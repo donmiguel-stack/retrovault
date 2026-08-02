@@ -1,11 +1,23 @@
+// Cloud-storage keys for webretro's "load a ROM from Google Drive / Dropbox /
+// OneDrive" picker.
+//
+// Blanked deliberately. The Vault loads ROMs from your own roms/ folder, so the
+// cloud picker is never used, and the keys that shipped here are not ours -
+// they belong to webretro's author and are already published in that project
+// and in dozens of forks of it. Carrying someone else's credentials serves no
+// purpose and trips GitHub's secret scanner.
+//
+// Want the cloud picker back? Put your own keys here; this is the file
+// uauth.js reads.
+
 // Google Drive
-var googleProjectId = "hallowed-digit-311307";
-var googleApiKey = "AIzaSyDuKbs32MBOZw87EJi0dsPVNHx6D4_QTOQ";
-var googleOauthClientId = "478810195063-c83gm38hf14o08gg4oqggql7pp9dqbdl.apps.googleusercontent.com";
+var googleProjectId = "";
+var googleApiKey = "";
+var googleOauthClientId = "";
 // scope: https://www.googleapis.com/auth/drive.readonly
 
 // Dropbox
-var dropboxAppKey = "2556z2wtdog5rop";
+var dropboxAppKey = "";
 
 // OneDrive
-var onedriveClientId = "31614988-7150-44ca-b17f-d18e3ea1d3af";
+var onedriveClientId = "";
