@@ -30,7 +30,7 @@ window.SETUP_I18N = {
   "mac": "<strong>Mac:</strong> Finder &rarr; find <code>VIDEOPAC ODYSSEY VAULT</code> &rarr; right-click it &rarr; <strong>New Terminal at Folder</strong>.",
   "win": "<strong>Windows:</strong> File Explorer &rarr; open <code>VIDEOPAC ODYSSEY VAULT</code> &rarr; click the <strong>address bar</strong> &rarr; type <code>cmd</code> &rarr; Enter.",
   "h_step2": "Step 2 &mdash; Start it",
-  "step2": "Type this and press Return. On Windows, <code>python serve.py</code>.",
+  "step2": "Type this and press Return:",
   "step2b": "It will look frozen. That's correct &mdash; it's waiting for the browser. Leave the window open while you play.",
   "h_step3": "Step 3 &mdash; Open it",
   "step3": "Go here and click a game.",
@@ -40,8 +40,13 @@ window.SETUP_I18N = {
   "w2": "<strong>\"Address already in use\"</strong> &mdash; a server is already running. Use the tab you have open, or pick another port: <code>python3 serve.py 8080</code>.",
   "w3": "<strong>\"No such file or directory\"</strong> &mdash; the terminal isn't pointing at the right folder. Redo Step 1 and pick the folder containing <code>serve.py</code>.",
   "w4": "<strong>The page won't load</strong> &mdash; check the terminal window is still open.",
-  "h_python": "First, install Python",
-  "python": "The Vault needs it to run its little local server. <strong>Mac:</strong> open Terminal and type <code>xcode-select --install</code>. <strong>Windows:</strong> get it from python.org and <strong>tick \"Add Python to PATH\"</strong> in the installer &mdash; miss that box and nothing will work."
+  "h_python": "Then install Python",
+  "python": "The Vault needs it to run its little local server. <strong>Mac:</strong> open Terminal and type <code>xcode-select --install</code>. <strong>Windows:</strong> get it from python.org. If the installer offers <strong>\"Add python.exe to PATH\"</strong>, tick it &mdash; without it the terminal won't find Python.",
+  "h_dumps": "First, add your dumps",
+  "dumps": "The Vault ships without games. The console BIOS, the cartridge dumps and the manual scans are downloaded separately and go in three folders here:",
+  "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     the cartridges\nmanuals/           the manual scans",
+  "dumpsNote": "If you were given a <code>videopac-odyssey-dumps.zip</code>, extract it at the top level of this folder and everything lands in place. Get it wrong and the Vault still looks fine &mdash; covers and all &mdash; but no game will start.",
+  "step2win": "On Windows:"
  },
  "nl": {
   "updateSetup": "Werken de knoppen niet? Updates hebben een bron nodig. Zet het adres van de repository waar deze Vault vandaan komt in <code>update-source.json</code> en start <code>serve.py</code> opnieuw.",
@@ -71,7 +76,7 @@ window.SETUP_I18N = {
   "mac": "<strong>Mac:</strong> Finder &rarr; zoek <code>VIDEOPAC ODYSSEY VAULT</code> &rarr; klik er met rechts op &rarr; <strong>Nieuwe Terminal bij map</strong>.",
   "win": "<strong>Windows:</strong> Verkenner &rarr; open <code>VIDEOPAC ODYSSEY VAULT</code> &rarr; klik op de <strong>adresbalk</strong> &rarr; typ <code>cmd</code> &rarr; Enter.",
   "h_step2": "Stap 2 &mdash; Start het",
-  "step2": "Typ dit en druk op Return. Op Windows: <code>python serve.py</code>.",
+  "step2": "Typ dit en druk op Return:",
   "step2b": "Het lijkt vast te lopen. Dat klopt &mdash; het wacht op de browser. Laat het venster open terwijl je speelt.",
   "h_step3": "Stap 3 &mdash; Open het",
   "step3": "Ga hierheen en klik een spel aan.",
@@ -81,8 +86,13 @@ window.SETUP_I18N = {
   "w2": "<strong>\"Address already in use\"</strong> &mdash; er draait al een server. Gebruik het tabblad dat al openstaat, of kies een andere poort: <code>python3 serve.py 8080</code>.",
   "w3": "<strong>\"No such file or directory\"</strong> &mdash; de terminal wijst naar de verkeerde map. Doe stap 1 opnieuw en kies de map met <code>serve.py</code> erin.",
   "w4": "<strong>De pagina laadt niet</strong> &mdash; controleer of het terminalvenster nog openstaat.",
-  "h_python": "Eerst: installeer Python",
-  "python": "De Vault heeft het nodig voor zijn kleine lokale server. <strong>Mac:</strong> open Terminal en typ <code>xcode-select --install</code>. <strong>Windows:</strong> haal het van python.org en <strong>vink \"Add Python to PATH\" aan</strong> in het installatieprogramma &mdash; zonder dat vinkje werkt niets."
+  "h_python": "Installeer daarna Python",
+  "python": "De Vault heeft het nodig voor zijn kleine lokale server. <strong>Mac:</strong> open Terminal en typ <code>xcode-select --install</code>. <strong>Windows:</strong> haal het van python.org. Biedt het installatieprogramma <strong>\"Add python.exe to PATH\"</strong> aan, vink dat dan aan &mdash; anders vindt de terminal Python niet.",
+  "h_dumps": "Eerst: voeg je dumps toe",
+  "dumps": "De Vault komt zonder spellen. De BIOS van de console, de cartridge-dumps en de gescande handleidingen download je apart; ze horen in drie mappen hier:",
+  "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     de cartridges\nmanuals/           de handleidingen",
+  "dumpsNote": "Heb je een <code>videopac-odyssey-dumps.zip</code> gekregen? Pak die uit op het bovenste niveau van deze map, dan komt alles op zijn plek. Doe je het verkeerd, dan ziet de Vault er nog prima uit &mdash; inclusief hoesjes &mdash; maar start geen enkel spel.",
+  "step2win": "Op Windows:"
  },
  "de": {
   "updateSetup": "Die Schaltflächen tun nichts? Updates brauchen eine Quelle. Trage die Adresse des Repositorys, aus dem dieser Vault stammt, in <code>update-source.json</code> ein und starte <code>serve.py</code> neu.",
@@ -112,7 +122,7 @@ window.SETUP_I18N = {
   "mac": "<strong>Mac:</strong> Finder &rarr; <code>VIDEOPAC ODYSSEY VAULT</code> suchen &rarr; rechtsklicken &rarr; <strong>Neues Terminal beim Ordner</strong>.",
   "win": "<strong>Windows:</strong> Explorer &rarr; <code>VIDEOPAC ODYSSEY VAULT</code> öffnen &rarr; auf die <strong>Adressleiste</strong> klicken &rarr; <code>cmd</code> tippen &rarr; Enter.",
   "h_step2": "Schritt 2 &mdash; Starten",
-  "step2": "Das hier eingeben und Return drücken. Unter Windows: <code>python serve.py</code>.",
+  "step2": "Das hier eingeben und Return drücken:",
   "step2b": "Es sieht aus, als hinge es. Das ist richtig so &mdash; es wartet auf den Browser. Lass das Fenster offen, während du spielst.",
   "h_step3": "Schritt 3 &mdash; Öffnen",
   "step3": "Hierhin gehen und ein Spiel anklicken.",
@@ -122,8 +132,13 @@ window.SETUP_I18N = {
   "w2": "<strong>\"Address already in use\"</strong> &mdash; es läuft bereits ein Server. Den offenen Tab benutzen oder einen anderen Port wählen: <code>python3 serve.py 8080</code>.",
   "w3": "<strong>\"No such file or directory\"</strong> &mdash; das Terminal zeigt auf den falschen Ordner. Schritt 1 wiederholen und den Ordner mit <code>serve.py</code> wählen.",
   "w4": "<strong>Die Seite lädt nicht</strong> &mdash; prüfen, ob das Terminalfenster noch offen ist.",
-  "h_python": "Zuerst: Python installieren",
-  "python": "Der Vault braucht es für seinen kleinen lokalen Server. <strong>Mac:</strong> Terminal öffnen und <code>xcode-select --install</code> eingeben. <strong>Windows:</strong> von python.org holen und im Installer <strong>\"Add Python to PATH\" ankreuzen</strong> &mdash; ohne dieses Häkchen funktioniert nichts."
+  "h_python": "Dann Python installieren",
+  "python": "Der Vault braucht es für seinen kleinen lokalen Server. <strong>Mac:</strong> Terminal öffnen und <code>xcode-select --install</code> eingeben. <strong>Windows:</strong> von python.org holen. Bietet der Installer <strong>\"Add python.exe to PATH\"</strong> an, dann ankreuzen &mdash; sonst findet das Terminal Python nicht.",
+  "h_dumps": "Zuerst: Dumps hinzufügen",
+  "dumps": "Der Vault kommt ohne Spiele. Das Konsolen-BIOS, die Moduldumps und die eingescannten Anleitungen lädst du separat; sie gehören in drei Ordner hier:",
+  "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     die Module\nmanuals/           die Anleitungen",
+  "dumpsNote": "Hast du eine <code>videopac-odyssey-dumps.zip</code> bekommen? Entpacke sie auf oberster Ebene dieses Ordners, dann landet alles richtig. Machst du es falsch, sieht der Vault trotzdem gut aus &mdash; Cover inklusive &mdash; aber kein Spiel startet.",
+  "step2win": "Unter Windows:"
  },
  "fr": {
   "updateSetup": "Les boutons ne font rien ? Les mises à jour ont besoin d'une source. Indiquez l'adresse du dépôt d'où vient ce Vault dans <code>update-source.json</code>, puis relancez <code>serve.py</code>.",
@@ -153,7 +168,7 @@ window.SETUP_I18N = {
   "mac": "<strong>Mac :</strong> Finder &rarr; trouvez <code>VIDEOPAC ODYSSEY VAULT</code> &rarr; clic droit &rarr; <strong>Nouveau terminal au dossier</strong>.",
   "win": "<strong>Windows :</strong> Explorateur &rarr; ouvrez <code>VIDEOPAC ODYSSEY VAULT</code> &rarr; cliquez la <strong>barre d'adresse</strong> &rarr; tapez <code>cmd</code> &rarr; Entrée.",
   "h_step2": "Étape 2 &mdash; Lancer",
-  "step2": "Tapez ceci et appuyez sur Entrée. Sous Windows : <code>python serve.py</code>.",
+  "step2": "Tapez ceci et appuyez sur Entrée :",
   "step2b": "On dirait que c'est figé. C'est normal &mdash; il attend le navigateur. Laissez la fenêtre ouverte pendant que vous jouez.",
   "h_step3": "Étape 3 &mdash; Ouvrir",
   "step3": "Allez ici et cliquez un jeu.",
@@ -163,8 +178,13 @@ window.SETUP_I18N = {
   "w2": "<strong>« Address already in use »</strong> &mdash; un serveur tourne déjà. Utilisez l'onglet déjà ouvert, ou choisissez un autre port : <code>python3 serve.py 8080</code>.",
   "w3": "<strong>« No such file or directory »</strong> &mdash; le terminal ne pointe pas sur le bon dossier. Refaites l'étape 1 en choisissant le dossier qui contient <code>serve.py</code>.",
   "w4": "<strong>La page ne charge pas</strong> &mdash; vérifiez que la fenêtre du terminal est toujours ouverte.",
-  "h_python": "D'abord : installer Python",
-  "python": "Le Vault en a besoin pour son petit serveur local. <strong>Mac :</strong> ouvrez Terminal et tapez <code>xcode-select --install</code>. <strong>Windows :</strong> récupérez-le sur python.org et <strong>cochez \"Add Python to PATH\"</strong> dans l'installeur &mdash; sans cette case, rien ne marchera."
+  "h_python": "Ensuite : installez Python",
+  "python": "Le Vault en a besoin pour son petit serveur local. <strong>Mac :</strong> ouvrez Terminal et tapez <code>xcode-select --install</code>. <strong>Windows :</strong> récupérez-le sur python.org. Si l'installeur propose <strong>\"Add python.exe to PATH\"</strong>, cochez-le &mdash; sinon le terminal ne trouvera pas Python.",
+  "h_dumps": "D'abord : ajoutez vos dumps",
+  "dumps": "Le Vault arrive sans jeux. Le BIOS de la console, les dumps de cartouches et les notices numérisées se téléchargent à part et vont dans trois dossiers ici :",
+  "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     les cartouches\nmanuals/           les notices",
+  "dumpsNote": "On vous a donné un <code>videopac-odyssey-dumps.zip</code> ? Extrayez-le à la racine de ce dossier et tout se met en place. En cas d'erreur, le Vault a l'air parfait &mdash; jaquettes comprises &mdash; mais aucun jeu ne démarre.",
+  "step2win": "Sous Windows :"
  },
  "pt": {
   "updateSetup": "Os botões não funcionam? As atualizações precisam de uma fonte. Coloque o endereço do repositório de onde veio este Vault em <code>update-source.json</code> e reinicie o <code>serve.py</code>.",
@@ -194,7 +214,7 @@ window.SETUP_I18N = {
   "mac": "<strong>Mac:</strong> Finder &rarr; ache <code>VIDEOPAC ODYSSEY VAULT</code> &rarr; clique com o botão direito &rarr; <strong>Novo Terminal na Pasta</strong>.",
   "win": "<strong>Windows:</strong> Explorador &rarr; abra <code>VIDEOPAC ODYSSEY VAULT</code> &rarr; clique na <strong>barra de endereços</strong> &rarr; digite <code>cmd</code> &rarr; Enter.",
   "h_step2": "Passo 2 &mdash; Inicie",
-  "step2": "Digite isto e aperte Return. No Windows: <code>python serve.py</code>.",
+  "step2": "Digite isto e aperte Return:",
   "step2b": "Vai parecer travado. Está certo &mdash; ele espera o navegador. Deixe a janela aberta enquanto joga.",
   "h_step3": "Passo 3 &mdash; Abra",
   "step3": "Vá aqui e clique num jogo.",
@@ -204,7 +224,12 @@ window.SETUP_I18N = {
   "w2": "<strong>\"Address already in use\"</strong> &mdash; já há um servidor rodando. Use a aba que já está aberta, ou escolha outra porta: <code>python3 serve.py 8080</code>.",
   "w3": "<strong>\"No such file or directory\"</strong> &mdash; o terminal não está na pasta certa. Refaça o passo 1 escolhendo a pasta que contém <code>serve.py</code>.",
   "w4": "<strong>A página não carrega</strong> &mdash; verifique se a janela do terminal continua aberta.",
-  "h_python": "Primeiro: instale o Python",
-  "python": "O Vault precisa dele para rodar seu pequeno servidor local. <strong>Mac:</strong> abra o Terminal e digite <code>xcode-select --install</code>. <strong>Windows:</strong> baixe de python.org e <strong>marque \"Add Python to PATH\"</strong> no instalador &mdash; sem essa caixa nada funciona."
+  "h_python": "Depois: instale o Python",
+  "python": "O Vault precisa dele para rodar seu pequeno servidor local. <strong>Mac:</strong> abra o Terminal e digite <code>xcode-select --install</code>. <strong>Windows:</strong> baixe de python.org. Se o instalador oferecer <strong>\"Add python.exe to PATH\"</strong>, marque &mdash; sem isso o terminal não acha o Python.",
+  "h_dumps": "Primeiro: adicione suas dumps",
+  "dumps": "O Vault vem sem jogos. A BIOS do console, as dumps dos cartuchos e os manuais digitalizados são baixados à parte e vão em três pastas aqui:",
+  "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     os cartuchos\nmanuals/           os manuais",
+  "dumpsNote": "Recebeu um <code>videopac-odyssey-dumps.zip</code>? Extraia no nível de cima desta pasta e tudo cai no lugar certo. Se errar, o Vault continua com boa aparência &mdash; capas e tudo &mdash; mas nenhum jogo inicia.",
+  "step2win": "No Windows:"
  }
 };

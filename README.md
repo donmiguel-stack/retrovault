@@ -42,8 +42,9 @@ and every game fails to start.
 
 The Vault needs it to run its little local server. **Mac:** open Terminal and
 type `xcode-select --install`. **Windows:** download it from
-[python.org](https://www.python.org/downloads/) and **tick "Add Python to
-PATH"** in the installer — miss that box and nothing will work.
+[python.org](https://www.python.org/downloads/). If the installer offers
+**"Add python.exe to PATH"**, tick it — without it the terminal won't find
+Python.
 
 ### Use Chrome
 
@@ -61,11 +62,17 @@ Terminal at Folder**.
 
 ### Step 2 — Start it
 
+On a Mac:
+
 ```
 python3 serve.py
 ```
 
-Windows: `python serve.py`.
+On Windows:
+
+```
+python serve.py
+```
 
 It will look frozen. That's correct — it's waiting for the browser. Leave the
 window open while you play.
