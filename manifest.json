@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-02 21:14:43",
+ "generated": "2026-08-02 22:37:00",
  "count": 229,
- "bytes": 96304191,
+ "bytes": 96303866,
  "files": {
   "games.js": {
    "sha256": "d0c5e066680f013c78dbcce2f7eb9b35b3f782b87e3f84e43a4f5ce3fe59ce12",
@@ -36,8 +36,8 @@
    "size": 18748
   },
   "setup-i18n.js": {
-   "sha256": "56d1c74f44ccf54616981fe80ad4323cfbdbc33eb17d43711b5df0b4a7a3c897",
-   "size": 33861
+   "sha256": "63ee3452bf395b94fd07754fde49505174f1956d2f6fc55caecfde0ce5a51815",
+   "size": 33395
   },
   "app.js": {
    "sha256": "825db12c82d9062f38f28b33dbd5c6ede26f01f2e4d97ef7d4fb8d441c2ba860",
@@ -60,8 +60,8 @@
    "size": 3768
   },
   "README.md": {
-   "sha256": "75c9f146ea462b13036f16c5b6e6d469f017a320a664a1084da1950f10a47334",
-   "size": 6129
+   "sha256": "2b94b72fea86ea6b827aac9db6f695aa4a3335525b812b8e526413e3337cd076",
+   "size": 6270
   },
   "video-script.md": {
    "sha256": "04cb5afeb225faac317667d2d450ce56061c5dbc25e3e656012fe5f852f4be9d",

@@ -117,8 +117,10 @@ Two things that catch everyone out:
 - **Arrow keys do nothing in some games.** Several titles only listen to the
   *second* joystick, even in one-player mode — Race and Flipper among them. Use
   `W A S D` and `Q` instead.
-- **Some carts hide modes behind RESET.** K.C. Munchkin's create-a-maze editor
-  is `F5` then `P`, not something on the SELECT GAME screen.
+- **Some carts hide modes on the keyboard.** K.C. Munchkin's create-a-maze
+  editor is one: press `P` at the SELECT GAME screen. And note `F5` is the
+  console's RESET key, but macOS claims it for Dictation — on a Mac use the
+  emulator's **More › Console RESET key** instead.
 
 ---
 
