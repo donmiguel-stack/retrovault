@@ -70,7 +70,21 @@ def fetch(url, timeout=30):
         return r.read()
 
 
+def authoring():
+    """True on the machine where the Vault is written.
+
+    An .authoring file (gitignored) switches updates off entirely. Nothing
+    else is reliable here: comparing files against manifest.json fails the
+    moment the manifest is regenerated, which is exactly what you do while
+    working. On the machine that produces the updates, the right number of
+    files to download is none.
+    """
+    return os.path.exists(os.path.join(ROOT, ".authoring"))
+
+
 def check_updates():
+    if authoring():
+        return {"ok": False, "reason": "authoring"}
     base = source_base()
     if not base:
         return {"ok": False, "reason": "no-source"}
@@ -119,6 +133,8 @@ def edited_here(rel, mine):
 
 
 def apply_updates(wanted):
+    if authoring():
+        return {"ok": False, "reason": "authoring"}
     base = source_base()
     if not base:
         return {"ok": False, "reason": "no-source"}
@@ -173,6 +189,8 @@ class VaultHandler(SimpleHTTPRequestHandler):
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
     print(f"Videopac Odyssey Vault on http://localhost:{port}  (no-cache mode)")
-    if not source_base():
+    if authoring():
+        print("updates: OFF - this is the authoring copy (.authoring present)")
+    elif not source_base():
         print("updates: not configured (see update-source.json)")
     ThreadingHTTPServer(("", port), VaultHandler).serve_forever()

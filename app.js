@@ -557,7 +557,8 @@
       applyBtn.hidden = true;
       fetch("/_update/check").then(function (r) { return r.json(); }).then(function (d) {
         if (!d.ok) {
-          say(window.t(d.reason === "no-source" ? "updNoSource" : "updFail"));
+          say(window.t(d.reason === "authoring" ? "updAuthoring"
+                     : d.reason === "no-source" ? "updNoSource" : "updFail"));
           return;
         }
         pendingFiles = d.added.concat(d.changed);

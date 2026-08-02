@@ -18,3 +18,6 @@ sources.local.json
 
 # Zips built for handing the Vault to someone else - not part of the repo.
 _bundles/
+
+# Marks the authoring copy - updates are refused while this exists.
+.authoring

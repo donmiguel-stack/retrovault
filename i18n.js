@@ -66,6 +66,7 @@ window.I18N = {
     updFail: "Could not reach the update source.",
     update: "Update",
     updSkipped: "{n} left alone - you have edited them here.",
+    updAuthoring: "Updates are off on this copy - it is where the Vault is edited.",
     plusGraphics: "G7400+ (Plus graphics)", language: "Language"
   },
   nl: { _name: "Nederlands", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><rect width=\"20\" height=\"4.67\" fill=\"#AE1C28\"/><rect y=\"9.33\" width=\"20\" height=\"4.67\" fill=\"#21468B\"/></svg>",
@@ -128,6 +129,7 @@ window.I18N = {
     updFail: "Kon de updatebron niet bereiken.",
     update: "Bijwerken",
     updSkipped: "{n} overgeslagen - die heb je hier zelf aangepast.",
+    updAuthoring: "Updates staan uit op deze kopie - hier wordt de Vault bewerkt.",
     plusGraphics: "G7400+ (Plus-graphics)", language: "Taal"
   },
   de: { _name: "Deutsch", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"4.67\" fill=\"#000\"/><rect y=\"4.67\" width=\"20\" height=\"4.67\" fill=\"#D00\"/><rect y=\"9.33\" width=\"20\" height=\"4.67\" fill=\"#FFCE00\"/></svg>",
@@ -190,6 +192,7 @@ window.I18N = {
     updFail: "Die Update-Quelle war nicht erreichbar.",
     update: "Aktualisieren",
     updSkipped: "{n} übersprungen - die hast du hier selbst geändert.",
+    updAuthoring: "Updates sind auf dieser Kopie aus - hier wird der Vault bearbeitet.",
     plusGraphics: "G7400+ (Plus-Grafik)", language: "Sprache"
   },
   fr: { _name: "Français", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><rect width=\"6.67\" height=\"14\" fill=\"#002395\"/><rect x=\"13.33\" width=\"6.67\" height=\"14\" fill=\"#ED2939\"/></svg>",
@@ -252,6 +255,7 @@ window.I18N = {
     updFail: "Impossible de joindre la source des mises à jour.",
     update: "Mise à jour",
     updSkipped: "{n} ignorés - vous les avez modifiés ici.",
+    updAuthoring: "Les mises à jour sont désactivées sur cette copie : c'est ici que le Vault est modifié.",
     plusGraphics: "G7400+ (graphismes Plus)", language: "Langue"
   },
   pt: { _name: "Português (BR)", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#009B3A\"/><path d=\"M10 1.6L18.2 7 10 12.4 1.8 7z\" fill=\"#FEDF00\"/><circle cx=\"10\" cy=\"7\" r=\"3.1\" fill=\"#002776\"/><path d=\"M6.9 6.2a3.1 3.1 0 0 0 6.2 .55\" stroke=\"#fff\" stroke-width=\".85\" fill=\"none\"/></svg>",
@@ -314,6 +318,7 @@ window.I18N = {
     updFail: "Não foi possível acessar a fonte de atualizações.",
     update: "Atualizar",
     updSkipped: "{n} ignorados - você os editou aqui.",
+    updAuthoring: "As atualizações estão desligadas nesta cópia - é aqui que o Vault é editado.",
     plusGraphics: "G7400+ (gráficos Plus)", language: "Idioma"
   }
 };
