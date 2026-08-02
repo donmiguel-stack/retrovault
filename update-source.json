@@ -1,4 +1,4 @@
 {
-  "_comment": "Where the update button looks for newer catalogue data. Point this at the raw view of your GitHub repo, e.g. https://raw.githubusercontent.com/<user>/<repo>/main - leave blank and the update button politely says it is not set up.",
-  "base": ""
+  "_comment": "Where the Update button looks for newer catalogue data - covers, the catalogue, translations. Nothing is fetched until you press the button. Point this somewhere else if you keep your own copy, or blank it to switch updates off entirely. This file is deliberately left out of manifest.json, so an update can never overwrite your choice.",
+  "base": "https://raw.githubusercontent.com/donmiguel-stack/videopac-odyssey-vault/main"
 }

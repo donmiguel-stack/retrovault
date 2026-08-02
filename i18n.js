@@ -6,7 +6,7 @@
 // The five here follow where the console actually sold: Philips Videopac
 // across the Netherlands, Germany and France, and Philips Brazil.
 window.I18N = {
-  en: { _name: "English", _flag: "🇬🇧",
+  en: { _name: "English", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#012169\"/><path d=\"M0 0l20 14M20 0L0 14\" stroke=\"#fff\" stroke-width=\"2.8\"/><path d=\"M0 0l20 14M20 0L0 14\" stroke=\"#C8102E\" stroke-width=\"1.4\"/><path d=\"M10 0v14M0 7h20\" stroke=\"#fff\" stroke-width=\"4.6\"/><path d=\"M10 0v14M0 7h20\" stroke=\"#C8102E\" stroke-width=\"2.6\"/></svg>",
     search: "Search {n} games...", setup: "Setup",
     platform: "Platform", category: "Category", lists: "Lists", all: "All",
     favorites: "Favorites", packaging: "Came with a board / overlay",
@@ -65,9 +65,10 @@ window.I18N = {
     updNoSource: "Updates are not set up. Put your repository address in update-source.json.",
     updFail: "Could not reach the update source.",
     update: "Update",
+    updSkipped: "{n} left alone - you have edited them here.",
     plusGraphics: "G7400+ (Plus graphics)", language: "Language"
   },
-  nl: { _name: "Nederlands", _flag: "🇳🇱",
+  nl: { _name: "Nederlands", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><rect width=\"20\" height=\"4.67\" fill=\"#AE1C28\"/><rect y=\"9.33\" width=\"20\" height=\"4.67\" fill=\"#21468B\"/></svg>",
     search: "Zoek in {n} spellen...", setup: "Instellingen",
     platform: "Platform", category: "Categorie", lists: "Lijsten", all: "Alles",
     favorites: "Favorieten", packaging: "Met bord / overlay geleverd",
@@ -126,9 +127,10 @@ window.I18N = {
     updNoSource: "Updates zijn niet ingesteld. Zet het adres van je repository in update-source.json.",
     updFail: "Kon de updatebron niet bereiken.",
     update: "Bijwerken",
+    updSkipped: "{n} overgeslagen - die heb je hier zelf aangepast.",
     plusGraphics: "G7400+ (Plus-graphics)", language: "Taal"
   },
-  de: { _name: "Deutsch", _flag: "🇩🇪",
+  de: { _name: "Deutsch", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"4.67\" fill=\"#000\"/><rect y=\"4.67\" width=\"20\" height=\"4.67\" fill=\"#D00\"/><rect y=\"9.33\" width=\"20\" height=\"4.67\" fill=\"#FFCE00\"/></svg>",
     search: "{n} Spiele durchsuchen...", setup: "Einrichtung",
     platform: "Plattform", category: "Kategorie", lists: "Listen", all: "Alle",
     favorites: "Favoriten", packaging: "Mit Spielbrett / Tastaturschablone",
@@ -187,9 +189,10 @@ window.I18N = {
     updNoSource: "Updates sind nicht eingerichtet. Trage die Adresse deines Repositorys in update-source.json ein.",
     updFail: "Die Update-Quelle war nicht erreichbar.",
     update: "Aktualisieren",
+    updSkipped: "{n} übersprungen - die hast du hier selbst geändert.",
     plusGraphics: "G7400+ (Plus-Grafik)", language: "Sprache"
   },
-  fr: { _name: "Français", _flag: "🇫🇷",
+  fr: { _name: "Français", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><rect width=\"6.67\" height=\"14\" fill=\"#002395\"/><rect x=\"13.33\" width=\"6.67\" height=\"14\" fill=\"#ED2939\"/></svg>",
     search: "Rechercher parmi {n} jeux...", setup: "Configuration",
     platform: "Plateforme", category: "Catégorie", lists: "Listes", all: "Tous",
     favorites: "Favoris", packaging: "Livré avec plateau / cache-clavier",
@@ -248,9 +251,10 @@ window.I18N = {
     updNoSource: "Les mises à jour ne sont pas configurées. Indiquez l'adresse de votre dépôt dans update-source.json.",
     updFail: "Impossible de joindre la source des mises à jour.",
     update: "Mise à jour",
+    updSkipped: "{n} ignorés - vous les avez modifiés ici.",
     plusGraphics: "G7400+ (graphismes Plus)", language: "Langue"
   },
-  pt: { _name: "Português (BR)", _flag: "🇧🇷",
+  pt: { _name: "Português (BR)", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#009B3A\"/><path d=\"M10 1.6L18.2 7 10 12.4 1.8 7z\" fill=\"#FEDF00\"/><circle cx=\"10\" cy=\"7\" r=\"3.1\" fill=\"#002776\"/><path d=\"M6.9 6.2a3.1 3.1 0 0 0 6.2 .55\" stroke=\"#fff\" stroke-width=\".85\" fill=\"none\"/></svg>",
     search: "Buscar entre {n} jogos...", setup: "Configuração",
     platform: "Plataforma", category: "Categoria", lists: "Listas", all: "Todos",
     favorites: "Favoritos", packaging: "Acompanha tabuleiro / máscara",
@@ -309,6 +313,7 @@ window.I18N = {
     updNoSource: "As atualizações não estão configuradas. Coloque o endereço do seu repositório em update-source.json.",
     updFail: "Não foi possível acessar a fonte de atualizações.",
     update: "Atualizar",
+    updSkipped: "{n} ignorados - você os editou aqui.",
     plusGraphics: "G7400+ (gráficos Plus)", language: "Idioma"
   }
 };

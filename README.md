@@ -8,6 +8,34 @@ browser.
 
 ---
 
+## First: add your dumps
+
+This repository carries the Vault itself — the catalogue, the box art, the
+translations — but **no ROMs, no BIOS and no manual scans**. Those aren't ours
+to distribute; you supply your own. They belong in three folders that arrive
+empty:
+
+```
+emulator/bios/      the console BIOS (g7400.bin)
+emulator/roms/      the cartridge dumps
+manuals/            manual page scans, one folder per title
+```
+
+If you were given a `videopac-odyssey-dumps.zip`, it already has those three
+paths inside it, so extract it **at the top level of this folder** and
+everything lands in place.
+
+> **Windows: watch the destination box.** "Extract All" defaults to creating a
+> new subfolder named after the zip, which buries `emulator\` and `manuals\`
+> one level too deep. Delete the trailing `\videopac-odyssey-dumps` from the
+> destination path before clicking Extract. On a Mac, double-clicking the zip
+> does the same thing — unzip it, then move the three folders up yourself.
+
+If the folders end up nested, you'll know: the Vault loads, the covers show,
+and every game fails to start.
+
+---
+
 ## How to run it
 
 Every time you want to play you do the same two things: **start the little

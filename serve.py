@@ -92,14 +92,43 @@ def check_updates():
             "bytes": total, "generated": remote.get("generated")}
 
 
+def local_manifest():
+    """Hashes of the files as they were last published from here."""
+    p = os.path.join(ROOT, "manifest.json")
+    if not os.path.exists(p):
+        return {}
+    try:
+        with open(p, encoding="utf-8") as fh:
+            return json.load(fh).get("files", {})
+    except Exception:
+        return {}
+
+
+def edited_here(rel, mine):
+    """True if this copy of the file differs from what our own manifest says.
+
+    That means somebody changed it locally - which on the machine where the
+    Vault is authored is the normal state of affairs. Overwriting it would
+    throw away their work, so we skip it and say so.
+    """
+    meta = mine.get(rel)
+    local = os.path.join(ROOT, rel)
+    if not meta or not os.path.exists(local):
+        return False
+    return digest(local) != meta["sha256"]
+
+
 def apply_updates(wanted):
     base = source_base()
     if not base:
         return {"ok": False, "reason": "no-source"}
-    written, failed = [], []
+    mine = local_manifest()
+    written, failed, skipped = [], [], []
     for rel in wanted:
         if not safe(rel):
             failed.append(rel); continue
+        if edited_here(rel, mine):
+            skipped.append(rel); continue
         try:
             data = fetch(base + "/" + rel)
             dest = os.path.join(ROOT, rel)
@@ -109,7 +138,7 @@ def apply_updates(wanted):
             written.append(rel)
         except Exception:
             failed.append(rel)
-    return {"ok": True, "written": written, "failed": failed}
+    return {"ok": True, "written": written, "failed": failed, "skipped": skipped}
 
 
 class VaultHandler(SimpleHTTPRequestHandler):

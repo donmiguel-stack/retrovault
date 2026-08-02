@@ -495,7 +495,7 @@
       var b = document.createElement("button");
       b.className = "flag-btn";
       b.dataset.lang = code;
-      b.textContent = window.I18N[code]._flag;
+      b.innerHTML = window.I18N[code]._flag;   // small inline SVG, not emoji
       b.title = window.I18N[code]._name;
       b.setAttribute("aria-label", window.I18N[code]._name);
       langFlags.appendChild(b);
@@ -577,7 +577,11 @@
         body: JSON.stringify({ files: pendingFiles })
       }).then(function (r) { return r.json(); }).then(function (d) {
         if (!d.ok) { say(window.t("updFail")); return; }
-        say(window.t("updDone", { n: d.written.length }), true);
+        var msg = window.t("updDone", { n: d.written.length });
+        if (d.skipped && d.skipped.length) {
+          msg += " " + window.t("updSkipped", { n: d.skipped.length });
+        }
+        say(msg, true);
         applyBtn.hidden = true;
       }).catch(function () { say(window.t("updFail")); });
     });

@@ -1,11 +1,11 @@
 {
- "generated": "2026-08-02 13:25:42",
+ "generated": "2026-08-02 18:07:14",
  "count": 229,
- "bytes": 96299164,
+ "bytes": 96311501,
  "files": {
   "games.js": {
-   "sha256": "36c41e19db96c9d539971b5dbf9a72a4cef499cec776b0474f77a41a285ca1e8",
-   "size": 57446
+   "sha256": "d0c5e066680f013c78dbcce2f7eb9b35b3f782b87e3f84e43a4f5ce3fe59ce12",
+   "size": 57445
   },
   "gamepages.js": {
    "sha256": "c7a3fbadc54dfc2df45a33d57bcb4af857d1c98cdf4a18d78da2134536d77965",
@@ -32,36 +32,36 @@
    "size": 1858
   },
   "i18n.js": {
-   "sha256": "dc85d8e31ed6e1d550bfce36de6db69a034c52b58958c718bf66be907c6a262c",
-   "size": 14227
+   "sha256": "0dc35f005a2c09e88fe159996c10541a1632ad3a85da8f866789e7aef9e8fa7a",
+   "size": 18273
   },
   "setup-i18n.js": {
-   "sha256": "ad236e08e32b18a42286e69f95c1731c8983ef1041a39ccdd813748d0a8e7957",
-   "size": 36649
+   "sha256": "a76b4583b2e414f7c2540bf17052a8066918177490d81be9db8744e63756508b",
+   "size": 39282
   },
   "app.js": {
-   "sha256": "6c50075d714bf46d48567e9ebbc37d3304837074130c6c4c3ddb56b12d1fde91",
-   "size": 22327
+   "sha256": "e091ad68313da78cc2c9a92325948913b37bbfe026b6bde2b715be8d79a86a54",
+   "size": 25472
   },
   "game.html": {
-   "sha256": "36ea6fae92742bffb1e0e35d7abf554e405c60e1331357beb9fef563ed3ec41e",
+   "sha256": "768d709e91bf52cf4a8f73d85dc9d4a90cabfd3f47a158efafc09b09894bb204",
    "size": 21577
   },
   "index.html": {
-   "sha256": "dc5d2930bb57d114ac170ece5656829aafb23c051db9b80475c4276629dfd490",
-   "size": 3889
+   "sha256": "7e5929915601d102e93f8647ed0528ffed8bd84e359d66a478bacde31b5fcdb9",
+   "size": 4673
   },
   "style.css": {
-   "sha256": "9d1f68532d0c8e22570d1511f034fea69bcd40dd40712c7fb41b3f3af47d31a4",
-   "size": 10438
+   "sha256": "e39a4d5c0ffb7f68a4ee91295f8937dbabe4d47529434fda2c6700d7c2a1e20a",
+   "size": 11062
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
    "size": 3768
   },
   "README.md": {
-   "sha256": "f835c62f89b1cdf446fb141cae7e46314b3ea130121d206e253d948f2e960b2f",
-   "size": 7444
+   "sha256": "6e54f0587266ee6db845f874049b35b46b68d371e2c11832ec557fbe1f5f7123",
+   "size": 8550
   },
   "video-script.md": {
    "sha256": "04cb5afeb225faac317667d2d450ce56061c5dbc25e3e656012fe5f852f4be9d",
