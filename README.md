@@ -38,87 +38,43 @@ and every game fails to start.
 
 ## How to run it
 
-Every time you want to play you do the same two things: **start the little
-server**, then **open the Vault in your browser**. About ten seconds once
-you've done it once.
+### First, install Python
 
-> **Why not just double-click `index.html`?**
-> Browsers refuse to load an emulator and its game files straight off your hard
-> disk — it's a security rule. The server below gets around that. It runs *only*
-> on this computer: nothing is uploaded, nothing is shared, and nobody else can
-> reach it.
+The Vault needs it to run its little local server. **Mac:** open Terminal and
+type `xcode-select --install`. **Windows:** download it from
+[python.org](https://www.python.org/downloads/) and **tick "Add Python to
+PATH"** in the installer — miss that box and nothing will work.
 
-### Which browser?
+### Use Chrome
 
-**Chrome or Firefox.** Any modern browser will *run* the Vault — the emulator
-needs nothing exotic (no multi-threading, so no special server headers), and
-the only hard requirements are `fetch` and IndexedDB, which everything modern
-has.
+Firefox runs the Vault fine, but puts an extra click between you and the game.
+Avoid **Safari**: it wipes stored data for a site you haven't visited in a
+week, and that's where your favourites and save games live.
 
-The reason to avoid **Safari** isn't speed, it's forgetfulness. WebKit deletes
-all script-writable storage for a site after 7 days of browser use without you
-visiting it. That covers localStorage *and* IndexedDB — which is exactly where
-your **favorites**, **save games** and **save states** live. Go on holiday for
-a fortnight and Safari may quietly bin the lot. Chrome and Firefox don't do
-this.
+### Step 1 — Open a terminal in this folder
 
-### Step 1 — Open the black text window
+**Mac:** Finder → find `VIDEOPAC ODYSSEY VAULT` → right-click it → **New
+Terminal at Folder**.
 
-It's called **Terminal** on a Mac and **Command Prompt** on Windows. You're
-going to point it at the `VIDEOPAC EMULATOR` folder — the one this file is in.
+**Windows:** File Explorer → open `VIDEOPAC ODYSSEY VAULT` → click the
+**address bar** → type `cmd` → Enter.
 
-**On a Mac**
-
-1. Open **Finder** and find the `VIDEOPAC EMULATOR` folder.
-2. **Right-click** it (or Control-click) and choose **New Terminal at Folder**.
-3. A black-and-white window opens. That's it.
-
-Don't see "New Terminal at Folder"? Switch it on once in
-*System Settings → Keyboard → Keyboard Shortcuts → Services → Files and
-Folders*, and tick **New Terminal at Folder**. Or open Terminal from
-*Applications → Utilities*, type `cd` followed by a space, drag the folder onto
-the window, and press Return.
-
-**On Windows**
-
-1. Open the `VIDEOPAC EMULATOR` folder in File Explorer.
-2. Click the white **address bar** at the top so the path highlights.
-3. Type `cmd` over it and press **Enter**.
-
-### Step 2 — Start the server
-
-Type this and press Return / Enter:
+### Step 2 — Start it
 
 ```
 python3 serve.py
 ```
 
-On Windows type `python serve.py` instead.
+Windows: `python serve.py`.
 
-You should see:
+It will look frozen. That's correct — it's waiting for the browser. Leave the
+window open while you play.
 
-```
-Videopac Odyssey Vault on http://localhost:8000  (no-cache mode)
-```
+### Step 3 — Open it
 
-That means it's working.
+Go to **http://localhost:8000/** and click a game.
 
-**Leave that window open while you play.** Closing it switches the Vault off.
-It will look like it has frozen — that's normal, it's just sitting there
-waiting for the browser.
-
-### Step 3 — Open the Vault
-
-In your browser, go to:
-
-```
-http://localhost:8000/
-```
-
-Click a game, then press **START**.
-
-When you're done, click the terminal window and press **Control + C** to stop
-the server, then close it.
+Done playing? Click the terminal window and press **Control + C**.
 
 ---
 
@@ -156,26 +112,6 @@ Two things that catch everyone out:
   `W A S D` and `Q` instead.
 - **Some carts hide modes behind RESET.** K.C. Munchkin's create-a-maze editor
   is `F5` then `P`, not something on the SELECT GAME screen.
-
----
-
-## Favorites
-
-Hover any cover and click the star, or use the button next to START on a game
-page. Favorites are remembered by your browser, so they survive quitting and
-rebooting.
-
-**They are stored by the browser, not in this folder.** That has one
-consequence worth knowing: **favorites don't travel.** Copy the Vault to
-another machine, or hand it to a friend, and the star list starts empty — the
-files come across, the browser's memory of them doesn't. The same applies if
-you switch browsers, or clear browsing data for `localhost`.
-
-To move them, open **Setup** and use **Export favorites**. That writes a small
-`videopac-vault-favorites.json` file you can back up or send along; **Import
-favorites** on the other machine merges it into whatever is already starred
-there, and never removes anything. Games in the file that aren't in that
-library are skipped and reported.
 
 ---
 
