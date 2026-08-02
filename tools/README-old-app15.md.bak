@@ -1,0 +1,48 @@
+# Videopac Vault
+
+A private, local browser front end for playing your own Philips
+Videopac / Odyssey2 / G7400+ game dumps, built on the open-source
+`webretro` project (RetroArch's O2EM core compiled to WebAssembly).
+
+Nothing here is bundled or pre-loaded: no BIOS, no game ROMs, no
+downloads from third-party ROM sites. Everything runs from files you
+supply yourself, from your own hardware.
+
+## Setup
+
+1. **BIOS** - dump your G7400 / G7000 BIOS yourself and drop the files
+   into `emulator/bios/` (see `emulator/bios/README.txt` for exact
+   filenames).
+2. **ROMs** - copy your PicoPAC's `.bin` files into `emulator/roms/`,
+   keeping their original filenames.
+3. **Run a local server** (required - browsers block local file
+   access for security):
+
+   ```
+   cd videopac-vault/app
+   python3 -m http.server 8000
+   ```
+
+   Then open `http://localhost:8000/` in your browser.
+
+## What's included
+
+- `index.html` / `app.js` / `style.css` - the library UI (grid, search,
+  filters), reading from `games.json`.
+- `games.json` - a catalogue of your 203 PicoPAC titles, parsed from
+  PICOPAC-GAME-LIST.txt, with platform (G7000 / G7400+) and category
+  tags.
+- `emulator/` - a self-hosted, trimmed copy of BinBashBanana/webretro
+  (MIT licensed) with only the O2EM core included. Patched so it never
+  phones home for BIOS files (the stock version pulls BIOS from a
+  public GitHub repo automatically - that path is disabled here; BIOS
+  is local-only, from `emulator/bios/`).
+
+## Notes
+
+- This is built for personal, private use with hardware and dumps you
+  own. It isn't set up for public hosting - see the BIOS note above
+  and keep it local.
+- First launch of a title with a missing BIOS file will fail silently
+  in the UI; open the emulator's console (Menu > Console) to see
+  what's missing.

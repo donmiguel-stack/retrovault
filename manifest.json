@@ -1,0 +1,923 @@
+{
+ "generated": "2026-08-02 13:25:42",
+ "count": 229,
+ "bytes": 96299164,
+ "files": {
+  "games.js": {
+   "sha256": "36c41e19db96c9d539971b5dbf9a72a4cef499cec776b0474f77a41a285ca1e8",
+   "size": 57446
+  },
+  "gamepages.js": {
+   "sha256": "c7a3fbadc54dfc2df45a33d57bcb4af857d1c98cdf4a18d78da2134536d77965",
+   "size": 112049
+  },
+  "genres.js": {
+   "sha256": "680bc2125d26ec5ef94720706fb00ef79adc5c843b8267ecad155c1538226fe1",
+   "size": 13481
+  },
+  "brazil.js": {
+   "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
+   "size": 7086
+  },
+  "usa.js": {
+   "sha256": "ab40aae868980339a676fac93afa77da474fc155071b7e79367e25c8309f5580",
+   "size": 4253
+  },
+  "packaging.js": {
+   "sha256": "c15cc3e2aacdcd24d84ce6644737f78cb4d6065bc006a826b3ea68b82cdd0183",
+   "size": 2591
+  },
+  "extras.js": {
+   "sha256": "bc7a118bf4725181cc3f8e9b4f2a670dd4d42dba3a9281e118ce1d5d4e97d07a",
+   "size": 1858
+  },
+  "i18n.js": {
+   "sha256": "dc85d8e31ed6e1d550bfce36de6db69a034c52b58958c718bf66be907c6a262c",
+   "size": 14227
+  },
+  "setup-i18n.js": {
+   "sha256": "ad236e08e32b18a42286e69f95c1731c8983ef1041a39ccdd813748d0a8e7957",
+   "size": 36649
+  },
+  "app.js": {
+   "sha256": "6c50075d714bf46d48567e9ebbc37d3304837074130c6c4c3ddb56b12d1fde91",
+   "size": 22327
+  },
+  "game.html": {
+   "sha256": "36ea6fae92742bffb1e0e35d7abf554e405c60e1331357beb9fef563ed3ec41e",
+   "size": 21577
+  },
+  "index.html": {
+   "sha256": "dc5d2930bb57d114ac170ece5656829aafb23c051db9b80475c4276629dfd490",
+   "size": 3889
+  },
+  "style.css": {
+   "sha256": "9d1f68532d0c8e22570d1511f034fea69bcd40dd40712c7fb41b3f3af47d31a4",
+   "size": 10438
+  },
+  "boot-splash.js": {
+   "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
+   "size": 3768
+  },
+  "README.md": {
+   "sha256": "f835c62f89b1cdf446fb141cae7e46314b3ea130121d206e253d948f2e960b2f",
+   "size": 7444
+  },
+  "video-script.md": {
+   "sha256": "04cb5afeb225faac317667d2d450ce56061c5dbc25e3e656012fe5f852f4be9d",
+   "size": 8300
+  },
+  "covers/Vp01_F.png": {
+   "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
+   "size": 615069
+  },
+  "covers/Vp05_F.png": {
+   "sha256": "d1775b29f15ab2a212d2cae30fcc6bad129e1d8179e9a73fef3f6376ef25988c",
+   "size": 473404
+  },
+  "covers/Vp06_F.png": {
+   "sha256": "3aa798e5d548a0333d8facf8d47d628e0bef621f945e1de0ff8fc619e49b2dc2",
+   "size": 474586
+  },
+  "covers/Vp07_F.png": {
+   "sha256": "9e88e364ea60b17db2002cbf26cf1b94b083cc252277d7c0b51f72f4125cf3d9",
+   "size": 832209
+  },
+  "covers/Vp11+_F.png": {
+   "sha256": "6f47f7ccc5d4b7ef023fb0791c36d8781bbc570f023641bcd4e79b403f1c6b4c",
+   "size": 693527
+  },
+  "covers/Vp11_F.png": {
+   "sha256": "6f47f7ccc5d4b7ef023fb0791c36d8781bbc570f023641bcd4e79b403f1c6b4c",
+   "size": 693527
+  },
+  "covers/Vp12_F.jpg": {
+   "sha256": "32603b61321e9badf03adc5e5a308725a6aaa7dc2d87b3d2373f31ede225ace0",
+   "size": 123464
+  },
+  "covers/Vp18_F.png": {
+   "sha256": "1edaf3cddaf9c530574d87106ca15b9932b976293517505da0b7d03631ee5715",
+   "size": 637723
+  },
+  "covers/Vp23_F.jpg": {
+   "sha256": "ced9ea15649d0308db8ae352a745a5f34d7d3b2cb8ab193c4d0dbe818e80bb5d",
+   "size": 117730
+  },
+  "covers/Vp24_F.png": {
+   "sha256": "907ed343c97ce18acaab30550920ad90da44515adb40386b8bd12a4b445ae1ec",
+   "size": 474218
+  },
+  "covers/Vp25_F.png": {
+   "sha256": "18b728883ab1da1039d6277da4a9723b1373e45d96d51ad5de972cebfd0e0c6b",
+   "size": 675941
+  },
+  "covers/Vp28_F.png": {
+   "sha256": "2302b53ca658ca4c08a787a7e0dfb68b9683db6bd02927f1688b028ea59a4650",
+   "size": 644184
+  },
+  "covers/Vp29_F.png": {
+   "sha256": "955556d5f427c5f12d09f623ad436cc5b5584fe0c5aa11e138f540a2c784e985",
+   "size": 719184
+  },
+  "covers/Vp35_F.png": {
+   "sha256": "e417d557bfc42cd07b960af7b96f09fb2812ecb890eaee6e7c7775118f794bdf",
+   "size": 612244
+  },
+  "covers/Vp36_F.png": {
+   "sha256": "c8d6a3fc9a6f3975ecddb5b50bd6826a9faec3b12294b51139c8ab86425426b2",
+   "size": 700338
+  },
+  "covers/Vp40_F.png": {
+   "sha256": "508474bceb260ed62a9905a220a11b613da78942740b442771e087f6078a2ee8",
+   "size": 627019
+  },
+  "covers/Vp42_F.png": {
+   "sha256": "07b51a3c68d583bbdfdf5d00255b2f3540b0021d5f372b55e0ded875d42db7b8",
+   "size": 401224
+  },
+  "covers/Vp45_F.png": {
+   "sha256": "162cac20b18a10ea3a18730d6f15d02fcdbfbd857b6865b85daf57bcf530abe8",
+   "size": 456358
+  },
+  "covers/Vp47_F.png": {
+   "sha256": "497fcfc1352c02042f8cfaeffe045d0ff18c35f9f6fca778526e85013f9e5b60",
+   "size": 472714
+  },
+  "covers/Vp52+_F.png": {
+   "sha256": "201e0e420daa66574337440224c38cd9471a7d9105fd8ba49a3bb09fd08b47a5",
+   "size": 492150
+  },
+  "covers/br_9434.jpg": {
+   "sha256": "ae0f3b89617db2ee63a76f5b6dae0eb50f06311e54144447a4f8e3bee665c956",
+   "size": 56268
+  },
+  "covers/br_9461.jpg": {
+   "sha256": "d4e6423a5ce4e434bc21d442948cab5b51e0d9e7261b1b67bda073cb9425a2f7",
+   "size": 76362
+  },
+  "covers/br_9462.jpg": {
+   "sha256": "a5d776595ba28847664871185631d51deb69a96e7691f3b2a644e0625e7b912c",
+   "size": 89477
+  },
+  "covers/br_9463.jpg": {
+   "sha256": "579eb64b121a5d47e9a53a6cc2fe31a6f0051217486ab8905b922adafbd58892",
+   "size": 88513
+  },
+  "covers/br_9468.jpg": {
+   "sha256": "c3e6cbd4842a4ac3a0961de6d2c0777bdecc888e6629e17d934220590ec81ac7",
+   "size": 87468
+  },
+  "covers/br_9469.jpg": {
+   "sha256": "37c717d0e78c8094b6650a1a52118b71a619ce75ee47c15138e880e87cd11129",
+   "size": 81379
+  },
+  "covers/br_9472.jpg": {
+   "sha256": "8c1a9649be790d6b67d27a38795bc18855f645c2e858b61393e869cfc984c6ba",
+   "size": 92965
+  },
+  "covers/br_9473.jpg": {
+   "sha256": "9e411ef900e3cb94c98dfef94a6478864c4459b752693b5f0b8f9023baeebfaf",
+   "size": 81177
+  },
+  "covers/br_9474.jpg": {
+   "sha256": "f42310bc29059227c71333258785627d48c9a7b868d561014f3451026ab1b0ed",
+   "size": 77852
+  },
+  "covers/br_9475.jpg": {
+   "sha256": "6d87ff273864c9541ca59ceee0c24e31c49441f8552c838ad07f580004fc0fe9",
+   "size": 88971
+  },
+  "covers/br_9476.jpg": {
+   "sha256": "1e3ef261bc928cf22401e4ea6642f92923f265ef0d2e03156908147e863ade6f",
+   "size": 74501
+  },
+  "covers/br_9477.jpg": {
+   "sha256": "7ae35c69dce3fcc315dce6dd0918cdbdd84f5151b7c3a4d7f5054513d5b046e5",
+   "size": 73091
+  },
+  "covers/br_9483.jpg": {
+   "sha256": "c6e6541f9661db1a36ab74a990ff1925c4f8f24cd10074d56dca09bbfad17ab6",
+   "size": 75120
+  },
+  "covers/br_9484.jpg": {
+   "sha256": "5ddb1212fad141041b878e9d4fddf6647aa2db944b1a817f419a74a92f3d22cf",
+   "size": 80983
+  },
+  "covers/br_9485.jpg": {
+   "sha256": "13cb516a73b99d23e31e33d9bb0ca8a1ed8f8d230ee26559ae66e41c367be4d7",
+   "size": 75667
+  },
+  "covers/br_9486.jpg": {
+   "sha256": "ef5c3e9ad6545d5d13b33b53797be4c81eb01135492a6fb81666160eb4041d05",
+   "size": 75215
+  },
+  "covers/csv1.jpg": {
+   "sha256": "828e50fedd6a929e08072725bc3c505d31ee6b186e0f161b3b381721b6ea558a",
+   "size": 76644
+  },
+  "covers/csv2.jpg": {
+   "sha256": "b1b04573d09b707f9a8fcdf012fc1e6c2e86db7537cc9ccd78aca40d32b88e6d",
+   "size": 77632
+  },
+  "covers/im_atlantis.png": {
+   "sha256": "6e7df5c00dca4f48878d283e920c254ae98344777449276856b713da6d39415c",
+   "size": 421356
+  },
+  "covers/im_demon-attack.png": {
+   "sha256": "7ac8c2f11366bd44108f1c07752610d1384f63cdcc90d18e818bcf956248f8d5",
+   "size": 107492
+  },
+  "covers/jo_basket-bowling_pl.png": {
+   "sha256": "b8676ea930b635612e0e82d251c995dce6f550215807f2cb257f6f04c86a8325",
+   "size": 604059
+  },
+  "covers/jo_billard_pl.png": {
+   "sha256": "bafee6c7ffe646d18bc8ef01954b96a6a5be3068b9a38a50a3bea2de32a89eb6",
+   "size": 570617
+  },
+  "covers/jo_chez-maxime.png": {
+   "sha256": "c74ea451ae71a0a539e0137f57fa33d093544ac306f27821e5da6be14b80979d",
+   "size": 525356
+  },
+  "covers/jo_demon-attack_pl.png": {
+   "sha256": "634e714c83254013ccab4772d1b0de54293381332bee4fd3191dbdf36287eac7",
+   "size": 359479
+  },
+  "covers/jo_exojet_pl.png": {
+   "sha256": "75b0c1e722e6ca6d4da4d475f1488e0e2f5de6ada85e026f93e0b5413644459e",
+   "size": 669375
+  },
+  "covers/jo_flipper_pl.png": {
+   "sha256": "9f6cd15cbf668311a82f3759063d778768811045b434c297adef68cde4521d0c",
+   "size": 376190
+  },
+  "covers/jo_le-tresor-englouti_pl.png": {
+   "sha256": "6687365fbf91c135247df8b8f9aae4b3a3a9a5e41482003036e4417775b32338",
+   "size": 601418
+  },
+  "covers/jo_moto-crash_pl.png": {
+   "sha256": "2fc85e62651a004202277243f89e503f73c02ce29a0efb0e00ccbdda23284c35",
+   "size": 470396
+  },
+  "covers/jo_syracuse.png": {
+   "sha256": "7b78bf70fd984f0f19d693d4953764d64ac462f283437af1a6dfa7e0195ffb84",
+   "size": 676469
+  },
+  "covers/mod_01pl.jpg": {
+   "sha256": "17ed1962fdb0b659b0bccfcb0d6686f0317601bba2d8f96e4a2d53e0c6432919",
+   "size": 62908
+  },
+  "covers/mod_05_g7400.jpg": {
+   "sha256": "17d6fc0742017b20c12571c20f6315d4b7d414450c28dde438861ff1ee8fc0bf",
+   "size": 111329
+  },
+  "covers/mod_06pl.png": {
+   "sha256": "3aa798e5d548a0333d8facf8d47d628e0bef621f945e1de0ff8fc619e49b2dc2",
+   "size": 474586
+  },
+  "covers/mod_11pl.png": {
+   "sha256": "6f47f7ccc5d4b7ef023fb0791c36d8781bbc570f023641bcd4e79b403f1c6b4c",
+   "size": 693527
+  },
+  "covers/mod_14fix.png": {
+   "sha256": "12a1fad466ed956a6338fa530dc2e4e42e6df8b3cf30cedbec2ebe88a36b0881",
+   "size": 485139
+  },
+  "covers/mod_19_g7400.png": {
+   "sha256": "86c3a35ede94006c518ee8777040614d49c9592139d415b6266428a35941db0a",
+   "size": 591522
+  },
+  "covers/mod_20pl.png": {
+   "sha256": "6ed558e3f542ac42ff2cbd1254634ad93c27f231a664206a3420e7fadc08bcf1",
+   "size": 700960
+  },
+  "covers/mod_24pl.jpg": {
+   "sha256": "6b168cd54f4e53deac1cc10ca390fb6d2410a6f9711e86b774a09d633d728954",
+   "size": 140113
+  },
+  "covers/mod_28fix.png": {
+   "sha256": "2302b53ca658ca4c08a787a7e0dfb68b9683db6bd02927f1688b028ea59a4650",
+   "size": 644184
+  },
+  "covers/mod_30fix.png": {
+   "sha256": "bd4ceff6d61531d145ae681fbe500d98191b11f566c5ca0ba6f9a0a91af85133",
+   "size": 759963
+  },
+  "covers/mod_31_g7400.jpg": {
+   "sha256": "035f345ba2292fa131c3c666eb3e7565d0b337eac7e3cc37d5db19b3d86b7e7e",
+   "size": 78491
+  },
+  "covers/mod_35pl_fix.png": {
+   "sha256": "e417d557bfc42cd07b960af7b96f09fb2812ecb890eaee6e7c7775118f794bdf",
+   "size": 612244
+  },
+  "covers/mod_36fix.png": {
+   "sha256": "c8d6a3fc9a6f3975ecddb5b50bd6826a9faec3b12294b51139c8ab86425426b2",
+   "size": 700338
+  },
+  "covers/mod_40_g7400.png": {
+   "sha256": "508474bceb260ed62a9905a220a11b613da78942740b442771e087f6078a2ee8",
+   "size": 627019
+  },
+  "covers/mod_43pl.png": {
+   "sha256": "1ed170057d8e0ae0940d923522f6151b9e5037cf167dbe63a45dd0f7606361ab",
+   "size": 818270
+  },
+  "covers/mod_55pl.png": {
+   "sha256": "70a37fb3b071ea5a6409ca74ad957afd9a55bfff0e8e0a42bc009e737cba41fc",
+   "size": 707117
+  },
+  "covers/mod_br21_fix.jpg": {
+   "sha256": "4767a86ef1ba3ad15453f9eda8cf4202e67510a5032b66602cce5da98c15c156",
+   "size": 140830
+  },
+  "covers/mod_demon-attack_pl.png": {
+   "sha256": "fd40fa2eebe0f6d3889bbc6fe6a9769d6bbe1f6df43ad37f043232a6ed8a3454",
+   "size": 443012
+  },
+  "covers/mod_moto-crash_g7000.png": {
+   "sha256": "2fc85e62651a004202277243f89e503f73c02ce29a0efb0e00ccbdda23284c35",
+   "size": 470396
+  },
+  "covers/mod_playtag_fix.jpg": {
+   "sha256": "51cd45b7e435e6db419c5cbdecdd7ea7d9a58e3a3222010806339c6b0b69cc8a",
+   "size": 102207
+  },
+  "covers/mod_tutankham_fix.png": {
+   "sha256": "b45da35e613e54a705e3150614a7db264dccdc4cc367d80444006556e8cf83ca",
+   "size": 458729
+  },
+  "covers/mod_vp31_examples.jpg": {
+   "sha256": "035f345ba2292fa131c3c666eb3e7565d0b337eac7e3cc37d5db19b3d86b7e7e",
+   "size": 78491
+  },
+  "covers/mod_vp9_examples.png": {
+   "sha256": "6d38a185cf1c312843664fcd5ff35729c2a556deeb0a1cd9f284af148a07b1d8",
+   "size": 615041
+  },
+  "covers/new_amok.png": {
+   "sha256": "20f1f1645cf279a2f360e484cdfff5a607256cec7714cef274e9aa67cffadb54",
+   "size": 575258
+  },
+  "covers/new_amok_alt.png": {
+   "sha256": "20f1f1645cf279a2f360e484cdfff5a607256cec7714cef274e9aa67cffadb54",
+   "size": 575258
+  },
+  "covers/new_calculator.png": {
+   "sha256": "6349aeaa3f0bbb9e666057537f9ab26015bc9e76325b05828ba059489aeae974",
+   "size": 756812
+  },
+  "covers/new_helicopter_buzzword.png": {
+   "sha256": "c5fac80f9430736b044d34d27ff1cbf6f0b39fab7795d4b24f97ed5183c89a21",
+   "size": 710624
+  },
+  "covers/new_jg-munchkin.png": {
+   "sha256": "21d25f2a5be8100d625256d04534513d33301a84670f43cc71f297d8c289350a",
+   "size": 576262
+  },
+  "covers/new_kc-pacman.png": {
+   "sha256": "21d25f2a5be8100d625256d04534513d33301a84670f43cc71f297d8c289350a",
+   "size": 576262
+  },
+  "covers/new_kc-pacvid.png": {
+   "sha256": "21d25f2a5be8100d625256d04534513d33301a84670f43cc71f297d8c289350a",
+   "size": 576262
+  },
+  "covers/new_ktaa-demo1.png": {
+   "sha256": "9faacdefa70ac8b6dfc8bc63f0131368fd74cdbea53af2c47f802c4283fc8d92",
+   "size": 422685
+  },
+  "covers/new_ktaa-demo2.png": {
+   "sha256": "9faacdefa70ac8b6dfc8bc63f0131368fd74cdbea53af2c47f802c4283fc8d92",
+   "size": 422685
+  },
+  "covers/new_ktaa.png": {
+   "sha256": "9faacdefa70ac8b6dfc8bc63f0131368fd74cdbea53af2c47f802c4283fc8d92",
+   "size": 422685
+  },
+  "covers/new_mrroboto.png": {
+   "sha256": "01987efa27067919356f0796e914ab063b91f12d3f425eccbce328a121c18966",
+   "size": 286313
+  },
+  "covers/new_planet-lander.png": {
+   "sha256": "615701bd6440dfbf7e267ab7c83eb5547f03a82643561e0ce5d899e4f009d90e",
+   "size": 185746
+  },
+  "covers/new_pong.png": {
+   "sha256": "2117efe7f0bb473e1887bb0d928066197d553b1a30a7557573d9fa556df12a8d",
+   "size": 755880
+  },
+  "covers/new_pong_all.png": {
+   "sha256": "2117efe7f0bb473e1887bb0d928066197d553b1a30a7557573d9fa556df12a8d",
+   "size": 755880
+  },
+  "covers/new_ppp-o2em.png": {
+   "sha256": "707a80034685e7bd3e0dce0c9aa72ad1d1e0df22adaf39a1214cb044df6e62a9",
+   "size": 608210
+  },
+  "covers/new_puzzle-piece-panic.png": {
+   "sha256": "707a80034685e7bd3e0dce0c9aa72ad1d1e0df22adaf39a1214cb044df6e62a9",
+   "size": 608210
+  },
+  "covers/new_route66.png": {
+   "sha256": "ba9be9f87899df7194a120b04df3d730eee95d326b7dc55f08cfe99fb9b0c4a0",
+   "size": 289519
+  },
+  "covers/o2_06.png": {
+   "sha256": "cbbfdfe45ef8d0c4130100e28ec759ac982bfd093ade113ff36d1082268991be",
+   "size": 488330
+  },
+  "covers/o2_07.png": {
+   "sha256": "8fb10a77a2a6b7e5f20afde4d7d9e9ad5c6e0433c5d0172468401cd13073d146",
+   "size": 345495
+  },
+  "covers/o2_10.png": {
+   "sha256": "c4bb995ea912aea1904d84fe59b7e6eb7d32a14aaaa5c28655d3becfa9ad2fa8",
+   "size": 308168
+  },
+  "covers/o2_11.png": {
+   "sha256": "b188f1392480ff9bc3bd6ca95b976bdde90a3c584865274a247fc87d56ce9922",
+   "size": 299174
+  },
+  "covers/o2_14.png": {
+   "sha256": "9662b7fce913853ffab1deceea26640794cc3a6b64dedd475996eaf24b57215a",
+   "size": 395156
+  },
+  "covers/o2_16.png": {
+   "sha256": "68e54440616d85959d15f300cdb7b23402a3368d3c77b93248eae380fecbb4ba",
+   "size": 219505
+  },
+  "covers/o2_19.png": {
+   "sha256": "12a76492c20a23e052756e773c3b79707c692ec84d395143675c205be0b8d120",
+   "size": 112932
+  },
+  "covers/o2_21.png": {
+   "sha256": "9d12e152d52135668b97c08fdb75774ca395016b28e49214b645e4fdfbc0e5a8",
+   "size": 73850
+  },
+  "covers/o2_30.png": {
+   "sha256": "49bf68bf2882f4524ec65c83646e83a1340f13d7f9098a08444f6dab2eaa8431",
+   "size": 112063
+  },
+  "covers/o2_33.png": {
+   "sha256": "7a41d255a2868d34344a87c9d6afc051e1afb5a65adc0e154baf24de9ad0364b",
+   "size": 82135
+  },
+  "covers/o2_35.png": {
+   "sha256": "fa66e93c067a0b73ead5b76ef23235f82b04268d64554280177b6dc07908937d",
+   "size": 457050
+  },
+  "covers/o2_38.png": {
+   "sha256": "722ee03fb0f3e68b35afa5291ebca99fdd008d94a6ce0640daa86178f1d97ada",
+   "size": 417705
+  },
+  "covers/o2_39.png": {
+   "sha256": "774bfa385a8e908ac99af435733a0cec2a6afce08b728653edfb20d997f2178e",
+   "size": 124825
+  },
+  "covers/o2_40.png": {
+   "sha256": "6787fb4b21e3f85f3d586e0774b08e26e472666c825a4e7afe5ee0105e9eb55a",
+   "size": 94032
+  },
+  "covers/o2_41.png": {
+   "sha256": "8faf4bb3a9b191424e59b37cb33b9898d25d71e2e4892a6c06c443ff6a89ceec",
+   "size": 194500
+  },
+  "covers/o2_43.png": {
+   "sha256": "29e481642104b2441c68fb2e9f065a6494ce5569cc2857e402c0b9eaaa6fc92d",
+   "size": 577439
+  },
+  "covers/o2_45.jpg": {
+   "sha256": "af6bd461b11006aaf0b397fb11cbe72d252aeb52452ca775c19fa4e94bddf4c3",
+   "size": 102608
+  },
+  "covers/o2_46.png": {
+   "sha256": "2876402709b9f16c9807003d005f7deabf8c450e8bc0f95273c0ad46db7dcfb1",
+   "size": 367981
+  },
+  "covers/o2_47.png": {
+   "sha256": "d2eb5b8ad920824f0bbf033c9b7b3edc3ffd0ba1fcec0009e2c0495f2708b5b1",
+   "size": 172818
+  },
+  "covers/o2_48.png": {
+   "sha256": "0cb7a89e18cb77f37087c29c667494bc79bf74d85947273b89adc9fd3ded827d",
+   "size": 48334
+  },
+  "covers/o2_48alt.png": {
+   "sha256": "0cb7a89e18cb77f37087c29c667494bc79bf74d85947273b89adc9fd3ded827d",
+   "size": 48334
+  },
+  "covers/pal_acrobats.png": {
+   "sha256": "7ad749805dc59543e0dd566f6dc30f6d200723c0595ccd5e4b08fbefe5b7c120",
+   "size": 182519
+  },
+  "covers/pal_flashpoint.jpg": {
+   "sha256": "b9c987cbe6871338773054be2c00f27a8727d63e265c745a48c88409f9fa55e7",
+   "size": 108892
+  },
+  "covers/pal_nimble-numbers-ned.png": {
+   "sha256": "bcda129c631a683dd0a222b390ae46510e8b08cc61a23cb9ead4dfaae7b63852",
+   "size": 397164
+  },
+  "covers/pal_type-and-tell.png": {
+   "sha256": "871c31367f79ff2fdf4c8fd849ba4f1e4e45c7cdea6dde4a308bfe7c7254c712",
+   "size": 691721
+  },
+  "covers/pb_frogger.png": {
+   "sha256": "b2e73ad9444940610e2fb5b43e7b7d636bbbf893b3832641ee69a51e5654cf4c",
+   "size": 439202
+  },
+  "covers/pb_popeye.png": {
+   "sha256": "89d13318b0d0039480432860839486145d661b8c20d5929089e38abbd467fa85",
+   "size": 477732
+  },
+  "covers/pb_q-bert.png": {
+   "sha256": "9aac35f0a88a36cc00fdac5e87b7121400bf9385e9e731d281e3d410fe2cffc4",
+   "size": 474165
+  },
+  "covers/pb_super-cobra.png": {
+   "sha256": "c56fae731cdea46425c845fa12c35801a00d7dc8ca43561deeae108a8bd5877e",
+   "size": 458804
+  },
+  "covers/pr_clay-pigeon_pl.png": {
+   "sha256": "71c8db5104d0798000fb77a993027b2e0d2c7aff7a7154bed046852c2dc0a1ac",
+   "size": 607507
+  },
+  "covers/pr_clay-pigeon_pl_alt.png": {
+   "sha256": "71c8db5104d0798000fb77a993027b2e0d2c7aff7a7154bed046852c2dc0a1ac",
+   "size": 607507
+  },
+  "covers/pr_interpol.png": {
+   "sha256": "9e8ad6a5a5f15581b96646ac7d468bc8ed50805417b53b6f856b65493355b3df",
+   "size": 712826
+  },
+  "covers/pr_martian-threat.jpg": {
+   "sha256": "0942b7411a50219f9142c00550ec10dd85a6196eba699dbaf84e1b9c7a141a95",
+   "size": 62415
+  },
+  "covers/pr_martian-threat_alt.jpg": {
+   "sha256": "0942b7411a50219f9142c00550ec10dd85a6196eba699dbaf84e1b9c7a141a95",
+   "size": 62415
+  },
+  "covers/pr_mission-impossible.png": {
+   "sha256": "16eb62c13fc25524b5939276dfffa52c952e8a56481fce127e42d790423d1e54",
+   "size": 314634
+  },
+  "covers/pr_nightfighter.png": {
+   "sha256": "6abf8a6d35a35c934b279db21f519c0db5cf4dbfaecbafd144128eade387d1d0",
+   "size": 566756
+  },
+  "covers/pr_pinball.png": {
+   "sha256": "00023bf41c01d70a23c298586c4155ffdab84c4ff8a04c6f9c20ba624f50f713",
+   "size": 406135
+  },
+  "covers/pr_playtag.jpg": {
+   "sha256": "51cd45b7e435e6db419c5cbdecdd7ea7d9a58e3a3222010806339c6b0b69cc8a",
+   "size": 102207
+  },
+  "covers/pr_red-baron.png": {
+   "sha256": "0261b54ca11908aa55be50e6c1b02ec418b4d711ff5723aa8a6c675220a983dd",
+   "size": 463350
+  },
+  "covers/pr_red-baron_alt.png": {
+   "sha256": "0261b54ca11908aa55be50e6c1b02ec418b4d711ff5723aa8a6c675220a983dd",
+   "size": 463350
+  },
+  "covers/pr_robot-city.png": {
+   "sha256": "a7e869e1cbe123d0747d5ec109b058327658848fd5beab9c3ef5976a95915907",
+   "size": 623284
+  },
+  "covers/pr_shark-hunter.png": {
+   "sha256": "1aa52fb6ec6f128056c7d145476112d9d0b7bba0b9216106ee8a667113447ac6",
+   "size": 496355
+  },
+  "covers/pr_spiderman.png": {
+   "sha256": "dd8b6b5d75cf0687514156928dbc6ffbc60fedfa3f6c92e750b381c9a753459e",
+   "size": 699332
+  },
+  "covers/pr_spiderman_alt.png": {
+   "sha256": "dd8b6b5d75cf0687514156928dbc6ffbc60fedfa3f6c92e750b381c9a753459e",
+   "size": 699332
+  },
+  "covers/pr_tutankham.png": {
+   "sha256": "b45da35e613e54a705e3150614a7db264dccdc4cc367d80444006556e8cf83ca",
+   "size": 458729
+  },
+  "covers/vp01+_F.jpg": {
+   "sha256": "17ed1962fdb0b659b0bccfcb0d6686f0317601bba2d8f96e4a2d53e0c6432919",
+   "size": 62908
+  },
+  "covers/vp_01.png": {
+   "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
+   "size": 615069
+  },
+  "covers/vp_01hack.png": {
+   "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
+   "size": 615069
+  },
+  "covers/vp_01pl.jpg": {
+   "sha256": "17ed1962fdb0b659b0bccfcb0d6686f0317601bba2d8f96e4a2d53e0c6432919",
+   "size": 62908
+  },
+  "covers/vp_02.png": {
+   "sha256": "bfe01625ed497c14d05d4f657801f7bb8ad2fc69aa314ed2f9786e4e917f323d",
+   "size": 657540
+  },
+  "covers/vp_03.png": {
+   "sha256": "c7c64df4c9628abf088823152f99348ab435d36f5b1bdd2d716bcbed1df19ae8",
+   "size": 643499
+  },
+  "covers/vp_04.png": {
+   "sha256": "fa951169641974da4a830b6683ec0ef9e3c73f63e2e9359f6ac2e7885dd1c35e",
+   "size": 593041
+  },
+  "covers/vp_05.png": {
+   "sha256": "d1775b29f15ab2a212d2cae30fcc6bad129e1d8179e9a73fef3f6376ef25988c",
+   "size": 473404
+  },
+  "covers/vp_06.png": {
+   "sha256": "3aa798e5d548a0333d8facf8d47d628e0bef621f945e1de0ff8fc619e49b2dc2",
+   "size": 474586
+  },
+  "covers/vp_06pl.png": {
+   "sha256": "3aa798e5d548a0333d8facf8d47d628e0bef621f945e1de0ff8fc619e49b2dc2",
+   "size": 474586
+  },
+  "covers/vp_07.png": {
+   "sha256": "9e88e364ea60b17db2002cbf26cf1b94b083cc252277d7c0b51f72f4125cf3d9",
+   "size": 832209
+  },
+  "covers/vp_08.png": {
+   "sha256": "521340b18250fbea26504d88920cf5f2c0bbca5ecc3e0e354642bba2ef3e477d",
+   "size": 533667
+  },
+  "covers/vp_09.png": {
+   "sha256": "6d38a185cf1c312843664fcd5ff35729c2a556deeb0a1cd9f284af148a07b1d8",
+   "size": 615041
+  },
+  "covers/vp_10.png": {
+   "sha256": "9ad7beec341cebd7113265e1f179d25262e5286f9ae9d82f0f78287f06a90b43",
+   "size": 673287
+  },
+  "covers/vp_11.png": {
+   "sha256": "6f47f7ccc5d4b7ef023fb0791c36d8781bbc570f023641bcd4e79b403f1c6b4c",
+   "size": 693527
+  },
+  "covers/vp_11alt.png": {
+   "sha256": "6f47f7ccc5d4b7ef023fb0791c36d8781bbc570f023641bcd4e79b403f1c6b4c",
+   "size": 693527
+  },
+  "covers/vp_11pl.png": {
+   "sha256": "6f47f7ccc5d4b7ef023fb0791c36d8781bbc570f023641bcd4e79b403f1c6b4c",
+   "size": 693527
+  },
+  "covers/vp_12.jpg": {
+   "sha256": "32603b61321e9badf03adc5e5a308725a6aaa7dc2d87b3d2373f31ede225ace0",
+   "size": 123464
+  },
+  "covers/vp_13.png": {
+   "sha256": "d40347c72ad50f192fb20fa5b30dd61b573a6720aea4d9bb9068c9cac0f40b70",
+   "size": 379110
+  },
+  "covers/vp_14.png": {
+   "sha256": "12a1fad466ed956a6338fa530dc2e4e42e6df8b3cf30cedbec2ebe88a36b0881",
+   "size": 485139
+  },
+  "covers/vp_15.png": {
+   "sha256": "f9d4a17bb2d66c67f7fd344bf6fdc8741b4ad99ebe70e92c6716ee5bb5506bd4",
+   "size": 712245
+  },
+  "covers/vp_16.png": {
+   "sha256": "43868d93070448d878675f9a4d67e89ab8745bb9faeb18437c1deb4ccba3cf5a",
+   "size": 577024
+  },
+  "covers/vp_17.png": {
+   "sha256": "05ce5d1ea92178c468cb69fd5db1ef5e8fe92c4c06264dbc08d42853a81c12d7",
+   "size": 708866
+  },
+  "covers/vp_18.png": {
+   "sha256": "1edaf3cddaf9c530574d87106ca15b9932b976293517505da0b7d03631ee5715",
+   "size": 637723
+  },
+  "covers/vp_19.png": {
+   "sha256": "86c3a35ede94006c518ee8777040614d49c9592139d415b6266428a35941db0a",
+   "size": 591522
+  },
+  "covers/vp_20.png": {
+   "sha256": "6ed558e3f542ac42ff2cbd1254634ad93c27f231a664206a3420e7fadc08bcf1",
+   "size": 700960
+  },
+  "covers/vp_20pl.png": {
+   "sha256": "6ed558e3f542ac42ff2cbd1254634ad93c27f231a664206a3420e7fadc08bcf1",
+   "size": 700960
+  },
+  "covers/vp_21.png": {
+   "sha256": "26c31f17829de52ef95ef7ac6decd46141b82a46e3081a5e2d295d606a3f35ad",
+   "size": 649712
+  },
+  "covers/vp_22.png": {
+   "sha256": "695be5eaece04558dc888aa70fe02a251c56ca52bac9b6a5affbd6dde1aa2928",
+   "size": 649952
+  },
+  "covers/vp_22hack.png": {
+   "sha256": "695be5eaece04558dc888aa70fe02a251c56ca52bac9b6a5affbd6dde1aa2928",
+   "size": 649952
+  },
+  "covers/vp_23.jpg": {
+   "sha256": "ced9ea15649d0308db8ae352a745a5f34d7d3b2cb8ab193c4d0dbe818e80bb5d",
+   "size": 117730
+  },
+  "covers/vp_24.png": {
+   "sha256": "907ed343c97ce18acaab30550920ad90da44515adb40386b8bd12a4b445ae1ec",
+   "size": 474218
+  },
+  "covers/vp_24pl.png": {
+   "sha256": "907ed343c97ce18acaab30550920ad90da44515adb40386b8bd12a4b445ae1ec",
+   "size": 474218
+  },
+  "covers/vp_25.png": {
+   "sha256": "18b728883ab1da1039d6277da4a9723b1373e45d96d51ad5de972cebfd0e0c6b",
+   "size": 675941
+  },
+  "covers/vp_26.png": {
+   "sha256": "52fe239bb9fb1bcffba5151c2fed71d7fc9c35f2d9e6db704fe4fc24a264083a",
+   "size": 489185
+  },
+  "covers/vp_27.png": {
+   "sha256": "ab4e48ae02b026302845a303c3b7d2fa82c62f93d21427bf6439023d60eadf42",
+   "size": 706370
+  },
+  "covers/vp_28.png": {
+   "sha256": "2302b53ca658ca4c08a787a7e0dfb68b9683db6bd02927f1688b028ea59a4650",
+   "size": 644184
+  },
+  "covers/vp_29.png": {
+   "sha256": "955556d5f427c5f12d09f623ad436cc5b5584fe0c5aa11e138f540a2c784e985",
+   "size": 719184
+  },
+  "covers/vp_30.png": {
+   "sha256": "bd4ceff6d61531d145ae681fbe500d98191b11f566c5ca0ba6f9a0a91af85133",
+   "size": 759963
+  },
+  "covers/vp_31.png": {
+   "sha256": "271b5139ddf2ddfa547d968936c4a70b5cfe74148f677958bf9ea8d4e39aa4aa",
+   "size": 410098
+  },
+  "covers/vp_32.png": {
+   "sha256": "eb428da970b84ebf4cffc0f396d219cbefc157f4a6f688f928b30609659c45fb",
+   "size": 673787
+  },
+  "covers/vp_33.png": {
+   "sha256": "7ad749805dc59543e0dd566f6dc30f6d200723c0595ccd5e4b08fbefe5b7c120",
+   "size": 182519
+  },
+  "covers/vp_33alt.png": {
+   "sha256": "7ad749805dc59543e0dd566f6dc30f6d200723c0595ccd5e4b08fbefe5b7c120",
+   "size": 182519
+  },
+  "covers/vp_34.png": {
+   "sha256": "3227c081a92192203db8a2e70911a523942468a34a57456819ec4196cd095d21",
+   "size": 700815
+  },
+  "covers/vp_34pl.png": {
+   "sha256": "3227c081a92192203db8a2e70911a523942468a34a57456819ec4196cd095d21",
+   "size": 700815
+  },
+  "covers/vp_35.png": {
+   "sha256": "e417d557bfc42cd07b960af7b96f09fb2812ecb890eaee6e7c7775118f794bdf",
+   "size": 612244
+  },
+  "covers/vp_35pl.png": {
+   "sha256": "e417d557bfc42cd07b960af7b96f09fb2812ecb890eaee6e7c7775118f794bdf",
+   "size": 612244
+  },
+  "covers/vp_36.png": {
+   "sha256": "c8d6a3fc9a6f3975ecddb5b50bd6826a9faec3b12294b51139c8ab86425426b2",
+   "size": 700338
+  },
+  "covers/vp_37.png": {
+   "sha256": "70edfb70755ae8f17cc024cfbbc02f5eb358f34c1b60bfb83bfee58da9ef88c4",
+   "size": 810295
+  },
+  "covers/vp_38.png": {
+   "sha256": "21d25f2a5be8100d625256d04534513d33301a84670f43cc71f297d8c289350a",
+   "size": 576262
+  },
+  "covers/vp_39.png": {
+   "sha256": "8b539ff2ca0c178ba25ad8bf59b026516e928fad4e89f363669b062ef8b7ffe3",
+   "size": 697786
+  },
+  "covers/vp_39pl.png": {
+   "sha256": "8b539ff2ca0c178ba25ad8bf59b026516e928fad4e89f363669b062ef8b7ffe3",
+   "size": 697786
+  },
+  "covers/vp_40.png": {
+   "sha256": "508474bceb260ed62a9905a220a11b613da78942740b442771e087f6078a2ee8",
+   "size": 627019
+  },
+  "covers/vp_41.png": {
+   "sha256": "90668db76901e94958712fe29542e0e9a8cecbbc4f8bf270d6dfda4a7ad37e90",
+   "size": 230058
+  },
+  "covers/vp_42.png": {
+   "sha256": "5cae54145c559e822b1a016a83e689fc43a19b5fd41f2db0055f97d91bae8253",
+   "size": 169936
+  },
+  "covers/vp_43.png": {
+   "sha256": "1ed170057d8e0ae0940d923522f6151b9e5037cf167dbe63a45dd0f7606361ab",
+   "size": 818270
+  },
+  "covers/vp_43pl.png": {
+   "sha256": "1ed170057d8e0ae0940d923522f6151b9e5037cf167dbe63a45dd0f7606361ab",
+   "size": 818270
+  },
+  "covers/vp_44.png": {
+   "sha256": "e7cfd479f5a0760d073fcfafda2a41009016a7ce12d5ef092132b547ff7c7b8d",
+   "size": 666260
+  },
+  "covers/vp_45.png": {
+   "sha256": "162cac20b18a10ea3a18730d6f15d02fcdbfbd857b6865b85daf57bcf530abe8",
+   "size": 456358
+  },
+  "covers/vp_46.png": {
+   "sha256": "c761fbdc7aed8f837d9ab9cf440aca8d409983c56159f0065054341a12dbe1ce",
+   "size": 294404
+  },
+  "covers/vp_47.png": {
+   "sha256": "497fcfc1352c02042f8cfaeffe045d0ff18c35f9f6fca778526e85013f9e5b60",
+   "size": 472714
+  },
+  "covers/vp_48.png": {
+   "sha256": "a72f5b0d1ec7f5c18cd826a8b996ad8bf3a5e87f3a29d4fc1609b5cfc68ed6b8",
+   "size": 578674
+  },
+  "covers/vp_49.jpg": {
+   "sha256": "4b199daea5445ea62e6172d897e4acac823220383873de94b83bc4820b463410",
+   "size": 85301
+  },
+  "covers/vp_50.png": {
+   "sha256": "1a2d0fdb222fedad081477b22331b83fba34b491c171661133f9275396353ecf",
+   "size": 122908
+  },
+  "covers/vp_51pl.jpg": {
+   "sha256": "27751798b044330a6f87707da87f95c947dbde665bab4bd03cf418c097e292bf",
+   "size": 81624
+  },
+  "covers/vp_52pl.png": {
+   "sha256": "201e0e420daa66574337440224c38cd9471a7d9105fd8ba49a3bb09fd08b47a5",
+   "size": 492150
+  },
+  "covers/vp_53.png": {
+   "sha256": "42191ae80dc84a0623d799c55ad87d0415f77f7666c7f18a031d7f176178e3ba",
+   "size": 665822
+  },
+  "covers/vp_53pl.png": {
+   "sha256": "42191ae80dc84a0623d799c55ad87d0415f77f7666c7f18a031d7f176178e3ba",
+   "size": 665822
+  },
+  "covers/vp_54.png": {
+   "sha256": "f377872a9af3b0fd26d86a4ce2181f5bd1954c9f835f04b61f24b14f66789317",
+   "size": 427442
+  },
+  "covers/vp_54pl.png": {
+   "sha256": "f377872a9af3b0fd26d86a4ce2181f5bd1954c9f835f04b61f24b14f66789317",
+   "size": 427442
+  },
+  "covers/vp_55.png": {
+   "sha256": "70a37fb3b071ea5a6409ca74ad957afd9a55bfff0e8e0a42bc009e737cba41fc",
+   "size": 707117
+  },
+  "covers/vp_55_12.png": {
+   "sha256": "70a37fb3b071ea5a6409ca74ad957afd9a55bfff0e8e0a42bc009e737cba41fc",
+   "size": 707117
+  },
+  "covers/vp_55_12fix.png": {
+   "sha256": "70a37fb3b071ea5a6409ca74ad957afd9a55bfff0e8e0a42bc009e737cba41fc",
+   "size": 707117
+  },
+  "covers/vp_56pl.png": {
+   "sha256": "b7f8ec384f8e2901f7736ded740737ec25d1d3c004d542e2f81ff611f390e780",
+   "size": 572759
+  },
+  "covers/vp_57.png": {
+   "sha256": "987cc96f9fc4360ad3ecdb5823c5cf26dec85c4e2a6450dda0c040ec7cbb8e3a",
+   "size": 678342
+  },
+  "covers/vp_58_12.png": {
+   "sha256": "542e94f13b8c1b65f84cd41fe9692b6d3f4a42583c0aefbc8bd3377cb881b5bd",
+   "size": 411046
+  },
+  "covers/vp_59_16.png": {
+   "sha256": "c5fac80f9430736b044d34d27ff1cbf6f0b39fab7795d4b24f97ed5183c89a21",
+   "size": 710624
+  },
+  "covers/vp_60_16.png": {
+   "sha256": "7a69c37394a155ebe8464bcf75e941dbcf1f5f25a89b17e7f8815b2d33507b79",
+   "size": 590861
+  },
+  "covers/vp_a.png": {
+   "sha256": "c953668bbfbe32130624ac727c523878ca4eb0fdaa290e12dbbe7bc46cc9e85a",
+   "size": 205760
+  }
+ }
+}

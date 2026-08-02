@@ -1,0 +1,266 @@
+:root{
+  --bg:#0f1115;
+  --surface:#171a21;
+  --surface-2:#1e2229;
+  --border:#2a2e37;
+  --text:#e9edf2;
+  --text-dim:#9aa3af;
+  --text-mute:#6b7280;
+  --accent:#5b8def;
+  --g7000:#3ba97a;
+  --g7400:#c07de0;
+  --radius:10px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.topbar{
+  display:flex;align-items:center;gap:16px;
+  padding:14px 24px;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;background:var(--bg);z-index:10;
+}
+.brand{font-size:17px;font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap;}
+.brand-mark{color:var(--accent);}
+#search{
+  flex:1;max-width:420px;
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--text);padding:8px 12px;border-radius:var(--radius);
+  font-size:14px;
+}
+#search:focus{outline:none;border-color:var(--accent);}
+.lang-sel{
+  background:var(--surface);border:1px solid var(--border);color:var(--text-dim);
+  padding:7px 10px;border-radius:var(--radius);font-size:13px;cursor:pointer;
+}
+.lang-sel:hover{border-color:var(--accent);color:var(--text);}
+.ghost-btn{
+  background:transparent;border:1px solid var(--border);color:var(--text-dim);
+  padding:8px 14px;border-radius:var(--radius);cursor:pointer;font-size:13px;
+}
+.ghost-btn:hover{border-color:var(--accent);color:var(--text);}
+
+.filterbar{
+  display:flex;flex-direction:column;gap:10px;
+  padding:14px 24px;border-bottom:1px solid var(--border);
+}
+.filterrow{display:flex;align-items:flex-start;gap:12px;}
+.filterlabel{
+  font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.04em;
+  padding-top:7px;min-width:64px;flex-shrink:0;
+}
+.chipgroup{display:flex;gap:6px;flex-wrap:wrap;}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--surface);border:1px solid var(--border);color:var(--text-dim);
+  padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;
+}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+.chip-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--chip-dot,var(--text-mute));
+  display:inline-block;flex-shrink:0;
+}
+.result-count{color:var(--text-mute);font-size:13px;padding-left:76px;}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:16px;padding:24px;
+}
+.card{
+  cursor:pointer;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;transition:border-color .15s, transform .15s;
+}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.cover{
+  position:relative;overflow:hidden;
+  aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;
+  font-size:28px;font-weight:700;color:#fff;
+}
+.cover-art{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  background:var(--surface-2);
+}
+.card-body{padding:10px 12px 12px;}
+.card-title{font-size:13px;font-weight:600;margin:0 0 4px;line-height:1.3;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.card-meta{display:flex;gap:6px;flex-wrap:wrap;}
+.badge{font-size:10px;padding:2px 7px;border-radius:999px;font-weight:600;letter-spacing:.02em;}
+.badge-g7000{background:rgba(59,169,122,.18);color:var(--g7000);}
+.badge-g7400{background:rgba(192,125,224,.18);color:var(--g7400);}
+.badge-cat{background:var(--surface-2);color:var(--text-mute);}
+.badge-cat-dyn{background:color-mix(in srgb, var(--badge-color) 20%, transparent);color:var(--badge-color);}
+/* dump variant (alt dump / 12K banked) - tells apart entries that are
+   otherwise the same title, platform and category */
+.badge-variant{background:var(--surface-2);color:var(--text-mute);border:1px solid var(--border);}
+/* shipped with a physical board / overlay / workbook */
+.badge-pack{background:rgba(224,192,90,.16);color:#e0c05a;border:1px solid rgba(224,192,90,.35);}
+
+/* favorite star, top-right of the cover */
+.fav-btn{
+  position:absolute;top:6px;right:6px;z-index:2;
+  width:30px;height:30px;padding:0;line-height:1;
+  border:none;border-radius:50%;cursor:pointer;
+  background:rgba(0,0,0,.45);color:rgba(255,255,255,.45);
+  font-size:17px;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .12s, color .12s, background .12s;
+}
+.card:hover .fav-btn{opacity:1;}
+.fav-btn:hover{background:rgba(0,0,0,.7);color:#ffc400;}
+.fav-btn.on{opacity:1;color:#ffc400;}
+.chip-count{
+  display:inline-block;min-width:16px;padding:0 5px;margin-left:2px;
+  border-radius:999px;background:rgba(255,255,255,.12);
+  font-size:11px;line-height:16px;text-align:center;
+}
+.chip.active .chip-count{background:rgba(0,0,0,.22);}
+#favChip.active{background:#ffc400;border-color:#ffc400;color:#000;}
+.badge-extras{background:rgba(255,196,0,.22);color:#ffc400;border:1px solid rgba(255,196,0,.4);}
+
+.empty-state{padding:60px 24px;text-align:center;color:var(--text-mute);}
+
+.modal[hidden]{display:none;}
+.modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.6);
+  display:flex;align-items:center;justify-content:center;z-index:100;padding:24px;
+}
+.modal-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  max-width:600px;width:100%;max-height:85vh;overflow-y:auto;
+}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;border-bottom:1px solid var(--border);
+}
+.modal-head h2{margin:0;font-size:16px;}
+.modal-body{padding:18px 20px;font-size:14px;line-height:1.6;color:var(--text-dim);}
+.modal-body h3{color:var(--text);font-size:14px;margin:18px 0 6px;}
+.modal-body h3:first-child{margin-top:0;}
+.modal-body code{background:var(--surface-2);color:var(--accent);padding:1px 6px;border-radius:4px;font-size:13px;}
+.modal-body pre{background:var(--surface-2);padding:10px 12px;border-radius:8px;overflow-x:auto;}
+.modal-body ul,.modal-body ol{padding-left:20px;}
+.modal-body li{margin-bottom:5px;}
+.modal-body .credits{
+  margin-top:24px;padding-top:14px;border-top:1px solid var(--border);
+  font-size:13px;color:var(--text-mute);
+}
+.modal-body .credits strong{color:var(--accent);}
+.fav-io{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 6px;}
+.fav-io .ghost-btn{font-size:13px;}
+.fav-io-note{font-size:13px;color:var(--text-mute);transition:color .2s;}
+.fav-io-note.ok{color:var(--g7000);}
+
+#bootSplash{
+  position:fixed;inset:0;background:#000;z-index:9999;
+  overflow:hidden;cursor:pointer;
+  transition:opacity .5s ease;
+}
+#bootSplash.hide{opacity:0;pointer-events:none;}
+#bootSplash::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(rgba(0,0,0,0) 0px,rgba(0,0,0,0) 2px,rgba(0,0,0,.15) 3px);
+}
+#bootSplashField{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(24px,5.5vw,56px);
+  white-space:nowrap;
+}
+.sg-letter{text-shadow:0 0 6px currentColor;}
+.sg-space{display:inline-block;width:0.9em;}
+
+.extras-wrap{
+  position:absolute;top:6px;right:6px;display:flex;flex-direction:column;gap:4px;z-index:1;
+}
+.extras-badge{
+  width:28px;height:28px;border-radius:7px;
+  background:#ffc400;box-shadow:0 1px 6px rgba(0,0,0,.5);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;text-decoration:none;
+  border:1px solid rgba(0,0,0,.15);
+  animation:extras-pulse 2s ease-in-out infinite;
+}
+.extras-badge:hover{background:#ffd23b;animation:none;}
+@keyframes extras-pulse{
+  0%,100%{box-shadow:0 1px 6px rgba(0,0,0,.5),0 0 0 0 rgba(255,196,0,.5);}
+  50%{box-shadow:0 1px 6px rgba(0,0,0,.5),0 0 0 5px rgba(255,196,0,0);}
+}
+#extrasOnlyChip{border-color:rgba(255,196,0,.4);}
+#extrasOnlyChip.active{background:#ffc400;border-color:#ffc400;color:#000;}
+
+/* Homebrew ribbon. Runs from the top edge down across the upper-left corner,
+   deliberately clear of the favourite star at top-right. */
+.cover-ribbon{
+  position:absolute; z-index:2;
+  left:-30%; top:17%; width:100%;
+  transform:rotate(-45deg);
+  background:#e05a7e; color:#2e0713;
+  font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  text-align:center; padding:4px 0;
+  box-shadow:0 1px 5px rgba(0,0,0,.45);
+  pointer-events:none;
+}
+/* the game page shows a bigger cover, so the ribbon scales with it */
+.game-cover .cover-ribbon{font-size:12px; padding:5px 0;}
+
+/* explains what "alt dump" / "12K banked dump" actually mean */
+.variant-note{
+  font-size:13px; line-height:1.6; color:var(--text-dim);
+  background:var(--surface-2); border:1px solid var(--border);
+  border-radius:var(--radius); padding:10px 12px; margin:10px 0 0;
+}
+.variant-note strong{color:var(--text);}
+
+/* Compact filter bar: one row of dropdowns instead of six rows of chips,
+   so the library itself gets the screen on a laptop. */
+.filterrow{flex-wrap:wrap; align-items:center; gap:8px;}
+.filter-sel{
+  background:var(--surface); border:1px solid var(--border); color:var(--text-dim);
+  padding:6px 10px; border-radius:999px; font-size:13px; cursor:pointer; max-width:230px;
+}
+.filter-sel:hover{border-color:var(--accent); color:var(--text);}
+.filter-sel.on{background:var(--accent); border-color:var(--accent); color:#fff;}
+.ghost-btn.small{padding:5px 10px; font-size:12px;}
+.icon-btn{
+  display:inline-flex; align-items:center; gap:5px;
+  background:transparent; border:1px solid var(--border); color:var(--text-dim);
+  padding:7px 11px; border-radius:999px; cursor:pointer; font-size:14px; line-height:1;
+}
+.icon-btn:hover{border-color:var(--accent); color:var(--text);}
+.icon-btn.active{background:#ffc400; border-color:#ffc400; color:#000;}
+#packChip.active{background:#e0c05a; border-color:#e0c05a; color:#000;}
+.result-count{padding-left:4px;}
+
+/* Language: five flags, no dropdown. */
+.lang-flags{display:flex; gap:2px;}
+.flag-btn{
+  background:transparent; border:1px solid transparent; border-radius:8px;
+  padding:4px 6px; font-size:17px; line-height:1; cursor:pointer;
+  opacity:.45; transition:opacity .12s, border-color .12s;
+}
+.flag-btn:hover{opacity:1; border-color:var(--border);}
+.flag-btn.active{opacity:1; border-color:var(--accent); background:var(--surface);}
+
+/* Don't let a cover's alt text render as giant type while the image loads
+   or if it 404s - the coloured placeholder underneath says enough. */
+.cover-art{font-size:0; color:transparent;}
+
+/* Favourites export/import, shown in the filter row while the star list is on */
+.fav-io-inline{display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap;}
+.fav-io-inline[hidden]{display:none;}
+.fav-io-inline .fav-io-note{font-size:12px;}
+
+/* Export/import wear the favourites yellow, so they read as belonging to the
+   star list rather than as two more grey filter controls. */
+#exportFavs, #importFavs{
+  background:#ffc400; border-color:#ffc400; color:#2e2200; font-weight:600;
+}
+#exportFavs:hover, #importFavs:hover{
+  background:#ffd23b; border-color:#ffd23b; color:#2e2200;
+}

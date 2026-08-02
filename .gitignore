@@ -1,0 +1,20 @@
+# ROMs, the BIOS and manual scans are not ours to distribute. Keep your own
+# dumps in these folders; git will not pick them up.
+emulator/roms/
+emulator/bios/
+manuals/
+extras/
+_brazil_staging/
+
+# Cover art set aside rather than deleted - working files, not part of the Vault.
+covers/_needs-art/
+covers/_replaced/
+covers/_withheld/
+
+# Your private link to wherever your dumps live. Never commit this.
+sources.local.json
+
+.DS_Store
+
+# Zips built for handing the Vault to someone else - not part of the repo.
+_bundles/

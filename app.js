@@ -1,0 +1,610 @@
+(function () {
+  // Bump when you add or replace anything in covers/ (see renderCard).
+  var COVER_V = 18;
+
+  var COVER_COLORS = [
+    "#5b8def", "#3ba97a", "#c07de0", "#e0865a",
+    "#d65a7e", "#8a8f98", "#e0c05a", "#4fb3bf"
+  ];
+
+  // Category groups: raw catalogue "category" values collapse into these
+  // for filtering/badging, per platform (G7000/G7400+) already handled separately.
+  var CATEGORY_GROUPS = [
+    { key: "eu",       label: "Videopac (EU)",  color: "#5b8def", match: ["Official Videopac (EU)"] },
+    { key: "french",   label: "French dump",    color: "#4fb3bf", match: ["Official Videopac (French)"] },
+    { key: "us",       label: "Odyssey2 (US)",  color: "#3ba97a", match: ["Official Odyssey2 (US)"] },
+    { key: "imagic",   label: "Imagic",         color: "#e0c05a", match: ["Imagic"] },
+    { key: "parker",   label: "Parker Brothers",color: "#d65a7e", match: ["Parker Brothers"] },
+    { key: "jopac",    label: "Jopac",          color: "#8a6fe0", match: ["Jopac (French)"] },
+    { key: "brazil",   label: "Philips Brazil", color: "#2fb47c", match: ["Philips Brazil"] },
+    { key: "pal",      label: "PAL",            color: "#5ac48a", match: ["PAL dumps"] },
+    { key: "modified", label: "Modified",       color: "#e0865a", match: ["Modified / fixed"] },
+    { key: "rare",     label: "Rare",           color: "#c07de0", match: ["Rare / unreleased", "Utility / unknown"] },
+    { key: "homebrew", label: "Homebrew",       color: "#e05a7e", match: ["Homebrew (this project)", "Homebrew (community)"] }
+  ];
+
+  var CATEGORY_LOOKUP = {};
+  CATEGORY_GROUPS.forEach(function (grp) {
+    grp.match.forEach(function (rawCat) { CATEGORY_LOOKUP[rawCat] = grp; });
+  });
+
+  function groupFor(g) {
+    return CATEGORY_LOOKUP[g.category] || { key: "other", label: g.category, color: "#8a8f98" };
+  }
+
+  // Chip and badge wording comes from i18n.js so it follows the language
+  // picker; the English label in CATEGORY_GROUPS is the fallback.
+  function catLabel(grp) {
+    var k = "cat_" + grp.key, v = window.t(k);
+    return (v && v !== k) ? v : grp.label;
+  }
+
+  // Several carts appear more than once with the SAME title, platform and
+  // category, because more than one dump of them survives - e.g. Neutron Star
+  // has a plain 8K image, a full 12K bank-switched image, and a corrected
+  // version of that 12K image. The rows were indistinguishable in the grid,
+  // so surface the dump type from the tags.
+  var VARIANT_LABELS = { "banked-rom": "var_banked", "alt-dump": "var_alt" };
+  function variantFor(g) {
+    for (var i = 0; i < g.tags.length; i++) {
+      if (VARIANT_LABELS[g.tags[i]]) return window.t(VARIANT_LABELS[g.tags[i]]);
+    }
+    return null;
+  }
+
+  // What a game actually is, from genres.js - filters that combine with the
+  // origin filters above, so "G7400 + shooter + two players" is one query.
+  var GENRE_ORDER = ["action","shooter","maze","sports","racing","strategy",
+                     "puzzle","adventure","education","gambling","utility"];
+  var PLAYER_ORDER = ["p1","p12","p2"];
+  function genreOf(g) { return ((window.GENRE_DATA || {})[g.id] || {}).genre || null; }
+  function playersOf(g) { return ((window.GENRE_DATA || {})[g.id] || {}).players || null; }
+
+  function buildFacetChips(el, order, values, labelKey, stateKey, allLabel) {
+    var counts = {};
+    state.games.forEach(function (g) {
+      var v = values(g); if (v) counts[v] = (counts[v] || 0) + 1;
+    });
+    var entries = [];
+    order.forEach(function (k) {
+      if (counts[k]) entries.push({ key: k, label: window.t(labelKey + k), count: counts[k] });
+    });
+    fillSelect(el, allLabel, entries, state[stateKey]);
+  }
+
+  // Shelf order. The catalogue is a numbered series - Videopac 1 through 60 -
+  // so that is the order a collector expects, not the alphabet. Entries with
+  // no Videopac number (US, Brazilian, Jopac, prototypes, homebrew) follow
+  // afterwards, grouped by where they came from.
+  var CATEGORY_RANK = {
+    eu: 0, french: 1, pal: 2, us: 3, brazil: 4, jopac: 5,
+    imagic: 6, parker: 7, modified: 8, rare: 9, homebrew: 10
+  };
+  function shelfKey(g) {
+    var n = parseInt(g.vpNumber, 10);
+    var rank = CATEGORY_RANK[groupFor(g).key];
+    return [isNaN(n) ? 1 : 0, isNaN(n) ? 0 : n, rank === undefined ? 11 : rank, g.title.toLowerCase()];
+  }
+  function bySort(a, b) {
+    if (state.sort === "az") return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
+    var ka = shelfKey(a), kb = shelfKey(b);
+    for (var i = 0; i < ka.length; i++) {
+      if (ka[i] < kb[i]) return -1;
+      if (ka[i] > kb[i]) return 1;
+    }
+    return 0;
+  }
+
+  function hashColor(str) {
+    var h = 0;
+    for (var i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0;
+    return COVER_COLORS[h % COVER_COLORS.length];
+  }
+
+  function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  function initials(title) {
+    var words = title.replace(/[^a-zA-Z0-9 ]/g, "").trim().split(/\s+/).filter(Boolean);
+    if (!words.length) return "?";
+    if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+  }
+
+  // ---- Favorites -------------------------------------------------------
+  // Stored in localStorage, which lives in the browser profile on disk, so it
+  // survives closing the tab, quitting the browser and rebooting. It is per
+  // browser and per origin though: favorites saved on http://localhost:8000
+  // won't show up in a different browser, and clearing "site data" wipes them.
+  // Export/Import below writes them to a small JSON file you can keep or move.
+  var FAV_KEY = "VideopacVault_favorites";
+  var favorites = {};
+  try {
+    favorites = JSON.parse(localStorage.getItem(FAV_KEY) || "{}") || {};
+  } catch (e) {
+    favorites = {};
+  }
+  function isFav(id) { return !!favorites[id]; }
+  function favCount() { return Object.keys(favorites).length; }
+  function saveFavs() {
+    try {
+      localStorage.setItem(FAV_KEY, JSON.stringify(favorites));
+    } catch (e) {
+      alert("Could not save favorites - your browser is blocking local storage for this page.");
+    }
+  }
+  function toggleFav(id) {
+    if (favorites[id]) delete favorites[id];
+    else favorites[id] = 1;
+    saveFavs();
+    updateListChips();
+  }
+
+  function hasPackaging(id) {
+    return !!(window.PACKAGING_DATA && window.PACKAGING_DATA[id]);
+  }
+
+  var SORT_KEY = "VideopacVault_sort";
+  var state = {
+    games: [], platform: "all", category: "all", query: "", list: "all",
+    sort: localStorage.getItem(SORT_KEY) || "number",
+    genre: "all", players: "all"
+  };
+
+  var grid = document.getElementById("grid");
+  var emptyState = document.getElementById("emptyState");
+  var resultCount = document.getElementById("resultCount");
+  var categorySel = document.getElementById("categorySel");
+  var genreSel = document.getElementById("genreSel");
+  var playerSel = document.getElementById("playerSel");
+  var sortSel = document.getElementById("sortSel");
+  var clearBtn = document.getElementById("clearFilters");
+  var searchInput = document.getElementById("search");
+
+  if (window.GAMES_DATA && window.GAMES_DATA.games) {
+    state.games = window.GAMES_DATA.games;
+    buildCategoryChips(state.games);
+    buildFacets();
+    updateListChips();
+    applyLang();
+    render();
+  } else {
+    grid.innerHTML = '<p style="padding:24px;color:#e0865a;">games.js did not load - make sure games.js sits next to index.html and is included before app.js.</p>';
+  }
+
+  function fillSelect(sel, allLabel, entries, current) {
+    var html = '<option value="all">' + allLabel + '</option>';
+    entries.forEach(function (e) {
+      html += '<option value="' + e.key + '">' + e.label + ' (' + e.count + ')</option>';
+    });
+    sel.innerHTML = html;
+    sel.value = current;
+    sel.classList.toggle("on", current !== "all");
+  }
+
+  function buildCategoryChips(games) {
+    var counts = {};
+    games.forEach(function (g) { var key = groupFor(g).key; counts[key] = (counts[key] || 0) + 1; });
+    var entries = [];
+    CATEGORY_GROUPS.forEach(function (grp) {
+      if (counts[grp.key]) entries.push({ key: grp.key, label: catLabel(grp), count: counts[grp.key] });
+    });
+    fillSelect(categorySel, window.t("allCats") + " (" + games.length + ")", entries, state.category);
+  }
+
+  function matches(g) {
+    if (state.list === "fav" && !isFav(g.id)) return false;
+    if (state.list === "pack" && !hasPackaging(g.id)) return false;
+    if (state.platform !== "all" && g.platform !== state.platform) return false;
+    if (state.genre !== "all" && genreOf(g) !== state.genre) return false;
+    if (state.players !== "all" && playersOf(g) !== state.players) return false;
+    if (state.category !== "all" && groupFor(g).key !== state.category) return false;
+    if (state.query) {
+      var q = state.query.toLowerCase();
+      // search the regional names too, so "Thunderball" finds Flipper and
+      // "Bacara" finds Blackjack
+      var hay = g.title + " " + g.filename;
+      var br = (window.BRAZIL_DATA || {})[g.id], us = (window.USA_DATA || {})[g.id];
+      if (br) hay += " " + br.title + " " + br.num;
+      if (us) hay += " " + us.title + " " + us.num;
+      if (hay.toLowerCase().indexOf(q) === -1) return false;
+    }
+    return true;
+  }
+
+  function render() {
+    var filtered = state.games.filter(matches).sort(bySort);
+    if (typeof updateListChips === "function" && clearBtn) {
+      var anyOn = state.category !== "all" || state.genre !== "all" || state.players !== "all" ||
+                  state.platform !== "all" || state.list !== "all" || !!state.query;
+      clearBtn.hidden = !anyOn;
+    }
+    resultCount.textContent = window.t("results", { shown: filtered.length, total: state.games.length });
+    emptyState.hidden = filtered.length !== 0;
+    grid.innerHTML = "";
+    var frag = document.createDocumentFragment();
+    filtered.forEach(function (g) {
+      frag.appendChild(renderCard(g));
+    });
+    grid.appendChild(frag);
+  }
+
+  function renderCard(g) {
+    var card = document.createElement("div");
+    card.className = "card";
+    card.title = g.title + " - manual, history & play";
+
+    var cover = document.createElement("div");
+    cover.className = "cover";
+    cover.style.background = hashColor(g.category + g.title);
+    cover.textContent = initials(g.title);
+
+    // Cover art - opt-in, for every category (official releases,
+    // homebrew, mods, rare dumps, all of it). No cover images ship
+    // with this app; drop your own scans, or images you've sourced
+    // yourself, into covers/<id>.jpg. See covers/README.txt. Falls
+    // back to the initials tile above if no matching image exists or
+    // it fails to load.
+    // COVER_V is bumped whenever a cover is added or swapped. Without it the
+    // browser keeps serving its cached *miss* for a cover that didn't exist
+    // when the page was first opened, so a newly added scan stays invisible
+    // even after a hard refresh.
+    var img = new Image();
+    img.className = "cover-art";
+    img.alt = g.title + " box art";
+    img.loading = "lazy";
+    img.onerror = function () {
+      if (this.dataset.stage === "png") {
+        this.dataset.stage = "jpg";
+        this.src = "covers/" + g.id + ".jpg?v=" + COVER_V;
+      } else {
+        this.remove();
+      }
+    };
+    img.dataset.stage = "png";
+    img.src = "covers/" + g.id + ".png?v=" + COVER_V;
+    cover.appendChild(img);
+
+    // Homebrew games are easy to mistake for official releases in the grid,
+    // and four of them borrow an official box for want of art of their own.
+    if (groupFor(g).key === "homebrew") {
+      var rib = document.createElement("span");
+      rib.className = "cover-ribbon";
+      rib.textContent = window.t("cat_homebrew");
+      cover.appendChild(rib);
+    }
+
+    var body = document.createElement("div");
+    body.className = "card-body";
+
+    var t = document.createElement("p");
+    t.className = "card-title";
+    t.textContent = g.title;
+
+    var meta = document.createElement("div");
+    meta.className = "card-meta";
+
+    var pbadge = document.createElement("span");
+    pbadge.className = "badge " + (g.platform === "G7400+" ? "badge-g7400" : "badge-g7000");
+    pbadge.textContent = g.platform;
+    meta.appendChild(pbadge);
+
+    var grp = groupFor(g);
+    var cbadge = document.createElement("span");
+    cbadge.className = "badge badge-cat-dyn";
+    cbadge.style.setProperty("--badge-color", grp.color);
+    cbadge.textContent = catLabel(grp);
+    meta.appendChild(cbadge);
+
+    var variant = variantFor(g);
+    if (variant) {
+      var vbadge = document.createElement("span");
+      vbadge.className = "badge badge-variant";
+      vbadge.textContent = variant;
+      meta.appendChild(vbadge);
+    }
+
+    var pack = window.PACKAGING_DATA && window.PACKAGING_DATA[g.id];
+    if (pack) {
+      var pbadge2 = document.createElement("span");
+      pbadge2.className = "badge badge-pack";
+      pbadge2.textContent = pack.kind;
+      pbadge2.title = pack.detail;
+      meta.appendChild(pbadge2);
+    }
+
+    // star sits on the cover so it doesn't push the card layout around
+    var star = document.createElement("button");
+    star.className = "fav-btn" + (isFav(g.id) ? " on" : "");
+    star.type = "button";
+    star.innerHTML = "&#9733;";
+    star.title = isFav(g.id) ? "Remove from favorites" : "Add to favorites";
+    star.setAttribute("aria-label", star.title);
+    star.addEventListener("click", function (e) {
+      e.stopPropagation();               // don't open the game page
+      toggleFav(g.id);
+      this.classList.toggle("on", isFav(g.id));
+      this.title = isFav(g.id) ? "Remove from favorites" : "Add to favorites";
+      if (state.list === "fav") render(); // drop it out of the list immediately
+    });
+    cover.appendChild(star);
+
+    body.appendChild(t);
+    body.appendChild(meta);
+    card.appendChild(cover);
+    card.appendChild(body);
+
+    card.addEventListener("click", function () {
+      window.location.href = "game.html?id=" + encodeURIComponent(g.id);
+    });
+
+    return card;
+  }
+
+  document.getElementById("platformChips").addEventListener("click", function (e) {
+    var btn = e.target.closest(".chip");
+    if (!btn) return;
+    document.querySelectorAll("#platformChips .chip").forEach(function (c) { c.classList.remove("active"); });
+    btn.classList.add("active");
+    state.platform = btn.dataset.platform;
+    render();
+  });
+
+  function updateListChips() {
+    document.getElementById("favCount").textContent = favCount();
+    document.getElementById("packCount").textContent =
+      state.games.filter(function (g) { return hasPackaging(g.id); }).length;
+    document.querySelectorAll("#favChip, #packChip").forEach(function (b) {
+      b.classList.toggle("active", b.dataset.list === state.list);
+    });
+    // export/import belong next to the star, not buried in Setup - but only
+    // once you are actually looking at your favourites
+    var favIo = document.getElementById("favIo");
+    if (favIo) favIo.hidden = state.list !== "fav";
+    // only offer the reset when something is actually filtered
+    var on = state.category !== "all" || state.genre !== "all" || state.players !== "all" ||
+             state.platform !== "all" || state.list !== "all" || !!state.query;
+    clearBtn.hidden = !on;
+  }
+
+  document.querySelectorAll("#favChip, #packChip").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      // clicking the active one turns it back off
+      state.list = (state.list === this.dataset.list) ? "all" : this.dataset.list;
+      updateListChips();
+      render();
+    });
+  });
+
+  function buildFacets() {
+    buildFacetChips(genreSel, GENRE_ORDER, genreOf, "g_", "genre", window.t("allGenres"));
+    buildFacetChips(playerSel, PLAYER_ORDER, playersOf, "p_", "players", window.t("allPlayers"));
+    sortSel.innerHTML = '<option value="number">' + window.t("sortNumber") + '</option>' +
+                        '<option value="az">' + window.t("sortAZ") + '</option>';
+    sortSel.value = state.sort;
+  }
+
+  function onFacetChange(sel, stateKey) {
+    sel.addEventListener("change", function () {
+      state[stateKey] = this.value;
+      this.classList.toggle("on", this.value !== "all");
+      render();
+    });
+  }
+  onFacetChange(categorySel, "category");
+  onFacetChange(genreSel, "genre");
+  onFacetChange(playerSel, "players");
+
+  sortSel.addEventListener("change", function () {
+    state.sort = this.value;
+    localStorage.setItem(SORT_KEY, state.sort);
+    render();
+  });
+
+  clearBtn.addEventListener("click", function () {
+    state.category = state.genre = state.players = state.platform = "all";
+    state.list = "all"; state.query = ""; searchInput.value = "";
+    document.querySelectorAll("#platformChips .chip").forEach(function (c) {
+      c.classList.toggle("active", c.dataset.platform === "all");
+    });
+    buildCategoryChips(state.games);
+    buildFacets();
+    updateListChips();
+    render();
+  });
+
+  searchInput.addEventListener("input", function () {
+    state.query = searchInput.value.trim();
+    render();
+  });
+
+  // ---- Favorites export / import ---------------------------------------
+  // localStorage belongs to the browser, not to this folder, so favorites do
+  // not travel when the Vault is copied or shared. These two buttons move them
+  // as a small JSON file.
+  var favIoNote = document.getElementById("favIoNote");
+  function note(msg) {
+    favIoNote.textContent = msg;
+    favIoNote.classList.add("ok");
+    setTimeout(function () { favIoNote.classList.remove("ok"); }, 4000);
+  }
+
+  document.getElementById("exportFavs").addEventListener("click", function () {
+    var ids = Object.keys(favorites);
+    if (!ids.length) { note("Nothing to export yet - star a few games first."); return; }
+    var payload = {
+      app: "Videopac Odyssey Vault",
+      kind: "favorites",
+      exported: new Date().toISOString().slice(0, 10),
+      ids: ids
+    };
+    var blob = new Blob([JSON.stringify(payload, null, 1)], { type: "application/json" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "videopac-vault-favorites.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    note("Exported " + ids.length + " favorite" + (ids.length === 1 ? "" : "s") + ".");
+  });
+
+  var importInput = document.getElementById("importFavsFile");
+  document.getElementById("importFavs").addEventListener("click", function () { importInput.click(); });
+  importInput.addEventListener("change", function () {
+    var file = this.files && this.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      var ids;
+      try {
+        var parsed = JSON.parse(reader.result);
+        // accept both our own file and a bare array of ids
+        ids = Array.isArray(parsed) ? parsed : parsed.ids;
+        if (!Array.isArray(ids)) throw new Error("no id list");
+      } catch (e) {
+        note("That doesn't look like a favorites file.");
+        return;
+      }
+      var known = {};
+      state.games.forEach(function (g) { known[g.id] = 1; });
+      var added = 0, skipped = 0;
+      ids.forEach(function (id) {
+        if (!known[id]) { skipped++; return; }   // game not in this catalogue
+        if (favorites[id]) return;                // already starred
+        favorites[id] = 1;
+        added++;
+      });
+      saveFavs();
+      updateListChips();
+      render();
+      note("Added " + added + " favorite" + (added === 1 ? "" : "s") +
+           (skipped ? " (" + skipped + " not in this library)" : "") + ".");
+    };
+    reader.readAsText(file);
+    this.value = "";   // let the same file be picked again
+  });
+
+  // ---- language ---------------------------------------------------------
+  // Only the interface is translated. Game titles stay exactly as printed on
+  // the cartridge, which is the whole point of a catalogue.
+  // Language as a row of flags - five clicks' worth of choice does not need
+  // a dropdown, and the flags read faster than the language names.
+  var langFlags = document.getElementById("langFlags");
+  if (langFlags && window.I18N) {
+    Object.keys(window.I18N).forEach(function (code) {
+      var b = document.createElement("button");
+      b.className = "flag-btn";
+      b.dataset.lang = code;
+      b.textContent = window.I18N[code]._flag;
+      b.title = window.I18N[code]._name;
+      b.setAttribute("aria-label", window.I18N[code]._name);
+      langFlags.appendChild(b);
+    });
+    function markLang() {
+      langFlags.querySelectorAll(".flag-btn").forEach(function (b) {
+        b.classList.toggle("active", b.dataset.lang === window.currentLang());
+      });
+    }
+    markLang();
+    langFlags.addEventListener("click", function (e) {
+      var b = e.target.closest(".flag-btn");
+      if (!b) return;
+      localStorage.setItem(window.I18N_KEY, b.dataset.lang);
+      markLang();
+      applyLang();
+      buildCategoryChips(state.games);
+      buildFacets();
+      updateListChips();
+      render();
+    });
+  }
+
+  // ---- Updates ---------------------------------------------------------
+  // Catalogue data only, and strictly opt-in: check tells you what changed,
+  // and nothing is written until you press the second button.
+  var checkBtn = document.getElementById("checkUpdates");
+  var applyBtn = document.getElementById("applyUpdates");
+  var updNote = document.getElementById("updateNote");
+  var pendingFiles = [];
+
+  function say(msg, ok) {
+    if (!updNote) return;
+    updNote.textContent = msg;
+    updNote.classList.toggle("ok", !!ok);
+  }
+
+  // Same check from the top bar: open Setup at that section and run it, so the
+  // result and the Download button appear in one place rather than two.
+  var updateModal = document.getElementById("updateModal");
+  var updateBtn = document.getElementById("updateBtn");
+  if (updateBtn && updateModal) {
+    updateBtn.addEventListener("click", function () {
+      updateModal.hidden = false;
+      // check straight away - the panel exists to answer one question
+      var c = document.getElementById("checkUpdates");
+      if (c) c.click();
+    });
+    document.getElementById("closeUpdate").addEventListener("click", function () { updateModal.hidden = true; });
+    updateModal.addEventListener("click", function (e) { if (e.target === updateModal) updateModal.hidden = true; });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !updateModal.hidden) updateModal.hidden = true;
+    });
+  }
+
+  if (checkBtn) {
+    checkBtn.addEventListener("click", function () {
+      say(window.t("updChecking"));
+      applyBtn.hidden = true;
+      fetch("/_update/check").then(function (r) { return r.json(); }).then(function (d) {
+        if (!d.ok) {
+          say(window.t(d.reason === "no-source" ? "updNoSource" : "updFail"));
+          return;
+        }
+        pendingFiles = d.added.concat(d.changed);
+        if (!pendingFiles.length) { say(window.t("updNone"), true); return; }
+        say(window.t("updFound", { n: pendingFiles.length, mb: (d.bytes / 1048576).toFixed(1) }));
+        applyBtn.hidden = false;
+      }).catch(function () { say(window.t("updFail")); });
+    });
+  }
+
+  if (applyBtn) {
+    applyBtn.addEventListener("click", function () {
+      say(window.t("updChecking"));
+      fetch("/_update/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ files: pendingFiles })
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (!d.ok) { say(window.t("updFail")); return; }
+        say(window.t("updDone", { n: d.written.length }), true);
+        applyBtn.hidden = true;
+      }).catch(function () { say(window.t("updFail")); });
+    });
+  }
+
+  function applyLang() {
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      el.textContent = window.t(el.dataset.i18n);
+    });
+    // the long-form Setup text lives in setup-i18n.js and is HTML, not plain
+    var pack = (window.SETUP_I18N || {})[window.currentLang()] || (window.SETUP_I18N || {}).en;
+    if (pack) {
+      document.querySelectorAll("[data-s]").forEach(function (el) {
+        if (pack[el.dataset.s]) el.innerHTML = pack[el.dataset.s];
+      });
+      var exp = document.getElementById("exportFavs"), imp = document.getElementById("importFavs");
+      if (exp) exp.textContent = window.t("exportFav");
+      if (imp) imp.textContent = window.t("importFav");
+    }
+    searchInput.placeholder = window.t("search", { n: state.games.length });
+    document.getElementById("setupBtn").textContent = window.t("setup");
+    document.documentElement.lang = window.currentLang();
+  }
+
+  var setupModal = document.getElementById("setupModal");
+  document.getElementById("setupBtn").addEventListener("click", function () { setupModal.hidden = false; });
+  document.getElementById("closeSetup").addEventListener("click", function () { setupModal.hidden = true; });
+  setupModal.addEventListener("click", function (e) { if (e.target === setupModal) setupModal.hidden = true; });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !setupModal.hidden) setupModal.hidden = true; });
+})();
