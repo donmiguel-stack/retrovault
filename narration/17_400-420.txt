@@ -1,1 +1,0 @@
-Some cartridges survive in more than one form. This is a twelve K banked dump: it holds more program than the console can address at once, so it switches between banks as it runs. The Vault tells you which copy you're looking at.

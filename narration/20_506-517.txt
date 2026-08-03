@@ -1,1 +1,0 @@
-Setting up takes three steps. You need Python first — it runs the small local server, because browsers won't load an emulator off your hard disk.

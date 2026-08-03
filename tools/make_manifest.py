@@ -24,7 +24,7 @@ FILES = [
     "games.js", "gamepages.js", "genres.js", "brazil.js", "usa.js",
     "packaging.js", "extras.js", "i18n.js", "setup-i18n.js", "featured.js",
     "app.js", "game.html", "index.html", "style.css", "boot-splash.js",
-    "README.md", "video-script.md",
+    "README.md",
 ]
 FOLDERS = ["covers"]
 

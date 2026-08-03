@@ -21,3 +21,12 @@ _bundles/
 
 # Marks the authoring copy - updates are refused while this exists.
 .authoring
+
+# Making-of material for the YouTube tour. Kept locally: none of it is needed
+# to run the Vault, and the subtitles already live on the video itself.
+narration/
+subtitles/
+video-captions.md
+video-script.md
+video-script-2.txt
+youtube-listing.md
