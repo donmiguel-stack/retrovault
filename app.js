@@ -318,13 +318,20 @@
     return state.games.filter(function (g) { return g.id === id; })[0];
   }
 
-  // "shot" takes a filename or a list of them. Two get stacked in the same
-  // slot rather than shrinking the panel to fit them side by side.
+  // "shot" takes a filename or a list of them; two are shown side by side.
+  //
+  // They live in covers/ under a shot_ prefix rather than in a folder of their
+  // own, and that is deliberate. The update endpoint only writes to a fixed
+  // whitelist of folders, and that whitelist lives in serve.py - which the
+  // updater deliberately never overwrites, since a remote list should not be
+  // able to widen its own permissions. So anything in a new folder can never
+  // reach an existing install. Put new files where the updater is already
+  // allowed to write.
   function shotMarkup(shot) {
     if (!shot) return "";
     var list = Array.isArray(shot) ? shot : [shot];
     var imgs = list.map(function (s) {
-      return '<img class="feature-shot" src="assets/shots/' + s + '" alt="">';
+      return '<img class="feature-shot" src="covers/shot_' + s + '" alt="">';
     }).join("");
     return list.length > 1 ? '<div class="feature-shots">' + imgs + '</div>' : imgs;
   }

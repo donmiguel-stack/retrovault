@@ -10,6 +10,10 @@ window.FEATURED_DATA = {
   // Games worth pointing someone at. "id" must match an id in games.js; the
   // cover and title are taken from there, so only the blurb lives here.
   // One sentence is plenty. The panel rotates every 7 seconds.
+  //
+  // "shot" is a screenshot filename. The file goes in covers/ with a shot_
+  // prefix - covers/shot_vp_38.jpg for shot: "vp_38.jpg" - because that is a
+  // folder the update endpoint is already allowed to write to.
   featured: [
     { id: "vp_38", shot: "vp_38.jpg",
       blurb: "The one Atari sued over — and the best-selling cartridge the console ever had. Press P at the select screen to draw your own maze." },

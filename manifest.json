@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-03 22:51:55",
+ "generated": "2026-08-03 23:15:29",
  "count": 242,
- "bytes": 96772401,
+ "bytes": 96773047,
  "files": {
   "games.js": {
    "sha256": "9014caa316420b9f1fd4733498ef91d1a175b9b721999b16857bde664b762966",
@@ -40,19 +40,19 @@
    "size": 33395
   },
   "featured.js": {
-   "sha256": "dd0b4e822b6337d0974245a870b7ec69edd9ad7e887174993cec11b25302f62b",
-   "size": 6193
+   "sha256": "7b8e5914e3bfb62744ac0ef627440578e7f778f97919f6ddde2f87b158ba3eac",
+   "size": 6416
   },
   "app.js": {
-   "sha256": "301318ce1309cec88350b580cf6af689fe8e09ce0eb5300d4bd9bc4b424b0809",
-   "size": 39764
+   "sha256": "a3a5090ca9f672a139a6a8036c38c1e47b6eb9249c2480f5976e4795ec459619",
+   "size": 40187
   },
   "game.html": {
-   "sha256": "1b0900187c610c173327b053e7bcb0c583be750a7252eebd5da95bd355501a52",
+   "sha256": "94d48601de651501f896671bfb75bd42a8325b1c5a7ea469e141a4db3b021daf",
    "size": 22084
   },
   "index.html": {
-   "sha256": "0d8ea3210d20a89d6042344f8f9da5f5d27e0c79d5c95024059413c709297307",
+   "sha256": "2a411606082c54bf4529340d506aa5e4e106c404d378b48d75ae100ead005909",
    "size": 6153
   },
   "style.css": {
@@ -603,6 +603,58 @@
    "sha256": "b45da35e613e54a705e3150614a7db264dccdc4cc367d80444006556e8cf83ca",
    "size": 458729
   },
+  "covers/shot_jo_demon-attack_pl.jpg": {
+   "sha256": "606aa2861c028c0e77859ab89f211eb12538e483ebb35c56f3165f0f09b08a7d",
+   "size": 77822
+  },
+  "covers/shot_new_amok.jpg": {
+   "sha256": "9761f26b4f9eb22d0752422c9270e3eb66f0e724eafd05b72c90616bada60166",
+   "size": 27885
+  },
+  "covers/shot_new_ktaa.png": {
+   "sha256": "e26392a325c52bbfa57e5384351efc1f6bf968de2a57ba7993420c48759ae260",
+   "size": 6195
+  },
+  "covers/shot_new_mrroboto.png": {
+   "sha256": "5e5d0b88ef3a577cb0841882d68fa40a1f3e1bfef5d1dc1250be8ec0dd9fba4a",
+   "size": 6149
+  },
+  "covers/shot_new_pong_all.png": {
+   "sha256": "66caa44f3c81bfa4757b3678fa06e64330a1cacb7081cf588097b38536f746fc",
+   "size": 5198
+  },
+  "covers/shot_new_ppp-o2em-2.png": {
+   "sha256": "7af6378b967e5b5eefd58b45a3c7ebe38f8f07961e824124bd975172bbfce672",
+   "size": 7447
+  },
+  "covers/shot_new_ppp-o2em.png": {
+   "sha256": "f2f97a9cebb68ac341a1cc87f56e93eaafdb923d3091f1f6476968280d49fed9",
+   "size": 5538
+  },
+  "covers/shot_new_route66.png": {
+   "sha256": "02a237fc2169a41d70a510fe6e8af878589afbda0a3ad107ff44dc75b838672f",
+   "size": 5559
+  },
+  "covers/shot_vp_38.jpg": {
+   "sha256": "d254ae06c50e6d670ae054b1888875451a5a20c2b84707a3cf955239e06d0a3d",
+   "size": 50216
+  },
+  "covers/shot_vp_42.jpg": {
+   "sha256": "b27071bfc9e3df35005b7a70ee5e988980229497bb27f33a0d28ca6634669cee",
+   "size": 28631
+  },
+  "covers/shot_vp_43.jpg": {
+   "sha256": "b1d1d8d94d4e8e7eb9d5fb7e66626dc7eac8c6504485e76339491d6a30886a97",
+   "size": 51151
+  },
+  "covers/shot_vp_51pl.png": {
+   "sha256": "6a1ce7e895c5bca2d59ade478ae1ab98b512a7c985536ccf023b79da9266c1d7",
+   "size": 7683
+  },
+  "covers/shot_vp_52pl.jpg": {
+   "sha256": "b3d57e7bc258365d23d83515bdc7ed8b8e9970d15ca421b46a58f15e9d3b02f0",
+   "size": 166604
+  },
   "covers/vp01+_F.jpg": {
    "sha256": "17ed1962fdb0b659b0bccfcb0d6686f0317601bba2d8f96e4a2d53e0c6432919",
    "size": 62908
@@ -918,58 +970,6 @@
   "covers/vp_a.png": {
    "sha256": "c953668bbfbe32130624ac727c523878ca4eb0fdaa290e12dbbe7bc46cc9e85a",
    "size": 205760
-  },
-  "assets/shots/jo_demon-attack_pl.jpg": {
-   "sha256": "606aa2861c028c0e77859ab89f211eb12538e483ebb35c56f3165f0f09b08a7d",
-   "size": 77822
-  },
-  "assets/shots/new_amok.jpg": {
-   "sha256": "9761f26b4f9eb22d0752422c9270e3eb66f0e724eafd05b72c90616bada60166",
-   "size": 27885
-  },
-  "assets/shots/new_ktaa.png": {
-   "sha256": "e26392a325c52bbfa57e5384351efc1f6bf968de2a57ba7993420c48759ae260",
-   "size": 6195
-  },
-  "assets/shots/new_mrroboto.png": {
-   "sha256": "5e5d0b88ef3a577cb0841882d68fa40a1f3e1bfef5d1dc1250be8ec0dd9fba4a",
-   "size": 6149
-  },
-  "assets/shots/new_pong_all.png": {
-   "sha256": "66caa44f3c81bfa4757b3678fa06e64330a1cacb7081cf588097b38536f746fc",
-   "size": 5198
-  },
-  "assets/shots/new_ppp-o2em-2.png": {
-   "sha256": "7af6378b967e5b5eefd58b45a3c7ebe38f8f07961e824124bd975172bbfce672",
-   "size": 7447
-  },
-  "assets/shots/new_ppp-o2em.png": {
-   "sha256": "f2f97a9cebb68ac341a1cc87f56e93eaafdb923d3091f1f6476968280d49fed9",
-   "size": 5538
-  },
-  "assets/shots/new_route66.png": {
-   "sha256": "02a237fc2169a41d70a510fe6e8af878589afbda0a3ad107ff44dc75b838672f",
-   "size": 5559
-  },
-  "assets/shots/vp_38.jpg": {
-   "sha256": "d254ae06c50e6d670ae054b1888875451a5a20c2b84707a3cf955239e06d0a3d",
-   "size": 50216
-  },
-  "assets/shots/vp_42.jpg": {
-   "sha256": "b27071bfc9e3df35005b7a70ee5e988980229497bb27f33a0d28ca6634669cee",
-   "size": 28631
-  },
-  "assets/shots/vp_43.jpg": {
-   "sha256": "b1d1d8d94d4e8e7eb9d5fb7e66626dc7eac8c6504485e76339491d6a30886a97",
-   "size": 51151
-  },
-  "assets/shots/vp_51pl.png": {
-   "sha256": "6a1ce7e895c5bca2d59ade478ae1ab98b512a7c985536ccf023b79da9266c1d7",
-   "size": 7683
-  },
-  "assets/shots/vp_52pl.jpg": {
-   "sha256": "b3d57e7bc258365d23d83515bdc7ed8b8e9970d15ca421b46a58f15e9d3b02f0",
-   "size": 166604
   }
  }
 }

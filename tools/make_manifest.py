@@ -26,10 +26,12 @@ FILES = [
     "app.js", "game.html", "index.html", "style.css", "boot-splash.js",
     "README.md",
 ]
-# covers/ is the box art; assets/shots/ the in-game screenshots the featured
-# and homebrew panels use. Both have to ship, or featured.js arrives on someone
-# else's copy pointing at pictures they haven't got.
-FOLDERS = ["covers", "assets/shots"]
+# covers/ holds the box art and, under a shot_ prefix, the in-game screenshots
+# the featured and homebrew panels use. Keep new artwork in here: the update
+# endpoint's folder whitelist lives in serve.py, which the updater never
+# overwrites, so a brand new folder can never reach an install that already
+# exists. covers/ is somewhere every copy already accepts writes.
+FOLDERS = ["covers"]
 
 
 def digest(path):

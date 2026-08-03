@@ -31,6 +31,12 @@ SOURCE_FILE = os.path.join(ROOT, "update-source.json")
 # Only these may be written by an update. A file outside this whitelist is
 # refused even if a manifest asks for it - a remote list should never be able
 # to drop arbitrary files into the folder.
+# NOTE: this whitelist is the one thing an update can never change - serve.py
+# is not in the manifest, and .py is not an allowed extension, on purpose: a
+# remote file list must not be able to widen its own permissions. The practical
+# consequence is that files in a folder listed here reach every install, and
+# files anywhere else reach nobody who has already installed. Put new artwork
+# in covers/.
 ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json")
 ALLOWED_DIRS = ("", "covers", "assets/shots")
 
