@@ -2,6 +2,11 @@
   // Bump when you add or replace anything in covers/ (see renderCard).
   var COVER_V = 18;
 
+  // Attract-screen palette, same letters as the SELECT GAME splash. Declared
+  // up here because render() runs before the code further down this file.
+  var ATTRACT_COLORS = ["#4ade80", "#ff6fc9", "#b39bff", "#3bffe9", "#ffffff",
+                        "#ffd23b", "#ff4d4d", "#ff9d3b", "#a6e13c", "#5c8dff"];
+
   var COVER_COLORS = [
     "#5b8def", "#3ba97a", "#c07de0", "#e0865a",
     "#d65a7e", "#8a8f98", "#e0c05a", "#4fb3bf"
@@ -166,6 +171,7 @@
     buildFacets();
     updateListChips();
     applyLang();
+    buildShowcase();
     render();
   } else {
     grid.innerHTML = '<p style="padding:24px;color:#e0865a;">games.js did not load - make sure games.js sits next to index.html and is included before app.js.</p>';
@@ -211,6 +217,125 @@
     return true;
   }
 
+  // The community panel sits partway down the library rather than at the top -
+  // it reads as a signpost you come across, not a banner you scroll past.
+  // An empty advert slot doesn't need artwork - it gets the console's own
+  // attract-screen treatment instead: rainbow letters bouncing off the edges,
+  // the way the Videopac idled when nobody was playing.
+  function attractBanner(text) {
+    var wrap = document.createElement("span");
+    wrap.className = "attract";
+    var word = document.createElement("span");
+    word.className = "attract-word";
+    var n = 0;
+    text.split("").forEach(function (ch) {
+      if (ch === " ") {
+        word.appendChild(Object.assign(document.createElement("span"),
+          { className: "attract-space" }));
+      } else {
+        var el = document.createElement("span");
+        el.className = "attract-letter";
+        el.textContent = ch;
+        el.style.color = ATTRACT_COLORS[n % ATTRACT_COLORS.length];
+        word.appendChild(el);
+        n++;
+      }
+    });
+    wrap.appendChild(word);
+
+    // DVD-logo drift. Starts once the element has a measurable size.
+    var x = 0, y = 0, dx = 0.7, dy = 0.45, shift = 0, raf = null;
+    function step() {
+      var bw = wrap.clientWidth, bh = wrap.clientHeight;
+      var ww = word.offsetWidth, wh = word.offsetHeight;
+      if (bw && ww) {
+        x += dx; y += dy;
+        var maxX = bw - ww, maxY = bh - wh;
+        if (x <= 0 || x >= maxX) { dx = -dx; x = Math.max(0, Math.min(x, maxX)); recolour(); }
+        if (y <= 0 || y >= maxY) { dy = -dy; y = Math.max(0, Math.min(y, maxY)); recolour(); }
+        word.style.transform = "translate(" + x + "px," + y + "px)";
+      }
+      raf = requestAnimationFrame(step);
+    }
+    function recolour() {
+      shift++;
+      word.querySelectorAll(".attract-letter").forEach(function (el, i) {
+        el.style.color = ATTRACT_COLORS[(i + shift) % ATTRACT_COLORS.length];
+      });
+    }
+    raf = requestAnimationFrame(step);
+    // ...and pause it when scrolled out of view, so it isn't burning a core
+    // in the background. Started above rather than here: the observer's first
+    // callback doesn't arrive until the element is in the document.
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !raf) raf = requestAnimationFrame(step);
+          else if (!e.isIntersecting && raf) { cancelAnimationFrame(raf); raf = null; }
+        });
+      }).observe(wrap);
+    }
+    return wrap;
+  }
+
+  function sponsorBlock() {
+    var list = (window.FEATURED_DATA || {}).sponsors || [];
+    var tpl = document.getElementById("sponsorTpl");
+    if (!list.length || !tpl) return null;
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    list.forEach(function (sp) {
+      var a = document.createElement("a");
+      a.className = "sponsor" + (sp.image ? "" : " sponsor-empty");
+      a.href = sp.url;
+      a.target = "_blank";
+      a.rel = "noopener sponsored";
+      if (sp.image) {
+        var img = document.createElement("img");
+        img.src = "assets/" + sp.image;
+        img.alt = "";
+        a.appendChild(img);
+      } else {
+        a.appendChild(attractBanner(sp.attract || "ADVERTISE HERE"));
+      }
+      var tag = document.createElement("span");
+      tag.className = "sponsor-tag";
+      tag.textContent = window.t("sponsored");
+      a.appendChild(tag);
+      var sr = document.createElement("span");
+      sr.className = "sponsor-sr";
+      sr.textContent = sp.name + " — " + (sp.text || "");
+      a.appendChild(sr);
+      node.appendChild(a);
+    });
+    return node;
+  }
+
+  // The community panel is a carousel: on a 14-inch screen six cards wrapped
+  // onto a second line and webretro ended up orphaned down there on its own.
+  function communityBlock() {
+    var list = (window.FEATURED_DATA || {}).community || [];
+    var tpl = document.getElementById("communityTpl");
+    if (!list.length || !tpl) return null;
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector("[data-i18n=communityHead]").textContent = window.t("communityHead");
+    node.querySelector(".community-intro").textContent = window.t("communityIntro");
+    var track = node.querySelector(".community-track");
+    track.innerHTML = list.map(function (c) {
+      return '<a class="community-item" href="' + c.url + '" target="_blank" rel="noopener" ' +
+        'style="--tint:' + (c.tint || "#8a8f98") + '">' +
+        '<span class="cname">' + c.name +
+        (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
+        '<p class="cwhat">' + c.what + '</p></a>';
+    }).join("");
+    node.querySelectorAll(".car-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var step = track.clientWidth * 0.8 * parseInt(this.dataset.dir, 10);
+        track.scrollBy({ left: step, behavior: "smooth" });
+      });
+    });
+    return node;
+  }
+
   function render() {
     var filtered = state.games.filter(matches).sort(bySort);
     if (typeof updateListChips === "function" && clearBtn) {
@@ -222,7 +347,14 @@
     emptyState.hidden = filtered.length !== 0;
     grid.innerHTML = "";
     var frag = document.createDocumentFragment();
-    filtered.forEach(function (g) {
+    // drop the community panel in around a third of the way down, but only on
+    // a decent-sized list - it would dominate a five-result search
+    var big = filtered.length >= 60;
+    var adAt = big ? Math.min(36, Math.floor(filtered.length / 3)) : -1;
+    var commAt = big ? Math.min(96, Math.floor(filtered.length * 2 / 3)) : -1;
+    filtered.forEach(function (g, i) {
+      if (i === adAt) { var a = sponsorBlock(); if (a) frag.appendChild(a); }
+      if (i === commAt) { var c = communityBlock(); if (c) frag.appendChild(c); }
       frag.appendChild(renderCard(g));
     });
     grid.appendChild(frag);
@@ -516,6 +648,78 @@
       buildFacets();
       updateListChips();
       render();
+    });
+  }
+
+  // ---- Showcase --------------------------------------------------------
+  // Featured games, sponsor banners and the community links, all driven by
+  // featured.js. Any panel with an empty list simply doesn't appear.
+  var SHOWCASE_KEY = "VideopacVault_showcase";
+  var featIndex = 0, featTimer = null;
+
+  function buildShowcase() {
+    var data = window.FEATURED_DATA || {};
+    var host = document.getElementById("showcase");
+    if (!host) return;
+
+    var picks = (data.featured || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
+    });
+    var sponsors = data.sponsors || [];
+    var community = data.community || [];
+    if (!picks.length && !sponsors.length && !community.length) return;
+
+    host.hidden = localStorage.getItem(SHOWCASE_KEY) === "off";
+
+    // --- featured
+    var main = document.getElementById("featureMain");
+    var list = document.getElementById("featureList");
+    function gameFor(id) {
+      return state.games.filter(function (g) { return g.id === id; })[0];
+    }
+    function showFeature(i) {
+      featIndex = (i + picks.length) % picks.length;
+      var pick = picks[featIndex], g = gameFor(pick.id);
+      var gen = (window.GENRE_DATA || {})[g.id] || {};
+      main.href = "game.html?id=" + encodeURIComponent(g.id);
+      main.innerHTML =
+        '<img class="feature-cover" src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
+        'onerror="this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
+        '<div class="feature-copy">' +
+        '<h3>' + g.title + '</h3>' +
+        '<p class="feature-blurb">' + pick.blurb + '</p>' +
+        '<div class="feature-meta">' +
+        '<span class="badge ' + (g.platform === "G7400+" ? "badge-g7400" : "badge-g7000") + '">' + g.platform + '</span>' +
+        (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
+        (gen.players ? '<span class="badge badge-cat">' + window.t("p_" + gen.players) + '</span>' : '') +
+        '</div></div>' +
+        (pick.shot ? '<img class="feature-shot" src="assets/shots/' + pick.shot + '" alt="">' : '');
+      list.querySelectorAll(".feature-thumb").forEach(function (b, n) {
+        b.classList.toggle("on", n === featIndex);
+      });
+    }
+    list.innerHTML = picks.map(function (p, n) {
+      var g = gameFor(p.id);
+      return '<button class="feature-thumb" data-i="' + n + '">' +
+             '<img src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="">' +
+             '<span>' + g.title + '</span></button>';
+    }).join("");
+    list.querySelectorAll(".feature-thumb").forEach(function (b) {
+      b.addEventListener("click", function () {
+        showFeature(parseInt(this.dataset.i, 10));
+        clearInterval(featTimer);          // stop rotating once someone chooses
+      });
+    });
+    if (picks.length) {
+      showFeature(0);
+      featTimer = setInterval(function () { showFeature(featIndex + 1); }, 7000);
+    }
+
+    var toggle = document.getElementById("showcaseToggle");
+    toggle.addEventListener("click", function () {
+      var off = !host.hidden;
+      host.hidden = off;
+      localStorage.setItem(SHOWCASE_KEY, off ? "off" : "on");
     });
   }
 
