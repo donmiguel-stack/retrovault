@@ -44,12 +44,11 @@ body{
 }
 .ghost-btn:hover{border-color:var(--accent);color:var(--text);}
 
-/* Update button, when the quiet check on load found something waiting. Yellow
-   like the import/export buttons, with the star the console never had. */
+/* Update button, when the watcher has found something waiting. Yellow, like
+   the import/export buttons - that reads on its own without a badge too. */
 #updateBtn.has-updates{
   background:#ffc400; border-color:#ffc400; color:#000; font-weight:600;
 }
-#updateBtn.has-updates::before{content:"\2605"; margin-right:6px;}
 #updateBtn.has-updates:hover{background:#ffd23b; border-color:#ffd23b; color:#000;}
 
 .filterbar{

@@ -864,12 +864,15 @@
     });
   }
 
-  // A quiet check on load, so the button tells you there is something waiting
-  // instead of you having to open it and ask. Throttled: the answer changes
-  // when the repo changes, which is not several times an hour, and a page
-  // reload should not mean another round trip to GitHub.
+  // The button watches by itself: on load, every five minutes while the page
+  // is open, and whenever you come back to the tab. Five minutes rather than
+  // one because GitHub serves the manifest with max-age=300 - ask more often
+  // than that and the CDN hands back the same cached copy, so a faster poll
+  // cannot give a fresher answer. The check itself is cheap: the server hashes
+  // the local files, which is around 0.2 seconds for the whole catalogue.
   var UPD_SEEN = "VideopacVault_updSeen";
-  var UPD_EVERY = 6 * 3600 * 1000;
+  var UPD_EVERY = 5 * 60 * 1000;
+  var lastCheck = 0, updTimer = null;
 
   function markUpdates(n) {
     if (!updateBtn) return;
@@ -880,25 +883,40 @@
 
   function rememberUpdates(n) {
     markUpdates(n);
+    lastCheck = Date.now();
     try {
-      localStorage.setItem(UPD_SEEN, JSON.stringify({ at: Date.now(), n: n }));
+      localStorage.setItem(UPD_SEEN, JSON.stringify({ at: lastCheck, n: n }));
     } catch (e) { /* private mode: the badge just won't survive a reload */ }
   }
 
-  function quietCheck() {
-    if (!updateBtn) return;
-    var last = 0, cached = null;
-    try {
-      var saved = JSON.parse(localStorage.getItem(UPD_SEEN) || "{}");
-      last = saved.at || 0; cached = saved.n;
-    } catch (e) { /* first run, or someone edited it by hand */ }
-    if (cached != null) markUpdates(cached);            // show last known state
-    if (Date.now() - last < UPD_EVERY) return;
-    fetch("/_update/check").then(function (r) { return r.json(); }).then(function (d) {
-      rememberUpdates(d.ok ? d.added.length + d.changed.length : 0);
-    }).catch(function () { /* offline: leave the button alone */ });
+  function stopWatching() {
+    if (updTimer) { clearInterval(updTimer); updTimer = null; }
   }
-  quietCheck();
+
+  function quietCheck(force) {
+    if (!updateBtn) return;
+    if (!force && Date.now() - lastCheck < UPD_EVERY) return;
+    lastCheck = Date.now();                  // claim the slot before the fetch
+    fetch("/_update/check").then(function (r) { return r.json(); }).then(function (d) {
+      // On the machine where the Vault is written there is nothing to watch
+      // for, and no source configured means nowhere to look.
+      if (!d.ok && (d.reason === "authoring" || d.reason === "no-source")) {
+        stopWatching(); markUpdates(0); return;
+      }
+      rememberUpdates(d.ok ? d.added.length + d.changed.length : 0);
+    }).catch(function () { /* offline: leave the button as it was */ });
+  }
+
+  // Show the last known answer straight away, then go and get a fresh one.
+  try {
+    var saved = JSON.parse(localStorage.getItem(UPD_SEEN) || "{}");
+    if (saved.n != null) markUpdates(saved.n);
+  } catch (e) { /* first run, or someone edited it by hand */ }
+  quietCheck(true);
+  updTimer = setInterval(quietCheck, UPD_EVERY);
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) quietCheck();     // back in the tab: is it still true?
+  });
 
   if (applyBtn) {
     applyBtn.addEventListener("click", function () {
