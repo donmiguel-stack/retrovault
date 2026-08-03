@@ -26,7 +26,10 @@ FILES = [
     "app.js", "game.html", "index.html", "style.css", "boot-splash.js",
     "README.md",
 ]
-FOLDERS = ["covers"]
+# covers/ is the box art; assets/shots/ the in-game screenshots the featured
+# and homebrew panels use. Both have to ship, or featured.js arrives on someone
+# else's copy pointing at pictures they haven't got.
+FOLDERS = ["covers", "assets/shots"]
 
 
 def digest(path):

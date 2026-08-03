@@ -21,8 +21,28 @@ window.FEATURED_DATA = {
       blurb: "Imagic's shooter, licensed to Thomson-Brandt and given G7400 backgrounds that exist nowhere else. The French got the best version." },
     { id: "vp_52pl", shot: "vp_52pl.jpg",
       blurb: "Ed Averett at his strangest: you are a swarm, and you eat other swarms. Nothing else on the machine plays like it." },
+    { id: "vp_51pl", shot: "vp_51pl.png",
+      blurb: "Sold as Attack of the Timelord in America, and licensed from a Gerry Anderson puppet series in Europe. One of the few cartridges written for the G7400's extra graphics chip." }
+  ],
+
+  // ---- Homebrew ---------------------------------------------------------
+  // The other half of the story: games written for this console after it was
+  // discontinued, by people who simply wanted to. Same shape as "featured",
+  // with one addition - "shot" also takes an array, and two screenshots are
+  // then stacked in the slot instead of one.
+  homebrew: [
     { id: "new_amok", shot: "new_amok.jpg",
-      blurb: "Written in 1999, two decades after Philips gave up. The homebrew scene never quite let this console die." }
+      blurb: "The first one. John Dondzila brought Stern's Berzerk to the console in 1998, fifteen years after Philips walked away, and started everything below." },
+    { id: "new_ktaa", shot: "new_ktaa.png",
+      blurb: "Sören Gust, 2003, under the Xype label — and one of the first homebrews to use the Plus graphics. Widely held to be among the best games on the machine, official ones included." },
+    { id: "new_route66", shot: "new_route66.png",
+      blurb: "Rafael Cardoso and René van den Enden, 2007. Four levels — day, night, desert, snow — seven black cars to run down in each, and every one faster than the last." },
+    { id: "new_pong_all", shot: "new_pong_all.png",
+      blurb: "It took thirty years for this console to get a Pong. René van den Enden's makes up for it with eleven variations, from squash to tennis to the 1972 original." },
+    { id: "new_mrroboto", shot: "new_mrroboto.png",
+      blurb: "Ted Foolery packed three different games into eight kilobytes, playable by one, two or nobody at all — and hid a puzzle in it that ran as a competition." },
+    { id: "new_ppp-o2em", shot: ["new_ppp-o2em.png", "new_ppp-o2em-2.png"],
+      blurb: "Tetris, essentially, and a good one: four variations, polyphonic music and enhanced graphics on a G7400. This is the build made to run under emulation — the cartridge version plays its music through The Voice." }
   ],
 
   // ---- Sponsors ---------------------------------------------------------

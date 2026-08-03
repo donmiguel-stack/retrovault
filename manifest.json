@@ -1,15 +1,15 @@
 {
- "generated": "2026-08-03 21:20:17",
- "count": 229,
- "bytes": 96317132,
+ "generated": "2026-08-03 22:51:55",
+ "count": 242,
+ "bytes": 96772401,
  "files": {
   "games.js": {
-   "sha256": "d0c5e066680f013c78dbcce2f7eb9b35b3f782b87e3f84e43a4f5ce3fe59ce12",
-   "size": 57445
+   "sha256": "9014caa316420b9f1fd4733498ef91d1a175b9b721999b16857bde664b762966",
+   "size": 57501
   },
   "gamepages.js": {
-   "sha256": "c7a3fbadc54dfc2df45a33d57bcb4af857d1c98cdf4a18d78da2134536d77965",
-   "size": 112049
+   "sha256": "35b8d26c2a643d81ab747f22ba63053dc9f94f6311f449c7108dfef66d5f2b25",
+   "size": 109723
   },
   "genres.js": {
    "sha256": "680bc2125d26ec5ef94720706fb00ef79adc5c843b8267ecad155c1538226fe1",
@@ -32,32 +32,32 @@
    "size": 1858
   },
   "i18n.js": {
-   "sha256": "e06e01aaec616f888ba64d44299d47a30c7e6c392e7e033a04f97ed87ff06f79",
-   "size": 20267
+   "sha256": "94d6653f44f0bfeed5b577960ff68570a664c2c6ef4434380e9927bedb97b931",
+   "size": 21569
   },
   "setup-i18n.js": {
    "sha256": "63ee3452bf395b94fd07754fde49505174f1956d2f6fc55caecfde0ce5a51815",
    "size": 33395
   },
   "featured.js": {
-   "sha256": "895177387a57e2fac1319edfa1ca22527b486ae74aa7dee0f93b995652a6215d",
-   "size": 4307
+   "sha256": "dd0b4e822b6337d0974245a870b7ec69edd9ad7e887174993cec11b25302f62b",
+   "size": 6193
   },
   "app.js": {
-   "sha256": "e2f3a3da504b58bd8fd79bc03285a7a19b2a06aa36252eafca90c0ec724a2000",
-   "size": 34573
+   "sha256": "301318ce1309cec88350b580cf6af689fe8e09ce0eb5300d4bd9bc4b424b0809",
+   "size": 39764
   },
   "game.html": {
-   "sha256": "2aab4a588750c4d9894c92ebc93a9ae1ff0655483949d93d72d519ffeb3d94e7",
-   "size": 21577
+   "sha256": "1b0900187c610c173327b053e7bcb0c583be750a7252eebd5da95bd355501a52",
+   "size": 22084
   },
   "index.html": {
-   "sha256": "34666facd48b8824028f437a8421dff96e63e56fb7981e95381af34c17d952f5",
-   "size": 5723
+   "sha256": "0d8ea3210d20a89d6042344f8f9da5f5d27e0c79d5c95024059413c709297307",
+   "size": 6153
   },
   "style.css": {
-   "sha256": "de96cce0d82469ddbee92acb7b9b3082784834c79370995bb70c317a58e8fc8f",
-   "size": 16565
+   "sha256": "3f7a022f27c5e77f81c55246724460887a2a780e383cdc39656f15ffc5eb0691",
+   "size": 18710
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -918,6 +918,58 @@
   "covers/vp_a.png": {
    "sha256": "c953668bbfbe32130624ac727c523878ca4eb0fdaa290e12dbbe7bc46cc9e85a",
    "size": 205760
+  },
+  "assets/shots/jo_demon-attack_pl.jpg": {
+   "sha256": "606aa2861c028c0e77859ab89f211eb12538e483ebb35c56f3165f0f09b08a7d",
+   "size": 77822
+  },
+  "assets/shots/new_amok.jpg": {
+   "sha256": "9761f26b4f9eb22d0752422c9270e3eb66f0e724eafd05b72c90616bada60166",
+   "size": 27885
+  },
+  "assets/shots/new_ktaa.png": {
+   "sha256": "e26392a325c52bbfa57e5384351efc1f6bf968de2a57ba7993420c48759ae260",
+   "size": 6195
+  },
+  "assets/shots/new_mrroboto.png": {
+   "sha256": "5e5d0b88ef3a577cb0841882d68fa40a1f3e1bfef5d1dc1250be8ec0dd9fba4a",
+   "size": 6149
+  },
+  "assets/shots/new_pong_all.png": {
+   "sha256": "66caa44f3c81bfa4757b3678fa06e64330a1cacb7081cf588097b38536f746fc",
+   "size": 5198
+  },
+  "assets/shots/new_ppp-o2em-2.png": {
+   "sha256": "7af6378b967e5b5eefd58b45a3c7ebe38f8f07961e824124bd975172bbfce672",
+   "size": 7447
+  },
+  "assets/shots/new_ppp-o2em.png": {
+   "sha256": "f2f97a9cebb68ac341a1cc87f56e93eaafdb923d3091f1f6476968280d49fed9",
+   "size": 5538
+  },
+  "assets/shots/new_route66.png": {
+   "sha256": "02a237fc2169a41d70a510fe6e8af878589afbda0a3ad107ff44dc75b838672f",
+   "size": 5559
+  },
+  "assets/shots/vp_38.jpg": {
+   "sha256": "d254ae06c50e6d670ae054b1888875451a5a20c2b84707a3cf955239e06d0a3d",
+   "size": 50216
+  },
+  "assets/shots/vp_42.jpg": {
+   "sha256": "b27071bfc9e3df35005b7a70ee5e988980229497bb27f33a0d28ca6634669cee",
+   "size": 28631
+  },
+  "assets/shots/vp_43.jpg": {
+   "sha256": "b1d1d8d94d4e8e7eb9d5fb7e66626dc7eac8c6504485e76339491d6a30886a97",
+   "size": 51151
+  },
+  "assets/shots/vp_51pl.png": {
+   "sha256": "6a1ce7e895c5bca2d59ade478ae1ab98b512a7c985536ccf023b79da9266c1d7",
+   "size": 7683
+  },
+  "assets/shots/vp_52pl.jpg": {
+   "sha256": "b3d57e7bc258365d23d83515bdc7ed8b8e9970d15ca421b46a58f15e9d3b02f0",
+   "size": 166604
   }
  }
 }

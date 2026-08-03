@@ -4,9 +4,9 @@ window.GAMEPAGES_DATA = {
  "new_amok_alt": {
   "input": "joystick",
   "history": {
-   "text": "Amok is a 1996 mech-themed action video game for Windows and Sega Saturn. Players guide a robot called \"Slambird\" through nine different scenarios to complete several objectives. The game was noted for its use of voxel-based graphics for its environments rather than the polygonal models which were standard at the time of its release. Developed by Lemon, Amok began as a technology demo for the Sega 32X, but was reworked for the Saturn after Sega discontinued support for the 32X.",
-   "wikiTitle": "Amok (video game)",
-   "url": "https://en.wikipedia.org/wiki/Amok_(video_game)"
+   "text": "An alternate dump of John Dondzila's Amok!, the 1998 Berzerk port that was the first homebrew ever written for this console.",
+   "source": "odyssey2.info",
+   "url": "https://odyssey2.info/faq/essentials/"
   },
   "video": {
    "id": "ZW72o6CCLps",
@@ -18,27 +18,18 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "BME16m-BDG0",
    "title": "AMOK! (Magnavox Odyssey 2/Philips Videopac G7000). Score: 610."
+  },
+  "history": {
+   "text": "John Dondzila's port of Stern's Berzerk, released in 1998 - the first homebrew game ever written for this console, about fifteen years after Philips stopped supporting it. Dondzila is better known for his Vectrex work, and had already put out a 56-game Odyssey2 multicart in 1996.",
+   "source": "odyssey2.info",
+   "url": "https://odyssey2.info/faq/essentials/"
   }
  },
  "new_calculator": {
-  "input": "keyboard",
-  "history": {
-   "text": "Calculator is a software calculator released by Sabec for the Nintendo Switch, a video game console, in May 2021. It was widely criticized for its US$10 price point and platform, with critics noting that better-suited devices featured free software with equivalent functionality. As an Internet meme, Calculator became one of Metacritic's best-rated games for the Switch by user score. It was cited as an influence on subsequent utility software releases on the Nintendo eShop.",
-   "wikiTitle": "Calculator (Nintendo Switch)",
-   "url": "https://en.wikipedia.org/wiki/Calculator_(Nintendo_Switch)"
-  }
+  "input": "keyboard"
  },
  "new_helicopter_buzzword": {
-  "input": "keyboard",
-  "history": {
-   "text": "R/C Helicopter: Indoor Flight Simulation is a flight simulation video game for the PlayStation 2, Xbox and Windows that involves piloting a radio-controlled helicopter. It received multiple sequels: Radio Helicopter II, released for Windows in 2003 and PlayStation 2 in 2005, and Mini Copter: Adventure Flight for Wii by Arc System Works and Sonic Powered, which was released in 2008.",
-   "wikiTitle": "R/C Helicopter",
-   "url": "https://en.wikipedia.org/wiki/R%2FC_Helicopter"
-  },
-  "video": {
-   "id": "r2s0-TLKiUY",
-   "title": "Magnavox Odyssey 2 - Philips Videopac: Out of This World! / Helicopter Rescue! (1979) Longplay"
-  }
+  "input": "keyboard"
  },
  "new_jg-munchkin": {
   "input": "joystick",
@@ -46,32 +37,24 @@ window.GAMEPAGES_DATA = {
    "item": "munchkin-eur-philips-videopac-1981",
    "pages": 28,
    "source": "Munchkin (EUR)(Philips Videopac)(1982)"
-  },
-  "video": {
-   "id": "YzAu9xI_Gbc",
-   "title": "Magnavox Odyssey 2 - Philips Videopac: K.C. Munchkin! (1981) (Videopac 38) Longplay"
   }
  },
  "new_kc-pacvid": {
   "input": "joystick"
  },
  "new_kc-pacman": {
-  "input": "joystick",
-  "history": {
-   "text": "Homebrew, when used in the context of video games, refers to unofficial software produced by hobbyists for proprietary video game consoles, which are not intended to be user-programmable. The official documentation for many video game consoles is often only available to licensed developers, and these systems may use storage formats that make distribution difficult, such as ROM cartridges or encrypted CD-ROMs. Many consoles also have hardware restrictions to prevent unauthorized development.",
-   "wikiTitle": "Homebrew (video games)",
-   "url": "https://en.wikipedia.org/wiki/Homebrew_(video_games)"
-  },
-  "video": {
-   "id": "HH7_Ka2b0GY",
-   "title": "LEAP Demo - a new homebrew for Videopac / Odyssey2 by bataais"
-  }
+  "input": "joystick"
  },
  "new_ktaa": {
   "input": "joystick",
   "video": {
    "id": "JVyY_IKZic4",
    "title": "Kill the Attacking Aliens (Odyssey2 /Videopac-emu) 3.551"
+  },
+  "history": {
+   "text": "Written by Soeren Gust and released in 2003 under the Xype label, and one of the first homebrews to use the G7400's Plus graphics. It is regularly named among the best games on the machine, official releases included.",
+   "source": "odyssey2.info",
+   "url": "https://odyssey2.info/db/game/kill-the-attacking-aliens-499"
   }
  },
  "new_ktaa-demo1": {
@@ -79,13 +62,23 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "76nRGYCSN8A",
    "title": "Kill the Attacking Aliens - Odyssey2"
+  },
+  "history": {
+   "text": "An early demo build of Soeren Gust's Kill the Attacking Aliens, the 2003 Xype release that was among the first homebrews to use the G7400's Plus graphics.",
+   "source": "odyssey2.info",
+   "url": "https://odyssey2.info/db/game/kill-the-attacking-aliens-499"
   }
  },
  "new_ktaa-demo2": {
   "input": "joystick",
   "video": {
    "id": "tLGv7NPtzh8",
-   "title": "Kill The Attacking Aliens \u2022 Odyssey\u00b2"
+   "title": "Kill The Attacking Aliens • Odyssey²"
+  },
+  "history": {
+   "text": "An early demo build of Soeren Gust's Kill the Attacking Aliens, the 2003 Xype release that was among the first homebrews to use the G7400's Plus graphics.",
+   "source": "odyssey2.info",
+   "url": "https://odyssey2.info/db/game/kill-the-attacking-aliens-499"
   }
  },
  "new_mrroboto": {
@@ -93,6 +86,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "Krpz3WMevHs",
    "title": "Mr  Roboto! USA  Magnavox Odyssey 2 HYPERSPIN NOT MINE VIDEOSUnl VIDEOPAC PHILIPS VIDEOPAC"
+  },
+  "history": {
+   "text": "Ted Foolery packed three game screens, an intro and a menu into eight kilobytes, playable by one, two or nobody at all, with Voice support and a hidden puzzle that ran as a competition on his site. Packrat Video Games later sold it as a cartridge with a printed manual.",
+   "source": "tedfoolery.com",
+   "url": "http://www.tedfoolery.com/RetroGeek/Odyssey2.php"
   }
  },
  "new_planet-lander": {
@@ -100,22 +98,27 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "UxjNbFDAO-g",
    "title": "Planet Lander - Philips Magnavox Odyssey2"
+  },
+  "history": {
+   "text": "Ted Foolery's lunar-lander game, deliberately squeezed under the two-kilobyte limit the earliest cartridges worked to, but with multiple screens, randomly generated landscapes and difficulty that climbs as you go.",
+   "source": "tedfoolery.com",
+   "url": "http://www.tedfoolery.com/RetroGeek/Odyssey2.php"
   }
  },
  "new_pong_all": {
   "input": "joystick",
   "history": {
-   "text": "Pong is a 1972 sports video game developed and published by Atari, Inc. for arcades. It was created by Allan Alcorn as a training exercise assigned to him by Atari co-founder Nolan Bushnell. Bushnell and Atari co-founder Ted Dabney were so surprised by the quality of Alcorn's work that they decided to manufacture the game. Bushnell based the game's concept on an electronic ping-pong game included on the Magnavox Odyssey, the first home video game console; in response, Magnavox later sued Atari for patent infringement.",
-   "wikiTitle": "Pong",
-   "url": "https://en.wikipedia.org/wiki/Pong"
+   "text": "It took this console more than thirty years to get a version of Pong. Rene van den Enden wrote it in 2004, with eleven variations from squash and tennis to the 1972 original. Several of them are Voice-enhanced: with the cartridge plugged in through The Voice you get spoken comments as balls are hit and missed.",
+   "source": "Ozyr's Odyssey2 Archive",
+   "url": "https://www.ozyr.com/o2/o2pong.html"
   }
  },
  "new_pong": {
   "input": "joystick",
   "history": {
-   "text": "Pong is a 1972 sports video game developed and published by Atari, Inc. for arcades. It was created by Allan Alcorn as a training exercise assigned to him by Atari co-founder Nolan Bushnell. Bushnell and Atari co-founder Ted Dabney were so surprised by the quality of Alcorn's work that they decided to manufacture the game. Bushnell based the game's concept on an electronic ping-pong game included on the Magnavox Odyssey, the first home video game console; in response, Magnavox later sued Atari for patent infringement.",
-   "wikiTitle": "Pong",
-   "url": "https://en.wikipedia.org/wiki/Pong"
+   "text": "It took this console more than thirty years to get a version of Pong. Rene van den Enden wrote it in 2004, with eleven variations from squash and tennis to the 1972 original. Several of them are Voice-enhanced: with the cartridge plugged in through The Voice you get spoken comments as balls are hit and missed.",
+   "source": "Ozyr's Odyssey2 Archive",
+   "url": "https://www.ozyr.com/o2/o2pong.html"
   }
  },
  "new_puzzle-piece-panic": {
@@ -123,6 +126,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "9OLJIE2Aq9k",
    "title": "Puzzle Piece Panic! for the Odyssey 2!"
+  },
+  "history": {
+   "text": "Ted Foolery's falling-block game: four variations, polyphonic music and enhanced graphics on a G7400. The music is the interesting part - on the real cartridge it plays through The Voice module, which is why a separate build exists for emulators.",
+   "source": "tedfoolery.com",
+   "url": "http://www.tedfoolery.com/RetroGeek/Odyssey2.php"
   }
  },
  "new_ppp-o2em": {
@@ -130,14 +138,19 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "9OLJIE2Aq9k",
    "title": "Puzzle Piece Panic! for the Odyssey 2!"
+  },
+  "history": {
+   "text": "Ted Foolery's falling-block game: four variations, polyphonic music and enhanced graphics on a G7400. The music is the interesting part - on the real cartridge it plays through The Voice module, which is why a separate build exists for emulators. This is that emulator build.",
+   "source": "tedfoolery.com",
+   "url": "http://www.tedfoolery.com/RetroGeek/Odyssey2.php"
   }
  },
  "new_route66": {
   "input": "joystick",
   "history": {
-   "text": "The King of Route 66 is an arcade game developed by Sega AM2 and distributed by Sega, released for arcades in 2002-2003, and ported to PlayStation 2 in 2003. It is the sequel to 18 Wheeler: American Pro Trucker.",
-   "wikiTitle": "The King of Route 66",
-   "url": "https://en.wikipedia.org/wiki/The_King_of_Route_66"
+   "text": "A vertical-scrolling racer by Rafael Cardoso and Rene van den Enden, first released in 2007 as Videopac 66. The pair kept working on it and added high-resolution backgrounds for Plus machines; the later Route 66+ also supports The Voice. Four levels - day, night, desert and snow - with seven black cars to destroy in each, and a hundred cartridges were made.",
+   "source": "Classic Consoles Center",
+   "url": "http://www.classic-consoles-center.at/videopac/route-66-introduction"
   },
   "video": {
    "id": "GY389TGiyNw",
@@ -158,7 +171,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "c98XV6roIBU",
-   "title": "Atlantis for the Magnavox Odyssey\u00b2/Philips Videopac"
+   "title": "Atlantis for the Magnavox Odyssey²/Philips Videopac"
   }
  },
  "im_demon-attack": {
@@ -194,7 +207,7 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "video": {
    "id": "tH1_fTFI5KA",
-   "title": "Billard Am\u00e9ricain (Fra) - Odyssey 2 [MESS] [shortplay]"
+   "title": "Billard Américain (Fra) - Odyssey 2 [MESS] [shortplay]"
   }
  },
  "jo_chez-maxime": {
@@ -235,7 +248,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "7c4KGPJKnaI",
-   "title": "Odyssey\u00b2  Videopac+ : Exojet+ / Preview \\"
+   "title": "Odyssey²  Videopac+ : Exojet+ / Preview \\"
   }
  },
  "jo_flipper_pl": {
@@ -334,7 +347,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "Z7Cb7ubFV-E",
-   "title": "Las Vegas Blackjack for the Magnavox Odyssey\u00b2 / Philips Videopac"
+   "title": "Las Vegas Blackjack for the Magnavox Odyssey² / Philips Videopac"
   }
  },
  "mod_06pl": {
@@ -362,7 +375,7 @@ window.GAMEPAGES_DATA = {
    "source": "Cosmic Conflict (EUR)(Philips Videopac)(1980)"
   },
   "history": {
-   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
+   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
    "wikiTitle": "Cosmic Conflict",
    "url": "https://en.wikipedia.org/wiki/Cosmic_Conflict"
   },
@@ -373,11 +386,6 @@ window.GAMEPAGES_DATA = {
  },
  "mod_14fix": {
   "input": "joystick",
-  "history": {
-   "text": "Gunfighter II: Revenge of Jesse James is a light gun shooter video game developed by Rebellion Developments and published by Ubi Soft for the PlayStation 2. It is the sequel to the 2001 game Gunfighter: The Legend of Jesse James. It is compatible with the GunCon 2 controller. The game's plot is set in the American Old West. The game's protagonist is Jesse James, an American outlaw who lived in the 19th century.",
-   "wikiTitle": "Gunfighter II: Revenge of Jesse James",
-   "url": "https://en.wikipedia.org/wiki/Gunfighter_II%3A_Revenge_of_Jesse_James"
-  },
   "video": {
    "id": "mTd_F2J2qPU",
    "title": "Gunfighter on Videopac G7000 (Rob's Retro Rambles)"
@@ -408,7 +416,7 @@ window.GAMEPAGES_DATA = {
    "source": "Stone Sling (1980)(Philips)(en-de)"
   },
   "history": {
-   "text": "Videopac 20 - Stone Sling is 1981 artillery video game released in Europe by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey\u00b2. In North America it was reworked by Robert Cheezem and published under the title Smithereens! in 1982. In the game, two players face off with catapults and attempt to knock each other's tower down. In North America, the game featured compatibility with \"The Voice of Odyssey\u00b2\" expansion module. It was also later released for the Philips Videopac+ G7400.",
+   "text": "Videopac 20 - Stone Sling is 1981 artillery video game released in Europe by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey². In North America it was reworked by Robert Cheezem and published under the title Smithereens! in 1982. In the game, two players face off with catapults and attempt to knock each other's tower down. In North America, the game featured compatibility with \"The Voice of Odyssey²\" expansion module. It was also later released for the Philips Videopac+ G7400.",
    "wikiTitle": "Stone Sling",
    "url": "https://en.wikipedia.org/wiki/Stone_Sling"
   },
@@ -451,11 +459,6 @@ window.GAMEPAGES_DATA = {
  },
  "mod_31_g7400": {
   "input": "keyboard",
-  "history": {
-   "text": "\n\nThe following is a list of computer and video game musicians, those who have worked in the video game industry to produce video game soundtracks or otherwise contribute musically. A broader list of major figures in the video game industry is also available.",
-   "wikiTitle": "List of video game musicians",
-   "url": "https://en.wikipedia.org/wiki/List_of_video_game_musicians"
-  },
   "video": {
    "id": "uhGxRzkkUJw",
    "title": "Musician for the Philips Videopac"
@@ -489,7 +492,7 @@ window.GAMEPAGES_DATA = {
   "input": "mixed",
   "video": {
    "id": "upoIpYcwjaE",
-   "title": "Odyssey 2 - 4 in 1 Row \u00a9 1982 Philips - Gameplay"
+   "title": "Odyssey 2 - 4 in 1 Row © 1982 Philips - Gameplay"
   }
  },
  "mod_43pl": {
@@ -500,13 +503,13 @@ window.GAMEPAGES_DATA = {
    "source": "Pickaxe Pete (EUR)(Philips Videopac)(1982)"
   },
   "history": {
-   "text": "Pick Axe Pete!, known in Europe as Videopac 43 - Pickaxe Pete, is a 1982 platform video game released for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was created by American programmer Ed Averett and his wife Linda and published by Philips. The player takes the role of the miner Pick Axe Pete who searching the Misty Mountain Mine for gold. A national high score competition was held at the 1982 World's Fair. In Brazil, it was titled Didi na Mina Encantada based on the character Didi from the TV series Os Trapalh\u00f5es.",
+   "text": "Pick Axe Pete!, known in Europe as Videopac 43 - Pickaxe Pete, is a 1982 platform video game released for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was created by American programmer Ed Averett and his wife Linda and published by Philips. The player takes the role of the miner Pick Axe Pete who searching the Misty Mountain Mine for gold. A national high score competition was held at the 1982 World's Fair. In Brazil, it was titled Didi na Mina Encantada based on the character Didi from the TV series Os Trapalhões.",
    "wikiTitle": "Pick Axe Pete!",
    "url": "https://en.wikipedia.org/wiki/Pick_Axe_Pete!"
   },
   "video": {
    "id": "xkIVZhTgZ48",
-   "title": "Pick Axe Pete! for the Odyssey\u00b2 | BIG Claims from a SO-SO Platformer?"
+   "title": "Pick Axe Pete! for the Odyssey² | BIG Claims from a SO-SO Platformer?"
   }
  },
  "mod_55pl": {
@@ -558,7 +561,7 @@ window.GAMEPAGES_DATA = {
    "source": "Type & Tell game manual Odyssey 2 (1982)"
   },
   "history": {
-   "text": "Type and Tell! is a speech synthesis program released in 1982 for the Magnavox Odyssey\u00b2. It was designed by Robert Cheezum for North American Philips and released exclusively in North America as a launch title for the Odyssey\u00b2's voice synthesis module, \"The Voice of Odyssey\u00b2\". Users can enter a short phrase which the voice module will attempt to read. Critics thought it was too simple to hold anyone's attention for long but were entertained by getting the voice module to say a wide variety of things. The Voice plugged into the cartridge slot with the game plugged into it in turn; the O2EM core used here does not emulate it, so the cart runs but stays silent.",
+   "text": "Type and Tell! is a speech synthesis program released in 1982 for the Magnavox Odyssey². It was designed by Robert Cheezum for North American Philips and released exclusively in North America as a launch title for the Odyssey²'s voice synthesis module, \"The Voice of Odyssey²\". Users can enter a short phrase which the voice module will attempt to read. Critics thought it was too simple to hold anyone's attention for long but were entertained by getting the voice module to say a wide variety of things. The Voice plugged into the cartridge slot with the game plugged into it in turn; the O2EM core used here does not emulate it, so the cart runs but stays silent.",
    "wikiTitle": "Type & Tell!",
    "url": "https://en.wikipedia.org/wiki/Type_%26_Tell!"
   },
@@ -585,11 +588,6 @@ window.GAMEPAGES_DATA = {
    "item": "Backgammon_1982_Philips_EU",
    "pages": 18,
    "source": "Backgammon (1982)(Philips)(EU)"
-  },
-  "history": {
-   "text": "Backgammon is a video game adaptation of the board-game backgammon, developed by Atari, Inc. for the Atari Video Computer System and released in 1979. The game was one of the earliest electronic versions of Backgammon.",
-   "wikiTitle": "Backgammon (1979 video game)",
-   "url": "https://en.wikipedia.org/wiki/Backgammon_(1979_video_game)"
   }
  },
  "o2_30": {
@@ -600,7 +598,7 @@ window.GAMEPAGES_DATA = {
    "source": "UFO game manual Odyssey 2 (1981)"
   },
   "history": {
-   "text": "UFO!, released in Europe as Videopac 34 - Satellite Attack, is a 1981 multidirectional shooter video game created by Ed Averett for the Magnavox Odyssey\u00b2 otherwise known as the Philips Videopac G7000. Players take control of a flying saucer tasked with destroying swarms of enemy unidentified flying objects in outer space. It was published by Magnavox in North America and Philips in Europe and Brazil. It was also later released for the Philips Videopac+ G7400 in 1983. The game is frequently compared to Atari's 1979 video game Asteroids.",
+   "text": "UFO!, released in Europe as Videopac 34 - Satellite Attack, is a 1981 multidirectional shooter video game created by Ed Averett for the Magnavox Odyssey² otherwise known as the Philips Videopac G7000. Players take control of a flying saucer tasked with destroying swarms of enemy unidentified flying objects in outer space. It was published by Magnavox in North America and Philips in Europe and Brazil. It was also later released for the Philips Videopac+ G7400 in 1983. The game is frequently compared to Atari's 1979 video game Asteroids.",
    "wikiTitle": "UFO!",
    "url": "https://en.wikipedia.org/wiki/UFO!"
   },
@@ -641,7 +639,7 @@ window.GAMEPAGES_DATA = {
    "source": "Computer Golf! (US)(Odyssey 2)(1978)"
   },
   "history": {
-   "text": "Computer Golf!, released in Europe as Videopac 10 - Golf, is a 1979 golf simulation video game. The game was released by Magnavox and Philips for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. The game features a nine-hole course golf course where players control the angle of their golf strokes by moving a player character around the map and control the power of their strokes by holding down the action button. The game was heavily praised at the time of its release for its graphical flourishes and is considered one of the best sports titles in the Odyssey\u00b2's library.",
+   "text": "Computer Golf!, released in Europe as Videopac 10 - Golf, is a 1979 golf simulation video game. The game was released by Magnavox and Philips for the Magnavox Odyssey², also known as the Philips Videopac G7000. The game features a nine-hole course golf course where players control the angle of their golf strokes by moving a player character around the map and control the power of their strokes by holding down the action button. The game was heavily praised at the time of its release for its graphical flourishes and is considered one of the best sports titles in the Odyssey²'s library.",
    "wikiTitle": "Computer Golf!",
    "url": "https://en.wikipedia.org/wiki/Computer_Golf!"
   },
@@ -670,7 +668,7 @@ window.GAMEPAGES_DATA = {
    "source": "Cosmic Conflict (US)(Odyssey 2)(1978)"
   },
   "history": {
-   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
+   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
    "wikiTitle": "Cosmic Conflict",
    "url": "https://en.wikipedia.org/wiki/Cosmic_Conflict"
   },
@@ -682,7 +680,7 @@ window.GAMEPAGES_DATA = {
  "o2_16": {
   "input": "joystick",
   "history": {
-   "text": "Showdown in 2100 A.D., known in Europe as Videopac 14 - Gunfighter is a 1979 multidirectional shooter video game created by Ed Averett and published by Magnavox and Philips for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. The game is set in a futuristic version of the old west. Two gunfighters face one another across a field filled with trees, similar to Midway's Gun Fight.",
+   "text": "Showdown in 2100 A.D., known in Europe as Videopac 14 - Gunfighter is a 1979 multidirectional shooter video game created by Ed Averett and published by Magnavox and Philips for the Magnavox Odyssey², also known as the Philips Videopac G7000. The game is set in a futuristic version of the old west. Two gunfighters face one another across a field filled with trees, similar to Midway's Gun Fight.",
    "wikiTitle": "Showdown in 2100 A.D.",
    "url": "https://en.wikipedia.org/wiki/Showdown_in_2100_A.D."
   },
@@ -699,7 +697,7 @@ window.GAMEPAGES_DATA = {
    "source": "Nimble Numbers Ned (US)(Odyssey 2)(1982)"
   },
   "history": {
-   "text": "Nimble Numbers Ned!, also known as Nimble Numbers N.E.D., is an 1982 educational video game with platforming elements released by North American Philips for the Magnavox Odyssey\u00b2. It was developed by Bob Harris and released exclusively in North America as a launch title for the Odyssey\u00b2's voice synthesis module, \"The Voice\". Players guide the player character Ned over a series of numbered stones while avoiding barrels and answering math and geometry questions. It was designed in collaboration with the University of Tennessee, Knoxville for children grades 1-9. Contemporary reviews found it to be a good educational tool but were mixed on the quality of game itself.",
+   "text": "Nimble Numbers Ned!, also known as Nimble Numbers N.E.D., is an 1982 educational video game with platforming elements released by North American Philips for the Magnavox Odyssey². It was developed by Bob Harris and released exclusively in North America as a launch title for the Odyssey²'s voice synthesis module, \"The Voice\". Players guide the player character Ned over a series of numbered stones while avoiding barrels and answering math and geometry questions. It was designed in collaboration with the University of Tennessee, Knoxville for children grades 1-9. Contemporary reviews found it to be a good educational tool but were mixed on the quality of game itself.",
    "wikiTitle": "Nimble Numbers Ned!",
    "url": "https://en.wikipedia.org/wiki/Nimble_Numbers_Ned!"
   },
@@ -727,11 +725,6 @@ window.GAMEPAGES_DATA = {
    "pages": 8,
    "source": "Matchmaker! Buzzword! Logix! (US)(Odyssey 2)(1978)"
   },
-  "history": {
-   "text": "Kitty Powers' Matchmaker is a 2014 simulation video game that was developed by Magic Notion and published through Mastertronic Group. It is available on Windows, OS X, Android, PlayStation 4 and iOS. The mobile version of the game was released on September 3, 2014 and a desktop edition was launched on April 22, 2015 on Steam. The game's premise has the player serving as an employee to drag queen and matchmaker Kitty Powers.",
-   "wikiTitle": "Kitty Powers' Matchmaker",
-   "url": "https://en.wikipedia.org/wiki/Kitty_Powers'_Matchmaker"
-  },
   "video": {
    "id": "VqQYYJB3Avs",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Matchmaker! Logix! Buzzword! Space Rendezvous (1978) Longplay"
@@ -745,7 +738,7 @@ window.GAMEPAGES_DATA = {
    "source": "Attack Of The Timelord! (US)(Odyssey 2)(1982)"
   },
   "history": {
-   "text": "Attack of the Timelord!, also known as Terrahawks, is a 1982 fixed shooter video game by Ed and Linda Averett for the Magnavox Odyssey\u00b2, known in Europe as the Philips Videopac G7000. The player takes the role of a time machine defending against the titular Timelord, Spyrus the Deathless. It was published by Philips who also released it for the Philips Videopac+ G7400. It is compatibile with \"The Voice\" expansion module for the Odyssey\u00b2. In Europe, it was released as Terrahawks, based off the Terrahawks television series.",
+   "text": "Attack of the Timelord!, also known as Terrahawks, is a 1982 fixed shooter video game by Ed and Linda Averett for the Magnavox Odyssey², known in Europe as the Philips Videopac G7000. The player takes the role of a time machine defending against the titular Timelord, Spyrus the Deathless. It was published by Philips who also released it for the Philips Videopac+ G7400. It is compatibile with \"The Voice\" expansion module for the Odyssey². In Europe, it was released as Terrahawks, based off the Terrahawks television series.",
    "wikiTitle": "Attack of the Timelord!",
    "url": "https://en.wikipedia.org/wiki/Attack_of_the_Timelord!"
   },
@@ -786,7 +779,7 @@ window.GAMEPAGES_DATA = {
    "source": "K. C. Munchkin! (US)(Odyssey 2)(1981)"
   },
   "history": {
-   "text": "K.C. Munchkin!, released in Europe as Videopac 38 - Munchkin, is a 1981 maze game created by Ed Averett for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. Players control a blue alien named K.C. who navigates a maze while eating pellets and avoiding enemy aliens. It was published by North American Philips (N.A.P.), who were sued by Atari over the game's resemblance to the arcade game Pac-Man. The ensuing court case, which was a landmark ruling in video game copyright law, found K.C. Munchkin! to be too close in \"look and feel\" to the arcade game causing it to be pulled from the market. At that point, it was the best selling game yet released for the Odyssey\u00b2.",
+   "text": "K.C. Munchkin!, released in Europe as Videopac 38 - Munchkin, is a 1981 maze game created by Ed Averett for the Magnavox Odyssey², also known as the Philips Videopac G7000. Players control a blue alien named K.C. who navigates a maze while eating pellets and avoiding enemy aliens. It was published by North American Philips (N.A.P.), who were sued by Atari over the game's resemblance to the arcade game Pac-Man. The ensuing court case, which was a landmark ruling in video game copyright law, found K.C. Munchkin! to be too close in \"look and feel\" to the arcade game causing it to be pulled from the market. At that point, it was the best selling game yet released for the Odyssey².",
    "wikiTitle": "K.C. Munchkin!",
    "url": "https://en.wikipedia.org/wiki/K.C._Munchkin!"
   },
@@ -803,7 +796,7 @@ window.GAMEPAGES_DATA = {
    "source": "Dynasty! game manual Odyssey 2 (1979)"
   },
   "history": {
-   "text": "Dynasty!, known in Europe as Videopac 15 - Samurai, is a 1979 video game published by Magnavox and Philips for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It is a computer version of the board game reversi, a variant of Othello.",
+   "text": "Dynasty!, known in Europe as Videopac 15 - Samurai, is a 1979 video game published by Magnavox and Philips for the Magnavox Odyssey², also known as the Philips Videopac G7000. It is a computer version of the board game reversi, a variant of Othello.",
    "wikiTitle": "Dynasty!",
    "url": "https://en.wikipedia.org/wiki/Dynasty!"
   },
@@ -832,13 +825,13 @@ window.GAMEPAGES_DATA = {
    "source": "Turtles (EUR)(Philips Videopac)(1983)"
   },
   "history": {
-   "text": "Turtles is a video game developed by Konami and released in arcades in 1981 by Stern and Sega. The Sega version was published as Turpin (\u30bf\u30fc\u30d4\u30f3). Turtles is a maze game where the player is a turtle trying to bring baby turtles to their homes while avoiding beetles {In some port versions, cars}",
+   "text": "Turtles is a video game developed by Konami and released in arcades in 1981 by Stern and Sega. The Sega version was published as Turpin (ターピン). Turtles is a maze game where the player is a turtle trying to bring baby turtles to their homes while avoiding beetles {In some port versions, cars}",
    "wikiTitle": "Turtles (video game)",
    "url": "https://en.wikipedia.org/wiki/Turtles_(video_game)"
   },
   "video": {
    "id": "oAqux065vAU",
-   "title": "Tartarugas! para Odyssey da Philips  -  Turtles! for Magnavox Odyssey\u00b2 / Philips Videopac G7000"
+   "title": "Tartarugas! para Odyssey da Philips  -  Turtles! for Magnavox Odyssey² / Philips Videopac G7000"
   }
  },
  "o2_47": {
@@ -849,7 +842,7 @@ window.GAMEPAGES_DATA = {
    "source": "Killer Bees! game manual Odyssey 2 (1983)"
   },
   "history": {
-   "text": "Killer Bees! is a 1983 action video game written by Bob Harris for the Magnavox Odyssey\u00b2, known in Europe as the Philips Videopac G7000. Players take on the role of a swarm of bees who must sting five robots to death while avoiding swarms of enemy bees. It was developed by Magnavox and published by Philips who also released it for the Philips Videopac+ G7400. In North America, the game is compatible with \"The Voice of Odyssey\u00b2\", an expansion module that adds synthesized voice lines.",
+   "text": "Killer Bees! is a 1983 action video game written by Bob Harris for the Magnavox Odyssey², known in Europe as the Philips Videopac G7000. Players take on the role of a swarm of bees who must sting five robots to death while avoiding swarms of enemy bees. It was developed by Magnavox and published by Philips who also released it for the Philips Videopac+ G7400. In North America, the game is compatible with \"The Voice of Odyssey²\", an expansion module that adds synthesized voice lines.",
    "wikiTitle": "Killer Bees!",
    "url": "https://en.wikipedia.org/wiki/Killer_Bees!"
   },
@@ -866,13 +859,13 @@ window.GAMEPAGES_DATA = {
    "source": "Turtles (EUR)(Philips Videopac)(1983)"
   },
   "history": {
-   "text": "Turtles is a video game developed by Konami and released in arcades in 1981 by Stern and Sega. The Sega version was published as Turpin (\u30bf\u30fc\u30d4\u30f3). Turtles is a maze game where the player is a turtle trying to bring baby turtles to their homes while avoiding beetles {In some port versions, cars}",
+   "text": "Turtles is a video game developed by Konami and released in arcades in 1981 by Stern and Sega. The Sega version was published as Turpin (ターピン). Turtles is a maze game where the player is a turtle trying to bring baby turtles to their homes while avoiding beetles {In some port versions, cars}",
    "wikiTitle": "Turtles (video game)",
    "url": "https://en.wikipedia.org/wiki/Turtles_(video_game)"
   },
   "video": {
    "id": "oAqux065vAU",
-   "title": "Tartarugas! para Odyssey da Philips  -  Turtles! for Magnavox Odyssey\u00b2 / Philips Videopac G7000"
+   "title": "Tartarugas! para Odyssey da Philips  -  Turtles! for Magnavox Odyssey² / Philips Videopac G7000"
   }
  },
  "vp_40": {
@@ -884,7 +877,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "upoIpYcwjaE",
-   "title": "Odyssey 2 - 4 in 1 Row \u00a9 1982 Philips - Gameplay"
+   "title": "Odyssey 2 - 4 in 1 Row © 1982 Philips - Gameplay"
   }
  },
  "vp_58_12": {
@@ -907,8 +900,8 @@ window.GAMEPAGES_DATA = {
    "source": "Air-Sea War / Battle (1978)(Philips)(EU)"
   },
   "history": {
-   "text": "Air-Sea War and Battle are two games that were released together as the fourth cartridge in the official Philips line of games for the Videopac. In North America, the same game was released as Armored Encounter! / Subchase! for the Magnavox Odyssey\u00b2.",
-   "wikiTitle": "Air-Sea War \u2013 Battle",
+   "text": "Air-Sea War and Battle are two games that were released together as the fourth cartridge in the official Philips line of games for the Videopac. In North America, the same game was released as Armored Encounter! / Subchase! for the Magnavox Odyssey².",
+   "wikiTitle": "Air-Sea War – Battle",
    "url": "https://en.wikipedia.org/wiki/Air-Sea_War_%E2%80%93_Battle"
   },
   "video": {
@@ -954,7 +947,7 @@ window.GAMEPAGES_DATA = {
    "source": "Baseball (1978)(Philips)(en-de)"
   },
   "history": {
-   "text": "Baseball!, known in Europe as Videopac 8 - Baseball, is a 1978 baseball video game published by Magnavox and Philips for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was a launch title for the system in North America. Contemporary critics considered it one of the better sports titles of its era and agreed it was better than Home Run for the Atari 2600 but not better than Major League Baseball for the Intellivision.",
+   "text": "Baseball!, known in Europe as Videopac 8 - Baseball, is a 1978 baseball video game published by Magnavox and Philips for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was a launch title for the system in North America. Contemporary critics considered it one of the better sports titles of its era and agreed it was better than Home Run for the Atari 2600 but not better than Major League Baseball for the Intellivision.",
    "wikiTitle": "Baseball!",
    "url": "https://en.wikipedia.org/wiki/Baseball!"
   },
@@ -1002,7 +995,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "Z7Cb7ubFV-E",
-   "title": "Las Vegas Blackjack for the Magnavox Odyssey\u00b2 / Philips Videopac"
+   "title": "Las Vegas Blackjack for the Magnavox Odyssey² / Philips Videopac"
   }
  },
  "vp_57": {
@@ -1043,7 +1036,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "DAVAEVmm9ao",
-   "title": "Odyssey 2 - Chinese Logic \u00a9 1980 Philips - Gameplay"
+   "title": "Odyssey 2 - Chinese Logic © 1980 Philips - Gameplay"
   }
  },
  "vp_09": {
@@ -1062,7 +1055,7 @@ window.GAMEPAGES_DATA = {
   "input": "mixed",
   "video": {
    "id": "w4kHeH_7mBQ",
-   "title": "Conquest of the World for the Magnavox Odyssey\u00b2/Philips Videopac"
+   "title": "Conquest of the World for the Magnavox Odyssey²/Philips Videopac"
   }
  },
  "vp_11": {
@@ -1073,7 +1066,7 @@ window.GAMEPAGES_DATA = {
    "source": "Cosmic Conflict (EUR)(Philips Videopac)(1980)"
   },
   "history": {
-   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
+   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
    "wikiTitle": "Cosmic Conflict",
    "url": "https://en.wikipedia.org/wiki/Cosmic_Conflict"
   },
@@ -1090,7 +1083,7 @@ window.GAMEPAGES_DATA = {
    "source": "Cosmic Conflict (EUR)(Philips Videopac)(1980)"
   },
   "history": {
-   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
+   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
    "wikiTitle": "Cosmic Conflict",
    "url": "https://en.wikipedia.org/wiki/Cosmic_Conflict"
   },
@@ -1107,7 +1100,7 @@ window.GAMEPAGES_DATA = {
    "source": "Cosmic Conflict (EUR)(Philips Videopac)(1980)"
   },
   "history": {
-   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
+   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
    "wikiTitle": "Cosmic Conflict",
    "url": "https://en.wikipedia.org/wiki/Cosmic_Conflict"
   },
@@ -1254,7 +1247,7 @@ window.GAMEPAGES_DATA = {
    "source": "Freedom Fighters (1982)(Philips)(EU)"
   },
   "history": {
-   "text": "Freedom Fighters!, released in Europe as Videopac 39 - Freedom Fighters, is a 1982 horizontally scrolling shooter video game written by Ed Averett for the Magnavox Odyssey\u00b2 also known as the Philips Videopac G7000. Two players must defeat waves of enemies while cooperatively controlling a single space ship. One player controls the ship's position on screen while the other controls the ship's scrolling and speed. It was also released for the Philips Videopac+ G7400. The game was praised at the time of its release for being fast paced and fun, but the game's unique control scheme has been a focal point for criticism. It is also frequently compared to Defender.",
+   "text": "Freedom Fighters!, released in Europe as Videopac 39 - Freedom Fighters, is a 1982 horizontally scrolling shooter video game written by Ed Averett for the Magnavox Odyssey² also known as the Philips Videopac G7000. Two players must defeat waves of enemies while cooperatively controlling a single space ship. One player controls the ship's position on screen while the other controls the ship's scrolling and speed. It was also released for the Philips Videopac+ G7400. The game was praised at the time of its release for being fast paced and fun, but the game's unique control scheme has been a focal point for criticism. It is also frequently compared to Defender.",
    "wikiTitle": "Freedom Fighters!",
    "url": "https://en.wikipedia.org/wiki/Freedom_Fighters!"
   },
@@ -1271,7 +1264,7 @@ window.GAMEPAGES_DATA = {
    "source": "Freedom Fighters (1982)(Philips)(EU)"
   },
   "history": {
-   "text": "Freedom Fighters!, released in Europe as Videopac 39 - Freedom Fighters, is a 1982 horizontally scrolling shooter video game written by Ed Averett for the Magnavox Odyssey\u00b2 also known as the Philips Videopac G7000. Two players must defeat waves of enemies while cooperatively controlling a single space ship. One player controls the ship's position on screen while the other controls the ship's scrolling and speed. It was also released for the Philips Videopac+ G7400. The game was praised at the time of its release for being fast paced and fun, but the game's unique control scheme has been a focal point for criticism. It is also frequently compared to Defender.",
+   "text": "Freedom Fighters!, released in Europe as Videopac 39 - Freedom Fighters, is a 1982 horizontally scrolling shooter video game written by Ed Averett for the Magnavox Odyssey² also known as the Philips Videopac G7000. Two players must defeat waves of enemies while cooperatively controlling a single space ship. One player controls the ship's position on screen while the other controls the ship's scrolling and speed. It was also released for the Philips Videopac+ G7400. The game was praised at the time of its release for being fast paced and fun, but the game's unique control scheme has been a focal point for criticism. It is also frequently compared to Defender.",
    "wikiTitle": "Freedom Fighters!",
    "url": "https://en.wikipedia.org/wiki/Freedom_Fighters!"
   },
@@ -1288,7 +1281,7 @@ window.GAMEPAGES_DATA = {
    "source": "Golf (EUR)(Philips Videopac)(1980)"
   },
   "history": {
-   "text": "Computer Golf!, released in Europe as Videopac 10 - Golf, is a 1979 golf simulation video game. The game was released by Magnavox and Philips for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. The game features a nine-hole course golf course where players control the angle of their golf strokes by moving a player character around the map and control the power of their strokes by holding down the action button. The game was heavily praised at the time of its release for its graphical flourishes and is considered one of the best sports titles in the Odyssey\u00b2's library.",
+   "text": "Computer Golf!, released in Europe as Videopac 10 - Golf, is a 1979 golf simulation video game. The game was released by Magnavox and Philips for the Magnavox Odyssey², also known as the Philips Videopac G7000. The game features a nine-hole course golf course where players control the angle of their golf strokes by moving a player character around the map and control the power of their strokes by holding down the action button. The game was heavily praised at the time of its release for its graphical flourishes and is considered one of the best sports titles in the Odyssey²'s library.",
    "wikiTitle": "Computer Golf!",
    "url": "https://en.wikipedia.org/wiki/Computer_Golf!"
   }
@@ -1347,7 +1340,7 @@ window.GAMEPAGES_DATA = {
    "source": "Jumping Acrobats (EUR)(Philips Videopac)(1981)"
   },
   "history": {
-   "text": "Videopac 33 - Jumping Acrobats, known in North America as P.T. Barnum's Acrobats!, is 1981 action video game by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey\u00b2. It is very similar to Exidy's arcade game Circus, itself a rethemed version of Atari's Breakout. In late 1982, it was rethemed around the entertainment properties of P.T. Barnum by the Odyssey Software Development Group for its North American release. This version also included compatibility with \"The Voice of Odyssey\u00b2\" expansion module.",
+   "text": "Videopac 33 - Jumping Acrobats, known in North America as P.T. Barnum's Acrobats!, is 1981 action video game by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey². It is very similar to Exidy's arcade game Circus, itself a rethemed version of Atari's Breakout. In late 1982, it was rethemed around the entertainment properties of P.T. Barnum by the Odyssey Software Development Group for its North American release. This version also included compatibility with \"The Voice of Odyssey²\" expansion module.",
    "wikiTitle": "Jumping Acrobats",
    "url": "https://en.wikipedia.org/wiki/Jumping_Acrobats"
   },
@@ -1364,7 +1357,7 @@ window.GAMEPAGES_DATA = {
    "source": "Jumping Acrobats (EUR)(Philips Videopac)(1981)"
   },
   "history": {
-   "text": "Videopac 33 - Jumping Acrobats, known in North America as P.T. Barnum's Acrobats!, is 1981 action video game by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey\u00b2. It is very similar to Exidy's arcade game Circus, itself a rethemed version of Atari's Breakout. In late 1982, it was rethemed around the entertainment properties of P.T. Barnum by the Odyssey Software Development Group for its North American release. This version also included compatibility with \"The Voice of Odyssey\u00b2\" expansion module.",
+   "text": "Videopac 33 - Jumping Acrobats, known in North America as P.T. Barnum's Acrobats!, is 1981 action video game by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey². It is very similar to Exidy's arcade game Circus, itself a rethemed version of Atari's Breakout. In late 1982, it was rethemed around the entertainment properties of P.T. Barnum by the Odyssey Software Development Group for its North American release. This version also included compatibility with \"The Voice of Odyssey²\" expansion module.",
    "wikiTitle": "Jumping Acrobats",
    "url": "https://en.wikipedia.org/wiki/Jumping_Acrobats"
   },
@@ -1393,7 +1386,7 @@ window.GAMEPAGES_DATA = {
    "source": "Killer Bees (EUR)(Philips Videopac)(1983)"
   },
   "history": {
-   "text": "Killer Bees! is a 1983 action video game written by Bob Harris for the Magnavox Odyssey\u00b2, known in Europe as the Philips Videopac G7000. Players take on the role of a swarm of bees who must sting five robots to death while avoiding swarms of enemy bees. It was developed by Magnavox and published by Philips who also released it for the Philips Videopac+ G7400. In North America, the game is compatible with \"The Voice of Odyssey\u00b2\", an expansion module that adds synthesized voice lines.",
+   "text": "Killer Bees! is a 1983 action video game written by Bob Harris for the Magnavox Odyssey², known in Europe as the Philips Videopac G7000. Players take on the role of a swarm of bees who must sting five robots to death while avoiding swarms of enemy bees. It was developed by Magnavox and published by Philips who also released it for the Philips Videopac+ G7400. In North America, the game is compatible with \"The Voice of Odyssey²\", an expansion module that adds synthesized voice lines.",
    "wikiTitle": "Killer Bees!",
    "url": "https://en.wikipedia.org/wiki/Killer_Bees!"
   },
@@ -1411,7 +1404,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "Xz8XElZySqY",
-   "title": "Odyssey 2 - A Labyrinth Game \u00a9 1981 Philips - Gameplay"
+   "title": "Odyssey 2 - A Labyrinth Game © 1981 Philips - Gameplay"
   }
  },
  "vp_23": {
@@ -1435,7 +1428,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "DbAOS72ffdE",
-   "title": "Laser War (Videopac G7000/Odyssey\u00b2)[#18]"
+   "title": "Laser War (Videopac G7000/Odyssey²)[#18]"
   }
  },
  "vp_54": {
@@ -1478,7 +1471,7 @@ window.GAMEPAGES_DATA = {
    "source": "Monkeyshines (1982)(Philips)(EU)"
   },
   "history": {
-   "text": "Monkeyshines!, released in Europe as Videopac 37 - Monkeyshines, is a 1981 maze platform written by Ed Averett and published by Philips for the Magnavox Odyssey\u00b2 also known as the Philips Videopac G7000. It is a game for young children, in which two players compete or coordinate with each other to challenge four monkeys to a game of tag.",
+   "text": "Monkeyshines!, released in Europe as Videopac 37 - Monkeyshines, is a 1981 maze platform written by Ed Averett and published by Philips for the Magnavox Odyssey² also known as the Philips Videopac G7000. It is a game for young children, in which two players compete or coordinate with each other to challenge four monkeys to a game of tag.",
    "wikiTitle": "Monkeyshines!",
    "url": "https://en.wikipedia.org/wiki/Monkeyshines!"
   },
@@ -1503,7 +1496,7 @@ window.GAMEPAGES_DATA = {
    "source": "Munchkin (EUR)(Philips Videopac)(1982)"
   },
   "history": {
-   "text": "K.C. Munchkin!, released in Europe as Videopac 38 - Munchkin, is a 1981 maze game created by Ed Averett for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. Players control a blue alien named K.C. who navigates a maze while eating pellets and avoiding enemy aliens. It was published by North American Philips (N.A.P.), who were sued by Atari over the game's resemblance to the arcade game Pac-Man. The ensuing court case, which was a landmark ruling in video game copyright law, found K.C. Munchkin! to be too close in \"look and feel\" to the arcade game causing it to be pulled from the market. At that point, it was the best selling game yet released for the Odyssey\u00b2.",
+   "text": "K.C. Munchkin!, released in Europe as Videopac 38 - Munchkin, is a 1981 maze game created by Ed Averett for the Magnavox Odyssey², also known as the Philips Videopac G7000. Players control a blue alien named K.C. who navigates a maze while eating pellets and avoiding enemy aliens. It was published by North American Philips (N.A.P.), who were sued by Atari over the game's resemblance to the arcade game Pac-Man. The ensuing court case, which was a landmark ruling in video game copyright law, found K.C. Munchkin! to be too close in \"look and feel\" to the arcade game causing it to be pulled from the market. At that point, it was the best selling game yet released for the Odyssey².",
    "wikiTitle": "K.C. Munchkin!",
    "url": "https://en.wikipedia.org/wiki/K.C._Munchkin!"
   },
@@ -1631,13 +1624,13 @@ window.GAMEPAGES_DATA = {
    "source": "Pickaxe Pete (EUR)(Philips Videopac)(1982)"
   },
   "history": {
-   "text": "Pick Axe Pete!, known in Europe as Videopac 43 - Pickaxe Pete, is a 1982 platform video game released for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was created by American programmer Ed Averett and his wife Linda and published by Philips. The player takes the role of the miner Pick Axe Pete who searching the Misty Mountain Mine for gold. A national high score competition was held at the 1982 World's Fair. In Brazil, it was titled Didi na Mina Encantada based on the character Didi from the TV series Os Trapalh\u00f5es.",
+   "text": "Pick Axe Pete!, known in Europe as Videopac 43 - Pickaxe Pete, is a 1982 platform video game released for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was created by American programmer Ed Averett and his wife Linda and published by Philips. The player takes the role of the miner Pick Axe Pete who searching the Misty Mountain Mine for gold. A national high score competition was held at the 1982 World's Fair. In Brazil, it was titled Didi na Mina Encantada based on the character Didi from the TV series Os Trapalhões.",
    "wikiTitle": "Pick Axe Pete!",
    "url": "https://en.wikipedia.org/wiki/Pick_Axe_Pete!"
   },
   "video": {
    "id": "xkIVZhTgZ48",
-   "title": "Pick Axe Pete! for the Odyssey\u00b2 | BIG Claims from a SO-SO Platformer?"
+   "title": "Pick Axe Pete! for the Odyssey² | BIG Claims from a SO-SO Platformer?"
   }
  },
  "vp_43pl": {
@@ -1648,13 +1641,13 @@ window.GAMEPAGES_DATA = {
    "source": "Pickaxe Pete (EUR)(Philips Videopac)(1982)"
   },
   "history": {
-   "text": "Pick Axe Pete!, known in Europe as Videopac 43 - Pickaxe Pete, is a 1982 platform video game released for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was created by American programmer Ed Averett and his wife Linda and published by Philips. The player takes the role of the miner Pick Axe Pete who searching the Misty Mountain Mine for gold. A national high score competition was held at the 1982 World's Fair. In Brazil, it was titled Didi na Mina Encantada based on the character Didi from the TV series Os Trapalh\u00f5es.",
+   "text": "Pick Axe Pete!, known in Europe as Videopac 43 - Pickaxe Pete, is a 1982 platform video game released for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was created by American programmer Ed Averett and his wife Linda and published by Philips. The player takes the role of the miner Pick Axe Pete who searching the Misty Mountain Mine for gold. A national high score competition was held at the 1982 World's Fair. In Brazil, it was titled Didi na Mina Encantada based on the character Didi from the TV series Os Trapalhões.",
    "wikiTitle": "Pick Axe Pete!",
    "url": "https://en.wikipedia.org/wiki/Pick_Axe_Pete!"
   },
   "video": {
    "id": "xkIVZhTgZ48",
-   "title": "Pick Axe Pete! for the Odyssey\u00b2 | BIG Claims from a SO-SO Platformer?"
+   "title": "Pick Axe Pete! for the Odyssey² | BIG Claims from a SO-SO Platformer?"
   }
  },
  "vp_42": {
@@ -1665,7 +1658,7 @@ window.GAMEPAGES_DATA = {
    "source": "The Quest for the Rings manual (1981) (Odyssey 2)"
   },
   "history": {
-   "text": "Quest for the Rings is a fantasy themed board game/video game hybrid released in 1981 by Philips for the Magnavox Odyssey\u00b2 also known as the Philips Videopac G7000. It is the first game in the \"Master Strategy\" series, a trio of video game/board game hybrids programmed by Ed Averett and designed by Steve Lehner and Rob Bradford for the Odyssey\u00b2. In addition to the game cartridge, it was shipped with a physical game board and a number of tokens.",
+   "text": "Quest for the Rings is a fantasy themed board game/video game hybrid released in 1981 by Philips for the Magnavox Odyssey² also known as the Philips Videopac G7000. It is the first game in the \"Master Strategy\" series, a trio of video game/board game hybrids programmed by Ed Averett and designed by Steve Lehner and Rob Bradford for the Odyssey². In addition to the game cartridge, it was shipped with a physical game board and a number of tokens.",
    "wikiTitle": "Quest for the Rings",
    "url": "https://en.wikipedia.org/wiki/Quest_for_the_Rings"
   },
@@ -1823,7 +1816,7 @@ window.GAMEPAGES_DATA = {
    "source": "Stone Sling (1980)(Philips)(en-de)"
   },
   "history": {
-   "text": "Videopac 20 - Stone Sling is 1981 artillery video game released in Europe by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey\u00b2. In North America it was reworked by Robert Cheezem and published under the title Smithereens! in 1982. In the game, two players face off with catapults and attempt to knock each other's tower down. In North America, the game featured compatibility with \"The Voice of Odyssey\u00b2\" expansion module. It was also later released for the Philips Videopac+ G7400.",
+   "text": "Videopac 20 - Stone Sling is 1981 artillery video game released in Europe by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey². In North America it was reworked by Robert Cheezem and published under the title Smithereens! in 1982. In the game, two players face off with catapults and attempt to knock each other's tower down. In North America, the game featured compatibility with \"The Voice of Odyssey²\" expansion module. It was also later released for the Philips Videopac+ G7400.",
    "wikiTitle": "Stone Sling",
    "url": "https://en.wikipedia.org/wiki/Stone_Sling"
   },
@@ -1840,7 +1833,7 @@ window.GAMEPAGES_DATA = {
    "source": "Stone Sling (1980)(Philips)(en-de)"
   },
   "history": {
-   "text": "Videopac 20 - Stone Sling is 1981 artillery video game released in Europe by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey\u00b2. In North America it was reworked by Robert Cheezem and published under the title Smithereens! in 1982. In the game, two players face off with catapults and attempt to knock each other's tower down. In North America, the game featured compatibility with \"The Voice of Odyssey\u00b2\" expansion module. It was also later released for the Philips Videopac+ G7400.",
+   "text": "Videopac 20 - Stone Sling is 1981 artillery video game released in Europe by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey². In North America it was reworked by Robert Cheezem and published under the title Smithereens! in 1982. In the game, two players face off with catapults and attempt to knock each other's tower down. In North America, the game featured compatibility with \"The Voice of Odyssey²\" expansion module. It was also later released for the Philips Videopac+ G7400.",
    "wikiTitle": "Stone Sling",
    "url": "https://en.wikipedia.org/wiki/Stone_Sling"
   },
@@ -1904,7 +1897,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "KczthmZiqdQ",
-   "title": "Terrahawks (Videopac G7000/Odyssey\u00b2)[#51]"
+   "title": "Terrahawks (Videopac G7000/Odyssey²)[#51]"
   }
  },
  "vp_46": {
@@ -1947,7 +1940,7 @@ window.GAMEPAGES_DATA = {
   "input": "mixed",
   "video": {
    "id": "W3bq-6PGKb8",
-   "title": "Take the Money and Run! for the Magnavox Odyssey\u00b2 / Philips Videopac"
+   "title": "Take the Money and Run! for the Magnavox Odyssey² / Philips Videopac"
   }
  },
  "Vp40_F": {
@@ -1959,7 +1952,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "upoIpYcwjaE",
-   "title": "Odyssey 2 - 4 in 1 Row \u00a9 1982 Philips - Gameplay"
+   "title": "Odyssey 2 - 4 in 1 Row © 1982 Philips - Gameplay"
   }
  },
  "Vp05_F": {
@@ -1976,7 +1969,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "Z7Cb7ubFV-E",
-   "title": "Las Vegas Blackjack for the Magnavox Odyssey\u00b2 / Philips Videopac"
+   "title": "Las Vegas Blackjack for the Magnavox Odyssey² / Philips Videopac"
   }
  },
  "Vp11+_F": {
@@ -1987,7 +1980,7 @@ window.GAMEPAGES_DATA = {
    "source": "Cosmic Conflict (EUR)(Philips Videopac)(1980)"
   },
   "history": {
-   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
+   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
    "wikiTitle": "Cosmic Conflict",
    "url": "https://en.wikipedia.org/wiki/Cosmic_Conflict"
   },
@@ -2004,7 +1997,7 @@ window.GAMEPAGES_DATA = {
    "source": "Cosmic Conflict (EUR)(Philips Videopac)(1980)"
   },
   "history": {
-   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey\u00b2, also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
+   "text": "Cosmic Conflict!, known in Europe as Videopac 11 - Cosmic Conflict, is a 1978 first-person shoot 'em up video game created by Sam Overton for the Magnavox Odyssey², also known as the Philips Videopac G7000. It was published by Magnavox and Philips and later rereleased for the Philips Videopac+ G7400. The player is a commander of the Centurion, an Earth Federation starship that guards a remote corner of the galaxy and defends against an invading alien fleet trying to enslave the Earth. It is frequently criticized for being too easy and for ending after only fifteen enemies are destroyed.",
    "wikiTitle": "Cosmic Conflict",
    "url": "https://en.wikipedia.org/wiki/Cosmic_Conflict"
   },
@@ -2086,7 +2079,7 @@ window.GAMEPAGES_DATA = {
    "source": "Killer Bees (EUR)(Philips Videopac)(1983)"
   },
   "history": {
-   "text": "Killer Bees! is a 1983 action video game written by Bob Harris for the Magnavox Odyssey\u00b2, known in Europe as the Philips Videopac G7000. Players take on the role of a swarm of bees who must sting five robots to death while avoiding swarms of enemy bees. It was developed by Magnavox and published by Philips who also released it for the Philips Videopac+ G7400. In North America, the game is compatible with \"The Voice of Odyssey\u00b2\", an expansion module that adds synthesized voice lines.",
+   "text": "Killer Bees! is a 1983 action video game written by Bob Harris for the Magnavox Odyssey², known in Europe as the Philips Videopac G7000. Players take on the role of a swarm of bees who must sting five robots to death while avoiding swarms of enemy bees. It was developed by Magnavox and published by Philips who also released it for the Philips Videopac+ G7400. In North America, the game is compatible with \"The Voice of Odyssey²\", an expansion module that adds synthesized voice lines.",
    "wikiTitle": "Killer Bees!",
    "url": "https://en.wikipedia.org/wiki/Killer_Bees!"
   },
@@ -2116,7 +2109,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "DbAOS72ffdE",
-   "title": "Laser War (Videopac G7000/Odyssey\u00b2)[#18]"
+   "title": "Laser War (Videopac G7000/Odyssey²)[#18]"
   }
  },
  "Vp07_F": {
@@ -2143,7 +2136,7 @@ window.GAMEPAGES_DATA = {
    "source": "The Quest for the Rings manual (1981) (Odyssey 2)"
   },
   "history": {
-   "text": "Quest for the Rings is a fantasy themed board game/video game hybrid released in 1981 by Philips for the Magnavox Odyssey\u00b2 also known as the Philips Videopac G7000. It is the first game in the \"Master Strategy\" series, a trio of video game/board game hybrids programmed by Ed Averett and designed by Steve Lehner and Rob Bradford for the Odyssey\u00b2. In addition to the game cartridge, it was shipped with a physical game board and a number of tokens.",
+   "text": "Quest for the Rings is a fantasy themed board game/video game hybrid released in 1981 by Philips for the Magnavox Odyssey² also known as the Philips Videopac G7000. It is the first game in the \"Master Strategy\" series, a trio of video game/board game hybrids programmed by Ed Averett and designed by Steve Lehner and Rob Bradford for the Odyssey². In addition to the game cartridge, it was shipped with a physical game board and a number of tokens.",
    "wikiTitle": "Quest for the Rings",
    "url": "https://en.wikipedia.org/wiki/Quest_for_the_Rings"
   },
@@ -2254,7 +2247,7 @@ window.GAMEPAGES_DATA = {
    "source": "P. T. Barnum's Acrobats! (US)(Odyssey 2)(1982)"
   },
   "history": {
-   "text": "Videopac 33 - Jumping Acrobats, known in North America as P.T. Barnum's Acrobats!, is 1981 action video game by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey\u00b2. It is very similar to Exidy's arcade game Circus, itself a rethemed version of Atari's Breakout. In late 1982, it was rethemed around the entertainment properties of P.T. Barnum by the Odyssey Software Development Group for its North American release. This version also included compatibility with \"The Voice of Odyssey\u00b2\" expansion module.",
+   "text": "Videopac 33 - Jumping Acrobats, known in North America as P.T. Barnum's Acrobats!, is 1981 action video game by Philips N.V. for the Philips Videopac G7000, also known as the Magnavox Odyssey². It is very similar to Exidy's arcade game Circus, itself a rethemed version of Atari's Breakout. In late 1982, it was rethemed around the entertainment properties of P.T. Barnum by the Odyssey Software Development Group for its North American release. This version also included compatibility with \"The Voice of Odyssey²\" expansion module.",
    "wikiTitle": "Jumping Acrobats",
    "url": "https://en.wikipedia.org/wiki/Jumping_Acrobats"
   },
@@ -2271,7 +2264,7 @@ window.GAMEPAGES_DATA = {
    "source": "Nimble Numbers Ned (US)(Odyssey 2)(1982)"
   },
   "history": {
-   "text": "Nimble Numbers Ned!, also known as Nimble Numbers N.E.D., is an 1982 educational video game with platforming elements released by North American Philips for the Magnavox Odyssey\u00b2. It was developed by Bob Harris and released exclusively in North America as a launch title for the Odyssey\u00b2's voice synthesis module, \"The Voice\". Players guide the player character Ned over a series of numbered stones while avoiding barrels and answering math and geometry questions. It was designed in collaboration with the University of Tennessee, Knoxville for children grades 1-9. Contemporary reviews found it to be a good educational tool but were mixed on the quality of game itself.",
+   "text": "Nimble Numbers Ned!, also known as Nimble Numbers N.E.D., is an 1982 educational video game with platforming elements released by North American Philips for the Magnavox Odyssey². It was developed by Bob Harris and released exclusively in North America as a launch title for the Odyssey²'s voice synthesis module, \"The Voice\". Players guide the player character Ned over a series of numbered stones while avoiding barrels and answering math and geometry questions. It was designed in collaboration with the University of Tennessee, Knoxville for children grades 1-9. Contemporary reviews found it to be a good educational tool but were mixed on the quality of game itself.",
    "wikiTitle": "Nimble Numbers Ned!",
    "url": "https://en.wikipedia.org/wiki/Nimble_Numbers_Ned!"
   },
@@ -2288,13 +2281,13 @@ window.GAMEPAGES_DATA = {
    "source": "Type & Tell game manual Odyssey 2 (1982)"
   },
   "history": {
-   "text": "Type and Tell! is a speech synthesis program released in 1982 for the Magnavox Odyssey\u00b2. It was designed by Robert Cheezum for North American Philips and released exclusively in North America as a launch title for the Odyssey\u00b2's voice synthesis module, \"The Voice of Odyssey\u00b2\". Users can enter a short phrase which the voice module will attempt to read. Critics thought it was too simple to hold anyone's attention for long but were entertained by getting the voice module to say a wide variety of things. The Voice plugged into the cartridge slot with the game plugged into it in turn; the O2EM core used here does not emulate it, so the cart runs but stays silent.",
+   "text": "Type and Tell! is a speech synthesis program released in 1982 for the Magnavox Odyssey². It was designed by Robert Cheezum for North American Philips and released exclusively in North America as a launch title for the Odyssey²'s voice synthesis module, \"The Voice of Odyssey²\". Users can enter a short phrase which the voice module will attempt to read. Critics thought it was too simple to hold anyone's attention for long but were entertained by getting the voice module to say a wide variety of things. The Voice plugged into the cartridge slot with the game plugged into it in turn; the O2EM core used here does not emulate it, so the cart runs but stays silent.",
    "wikiTitle": "Type & Tell!",
    "url": "https://en.wikipedia.org/wiki/Type_%26_Tell!"
   },
   "video": {
    "id": "sUDD8bdO0Yo",
-   "title": "Type & Tell for the Magnavox Odyssey\u00b2"
+   "title": "Type & Tell for the Magnavox Odyssey²"
   }
  },
  "pb_frogger": {
@@ -2364,7 +2357,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "N4LtnZ1sdJ8",
-   "title": "Clay Pigeon! for the Magnavox Odyssey\u00b2/Philips Videopac"
+   "title": "Clay Pigeon! for the Magnavox Odyssey²/Philips Videopac"
   }
  },
  "pr_clay-pigeon_pl_alt": {
@@ -2376,7 +2369,7 @@ window.GAMEPAGES_DATA = {
   },
   "video": {
    "id": "N4LtnZ1sdJ8",
-   "title": "Clay Pigeon! for the Magnavox Odyssey\u00b2/Philips Videopac"
+   "title": "Clay Pigeon! for the Magnavox Odyssey²/Philips Videopac"
   }
  },
  "pr_interpol": {
@@ -2512,8 +2505,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "The sensitivity of different types of investments to this news is graphically demonstrated on an entirely new type of game board. This will give players the necessary information to make buying and selling decisions through the alphanumeric keyboard.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9434",
@@ -2525,8 +2518,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "Seven submerged submarines must be destroyed with the help of a cannon and a sight. The submarines are destroyed in parts and you have a load of 99 shots. Great skill is needed to not waste your ammunition.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9461",
@@ -2538,8 +2531,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "A true electronic puzzle, where the player fights against the clock to reorder the numbers with the minimum number of transfers possible. The numbers, which are at point \"A\" in descending order, must be transferred to point \"B\" in ascending order.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9462",
@@ -2551,8 +2544,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "Here you can't pay too much attention: each ball passes through the maze and falls at any point, and must be caught by the juggler's hat. In 3 minutes, he must collect as many balls as possible!",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9463",
@@ -2564,8 +2557,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "Telegrapher is a simple, enjoyable, and step-by-step game for you to learn while playing something very serious. It's Morse Code, a universal communication system through which you can communicate.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9468",
@@ -2577,8 +2570,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "In this exciting chase, the agile Mouse also has his weapons. To defend himself from Mr. Cat's threats, he must eat all the pieces of cheese that appear in his path.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9469",
@@ -2590,8 +2583,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "Flying through a tangle of plants, the cheerful little bee follows her daily path in search of precious fruits that will feed her. During this super flight, you will have the mission of helping her.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9472",
@@ -2603,8 +2596,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "The great challenge of this space mission is to unravel the mystery of the Black Hole. Large meteorites appear at every moment and must be destroyed or led into the gravitational field of the Black Hole.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9473",
@@ -2616,8 +2609,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "Grab the gun and take good aim at the plates. Otherwise, they will fall on your head, leaving you stunned. But the worst is yet to come, and it's good to have plenty of ammunition.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9474",
@@ -2629,8 +2622,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "You are commanding your airplane at night and your mission is to destroy enemy bases. A game where the suspense is ever-growing and you need to defend yourself from the terrible obstacles that appear.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9475",
@@ -2642,8 +2635,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "All cheerful, the child enters the amusement park carrying her mischievous balloon. Between playing on the carousel, the slide, or the rocking horse - which score points - she has to take her balloon along.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9476",
@@ -2655,8 +2648,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "Your airplane will run along the bumpy runway. You must keep it on track until you reach the ideal speed to take off. In the air, you will face the planes of the fearsome Red Baron squadron.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9477",
@@ -2668,8 +2661,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "A very fun and exciting game, in which you have to use all your skill and very fast reflexes to bring the little frogs home safely. It's not easy: they have to cross with fast jumps a busy highway.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9483",
@@ -2681,8 +2674,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "In this action-packed game, you have to make Popeye go up and down stairs, cross beams, and escape from the bottles thrown by his enemy Brutus - all to win the heart of his beloved Olive Oyl.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9484",
@@ -2694,8 +2687,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "You have 7 Q*Berts to change the colors of the pyramid cubes, from an initial color to a target color. But there are several obstacles along the way - Red Danger, Purple Danger, Slick, Jumper, and more.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9485",
@@ -2707,8 +2700,8 @@ window.GAMEPAGES_DATA = {
   "input": "joystick",
   "history": {
    "text": "Here you will test your skill as an aviation ace, living an adventure with 13 miles of obstacles in a raid through enemy territory. Steep mountains, tall buildings, and irregular tunnels are barriers.",
-   "wikiTitle": "Odyssey Clube",
-   "url": "https://odysseyclube.com/en/colecoes/philips-brasil"
+   "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
+   "source": "Odyssey Clube"
   },
   "manual": {
    "item": "br_9486",

@@ -78,10 +78,12 @@ window.GAMES_DATA = {
     "id": "new_ktaa",
     "filename": "new_ktaa.bin",
     "title": "Kill the Attacking Aliens (Soeren Gust) — full",
-    "platform": "G7000",
+    "platform": "G7400+",
     "category": "Homebrew (community)",
     "vpNumber": null,
-    "tags": [],
+    "tags": [
+      "plus-graphics"
+    ],
     "romFile": "Kill the Attacking Aliens (Soeren Gust) — full.bin"
   },
   {
@@ -170,10 +172,12 @@ window.GAMES_DATA = {
     "id": "new_route66",
     "filename": "new_route66.bin",
     "title": "Route 66 (Rafael Cardoso)",
-    "platform": "G7000",
+    "platform": "G7400+",
     "category": "Homebrew (community)",
     "vpNumber": null,
-    "tags": [],
+    "tags": [
+      "plus-graphics"
+    ],
     "romFile": "Route 66 (Rafael Cardoso).bin"
   },
   {

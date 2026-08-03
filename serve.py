@@ -32,7 +32,7 @@ SOURCE_FILE = os.path.join(ROOT, "update-source.json")
 # refused even if a manifest asks for it - a remote list should never be able
 # to drop arbitrary files into the folder.
 ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json")
-ALLOWED_DIRS = ("", "covers")
+ALLOWED_DIRS = ("", "covers", "assets/shots")
 
 
 def source_base():
@@ -56,9 +56,9 @@ def safe(rel):
     if rel.startswith("/") or ".." in rel.split("/"):
         return False
     parts = rel.split("/")
-    if len(parts) > 2:
+    if len(parts) > 3:
         return False
-    folder = parts[0] if len(parts) == 2 else ""
+    folder = "/".join(parts[:-1])          # "", "covers", "assets/shots"
     if folder not in ALLOWED_DIRS:
         return False
     return os.path.splitext(rel)[1].lower() in ALLOWED_EXT

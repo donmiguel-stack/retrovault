@@ -30,3 +30,6 @@ video-captions.md
 video-script.md
 video-script-2.txt
 youtube-listing.md
+
+# python bytecode
+__pycache__/

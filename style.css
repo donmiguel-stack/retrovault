@@ -44,6 +44,14 @@ body{
 }
 .ghost-btn:hover{border-color:var(--accent);color:var(--text);}
 
+/* Update button, when the quiet check on load found something waiting. Yellow
+   like the import/export buttons, with the star the console never had. */
+#updateBtn.has-updates{
+  background:#ffc400; border-color:#ffc400; color:#000; font-weight:600;
+}
+#updateBtn.has-updates::before{content:"\2605"; margin-right:6px;}
+#updateBtn.has-updates:hover{background:#ffd23b; border-color:#ffd23b; color:#000;}
+
 .filterbar{
   display:flex;flex-direction:column;gap:10px;
   padding:14px 24px;border-bottom:1px solid var(--border);
@@ -302,6 +310,37 @@ body{
 .feature-thumb:hover{border-color:var(--border); color:var(--text);}
 .feature-thumb.on{border-color:var(--accent); color:var(--text); background:var(--surface-2);}
 .feature-thumb img{width:26px; height:35px; object-fit:cover; border-radius:3px; flex-shrink:0;}
+
+/* Homebrew panel - the featured layout again, but sitting inside the grid.
+   Warmer border than the rest so it reads as its own thing rather than a
+   second helping of "featured". */
+.homebrew-strip{
+  grid-column:1/-1; margin:16px 0 10px; padding:16px 18px 18px;
+  background:var(--surface); border-radius:12px;
+  border:2px solid color-mix(in srgb, #e05a7e 65%, transparent);
+}
+.hb-head{display:flex; align-items:flex-start; justify-content:space-between; gap:16px;}
+.homebrew-strip h3{margin:0 0 3px; font-size:15px; display:flex; align-items:center; gap:9px;}
+/* the same word the cover ribbons carry, in the same pink */
+.hb-word{
+  font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  background:#e05a7e; color:#2e0713; border-radius:4px; padding:2px 8px;
+}
+.hb-intro{margin:0 0 12px; font-size:13px; color:var(--text-mute);}
+/* the featured cover needs the ribbon too, or a borrowed official box reads
+   as an official release - which is the whole reason the ribbon exists */
+.feature-cover-wrap{position:relative; overflow:hidden; border-radius:8px; flex-shrink:0;}
+.feature-cover-wrap .feature-cover{display:block; border-radius:0;}
+.feature-cover-wrap .cover-ribbon{font-size:11px; padding:5px 0;}
+/* Two screenshots share the slot: same footprint, one above the other. */
+/* Two screenshots sit side by side at 4:3 - the console's own aspect, so
+   nothing is cropped. Stacking them instead would halve the height and cut
+   the top off a title screen, which defeats the point of showing it. */
+.feature-shots{display:flex; gap:6px; flex-shrink:0;}
+.feature-shots .feature-shot{width:248px; height:186px;}
+@media (max-width:1500px){
+  .feature-shots .feature-shot:nth-child(2){display:none;}
+}
 
 /* Advert strip - full width, always labelled, never dressed up as content */
 .sponsor-strip{grid-column:1/-1; margin:16px 0 10px;}

@@ -310,6 +310,97 @@
     return node;
   }
 
+  // ---- The featured layout, used twice ---------------------------------
+  // Once at the top of the page, once for the homebrew panel inside the grid.
+  // Cover on the left, blurb in the middle, a screenshot on the right, and a
+  // column of thumbnails that also rotate on their own.
+  function gameById(id) {
+    return state.games.filter(function (g) { return g.id === id; })[0];
+  }
+
+  // "shot" takes a filename or a list of them. Two get stacked in the same
+  // slot rather than shrinking the panel to fit them side by side.
+  function shotMarkup(shot) {
+    if (!shot) return "";
+    var list = Array.isArray(shot) ? shot : [shot];
+    var imgs = list.map(function (s) {
+      return '<img class="feature-shot" src="assets/shots/' + s + '" alt="">';
+    }).join("");
+    return list.length > 1 ? '<div class="feature-shots">' + imgs + '</div>' : imgs;
+  }
+
+  // Returns a function that stops the rotation - the homebrew panel is thrown
+  // away and rebuilt on every resize, and its old timer has to go with it.
+  function featureRotator(main, list, picks) {
+    var at = 0, timer = null;
+
+    function show(n) {
+      at = (n + picks.length) % picks.length;
+      var pick = picks[at], g = gameById(pick.id);
+      var gen = (window.GENRE_DATA || {})[g.id] || {};
+      main.href = "game.html?id=" + encodeURIComponent(g.id);
+      var homebrew = groupFor(g).key === "homebrew";
+      main.innerHTML =
+        '<span class="feature-cover-wrap">' +
+        '<img class="feature-cover" src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
+        'onerror="this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
+        (homebrew ? '<span class="cover-ribbon">' + window.t("cat_homebrew") + '</span>' : '') +
+        '</span>' +
+        '<div class="feature-copy">' +
+        '<h3>' + g.title + '</h3>' +
+        '<p class="feature-blurb">' + pick.blurb + '</p>' +
+        '<div class="feature-meta">' +
+        '<span class="badge ' + (g.platform === "G7400+" ? "badge-g7400" : "badge-g7000") + '">' + g.platform + '</span>' +
+        (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
+        (gen.players ? '<span class="badge badge-cat">' + window.t("p_" + gen.players) + '</span>' : '') +
+        '</div></div>' + shotMarkup(pick.shot);
+      list.querySelectorAll(".feature-thumb").forEach(function (b, n2) {
+        b.classList.toggle("on", n2 === at);
+      });
+    }
+
+    list.innerHTML = picks.map(function (p, n) {
+      var g = gameById(p.id);
+      // same .png-then-.jpg fallback as the big cover, or a jpg-only cover
+      // (Terrahawks, for one) shows as a broken thumbnail
+      return '<button class="feature-thumb" data-i="' + n + '">' +
+             '<img src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
+             'onerror="this.onerror=null;this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
+             '<span>' + g.title + '</span></button>';
+    }).join("");
+    list.querySelectorAll(".feature-thumb").forEach(function (b) {
+      b.addEventListener("click", function () {
+        show(parseInt(this.dataset.i, 10));
+        clearInterval(timer);            // stop rotating once someone chooses
+        timer = null;
+      });
+    });
+
+    show(0);
+    timer = setInterval(function () { show(at + 1); }, 7000);
+    return function () { if (timer) clearInterval(timer); timer = null; };
+  }
+
+  // Homebrew gets its own panel partway down the library. The games at the
+  // top of the page are the ones Philips sold; these are the ones people
+  // wrote afterwards, and they'd disappear among 213 covers otherwise.
+  var hbStop = null;
+  function homebrewBlock() {
+    var picks = ((window.FEATURED_DATA || {}).homebrew || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
+    });
+    var tpl = document.getElementById("homebrewTpl");
+    if (!picks.length || !tpl) return null;
+    if (hbStop) hbStop();
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector("[data-i18n=homebrewHead]").textContent = window.t("homebrewHead");
+    node.querySelector(".hb-word").textContent = window.t("cat_homebrew");
+    node.querySelector(".hb-intro").textContent = window.t("homebrewIntro");
+    hbStop = featureRotator(node.querySelector(".feature-main"),
+                            node.querySelector(".feature-list"), picks);
+    return node;
+  }
+
   // The community panel is a carousel: on a 14-inch screen six cards wrapped
   // onto a second line and webretro ended up orphaned down there on its own.
   function communityBlock() {
@@ -336,6 +427,42 @@
     return node;
   }
 
+  // The advert and community panels span the full grid width, so dropping one
+  // mid-row leaves the rest of that row empty. Work out how many columns the
+  // grid actually has and land them on a row boundary instead. The count
+  // changes with the window, hence the re-run on resize.
+  function gridColumns() {
+    var t = getComputedStyle(grid).gridTemplateColumns;
+    return t && t !== "none" ? t.split(" ").filter(Boolean).length : 1;
+  }
+
+  function placeBlocks(total) {
+    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .community")
+        .forEach(function (n) { n.remove(); });
+    if (total < 60) return;                       // too short to bother
+    var cols = gridColumns();
+    var cards = grid.querySelectorAll(".card");
+
+    function insertAt(node, wanted) {
+      if (!node) return;
+      var row = Math.max(1, Math.round(wanted / cols));   // nearest whole row
+      var idx = row * cols;
+      if (idx >= cards.length) return;
+      grid.insertBefore(node, cards[idx]);
+    }
+    insertAt(sponsorBlock(), Math.min(36, Math.floor(total / 3)));
+    insertAt(homebrewBlock(), Math.min(96, Math.floor(total * 2 / 3)));
+    insertAt(communityBlock(), Math.min(160, Math.floor(total * 6 / 7)));
+  }
+
+  var replaceTimer = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(replaceTimer);
+    replaceTimer = setTimeout(function () {
+      placeBlocks(grid.querySelectorAll(".card").length);
+    }, 150);
+  });
+
   function render() {
     var filtered = state.games.filter(matches).sort(bySort);
     if (typeof updateListChips === "function" && clearBtn) {
@@ -349,15 +476,9 @@
     var frag = document.createDocumentFragment();
     // drop the community panel in around a third of the way down, but only on
     // a decent-sized list - it would dominate a five-result search
-    var big = filtered.length >= 60;
-    var adAt = big ? Math.min(36, Math.floor(filtered.length / 3)) : -1;
-    var commAt = big ? Math.min(96, Math.floor(filtered.length * 2 / 3)) : -1;
-    filtered.forEach(function (g, i) {
-      if (i === adAt) { var a = sponsorBlock(); if (a) frag.appendChild(a); }
-      if (i === commAt) { var c = communityBlock(); if (c) frag.appendChild(c); }
-      frag.appendChild(renderCard(g));
-    });
+    filtered.forEach(function (g) { frag.appendChild(renderCard(g)); });
     grid.appendChild(frag);
+    placeBlocks(filtered.length);
   }
 
   function renderCard(g) {
@@ -655,7 +776,7 @@
   // Featured games, sponsor banners and the community links, all driven by
   // featured.js. Any panel with an empty list simply doesn't appear.
   var SHOWCASE_KEY = "VideopacVault_showcase";
-  var featIndex = 0, featTimer = null;
+  var featStop = null;
 
   function buildShowcase() {
     var data = window.FEATURED_DATA || {};
@@ -672,47 +793,9 @@
     host.hidden = localStorage.getItem(SHOWCASE_KEY) === "off";
 
     // --- featured
-    var main = document.getElementById("featureMain");
-    var list = document.getElementById("featureList");
-    function gameFor(id) {
-      return state.games.filter(function (g) { return g.id === id; })[0];
-    }
-    function showFeature(i) {
-      featIndex = (i + picks.length) % picks.length;
-      var pick = picks[featIndex], g = gameFor(pick.id);
-      var gen = (window.GENRE_DATA || {})[g.id] || {};
-      main.href = "game.html?id=" + encodeURIComponent(g.id);
-      main.innerHTML =
-        '<img class="feature-cover" src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
-        'onerror="this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
-        '<div class="feature-copy">' +
-        '<h3>' + g.title + '</h3>' +
-        '<p class="feature-blurb">' + pick.blurb + '</p>' +
-        '<div class="feature-meta">' +
-        '<span class="badge ' + (g.platform === "G7400+" ? "badge-g7400" : "badge-g7000") + '">' + g.platform + '</span>' +
-        (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
-        (gen.players ? '<span class="badge badge-cat">' + window.t("p_" + gen.players) + '</span>' : '') +
-        '</div></div>' +
-        (pick.shot ? '<img class="feature-shot" src="assets/shots/' + pick.shot + '" alt="">' : '');
-      list.querySelectorAll(".feature-thumb").forEach(function (b, n) {
-        b.classList.toggle("on", n === featIndex);
-      });
-    }
-    list.innerHTML = picks.map(function (p, n) {
-      var g = gameFor(p.id);
-      return '<button class="feature-thumb" data-i="' + n + '">' +
-             '<img src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="">' +
-             '<span>' + g.title + '</span></button>';
-    }).join("");
-    list.querySelectorAll(".feature-thumb").forEach(function (b) {
-      b.addEventListener("click", function () {
-        showFeature(parseInt(this.dataset.i, 10));
-        clearInterval(featTimer);          // stop rotating once someone chooses
-      });
-    });
     if (picks.length) {
-      showFeature(0);
-      featTimer = setInterval(function () { showFeature(featIndex + 1); }, 7000);
+      featStop = featureRotator(document.getElementById("featureMain"),
+                                document.getElementById("featureList"), picks);
     }
 
     var toggle = document.getElementById("showcaseToggle");
@@ -766,12 +849,49 @@
           return;
         }
         pendingFiles = d.added.concat(d.changed);
+        rememberUpdates(pendingFiles.length);
         if (!pendingFiles.length) { say(window.t("updNone"), true); return; }
         say(window.t("updFound", { n: pendingFiles.length, mb: (d.bytes / 1048576).toFixed(1) }));
         applyBtn.hidden = false;
       }).catch(function () { say(window.t("updFail")); });
     });
   }
+
+  // A quiet check on load, so the button tells you there is something waiting
+  // instead of you having to open it and ask. Throttled: the answer changes
+  // when the repo changes, which is not several times an hour, and a page
+  // reload should not mean another round trip to GitHub.
+  var UPD_SEEN = "VideopacVault_updSeen";
+  var UPD_EVERY = 6 * 3600 * 1000;
+
+  function markUpdates(n) {
+    if (!updateBtn) return;
+    updateBtn.classList.toggle("has-updates", n > 0);
+    if (n > 0) updateBtn.title = window.t("updWaiting", { n: n });
+    else updateBtn.removeAttribute("title");
+  }
+
+  function rememberUpdates(n) {
+    markUpdates(n);
+    try {
+      localStorage.setItem(UPD_SEEN, JSON.stringify({ at: Date.now(), n: n }));
+    } catch (e) { /* private mode: the badge just won't survive a reload */ }
+  }
+
+  function quietCheck() {
+    if (!updateBtn) return;
+    var last = 0, cached = null;
+    try {
+      var saved = JSON.parse(localStorage.getItem(UPD_SEEN) || "{}");
+      last = saved.at || 0; cached = saved.n;
+    } catch (e) { /* first run, or someone edited it by hand */ }
+    if (cached != null) markUpdates(cached);            // show last known state
+    if (Date.now() - last < UPD_EVERY) return;
+    fetch("/_update/check").then(function (r) { return r.json(); }).then(function (d) {
+      rememberUpdates(d.ok ? d.added.length + d.changed.length : 0);
+    }).catch(function () { /* offline: leave the button alone */ });
+  }
+  quietCheck();
 
   if (applyBtn) {
     applyBtn.addEventListener("click", function () {
@@ -782,6 +902,7 @@
         body: JSON.stringify({ files: pendingFiles })
       }).then(function (r) { return r.json(); }).then(function (d) {
         if (!d.ok) { say(window.t("updFail")); return; }
+        rememberUpdates(0);                      // nothing waiting any more
         var msg = window.t("updDone", { n: d.written.length });
         if (d.skipped && d.skipped.length) {
           msg += " " + window.t("updSkipped", { n: d.skipped.length });
