@@ -1,0 +1,3 @@
+Star anything and it lands in your favourites, remembered between visits.
+
+They live in the browser, not the folder, so they don't travel. Export writes them to a small file; import merges it into whatever is already starred, without removing anything.

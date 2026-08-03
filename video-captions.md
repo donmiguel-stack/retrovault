@@ -1,173 +1,196 @@
 # Narration timed to the recording
 
-Read against `screenrecording vault.mov` — 4 minutes 2 seconds. Timings taken
-from the footage itself, sampled every 3 seconds.
+Read against `screenrecording videopac vault.mov` — 5 minutes 29 seconds.
+Timings taken from the footage itself, sampled every 3 seconds.
 
-Word counts are sized to the gap they sit in, at a relaxed 150 words a minute,
-with silence left around each block. Where a shot runs long there's a deliberate
-pause rather than padding.
+Trimmed to fit. Every block now sits at a speakable pace, most between 130 and
+170 words a minute. A sentence running a second or two past its cut is fine and
+usually sounds better than clipping it.
 
----
-
-### 0:00 – 0:13 · K.C. Munchkin, mid-game
-
-*Let the first four seconds play with only the console's own sound.*
-
-> This is a Philips Videopac. In America they called it the Magnavox Odyssey²,
-> and in France, the Jopac. It arrived in 1978.
->
-> Everything made for it is in here, and it all runs in a browser.
+Four blocks are deliberately silent — the gameplay and the covers carry those.
 
 ---
 
-### 0:14 – 0:57 · The library, scrolling A to Z
+### 0:00 – 0:08 · K.C. Munchkin, mid-game
+
+*Let the first four seconds run on the console's own sound.*
+
+> This is a Philips Videopac. In America, the Magnavox Odyssey². 1978.
+> Everything made for it is here, in a browser.
+
+---
+
+### 0:09 – 0:20 · Restarting without leaving the game
+
+> Underneath is webretro, running the open-source O2EM core. Its Quick Menu
+> restarts a game without going back to the library. Leaving asks you to
+> confirm — that's the browser, not the Vault.
+
+---
+
+### 0:21 – 0:35 · The library
 
 > Two hundred and thirteen cartridges. Box art for every one, the original
-> manual scanned for most, a bit of history, and a gameplay clip — so you can
-> see what something is before you commit to it.
->
-> It runs entirely on your own machine. Nothing is uploaded, and there's no
-> account to make.
-
-*Then let it scroll in silence for a while. The covers are the argument.*
+> manual for most, a bit of history, and a gameplay clip. It all runs on your
+> own machine — nothing uploaded, no account.
 
 ---
 
-### 0:58 – 1:20 · Platform, then category
+### 0:36 – 0:44 · Platform
 
-> You can search, or you can browse.
->
 > The platform filter splits the original G7000 from the G7400 — the later
-> machine, with the extra graphics chip.
->
-> Then the categories. Seventy-eight official European Videopacs. The American
-> Odyssey² releases. Parker Brothers. The two Imagic cartridges. Nine Jopac
-> titles that only ever came out in France, and sixteen Brazilian ones with
-> their own Portuguese names.
+> machine, with the extra graphics chip. Forty use it.
 
 ---
 
-### 1:21 – 1:35 · Genre and players
+### 0:45 – 1:08 · Category
 
-> Or filter by what a game actually is, rather than where it came from. Maze,
-> shooter, sports, racing. One player, or two.
+*The dropdown is open on screen with every category and its count.*
+
+> Then by where a cartridge came from. Nine Jopac titles, sold only in France.
+> Sixteen Brazilian releases with their own Portuguese names.
 >
-> They stack, so you can ask for a two-player G7400 shooter — and be told
-> there isn't one.
-
-*(The empty result on screen at 1:24 is real. Worth keeping.)*
+> And the corners that never reached a shop: eighteen rare prototypes,
+> twenty-three modified carts where someone went back in to fix a bug, and
+> seventeen homebrew games still being written today — forty years after
+> Philips stopped.
 
 ---
 
-### 1:36 – 1:59 · Favourites
+### 1:09 – 1:23 · Genre and players
+
+> You can also filter by what a game actually is. Maze, shooter, sports,
+> racing. One player or two. The filters stack, so you can ask for a
+> two-player G7400 shooter — and find there isn't one.
+
+---
+
+### 1:24 – 1:32 · Languages
+
+> Five languages. Not just the buttons — the setup instructions and control
+> notes too. Fitting, for a console sold under four different names.
+
+---
+
+### 1:33 – 1:56 · Favourites
 
 > Star anything and it lands in your favourites, remembered between visits.
 >
-> They live in the browser rather than the folder, so there are buttons to
-> carry them to another machine.
+> They live in the browser, not the folder, so they don't travel. Export
+> writes them to a small file; import merges it into whatever is already
+> starred, without removing anything.
 
 ---
 
-### 2:00 – 2:08 · Trans American Rally
+### 1:57 – 2:14 · Search, and Munchkin's page
 
-> Some cartridges survive in more than one form. This one is a twelve-K banked
-> dump — the cart holds more than the console can address at once, so it
-> switches between banks as it runs. The Vault explains which copy you're
+> Munchkin is the one with a story. Atari sued Philips, said it was too close
+> to Pac-Man, and won. It was pulled from the shelves.
+>
+> The K.C. stands for Kenneth C. Meinken Junior, then president of North
+> American Philips.
+
+---
+
+### 2:15 – 2:26 · The controls box, and a hidden mode
+
+*The "hidden modes" note is highlighted on screen.*
+
+> Every game lists its own controls. And some hide things: Munchkin has a maze
+> editor nowhere on the select screen. Press P, draw your own maze, play it.
+> In 1981.
+
+---
+
+### 2:27 – 2:38 · The manual
+
+> The manual is here too. Scanned page by page, the real thing — where you
+> find out what the game variations actually do.
+
+---
+
+### 2:39 – 2:58 · Munchkin gameplay video
+
+*No narration. Let the clip run.*
+
+---
+
+### 3:00 – 3:17 · Race, and the two joysticks
+
+*The page is open with both joystick rows highlighted.*
+
+> Race was cartridge number one — three games on it, sold as Speedway in
+> America.
+>
+> Look at the controls. The console had two joysticks, and each game picks
+> which one it reads. Race only reads the second. That's why the arrow keys do
+> nothing.
+
+---
+
+### 3:18 – 3:44 · Playing it on W A S D
+
+*No narration. The car moves on W A S D, which is the whole point.*
+
+---
+
+### 3:45 – 3:47 · Restart from the Quick Menu
+
+> More, then Restart. No reloading.
+
+---
+
+### 3:48 – 3:59 · Game two: both players at once
+
+> This is why. Game two is a race against someone else on one keyboard: one
+> player on the arrows, the other on W A S D.
+
+---
+
+### 4:00 – 4:20 · Trans American Rally
+
+> Some cartridges survive in more than one form. This is a twelve-K banked
+> dump: it holds more program than the console can address at once, so it
+> switches between banks as it runs. The Vault tells you which copy you're
 > looking at.
 
 ---
 
-### 2:09 – 2:29 · Race, and its manual
+### 4:21 – 4:47 · Playing Trans American Rally
 
-> Every game gets a page. The box, the story where there is one, and what it
-> was called elsewhere — Race was *Speedway* in America.
+*One line early, then let it run.*
+
+> One thing the manual has to tell you: Q — the fire button — changes gear.
+> Nothing on screen suggests it, and without it you'll never get out of first.
+
+---
+
+### 4:48 – 5:05 · Came with a board or overlay
+
+> A few cartridges weren't only cartridges. The Master Strategy games came
+> with a board and playing pieces; Musician with a keyboard overlay. This list
+> is where something else was in the box. Scans of those are still being made.
+
+---
+
+### 5:06 – 5:17 · Setup
+
+> Setting up takes three steps. You need Python first — it runs the small
+> local server, because browsers won't load an emulator off your hard disk.
+
+---
+
+### 5:18 – 5:29 · Update, and close
+
+> When the catalogue improves, one button fetches it.
 >
-> Then the manual. Scanned page by page, the real thing. This is where you
-> find out what the game variations actually do, which on a console from 1978
-> is not obvious.
+> Two hundred and thirteen cartridges, and forty years of a console most
+> people have never heard of. If you had one, you know.
 
 ---
 
-### 2:30 – 2:47 · Gameplay video
+## On the edit
 
-*No narration. Let the clip play.*
-
----
-
-### 2:48 – 3:02 · Back to the library, searching
-
-> And you can just search for what you want.
-
----
-
-### 3:03 – 3:20 · Munchkin, history and manual
-
-> Munchkin is the one with a story. Atari sued Philips over it, said it was too
-> close to Pac-Man, and won. It was pulled from the shelves.
->
-> In Brazil it was Come-Come II. In America, K.C. Munchkin.
-
----
-
-### 3:21 – 3:35 · Munchkin gameplay video
-
-*No narration.*
-
----
-
-### 3:36 – 3:47 · Switching languages
-
-> The Vault speaks five languages — English, Dutch, German, French and
-> Portuguese. Not just the buttons: the setup instructions and the control
-> notes are translated too.
->
-> Which felt right for a console sold under four different names depending on
-> where you bought it.
-
----
-
-### 3:48 – 3:57 · Came with a board or overlay
-
-> And a few cartridges weren't only cartridges. The Master Strategy games came
-> with a physical board and playing pieces; Musician came with a keyboard
-> overlay. This list is the ones where something else was in the box.
-
----
-
-### 3:58 – 4:02 · Close
-
-> Two hundred and thirteen cartridges, and forty years of a console most people
-> have never heard of.
->
-> If you had one, you know. If you didn't — start with Munchkin.
-
----
-
-## Two notes on the footage
-
-**The A–Z scroll runs 43 seconds** (0:14–0:57). That's a long time on one
-gesture, and it's the stretch where someone clicks away. Cutting it to about
-25 would tighten the whole video and cost nothing — the point is made in the
-first ten.
-
-**The control gotchas never appear.** Two things defeat everyone: several games
-only read the *second* joystick, so the arrow keys do nothing — Race is the
-famous one — and some carts hide modes on the console's own keyboard, like
-Munchkin's maze editor on `P` at the SELECT GAME screen.
-
-You don't need to show the keys. Record Race with the arrows doing nothing for
-a few seconds, then start moving with W A S D, and narrate over it:
-
-> One thing will catch you out. Sometimes the arrow keys do nothing at all.
-> The console had two joysticks, and each game decides which one it listens
-> to — a few only read the second, even in single player. Race is the famous
-> one. If the arrows are dead, use W A S D.
-
-Then Munchkin's SELECT GAME screen, pressing P:
-
-> And some cartridges hide whole modes on the console's keyboard. Munchkin has
-> a maze editor: press P at the select screen, draw your own maze, and play it.
-> In 1981.
-
-Twenty seconds, and it's the most useful twenty seconds in the video for anyone
-who owned one of these.
+Nothing needs cutting from the footage. The library scroll is about fifteen
+seconds, which is right — my earlier note about 43 seconds came from the first
+recording and I carried it over by mistake.

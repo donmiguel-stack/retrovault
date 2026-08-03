@@ -1,0 +1,1 @@
+Every game lists its own controls. And some hide things: Munchkin has a maze editor nowhere on the select screen. Press P, draw your own maze, play it. In 1981.

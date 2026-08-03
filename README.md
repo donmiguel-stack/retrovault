@@ -6,6 +6,9 @@ browser.
 
 **Vault by @donmiguel2.0 · code by Claude**
 
+**[Watch the five-minute tour →](https://www.youtube.com/watch?v=XIxl2ep34_Y)**
+Subtitled in English, Portuguese, Dutch, German and French.
+
 ---
 
 ## First: add your dumps

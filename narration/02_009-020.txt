@@ -1,0 +1,1 @@
+Underneath is webretro, running the open-source O2EM core. Its Quick Menu restarts a game without going back to the library. Leaving asks you to confirm — that's the browser, not the Vault.

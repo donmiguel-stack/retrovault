@@ -1,0 +1,3 @@
+Race was cartridge number one — three games on it, sold as Speedway in America.
+
+Look at the controls. The console had two joysticks, and each game picks which one it reads. Race only reads the second. That's why the arrow keys do nothing.
