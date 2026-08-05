@@ -37,13 +37,35 @@ window.GAMEPAGES_DATA = {
    "item": "munchkin-eur-philips-videopac-1981",
    "pages": 28,
    "source": "Munchkin (EUR)(Philips Videopac)(1982)"
+  },
+  "video": {
+   "id": "AdQtjP8ZvKk",
+   "title": "2909 - J.G. Munchkin! - Odyssey² [MAME]"
   }
  },
  "new_kc-pacvid": {
-  "input": "joystick"
+  "input": "joystick",
+  "video": {
+   "id": "SbwtsNq2Ves",
+   "title": "KC Pacman!"
+  },
+  "history": {
+   "text": "A modified K.C. Munchkin — the game Atari sued Philips over and won, reworked years later by someone who thought the original had the better idea.",
+   "source": "the uploader's notes",
+   "url": "https://www.youtube.com/watch?v=SbwtsNq2Ves"
+  }
  },
  "new_kc-pacman": {
-  "input": "joystick"
+  "input": "joystick",
+  "video": {
+   "id": "SbwtsNq2Ves",
+   "title": "KC Pacman!"
+  },
+  "history": {
+   "text": "A modified K.C. Munchkin — the game Atari sued Philips over and won, reworked years later by someone who thought the original had the better idea.",
+   "source": "the uploader's notes",
+   "url": "https://www.youtube.com/watch?v=SbwtsNq2Ves"
+  }
  },
  "new_ktaa": {
   "input": "joystick",
@@ -111,6 +133,10 @@ window.GAMEPAGES_DATA = {
    "text": "It took this console more than thirty years to get a version of Pong. Rene van den Enden wrote it in 2004, with eleven variations from squash and tennis to the 1972 original. Several of them are Voice-enhanced: with the cartridge plugged in through The Voice you get spoken comments as balls are hit and missed.",
    "source": "Ozyr's Odyssey2 Archive",
    "url": "https://www.ozyr.com/o2/o2pong.html"
+  },
+  "video": {
+   "id": "7jGNjcCJS-c",
+   "title": "Pong 2003 USA  Magnavox Odyssey 2 Unl VIDEOPAC PHILIPS VIDEOPAC HYPERSPIN"
   }
  },
  "new_pong": {
@@ -119,6 +145,10 @@ window.GAMEPAGES_DATA = {
    "text": "It took this console more than thirty years to get a version of Pong. Rene van den Enden wrote it in 2004, with eleven variations from squash and tennis to the 1972 original. Several of them are Voice-enhanced: with the cartridge plugged in through The Voice you get spoken comments as balls are hit and missed.",
    "source": "Ozyr's Odyssey2 Archive",
    "url": "https://www.ozyr.com/o2/o2pong.html"
+  },
+  "video": {
+   "id": "7jGNjcCJS-c",
+   "title": "Pong 2003 USA  Magnavox Odyssey 2 Unl VIDEOPAC PHILIPS VIDEOPAC HYPERSPIN"
   }
  },
  "new_puzzle-piece-panic": {
@@ -165,9 +195,9 @@ window.GAMEPAGES_DATA = {
    "source": "Atlantis (1983)(Imagic)(EU)"
   },
   "history": {
-   "text": "Atlantis is a fixed shooter video game released by Imagic in August 1982 for the Atari 2600. The game is set in the fabled city of Atlantis where the cities are under attack by invading Gorgon vessels that plan to destroy the city. The player controls sentries to fire a counter attack.",
-   "wikiTitle": "Atlantis (video game)",
-   "url": "https://en.wikipedia.org/wiki/Atlantis_(video_game)"
+   "text": "Imagic's defence game: hold off the Gorgon fleet before it levels the city. Atlantis has six sections and the game ends when the last one falls. Four skill levels.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Atlantis_1983_Imagic_EU"
   },
   "video": {
    "id": "c98XV6roIBU",
@@ -182,9 +212,9 @@ window.GAMEPAGES_DATA = {
    "source": "Demon Attack (1993)(Imagic)"
   },
   "history": {
-   "text": "Demon Attack is a fixed shooter video game created by Rob Fulop for the Atari 2600 and published by Imagic in 1982. The game involves the player controlling a laser cannon from the surface of a planet, shooting winged demons that fly down and attack in different sets of patterns.",
-   "wikiTitle": "Demon Attack",
-   "url": "https://en.wikipedia.org/wiki/Demon_Attack"
+   "text": "Imagic's fixed shooter. Demons come down in waves and you survive them to earn reserve bunkers — three to start with, six at most, and the next hit after the last one is gone ends the game.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Demon_Attack_1993_Imagic"
   },
   "video": {
    "id": "HeiHP93mfjQ",
@@ -201,6 +231,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "L-3EeUcJQKM",
    "title": "Modul 6 Jopac Version: Bowling | Philips Videopac / Magnavox Odyssey / G7000 / G7400"
+  },
+  "history": {
+   "text": "Tenpin bowling and basketball on one cartridge, for two or three players, with a faster speed setting for the bowling.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/tenpin-bowling-basketball-eur-philips-videopac-1980"
   }
  },
  "jo_billard_pl": {
@@ -220,6 +255,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "FPgLPbCKPqI",
    "title": "Videopac /  Odyssey 2 Games - The Mousing Cat & Chez Maxime - ARG Presents 204"
+  },
+  "history": {
+   "text": "Maxime runs meals up to a waiter working his way between floors by the stairs. Let more than three customers leave angry and the job is judged a failure.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Chez_Maxime_198x_Jopac"
   }
  },
  "jo_demon-attack_pl": {
@@ -249,6 +289,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "7c4KGPJKnaI",
    "title": "Odyssey²  Videopac+ : Exojet+ / Preview \\"
+  },
+  "history": {
+   "text": "Your ship has strayed into a canyon on a reconnaissance flight and cannot get out. Enemy ships overhead fire two missiles at a time, laser guns in the canyon walls fire one, and the sight tells you which is coming.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Exojet_198x_Jopac"
   }
  },
  "jo_flipper_pl": {
@@ -261,6 +306,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "QT3msJJbjlE",
    "title": "Modul 24+: Flipper Jopac Version | Philips Videopac / Magnavox Odyssey / G7000 / G7400 (MrVenom1974)"
+  },
+  "history": {
+   "text": "Pinball, with the whole television turned into a table. The four small coloured targets at the very top are worth four thousand points each and are correspondingly hard to hit.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Flipper_Game_1980_Philips_en-de"
   }
  },
  "jo_le-tresor-englouti_pl": {
@@ -273,6 +323,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "ZIgIzZJOWgo",
    "title": "Philips Videopac Plus G7400 - Le Tresor Englouti"
+  },
+  "history": {
+   "text": "A diving game: your air runs down as you explore the wreck and goes back up when you surface at the boat, where three bottles are waiting.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Tresor_Englouti_Le_198x_Jopac_FR"
   }
  },
  "jo_moto-crash_pl": {
@@ -285,6 +340,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "9XGTuyK6W8Q",
    "title": "Philips Videopac Plus G7400 - Moto Crash"
+  },
+  "history": {
+   "text": "A French Jopac release, published by TO.TEK: a reflex game, riding a motorbike flat out at night.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Moto-Crash_198x_Jopac"
   }
  },
  "jo_syracuse": {
@@ -295,13 +355,23 @@ window.GAMEPAGES_DATA = {
   }
  },
  "mod_br21_fix": {
-  "input": "joystick"
+  "input": "joystick",
+  "history": {
+   "text": "Two pyramid builders race each other to get the stones into the right order and solve the pyramid. The winner grows in stature and blows his trumpet about it. This copy is a modified dump of that cartridge. Nobody has written down what was changed in it — playing it and comparing is the only way to find out.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Secret_of_the_Pharaohs_1980_Philips_en-de"
+  }
  },
  "mod_vp9_examples": {
   "input": "keyboard",
   "video": {
    "id": "Is9v3t5DxiE",
    "title": "PHILIPS VIDEOPAC 7000 ODYSSEY 2 Computer Intro 1980MagnavoxUS bin"
+  },
+  "history": {
+   "text": "Not a game but a course, in six chapters: how microprocessors work, binary and computer languages, the Videopac machine itself, its instruction set, its operating modes, and sample programs to type in. This one carries the worked examples that go with it.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Computer_Programmer_1978_Philips_EU"
   }
  },
  "mod_demon-attack_pl": {
@@ -312,9 +382,9 @@ window.GAMEPAGES_DATA = {
    "source": "Demon Attack (1993)(Imagic)"
   },
   "history": {
-   "text": "Demon Attack is a fixed shooter video game created by Rob Fulop for the Atari 2600 and published by Imagic in 1982. The game involves the player controlling a laser cannon from the surface of a planet, shooting winged demons that fly down and attack in different sets of patterns.",
-   "wikiTitle": "Demon Attack",
-   "url": "https://en.wikipedia.org/wiki/Demon_Attack"
+   "text": "Imagic's fixed shooter. Demons come down in waves and you survive them to earn reserve bunkers — three to start with, six at most, and the next hit after the last one is gone ends the game.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Demon_Attack_1993_Imagic"
   },
   "video": {
    "id": "HeiHP93mfjQ",
@@ -340,14 +410,14 @@ window.GAMEPAGES_DATA = {
  },
  "mod_05_g7400": {
   "input": "mixed",
-  "history": {
-   "text": "Blackjack is a video game simulation of the card game blackjack. It was designed by Bob Whitehead for the Atari Video Computer System. The game allows up to three players to play a variation of blackjack. All players are given 200 chips which they can use to bet 1 to 25 during each round. The game ends for a player when they either run out of chips or earns 1000 chips or more.",
-   "wikiTitle": "Blackjack (Atari 2600 video game)",
-   "url": "https://en.wikipedia.org/wiki/Blackjack_(Atari_2600_video_game)"
-  },
   "video": {
    "id": "Z7Cb7ubFV-E",
    "title": "Las Vegas Blackjack for the Magnavox Odyssey² / Philips Videopac"
+  },
+  "history": {
+   "text": "Blackjack against the computer, which deals, keeps its second card hidden and does the banking. One or two players, aces count one or eleven, and you can draw to a maximum of five cards. This copy is a modified dump of that cartridge. Nobody has written down what was changed in it — playing it and comparing is the only way to find out.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Blackjack_1978_Philips_en-de"
   }
  },
  "mod_06pl": {
@@ -357,14 +427,14 @@ window.GAMEPAGES_DATA = {
    "pages": 12,
    "source": "Tenpin Bowling | Basketball (EUR)(Philips Videopac)(1980)"
   },
-  "history": {
-   "text": "Bowling is a 1979 sports video game developed by Larry Kaplan and published by Atari, Inc. for the Atari 2600. It is a simulation of tenpin bowling and sees the player attempting to knock down as many pins as possible with a ball in order to acquire a high score. There are six game modes that can selected from that influence the ball's movement and if a second player can participate for competitive multiplayer.",
-   "wikiTitle": "Bowling (1979 video game)",
-   "url": "https://en.wikipedia.org/wiki/Bowling_(1979_video_game)"
-  },
   "video": {
    "id": "_SZMgiFthtY",
    "title": "Bowling! - (1978) - Odyssey 2 - gameplay HD"
+  },
+  "history": {
+   "text": "Tenpin bowling and basketball on one cartridge, for two or three players, with a faster speed setting for the bowling.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/tenpin-bowling-basketball-eur-philips-videopac-1980"
   }
  },
  "mod_11pl": {
@@ -389,6 +459,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "mTd_F2J2qPU",
    "title": "Gunfighter on Videopac G7000 (Rob's Retro Rambles)"
+  },
+  "history": {
+   "text": "A duel for two, blue against red. Take cover behind the rocks, wait for a clear horizontal shot, and mind the ricochets. First to ten wins. This copy is a modified dump of that cartridge. Nobody has written down what was changed in it — playing it and comparing is the only way to find out.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Gunfighter_1978_Philips_en-de"
   }
  },
  "mod_19_g7400": {
@@ -398,14 +473,14 @@ window.GAMEPAGES_DATA = {
    "pages": 24,
    "source": "Catch The Ball | Noughts And Crosses (EUR)(Philips Videopac)(1980)"
   },
-  "history": {
-   "text": "Game & Watch: Ball is an action Game & Watch video game released as a part of the Silver series on April 28, 1980. It was the first Game & Watch game to come out and has been released a number of times over the years in various ways.",
-   "wikiTitle": "Ball (video game)",
-   "url": "https://en.wikipedia.org/wiki/Ball_(video_game)"
-  },
   "video": {
    "id": "pqPmAYwVrA8",
    "title": "39 - Catch the Ball - press 2:Single Player - Videopac [MAME]"
+  },
+  "history": {
+   "text": "Catch the Ball and Noughts and Crosses, in variations for one or two players, with and without a time limit — the untimed ones exist so you can practise the timed ones.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/catch-the-ball-noughts-and-crosses-eur-philips-videopac-1980"
   }
  },
  "mod_20pl": {
@@ -427,9 +502,14 @@ window.GAMEPAGES_DATA = {
  },
  "mod_24pl": {
   "input": "joystick",
+  "history": {
+   "text": "Pinball, with the whole television turned into a table. The four small coloured targets at the very top are worth four thousand points each and are correspondingly hard to hit. This copy is a modified dump of that cartridge. Nobody has written down what was changed in it — playing it and comparing is the only way to find out.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Flipper_Game_1980_Philips_en-de"
+  },
   "video": {
-   "id": "IPfgNqdVI0s",
-   "title": "Videopac (Odyssey 2) - Flipper (fast game - 1) - Gameplay (plus4punk)"
+   "id": "Fi34Om0UAIs",
+   "title": "Flipper Game - G7000 Videopac nr. 24 - GubbaGaming"
   }
  },
  "mod_28fix": {
@@ -452,9 +532,13 @@ window.GAMEPAGES_DATA = {
  "mod_30fix": {
   "input": "joystick",
   "history": {
-   "text": "Battlefield is a military first-person shooter video game franchise developed by Battlefield Studios, primarily led by Swedish company DICE, and published by American company Electronic Arts. The series mainly focuses on online multiplayer, with gameplay taking place across large maps, and emphasizes teamwork and combined arms warfare.",
-   "wikiTitle": "Battlefield (video game series)",
-   "url": "https://en.wikipedia.org/wiki/Battlefield_(video_game_series)"
+   "text": "Two generals, and soldiers you cannot steer. They make their own way towards the opposing general and capture whatever they meet on the route; the officers start out gentlemanly and do not stay that way. This copy is a modified dump of that cartridge. Nobody has written down what was changed in it — playing it and comparing is the only way to find out.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/battlefield-eur-philips-videopac-1981"
+  },
+  "video": {
+   "id": "qIfCwJE857U",
+   "title": "Magnavox Odyssey 2 - Philips Videopac: War of Nerves! (1979) (Videopac 30) Longplay"
   }
  },
  "mod_31_g7400": {
@@ -462,6 +546,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "uhGxRzkkUJw",
    "title": "Musician for the Philips Videopac"
+  },
+  "history": {
+   "text": "A music cartridge rather than a game. It teaches you to play, and records what you play back. This copy is a modified dump of that cartridge. Nobody has written down what was changed in it — playing it and comparing is the only way to find out.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Musician_1983_Philips_EU"
   }
  },
  "mod_35pl_fix": {
@@ -474,6 +563,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "1c4VL8be2XM",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Pocket Billiards! (1980) (Videopac 35) Longplay"
+  },
+  "history": {
+   "text": "Pool, in two games: 8-Ball and Rotation. The manual is firm that you never press the action button or a key while you are moving the joystick.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/electronic-billiards-eur-philips-videopac-1981"
   }
  },
  "mod_36fix": {
@@ -486,6 +580,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "B8s5zSQDGDg",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Electronic Table Soccer! (1980) (Videopac 27) Longplay"
+  },
+  "history": {
+   "text": "Soccer and ice hockey, red against blue, played in five-minute periods with the clock counting down at the bottom of the screen. Hold the action button and the ball keeps travelling.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/electronic-soccer-electronic-ice-hockey-eur-philips-videopac-1981"
   }
  },
  "mod_40_g7400": {
@@ -493,6 +592,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "upoIpYcwjaE",
    "title": "Odyssey 2 - 4 in 1 Row © 1982 Philips - Gameplay"
+  },
+  "history": {
+   "text": "Connect four, played by a pussycat and a hounddog. Drop a ball into a column each turn and try to line up four across, down or diagonally; the computer applauds the winner for as long as you hold the button down. This copy is a modified dump of that cartridge. Nobody has written down what was changed in it — playing it and comparing is the only way to find out.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Four_in_1_row_1982_Philips_EU"
   }
  },
  "mod_43pl": {
@@ -522,6 +626,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "buF3DWJ_nPQ",
    "title": "Neutron Star (Odyssey 2 /Videopac...emu) 116"
+  },
+  "history": {
+   "text": "You fly out to a dead planet, collect the fragments left of it and drop them into a neutron star to be incinerated. Getting close enough to grab a boulder is the easy half; firing the retro rockets to pull away from the star before it takes you is the other.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/55_PLUS_Neutron_Star_1983_Philips_EU"
   }
  },
  "mod_moto-crash_g7000": {
@@ -534,10 +643,24 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "QX6_c71gdQ0",
    "title": "Videopac G7400 / Moto-Crash 3,897"
+  },
+  "history": {
+   "text": "A French Jopac release, published by TO.TEK: a reflex game, riding a motorbike flat out at night.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Moto-Crash_198x_Jopac"
   }
  },
  "mod_vp31_examples": {
-  "input": "keyboard"
+  "input": "keyboard",
+  "history": {
+   "text": "A music cartridge rather than a game. It teaches you to play, and records what you play back. This one carries the worked code examples that go with it, rather than the music program itself.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Musician_1983_Philips_EU"
+  },
+  "video": {
+   "id": "uhGxRzkkUJw",
+   "title": "Musician for the Philips Videopac"
+  }
  },
  "mod_playtag_fix": {
   "input": "joystick",
@@ -580,6 +703,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "Sgeo6S_zuJI",
    "title": "Power Lords - Magnavox Odyssey 2 gameplay (The No Swear Gamer)"
+  },
+  "history": {
+   "text": "A tie-in with the Revell toy line. Points come from blasting lava during the eruption and destroying the rock it leaves, and the high scorer types their initials in at the end.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/power-lords-us-odyssey-2-1983"
   }
  },
  "o2_48alt": {
@@ -588,6 +716,11 @@ window.GAMEPAGES_DATA = {
    "item": "Backgammon_1982_Philips_EU",
    "pages": 18,
    "source": "Backgammon (1982)(Philips)(EU)"
+  },
+  "history": {
+   "text": "Backgammon against the computer or another player. Both sides race to bear all their checkers off; a roll of five and three moves five and then three, never eight in one go.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Backgammon_1982_Philips_EU"
   }
  },
  "o2_30": {
@@ -617,6 +750,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "IDaW_g5pibM",
    "title": "Computer Intro Walkthrough Odyssey 2"
+  },
+  "history": {
+   "text": "A programming course on cartridge, working up from the ideas to typed-in programs: a Creepy Crawler in two versions, addition in three, multiplication, division, area problems using subroutines, and flash cards.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/computer-intro-us-odyssey-2-1979"
   }
  },
  "o2_19": {
@@ -629,6 +767,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "e0QjOgqUXmw",
    "title": "Magnovox Odyssey 2 Game   Out of This World/Helicopter Rescue (1979 Magnovox)"
+  },
+  "history": {
+   "text": "You fly the rescue helicopter Daredevil and have two minutes to lift as many people as possible off the roof of the burning Doomsday Hotel.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/OutOfThisWorldHelicopterRescueOdyssey2"
   }
  },
  "o2_10": {
@@ -658,6 +801,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "9fyLZvdnPgY",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Smithereens! (1982) (Videopac 20) Longplay"
+  },
+  "history": {
+   "text": "Two catapults, two castles, and boulders. Each hit takes a section off your opponent's castle; hit the catapult itself and he has to pull it back out of range to repair it, which is the moment to press.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/smithereens-us-odyssey-2-1982"
   }
  },
  "o2_11": {
@@ -716,6 +864,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "W0fTUMkq3po",
    "title": "Magnavox Odyssey 2 : SID the Spellbinder (1982) Longplay"
+  },
+  "history": {
+   "text": "A segmented creature works its way down the screen, and if you don't destroy it before it reaches the openings at the bottom corners it starts eating your missile reserve — five missiles for every segment that gets through.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/sid-the-spellbinder-us-odyssey-2-1982"
   }
  },
  "o2_07": {
@@ -728,6 +881,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "VqQYYJB3Avs",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Matchmaker! Logix! Buzzword! Space Rendezvous (1978) Longplay"
+  },
+  "history": {
+   "text": "A deduction game: work out the answer in as few tries as you can. The computer keeps the last six attempts on screen to compare, and whoever solves it in fewest entries wins.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/matchmaker-buzzword-logix-us-odyssey-2-1978"
   }
  },
  "o2_45": {
@@ -757,6 +915,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "iB1WzfXM_MM",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Keyboard Creations! (1981) (Viadeoapac A) Longplay"
+  },
+  "history": {
+   "text": "A message and quiz cartridge. One player fills as much of the screen message as they can inside an agreed time limit — five, ten or fifteen minutes, ninety-nine for a perfect score — then the second player takes a turn.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/keyboard-creations-us-odyssey-2-1981"
   }
  },
  "o2_43": {
@@ -769,6 +932,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "5qdPOXqpWPw",
    "title": "P.T. Barnum's Acrobats! Odyssey 2 Videopac Gameplay"
+  },
+  "history": {
+   "text": "Two acrobats and a seesaw, popping rows of balloons. The bottom row scores two a balloon, the middle four, the top six, with a bonus for clearing a row outright.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/p.-t.-barnums-acrobats-us-odyssey-2-1982"
   }
  },
  "o2_35": {
@@ -815,6 +983,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "XeW4Jojq86Y",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Invaders from Hyperspace! (1978) (Videopac 18) Longplay"
+  },
+  "history": {
+   "text": "Battle cruisers launch from planets of your own colour, and a planet changes colour each time laser fire hits it — so losing ground means losing the places you can launch from. Sold in Europe as Laser War.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/invadersfromhyperspacegamemanualodyssey21978"
   }
  },
  "o2_46": {
@@ -824,14 +997,14 @@ window.GAMEPAGES_DATA = {
    "pages": 16,
    "source": "Turtles (EUR)(Philips Videopac)(1983)"
   },
-  "history": {
-   "text": "Turtles is a video game developed by Konami and released in arcades in 1981 by Stern and Sega. The Sega version was published as Turpin (ターピン). Turtles is a maze game where the player is a turtle trying to bring baby turtles to their homes while avoiding beetles {In some port versions, cars}",
-   "wikiTitle": "Turtles (video game)",
-   "url": "https://en.wikipedia.org/wiki/Turtles_(video_game)"
-  },
   "video": {
    "id": "oAqux065vAU",
    "title": "Tartarugas! para Odyssey da Philips  -  Turtles! for Magnavox Odyssey² / Philips Videopac G7000"
+  },
+  "history": {
+   "text": "Konami's arcade game under licence: a multi-storey building, baby turtles to collect, and bombers working through the rooms after you.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/turtles-eur-philips-videopac-1983"
   }
  },
  "o2_47": {
@@ -858,14 +1031,14 @@ window.GAMEPAGES_DATA = {
    "pages": 16,
    "source": "Turtles (EUR)(Philips Videopac)(1983)"
   },
-  "history": {
-   "text": "Turtles is a video game developed by Konami and released in arcades in 1981 by Stern and Sega. The Sega version was published as Turpin (ターピン). Turtles is a maze game where the player is a turtle trying to bring baby turtles to their homes while avoiding beetles {In some port versions, cars}",
-   "wikiTitle": "Turtles (video game)",
-   "url": "https://en.wikipedia.org/wiki/Turtles_(video_game)"
-  },
   "video": {
    "id": "oAqux065vAU",
    "title": "Tartarugas! para Odyssey da Philips  -  Turtles! for Magnavox Odyssey² / Philips Videopac G7000"
+  },
+  "history": {
+   "text": "Konami's arcade game under licence: a multi-storey building, baby turtles to collect, and bombers working through the rooms after you.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/turtles-eur-philips-videopac-1983"
   }
  },
  "vp_40": {
@@ -878,6 +1051,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "upoIpYcwjaE",
    "title": "Odyssey 2 - 4 in 1 Row © 1982 Philips - Gameplay"
+  },
+  "history": {
+   "text": "Connect four, played by a pussycat and a hounddog. Drop a ball into a column each turn and try to line up four across, down or diagonally; the computer applauds the winner for as long as you hold the button down.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Four_in_1_row_1982_Philips_EU"
   }
  },
  "vp_58_12": {
@@ -890,6 +1068,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "YY6QuNVT5ZM",
    "title": "Air Battle (Odyssey 2). Score: 20."
+  },
+  "history": {
+   "text": "An air combat game for one or more players. Take-off is a manoeuvre in itself: push the stick forward until the indicator light flashes to say you have flying speed, then pull back.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/58_PLUS_Air_Battle_1983_Philips_EU"
   }
  },
  "vp_04": {
@@ -917,9 +1100,9 @@ window.GAMEPAGES_DATA = {
    "source": "American Football (1978)(Philips)(EU)"
   },
   "history": {
-   "text": "Football is a 1978 American football video game developed and released by Atari, Inc. for arcades. Players are represented by X's and O's. While predated by Sega's World Cup, Football is credited with popularizing the trackball controller and is also the first non-racing vertically scrolling video game. It was distributed in Japan by Namco in 1979.",
-   "wikiTitle": "Football (video game)",
-   "url": "https://en.wikipedia.org/wiki/Football_(video_game)"
+   "text": "American football for two players, with downs, field goals worth three points, and a choice of normal or fast play.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/American_Football_1978_Philips_EU"
   },
   "video": {
    "id": "fx-CNnsWOOI",
@@ -934,9 +1117,13 @@ window.GAMEPAGES_DATA = {
    "source": "Backgammon (1982)(Philips)(EU)"
   },
   "history": {
-   "text": "Backgammon is a video game adaptation of the board-game backgammon, developed by Atari, Inc. for the Atari Video Computer System and released in 1979. The game was one of the earliest electronic versions of Backgammon.",
-   "wikiTitle": "Backgammon (1979 video game)",
-   "url": "https://en.wikipedia.org/wiki/Backgammon_(1979_video_game)"
+   "text": "Backgammon against the computer or another player. Both sides race to bear all their checkers off; a roll of five and three moves five and then three, never eight in one go.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Backgammon_1982_Philips_EU"
+  },
+  "video": {
+   "id": "K7Dl9vA8zVo",
+   "title": "Modul 48: Backgammon | Philips Videopac / Magnavox Odyssey / G7000 / G7400"
   }
  },
  "vp_08": {
@@ -966,6 +1153,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "CtLLQftDf1c",
    "title": "Basket Game (Euro) ~ Pachinko! (USA) - Odyssey 2 [MESS] [shortplay]"
+  },
+  "history": {
+   "text": "Two players lob balls across a hall, and the game pauses to salute whoever crosses another hundred points. The complication is the busybody running back and forth midway up the screen, catching whatever passes and dumping it back in the centre.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Basket_Game_1980_Philips_en-de"
   }
  },
  "vp_30": {
@@ -976,9 +1168,13 @@ window.GAMEPAGES_DATA = {
    "source": "Battlefield (EUR)(Philips Videopac)(1981)"
   },
   "history": {
-   "text": "Battlefield is a military first-person shooter video game franchise developed by Battlefield Studios, primarily led by Swedish company DICE, and published by American company Electronic Arts. The series mainly focuses on online multiplayer, with gameplay taking place across large maps, and emphasizes teamwork and combined arms warfare.",
-   "wikiTitle": "Battlefield (video game series)",
-   "url": "https://en.wikipedia.org/wiki/Battlefield_(video_game_series)"
+   "text": "A strategy game for one or two, and the trick is that you barely control your own army. Each side has a general and four robots; the robots move and fire by themselves, and you only steer the general. A robot hit by a shot freezes, and the fewer of them are still moving the faster the survivors get. The general's job is to repair them by touching them, herd them towards the enemy general, and stay alive — he can be caught by robots, and only by robots. Sold in America as War of Nerves! and in Brazil as Guerra de Nervos!",
+   "source": "GameClab longplay notes",
+   "url": "https://www.youtube.com/watch?v=qIfCwJE857U"
+  },
+  "video": {
+   "id": "qIfCwJE857U",
+   "title": "Magnavox Odyssey 2 - Philips Videopac: War of Nerves! (1979) (Videopac 30) Longplay"
   }
  },
  "vp_05": {
@@ -989,9 +1185,9 @@ window.GAMEPAGES_DATA = {
    "source": "Blackjack (1978)(Philips)(en-de)"
   },
   "history": {
-   "text": "Blackjack is a video game simulation of the card game blackjack. It was designed by Bob Whitehead for the Atari Video Computer System. The game allows up to three players to play a variation of blackjack. All players are given 200 chips which they can use to bet 1 to 25 during each round. The game ends for a player when they either run out of chips or earns 1000 chips or more.",
-   "wikiTitle": "Blackjack (Atari 2600 video game)",
-   "url": "https://en.wikipedia.org/wiki/Blackjack_(Atari_2600_video_game)"
+   "text": "Blackjack against the computer, which deals, keeps its second card hidden and does the banking. One or two players, aces count one or eleven, and you can draw to a maximum of five cards.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Blackjack_1978_Philips_en-de"
   },
   "video": {
    "id": "Z7Cb7ubFV-E",
@@ -1008,6 +1204,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "WC0chYsRm5Y",
    "title": "Blobbers for the Philips Videopac"
+  },
+  "history": {
+   "text": "Blobbers hatch harmless and grow, turning purple, then white, then red — and red is when they are dangerous. Adults have a habit of sticking to your laser unit.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Blobbers_1983_Philips_EU"
   }
  },
  "vp_19": {
@@ -1017,14 +1218,14 @@ window.GAMEPAGES_DATA = {
    "pages": 24,
    "source": "Catch The Ball | Noughts And Crosses (EUR)(Philips Videopac)(1980)"
   },
-  "history": {
-   "text": "Game & Watch: Ball is an action Game & Watch video game released as a part of the Silver series on April 28, 1980. It was the first Game & Watch game to come out and has been released a number of times over the years in various ways.",
-   "wikiTitle": "Ball (video game)",
-   "url": "https://en.wikipedia.org/wiki/Ball_(video_game)"
-  },
   "video": {
    "id": "pqPmAYwVrA8",
    "title": "39 - Catch the Ball - press 2:Single Player - Videopac [MAME]"
+  },
+  "history": {
+   "text": "Catch the Ball and Noughts and Crosses, in variations for one or two players, with and without a time limit — the untimed ones exist so you can practise the timed ones.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/catch-the-ball-noughts-and-crosses-eur-philips-videopac-1980"
   }
  },
  "vp_17": {
@@ -1037,6 +1238,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "DAVAEVmm9ao",
    "title": "Odyssey 2 - Chinese Logic © 1980 Philips - Gameplay"
+  },
+  "history": {
+   "text": "The Tower of Hanoi, with figures moved between stations. The manual gives the minimum for each size, and the numbers tell you what kind of puzzle it is: three moves for three figures, seven for four, fifteen for five, thirty-one for six.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/chinese-logic-eur-philips-videopac-1980"
   }
  },
  "vp_09": {
@@ -1049,6 +1255,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "tsLRtlqsUxU",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Computer Intro! (1979) (Videopac 9) Longplay"
+  },
+  "history": {
+   "text": "Not a game but a course, in six chapters: how microprocessors work, binary and computer languages, the Videopac machine itself, its instruction set, its operating modes, and sample programs to type in.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Computer_Programmer_1978_Philips_EU"
   }
  },
  "vp_41": {
@@ -1111,11 +1322,6 @@ window.GAMEPAGES_DATA = {
  },
  "vp_44": {
   "input": "joystick",
-  "history": {
-   "text": "Kid Klown in Crazy Chase  is a platform video game developed and published by Kemco for the Super Nintendo Entertainment System. It was released in North America in September 1994, Japan on October 21, 1994 and in Europe in 1995. The game features the Kid Klown, the player character who is tasked with rescuing the Princess Honey from the villain Black Jack. Players view gameplay from an isometric perspective as Kid Klown pursues a lit fuse in order to stop it from reaching a spade bomb. The game was re-released for the Game Boy Advance as Crazy Chase and features 11 new levels and four mini-games. The re-release was released in Europe and North America in October 2002, while a release in Japan was planned but ultimately canceled. It was met with mixed reception from critics, who found it to be inferior to other games of its type. The game has a Japan-exclusive sequel Kid Klown in Crazy Chase 2: Love Love Hani Soudatsusen released for the Sony PlayStation in 1996.",
-   "wikiTitle": "Kid Klown in Crazy Chase",
-   "url": "https://en.wikipedia.org/wiki/Kid_Klown_in_Crazy_Chase"
-  },
   "video": {
    "id": "qIiVoq98Ggg",
    "title": "KC's Krazy Chase for the Magnavox Odyssey 2/G7000 Videopac"
@@ -1131,6 +1337,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "46SY8ltwihU",
    "title": "Odyssey 2 / Videopac Dam Buster [Variation 0/2] 7"
+  },
+  "history": {
+   "text": "One player has sixty seconds to knock as many blocks as possible out of a dam; the other defends it with a shield. Then the handsets swap and the other one tries.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Dambuster_1981_Philips_en-de"
   }
  },
  "vp_16": {
@@ -1141,9 +1352,9 @@ window.GAMEPAGES_DATA = {
    "source": "Depth Charge / Marksman (1978)(Philips)(en-de)"
   },
   "history": {
-   "text": "Depth Charge is an action video game for the Apple II programmed by Chris Oberth and published by The Elektrik Keyboard of Chicago, Illinois in 1978. A clone of the 1977 arcade video game Depthcharge, the player drops explosives from a moving ship attempting to eliminate submarines below it.",
-   "wikiTitle": "Depth Charge (video game)",
-   "url": "https://en.wikipedia.org/wiki/Depth_Charge_(video_game)"
+   "text": "Two games. In Marksman, targets drift past a sight for one minute or three, with the manual grading your score from 'more practice needed' below fifty to 'a marksman' above a hundred and forty.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Marksman_1978_Philips_en-de"
   },
   "video": {
    "id": "WgE0dGp_kXE",
@@ -1160,6 +1371,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "1c4VL8be2XM",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Pocket Billiards! (1980) (Videopac 35) Longplay"
+  },
+  "history": {
+   "text": "Pool, in two games: 8-Ball and Rotation. The manual is firm that you never press the action button or a key while you are moving the joystick.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/electronic-billiards-eur-philips-videopac-1981"
   }
  },
  "vp_35pl": {
@@ -1172,6 +1388,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "1c4VL8be2XM",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Pocket Billiards! (1980) (Videopac 35) Longplay"
+  },
+  "history": {
+   "text": "Pool, in two games: 8-Ball and Rotation. The manual is firm that you never press the action button or a key while you are moving the joystick.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/electronic-billiards-eur-philips-videopac-1981"
   }
  },
  "vp_36": {
@@ -1184,6 +1405,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "B8s5zSQDGDg",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Electronic Table Soccer! (1980) (Videopac 27) Longplay"
+  },
+  "history": {
+   "text": "Soccer and ice hockey, red against blue, played in five-minute periods with the clock counting down at the bottom of the screen. Hold the action button and the ball keeps travelling.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/electronic-soccer-electronic-ice-hockey-eur-philips-videopac-1981"
   }
  },
  "vp_27": {
@@ -1196,6 +1422,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "B8s5zSQDGDg",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Electronic Table Soccer! (1980) (Videopac 27) Longplay"
+  },
+  "history": {
+   "text": "Table football for one or two players, blue playing left to right and yellow the other way. The computer keeps score along the bottom of the screen.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Electronic_Table_Football_1980_Philips_EU"
   }
  },
  "vp_28": {
@@ -1225,6 +1456,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "IPfgNqdVI0s",
    "title": "Videopac (Odyssey 2) - Flipper (fast game - 1) - Gameplay (plus4punk)"
+  },
+  "history": {
+   "text": "Pinball, with the whole television turned into a table. The four small coloured targets at the very top are worth four thousand points each and are correspondingly hard to hit.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Flipper_Game_1980_Philips_en-de"
   }
  },
  "vp_24pl": {
@@ -1234,9 +1470,14 @@ window.GAMEPAGES_DATA = {
    "pages": 6,
    "source": "Flipper Game (1980)(Philips)(en-de)"
   },
+  "history": {
+   "text": "Pinball, with the whole television turned into a table. The four small coloured targets at the very top are worth four thousand points each and are correspondingly hard to hit.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Flipper_Game_1980_Philips_en-de"
+  },
   "video": {
-   "id": "IPfgNqdVI0s",
-   "title": "Videopac (Odyssey 2) - Flipper (fast game - 1) - Gameplay (plus4punk)"
+   "id": "Fi34Om0UAIs",
+   "title": "Flipper Game - G7000 Videopac nr. 24 - GubbaGaming"
   }
  },
  "vp_39": {
@@ -1284,6 +1525,10 @@ window.GAMEPAGES_DATA = {
    "text": "Computer Golf!, released in Europe as Videopac 10 - Golf, is a 1979 golf simulation video game. The game was released by Magnavox and Philips for the Magnavox Odyssey², also known as the Philips Videopac G7000. The game features a nine-hole course golf course where players control the angle of their golf strokes by moving a player character around the map and control the power of their strokes by holding down the action button. The game was heavily praised at the time of its release for its graphical flourishes and is considered one of the best sports titles in the Odyssey²'s library.",
    "wikiTitle": "Computer Golf!",
    "url": "https://en.wikipedia.org/wiki/Computer_Golf!"
+  },
+  "video": {
+   "id": "z0j3UtOJvc4",
+   "title": "Modul 10: Golf | Philips Videopac / Magnavox Odyssey / G7000 / G7400"
   }
  },
  "vp_14": {
@@ -1294,9 +1539,9 @@ window.GAMEPAGES_DATA = {
    "source": "Gunfighter (1978)(Philips)(en-de)"
   },
   "history": {
-   "text": "Gunfighter II: Revenge of Jesse James is a light gun shooter video game developed by Rebellion Developments and published by Ubi Soft for the PlayStation 2. It is the sequel to the 2001 game Gunfighter: The Legend of Jesse James. It is compatible with the GunCon 2 controller. The game's plot is set in the American Old West. The game's protagonist is Jesse James, an American outlaw who lived in the 19th century.",
-   "wikiTitle": "Gunfighter II: Revenge of Jesse James",
-   "url": "https://en.wikipedia.org/wiki/Gunfighter_II%3A_Revenge_of_Jesse_James"
+   "text": "A duel for two, blue against red. Take cover behind the rocks, wait for a clear horizontal shot, and mind the ricochets. First to ten wins.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Gunfighter_1978_Philips_en-de"
   },
   "video": {
    "id": "mTd_F2J2qPU",
@@ -1311,9 +1556,9 @@ window.GAMEPAGES_DATA = {
    "source": "59 PLUS - Helicopter Rescue (1983)(Philips)(en-de)"
   },
   "history": {
-   "text": "Rescue is a twin-stick shooter arcade video game designed by Chris Oberth and released by Stern Electronics in 1982. The player flies a helicopter over the open sea to rescue stranded paratroopers from enemy forces and sharks. As the player-controlled helicopter flies left and right, the cloud layers move at different rates, giving a parallax scrolling effect.",
-   "wikiTitle": "Rescue (1982 video game)",
-   "url": "https://en.wikipedia.org/wiki/Rescue_(1982_video_game)"
+   "text": "Fly a helicopter over desert and sea picking up stranded pilots, who mark themselves with red flares. Enemy tanks and patrol boats try to stop you, and to pick the pilots off before you get there.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/59_PLUS_Helicopter_Rescue_1983_Philips_en-de"
   },
   "video": {
    "id": "r2s0-TLKiUY",
@@ -1330,6 +1575,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "G_2yfSnnC9E",
    "title": "Magnavox Odyssey 2 - Philips Videopac: I've Got Your Number (1978) (Videopac 13) Longplay"
+  },
+  "history": {
+   "text": "A number game for children, and deliberately playable by ones who cannot read numbers yet. First to ten right answers wins, with an electronic pat on the back and a musical salute; some answers sit inside the orbits, and you duck the figure's head through to reach them.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/ive-got-your-number-usodyssey-21978"
   }
  },
  "vp_33": {
@@ -1376,6 +1626,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "8BbWqceR7Eg",
    "title": "Newscaster (Euro) - Odyssey 2 [shortplay] (Arcade Database)"
+  },
+  "history": {
+   "text": "A message and quiz cartridge. One player fills as much of the screen message as they can inside an agreed time limit — five, ten or fifteen minutes, ninety-nine for a perfect score — then the second player takes a turn.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/keyboard-creations-us-odyssey-2-1981"
   }
  },
  "vp_52pl": {
@@ -1405,6 +1660,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "Xz8XElZySqY",
    "title": "Odyssey 2 - A Labyrinth Game © 1981 Philips - Gameplay"
+  },
+  "history": {
+   "text": "Two games on one cartridge. Supermind is the code-breaker: the computer picks a combination of four symbols out of the forty-seven on the Videopac keyboard, and you work out which.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/a-labyrinth-game-supermind-eur-philips-videopac-1981"
   }
  },
  "vp_23": {
@@ -1417,6 +1677,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "TEOy5nIPLzE",
    "title": "Las Vegas Gambling (Euro) ~ Casino Slot Machine! (USA) - Odyssey 2 [MESS] [shortplay]"
+  },
+  "history": {
+   "text": "A slot machine for up to four players. Line up three symbols along any of five lines — three across and two diagonal — and the machine pays out coin by coin. The computer keeps your balance.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/las-vegas-gambling-eur-philips-videopac-1980"
   }
  },
  "vp_18": {
@@ -1429,6 +1694,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "DbAOS72ffdE",
    "title": "Laser War (Videopac G7000/Odyssey²)[#18]"
+  },
+  "history": {
+   "text": "Red and yellow fighters among asteroids. You fire when an asteroid takes your own craft's colour, and the flying saucer explodes when the laser catches it. The American release called it Invaders from Hyperspace.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/laser-war-eur-philips-videopac-1980"
   }
  },
  "vp_54": {
@@ -1441,6 +1711,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "GzmMpicE_Oc",
    "title": "Loony Balloon (Prototype version) for the Philips Videopac"
+  },
+  "history": {
+   "text": "Ten variations set in a playground. You score off the roundabout, the rocking horse and the trees, but each one only pays once, so bonus points have to be hunted elsewhere.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/54_PLUS_Looney_Balloon_1983_Philips_en-de"
   }
  },
  "vp_54pl": {
@@ -1453,6 +1728,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "GzmMpicE_Oc",
    "title": "Loony Balloon (Prototype version) for the Philips Videopac"
+  },
+  "history": {
+   "text": "Ten variations set in a playground. You score off the roundabout, the rocking horse and the trees, but each one only pays once, so bonus points have to be hunted elsewhere.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/54_PLUS_Looney_Balloon_1983_Philips_en-de"
   }
  },
  "vp_07": {
@@ -1461,6 +1741,15 @@ window.GAMEPAGES_DATA = {
    "item": "mathematician-echo-eur-philips-videopac-1978",
    "pages": 12,
    "source": "Mathematician | Echo (EUR)(Philips Videopac)(1978)"
+  },
+  "video": {
+   "id": "hue_65oFTZY",
+   "title": "Magnavox Odyssey 2 - Philips Videopac: Math-a-Magic! / Echo! (1978) (Videopac 7) Longplay"
+  },
+  "history": {
+   "text": "Two teaching games. Math-a-Magic sets arithmetic problems — addition, subtraction, multiplication and division, at one, two or three digits depending on the skill level — and never ends; it plays a little tune every ten right answers and runs a clock in the corner so you can race yourself. Echo is Simon: the computer plays a note, shown as a number, a colour and a sound, you repeat it, and one more note is added each round until you have made three mistakes. Brazil sold it as Matemagica! / Jogo da Memória!",
+   "source": "GameClab longplay notes",
+   "url": "https://www.youtube.com/watch?v=hue_65oFTZY"
   }
  },
  "vp_37": {
@@ -1486,6 +1775,15 @@ window.GAMEPAGES_DATA = {
    "item": "Morse_1982_Philips_EU",
    "pages": 4,
    "source": "Morse (1982)(Philips)(EU)"
+  },
+  "history": {
+   "text": "A Morse tutor. The computer sends a signal, and if you don't recognise it, repeats it as dots and dashes on screen and tells you the letter. You answer on the keyboard, and pick your speed to start.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Morse_1982_Philips_EU"
+  },
+  "video": {
+   "id": "nFWY3uMvHQg",
+   "title": "Morse for the Videopac"
   }
  },
  "vp_38": {
@@ -1513,9 +1811,9 @@ window.GAMEPAGES_DATA = {
    "source": "Musician (1983)(Philips)(EU)"
   },
   "history": {
-   "text": "\n\nThe following is a list of computer and video game musicians, those who have worked in the video game industry to produce video game soundtracks or otherwise contribute musically. A broader list of major figures in the video game industry is also available.",
-   "wikiTitle": "List of video game musicians",
-   "url": "https://en.wikipedia.org/wiki/List_of_video_game_musicians"
+   "text": "A music cartridge rather than a game. It teaches you to play, and records what you play back.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Musician_1983_Philips_EU"
   },
   "video": {
    "id": "uhGxRzkkUJw",
@@ -1532,6 +1830,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "buF3DWJ_nPQ",
    "title": "Neutron Star (Odyssey 2 /Videopac...emu) 116"
+  },
+  "history": {
+   "text": "You fly out to a dead planet, collect the fragments left of it and drop them into a neutron star to be incinerated. Getting close enough to grab a boulder is the easy half; firing the retro rockets to pull away from the star before it takes you is the other.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/55_PLUS_Neutron_Star_1983_Philips_EU"
   }
  },
  "vp_55_12": {
@@ -1544,6 +1847,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "buF3DWJ_nPQ",
    "title": "Neutron Star (Odyssey 2 /Videopac...emu) 116"
+  },
+  "history": {
+   "text": "You fly out to a dead planet, collect the fragments left of it and drop them into a neutron star to be incinerated. Getting close enough to grab a boulder is the easy half; firing the retro rockets to pull away from the star before it takes you is the other.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/55_PLUS_Neutron_Star_1983_Philips_EU"
   }
  },
  "vp_55_12fix": {
@@ -1556,6 +1864,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "buF3DWJ_nPQ",
    "title": "Neutron Star (Odyssey 2 /Videopac...emu) 116"
+  },
+  "history": {
+   "text": "You fly out to a dead planet, collect the fragments left of it and drop them into a neutron star to be incinerated. Getting close enough to grab a boulder is the easy half; firing the retro rockets to pull away from the star before it takes you is the other.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/55_PLUS_Neutron_Star_1983_Philips_EU"
   }
  },
  "vp_53": {
@@ -1566,9 +1879,9 @@ window.GAMEPAGES_DATA = {
    "source": "Nightmare (1983)(Philips)(en-de)"
   },
   "history": {
-   "text": "The Simpsons: Bart's Nightmare is a 1992 platform video game based on the animated television series The Simpsons. Developed by Sculptured Software and published by Acclaim Entertainment, it was first released for the Super Nintendo Entertainment System in 1992, followed by the Sega Genesis in 1993. The first half of the game follows Bart Simpson as he tries to find his missing homework pages in order to escape a bizarre dream world, while the second half consists of minigames.",
-   "wikiTitle": "The Simpsons: Bart's Nightmare",
-   "url": "https://en.wikipedia.org/wiki/The_Simpsons%3A_Bart's_Nightmare"
+   "text": "An escape adventure for one or two players. Each nightmare is a run of three attempts to get out, and the computer shows how many you have left before the dream is over.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/53_PLUS_Nightmare_1983_Philips_en-de"
   },
   "video": {
    "id": "WUlqZezZoB0",
@@ -1583,9 +1896,9 @@ window.GAMEPAGES_DATA = {
    "source": "Nightmare (1983)(Philips)(en-de)"
   },
   "history": {
-   "text": "The Simpsons: Bart's Nightmare is a 1992 platform video game based on the animated television series The Simpsons. Developed by Sculptured Software and published by Acclaim Entertainment, it was first released for the Super Nintendo Entertainment System in 1992, followed by the Sega Genesis in 1993. The first half of the game follows Bart Simpson as he tries to find his missing homework pages in order to escape a bizarre dream world, while the second half consists of minigames.",
-   "wikiTitle": "The Simpsons: Bart's Nightmare",
-   "url": "https://en.wikipedia.org/wiki/The_Simpsons%3A_Bart's_Nightmare"
+   "text": "An escape adventure for one or two players. Each nightmare is a run of three attempts to get out, and the computer shows how many you have left before the dream is over.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/53_PLUS_Nightmare_1983_Philips_en-de"
   },
   "video": {
    "id": "WUlqZezZoB0",
@@ -1602,6 +1915,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "FOMMp5AY5n4",
    "title": "Videopac G7400 / Norseman [Game 0] 510"
+  },
+  "history": {
+   "text": "A Videopac+ exclusive, set among the Vikings a thousand years ago. The screen is a courtyard divided into cells in a honeycomb pattern, with a warrior working his way through it.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/56_PLUS_Norseman_1983_Philips_en-de"
   }
  },
  "vp_02": {
@@ -1614,6 +1932,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "HBF_fbKmwus",
    "title": "PHILIPS VIDEOPAC 7000 ODYSSEY 2 3 GAMES Pairs   Space Rendezvous   Logic 1980PhilipsEu bin"
+  },
+  "history": {
+   "text": "Three games. Pairs asks for two letters between A and T to turn symbols over. Space Rendezvous is the interesting one: land on the planet, then dock with the mother ship before the fuel runs out, with a crash costing you time.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/pairs-space-rendezvous-logic-eur-philips-videopac-1980"
   }
  },
  "vp_43": {
@@ -1726,9 +2049,13 @@ window.GAMEPAGES_DATA = {
    "source": "Samurai (1978)(Philips)(en-de)"
   },
   "history": {
-   "text": "Afro Samurai is an action video game for the PlayStation 3 and Xbox 360, loosely based on the manga and anime series of the same name. It was announced in the February 2008 issue of Play magazine and released on January 27, 2009. The game was developed by Namco Bandai Games and in North America, it was the first game published under their western label, Surge. In Europe and Australia the game was released under the Namco brand instead and was distributed by Atari Europe.",
-   "wikiTitle": "Afro Samurai (video game)",
-   "url": "https://en.wikipedia.org/wiki/Afro_Samurai_(video_game)"
+   "text": "Reversi, under another name. You and your opponent take turns capturing each other's discs, and whoever holds the most at the end wins. There are time limits and a computer opponent to practise against.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Samurai_1978_Philips_en-de"
+  },
+  "video": {
+   "id": "kCS9Y5F7AKg",
+   "title": "Modul 15: Samurai | Philips Videopac / Magnavox Odyssey / G7000 / G7400"
   }
  },
  "vp_34": {
@@ -1741,6 +2068,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "Tqt29viIOjY",
    "title": "Magnavox Odyssey/Philips Videopac G7000 - Satellite Attack (o2em)"
+  },
+  "history": {
+   "text": "UFO!, released in Europe as Videopac 34 - Satellite Attack, is a 1981 multidirectional shooter video game created by Ed Averett for the Magnavox Odyssey² otherwise known as the Philips Videopac G7000. Players take control of a flying saucer tasked with destroying swarms of enemy unidentified flying objects in outer space. It was published by Magnavox in North America and Philips in Europe and Brazil. It was also later released for the Philips Videopac+ G7400 in 1983. The game is frequently compared to Atari's 1979 video game Asteroids.",
+   "wikiTitle": "UFO!",
+   "url": "https://en.wikipedia.org/wiki/UFO!"
   }
  },
  "vp_34pl": {
@@ -1753,6 +2085,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "Tqt29viIOjY",
    "title": "Magnavox Odyssey/Philips Videopac G7000 - Satellite Attack (o2em)"
+  },
+  "history": {
+   "text": "UFO!, released in Europe as Videopac 34 - Satellite Attack, is a 1981 multidirectional shooter video game created by Ed Averett for the Magnavox Odyssey² otherwise known as the Philips Videopac G7000. Players take control of a flying saucer tasked with destroying swarms of enemy unidentified flying objects in outer space. It was published by Magnavox in North America and Philips in Europe and Brazil. It was also later released for the Philips Videopac+ G7400 in 1983. The game is frequently compared to Atari's 1979 video game Asteroids.",
+   "wikiTitle": "UFO!",
+   "url": "https://en.wikipedia.org/wiki/UFO!"
   }
  },
  "vp_21": {
@@ -1765,6 +2102,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "YOueTzbL2Ag",
    "title": "Secret of the Pharaohs - Odyssey 2 - Videopac"
+  },
+  "history": {
+   "text": "Two pyramid builders race each other to get the stones into the right order and solve the pyramid. The winner grows in stature and blows his trumpet about it.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Secret_of_the_Pharaohs_1980_Philips_en-de"
   }
  },
  "vp_25": {
@@ -1775,9 +2117,9 @@ window.GAMEPAGES_DATA = {
    "source": "Skiing (1980)(Philips)(en-de)"
   },
   "history": {
-   "text": "Skiing is a video game cartridge for the Atari 2600. It was authored by Bob Whitehead and released by Activision in 1980. It is one of the first video games developed by Activision.",
-   "wikiTitle": "Skiing (Atari 2600 video game)",
-   "url": "https://en.wikipedia.org/wiki/Skiing_(Atari_2600_video_game)"
+   "text": "Slalom skiing for one or two players against the clock. Where the posts line up vertically you cut side to side between them; the action button accelerates, which is how you make back the time you lost.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Skiing_1980_Philips_en-de"
   },
   "video": {
    "id": "Mwq5VtmlN-I",
@@ -1794,6 +2136,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "eo2v95CVihw",
    "title": "Space Monster [Philips Videopac G7000 Longplay] (1980) Magnavox"
+  },
+  "history": {
+   "text": "Alien Invaders - Plus!, known in Europe as Videopac 22 - Space Monster, is a 1980 fixed shooter video game developed by Ed and Linda Averett for the Magnavox Odyssey² also known as the Philips Videopac G7000. Similar to Space Invaders, the object of the game is to destroy all invading aliens while also avoiding enemy fire. It was published by Magnavox and Philips and was later rereleased for the Philips Videopac+ G7400. It reviewed favorably to Space Invaders with some critics considering the starring space monster, The Merciless Monstroth, to be a more interesting adversary. However it was criticized for only having one gameplay mode, contrary to the game's packaging.",
+   "wikiTitle": "Alien Invaders - Plus!",
+   "url": "https://en.wikipedia.org/wiki/Alien_Invaders_-_Plus!"
   }
  },
  "vp_22hack": {
@@ -1806,6 +2153,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "eo2v95CVihw",
    "title": "Space Monster [Philips Videopac G7000 Longplay] (1980) Magnavox"
+  },
+  "history": {
+   "text": "Alien Invaders - Plus!, known in Europe as Videopac 22 - Space Monster, is a 1980 fixed shooter video game developed by Ed and Linda Averett for the Magnavox Odyssey² also known as the Philips Videopac G7000. Similar to Space Invaders, the object of the game is to destroy all invading aliens while also avoiding enemy fire. It was published by Magnavox and Philips and was later rereleased for the Philips Videopac+ G7400. It reviewed favorably to Space Invaders with some critics considering the starring space monster, The Merciless Monstroth, to be a more interesting adversary. However it was criticized for only having one gameplay mode, contrary to the game's packaging.",
+   "wikiTitle": "Alien Invaders - Plus!",
+   "url": "https://en.wikipedia.org/wiki/Alien_Invaders_-_Plus!"
   }
  },
  "vp_20": {
@@ -1852,6 +2204,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "T7321hqO1Xg",
    "title": "Super Bee for the Philips Videopac"
+  },
+  "history": {
+   "text": "Super Bee eats his way through a magic garden that keeps filling with fruit, and the whole difficulty is steering: touch one of the fences or the magic barriers and he crashes.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/super-bee-eur-philips-videopac-1983"
   }
  },
  "vp_06": {
@@ -1861,14 +2218,14 @@ window.GAMEPAGES_DATA = {
    "pages": 12,
    "source": "Tenpin Bowling | Basketball (EUR)(Philips Videopac)(1980)"
   },
-  "history": {
-   "text": "Bowling is a 1979 sports video game developed by Larry Kaplan and published by Atari, Inc. for the Atari 2600. It is a simulation of tenpin bowling and sees the player attempting to knock down as many pins as possible with a ball in order to acquire a high score. There are six game modes that can selected from that influence the ball's movement and if a second player can participate for competitive multiplayer.",
-   "wikiTitle": "Bowling (1979 video game)",
-   "url": "https://en.wikipedia.org/wiki/Bowling_(1979_video_game)"
-  },
   "video": {
    "id": "_SZMgiFthtY",
    "title": "Bowling! - (1978) - Odyssey 2 - gameplay HD"
+  },
+  "history": {
+   "text": "Tenpin bowling and basketball on one cartridge, for two or three players, with a faster speed setting for the bowling.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/tenpin-bowling-basketball-eur-philips-videopac-1980"
   }
  },
  "vp_06pl": {
@@ -1878,14 +2235,14 @@ window.GAMEPAGES_DATA = {
    "pages": 12,
    "source": "Tenpin Bowling | Basketball (EUR)(Philips Videopac)(1980)"
   },
-  "history": {
-   "text": "Bowling is a 1979 sports video game developed by Larry Kaplan and published by Atari, Inc. for the Atari 2600. It is a simulation of tenpin bowling and sees the player attempting to knock down as many pins as possible with a ball in order to acquire a high score. There are six game modes that can selected from that influence the ball's movement and if a second player can participate for competitive multiplayer.",
-   "wikiTitle": "Bowling (1979 video game)",
-   "url": "https://en.wikipedia.org/wiki/Bowling_(1979_video_game)"
-  },
   "video": {
    "id": "_SZMgiFthtY",
    "title": "Bowling! - (1978) - Odyssey 2 - gameplay HD"
+  },
+  "history": {
+   "text": "Tenpin bowling and basketball on one cartridge, for two or three players, with a faster speed setting for the bowling.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/tenpin-bowling-basketball-eur-philips-videopac-1980"
   }
  },
  "vp_51pl": {
@@ -1898,6 +2255,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "KczthmZiqdQ",
    "title": "Terrahawks (Videopac G7000/Odyssey²)[#51]"
+  },
+  "history": {
+   "text": "The Timelord sends fleet after fleet through the warp, each better armed than the last — missiles and antimatter mines, then homing annihilators that have to be dodged rather than out-shot.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/attack-of-the-timelord-us-odyssey-2-1982"
   }
  },
  "vp_46": {
@@ -1910,6 +2272,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "4Wy9e5BLSao",
    "title": "Magnavox Odyssey 2 - Philips Videopac - Great Wall Street Fortune Hunt (1982) (Videopac 46) Longplay"
+  },
+  "history": {
+   "text": "A stock market game with real companies in it — IBM, McDonald's, Texas Instruments — alongside invented flyers like Wildcat Oil Western. The point is to read the swings fast enough to buy and sell well, and they run differently every time you play.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Great_Wall_Street_Fortune_Hunt_The_19xx_Magnavox_US"
   }
  },
  "vp_47": {
@@ -1922,6 +2289,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "hykj8xsWtk8",
    "title": "The Mousing Cat for the Philips Videopac"
+  },
+  "history": {
+   "text": "Cat and mouse, in eight variations for one or two players, each at seven levels of difficulty. A game runs to six encounters.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Mousing_Cat_The_1982_Philips_en-de"
   }
  },
  "vp_60_16": {
@@ -1934,6 +2306,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "7dErbkKtNCg",
    "title": "Jogo Videopac : Trans American Rally!"
+  },
+  "history": {
+   "text": "A rally across America, run on fuel rather than laps: cover as much ground as you can before it runs out, and every collision costs. Five scores stay on the rally board, with room to type in the drivers' names.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/trans-american-rally-eur-philips-videopac-1983"
   }
  },
  "vp_12": {
@@ -1953,6 +2330,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "upoIpYcwjaE",
    "title": "Odyssey 2 - 4 in 1 Row © 1982 Philips - Gameplay"
+  },
+  "history": {
+   "text": "Connect four, played by a pussycat and a hounddog. Drop a ball into a column each turn and try to line up four across, down or diagonally; the computer applauds the winner for as long as you hold the button down.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Four_in_1_row_1982_Philips_EU"
   }
  },
  "Vp05_F": {
@@ -1963,9 +2345,9 @@ window.GAMEPAGES_DATA = {
    "source": "Blackjack (1978)(Philips)(en-de)"
   },
   "history": {
-   "text": "Blackjack is a video game simulation of the card game blackjack. It was designed by Bob Whitehead for the Atari Video Computer System. The game allows up to three players to play a variation of blackjack. All players are given 200 chips which they can use to bet 1 to 25 during each round. The game ends for a player when they either run out of chips or earns 1000 chips or more.",
-   "wikiTitle": "Blackjack (Atari 2600 video game)",
-   "url": "https://en.wikipedia.org/wiki/Blackjack_(Atari_2600_video_game)"
+   "text": "Blackjack against the computer, which deals, keeps its second card hidden and does the banking. One or two players, aces count one or eleven, and you can draw to a maximum of five cards.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Blackjack_1978_Philips_en-de"
   },
   "video": {
    "id": "Z7Cb7ubFV-E",
@@ -2016,6 +2398,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "46SY8ltwihU",
    "title": "Odyssey 2 / Videopac Dam Buster [Variation 0/2] 7"
+  },
+  "history": {
+   "text": "One player has sixty seconds to knock as many blocks as possible out of a dam; the other defends it with a shield. Then the handsets swap and the other one tries.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Dambuster_1981_Philips_en-de"
   }
  },
  "Vp35_F": {
@@ -2028,6 +2415,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "1c4VL8be2XM",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Pocket Billiards! (1980) (Videopac 35) Longplay"
+  },
+  "history": {
+   "text": "Pool, in two games: 8-Ball and Rotation. The manual is firm that you never press the action button or a key while you are moving the joystick.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/electronic-billiards-eur-philips-videopac-1981"
   }
  },
  "Vp36_F": {
@@ -2040,6 +2432,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "B8s5zSQDGDg",
    "title": "Magnavox Odyssey 2 - Philips Videopac: Electronic Table Soccer! (1980) (Videopac 27) Longplay"
+  },
+  "history": {
+   "text": "Soccer and ice hockey, red against blue, played in five-minute periods with the clock counting down at the bottom of the screen. Hold the action button and the ball keeps travelling.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/electronic-soccer-electronic-ice-hockey-eur-philips-videopac-1981"
   }
  },
  "Vp28_F": {
@@ -2069,6 +2466,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "IPfgNqdVI0s",
    "title": "Videopac (Odyssey 2) - Flipper (fast game - 1) - Gameplay (plus4punk)"
+  },
+  "history": {
+   "text": "Pinball, with the whole television turned into a table. The four small coloured targets at the very top are worth four thousand points each and are correspondingly hard to hit.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Flipper_Game_1980_Philips_en-de"
   }
  },
  "Vp52+_F": {
@@ -2098,6 +2500,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "TEOy5nIPLzE",
    "title": "Las Vegas Gambling (Euro) ~ Casino Slot Machine! (USA) - Odyssey 2 [MESS] [shortplay]"
+  },
+  "history": {
+   "text": "A slot machine for up to four players. Line up three symbols along any of five lines — three across and two diagonal — and the machine pays out coin by coin. The computer keeps your balance.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/las-vegas-gambling-eur-philips-videopac-1980"
   }
  },
  "Vp18_F": {
@@ -2110,6 +2517,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "DbAOS72ffdE",
    "title": "Laser War (Videopac G7000/Odyssey²)[#18]"
+  },
+  "history": {
+   "text": "Red and yellow fighters among asteroids. You fire when an asteroid takes your own craft's colour, and the flying saucer explodes when the laser catches it. The American release called it Invaders from Hyperspace.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/laser-war-eur-philips-videopac-1980"
   }
  },
  "Vp07_F": {
@@ -2118,6 +2530,10 @@ window.GAMEPAGES_DATA = {
    "item": "mathematician-echo-eur-philips-videopac-1978",
    "pages": 12,
    "source": "Mathematician | Echo (EUR)(Philips Videopac)(1978)"
+  },
+  "video": {
+   "id": "hue_65oFTZY",
+   "title": "Magnavox Odyssey 2 - Philips Videopac: Math-a-Magic! / Echo! (1978) (Videopac 7) Longplay"
   }
  },
  "Vp45_F": {
@@ -2126,6 +2542,15 @@ window.GAMEPAGES_DATA = {
    "item": "Morse_1982_Philips_EU",
    "pages": 4,
    "source": "Morse (1982)(Philips)(EU)"
+  },
+  "history": {
+   "text": "A Morse tutor. The computer sends a signal, and if you don't recognise it, repeats it as dots and dashes on screen and tells you the letter. You answer on the keyboard, and pick your speed to start.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Morse_1982_Philips_EU"
+  },
+  "video": {
+   "id": "nFWY3uMvHQg",
+   "title": "Morse for the Videopac"
   }
  },
  "Vp42_F": {
@@ -2187,9 +2612,9 @@ window.GAMEPAGES_DATA = {
    "source": "Skiing (1980)(Philips)(en-de)"
   },
   "history": {
-   "text": "Skiing is a video game cartridge for the Atari 2600. It was authored by Bob Whitehead and released by Activision in 1980. It is one of the first video games developed by Activision.",
-   "wikiTitle": "Skiing (Atari 2600 video game)",
-   "url": "https://en.wikipedia.org/wiki/Skiing_(Atari_2600_video_game)"
+   "text": "Slalom skiing for one or two players against the clock. Where the posts line up vertically you cut side to side between them; the action button accelerates, which is how you make back the time you lost.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Skiing_1980_Philips_en-de"
   },
   "video": {
    "id": "Mwq5VtmlN-I",
@@ -2203,14 +2628,14 @@ window.GAMEPAGES_DATA = {
    "pages": 12,
    "source": "Tenpin Bowling | Basketball (EUR)(Philips Videopac)(1980)"
   },
-  "history": {
-   "text": "Bowling is a 1979 sports video game developed by Larry Kaplan and published by Atari, Inc. for the Atari 2600. It is a simulation of tenpin bowling and sees the player attempting to knock down as many pins as possible with a ball in order to acquire a high score. There are six game modes that can selected from that influence the ball's movement and if a second player can participate for competitive multiplayer.",
-   "wikiTitle": "Bowling (1979 video game)",
-   "url": "https://en.wikipedia.org/wiki/Bowling_(1979_video_game)"
-  },
   "video": {
    "id": "_SZMgiFthtY",
    "title": "Bowling! - (1978) - Odyssey 2 - gameplay HD"
+  },
+  "history": {
+   "text": "Tenpin bowling and basketball on one cartridge, for two or three players, with a faster speed setting for the bowling.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/tenpin-bowling-basketball-eur-philips-videopac-1980"
   }
  },
  "Vp47_F": {
@@ -2223,6 +2648,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "hykj8xsWtk8",
    "title": "The Mousing Cat for the Philips Videopac"
+  },
+  "history": {
+   "text": "Cat and mouse, in eight variations for one or two players, each at seven levels of difficulty. A game runs to six encounters.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Mousing_Cat_The_1982_Philips_en-de"
   }
  },
  "Vp12_F": {
@@ -2298,9 +2728,9 @@ window.GAMEPAGES_DATA = {
    "source": "Frogger (1982)(Parker Brothers)(EU)"
   },
   "history": {
-   "text": "Frogger is a Japanese video game series and media franchise created by designer Takahide Arima for Konami. The franchise's games are primarily top-down action platformers that follow Frogger, an anthropomorphic frog, crossing through hazardous terrain to reach an objective. The first game in the series was the 1981 arcade game Frogger, and new games in the series have been released in the following decades. In 2021, Frogger was adapted into a game show series on Peacock.",
-   "wikiTitle": "Frogger (series)",
-   "url": "https://en.wikipedia.org/wiki/Frogger_(series)"
+   "text": "Parker Brothers' conversion of the Konami arcade game. Get the frog across the traffic, then across the river to the home bays. Five frogs to lose.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Frogger_1982_Parker_Brothers_EU"
   },
   "video": {
    "id": "cdvXm6SkWGE",
@@ -2315,9 +2745,9 @@ window.GAMEPAGES_DATA = {
    "source": "Popeye (1983)(Parker Brothers)(EU)"
   },
   "history": {
-   "text": "Popeye is a 1982 platform game developed and published by Nintendo for arcades. It is based on the comic strip of the same name created by E. C. Segar and licensed from King Features Syndicate. Some sources claim that Ikegami Tsushinki did programming work on the game. As Popeye, the player must collect objects thrown by Olive Oyl from the top of the screen while being chased by Brutus. Popeye can punch bottles thrown at him but can only hurt Brutus after eating the one can of spinach present in each level. Unlike Nintendo's earlier game Donkey Kong (1981), there is no jump button.",
-   "wikiTitle": "Popeye (video game)",
-   "url": "https://en.wikipedia.org/wiki/Popeye_(video_game)"
+   "text": "You are Popeye, catching Olive Oyl's falling hearts before they hit the water — and staying clear of Brutus, who is trying to knock you overboard. Every hundred points moves you to a harder round.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Popeye_1983_Parker_Brothers_EU"
   },
   "video": {
    "id": "yoZv0FdZlWs",
@@ -2334,15 +2764,15 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "fC8A8vZBawE",
    "title": "Magnavox Odyssey 2 - Q*Bert - QBert - Philips Videopac - 8bit Retrogaming - Video Game - Odyssey II"
+  },
+  "history": {
+   "text": "Parker Brothers' conversion, licensed from Mylstar. Hop Q*bert onto every cube until the whole pyramid has changed colour.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Q-Bert_1983_Parker_Brothers_EU"
   }
  },
  "pb_super-cobra": {
   "input": "joystick",
-  "history": {
-   "text": "Super Cobra is a 1981 horizontally scrolling shooter video game developed and published by Konami for arcades. It was released in North America by Stern. It is a spiritual successor to Scramble, using the same arcade hardware.",
-   "wikiTitle": "Super Cobra",
-   "url": "https://en.wikipedia.org/wiki/Super_Cobra"
-  },
   "video": {
    "id": "SH3FI1PrTN4",
    "title": "Super Cobra Magnavox Odyssey 2 Gameplay"
@@ -2358,6 +2788,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "N4LtnZ1sdJ8",
    "title": "Clay Pigeon! for the Magnavox Odyssey²/Philips Videopac"
+  },
+  "history": {
+   "text": "Clay pigeon shooting, aimed with the joystick — and not the quiet afternoon it looks like. The manual promises unexpected hazards, ducks among them.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/62_PLUS_Clay_Pigeon_1984_Philips_EU"
   }
  },
  "pr_clay-pigeon_pl_alt": {
@@ -2370,6 +2805,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "N4LtnZ1sdJ8",
    "title": "Clay Pigeon! for the Magnavox Odyssey²/Philips Videopac"
+  },
+  "history": {
+   "text": "Clay pigeon shooting, aimed with the joystick — and not the quiet afternoon it looks like. The manual promises unexpected hazards, ducks among them.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/62_PLUS_Clay_Pigeon_1984_Philips_EU"
   }
  },
  "pr_interpol": {
@@ -2382,6 +2822,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "2aKKwBK33Y8",
    "title": "INTERPOL by GSTvideo for VIDEOPAC & ODYSSEY2."
+  },
+  "history": {
+   "text": "A French cartridge, played as police against spies: two spies try to get out of the country with what they have stolen, while the police close the airport and the harbour to stop them leaving by air or sea.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Interpol_1984_Philips_FR"
   }
  },
  "pr_martian-threat_alt": {
@@ -2404,6 +2849,15 @@ window.GAMEPAGES_DATA = {
    "item": "Mission_Impossible_2006_Humanoid_Games_en-de",
    "pages": 6,
    "source": "Mission Impossible / Programmed Trip (2006)(Humanoid Games)(en-de)"
+  },
+  "history": {
+   "text": "An unreleased cartridge with a written-out setting: the year is 2425, the twelve known planets are colonised, and Earth is largely abandoned, kept as a staging post on the run between Mars and Venus.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Mission_Impossible_2006_Humanoid_Games_en-de"
+  },
+  "video": {
+   "id": "DbmrAiLBr54",
+   "title": "Mission Impossible  [prototype] ~ Magnavox Odyssey 2"
   }
  },
  "pr_nightfighter": {
@@ -2415,11 +2869,11 @@ window.GAMEPAGES_DATA = {
  },
  "pr_pinball": {
   "input": "joystick",
-  "history": {
-   "text": "The Video Pinball brand is a series of first-generation single-player dedicated home video game consoles manufactured, released and marketed by Atari, Inc. starting in 1977. Bumper controllers on the sides or a dial on the front are used to control the games depending on the game selected. There are four game types in the Video Pinball series: Flipper Pinball, Paddle Pinball, Basketball, and Breakout.",
-   "wikiTitle": "Video Pinball series",
-   "url": "https://en.wikipedia.org/wiki/Video_Pinball_series"
-  }
+  "video": {
+   "id": "juvol4UDWog",
+   "title": "Videopac G7000 / Flipper Game [Slow] 248,110"
+  },
+  "note": "Nudge the ball into play with the <span class='kbd'>W</span> <span class='kbd'>A</span> <span class='kbd'>S</span> <span class='kbd'>D</span> joystick, and work the flippers with <span class='kbd'>G</span> — the two handsets split between launching and flipping."
  },
  "pr_playtag": {
   "input": "joystick",
@@ -2466,6 +2920,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "btS0vIHpAhg",
    "title": "Spider Man (Odyssey 2 /Videopac...emu) 102"
+  },
+  "history": {
+   "text": "The Green Goblin has wired New York's skyscrapers with bombs. You climb as Spider-Man, and can shoot a web downwards to descend — but only once you have climbed up from where you started.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Spiderman_198x_Parker_Brothers_EU"
   }
  },
  "pr_spiderman": {
@@ -2478,6 +2937,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "btS0vIHpAhg",
    "title": "Spider Man (Odyssey 2 /Videopac...emu) 102"
+  },
+  "history": {
+   "text": "The Green Goblin has wired New York's skyscrapers with bombs. You climb as Spider-Man, and can shoot a web downwards to descend — but only once you have climbed up from where you started.",
+   "source": "the cartridge manual",
+   "url": "https://archive.org/details/Spiderman_198x_Parker_Brothers_EU"
   }
  },
  "pr_tutankham": {
@@ -2492,6 +2956,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "5FbDu6vu8u4",
    "title": "Kinder im Verkehr 1 for the Philips Videopac"
+  },
+  "history": {
+   "text": "Philips and CSV put a G7000 and two traffic-safety cartridges into primary schools in one small region of West Germany, to teach children how to behave on the road. They were never sold to the public and only a few hundred exist, which is why they are often left out of the released set altogether. This is the first of the two. It was later retitled Kinder im Verkehr 1 and given away to members of the German Commander-ROM club as Videopac \"V\".",
+   "source": "Video Game Kraken — German games rarity list",
+   "url": "https://videogamekraken.com/philips-videopac-german-games-rarity-list"
   }
  },
  "csv2": {
@@ -2499,6 +2968,11 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "7IRqjZ0sAgU",
    "title": "Kinder im Verkehr 1 & 2 (Videopac/1981) - Verkehrserziehung einmal anders [Gameplay]"
+  },
+  "history": {
+   "text": "Philips and CSV put a G7000 and two traffic-safety cartridges into primary schools in one small region of West Germany, to teach children how to behave on the road. They were never sold to the public and only a few hundred exist, which is why they are often left out of the released set altogether. The second cartridge never had a second life the way the first one did — it stayed exclusive to the school scheme, and is rated extremely rare.",
+   "source": "Video Game Kraken — German games rarity list",
+   "url": "https://videogamekraken.com/philips-videopac-german-games-rarity-list"
   }
  },
  "br_9434": {
@@ -2564,6 +3038,10 @@ window.GAMEPAGES_DATA = {
    "item": "br_9468",
    "pages": 13,
    "source": "Telegrafista! - manual scan, odysseyclube.com"
+  },
+  "video": {
+   "id": "nFWY3uMvHQg",
+   "title": "Morse for the Videopac"
   }
  },
  "br_9469": {
@@ -2681,6 +3159,10 @@ window.GAMEPAGES_DATA = {
    "item": "br_9484",
    "pages": 9,
    "source": "Popeye - manual scan, odysseyclube.com"
+  },
+  "video": {
+   "id": "yoZv0FdZlWs",
+   "title": "Popeye - Odyssey 2 - VGDB"
   }
  },
  "br_9485": {
@@ -2707,6 +3189,292 @@ window.GAMEPAGES_DATA = {
    "item": "br_9486",
    "pages": 9,
    "source": "Super Cobra - manual scan, odysseyclube.com"
+  }
+ },
+ "c64_boulder_dash": {
+  "input": "joystick",
+  "video": {
+   "id": "evvZDmVWHbo",
+   "title": "Boulder Dash (C64 Longplay)"
+  },
+  "history": {
+   "text": "Guide Rockford through caves of dirt, boulders and diamonds where every block you loosen obeys ruthless gravity. Written by Peter Liepa with Chris Gray and published by First Star in 1984, it became one of the few home-computer originals ported TO the arcades rather than from them, and it is still the gold standard of the dig-and-dodge genre."
+  }
+ },
+ "c64_impossible_mission": {
+  "input": "joystick",
+  "video": {
+   "id": "WXZjocPhAE4",
+   "title": "Impossible Mission (C64 Longplay)"
+  },
+  "history": {
+   "text": "\"Another visitor! Stay a while... stay FOREVER!\" Dennis Caswell's agents somersault past killer robots in Elvin Atombender's stronghold, searching furniture for puzzle pieces before the world ends. Its digitised speech and fluid rotoscoped animation felt like witchcraft in 1984, and the sampled scream on falling still lands."
+  }
+ },
+ "c64_last_ninja": {
+  "input": "joystick",
+  "video": {
+   "id": "sUHfSygbSBo",
+   "title": "Commodore 64 Longplay [026] The Last Ninja (EU)"
+  },
+  "history": {
+   "text": "An isometric quest of combat and cunning as Armakuni sets out to avenge his slaughtered clan. Gorgeous scenery, notoriously precise jumps across streams, and a Ben Daglish / Anthony Lees soundtrack that regularly tops lists of the best SID music ever written. One of the best-selling C64 games of all."
+  }
+ },
+ "c64_wizball": {
+  "input": "joystick",
+  "video": {
+   "id": "BAwz1Qlxfbw",
+   "title": "Commodore 64 Longplay [282] Wizball (EU)"
+  },
+  "history": {
+   "text": "A grey, joyless world needs its colour back, and only a bouncing wizard-in-a-ball and his cat Nifta can restore it. Sensible Software's shooter starts maddening and becomes sublime — it plays like nothing before or since, and Martin Galway's title tune is among the most loved on the machine. Zzap!64's Game of the Year for 1987."
+  }
+ },
+ "c64_uridium": {
+  "input": "joystick",
+  "video": {
+   "id": "u7fbvTYWFe0",
+   "title": "Uridium (C64 Longplay)"
+  },
+  "history": {
+   "text": "Pilot the Manta fighter across the hulls of fifteen enemy super-dreadnoughts in the slickest-scrolling shooter the C64 ever saw. Andrew Braybrook's metallic sheen and buttery 50fps scrolling made owners of rival machines openly jealous, and the flip-to-dodge manoeuvre still feels great."
+  }
+ },
+ "c64_paradroid": {
+  "input": "joystick",
+  "video": {
+   "id": "gCdIXJsIuu0",
+   "title": "C64-Longplay - Paradroid (720p)"
+  },
+  "history": {
+   "text": "Board a drifting freighter fleet and clear it of rogue robots — not by outgunning them, but by hijacking their bodies through a brilliant circuit-logic transfer mini-game. Braybrook's masterpiece was endlessly imitated and never bettered; Zzap!64 eventually rated it the best C64 game of all time."
+  }
+ },
+ "c64_turrican2": {
+  "input": "joystick",
+  "video": {
+   "id": "JIaabMWupmQ",
+   "title": "Commodore 64 Longplay [004] Turrican II: The Final Fight (EU)"
+  },
+  "history": {
+   "text": "Manfred Trenz pushed the C64 far past what anyone thought possible: vast multidirectional levels, screen-filling bosses, a morph-into-a-wheel mode, and Markus Siebold's thunderous SID rendition of Chris Hülsbeck's score. The machine's late-era technical high-water mark."
+  }
+ },
+ "c64_maniac_mansion": {
+  "input": "joystick",
+  "video": {
+   "id": "0dVqe4a4oDo",
+   "title": "Commodore 64 Longplay [378] Maniac Mansion (US)"
+  },
+  "history": {
+   "text": "Break into Dr. Fred's mansion to rescue a kidnapped cheerleader, armed with three playable teenagers and the very first SCUMM engine — written by Ron Gilbert on this machine. Hamster jokes, meteor police and multiple endings: the entire LucasArts adventure tradition starts here, on the C64."
+  }
+ },
+ "c64_zak_mckracken": {
+  "input": "joystick",
+  "note": "Zak is a three-disk game, so the single boot disk wouldn&rsquo;t start. This is the OneLoad64 cartridge with every disk built in. Let the intro run to the menu, then with <strong>ZAK McKRACKEN</strong> highlighted at the top press <strong>G</strong> (fire) to launch it. It&rsquo;s point-and-click: move the cursor with the joystick, <strong>G</strong> to select.",
+  "video": {
+   "id": "5iB768s266k",
+   "title": "Commodore 64 Longplay [379] Zak McKracken and the Alien Mindbenders (US)"
+  },
+  "history": {
+   "text": "A tabloid journalist, aliens running a stupidity machine that slowly dumbs down humanity, and a broken French bread that doubles as a puzzle item. David Fox's globe-trotting SCUMM adventure sends Zak from Seattle to Mars with a smirk the whole way."
+  }
+ },
+ "c64_elite": {
+  "input": "joystick",
+  "video": {
+   "id": "LhTTpV5qFrs",
+   "title": "C64-Longplay - Elite (720p)"
+  },
+  "history": {
+   "text": "Eight galaxies, thousands of planets, and total freedom to trade, smuggle or turn pirate — squeezed into 64K of wireframe 3D. Braben and Bell's game invented the open-ended space sim, and the 1985 C64 conversion is its definitive 8-bit home. Right on, Commander."
+  }
+ },
+ "c64_ik_plus": {
+  "input": "joystick",
+  "video": {
+   "id": "FMGI0HoXNBA",
+   "title": "Commodore 64 Longplay [035] IK+ (EU)"
+  },
+  "history": {
+   "text": "Three karateka on screen at once, fighting simultaneously with razor-sharp controls, Rob Hubbard music and sly humour — wait for the fish, and mind the trousers falling down. Archer Maclean's masterpiece remains one of the finest fighting games of the 8-bit era."
+  }
+ },
+ "c64_bruce_lee": {
+  "input": "joystick",
+  "note": "Cracked release: press <strong>G</strong> (fire) at the REMEMBER intro to reach the DOCUMENTS screen, then start with the C64 <strong>RUN/STOP</strong> key — press <strong>Right Shift</strong> for the on-screen keyboard, arrow to <em>R/S</em> and press Enter. In game: joystick moves, hold a direction + G to punch or kick, push up to jump.",
+  "video": {
+   "id": "s7RCUa50lf0",
+   "title": "Bruce Lee (C64 Longplay)"
+  },
+  "history": {
+   "text": "Collect lanterns through twenty chambers while a ninja and the waddling Green Yamo hound your every step. Short, stylish and endlessly replayable — and player two controls the Yamo, an arrangement few friendships survived intact."
+  }
+ },
+ "c64_commando": {
+  "input": "joystick",
+  "video": {
+   "id": "ZkC7yqlHOD0",
+   "title": "Commodore 64 Longplay [048] Commando (EU)"
+  },
+  "history": {
+   "text": "Capcom's arcade assault crammed into the C64 by Chris Butler in a matter of weeks for Christmas 1985 — and elevated to legend by Rob Hubbard's driving SID anthem, a soundtrack many rate above the game itself. The game, for the record, is very good."
+  }
+ },
+ "c64_bubble_bobble": {
+  "input": "joystick",
+  "video": {
+   "id": "s6vTqG17cB4",
+   "title": "Commodore 64 Longplay [143] Bubble Bobble (EU)"
+  },
+  "history": {
+   "text": "Bub and Bob blow bubbles through a hundred single-screen caves in the definitive couch co-op game of the eighties. The C64 port of Taito's arcade hit nails the charm, the chaos, and that melody you will be humming for a week."
+  }
+ },
+ "c64_giana_sisters": {
+  "input": "joystick",
+  "video": {
+   "id": "QL3fje5WRrY",
+   "title": "Commodore 64 Longplay [001] The Great Giana Sisters (EU)"
+  },
+  "history": {
+   "text": "The platformer so shamelessly close to a certain plumber that legal pressure saw it pulled from sale, making original copies collector's gold. Beneath the notoriety sit tight controls, Manfred Trenz level design and a Chris Hülsbeck title tune for the ages."
+  }
+ },
+ "c64_katakis": {
+  "input": "joystick",
+  "video": {
+   "id": "BYr_QA1748U",
+   "title": "Commodore 64 Longplay [006] Katakis (EU)"
+  },
+  "history": {
+   "text": "Manfred Trenz's answer to R-Type — so convincing that Activision's lawyers came knocking, and so good that the same team was then hired to make the official R-Type conversion. Twelve sectors of gorgeous, ferocious blasting."
+  }
+ },
+ "c64_creatures": {
+  "input": "joystick",
+  "video": {
+   "id": "JEHo7A4ydvE",
+   "title": "Commodore 64 Longplay [018] Creatures (EU)"
+  },
+  "history": {
+   "text": "Clyde Radcliffe rescues his fellow Fuzzy Wuzzies from gloriously grisly torture screens in a platformer dripping with colour, character and cheerfully macabre humour. The Rowlands brothers at full power, on hardware everyone else had written off."
+  }
+ },
+ "c64_mayhem": {
+  "input": "joystick",
+  "video": {
+   "id": "UBEVxH5ORnw",
+   "title": "Commodore 64 Longplay [024] Mayhem in Monsterland (EU)"
+  },
+  "history": {
+   "text": "A console-quality platformer released when the C64 was supposedly dead, moving at speeds the hardware had no right to reach. Commodore Format famously scored it 100% — the machine's glorious commercial swan song."
+  }
+ },
+ "c64_archon": {
+  "input": "joystick",
+  "note": "Cracked release with a scrolling intro. Start it with the C64 <strong>RUN/STOP</strong> key — press <strong>Right Shift</strong> for the on-screen keyboard, arrow to <em>R/S</em> and press Enter. Then it's chess-with-combat: joystick to move a piece, G to select and to fight.",
+  "video": {
+   "id": "RSy1Jma6iL0",
+   "title": "Archon: The Light and the Dark (C64 Longplay)"
+  },
+  "history": {
+   "text": "Chess where the pieces fight back: land on an occupied square and the two pieces battle it out arcade-style, with the board's shifting light cycle tilting the odds. One of Electronic Arts' launch titles, and a two-player classic that still fills a living room with shouting."
+  }
+ },
+ "c64_mule": {
+  "input": "joystick",
+  "video": {
+   "id": "AWeqk7EBKBU",
+   "title": "C-64 M.U.L.E. Longplay - Beginner difficulty"
+  },
+  "history": {
+   "text": "Four settlers colonise the planet Irata through land grabs, mule-powered farming and tense real-time auctions. Dan Bunten's supply-and-demand masterclass was decades ahead of its time — and is somehow riotous fun with four players around one machine."
+  }
+ },
+ "c64_california_games": {
+  "input": "joystick",
+  "note": "The plain c64.com dump was one side of a multi-disk crack and kept asking to insert another side. This is the ESI &lsquo;side-load&rsquo; version — everything on one disk, no swapping. Press <strong>Space</strong> to click through the two crack-intro screens and it loads. Then joystick + <strong>G</strong> to play; on the roster/ceremony screen, wiggle the joystick to take part.",
+  "video": {
+   "id": "1i2aZ-Ivncs",
+   "title": "California Games (C64 Longplay)"
+  },
+  "history": {
+   "text": "Epyx traded Olympic solemnity for halfpipes, footbags and rolling BMX wipeouts, all set to a SID rendition of Louie Louie. The most laid-back entry in the Games series — and the best-selling one."
+  }
+ },
+ "c64_winter_games": {
+  "input": "joystick",
+  "video": {
+   "id": "VbYgwJFXrW0",
+   "title": "Winter Games (C64 Longplay)"
+  },
+  "history": {
+   "text": "Ski jump face-plants, biathlon rhythm and the fiendish triple loop of figure skating — Epyx's winter Olympiad shines in its event variety and that stately opening ceremony everyone let play through at least once."
+  }
+ },
+ "c64_pitstop2": {
+  "input": "joystick",
+  "video": {
+   "id": "zI6zmRHUWaw",
+   "title": "Pitstop II (C64 Longplay)"
+  },
+  "history": {
+   "text": "The first great split-screen racer: watch your tyres change colour as they wear, dive into the pits, and fumble the fuel hose while your rival streaks past on the other half of the screen."
+  }
+ },
+ "c64_defender_crown": {
+  "input": "joystick",
+  "video": {
+   "id": "60ih81-o04g",
+   "title": "Defender of the Crown (C64 Longplay)"
+  },
+  "history": {
+   "text": "Saxons versus Normans in Cinemaware's interactive movie of jousts, castle sieges and midnight raids. The C64 version trims the Amiga original's gloss but keeps the swashbuckling heart intact."
+  }
+ },
+ "c64_barbarian": {
+  "input": "joystick",
+  "video": {
+   "id": "9Yn4FLp-0aY",
+   "title": "Barbarian - The Ultimate Warrior (C64 Longplay)"
+  },
+  "history": {
+   "text": "Sword-fighting with a flying head-lop finisher and a goblin who punts the remains off-screen. Maria Whittaker's box art scandalised the British tabloids; the head-rolling two-player mode scandalised nobody's sleepover schedule whatsoever."
+  }
+ },
+ "c64_microprose_soccer": {
+  "input": "joystick",
+  "video": {
+   "id": "CcfFEecaYPc",
+   "title": "Microprose Soccer - C64 Longplay / Walkthrough"
+  },
+  "history": {
+   "text": "Overhead football with outrageous after-touch banana shots and a six-a-side indoor mode. Sensible Software's first crack at the beautiful game — the direct ancestor of Sensible Soccer, so the entire future of top-down footy starts here."
+  }
+ },
+ "c64_paperboy": {
+  "input": "joystick",
+  "note": "Start with the C64 <strong>RUN/STOP</strong> key — press <strong>Right Shift</strong> for the on-screen keyboard, arrow to <em>R/S</em> and press Enter. Then joystick to steer and pedal, G to throw papers.",
+  "video": {
+   "id": "_djAJNxWKm8",
+   "title": "Commodore 64 Longplay [214] Paperboy (EU)"
+  },
+  "history": {
+   "text": "Atari Games' arcade hit brought home by Elite: pedal down Easy Street lobbing the Daily Sun onto subscribers' doormats and through the windows of everyone who dared cancel. The 1986 C64 port, with Mark Cooksey's take on the arcade tune, became one of Elite's biggest sellers — breakables and all."
+  }
+ },
+ "c64_test_drive": {
+  "input": "joystick",
+  "note": "This is the OneLoad64 cartridge (the old cracked disk wouldn't load). It boots straight to a menu — pick <strong>test drive (tape)</strong> by pressing <strong>Down</strong> then <strong>G</strong> to launch (the &lsquo;disk&rsquo; entry\'s loader stalls in the browser). In the game: <strong>+</strong> / <strong>&minus;</strong> select a car, <strong>S</strong> to start driving.",
+  "video": {
+   "id": "drLKG0EKKMg",
+   "title": "C64 Longplay - Test Drive"
+  },
+  "history": {
+   "text": "Pick a Ferrari Testarossa, Lamborghini Countach or Porsche 911 Turbo and blast up a cliffside highway, dodging traffic and radar cops between fuel stops. Distinctive Software's 1987 original founded the entire Test Drive franchise — and the same Vancouver studio later built the first Need for Speed."
   }
  }
 };

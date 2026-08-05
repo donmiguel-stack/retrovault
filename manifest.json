@@ -1,19 +1,19 @@
 {
- "generated": "2026-08-03 23:33:14",
- "count": 242,
- "bytes": 96773854,
+ "generated": "2026-08-05 12:04:53",
+ "count": 271,
+ "bytes": 99486948,
  "files": {
   "games.js": {
-   "sha256": "9014caa316420b9f1fd4733498ef91d1a175b9b721999b16857bde664b762966",
-   "size": 57501
+   "sha256": "46ce8f02c07db15f5ea63a24c4f7cc2f67c6b9c09b5d053a1029ea1e79c32461",
+   "size": 66431
   },
   "gamepages.js": {
-   "sha256": "35b8d26c2a643d81ab747f22ba63053dc9f94f6311f449c7108dfef66d5f2b25",
-   "size": 109723
+   "sha256": "c0a18ee237958e37c5f63cc05cba6a085db285ee3e064775e1960280d995c598",
+   "size": 150662
   },
   "genres.js": {
-   "sha256": "680bc2125d26ec5ef94720706fb00ef79adc5c843b8267ecad155c1538226fe1",
-   "size": 13481
+   "sha256": "01b37365315328c14ea14170944b4859d175ed4d0036a3fc9542db1522622d43",
+   "size": 15339
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -28,44 +28,48 @@
    "size": 2591
   },
   "extras.js": {
-   "sha256": "bc7a118bf4725181cc3f8e9b4f2a670dd4d42dba3a9281e118ce1d5d4e97d07a",
-   "size": 1858
+   "sha256": "296a8d851844e553bfdd1d371b2ad36f9abdfa3664852967bd962239a4468746",
+   "size": 2582
   },
   "i18n.js": {
-   "sha256": "94d6653f44f0bfeed5b577960ff68570a664c2c6ef4434380e9927bedb97b931",
-   "size": 21569
+   "sha256": "2c22556fb2ac8bbe16871cb4614f0735c3b110875a47a6748e39f9e3913e7a8b",
+   "size": 29382
   },
   "setup-i18n.js": {
    "sha256": "63ee3452bf395b94fd07754fde49505174f1956d2f6fc55caecfde0ce5a51815",
    "size": 33395
   },
   "featured.js": {
-   "sha256": "7b8e5914e3bfb62744ac0ef627440578e7f778f97919f6ddde2f87b158ba3eac",
-   "size": 6416
+   "sha256": "05df7aa15fb9d0b4787306ef49006842c07c73baf5543df20ff857ea69f486e5",
+   "size": 6719
+  },
+  "shops.js": {
+   "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
+   "size": 2535
   },
   "app.js": {
-   "sha256": "826f1e08bc67f6655e7657f1f8d3b469c95aed90bd668c10182a84fc63164252",
-   "size": 41061
+   "sha256": "73771fd6dd63bc6418684ce1482057a9a002a2f8fdc7d364d03dde39efeeb02f",
+   "size": 43045
   },
   "game.html": {
-   "sha256": "d1ab0ad4152a6f1f0d2969d712cf028ed2d888d785cb3eb0223902bca291226e",
-   "size": 22084
+   "sha256": "b728365261c04fba973b300cdda393dd94bdd826b9da729fa4d1c0604e2c9765",
+   "size": 28315
   },
   "index.html": {
-   "sha256": "c918837ce7ce3a0842a7b3738e38f48352fb1225956f160b27c0f7f602b2f636",
-   "size": 6153
+   "sha256": "f3cc8120bb7223483c2be12b884a8b8607dbe362483e3a56c569b82a3d87735b",
+   "size": 6277
   },
   "style.css": {
-   "sha256": "f0719b2025b5758d8c46298ce5d7f443d197c8a0bf0db171a8690fc7aeb0b808",
-   "size": 18643
+   "sha256": "64031e627117a53d77f72992d97a78220b4552b44aaee3a8909fcbeb51278682",
+   "size": 19054
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
    "size": 3768
   },
   "README.md": {
-   "sha256": "14e8399c574a897c0027ebf6482d68e63d114a1704c3b50ca1642264e36231f3",
-   "size": 6413
+   "sha256": "ee2ff4da3a51dbd8a79d6f07278a3041162bdd41f9fcc2e1f00d69944c43e09d",
+   "size": 7838
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -210,6 +214,118 @@
   "covers/br_9486.jpg": {
    "sha256": "ef5c3e9ad6545d5d13b33b53797be4c81eb01135492a6fb81666160eb4041d05",
    "size": 75215
+  },
+  "covers/c64_archon.png": {
+   "sha256": "cdd53552293b4becc7c70356a75213355f58ea04d094ec88db62ec280b0542f4",
+   "size": 137885
+  },
+  "covers/c64_barbarian.png": {
+   "sha256": "1091e86f55356edf167e049d303e030f8d8855ee47ea50553e5bc0fd5c6ad2d0",
+   "size": 136437
+  },
+  "covers/c64_boulder_dash.png": {
+   "sha256": "bb3f6cb2f3f8100c1d1beca3ea32651bbc5c7b8892f5e985b5b511c5c5abfb9f",
+   "size": 117325
+  },
+  "covers/c64_bruce_lee.png": {
+   "sha256": "73579c9961209e86eb667e2d665452b05e1e891de1434b4d59d139b5de6216f3",
+   "size": 127382
+  },
+  "covers/c64_bubble_bobble.png": {
+   "sha256": "fde5113ab30f3e845d7dc62598db03f852d37decf2c40b2e7dc9d320ee46e7ef",
+   "size": 31308
+  },
+  "covers/c64_california_games.png": {
+   "sha256": "f1f120e9226e277b24af236a4ff36268f962e9609ea7032c36b3ac539b12eebd",
+   "size": 159398
+  },
+  "covers/c64_commando.png": {
+   "sha256": "d3bfdd101a0dba689db3cb81112211dde4e67f98c99bf4fb372c7f26b462f910",
+   "size": 43811
+  },
+  "covers/c64_creatures.png": {
+   "sha256": "9d20cc04e590d4c10a255e23048a5481c38101536dda9ed1feaf531cebc63a5b",
+   "size": 34086
+  },
+  "covers/c64_defender_crown.png": {
+   "sha256": "40148137b5214c36a031e1c20862d33c59fc68c6a4f51509e776e06b3d8ac973",
+   "size": 30863
+  },
+  "covers/c64_elite.png": {
+   "sha256": "ab7c0db113566ed01f6f9cf9d2d3849cf71b803c4dded40e2617b4e988b6f621",
+   "size": 16325
+  },
+  "covers/c64_giana_sisters.png": {
+   "sha256": "4d7a947531ff1a2c54e74eabefa161bb61708a8128d56187f6f16992adae0b2e",
+   "size": 188475
+  },
+  "covers/c64_ik_plus.png": {
+   "sha256": "303c9573140dc0312f172826bc3fa2c06a5bff872417d98b5420b5744d092e17",
+   "size": 46839
+  },
+  "covers/c64_impossible_mission.png": {
+   "sha256": "4265d297a26705ba981e0bc025e7ad23eefbf43634d94ef61227555bfba1f705",
+   "size": 219611
+  },
+  "covers/c64_katakis.png": {
+   "sha256": "afe90043a33a4d3b4c2e69de5e3daf32f59bb3b8fa1d0253b3718ac1e7f2c240",
+   "size": 151561
+  },
+  "covers/c64_last_ninja.png": {
+   "sha256": "96d35941656943232d947e2f31015d449fb3dd7de5c42abc949e298cf84cfe67",
+   "size": 15421
+  },
+  "covers/c64_maniac_mansion.png": {
+   "sha256": "6d51442c62b2ee1d18b2e49c7a3109a3a75a31a712894c36ae5a59ca37bdcde2",
+   "size": 129371
+  },
+  "covers/c64_mayhem.png": {
+   "sha256": "1c5a3c6baf887888551d565f3ea0e81d7236e2f956fb9d316325950e5a098373",
+   "size": 54184
+  },
+  "covers/c64_microprose_soccer.png": {
+   "sha256": "cab86db63b9e21f7030f7b0f1411a8776f907ef69dcf480b8ce6189f44327c10",
+   "size": 178475
+  },
+  "covers/c64_mule.png": {
+   "sha256": "424db4766c122d662d8d85733ee81b1705ce0f055498ff8b0fe137b523c8108c",
+   "size": 28081
+  },
+  "covers/c64_paperboy.png": {
+   "sha256": "e5c7b010a0915355006a85b078f608628ee1d80619d6f0dc69c4462b4d0e3c7b",
+   "size": 205110
+  },
+  "covers/c64_paradroid.png": {
+   "sha256": "657c882847ea76299394135d244130d99bb4dc36f6c59d36bf5fa578bf1d98aa",
+   "size": 36869
+  },
+  "covers/c64_pitstop2.png": {
+   "sha256": "4b487af931d6e5ce8d925a6dd98a4a410c72cfea0fe74c18af3a0dd4110f79e3",
+   "size": 16549
+  },
+  "covers/c64_test_drive.png": {
+   "sha256": "9b0dbf91a0a91c201184c3b5be16e467c50d6627ebace7c6f2dfd708d4079841",
+   "size": 27814
+  },
+  "covers/c64_turrican2.png": {
+   "sha256": "07ae09a81738a565048894cfaefb95180b0bc69dc5b3e5ab8eb910a8d741061b",
+   "size": 24089
+  },
+  "covers/c64_uridium.png": {
+   "sha256": "bb6107f17531455d67f4343421499c819e0c93ab64d46c7d0d1a404295522e8e",
+   "size": 35910
+  },
+  "covers/c64_winter_games.png": {
+   "sha256": "af9bbdc358a1edd22f1262c051fc08d064cd75e7cc9b1f9659e84afd0ca9ebd8",
+   "size": 211909
+  },
+  "covers/c64_wizball.png": {
+   "sha256": "dbdf93c5240d7ab19465629624bf4428e29fbd080ad5e671d9019c696e5d7039",
+   "size": 31394
+  },
+  "covers/c64_zak_mckracken.png": {
+   "sha256": "23f7d5815b24edb9805e5a9b12663773ec001aeb2a2e4647b86f8ab8b2645e19",
+   "size": 203335
   },
   "covers/csv1.jpg": {
    "sha256": "828e50fedd6a929e08072725bc3c505d31ee6b186e0f161b3b381721b6ea558a",

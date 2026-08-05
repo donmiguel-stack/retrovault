@@ -1,6 +1,6 @@
 (function () {
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 18;
+  var COVER_V = 21;
 
   // Attract-screen palette, same letters as the SELECT GAME splash. Declared
   // up here because render() runs before the code further down this file.
@@ -25,13 +25,18 @@
     { key: "pal",      label: "PAL",            color: "#5ac48a", match: ["PAL dumps"] },
     { key: "modified", label: "Modified",       color: "#e0865a", match: ["Modified / fixed"] },
     { key: "rare",     label: "Rare",           color: "#c07de0", match: ["Rare / unreleased", "Utility / unknown"] },
-    { key: "homebrew", label: "Homebrew",       color: "#e05a7e", match: ["Homebrew (this project)", "Homebrew (community)"] }
+    { key: "homebrew", label: "Homebrew",       color: "#e05a7e", match: ["Homebrew (this project)", "Homebrew (community)"] },
+    { key: "c64",      label: "Commodore 64",   color: "#b98a5f", match: ["Commodore 64"] }
   ];
 
   var CATEGORY_LOOKUP = {};
   CATEGORY_GROUPS.forEach(function (grp) {
     grp.match.forEach(function (rawCat) { CATEGORY_LOOKUP[rawCat] = grp; });
   });
+
+  function platformBadge(p) {
+    return p === "G7400+" ? "badge-g7400" : p === "C64" ? "badge-c64" : "badge-g7000";
+  }
 
   function groupFor(g) {
     return CATEGORY_LOOKUP[g.category] || { key: "other", label: g.category, color: "#8a8f98" };
@@ -59,15 +64,15 @@
 
   // What a game actually is, from genres.js - filters that combine with the
   // origin filters above, so "G7400 + shooter + two players" is one query.
-  var GENRE_ORDER = ["action","shooter","maze","sports","racing","strategy",
-                     "puzzle","adventure","education","gambling","utility"];
+  var GENRE_ORDER = ["action","platformer","shooter","fighting","maze","sports",
+                     "racing","strategy","puzzle","adventure","education","gambling","utility"];
   var PLAYER_ORDER = ["p1","p12","p2"];
   function genreOf(g) { return ((window.GENRE_DATA || {})[g.id] || {}).genre || null; }
   function playersOf(g) { return ((window.GENRE_DATA || {})[g.id] || {}).players || null; }
 
   function buildFacetChips(el, order, values, labelKey, stateKey, allLabel) {
     var counts = {};
-    state.games.forEach(function (g) {
+    platformGames().forEach(function (g) {
       var v = values(g); if (v) counts[v] = (counts[v] || 0) + 1;
     });
     var entries = [];
@@ -83,12 +88,12 @@
   // afterwards, grouped by where they came from.
   var CATEGORY_RANK = {
     eu: 0, french: 1, pal: 2, us: 3, brazil: 4, jopac: 5,
-    imagic: 6, parker: 7, modified: 8, rare: 9, homebrew: 10
+    imagic: 6, parker: 7, modified: 8, rare: 9, homebrew: 10, c64: 11
   };
   function shelfKey(g) {
     var n = parseInt(g.vpNumber, 10);
     var rank = CATEGORY_RANK[groupFor(g).key];
-    return [isNaN(n) ? 1 : 0, isNaN(n) ? 0 : n, rank === undefined ? 11 : rank, g.title.toLowerCase()];
+    return [isNaN(n) ? 1 : 0, isNaN(n) ? 0 : n, rank === undefined ? 12 : rank, g.title.toLowerCase()];
   }
   function bySort(a, b) {
     if (state.sort === "az") return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
@@ -121,6 +126,9 @@
   // browser and per origin though: favorites saved on http://localhost:8000
   // won't show up in a different browser, and clearing "site data" wipes them.
   // Export/Import below writes them to a small JSON file you can keep or move.
+  // NOTE: the app is branded "Retro Vault" now, but every localStorage key
+  // keeps its original VideopacVault_ prefix on purpose - renaming the keys
+  // would silently orphan saved favorites and settings in every install.
   var FAV_KEY = "VideopacVault_favorites";
   var favorites = {};
   try {
@@ -149,8 +157,12 @@
   }
 
   var SORT_KEY = "VideopacVault_sort";
+  var SHOWCASE_KEY = "VideopacVault_showcase";
+  var SHELF_KEY = "VideopacVault_shelf";
+  var savedShelf = localStorage.getItem(SHELF_KEY);
+  if (["videopac", "G7000", "G7400+", "C64"].indexOf(savedShelf) === -1) savedShelf = "videopac";
   var state = {
-    games: [], platform: "all", category: "all", query: "", list: "all",
+    games: [], platform: savedShelf, category: "all", query: "", list: "all",
     sort: localStorage.getItem(SORT_KEY) || "number",
     genre: "all", players: "all"
   };
@@ -167,14 +179,35 @@
 
   if (window.GAMES_DATA && window.GAMES_DATA.games) {
     state.games = window.GAMES_DATA.games;
-    buildCategoryChips(state.games);
+    buildCategoryChips(platformGames());
     buildFacets();
     updateListChips();
     applyLang();
     buildShowcase();
+    syncShelfChips();
     render();
   } else {
     grid.innerHTML = '<p style="padding:24px;color:#e0865a;">games.js did not load - make sure games.js sits next to index.html and is included before app.js.</p>';
+  }
+
+  // The games on the active shelf. Counts, placeholders and filter options
+  // are all computed from this rather than the whole catalogue, so the
+  // Videopac shelf says 213 games and the C64 shelf says its own number -
+  // the shelves never mix.
+  function platformGames() {
+    return state.games.filter(function (g) {
+      if (state.platform === "all") return true;
+      if (state.platform === "videopac") return g.platform !== "C64";
+      return g.platform === state.platform;
+    });
+  }
+
+  function syncShelfChips() {
+    document.querySelectorAll("#platformChips .chip").forEach(function (c) {
+      c.classList.toggle("active", c.dataset.platform === state.platform);
+    });
+    var sc = document.getElementById("showcase");
+    if (sc) sc.hidden = state.platform === "C64" || localStorage.getItem(SHOWCASE_KEY) === "off";
   }
 
   function fillSelect(sel, allLabel, entries, current) {
@@ -200,7 +233,8 @@
   function matches(g) {
     if (state.list === "fav" && !isFav(g.id)) return false;
     if (state.list === "pack" && !hasPackaging(g.id)) return false;
-    if (state.platform !== "all" && g.platform !== state.platform) return false;
+    if (state.platform === "videopac") { if (g.platform === "C64") return false; }
+    else if (state.platform !== "all" && g.platform !== state.platform) return false;
     if (state.genre !== "all" && genreOf(g) !== state.genre) return false;
     if (state.players !== "all" && playersOf(g) !== state.players) return false;
     if (state.category !== "all" && groupFor(g).key !== state.category) return false;
@@ -357,7 +391,7 @@
         '<h3>' + g.title + '</h3>' +
         '<p class="feature-blurb">' + pick.blurb + '</p>' +
         '<div class="feature-meta">' +
-        '<span class="badge ' + (g.platform === "G7400+" ? "badge-g7400" : "badge-g7000") + '">' + g.platform + '</span>' +
+        '<span class="badge ' + platformBadge(g.platform) + '">' + g.platform + '</span>' +
         (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
         (gen.players ? '<span class="badge badge-cat">' + window.t("p_" + gen.players) + '</span>' : '') +
         '</div></div>' + shotMarkup(pick.shot);
@@ -474,10 +508,12 @@
     var filtered = state.games.filter(matches).sort(bySort);
     if (typeof updateListChips === "function" && clearBtn) {
       var anyOn = state.category !== "all" || state.genre !== "all" || state.players !== "all" ||
-                  state.platform !== "all" || state.list !== "all" || !!state.query;
+                  state.platform !== "videopac" || state.list !== "all" || !!state.query;
       clearBtn.hidden = !anyOn;
     }
-    resultCount.textContent = window.t("results", { shown: filtered.length, total: state.games.length });
+    var shelfTotal = platformGames().length;
+    resultCount.textContent = window.t("results", { shown: filtered.length, total: shelfTotal });
+    searchInput.placeholder = window.t("search", { n: shelfTotal });
     emptyState.hidden = filtered.length !== 0;
     grid.innerHTML = "";
     var frag = document.createDocumentFragment();
@@ -544,7 +580,7 @@
     meta.className = "card-meta";
 
     var pbadge = document.createElement("span");
-    pbadge.className = "badge " + (g.platform === "G7400+" ? "badge-g7400" : "badge-g7000");
+    pbadge.className = "badge " + platformBadge(g.platform);
     pbadge.textContent = g.platform;
     meta.appendChild(pbadge);
 
@@ -606,6 +642,13 @@
     document.querySelectorAll("#platformChips .chip").forEach(function (c) { c.classList.remove("active"); });
     btn.classList.add("active");
     state.platform = btn.dataset.platform;
+    state.category = "all"; state.genre = "all"; state.players = "all";
+    categorySel.classList.remove("on"); genreSel.classList.remove("on"); playerSel.classList.remove("on");
+    buildCategoryChips(platformGames());
+    buildFacets();
+    updateListChips();
+    localStorage.setItem(SHELF_KEY, state.platform);
+    syncShelfChips();
     render();
   });
 
@@ -622,7 +665,7 @@
     if (favIo) favIo.hidden = state.list !== "fav";
     // only offer the reset when something is actually filtered
     var on = state.category !== "all" || state.genre !== "all" || state.players !== "all" ||
-             state.platform !== "all" || state.list !== "all" || !!state.query;
+             state.platform !== "videopac" || state.list !== "all" || !!state.query;
     clearBtn.hidden = !on;
   }
 
@@ -661,12 +704,12 @@
   });
 
   clearBtn.addEventListener("click", function () {
-    state.category = state.genre = state.players = state.platform = "all";
+    state.category = state.genre = state.players = "all";
+    state.platform = "videopac";
     state.list = "all"; state.query = ""; searchInput.value = "";
-    document.querySelectorAll("#platformChips .chip").forEach(function (c) {
-      c.classList.toggle("active", c.dataset.platform === "all");
-    });
-    buildCategoryChips(state.games);
+    localStorage.setItem(SHELF_KEY, "videopac");
+    syncShelfChips();
+    buildCategoryChips(platformGames());
     buildFacets();
     updateListChips();
     render();
@@ -692,7 +735,7 @@
     var ids = Object.keys(favorites);
     if (!ids.length) { note("Nothing to export yet - star a few games first."); return; }
     var payload = {
-      app: "Videopac Odyssey Vault",
+      app: "Retro Vault",
       kind: "favorites",
       exported: new Date().toISOString().slice(0, 10),
       ids: ids
@@ -700,7 +743,7 @@
     var blob = new Blob([JSON.stringify(payload, null, 1)], { type: "application/json" });
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "videopac-vault-favorites.json";
+    a.download = "retro-vault-favorites.json";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -772,7 +815,7 @@
       localStorage.setItem(window.I18N_KEY, b.dataset.lang);
       markLang();
       applyLang();
-      buildCategoryChips(state.games);
+      buildCategoryChips(platformGames());
       buildFacets();
       updateListChips();
       render();
@@ -782,7 +825,6 @@
   // ---- Showcase --------------------------------------------------------
   // Featured games, sponsor banners and the community links, all driven by
   // featured.js. Any panel with an empty list simply doesn't appear.
-  var SHOWCASE_KEY = "VideopacVault_showcase";
   var featStop = null;
 
   function buildShowcase() {
@@ -797,7 +839,7 @@
     var community = data.community || [];
     if (!picks.length && !sponsors.length && !community.length) return;
 
-    host.hidden = localStorage.getItem(SHOWCASE_KEY) === "off";
+    host.hidden = state.platform === "C64" || localStorage.getItem(SHOWCASE_KEY) === "off";
 
     // --- featured
     if (picks.length) {
@@ -952,7 +994,7 @@
       if (exp) exp.textContent = window.t("exportFav");
       if (imp) imp.textContent = window.t("importFav");
     }
-    searchInput.placeholder = window.t("search", { n: state.games.length });
+    searchInput.placeholder = window.t("search", { n: platformGames().length });
     document.getElementById("setupBtn").textContent = window.t("setup");
     document.documentElement.lang = window.currentLang();
   }

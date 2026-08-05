@@ -33,3 +33,21 @@ youtube-listing.md
 
 # python bytecode
 __pycache__/
+
+# Working notes and history - reasoning, open questions, commercial bits.
+# Useful locally, not part of what people clone.
+WORKLOG.md
+missing-videos.md
+missing-histories.md
+
+# C64 asset fetcher (tools/fetch_c64_assets.py) working files. The assets it
+# pulls land in already-ignored folders (emulator/roms/, extras/); these are
+# its scratch + the big cached manual zip.
+tools/.cache/
+tools/fetch-c64-report.txt
+extras.js.bak
+# Scraped C64 box art is fair-use and overwrites the generated placeholder
+# covers/c64_*.png in place. They're committed by default (as the placeholders
+# are); if you'd rather not redistribute the real scans, `git checkout` those
+# files before committing, or uncomment the next line.
+# covers/c64_*.png

@@ -877,5 +877,117 @@ window.GENRE_DATA = {
  "br_9486": {
   "genre": "shooter",
   "players": "p12"
+ },
+ "c64_boulder_dash": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "c64_impossible_mission": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_last_ninja": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "c64_wizball": {
+  "genre": "shooter",
+  "players": "p12"
+ },
+ "c64_uridium": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_paradroid": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_turrican2": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_maniac_mansion": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "c64_zak_mckracken": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "c64_elite": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_ik_plus": {
+  "genre": "fighting",
+  "players": "p12"
+ },
+ "c64_bruce_lee": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "c64_commando": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_bubble_bobble": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "c64_giana_sisters": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "c64_katakis": {
+  "genre": "shooter",
+  "players": "p12"
+ },
+ "c64_creatures": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_mayhem": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_archon": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "c64_mule": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "c64_california_games": {
+  "genre": "sports",
+  "players": "p12"
+ },
+ "c64_winter_games": {
+  "genre": "sports",
+  "players": "p12"
+ },
+ "c64_pitstop2": {
+  "genre": "racing",
+  "players": "p12"
+ },
+ "c64_defender_crown": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_barbarian": {
+  "genre": "fighting",
+  "players": "p12"
+ },
+ "c64_microprose_soccer": {
+  "genre": "sports",
+  "players": "p12"
+ },
+ "c64_paperboy": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "c64_test_drive": {
+  "genre": "racing",
+  "players": "p1"
  }
 };

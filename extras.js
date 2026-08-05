@@ -29,5 +29,16 @@ window.EXTRAS_DATA = {
   // down (1-7 pick the 2-player handicap, 9 / : / space / L / P the 1-player
   // levels, then you type your name and press ENTER).
   "mod_playtag_fix": { "manual": "playtag-manual-nl.png" },
-  "pr_playtag":      { "manual": "playtag-manual-nl.png" }
+  "pr_playtag":      { "manual": "playtag-manual-nl.png" },
+  "c64_uridium": { "manual": "c64_uridium-manual.pdf" },
+  "c64_bruce_lee": { "manual": "c64_bruce_lee-manual.pdf" },
+  "c64_california_games": { "manual": "c64_california_games-manual.pdf" },
+  "c64_winter_games": { "manual": "c64_winter_games-manual.pdf" },
+  "c64_defender_crown": { "manual": "c64_defender_crown-manual.pdf" },
+  "c64_boulder_dash": { "manual": "c64_boulder_dash-manual.pdf" },
+  "c64_impossible_mission": { "manual": "c64_impossible_mission-manual.pdf" },
+  "c64_zak_mckracken": { "manual": "c64_zak_mckracken-manual.pdf" },
+  "c64_archon": { "manual": "c64_archon-manual.pdf" },
+  "c64_pitstop2": { "manual": "c64_pitstop2-manual.pdf" },
+  "c64_test_drive": { "manual": "c64_test_drive-manual.pdf" },
 };

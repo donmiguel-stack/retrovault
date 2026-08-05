@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Videopac Odyssey Vault</title>
-<link rel="stylesheet" href="style.css?v=48">
+<title>Retro Vault</title>
+<link rel="stylesheet" href="style.css?v=68">
 <style>
   .game-page{max-width:1100px;margin:0 auto;padding:24px;}
   .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
@@ -41,6 +41,25 @@
   }
   .fav-toggle:hover{border-color:#ffc400;color:#ffc400;}
   .fav-toggle.on{border-color:#ffc400;color:#ffc400;}
+  /* Buy button - an outside shop, so it is styled apart from START rather
+     than dressed up to look like part of the Vault */
+  .buy-col{
+    position:relative;                  /* the shop line hangs off this */
+    margin-top:18px;margin-left:16px;   /* row gap is 14px, so 30px from the star */
+  }
+  .buy-btn{
+    display:inline-flex;align-items:center;gap:11px;text-decoration:none;
+    background:#2fb47c;color:#052a1d;font-weight:700;font-size:15px;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .buy-btn:hover{background:#3ecd90;}
+  .buy-price{
+    background:rgba(0,0,0,.18);border-radius:6px;padding:2px 9px;font-size:14px;
+  }
+  .buy-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
   .alt-name{margin:0 0 6px;font-size:13.5px;color:var(--text-dim);}
   .alt-name strong{color:var(--text);}
   .alt-num{
@@ -104,6 +123,11 @@
   }
   .controls-note{margin:10px 0 0;line-height:1.6;font-size:13.5px;}
   .controls-note strong{color:var(--text);}
+  /* a tip about this cartridge specifically - worth more than the generic ones */
+  .own-note{
+    color:var(--text);background:var(--surface-2);border-left:3px solid var(--accent);
+    border-radius:0 6px 6px 0;padding:9px 12px;margin-top:12px;
+  }
 
   /* Extras (own scans) */
   .extras-list{display:flex;flex-direction:column;gap:16px;max-width:760px;}
@@ -118,22 +142,23 @@
 </head>
 <body>
 <div class="topbar">
-  <div class="brand"><span class="brand-mark">&#9632;</span> Videopac Odyssey Vault</div>
+  <div class="brand"><span class="brand-mark">&#9632;</span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64</span></div>
 </div>
 <div class="game-page" id="page">
   <a class="back-link" href="index.html" id="backLink">&#9664; <span data-i18n="back">Back to library</span></a>
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=48"></script>
-<script src="setup-i18n.js?v=48"></script>
-<script src="games.js?v=48"></script>
-<script src="extras.js?v=48"></script>
-<script src="packaging.js?v=48"></script>
-<script src="genres.js?v=48"></script>
-<script src="brazil.js?v=48"></script>
-<script src="usa.js?v=48"></script>
-<script src="gamepages.js?v=48"></script>
+<script src="i18n.js?v=68"></script>
+<script src="setup-i18n.js?v=68"></script>
+<script src="games.js?v=68"></script>
+<script src="extras.js?v=68"></script>
+<script src="packaging.js?v=68"></script>
+<script src="genres.js?v=68"></script>
+<script src="brazil.js?v=68"></script>
+<script src="usa.js?v=68"></script>
+<script src="shops.js?v=68"></script>
+<script src="gamepages.js?v=68"></script>
 <script>
 (function () {
   var COVER_COLORS = ["#5b8def","#3ba97a","#c07de0","#e0865a","#d65a7e","#8a8f98","#e0c05a","#4fb3bf"];
@@ -159,7 +184,7 @@
     page.appendChild(el("p","missing-note",(((window.SETUP_I18N||{})[window.currentLang()]||(window.SETUP_I18N||{}).en||{}).s_notFound)||"Game not found."));
     return;
   }
-  document.title = g.title + " | Videopac Odyssey Vault";
+  document.title = g.title + " | Retro Vault";
   var data = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id]) || {};
 
   // ---- hero ----
@@ -169,7 +194,7 @@
   var img = new Image();
   img.alt = g.title + " box art";
   // ?v= so a newly added cover isn't hidden behind the browser's cached miss
-  var COVER_V = 18;
+  var COVER_V = 21;
   img.onerror = function(){
     if(this.dataset.stage==="png"){this.dataset.stage="jpg";this.src="covers/"+g.id+".jpg?v="+COVER_V;}
     else if(data.manual){this.dataset.stage="manual";this.src="manuals/"+data.manual.item+"/p00.jpg";}
@@ -187,7 +212,7 @@
   var info = el("div","hero-info");
   info.appendChild(el("h1",null,g.title));
   var meta = el("div","hero-meta");
-  var pb = el("span","badge "+(g.platform==="G7400+"?"badge-g7400":"badge-g7000"), g.platform);
+  var pb = el("span","badge "+(g.platform==="G7400+"?"badge-g7400":g.platform==="C64"?"badge-c64":"badge-g7000"), g.platform);
   meta.appendChild(pb);
   // same wording as the library chips, so the category follows the language too
   var CAT_KEYS = {
@@ -197,7 +222,8 @@
     "Philips Brazil":"cat_brazil", "PAL dumps":"cat_pal",
     "Modified / fixed":"cat_modified", "Rare / unreleased":"cat_rare",
     "Utility / unknown":"cat_rare", "Homebrew (community)":"cat_homebrew",
-    "Homebrew (this project)":"cat_homebrew"
+    "Homebrew (this project)":"cat_homebrew",
+    "Commodore 64":"cat_c64"
   };
   var catKey = CAT_KEYS[g.category];
   meta.appendChild(el("span","badge badge-cat", catKey ? window.t(catKey) : g.category));
@@ -213,6 +239,12 @@
     meta.appendChild(el("span","badge badge-cat", window.t("p_"+gen.players)));
   }
   info.appendChild(meta);
+  // year, publisher and developer, for shelves whose catalogue carries them
+  if (g.year || g.publisher) {
+    var credits = [g.year, g.publisher];
+    if (g.developer && g.developer !== g.publisher) credits.push(g.developer);
+    info.appendChild(el("p","alt-name", credits.filter(Boolean).join(" \u00b7 ")));
+  }
   if (gen && gen.unsure) {
     var un = el("p","variant-note", window.t("unsureNote"));
     info.appendChild(un);
@@ -291,14 +323,72 @@
   var start = el("button","start-btn");
   start.appendChild(el("span","tri"));
   start.appendChild(document.createTextNode("START"));
+  // each shelf plays through its own libretro core
+  var CORES = { "C64": "vice_x64" };
   start.addEventListener("click", function(){
-    location.href = "emulator/index.html?core=o2em&rom=" + encodeURIComponent(g.romFile);
+    location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
+                    "&rom=" + encodeURIComponent(g.romFile);
   });
   info.appendChild(document.createElement("br"));
   var actions = el("div","hero-actions");
-  actions.appendChild(start);
+  // On the C64 shelf, START appears only when the rom really is in
+  // emulator/roms/ - checked live with a HEAD request, so dropping the
+  // file in is all it takes. No button that leads to an error screen.
+  if (g.platform === "C64") {
+    var romNote = el("p","missing-note","");
+    info.appendChild(romNote);
+    fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" })
+      .then(function (r) {
+        if (!r.ok) throw 0;
+        romNote.remove();
+        actions.insertBefore(start, actions.firstChild);
+      })
+      .catch(function () {
+        romNote.textContent = window.t("c64_noRom", { file: g.romFile });
+      });
+  } else {
+    actions.appendChild(start);
+  }
   actions.appendChild(favBtn);
   info.appendChild(actions);
+
+  // ---- for sale ----
+  // Somebody selling the real cartridge, from shops.js. An outside shop, no
+  // cut taken, and the price carries the date it was checked - second-hand
+  // stock moves, and a number with no date on it quietly becomes a lie.
+  // The button sits in the same row as START and the favourite toggle, set a
+  // little further off so it reads as a different kind of thing; the shop and
+  // the date it was priced go on a line underneath.
+  var offers = (window.SHOPS_DATA && window.SHOPS_DATA[g.id]) || [];
+  offers.forEach(function (o) {
+    var col = el("div","buy-col");
+    var a = document.createElement("a");
+    a.className = "buy-btn";
+    a.href = o.url; a.target = "_blank"; a.rel = "noopener nofollow";
+    a.innerHTML = '<span class="buy-label">' + window.t("buyThis") + '</span>' +
+                  '<span class="buy-price">' + o.price + '</span>';
+    col.appendChild(a);
+    // Just the shop on screen. The condition and the date the price was last
+    // seen stay in shops.js and ride along as the hover title, so the line
+    // reads clean but the number is still dated somewhere. Hung below the
+    // button rather than placed in the flow, so the row still centres on the
+    // buttons alone and START does not shift.
+    // "variant" is for when the cartridge on sale is not the one on this page
+    // - the same game in another region's box. Says so on the line itself,
+    // because someone who knows the boxes will spot it anyway. An i18n key
+    // (rel_eu, rel_us, rel_br, rel_fr) follows the language picker; anything
+    // else is printed as written.
+    var vt = "";
+    if (o.variant) {
+      var tr = window.t(o.variant);
+      vt = " · " + (tr && tr !== o.variant ? tr : o.variant);
+    }
+    var line = el("p","buy-note", o.shop + vt);
+    line.title = (o.note ? o.note + " · " : "") +
+      (o.checked ? window.t("priceChecked", { date: o.checked }) : "");
+    col.appendChild(line);
+    actions.appendChild(col);
+  });
   hero.appendChild(info);
   page.appendChild(hero);
 
@@ -350,6 +440,15 @@
   }
   cBox.appendChild(grid);
 
+  // A tip that only applies to this cartridge, from gamepages.js. Written once,
+  // in English, because it describes one game rather than the machine — the
+  // notes below it come from setup-i18n.js and follow the language picker.
+  if (data.note) {
+    var nOwn = el("p","controls-note own-note");
+    nOwn.innerHTML = data.note;
+    cBox.appendChild(nOwn);
+  }
+
   if (style === "keyboard") {
     var n1 = el("p","controls-note");
     n1.innerHTML = LT("c_kbdNote");
@@ -369,7 +468,34 @@
   nStick2.innerHTML = LT("c_stick2");
   cBox.appendChild(nStick2);
   cSec.appendChild(cBox);
-  page.appendChild(cSec);
+  if (g.platform !== "C64") {
+    page.appendChild(cSec);
+  } else {
+    var c64Sec = el("div","section");
+    c64Sec.appendChild(el("h2",null,window.t("controls")));
+    var c64Box = el("div","controls-box");
+    var c64Grid = el("div","controls-grid");
+    row(c64Grid, '<span class="kbd">&#8592;</span> <span class="kbd">&#8593;</span> <span class="kbd">&#8595;</span> <span class="kbd">&#8594;</span> + <span class="kbd">G</span>', window.t("c64_j1"));
+    row(c64Grid, '<span class="kbd">W</span> <span class="kbd">A</span> <span class="kbd">S</span> <span class="kbd">D</span> + <span class="kbd">Q</span>', window.t("c64_j2"));
+    row(c64Grid, '<span class="kbd">Right&nbsp;Shift</span>', window.t("c64_vkbd"));
+    row(c64Grid, '<span class="kbd">A</span>&ndash;<span class="kbd">Z</span> <span class="kbd">0</span>&ndash;<span class="kbd">9</span> <span class="kbd">Space</span> <span class="kbd">Enter</span>', LT("c_kbd"));
+    c64Box.appendChild(c64Grid);
+    // a per-game tip (gamepages.js "note"), then the two things that trip
+    // everyone up on the C64 shelf: cracked-intro screens and the Mac F-keys.
+    if (data.note) {
+      var c64Note = el("p","controls-note own-note");
+      c64Note.innerHTML = data.note;
+      c64Box.appendChild(c64Note);
+    }
+    var c64Start = el("p","controls-note");
+    c64Start.innerHTML = window.t("c64_startHelp");
+    c64Box.appendChild(c64Start);
+    var c64Mac = el("p","controls-note");
+    c64Mac.innerHTML = window.t("c64_macNote");
+    c64Box.appendChild(c64Mac);
+    c64Sec.appendChild(c64Box);
+    page.appendChild(c64Sec);
+  }
 
   // ---- extras (your own scans: original manual, maps, boards) ----
   var extras = (window.EXTRAS_DATA && window.EXTRAS_DATA[g.id]) || null;

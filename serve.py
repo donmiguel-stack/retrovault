@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Videopac Odyssey Vault local server.
+"""Retro Vault local server.
 
 Same as `python3 -m http.server`, but with two additions:
 
@@ -194,7 +194,7 @@ class VaultHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
-    print(f"Videopac Odyssey Vault on http://localhost:{port}  (no-cache mode)")
+    print(f"Retro Vault on http://localhost:{port}  (no-cache mode)")
     if authoring():
         print("updates: OFF - this is the authoring copy (.authoring present)")
     elif not source_base():

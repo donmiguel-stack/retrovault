@@ -9,6 +9,7 @@
   --accent:#5b8def;
   --g7000:#3ba97a;
   --g7400:#c07de0;
+  --c64:#b98a5f;
   --radius:10px;
 }
 *{box-sizing:border-box;}
@@ -26,6 +27,7 @@ body{
 }
 .brand{font-size:17px;font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap;}
 .brand-mark{color:var(--accent);}
+.brand-sub{font-size:11px;font-weight:400;color:var(--text-mute);letter-spacing:.04em;margin-left:2px;align-self:center;white-space:nowrap;}
 #search{
   flex:1;max-width:420px;
   background:var(--surface);border:1px solid var(--border);
@@ -99,6 +101,7 @@ body{
 .badge{font-size:10px;padding:2px 7px;border-radius:999px;font-weight:600;letter-spacing:.02em;}
 .badge-g7000{background:rgba(59,169,122,.18);color:var(--g7000);}
 .badge-g7400{background:rgba(192,125,224,.18);color:var(--g7400);}
+.badge-c64{background:rgba(185,138,95,.2);color:var(--c64);}
 .badge-cat{background:var(--surface-2);color:var(--text-mute);}
 .badge-cat-dyn{background:color-mix(in srgb, var(--badge-color) 20%, transparent);color:var(--badge-color);}
 /* dump variant (alt dump / 12K banked) - tells apart entries that are
@@ -362,7 +365,7 @@ body{
 .attract-word{
   position:absolute; top:0; left:0; white-space:nowrap;
   font-family:"Press Start 2P", ui-monospace, Menlo, Consolas, monospace;
-  font-size:clamp(15px, 2.1vw, 26px); letter-spacing:.06em; line-height:1;
+  font-size:clamp(19px, 3.1vw, 40px); letter-spacing:.06em; line-height:1;
   padding:6px 8px; will-change:transform;
 }
 .attract-letter{text-shadow:0 0 8px currentColor; transition:color .5s;}
@@ -378,28 +381,33 @@ body{
 }
 .sponsor-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
 
+/* Yellow all round, like the import/export and update buttons — this panel is
+   the one asking you to go somewhere else, so it is allowed to be loud. */
 .community{
-  grid-column:1/-1; margin:16px 0 10px; padding:16px 18px;
-  background:var(--surface); border:1px solid var(--border); border-radius:12px;
+  grid-column:1/-1; margin:20px 0 14px; padding:20px 22px 22px;
+  background:var(--surface); border:2px solid #ffc400; border-radius:12px;
 }
 .community-head{display:flex; align-items:flex-start; justify-content:space-between; gap:16px;}
-.community h3{margin:0 0 3px; font-size:15px;}
-.community-intro{margin:0 0 12px; font-size:13px; color:var(--text-mute);}
-.carousel-nav{display:flex; gap:6px; flex-shrink:0;}
+.community h3{margin:0 0 5px; font-size:19px;}
+.community-intro{margin:0 0 16px; font-size:14.5px; color:var(--text-dim);}
+.carousel-nav{display:flex; gap:8px; flex-shrink:0;}
 .car-btn{
-  width:28px; height:28px; border-radius:50%; cursor:pointer; font-size:15px; line-height:1;
-  background:var(--surface-2); border:1px solid var(--border); color:var(--text-dim);
+  width:36px; height:36px; border-radius:50%; cursor:pointer;
+  font-size:20px; font-weight:700; line-height:1;
+  background:#fff; border:none; color:#000;
+  box-shadow:0 1px 5px rgba(0,0,0,.45);
 }
-.car-btn:hover{border-color:var(--accent); color:var(--text);}
+.car-btn:hover{background:#ffc400;}
+.car-btn:active{transform:translateY(1px);}
 .community-track{
   display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory;
   scrollbar-width:none; padding-bottom:2px;
 }
 .community-track::-webkit-scrollbar{display:none;}
 .community-item{
-  flex:0 0 264px; scroll-snap-align:start;
+  flex:0 0 300px; scroll-snap-align:start;
   display:block; text-decoration:none; color:inherit; border-radius:10px;
-  padding:10px 12px 10px 14px;
+  padding:13px 15px 14px 16px;
   background:color-mix(in srgb, var(--tint) 12%, var(--surface-2));
   border:1px solid color-mix(in srgb, var(--tint) 32%, transparent);
   border-left:3px solid var(--tint);
@@ -409,12 +417,12 @@ body{
   background:color-mix(in srgb, var(--tint) 22%, var(--surface-2));
   border-color:var(--tint);
 }
-.community-item .cname{font-size:13px; font-weight:600; display:flex; gap:7px; align-items:center; color:var(--text);}
+.community-item .cname{font-size:15px; font-weight:600; display:flex; gap:7px; align-items:center; color:var(--text);}
 .community-item .clang{
-  font-size:10px; color:var(--tint); border:1px solid color-mix(in srgb, var(--tint) 45%, transparent);
+  font-size:11px; color:var(--tint); border:1px solid color-mix(in srgb, var(--tint) 45%, transparent);
   border-radius:999px; padding:1px 7px; font-weight:500; white-space:nowrap;
 }
-.community-item .cwhat{margin:5px 0 0; font-size:12px; line-height:1.5; color:var(--text-dim);}
+.community-item .cwhat{margin:7px 0 0; font-size:13px; line-height:1.55; color:var(--text-dim);}
 
 @media (max-width:1200px){
   .feature-shot{display:none;}

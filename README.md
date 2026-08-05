@@ -1,8 +1,11 @@
-# Videopac Odyssey Vault
+# Retro Vault
 
-A private, offline library for Philips Videopac / Magnavox Odyssey² games —
-box art, manuals, history and gameplay clips, with the games playable in the
-browser.
+A private, offline library for classic game systems, organised as shelves:
+Philips Videopac / Magnavox Odyssey² and Commodore 64 — box art, manuals,
+history and gameplay clips, with the games playable in the browser. One shelf
+is visible at a time; the counts never mix.
+
+*(Previously "Videopac Odyssey Vault" — the folder keeps that name.)*
 
 **Vault by @donmiguel2.0 · code by Claude**
 
@@ -153,6 +156,24 @@ Drop a PDF or image into `extras/`, then add a line to `extras.js`:
 
 It'll appear as an **Extras** section on that game's page. The game ids are in
 `games.js`.
+
+### The C64 shelf
+
+The library now has a **Commodore 64** shelf — the C64 chip in the filter bar,
+28 curated classics to start with, playable through the VICE core (in
+`emulator/cores/`). VICE brings its own KERNAL, BASIC and CHARGEN, so unlike
+the Videopac shelf there is **no BIOS to supply** — a game needs only its dump.
+Drop the file named on the game's page (e.g. `Boulder Dash.d64`) into
+`emulator/roms/` and START appears on that page by itself; until then the page
+says exactly which file it is waiting for.
+
+The placeholder covers in `covers/c64_*.png` are generated art, not scans —
+replace any of them with your own box or cassette-inlay scans under the same
+filename (then bump `COVER_V`, see below). Or let the fetcher find them for you: `python3 tools/fetch_c64_assets.py --covers` pulls box art from Wikipedia, `--roms` pulls disk images from the c64.com set on archive.org, and `--manuals` pulls manual PDFs. Run `python3 tools/fetch_c64_assets.py` with no arguments for the options. The files it fetches stay out of git.
+
+To add more C64 titles, give them an id starting with
+`c64_`, platform `"C64"` and category `"Commodore 64"` in `games.js`, plus a
+matching entry in `genres.js` and (optionally) a history in `gamepages.js`.
 
 ### Adding cover art
 
