@@ -162,9 +162,20 @@
   var SORT_KEY = "VideopacVault_sort";
   var SHELF_KEY = "VideopacVault_shelf";
   var savedShelf = localStorage.getItem(SHELF_KEY);
-  if (["videopac", "G7000", "G7400+", "C64", "PC"].indexOf(savedShelf) === -1) savedShelf = "videopac";
+  // G7000/G7400+ used to be their own standalone shelves; they're now a
+  // console filter living under Category, on the Videopac shelf. Anyone whose
+  // browser still has one of those old values saved lands on Videopac with
+  // that console pre-selected in the Category dropdown, instead of losing
+  // the setting outright.
+  var savedConsole = null;
+  if (savedShelf === "G7000" || savedShelf === "G7400+") {
+    savedConsole = savedShelf;
+    savedShelf = "videopac";
+  }
+  if (["videopac", "C64", "PC"].indexOf(savedShelf) === -1) savedShelf = "videopac";
+  localStorage.setItem(SHELF_KEY, savedShelf);
   var state = {
-    games: [], platform: savedShelf, category: "all", query: "", list: "all",
+    games: [], platform: savedShelf, category: savedConsole || "all", query: "", list: "all",
     sort: localStorage.getItem(SORT_KEY) || "number",
     genre: "all", players: "all"
   };
@@ -227,10 +238,23 @@
     sel.classList.toggle("on", current !== "all");
   }
 
+  // G7000 and G7400+ aren't their own shelf any more - they're a console
+  // filter that only makes sense on the Videopac shelf, so they show up as
+  // two extra entries at the top of the Category dropdown instead of as
+  // standalone chips. Reuses state.category (their keys, "G7000"/"G7400+",
+  // never collide with a CATEGORY_GROUPS key), so matches() below treats them
+  // as just another category value.
   function buildCategoryChips(games) {
     var counts = {};
     games.forEach(function (g) { var key = groupFor(g).key; counts[key] = (counts[key] || 0) + 1; });
     var entries = [];
+    if (state.platform === "videopac") {
+      var consoleCounts = { "G7000": 0, "G7400+": 0 };
+      games.forEach(function (g) { if (consoleCounts[g.platform] !== undefined) consoleCounts[g.platform]++; });
+      ["G7000", "G7400+"].forEach(function (p) {
+        if (consoleCounts[p]) entries.push({ key: p, label: p, count: consoleCounts[p] });
+      });
+    }
     CATEGORY_GROUPS.forEach(function (grp) {
       if (counts[grp.key]) entries.push({ key: grp.key, label: catLabel(grp), count: counts[grp.key] });
     });
@@ -244,7 +268,11 @@
     else if (state.platform !== "all" && g.platform !== state.platform) return false;
     if (state.genre !== "all" && genreOf(g) !== state.genre) return false;
     if (state.players !== "all" && playersOf(g) !== state.players) return false;
-    if (state.category !== "all" && groupFor(g).key !== state.category) return false;
+    if (state.category !== "all") {
+      if (state.category === "G7000" || state.category === "G7400+") {
+        if (g.platform !== state.category) return false;
+      } else if (groupFor(g).key !== state.category) return false;
+    }
     if (state.query) {
       var q = state.query.toLowerCase();
       // search the regional names too, so "Thunderball" finds Flipper and
