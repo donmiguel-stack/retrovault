@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retro Vault</title>
-<link rel="stylesheet" href="style.css?v=68">
+<link rel="stylesheet" href="style.css?v=82">
 </head>
 <body>
 <header class="topbar">
-  <div class="brand"><span class="brand-mark">&#9642;</span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64</span></div>
+  <div class="brand"><span class="brand-mark">&#9642;</span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; PC</span></div>
   <input id="search" type="search" placeholder="Search 213 games..." autocomplete="off">
   <button class="icon-btn" id="favChip" data-list="fav" title="Favorites">
     &#9733; <span class="chip-count" id="favCount">0</span></button>
@@ -26,6 +26,7 @@
       <button class="chip" data-platform="G7000">G7000</button>
       <button class="chip" data-platform="G7400+">G7400+</button>
       <button class="chip" data-platform="C64">C64</button>
+      <button class="chip" data-platform="PC">PC</button>
     </div>
     <select id="categorySel" class="filter-sel" aria-label="Category"></select>
     <select id="genreSel" class="filter-sel" aria-label="Genre"></select>
@@ -63,11 +64,20 @@
 <section id="showcase" class="showcase" hidden>
   <div class="showcase-head">
     <h2 data-i18n="featuredHead">Featured and recommended</h2>
-    <button id="showcaseToggle" class="ghost-btn small" data-i18n="hideShowcase">Hide</button>
   </div>
   <div class="feature-row">
     <a id="featureMain" class="feature-main" href="#"></a>
     <div id="featureList" class="feature-list"></div>
+  </div>
+</section>
+
+<section id="c64showcase" class="showcase" hidden>
+  <div class="showcase-head">
+    <h2 data-i18n="featuredHead">Featured and recommended</h2>
+  </div>
+  <div class="feature-row">
+    <div id="c64FeatureMain" class="feature-main feature-main-c64"></div>
+    <div id="c64FeatureList" class="feature-list"></div>
   </div>
 </section>
 
@@ -148,20 +158,22 @@
         <li data-s="w4"></li>
       </ul>
       <p class="credits">Vault by <strong>@donmiguel2.0</strong> &middot; code by Claude<br>
-      Emulation by the open-source O2EM libretro core running in webretro. Not affiliated with Philips or Magnavox.</p>
+      Emulation by the open-source O2EM and VICE libretro cores running in webretro, and DOSBox running in js-dos for the PC shelf. Not affiliated with Philips, Magnavox, Commodore, id Software, Sierra or Broderbund.</p>
     </div>
   </div>
 </div>
 
-<script src="i18n.js?v=68"></script>
-<script src="setup-i18n.js?v=68"></script>
-<script src="games.js?v=68"></script>
-<script src="extras.js?v=68"></script>
-<script src="packaging.js?v=68"></script>
-<script src="genres.js?v=68"></script>
-<script src="featured.js?v=68"></script>
-<script src="brazil.js?v=68"></script>
-<script src="usa.js?v=68"></script>
-<script src="app.js?v=68"></script>
+<script src="i18n.js?v=82"></script>
+<script src="setup-i18n.js?v=82"></script>
+<script src="games.js?v=82"></script>
+<script src="extras.js?v=82"></script>
+<script src="packaging.js?v=82"></script>
+<script src="genres.js?v=82"></script>
+<script src="gamepages.js?v=82"></script>
+<script src="featured.js?v=82"></script>
+<script src="brazil.js?v=82"></script>
+<script src="usa.js?v=82"></script>
+<script src="c64ad.js?v=82"></script>
+<script src="app.js?v=82"></script>
 </body>
 </html>

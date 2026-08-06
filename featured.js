@@ -29,6 +29,27 @@ window.FEATURED_DATA = {
       blurb: "Sold as Attack of the Timelord in America, and licensed from a Gerry Anderson puppet series in Europe. One of the few cartridges written for the G7400's extra graphics chip." }
   ],
 
+  // ---- Featured and recommended, C64 shelf ------------------------------
+  // The same panel as above, but for the Commodore 64 shelf. "id" matches an
+  // id in games.js; the cover comes from there and the blurb lives here. The
+  // right-hand slot plays the game's own gameplay clip (the one already wired
+  // into its game page) - muted, looping - so the screenshot actually moves.
+  // No "shot" needed: the video id is taken from gamepages.js automatically.
+  c64featured: [
+    { id: "c64_paradroid",
+      blurb: "Andrew Braybrook's masterpiece: board an enemy droid, win a little logic duel for control of it, then turn its guns on the rest. Nothing on the machine feels quite this considered." },
+    { id: "c64_last_ninja",
+      blurb: "System 3's isometric adventure sold over four million copies and defined what a C64 blockbuster looked like — six loading screens, a Ben Daglish score, and puzzles that punished the impatient." },
+    { id: "c64_turrican2",
+      blurb: "Manfred Trenz and Chris Huelsbeck pushing the hardware to its limit in 1991 — vast scrolling worlds, a rotating beam weapon, and a soundtrack people still cover today." },
+    { id: "c64_impossible_mission",
+      blurb: "\"Another visitor. Stay a while... stay forever!\" Epyx's acrobatic search through a mad scientist's lair, with speech synthesis that stunned everyone in 1984." },
+    { id: "c64_wizball",
+      blurb: "Sensible Software's strangest and best: bounce an unsteerable ball across the land to collect paint and give a grey world its colour back. A two-player cat helps." },
+    { id: "c64_ik_plus",
+      blurb: "Archer Maclean's three-way karate tournament — you, a rival, and a computer fighter all at once — with a bonus round batting bombs back. The high point of the genre on the 64." }
+  ],
+
   // ---- Homebrew ---------------------------------------------------------
   // The other half of the story: games written for this console after it was
   // discontinued, by people who simply wanted to. Same shape as "featured",

@@ -1,9 +1,9 @@
 # Retro Vault
 
 A private, offline library for classic game systems, organised as shelves:
-Philips Videopac / Magnavox Odyssey² and Commodore 64 — box art, manuals,
-history and gameplay clips, with the games playable in the browser. One shelf
-is visible at a time; the counts never mix.
+Philips Videopac / Magnavox Odyssey², Commodore 64 and MS-DOS PC — box art,
+manuals, history and gameplay clips, with the games playable in the browser.
+One shelf is visible at a time; the counts never mix.
 
 *(Previously "Videopac Odyssey Vault" — the folder keeps that name.)*
 
@@ -144,7 +144,7 @@ Two things that catch everyone out:
 | `covers/` | Box art, one image per game id |
 | `manuals/` | Manual page scans from the archive.org Videopac collection |
 | `extras/` | Your own scans of manuals, maps and boards |
-| `emulator/` | webretro + the O2EM core, the BIOS, and the ROMs |
+| `emulator/` | webretro + the O2EM/VICE cores and js-dos (DOSBox), the BIOS, and the ROMs |
 
 ### Adding your own scans
 
@@ -175,6 +175,31 @@ To add more C64 titles, give them an id starting with
 `c64_`, platform `"C64"` and category `"Commodore 64"` in `games.js`, plus a
 matching entry in `genres.js` and (optionally) a history in `gamepages.js`.
 
+### The PC shelf
+
+The library also has an **MS-DOS** shelf — the PC chip in the filter bar,
+playable through [js-dos](https://js-dos.com/) (a self-hosted DOSBox, in
+`emulator/dos/`), not the RetroArch/webretro cores the other two shelves use.
+Each game is a single zip in `emulator/roms/` that's also a self-contained
+js-dos bundle: the game's own files plus a `.jsdos/dosbox.conf` that mounts
+the zip as drive C: and launches the right .EXE/.BAT automatically. Drop the
+file named on the game's page into `emulator/roms/` and START appears by
+itself, exactly like the C64 shelf.
+
+To add another DOS title yourself: put the game's files in a folder, add a
+`.jsdos/dosbox.conf` to it (copy one from an existing PC game's zip and change
+the `[autoexec]` line to your game's .EXE/.BAT), zip the folder's *contents*
+(not the folder itself) so the .EXE ends up at the zip's root, and drop that
+zip into `emulator/roms/`. Then give it an id starting with `pc_`, platform
+`"PC"` and category `"MS-DOS"` in `games.js`, plus a matching entry in
+`genres.js` and (optionally) a history in `gamepages.js`.
+
+Doom ships as id Software's free 1993 shareware episode (`DOOM1.WAD`) — if you
+own a full copy, its `DOOM.WAD` can replace the shareware WAD in a rebuilt
+`DOOM.zip` to unlock all three episodes. Leisure Suit Larry, Wolfenstein 3D,
+Commander Keen and Prince of Persia ship as-is; see `tools/` notes for where
+each came from.
+
 ### Adding cover art
 
 Save the image as `covers/<game id>.jpg`, then open `app.js` and bump the
@@ -188,9 +213,11 @@ browser keeps showing the blank it cached before the file existed.
 This is a personal archive for cartridges you own. No ROMs, BIOS images or
 manual scans are distributed with the project — you supply your own dumps.
 
-Emulation is the open-source [O2EM](https://o2em.sourceforge.net/) libretro
-core running in [webretro](https://github.com/BinBashBanana/webretro).
-Manual scans come from the Internet Archive's Videopac/Odyssey² manuals
-collection. Not affiliated with Philips or Magnavox.
+Emulation is the open-source [O2EM](https://o2em.sourceforge.net/) and
+[VICE](https://vice-emu.sourceforge.io/) libretro cores running in
+[webretro](https://github.com/BinBashBanana/webretro), and DOSBox running in
+[js-dos](https://js-dos.com/) for the PC shelf. Manual scans come from the
+Internet Archive's Videopac/Odyssey² manuals collection. Not affiliated with
+Philips, Magnavox, Commodore, id Software, Sierra or Broderbund.
 
 **Vault by @donmiguel2.0 · code by Claude**

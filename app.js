@@ -1,6 +1,8 @@
 (function () {
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 21;
+  var COVER_V = 23;
+  // Bump when you add or re-record anything in clips/ (C64 featured gameplay).
+  var CLIP_V = 1;
 
   // Attract-screen palette, same letters as the SELECT GAME splash. Declared
   // up here because render() runs before the code further down this file.
@@ -26,7 +28,8 @@
     { key: "modified", label: "Modified",       color: "#e0865a", match: ["Modified / fixed"] },
     { key: "rare",     label: "Rare",           color: "#c07de0", match: ["Rare / unreleased", "Utility / unknown"] },
     { key: "homebrew", label: "Homebrew",       color: "#e05a7e", match: ["Homebrew (this project)", "Homebrew (community)"] },
-    { key: "c64",      label: "Commodore 64",   color: "#b98a5f", match: ["Commodore 64"] }
+    { key: "c64",      label: "Commodore 64",   color: "#b98a5f", match: ["Commodore 64"] },
+    { key: "pc",       label: "MS-DOS",         color: "#4a7fd6", match: ["MS-DOS"] }
   ];
 
   var CATEGORY_LOOKUP = {};
@@ -35,7 +38,7 @@
   });
 
   function platformBadge(p) {
-    return p === "G7400+" ? "badge-g7400" : p === "C64" ? "badge-c64" : "badge-g7000";
+    return p === "G7400+" ? "badge-g7400" : p === "C64" ? "badge-c64" : p === "PC" ? "badge-pc" : "badge-g7000";
   }
 
   function groupFor(g) {
@@ -88,7 +91,7 @@
   // afterwards, grouped by where they came from.
   var CATEGORY_RANK = {
     eu: 0, french: 1, pal: 2, us: 3, brazil: 4, jopac: 5,
-    imagic: 6, parker: 7, modified: 8, rare: 9, homebrew: 10, c64: 11
+    imagic: 6, parker: 7, modified: 8, rare: 9, homebrew: 10, c64: 11, pc: 12
   };
   function shelfKey(g) {
     var n = parseInt(g.vpNumber, 10);
@@ -157,10 +160,9 @@
   }
 
   var SORT_KEY = "VideopacVault_sort";
-  var SHOWCASE_KEY = "VideopacVault_showcase";
   var SHELF_KEY = "VideopacVault_shelf";
   var savedShelf = localStorage.getItem(SHELF_KEY);
-  if (["videopac", "G7000", "G7400+", "C64"].indexOf(savedShelf) === -1) savedShelf = "videopac";
+  if (["videopac", "G7000", "G7400+", "C64", "PC"].indexOf(savedShelf) === -1) savedShelf = "videopac";
   var state = {
     games: [], platform: savedShelf, category: "all", query: "", list: "all",
     sort: localStorage.getItem(SORT_KEY) || "number",
@@ -192,12 +194,12 @@
 
   // The games on the active shelf. Counts, placeholders and filter options
   // are all computed from this rather than the whole catalogue, so the
-  // Videopac shelf says 213 games and the C64 shelf says its own number -
+  // Videopac shelf says 213 games and the C64/PC shelves say their own number -
   // the shelves never mix.
   function platformGames() {
     return state.games.filter(function (g) {
       if (state.platform === "all") return true;
-      if (state.platform === "videopac") return g.platform !== "C64";
+      if (state.platform === "videopac") return g.platform !== "C64" && g.platform !== "PC";
       return g.platform === state.platform;
     });
   }
@@ -206,8 +208,13 @@
     document.querySelectorAll("#platformChips .chip").forEach(function (c) {
       c.classList.toggle("active", c.dataset.platform === state.platform);
     });
+    // The featured panels are Videopac/C64-only content and always shown: the
+    // Videopac one on every shelf except C64/PC, the C64 one only on the C64
+    // shelf. The PC shelf gets neither (no PC-specific showcase yet).
     var sc = document.getElementById("showcase");
-    if (sc) sc.hidden = state.platform === "C64" || localStorage.getItem(SHOWCASE_KEY) === "off";
+    if (sc) sc.hidden = state.platform === "C64" || state.platform === "PC";
+    var c64sc = document.getElementById("c64showcase");
+    if (c64sc) c64sc.hidden = state.platform !== "C64";
   }
 
   function fillSelect(sel, allLabel, entries, current) {
@@ -233,7 +240,7 @@
   function matches(g) {
     if (state.list === "fav" && !isFav(g.id)) return false;
     if (state.list === "pack" && !hasPackaging(g.id)) return false;
-    if (state.platform === "videopac") { if (g.platform === "C64") return false; }
+    if (state.platform === "videopac") { if (g.platform === "C64" || g.platform === "PC") return false; }
     else if (state.platform !== "all" && g.platform !== state.platform) return false;
     if (state.genre !== "all" && genreOf(g) !== state.genre) return false;
     if (state.players !== "all" && playersOf(g) !== state.players) return false;
@@ -310,6 +317,20 @@
       }).observe(wrap);
     }
     return wrap;
+  }
+
+  // The C64-style advert banner lives in c64ad.js (shared with game.html):
+  // window.buildC64Ad(sponsor) returns the animated banner element.
+  function c64AdBlock() {
+    var sp = ((window.FEATURED_DATA || {}).sponsors || [])[0] || null;
+    var strip = document.createElement("div"); strip.className = "sponsor-strip c64-ad-strip";
+    var a = document.createElement("a"); a.className = "c64ad-link";
+    a.href = (sp && sp.url) || "#"; a.target = "_blank"; a.rel = "noopener sponsored";
+    a.appendChild(window.buildC64Ad(sp));
+    var tag = document.createElement("span"); tag.className = "sponsor-tag"; tag.textContent = window.t("sponsored");
+    a.appendChild(tag);
+    strip.appendChild(a);
+    return strip;
   }
 
   function sponsorBlock() {
@@ -422,6 +443,112 @@
     return function () { if (timer) clearInterval(timer); timer = null; };
   }
 
+  // The C64 featured panel is the same idea, but the right-hand slot plays the
+  // game's own gameplay clip instead of a still - muted, looping - so the
+  // screenshot actually moves. It rotates more slowly than the Videopac panel
+  // (14s) so a clip has time to actually play before the next one loads.
+  //
+  // Three layers, best first, each falling back to the next automatically:
+  //   1. a locally-recorded clip at clips/clip_<id>.mp4  (instant, offline,
+  //      no YouTube chrome) - preferred whenever the file is present;
+  //   2. the game's YouTube gameplay embed (gamepages.js video id) if there
+  //      is no local clip but the machine is online;
+  //   3. the cover, if there's neither.
+  // The <video> element's own error event does the 1->2/3 hop, so dropping a
+  // new clip into clips/ upgrades that game with no code or config change.
+  function ytEmbed(vid) {
+    // youtube-nocookie + muted is what makes autoplay/loop allowed.
+    return "https://www.youtube-nocookie.com/embed/" + vid +
+      "?autoplay=1&mute=1&loop=1&playlist=" + vid +
+      "&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1";
+  }
+
+  // When a local clip is missing, its <video> fires "error"; swap the slot for
+  // the YouTube embed, or the cover if the game has no video id either.
+  function c64ClipFallback(box) {
+    var vid = box.getAttribute("data-vid");
+    var gid = box.getAttribute("data-gid");
+    var href = box.getAttribute("data-href");
+    if (vid) {
+      box.innerHTML = '<iframe src="' + ytEmbed(vid) + '" title="" loading="lazy" ' +
+        'frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" ' +
+        'allowfullscreen></iframe>';
+    } else {
+      box.classList.add("feature-video-fallback");
+      box.innerHTML = '<a href="' + href + '"><img src="covers/' + gid + '.png?v=' + COVER_V +
+        '" alt="" onerror="this.onerror=null;this.src=\'covers/' + gid + '.jpg?v=' + COVER_V + '\'"></a>';
+    }
+  }
+
+  function c64FeatureRotator(main, list, picks) {
+    var at = 0, timer = null;
+
+    function videoSlot(g, href) {
+      var gp = (window.GAMEPAGES_DATA || {})[g.id] || {};
+      var vid = gp.video && gp.video.id ? gp.video.id : "";
+      // Always reach for the local clip first; data-* carries what the error
+      // handler needs to fall back to.
+      return '<div class="feature-video" data-gid="' + g.id + '" data-vid="' + vid +
+        '" data-href="' + href.replace(/"/g, "&quot;") + '">' +
+        '<video class="feature-clip" src="clips/clip_' + g.id + '.mp4?v=' + CLIP_V + '" ' +
+        'autoplay muted loop playsinline preload="auto"></video></div>';
+    }
+
+    // Wire the freshly-rendered clip: kick playback (autoplay policies) and
+    // arm the missing-file fallback.
+    function wireClip() {
+      var box = main.querySelector(".feature-video");
+      if (!box) return;
+      var v = box.querySelector("video");
+      if (!v) return;
+      v.addEventListener("error", function () { c64ClipFallback(box); }, { once: true });
+      var p = v.play && v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
+    function show(n) {
+      at = (n + picks.length) % picks.length;
+      var pick = picks[at], g = gameById(pick.id);
+      var gen = (window.GENRE_DATA || {})[g.id] || {};
+      var href = "game.html?id=" + encodeURIComponent(g.id);
+      main.innerHTML =
+        '<a class="feature-cover-wrap" href="' + href + '">' +
+        '<img class="feature-cover" src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
+        'onerror="this.onerror=null;this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'"></a>' +
+        '<div class="feature-copy">' +
+        '<h3><a href="' + href + '">' + g.title + '</a></h3>' +
+        '<p class="feature-blurb">' + pick.blurb + '</p>' +
+        '<div class="feature-meta">' +
+        '<span class="badge ' + platformBadge(g.platform) + '">' + g.platform + '</span>' +
+        (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
+        (gen.players ? '<span class="badge badge-cat">' + window.t("p_" + gen.players) + '</span>' : '') +
+        '</div></div>' + videoSlot(g, href);
+      wireClip();
+      list.querySelectorAll(".feature-thumb").forEach(function (b, n2) {
+        b.classList.toggle("on", n2 === at);
+      });
+    }
+
+    list.innerHTML = picks.map(function (p, n) {
+      var g = gameById(p.id);
+      return '<button class="feature-thumb" data-i="' + n + '">' +
+             '<img src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
+             'onerror="this.onerror=null;this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
+             '<span>' + g.title + '</span></button>';
+    }).join("");
+    list.querySelectorAll(".feature-thumb").forEach(function (b) {
+      b.addEventListener("click", function () {
+        show(parseInt(this.dataset.i, 10));
+        clearInterval(timer);            // stop rotating once someone chooses
+        timer = null;
+      });
+    });
+
+    show(0);
+    timer = setInterval(function () { show(at + 1); }, 10000);
+    return function () { if (timer) clearInterval(timer); timer = null; };
+  }
+
   // Homebrew gets its own panel partway down the library. The games at the
   // top of the page are the ones Philips sold; these are the ones people
   // wrote afterwards, and they'd disappear among 213 covers otherwise.
@@ -478,9 +605,8 @@
   }
 
   function placeBlocks(total) {
-    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .community")
+    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .community, .c64-ad-strip")
         .forEach(function (n) { n.remove(); });
-    if (total < 60) return;                       // too short to bother
     var cols = gridColumns();
     var cards = grid.querySelectorAll(".card");
 
@@ -491,6 +617,13 @@
       if (idx >= cards.length) return;
       grid.insertBefore(node, cards[idx]);
     }
+    // The C64 shelf gets its own C64-style advert and none of the Videopac
+    // homebrew/community panels (those are Videopac content).
+    if (state.platform === "C64") {
+      if (total >= 6) insertAt(c64AdBlock(), Math.min(12, Math.floor(total / 2)));
+      return;
+    }
+    if (total < 60) return;                       // too short to bother
     insertAt(sponsorBlock(), Math.min(36, Math.floor(total / 3)));
     insertAt(homebrewBlock(), Math.min(96, Math.floor(total * 2 / 3)));
     insertAt(communityBlock(), Math.min(160, Math.floor(total * 6 / 7)));
@@ -826,6 +959,7 @@
   // Featured games, sponsor banners and the community links, all driven by
   // featured.js. Any panel with an empty list simply doesn't appear.
   var featStop = null;
+  var c64FeatStop = null;
 
   function buildShowcase() {
     var data = window.FEATURED_DATA || {};
@@ -839,7 +973,7 @@
     var community = data.community || [];
     if (!picks.length && !sponsors.length && !community.length) return;
 
-    host.hidden = state.platform === "C64" || localStorage.getItem(SHOWCASE_KEY) === "off";
+    host.hidden = state.platform === "C64" || state.platform === "PC";
 
     // --- featured
     if (picks.length) {
@@ -847,12 +981,16 @@
                                 document.getElementById("featureList"), picks);
     }
 
-    var toggle = document.getElementById("showcaseToggle");
-    toggle.addEventListener("click", function () {
-      var off = !host.hidden;
-      host.hidden = off;
-      localStorage.setItem(SHOWCASE_KEY, off ? "off" : "on");
+    // --- the C64 featured panel, its own section, shown only on that shelf
+    var c64picks = (data.c64featured || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
     });
+    var c64host = document.getElementById("c64showcase");
+    if (c64host && c64picks.length) {
+      c64host.hidden = state.platform !== "C64";
+      c64FeatStop = c64FeatureRotator(document.getElementById("c64FeatureMain"),
+                                      document.getElementById("c64FeatureList"), c64picks);
+    }
   }
 
   // ---- Updates ---------------------------------------------------------

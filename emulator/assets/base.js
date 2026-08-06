@@ -112,6 +112,13 @@ var screenshotsDiv = document.getElementById("screenshotsdiv");
 var saveTable = document.getElementById("savetable");
 var romSelectorTable = document.getElementById("romselectortable");
 var pso = document.getElementById("pso");
+// A handful of C64 disks use a custom/protected loader that talks to the
+// virtual 1541 directly (bypassing the normal KERNAL LOAD routine) - with
+// true drive emulation off (see the vice_x64 case below) those just hang on
+// a black or looping screen forever. List romName values (the ROM filename
+// without its extension, lowercased) here to force true drive emulation on
+// for just that game, at the cost of a slower, more authentic disk load.
+var viceTrueDriveEmulationRoms = ["wasteland"];
 var coreOptions = {"a5200": {"lowpass": 'a5200_low_pass_filter = "enabled"\n'}, "mednafen_psx": {"highres": 'beetle_psx_internal_resolution = "2x"\n', "ditherscaling": 'beetle_psx_dither_mode = "internal resolution"\n', "widescreen": 'beetle_psx_widescreen_hack = "enabled"\n', "antijitter": 'beetle_psx_pgxp_mode = "memory only"\n'}, "mednafen_psx_hw": {"softwarerenderer": 'beetle_psx_hw_renderer = "software"\n', "highres": 'beetle_psx_hw_internal_resolution = "2x"\n', "ditherscaling": 'beetle_psx_hw_dither_mode = "internal resolution"\n', "widescreen": 'beetle_psx_hw_widescreen_hack = "enabled"\n', "antijitter": 'beetle_psx_hw_pgxp_mode = "memory only"\n'}, "mednafen_vb": {"anaglyph": 'vb_anaglyph_preset = "red & blue"\n'}, "mednafen_wswan": {"75hz": 'wswan_60hz_mode = "disabled"\n', "portrait": 'wswan_rotate_display = "portrait"\n', "lowpass": 'wswan_sound_low_pass = "enabled"\n'}, "melonds": {"leftright": 'melonds_screen_layout = "Left/Right"\n'}, "mgba": {"lowpass": 'mgba_audio_low_pass_filter = "enabled"\n'}, "mupen64plus_next": {"highres": 'mupen64plus-169screensize = "1280x720"\nmupen64plus-43screensize = "960x720"\n', "widescreen": 'mupen64plus-aspect = "16:9 adjusted"\n'}, "o2em": {"lowpass": 'o2em_low_pass_filter = "enabled"\n'}, "parallel_n64": {"highres": 'parallel-n64-screensize = "960x720"\n', "renderer2": 'parallel-n64-gfxplugin = "gln64"\n'}, "prosystem": {"lowpass": 'prosystem_low_pass_filter = "enabled"\n'}, "snes9x": {"mouse": 'input_libretro_device_p1 = "2"\n'}, "stella2014": {"lowpass": 'stella2014_low_pass_filter = "enabled"\n'}, "vecx": {"softwarerenderer": 'vecx_use_hw = "Software"\n'}, "virtualjaguar": {"fastblitter": 'virtualjaguar_usefastblitter = "enabled"\n'}, "yabause": {"frameskip": 'yabause_frameskip = "enabled"\n'}};
 var managers = {};
 managers.keybind = document.getElementById("keybindmanager");
@@ -2005,9 +2012,14 @@ function initFromData(data) {
 					// Turn it off for near-instant virtual-device loads, and warp
 					// through any autoload as a backstop. Fast, and fine for these
 					// standard dumps.
+					//
+					// Exception: a few disks (see viceTrueDriveEmulationRoms above)
+					// use a protection/loader scheme that only works with true
+					// drive emulation on - those load for real instead of hanging.
+					var viceNeedsTrueDrive = viceTrueDriveEmulationRoms.indexOf(String(romName || "").toLowerCase()) !== -1;
 					safeWriteFile(baseFsConfigDir + "VICE x64/VICE x64.opt",
 						coreOptionsString +
-						'vice_drive_true_emulation = "disabled"\n' +
+						'vice_drive_true_emulation = "' + (viceNeedsTrueDrive ? "enabled" : "disabled") + '"\n' +
 						'vice_autoloadwarp = "enabled"\n' +
 						'vice_warp_boost = "enabled"\n');
 					break;

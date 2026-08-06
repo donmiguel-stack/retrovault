@@ -3284,6 +3284,7 @@ window.GAMEPAGES_DATA = {
  },
  "c64_elite": {
   "input": "joystick",
+  "note": "Right after it loads you'll hit a red <strong>DO YOU WANT TO USE THE FAST LOADER? (Y/N)</strong> screen &ndash; press <strong>N</strong>. Elite's own fast loader talks to the disk drive directly, and this vault runs disks in a quick virtual-device mode (so every other game loads instantly) that can't keep up with it, so <strong>Y</strong> just sits there forever with no error and no way out. <strong>N</strong> uses the normal loader instead &ndash; a few seconds slower, but it actually reaches the title screen and &lsquo;Load New Commander (Y/N)?&rsquo;.",
   "video": {
    "id": "LhTTpV5qFrs",
    "title": "C64-Longplay - Elite (720p)"
@@ -3475,6 +3476,223 @@ window.GAMEPAGES_DATA = {
   },
   "history": {
    "text": "Pick a Ferrari Testarossa, Lamborghini Countach or Porsche 911 Turbo and blast up a cliffside highway, dodging traffic and radar cops between fuel stops. Distinctive Software's 1987 original founded the entire Test Drive franchise — and the same Vancouver studio later built the first Need for Speed."
+  }
+ },
+ "c64_target_renegade": {
+  "input": "joystick",
+  "video": {
+   "id": "2qXyop3y1As",
+   "title": "Commodore 64 Longplay [065] Target: Renegade (EU)"
+  },
+  "history": {
+   "text": "A vengeful street brawler drags Renegade hero Mister X through pool halls and back alleys to rescue his girlfriend from a crime boss, mixing one-on-one beat-em-up combat with light platforming. Published by Imagine Software (an Ocean Software label) in 1988 as the sequel to the Renegade arcade conversion, the C64 version dropped the two-player mode found elsewhere but was still praised for capturing the arcade's punchy combat feel."
+  }
+ },
+ "c64_sword_of_fargoal": {
+  "input": "joystick",
+  "video": {
+   "id": "SZzDwAKaslM",
+   "title": "C64-Longplay - Sword Of Fargoal"
+  },
+  "history": {
+   "text": "Descend a randomly-regenerating dungeon in search of the titular sword, fighting monsters and hauling treasure back to the surface before a time limit expires. Written by Jeff McCord and published by Epyx, it predates Rogue's PC popularity on home micros and is regarded as one of the earliest and most influential roguelike-style dungeon crawlers on 8-bit hardware."
+  }
+ },
+ "c64_shadow_of_the_beast": {
+  "input": "joystick",
+  "video": {
+   "id": "8sBqUFlzPlw",
+   "title": "Commodore 64 Longplay [047] Shadow of the Beast (EU)"
+  },
+  "history": {
+   "text": "Stripped of its Amiga original's multi-plane parallax scrolling, this C64 conversion still delivers the same grim revenge story of a man transformed into a beast fighting through a nightmarish world. Handled by DMA Design (later of Grand Theft Auto and Lemmings fame) and published by Psygnosis in 1990, it's remembered more as a technical curiosity than as a great C64 game in its own right."
+  }
+ },
+ "c64_operation_wolf": {
+  "input": "joystick",
+  "video": {
+   "id": "KCUJawJq-Ng",
+   "title": "Commodore 64 Longplay [080] Operation Wolf (US)"
+  },
+  "history": {
+   "text": "Mow down an endless tide of soldiers and hostages-you'd-better-not-shoot with a stationary machine gun, converted from Taito's arcade light-gun cabinet down to joystick control. Published by Ocean Software in 1988, it swaps the arcade's plastic Uzi for a fire button but keeps the frantic pacing, and became one of the C64's best-selling shooters despite the inevitable loss of the light-gun's precision."
+  }
+ },
+ "c64_double_dragon": {
+  "input": "joystick",
+  "video": {
+   "id": "BQbVgyBfKLA",
+   "title": "Double Dragon Longplay (C64: Binary Design) [50 FPS]"
+  },
+  "history": {
+   "text": "Billy and Jimmy Lee punch and kick their way through city streets to rescue Marian from the Black Warriors gang, in a conversion of Technos' seminal arcade brawler. Published by Melbourne House in 1988 after a troubled development that saw the original build scrapped and secretly rebuilt by uncredited programmers \"Ash and Dave\" in six weeks, it was savaged by critics on release and stands as a cautionary tale of a rushed arcade port."
+  }
+ },
+ "c64_spy_vs_spy": {
+  "input": "joystick",
+  "video": {
+   "id": "PhIwB52iUjc",
+   "title": "Spy vs Spy (C64) - Longplay"
+  },
+  "history": {
+   "text": "Two agents ransack the same embassy, racing to find the briefcase, gun and passport while booby-trapping rooms against each other. Programmed by Michael Riedel and published by First Star Software in 1984, it pioneered the split-screen simultaneous two-player format, later spawning two sequels and a lasting rivalry-game formula."
+  }
+ },
+ "c64_ghostbusters": {
+  "input": "joystick",
+  "video": {
+   "id": "X1jKHHeufS0",
+   "title": "C64 Longplay - Ghostbusters"
+  },
+  "history": {
+   "text": "Drive Ecto-1 across town catching roaming ghosts and stopping a giant Marshmallow Man before Manhattan floods with slime. Designed by David Crane and published by Activision in 1984, it was one of the first games built directly off a movie license with input from the film's producers, and its business-management layer made it an early hybrid of action and simulation."
+  }
+ },
+ "c64_pool_of_radiance": {
+  "input": "joystick",
+  "video": {
+   "id": "pF7jt4UBbFA",
+   "title": "Commodore 64 Longplay SSI Pool Of Radiance 1988"
+  },
+  "history": {
+   "text": "Lead a six-member party through the ruins of New Phlan, fighting turn-based battles and building toward a showdown with the tyrant Tyranthraxus. Released by SSI in 1988, it was the first AD&D \"Gold Box\" computer RPG and set the template that the whole subgenre followed for the next decade. Note: an 8-disk game; only disk 1 is wired up for boot/character-creation so far, the rest sit alongside it for manual swapping."
+  }
+ },
+ "c64_turrican": {
+  "input": "joystick",
+  "video": {
+   "id": "_0Cs0z3AnxU",
+   "title": "Turrican I - Longplay - C64 - (1990) - Walkthrough"
+  },
+  "history": {
+   "text": "Armored warrior Turrican blasts, rolls and grapples through sprawling side-scrolling levels crawling with bio-mechanical enemies, using a screen-clearing Lightning smart-bomb as his signature move. Designed and programmed by Manfred Trenz for Factor 5 and published by Rainbow Arts in 1990, it pushed the C64 far past its supposed limits and is widely considered the platform's best action game."
+  }
+ },
+ "c64_wasteland": {
+  "input": "joystick",
+  "video": {
+   "id": "WRqYoeJAHdQ",
+   "title": "C64-Longplay - Wasteland (720p)"
+  },
+  "history": {
+   "text": "Survive a nuclear wasteland as a squad of Desert Rangers, cross-referencing numbered paragraphs from a printed book for story text the disks couldn't hold. Developed by Interplay and published by Electronic Arts in 1988, it introduced a skill-based, consequence-driven RPG structure years ahead of its time and is a direct ancestor of Fallout."
+  }
+ },
+ "c64_dropzone": {
+  "input": "joystick",
+  "video": {
+   "id": "MNTpt69sTiY",
+   "title": "C64 Longplay - Dropzone (HQ)"
+  },
+  "history": {
+   "text": "Trapped astronauts need rescuing from a hostile alien base while you blast waves of attackers in a single-screen arena, Robotron-meets-Defender style. Archer Maclean coded it first on the Atari 8-bit under the alias Arena Graphics before personally converting it to the C64, and U.S. Gold published both. Its unforgiving difficulty curve and tight joystick control made it a benchmark for skill-based arcade action on 8-bit home computers."
+  }
+ },
+ "c64_laser_squad": {
+  "input": "joystick",
+  "video": {
+   "id": "UENotBtsnyE",
+   "title": "C64-Longplay - Laser Squad (720p)"
+  },
+  "history": {
+   "text": "Command a small tactical squad through turn-based, action-point-driven firefights across five scenarios of increasing complexity. Written by Julian Gollop with his brother Nick handling the C64 conversion, and originally published by Target Games in 1988, it laid the groundwork for the systems Gollop would later expand into X-COM, and remains a landmark for introducing genuinely tactical, line-of-sight combat to home computers."
+  }
+ },
+ "c64_congo_bongo": {
+  "input": "joystick",
+  "video": {
+   "id": "gG01_Z1jmik",
+   "title": "C64 Longplay - Congo Bongo (HQ)"
+  },
+  "history": {
+   "text": "Climb, jump and dodge across an isometric jungle as an explorer being pelted by a vengeful gorilla, in Sega's pseudo-3D answer to Donkey Kong. Sega published the C64 cartridge conversion in 1983. Its skewed perspective made platform judging notoriously tricky, giving it a reputation as one of the harder early-80s arcade ports on the system."
+  }
+ },
+ "c64_frogger": {
+  "input": "joystick",
+  "video": {
+   "id": "efx9Z6TACPo",
+   "title": "Longplay of Frogger (Sierra)"
+  },
+  "history": {
+   "text": "Hop a frog through speeding traffic and a log-strewn river to reach home safely, one of the defining \"cross the screen alive\" designs of the arcade era. Sierra On-Line licensed Konami/Sega's 1981 arcade hit and had Chuck Benton program this C64 conversion in 1983. Its simple rules and split-second timing made it one of the most widely ported games of its generation."
+  }
+ },
+ "c64_castle_wolfenstein": {
+  "input": "joystick",
+  "note": "This one's keyboard-only in disguise. Press <strong>Tab</strong> (Game Focus) the moment it loads &ndash; without it, RETURN and several other keys are grabbed as joystick input before they ever reach the C64, so &lsquo;PRESS RETURN TO BEGIN&rsquo; just sits there. With Game Focus on: <strong>Return</strong> to begin, <strong>Ctrl+N</strong> for a new game, then <strong>K</strong> for keyboard control (or <strong>J</strong> for joystick &ndash; but you'll still need the keyboard to actually fire). Movement isn't arrows or WASD, it's a 3&times;3 block: <strong>E R T</strong> / <strong>D F G</strong> / <strong>C V B</strong> (up-left/up/up-right, left/stop/right, down-left/down/down-right &ndash; F halts). Fire is the C64's own &larr; key, top-left of the keyboard, not the cursor arrows &ndash; easiest to reach via the on-screen keyboard (<strong>Right Shift</strong>) if your keyboard doesn't have one. <strong>Q</strong> throws a grenade, <strong>Space</strong> searches bodies/doors/chests, <strong>Return</strong> checks your inventory, and <strong>RUN/STOP</strong> saves your position and quits. Keep Game Focus on throughout &ndash; several of these (G, T, Q) double as this vault's joystick keys otherwise.",
+  "video": {
+   "id": "tJNAXh-LVnk",
+   "title": "C64 Longplay - Castle Wolfenstein (HQ)"
+  },
+  "history": {
+   "text": "Sneak, bluff and shoot your way out of a Nazi fortress, stealing disguises and secret plans while guards patrol a randomized, replayable layout. Written by Silas Warner and published by Muse Software in 1983, it introduced stealth mechanics to computer gaming years before the term existed, and its title and premise were later revived — and radically reinvented — as id Software's Wolfenstein 3D."
+  }
+ },
+ "pc_doom": {
+  "input": "keyboard",
+  "note": "This vault ships id Software's free 1993 shareware episode, <strong>Knee-Deep in the Dead</strong> &ndash; the same disk that made Doom a phenomenon before anyone had paid a cent for it. Arrow keys move, <strong>Ctrl</strong> fires, <strong>Space</strong> opens doors and flips switches, <strong>Shift</strong> runs, and the number keys swap weapons. Click into the window once to give it your mouse for looking around; <strong>Esc</strong> opens DOSBox's own menu (exit, fullscreen, etc.), not the game's. If you own a full copy of Doom, its DOOM.WAD can replace the shareware DOOM1.WAD in a rebuilt DOOM.zip to unlock all three episodes &ndash; see the notes in the Vault project docs.",
+  "video": {
+   "id": "RzpOomy9iYQ",
+   "title": "Doom (Episode 1: Knee-Deep in the Dead) (id Software) (MS-DOS) [1993] [PC Longplay]"
+  },
+  "history": {
+   "text": "id Software's first-person shooter did more than popularize a genre it didn't quite invent - it redefined what a PC could look and feel like at a moment when most games still looked like Doom's own predecessor, Wolfenstein 3D. Built by John Carmack, John Romero, Tom Hall and Adrian Carmack and released in December 1993, its shareware episode spread across bulletin boards and campus networks faster than id could have sold it in stores, and the studio made more money giving a third of the game away than most publishers made selling the whole thing. Its network deathmatch mode, sprite-based enemies rendered in a true 3D world, and moddable WAD format shaped shooters, and PC gaming's business model, for the rest of the decade."
+  }
+ },
+ "pc_wolfenstein3d": {
+  "input": "keyboard",
+  "note": "This vault ships the 1993 shareware release &ndash; Episode 1, <strong>Escape from Wolfenstein</strong>. Arrow keys move, <strong>Ctrl</strong> fires, <strong>Space</strong> opens doors, <strong>Shift</strong> runs, and <strong>Alt</strong> strafes. Full mouse-look isn't part of the original engine &ndash; expect a Doom-style keyboard shooter, not a modern one. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "L9ucEzJQvIk",
+   "title": "Wolfenstein 3D (1992) DOS Longplay"
+  },
+  "history": {
+   "text": "id Software's breakout hit predates Doom by a year and effectively invented the first-person shooter as a commercial genre, built on a fast raycasting engine John Carmack wrote to squeeze real-time 3D out of 1992 PCs. Loosely inspired by Muse Software's 1981 stealth game of the same name (also on this vault's C64 shelf), it swapped sneaking for a room-by-room shootout through a Nazi stronghold, and its shareware-first release - Episode 1 free, two more sold by mail order - became the template id repeated a year later with Doom."
+  }
+ },
+ "pc_commander_keen": {
+  "input": "keyboard",
+  "note": "The first shareware episode, <strong>Marooned on Mars</strong>. Arrow keys move, <strong>Alt</strong> jumps, and <strong>Ctrl</strong> fires Keen's pogo stick (also how he bounces onto ledges). <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "TxSRyOm64AU",
+   "title": "Commander Keen 1: Marooned on Mars (PC) Longplay [1990]"
+  },
+  "history": {
+   "text": "Built in a matter of weeks by John Carmack, Tom Hall, John Romero and Adrian Carmack while all four were still working day jobs at Softdisk, Commander Keen proved a PC could do the kind of smooth side-scrolling Nintendo had made its name on - Carmack's adaptive tile refresh technique was the trick that made it possible. The four left to found id Software on the strength of it. Invasion of the Vorticons shipped shareware-first through Apogee in December 1990: the first episode free, two more sold direct, the same distribution playbook id would run again on Wolfenstein 3D and Doom."
+  }
+ },
+ "pc_duke_nukem_2": {
+  "input": "keyboard",
+  "note": "Shareware Episode 1. Arrow keys move, <strong>Ctrl</strong> fires, <strong>Alt</strong> jumps &ndash; the game's own options screen confirms the exact layout if a key doesn't do what you expect. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "tofpXhxv64U",
+   "title": "Longplay: Duke Nukem II - Episode 1 (1993) [MS-DOS]"
+  },
+  "history": {
+   "text": "A straight side-scrolling platformer, closer in spirit to Commander Keen than to the 3D shooter Duke would become - the original Duke Nukem (1991) and this sequel were both 2D Apogee games, and it was only 3D Realms' 1996 Duke Nukem 3D that reinvented the character as a shooter icon and trademarked the number stunt-double name change to dodge a Duke Nukem'em trademark dispute. Duke Nukem II added parallax-scrolling backgrounds and a wider arsenal to the run-and-gun format, and shipped the same way its stablemates did: a free first episode, more sold by mail order."
+  }
+ },
+ "pc_prince_of_persia": {
+  "input": "keyboard",
+  "note": "Arrow keys walk, run and jump; <strong>Shift</strong> makes Prince step carefully or grip a ledge instead of falling. Precision matters more than speed here &ndash; missing a jump or misjudging a guard's blade is how runs end. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "EBbbDXtRJ6g",
+   "title": "Prince of Persia (Jordan Mechner) (MS-DOS) [1990] [PC Longplay]"
+  },
+  "history": {
+   "text": "Jordan Mechner rotoscoped his own brother's movements on a camcorder to give Prince of Persia's animation a fluidity nothing else on DOS had in 1989 - the same technique he'd used on Karateka. Built almost single-handedly over three years and published by Broderbund, its sixty real-time minutes, sword duels and lethal spike traps turned platforming into something that punished carelessness rather than reflexes alone, and its engine and animation approach went on to shape Mechner's own Prince of Persia 2 and, later, Ubisoft's Assassin's Creed."
+  }
+ },
+ "pc_leisure_suit_larry": {
+  "input": "keyboard",
+  "note": "A text-parser graphic adventure, not an action game &ndash; type what Larry should do (<code>look</code>, <code>get money</code>, <code>talk to bartender</code>) and use the arrow keys to walk once he's on his feet. The game opens with an age/trivia gate typical of Sierra's adult-comedy line at the time; answer its questions to get past the title screen. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "V0k5nzLbnNU",
+   "title": "Leisure Suit Larry in the Land of the Lounge Lizards — Longplay (EGA)"
+  },
+  "history": {
+   "text": "Al Lowe built Larry out of an earlier, tamer Sierra game called Softporn Adventure, reworking it into an AGI-engine graphic adventure that leaned all the way into its double entendres rather than away from them. Sierra almost didn't ship it, worried a comedy about a middle-aged loser trying (and mostly failing) to get a date would embarrass the company; instead it became one of Sierra's best-selling titles and spawned a franchise that ran for decades. Its trivia-question age gate at the start - meant only to keep casual browsers out, and trivially skippable - became as much a part of its reputation as the jokes inside."
   }
  }
 };

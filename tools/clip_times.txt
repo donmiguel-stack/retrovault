@@ -1,0 +1,243 @@
+# Retro Vault - gameplay clip times
+# =====================================================================
+# Point out the good bit of each game clip. The build script grabs just
+# those seconds from the game's YouTube video and makes a small, muted,
+# offline clip at clips/clip_<id>.mp4. Games you fill in get moving
+# gameplay on the shelf + their game page; the rest keep the YouTube embed.
+#
+# HOW: put a START time on any game you want. Leave START blank to skip.
+#   START  = where to begin, in SS or M:SS   (e.g. 90  or  1:30)
+#   LEN    = how many seconds to keep        (blank = 15)
+# Pick a START on PURE GAMEPLAY: past the title/intro screens, and away from
+# any face-cam or menus, so the clip shows only the game. ~15s works for most.
+# Then run:  python3 tools/make_clips.py
+# Re-run any time - it only (re)builds rows that changed.
+#
+# id                              youtube_id    START   LEN   # title
+
+# ---- Commodore 64 -----------------------------------------------------
+c64_boulder_dash                evvZDmVWHbo                 # Boulder Dash
+c64_impossible_mission          WXZjocPhAE4                 # Impossible Mission
+c64_last_ninja                  sUHfSygbSBo                 # The Last Ninja
+c64_wizball                     BAwz1Qlxfbw                 # Wizball
+c64_uridium                     u7fbvTYWFe0                 # Uridium
+c64_paradroid                   gCdIXJsIuu0                 # Paradroid
+c64_turrican2                   JIaabMWupmQ                 # Turrican II: The Final Fight
+c64_maniac_mansion              0dVqe4a4oDo                 # Maniac Mansion
+c64_zak_mckracken               5iB768s266k                 # Zak McKracken and the Alien Mindbenders
+c64_elite                       LhTTpV5qFrs                 # Elite
+c64_ik_plus                     FMGI0HoXNBA                 # IK+
+c64_bruce_lee                   s7RCUa50lf0                 # Bruce Lee
+c64_commando                    ZkC7yqlHOD0                 # Commando
+c64_bubble_bobble               s6vTqG17cB4                 # Bubble Bobble
+c64_giana_sisters               QL3fje5WRrY                 # The Great Giana Sisters
+c64_katakis                     BYr_QA1748U                 # Katakis
+c64_creatures                   JEHo7A4ydvE                 # Creatures
+c64_mayhem                      UBEVxH5ORnw                 # Mayhem in Monsterland
+c64_archon                      RSy1Jma6iL0                 # Archon: The Light and the Dark
+c64_mule                        AWeqk7EBKBU                 # M.U.L.E.
+c64_california_games            1i2aZ-Ivncs                 # California Games
+c64_winter_games                VbYgwJFXrW0                 # Winter Games
+c64_pitstop2                    zI6zmRHUWaw                 # Pitstop II
+c64_defender_crown              60ih81-o04g                 # Defender of the Crown
+c64_barbarian                   9Yn4FLp-0aY                 # Barbarian: The Ultimate Warrior
+c64_microprose_soccer           CcfFEecaYPc                 # Microprose Soccer
+c64_paperboy                    _djAJNxWKm8                 # Paperboy
+c64_test_drive                  drLKG0EKKMg                 # Test Drive
+
+# ---- Videopac / Odyssey2 ----------------------------------------------
+new_amok_alt                    ZW72o6CCLps                 # Amok! (alternate build)
+new_amok                        BME16m-BDG0                 # Amok! (John Dondzila) — first famous O2 homebrew
+new_jg-munchkin                 AdQtjP8ZvKk                 # JG Munchkin (homebrew Munchkin variant)
+new_kc-pacvid                   SbwtsNq2Ves                 # K.C. Pac / video variant
+new_kc-pacman                   SbwtsNq2Ves                 # K.C. Pac-Man style homebrew
+new_ktaa                        JVyY_IKZic4                 # Kill the Attacking Aliens (Soeren Gust) — full
+new_ktaa-demo1                  76nRGYCSN8A                 # Kill the Attacking Aliens — demo 1
+new_ktaa-demo2                  tLGv7NPtzh8                 # Kill the Attacking Aliens — demo 2
+new_mrroboto                    Krpz3WMevHs                 # Mr Roboto (Ted Foolery)
+new_planet-lander               UxjNbFDAO-g                 # Planet Lander!
+new_pong_all                    7jGNjcCJS-c                 # Pong (all-in-one / extended)
+new_pong                        7jGNjcCJS-c                 # Pong (René van den Enden)
+new_puzzle-piece-panic          9OLJIE2Aq9k                 # Puzzle Piece Panic
+new_ppp-o2em                    9OLJIE2Aq9k                 # Puzzle Piece Panic (o2em build)
+new_route66                     GY389TGiyNw                 # Route 66 (Rafael Cardoso)
+im_atlantis                     c98XV6roIBU                 # Atlantis
+im_demon-attack                 HeiHP93mfjQ                 # Demon Attack
+jo_basket-bowling_pl            L-3EeUcJQKM                 # Basket / Bowling (Plus)
+jo_billard_pl                   tH1_fTFI5KA                 # Billard (Plus)
+jo_chez-maxime                  FPgLPbCKPqI                 # Chez Maxime
+jo_demon-attack_pl              nwctfn_mNik                 # Demon Attack+ (Jopac, Plus-enhanced French)
+jo_exojet_pl                    7c4KGPJKnaI                 # Exojet+ (Plus)
+jo_flipper_pl                   QT3msJJbjlE                 # Flipper / Pinball (Plus)
+jo_le-tresor-englouti_pl        ZIgIzZJOWgo                 # Le Trésor Englouti (Plus)
+jo_moto-crash_pl                9XGTuyK6W8Q                 # Moto-Crash+ (Plus)
+jo_syracuse                     fBWnkaDpfj0                 # Syracuse
+mod_vp9_examples                Is9v3t5DxiE                 # Computer Programmer (VP9) examples / teaching cart
+mod_demon-attack_pl             HeiHP93mfjQ                 # Demon Attack (modified / Plus)
+mod_01pl                        QJECgFRqT5E                 # Mod of VP#01: Race / Spin-Out / Cryptogram
+mod_05_g7400                    Z7Cb7ubFV-E                 # Mod of VP#05: Blackjack
+mod_06pl                        _SZMgiFthtY                 # Mod of VP#06: Tenpin Bowling / Basketball
+mod_11pl                        Kb7QDYYEfcc                 # Mod of VP#11: Cosmic Conflict
+mod_14fix                       mTd_F2J2qPU                 # Mod of VP#14: Gunfighter
+mod_19_g7400                    pqPmAYwVrA8                 # Mod of VP#19: Catch the Ball / Noughts and Crosses
+mod_20pl                        sVFAzikfWWw                 # Mod of VP#20: Stone Sling
+mod_24pl                        Fi34Om0UAIs                 # Mod of VP#24: Flipper (Pinball)
+mod_28fix                       U95KWXplSzk                 # Mod of VP#28: Electronic Volleyball
+mod_30fix                       qIfCwJE857U                 # Mod of VP#30: Battlefield
+mod_31_g7400                    uhGxRzkkUJw                 # Mod of VP#31: Musician
+mod_35pl_fix                    1c4VL8be2XM                 # Mod of VP#35: Electronic Billiards
+mod_36fix                       B8s5zSQDGDg                 # Mod of VP#36: Electronic Soccer / Ice Hockey
+mod_40_g7400                    upoIpYcwjaE                 # Mod of VP#40: 4 in 1 Row
+mod_43pl                        xkIVZhTgZ48                 # Mod of VP#43: Pickaxe Pete
+mod_55pl                        buF3DWJ_nPQ                 # Mod of VP#55: Neutron Star
+mod_moto-crash_g7000            QX6_c71gdQ0                 # Moto-Crash (modified for G7000)
+mod_vp31_examples               uhGxRzkkUJw                 # Musician (VP31) code examples / teaching cart
+mod_playtag_fix                 0WQ1hcMF-_8                 # Playtag (fixed)
+mod_tutankham_fix               6IgcEyfp8s0                 # Tutankham (fixed)
+o2_40                           r02EwfmZojU                 # Type & Tell! (US)
+o2_48                           Sgeo6S_zuJI                 # Power Lords (US)
+o2_30                           jNlu7wREuUA                 # UFO! (US)
+o2_06                           IDaW_g5pibM                 # Computer Intro! (US)
+o2_19                           e0QjOgqUXmw                 # Out of this World! / Helicopter Rescue! (US)
+o2_10                           ZQxyaaiR7Es                 # Computer Golf! (US)
+o2_41                           9fyLZvdnPgY                 # Smithereens! (US)
+o2_11                           Kb7QDYYEfcc                 # Cosmic Conflict! (US)
+o2_16                           uvr_00Qwkf4                 # Showdown in 2100 A.D. (US)
+o2_39                           t4c9hM429t0                 # Nimble Numbers Ned! (US)
+o2_38                           W0fTUMkq3po                 # Sid the Spellbinder! (US)
+o2_07                           VqQYYJB3Avs                 # Matchmaker! / Buzzword! / Logix! (US)
+o2_45                           eFwgtqeRnCM                 # Attack of the Timelord! (US)
+o2_33                           iB1WzfXM_MM                 # Keyboard Creations! (US)
+o2_43                           5qdPOXqpWPw                 # P.T. Barnum's Acrobats! (US)
+o2_35                           YzAu9xI_Gbc                 # K.C. Munchkin! (US)
+o2_21                           ENcCIA9dTYs                 # Dynasty! (US)
+o2_14                           XeW4Jojq86Y                 # Invaders from Hyperspace! (US)
+o2_46                           oAqux065vAU                 # Turtles! (US)
+o2_47                           bewkGthH8WM                 # Killer Bees! (US)
+vp_49                           oAqux065vAU                 # Turtles (EU)
+vp_40                           upoIpYcwjaE                 # 4 in 1 Row
+vp_58_12                        YY6QuNVT5ZM                 # Air Battle
+vp_04                           X3ki9AR-trY                 # Air-Sea War / Battle
+vp_03                           fx-CNnsWOOI                 # American Football
+vp_48                           K7Dl9vA8zVo                 # Backgammon
+vp_08                           jHbKYzHtMRs                 # Baseball
+vp_26                           CtLLQftDf1c                 # Basket Game
+vp_30                           qIfCwJE857U                 # Battlefield
+vp_05                           Z7Cb7ubFV-E                 # Blackjack
+vp_57                           WC0chYsRm5Y                 # Blobbers
+vp_19                           pqPmAYwVrA8                 # Catch the Ball / Noughts and Crosses
+vp_17                           DAVAEVmm9ao                 # Chinese Logic
+vp_09                           tsLRtlqsUxU                 # Computer Programmer
+vp_41                           w4kHeH_7mBQ                 # Conquest of the World
+vp_11                           Kb7QDYYEfcc                 # Cosmic Conflict
+vp_11alt                        Kb7QDYYEfcc                 # Cosmic Conflict
+vp_11pl                         Kb7QDYYEfcc                 # Cosmic Conflict
+vp_44                           qIiVoq98Ggg                 # Crazy Chase
+vp_29                           46SY8ltwihU                 # Dam Buster
+vp_16                           WgE0dGp_kXE                 # Depth Charge / Marksman
+vp_35                           1c4VL8be2XM                 # Electronic Billiards
+vp_35pl                         1c4VL8be2XM                 # Electronic Billiards
+vp_36                           B8s5zSQDGDg                 # Electronic Soccer / Ice Hockey
+vp_27                           B8s5zSQDGDg                 # Electronic Table Football
+vp_28                           U95KWXplSzk                 # Electronic Volleyball
+vp_24                           IPfgNqdVI0s                 # Flipper (Pinball)
+vp_24pl                         Fi34Om0UAIs                 # Flipper (Pinball)
+vp_39                           8CUjnJSjBnQ                 # Freedom Fighters
+vp_39pl                         8CUjnJSjBnQ                 # Freedom Fighters
+vp_10                           z0j3UtOJvc4                 # Golf
+vp_14                           mTd_F2J2qPU                 # Gunfighter
+vp_59_16                        r2s0-TLKiUY                 # Helicopter Rescue
+vp_13                           G_2yfSnnC9E                 # I've Got Your Number / Playschool Maths
+vp_33                           l3oVdXPTF2Q                 # Jumping Acrobats
+vp_33alt                        l3oVdXPTF2Q                 # Jumping Acrobats
+vp_a                            8BbWqceR7Eg                 # Keyboard Creations! / Newscaster (cart A)
+vp_52pl                         bewkGthH8WM                 # Killer Bees
+vp_32                           Xz8XElZySqY                 # Labyrinth / Supermind
+vp_23                           TEOy5nIPLzE                 # Las Vegas Gambling
+vp_18                           DbAOS72ffdE                 # Laser War
+vp_54                           GzmMpicE_Oc                 # Loony Balloon
+vp_54pl                         GzmMpicE_Oc                 # Loony Balloon
+vp_07                           hue_65oFTZY                 # Mathematician / Echo
+vp_37                           5qOEINltvDo                 # Monkeyshines
+vp_45                           nFWY3uMvHQg                 # Morse
+vp_38                           YzAu9xI_Gbc                 # Munchkin
+vp_31                           uhGxRzkkUJw                 # Musician
+vp_55                           buF3DWJ_nPQ                 # Neutron Star
+vp_55_12                        buF3DWJ_nPQ                 # Neutron Star
+vp_55_12fix                     buF3DWJ_nPQ                 # Neutron Star
+vp_53                           WUlqZezZoB0                 # Nightmare
+vp_53pl                         WUlqZezZoB0                 # Nightmare
+vp_56pl                         FOMMp5AY5n4                 # Norseman
+vp_02                           HBF_fbKmwus                 # Pairs / Space Rendezvous / Logic
+vp_43                           xkIVZhTgZ48                 # Pickaxe Pete
+vp_43pl                         xkIVZhTgZ48                 # Pickaxe Pete
+vp_42                           k-m-_11Jjf8                 # Quest for the Rings
+vp_01                           QJECgFRqT5E                 # Race / Spin-Out / Cryptogram
+vp_01hack                       QJECgFRqT5E                 # Race / Spin-Out / Cryptogram
+vp_01pl                         QJECgFRqT5E                 # Race / Spin-Out / Cryptogram
+vp_15                           kCS9Y5F7AKg                 # Samurai
+vp_34                           Tqt29viIOjY                 # Satellite Attack
+vp_34pl                         Tqt29viIOjY                 # Satellite Attack
+vp_21                           YOueTzbL2Ag                 # Secret of the Pharaohs
+vp_25                           Mwq5VtmlN-I                 # Skiing
+vp_22                           eo2v95CVihw                 # Space Monster / Alien Invaders
+vp_22hack                       eo2v95CVihw                 # Space Monster / Alien Invaders
+vp_20                           sVFAzikfWWw                 # Stone Sling
+vp_20pl                         sVFAzikfWWw                 # Stone Sling
+vp_50                           T7321hqO1Xg                 # Super Bee
+vp_06                           _SZMgiFthtY                 # Tenpin Bowling / Basketball
+vp_06pl                         _SZMgiFthtY                 # Tenpin Bowling / Basketball
+vp_51pl                         KczthmZiqdQ                 # Terrahawks / Attack of the Timelord
+vp_46                           4Wy9e5BLSao                 # The Great Wall Street Fortune Hunt
+vp_47                           hykj8xsWtk8                 # The Mousing Cat
+vp_60_16                        7dErbkKtNCg                 # Trans American Rally
+vp_12                           W3bq-6PGKb8                 # Take the Money and Run (EU)
+Vp40_F                          upoIpYcwjaE                 # 4 in 1 Row
+Vp05_F                          Z7Cb7ubFV-E                 # Blackjack
+Vp11+_F                         Kb7QDYYEfcc                 # Cosmic Conflict
+Vp11_F                          Kb7QDYYEfcc                 # Cosmic Conflict
+Vp29_F                          46SY8ltwihU                 # Dam Buster
+Vp35_F                          1c4VL8be2XM                 # Electronic Billiards
+Vp36_F                          B8s5zSQDGDg                 # Electronic Soccer / Ice Hockey
+Vp28_F                          U95KWXplSzk                 # Electronic Volleyball
+Vp24_F                          IPfgNqdVI0s                 # Flipper (Pinball)
+Vp52+_F                         bewkGthH8WM                 # Killer Bees
+Vp23_F                          TEOy5nIPLzE                 # Las Vegas Gambling
+Vp18_F                          DbAOS72ffdE                 # Laser War
+Vp07_F                          hue_65oFTZY                 # Mathematician / Echo
+Vp45_F                          nFWY3uMvHQg                 # Morse
+Vp42_F                          k-m-_11Jjf8                 # Quest for the Rings
+vp01+_F                         QJECgFRqT5E                 # Race / Spin-Out / Cryptogram
+Vp01_F                          QJECgFRqT5E                 # Race / Spin-Out / Cryptogram
+Vp25_F                          Mwq5VtmlN-I                 # Skiing
+Vp06_F                          _SZMgiFthtY                 # Tenpin Bowling / Basketball
+Vp47_F                          hykj8xsWtk8                 # The Mousing Cat
+Vp12_F                          loYjAVIlQTo                 # Prendre l'Argent et Fuir / Take the Money and Run (France)
+pal_flashpoint                  p5xGrl8uPFc                 # Flash Point (PAL conversion)
+pal_acrobats                    l3oVdXPTF2Q                 # Jumping Acrobats / P.T. Barnum's Acrobats
+pal_nimble-numbers-ned          t4c9hM429t0                 # Nimble Numbers Ned! (Voice-era educational)
+pal_type-and-tell               sUDD8bdO0Yo                 # Type & Tell (keyboard/voice-era)
+pb_frogger                      cdvXm6SkWGE                 # Frogger
+pb_popeye                       yoZv0FdZlWs                 # Popeye
+pb_q-bert                       fC8A8vZBawE                 # Q*bert
+pb_super-cobra                  SH3FI1PrTN4                 # Super Cobra
+pr_clay-pigeon_pl               N4LtnZ1sdJ8                 # Clay Pigeon! (Plus)
+pr_clay-pigeon_pl_alt           N4LtnZ1sdJ8                 # Clay Pigeon! (Plus, alt)
+pr_interpol                     2aKKwBK33Y8                 # Interpol (GST Video)
+pr_martian-threat_alt           -n1FXbzdmJE                 # Martian Threat (alt)
+pr_martian-threat               -n1FXbzdmJE                 # Martian Threat (GST Video)
+pr_mission-impossible           DbmrAiLBr54                 # Mission Impossible (homebrew-style)
+pr_nightfighter                 pgZrhf-ZXiI                 # Nightfighter (Retrogenesis)
+pr_pinball                      juvol4UDWog                 # Pinball
+pr_playtag                      0WQ1hcMF-_8                 # Playtag (Bas Kornalijnslijper)
+pr_red-baron                    xCFb7B_N-n8                 # Red Baron
+pr_red-baron_alt                xCFb7B_N-n8                 # Red Baron (alt)
+pr_robot-city                   fDspASB-0YQ                 # Robot City
+pr_shark-hunter                 7xmm7FVlxiI                 # Shark Hunter
+pr_spiderman_alt                btS0vIHpAhg                 # Spider-Man (alt)
+pr_spiderman                    btS0vIHpAhg                 # Spider-Man (unofficial/rare dump on packs)
+pr_tutankham                    6IgcEyfp8s0                 # Tutankham (unofficial/rare dump on packs)
+csv1                            5FbDu6vu8u4                 # Verkehrsspiele 1 (Germany)
+csv2                            7IRqjZ0sAgU                 # Verkehrsspiele 2 (Germany)
+br_9468                         nFWY3uMvHQg                 # Telegrafista!
+br_9484                         yoZv0FdZlWs                 # Popeye

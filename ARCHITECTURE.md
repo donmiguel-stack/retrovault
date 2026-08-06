@@ -21,17 +21,27 @@ touching code.
 ## Shelves
 
 The catalogue holds more than one system. `platform` on each entry says which
-machine it is (`G7000`, `G7400+`, `C64`); the chip row picks the shelf.
-**Videopac** (the default) is every non-C64 entry, with G7000 / G7400+
-narrowing it; **C64** is its own shelf. One shelf is visible at a time — there
-is deliberately no combined view, so "213 / 213 games" keeps meaning what it
-means.
+machine it is (`G7000`, `G7400+`, `C64`, `PC`); the chip row picks the shelf.
+**Videopac** (the default) is every entry that isn't C64 or PC, with G7000 /
+G7400+ narrowing it; **C64** and **PC** are each their own shelf. One shelf is
+visible at a time — there is deliberately no combined view, so "213 / 213
+games" keeps meaning what it means.
 
 `platformGames()` in `app.js` is the one place shelf membership is computed;
 every count on the page — search placeholder, result count, category, genre
 and player options — derives from it. Switching shelf resets those filters,
-hides the (Videopac-only) showcase on the C64 shelf, and is remembered in
-localStorage like the sort preference.
+hides the (Videopac-only) showcase on the C64 and PC shelves, and is
+remembered in localStorage like the sort preference.
+
+The PC shelf runs on a different emulator entirely — js-dos (a self-hosted
+DOSBox), not the RetroArch/webretro cores the other two shelves share —
+because no working WASM build of a libretro DOSBox core was findable or
+buildable in a reasonable session (see `emulator/dos.html` and the PC-shelf
+note in `vault-sources.md`). `game.html`'s START button branches on
+`g.platform === "PC"` to send those games to `emulator/dos.html` instead of
+`emulator/index.html`; everything else about how a PC entry looks in the
+library — card, badges, filters, favourites — goes through the same code path
+as every other shelf.
 
 The brand is **Retro Vault** (renamed 2026-08-04); localStorage keys keep
 their original `VideopacVault_` prefix so nobody's favourites are orphaned,

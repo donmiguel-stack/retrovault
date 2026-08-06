@@ -989,5 +989,89 @@ window.GENRE_DATA = {
  "c64_test_drive": {
   "genre": "racing",
   "players": "p1"
+ },
+ "c64_target_renegade": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_sword_of_fargoal": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "c64_shadow_of_the_beast": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_operation_wolf": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_double_dragon": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "c64_spy_vs_spy": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "c64_ghostbusters": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_pool_of_radiance": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_turrican": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_wasteland": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_dropzone": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_laser_squad": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "c64_congo_bongo": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "c64_frogger": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "c64_castle_wolfenstein": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "pc_doom": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "pc_wolfenstein3d": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "pc_commander_keen": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_duke_nukem_2": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_prince_of_persia": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_leisure_suit_larry": {
+  "genre": "adventure",
+  "players": "p1"
  }
 };

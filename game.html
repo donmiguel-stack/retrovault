@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retro Vault</title>
-<link rel="stylesheet" href="style.css?v=68">
+<link rel="stylesheet" href="style.css?v=82">
 <style>
   .game-page{max-width:1100px;margin:0 auto;padding:24px;}
   .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
@@ -76,6 +76,16 @@
   .section h2 .sec-note{font-size:12px;color:var(--text-mute);font-weight:400;}
   .video-wrap{position:relative;width:100%;max-width:760px;aspect-ratio:16/9;background:#000;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);}
   .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  /* a local clip fills the same 16:9 box; contain keeps the 4:3 game from being
+     cropped (pillar-boxed on black, exactly like the YouTube embed shows it) */
+  .video-wrap video.video-clip{position:absolute;inset:0;width:100%;height:100%;
+    object-fit:contain;background:#000;display:block;}
+  /* link through to the full video on YouTube, under the clip */
+  .video-link{display:inline-flex;align-items:center;gap:8px;margin-top:10px;
+    font-size:13px;color:var(--text-dim);text-decoration:none;}
+  .video-link:hover{color:var(--text);}
+  .video-link-tri{width:0;height:0;border-top:5px solid transparent;
+    border-bottom:5px solid transparent;border-left:8px solid currentColor;}
 
   /* Manual reader */
   .manual-reader{max-width:760px;}
@@ -142,23 +152,25 @@
 </head>
 <body>
 <div class="topbar">
-  <div class="brand"><span class="brand-mark">&#9632;</span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64</span></div>
+  <div class="brand"><span class="brand-mark">&#9632;</span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; PC</span></div>
 </div>
 <div class="game-page" id="page">
   <a class="back-link" href="index.html" id="backLink">&#9664; <span data-i18n="back">Back to library</span></a>
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=68"></script>
-<script src="setup-i18n.js?v=68"></script>
-<script src="games.js?v=68"></script>
-<script src="extras.js?v=68"></script>
-<script src="packaging.js?v=68"></script>
-<script src="genres.js?v=68"></script>
-<script src="brazil.js?v=68"></script>
-<script src="usa.js?v=68"></script>
-<script src="shops.js?v=68"></script>
-<script src="gamepages.js?v=68"></script>
+<script src="i18n.js?v=82"></script>
+<script src="setup-i18n.js?v=82"></script>
+<script src="games.js?v=82"></script>
+<script src="extras.js?v=82"></script>
+<script src="packaging.js?v=82"></script>
+<script src="genres.js?v=82"></script>
+<script src="brazil.js?v=82"></script>
+<script src="usa.js?v=82"></script>
+<script src="shops.js?v=82"></script>
+<script src="featured.js?v=82"></script>
+<script src="c64ad.js?v=82"></script>
+<script src="gamepages.js?v=82"></script>
 <script>
 (function () {
   var COVER_COLORS = ["#5b8def","#3ba97a","#c07de0","#e0865a","#d65a7e","#8a8f98","#e0c05a","#4fb3bf"];
@@ -194,7 +206,7 @@
   var img = new Image();
   img.alt = g.title + " box art";
   // ?v= so a newly added cover isn't hidden behind the browser's cached miss
-  var COVER_V = 21;
+  var COVER_V = 22;
   img.onerror = function(){
     if(this.dataset.stage==="png"){this.dataset.stage="jpg";this.src="covers/"+g.id+".jpg?v="+COVER_V;}
     else if(data.manual){this.dataset.stage="manual";this.src="manuals/"+data.manual.item+"/p00.jpg";}
@@ -212,7 +224,7 @@
   var info = el("div","hero-info");
   info.appendChild(el("h1",null,g.title));
   var meta = el("div","hero-meta");
-  var pb = el("span","badge "+(g.platform==="G7400+"?"badge-g7400":g.platform==="C64"?"badge-c64":"badge-g7000"), g.platform);
+  var pb = el("span","badge "+(g.platform==="G7400+"?"badge-g7400":g.platform==="C64"?"badge-c64":g.platform==="PC"?"badge-pc":"badge-g7000"), g.platform);
   meta.appendChild(pb);
   // same wording as the library chips, so the category follows the language too
   var CAT_KEYS = {
@@ -223,7 +235,8 @@
     "Modified / fixed":"cat_modified", "Rare / unreleased":"cat_rare",
     "Utility / unknown":"cat_rare", "Homebrew (community)":"cat_homebrew",
     "Homebrew (this project)":"cat_homebrew",
-    "Commodore 64":"cat_c64"
+    "Commodore 64":"cat_c64",
+    "MS-DOS":"cat_pc"
   };
   var catKey = CAT_KEYS[g.category];
   meta.appendChild(el("span","badge badge-cat", catKey ? window.t(catKey) : g.category));
@@ -323,18 +336,25 @@
   var start = el("button","start-btn");
   start.appendChild(el("span","tri"));
   start.appendChild(document.createTextNode("START"));
-  // each shelf plays through its own libretro core
+  // each shelf plays through its own emulator - Videopac/C64 through webretro's
+  // libretro cores, PC through js-dos (see emulator/dos.html)
   var CORES = { "C64": "vice_x64" };
   start.addEventListener("click", function(){
-    location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
-                    "&rom=" + encodeURIComponent(g.romFile);
+    if (g.platform === "PC") {
+      location.href = "emulator/dos.html?zip=" + encodeURIComponent(g.romFile) +
+                      "&title=" + encodeURIComponent(g.title) +
+                      "&id=" + encodeURIComponent(g.id);
+    } else {
+      location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
+                      "&rom=" + encodeURIComponent(g.romFile);
+    }
   });
   info.appendChild(document.createElement("br"));
   var actions = el("div","hero-actions");
-  // On the C64 shelf, START appears only when the rom really is in
-  // emulator/roms/ - checked live with a HEAD request, so dropping the
+  // On the C64 and PC shelves, START appears only when the rom/zip really is
+  // in emulator/roms/ - checked live with a HEAD request, so dropping the
   // file in is all it takes. No button that leads to an error screen.
-  if (g.platform === "C64") {
+  if (g.platform === "C64" || g.platform === "PC") {
     var romNote = el("p","missing-note","");
     info.appendChild(romNote);
     fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" })
@@ -344,7 +364,9 @@
         actions.insertBefore(start, actions.firstChild);
       })
       .catch(function () {
-        romNote.textContent = window.t("c64_noRom", { file: g.romFile });
+        romNote.textContent = g.platform === "PC"
+          ? window.t("pc_noRom", { file: g.romFile })
+          : window.t("c64_noRom", { file: g.romFile });
       });
   } else {
     actions.appendChild(start);
@@ -468,7 +490,30 @@
   nStick2.innerHTML = LT("c_stick2");
   cBox.appendChild(nStick2);
   cSec.appendChild(cBox);
-  if (g.platform !== "C64") {
+  if (g.platform === "PC") {
+    // DOS games ran on a real PC keyboard (and sometimes a mouse), not a
+    // joystick, and js-dos reads keys straight off the browser once the page
+    // has focus - there's no RetroArch-style hotkey layer fighting it for
+    // Tab/Enter/etc the way the Videopac and C64 shelves have. So this box is
+    // just the per-game note (exact keys for that title) plus the couple of
+    // things every DOS game on this shelf shares.
+    var pcSec = el("div","section");
+    pcSec.appendChild(el("h2",null,window.t("controls")));
+    var pcBox = el("div","controls-box");
+    if (data.note) {
+      var pcNote = el("p","controls-note own-note");
+      pcNote.innerHTML = data.note;
+      pcBox.appendChild(pcNote);
+    }
+    var pcClick = el("p","controls-note");
+    pcClick.innerHTML = window.t("pc_clickNote");
+    pcBox.appendChild(pcClick);
+    var pcEsc = el("p","controls-note");
+    pcEsc.innerHTML = window.t("pc_escNote");
+    pcBox.appendChild(pcEsc);
+    pcSec.appendChild(pcBox);
+    page.appendChild(pcSec);
+  } else if (g.platform !== "C64") {
     page.appendChild(cSec);
   } else {
     var c64Sec = el("div","section");
@@ -479,6 +524,17 @@
     row(c64Grid, '<span class="kbd">W</span> <span class="kbd">A</span> <span class="kbd">S</span> <span class="kbd">D</span> + <span class="kbd">Q</span>', window.t("c64_j2"));
     row(c64Grid, '<span class="kbd">Right&nbsp;Shift</span>', window.t("c64_vkbd"));
     row(c64Grid, '<span class="kbd">A</span>&ndash;<span class="kbd">Z</span> <span class="kbd">0</span>&ndash;<span class="kbd">9</span> <span class="kbd">Space</span> <span class="kbd">Enter</span>', LT("c_kbd"));
+    // Missing before this fix: on the C64 shelf, Arrows/G and WASD/Q are wired
+    // as joystick 1/2 (see the two rows above), which means those specific
+    // keys - including Enter/Return, since RETURN doubles as "joystick 1
+    // start" - are intercepted before they reach the C64's own keyboard,
+    // unless Game Focus is on. Any keyboard-driven C64 game whose real
+    // controls happen to land on one of those letters (checked against
+    // Castle Wolfenstein: RETURN to begin, and G/T/Q are all real in-game
+    // keys there) is unplayable without this row. The generic (non-C64)
+    // control box already had this tip for "keyboard"/"mixed" games; the C64
+    // box just never carried it.
+    row(c64Grid, '<span class="kbd">Tab</span>', LT("c_focus"));
     c64Box.appendChild(c64Grid);
     // a per-game tip (gamepages.js "note"), then the two things that trip
     // everyone up on the C64 shelf: cracked-intro screens and the Mac F-keys.
@@ -598,17 +654,56 @@
   if (data.video) {
     vH.appendChild(el("span","sec-note",data.video.title));
     var wrap = el("div","video-wrap");
-    var ifr = document.createElement("iframe");
-    ifr.src = "https://www.youtube-nocookie.com/embed/" + data.video.id;
-    ifr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-    ifr.allowFullscreen = true;
-    ifr.title = data.video.title;
-    wrap.appendChild(ifr);
+    // Prefer a locally-recorded clip (plays offline, no YouTube chrome). If it
+    // is missing, the <video> error event swaps in the YouTube embed - so the
+    // page works offline for the games you've made clips for, and still shows
+    // the full video (online) for the ones you haven't.
+    function youtubeEmbed() {
+      var ifr = document.createElement("iframe");
+      ifr.src = "https://www.youtube-nocookie.com/embed/" + data.video.id;
+      ifr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      ifr.allowFullscreen = true;
+      ifr.title = data.video.title;
+      wrap.innerHTML = "";
+      wrap.appendChild(ifr);
+    }
+    var clip = document.createElement("video");
+    clip.className = "video-clip";
+    clip.src = "clips/clip_" + g.id + ".mp4?v=" + (window.CLIP_V || 1);
+    clip.autoplay = true; clip.muted = true; clip.loop = true;
+    clip.playsInline = true; clip.preload = "auto"; clip.controls = true;
+    clip.addEventListener("error", youtubeEmbed, { once: true });
+    wrap.appendChild(clip);
+    var pr = clip.play && clip.play(); if (pr && pr.catch) pr.catch(function(){});
     vSec.appendChild(wrap);
+    // Always keep a way through to the full video on YouTube - for anyone who
+    // wants the whole playthrough or more background, and as a link back to the
+    // source the clip is taken from.
+    var yLink = document.createElement("a");
+    yLink.className = "video-link";
+    yLink.href = "https://www.youtube.com/watch?v=" + data.video.id;
+    yLink.target = "_blank";
+    yLink.rel = "noopener";
+    yLink.innerHTML = '<span class="video-link-tri"></span>' + LT("s_fullVideo");
+    vSec.appendChild(yLink);
   } else {
     vSec.appendChild(el("p","missing-note",LT("s_noVideo")));
   }
   page.appendChild(vSec);
+
+  // ---- advert (C64 shelf only) ----
+  if (g.platform === "C64" && window.buildC64Ad) {
+    var adSec = el("div","section c64ad-section");
+    var adLink = document.createElement("a");
+    var sp = ((window.FEATURED_DATA || {}).sponsors || [])[0] || null;
+    adLink.href = (sp && sp.url) || "#"; adLink.target = "_blank"; adLink.rel = "noopener sponsored";
+    adLink.className = "c64ad-link";
+    adLink.appendChild(window.buildC64Ad(sp));
+    var adTag = el("span","sponsor-tag", window.t("sponsored"));
+    adLink.appendChild(adTag);
+    adSec.appendChild(adLink);
+    page.appendChild(adSec);
+  }
 })();
 </script>
 </body>

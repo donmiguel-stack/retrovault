@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function () {
+	var params = new URLSearchParams(window.location.search);
+	if (!params.get("zip")) {
+		window.location.replace("../index.html");
+	}
+})();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#171717">
+<title>DOS - Retro Vault</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="dos/js-dos.css">
+<style>
+	html, body { margin: 0; padding: 0; height: 100%; background: #171717; overflow: hidden; }
+	#topbar {
+		position: fixed; top: 0; left: 0; right: 0; height: 40px; z-index: 50;
+		display: flex; align-items: center; gap: 10px; padding: 0 12px;
+		background: #1e1e1e; border-bottom: 1px solid #333;
+		font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		box-sizing: border-box;
+	}
+	#topbar a {
+		color: #d0d0d0; text-decoration: none; padding: 6px 10px; border-radius: 4px;
+	}
+	#topbar a:hover { background: #333; }
+	#topbar .title { color: #888; margin-left: 4px; }
+	#dosWrap { position: absolute; top: 40px; left: 0; right: 0; bottom: 0; }
+	#dos { width: 100%; height: 100%; }
+	#loadingMsg {
+		position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+		color: #999; font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	}
+</style>
+</head>
+<body>
+<div id="topbar">
+	<a href="#" id="backLink">&larr; Back</a>
+	<span class="title" id="titleText"></span>
+</div>
+<div id="dosWrap">
+	<p id="loadingMsg">Loading&hellip;</p>
+	<div id="dos"></div>
+</div>
+
+<script src="dos/js-dos.js"></script>
+<script>
+(function () {
+	var params = new URLSearchParams(window.location.search);
+	var zip = params.get("zip");
+	var title = params.get("title") ? decodeURIComponent(params.get("title")) : "DOS";
+	var gameId = params.get("id") || "";
+
+	document.title = title + " - Retro Vault";
+	document.getElementById("titleText").textContent = title;
+	document.getElementById("backLink").href = gameId
+		? "../game.html?id=" + encodeURIComponent(gameId)
+		: "../index.html";
+
+	// Each PC game's zip in roms/ is a self-contained js-dos bundle: the game
+	// files plus a .jsdos/dosbox.conf that mounts C: and launches the game's
+	// own .EXE/.BAT. That's built once when the game is added (see
+	// vault-sources notes) - this page just hands the zip to js-dos and gets
+	// out of the way. kiosk hides js-dos's own bundle-editor sidebar (meant
+	// for people building their own bundles, not for playing one); autoStart
+	// skips its "press play" gate.
+	function boot() {
+		var loading = document.getElementById("loadingMsg");
+		if (typeof Dos !== "function") {
+			loading.textContent = "Couldn't load the DOS player. Refresh, or check emulator/dos/js-dos.js is in place.";
+			return;
+		}
+		Dos(document.getElementById("dos"), {
+			url: "roms/" + zip,
+			pathPrefix: "dos/emulators/",
+			backend: "dosbox",
+			kiosk: true,
+			autoStart: true
+		});
+		// js-dos signals readiness in a few different ways across versions;
+		// simplest reliable signal is a <canvas> appearing in the container.
+		var poll = setInterval(function () {
+			if (document.querySelector("#dos canvas")) {
+				if (loading) { loading.remove(); loading = null; }
+				clearInterval(poll);
+			}
+		}, 300);
+		window.setTimeout(function () { clearInterval(poll); }, 30000);
+	}
+
+	if (document.readyState === "complete" || document.readyState === "interactive") boot();
+	else document.addEventListener("DOMContentLoaded", boot);
+})();
+</script>
+</body>
+</html>
