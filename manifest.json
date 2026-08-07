@@ -1,19 +1,19 @@
 {
- "generated": "2026-08-07 15:20:23",
- "count": 328,
- "bytes": 102422285,
+ "generated": "2026-08-07 20:04:19",
+ "count": 353,
+ "bytes": 107318306,
  "files": {
   "games.js": {
-   "sha256": "3385c8df4520685bf5ec9e86383c5c234e56241442e663b84188fb259332bc1c",
-   "size": 79697
+   "sha256": "627be72a9ff974ab8f33fb967926f9f5f1ac0dcdf73bbf021c2fa641e2ee2e98",
+   "size": 87691
   },
   "gamepages.js": {
-   "sha256": "b2ef4413cd5dc61a523472085338e507d1b59aca794afb6883273025d87e11de",
-   "size": 180508
+   "sha256": "6fa067718a5f67dae836feb714bd2b3015d2b4801c8d684996a67de517e6fb9a",
+   "size": 198202
   },
   "genres.js": {
-   "sha256": "dbf7728db206cbc9576ad0775deadc5fa9161ffacec0a0a2b8c825f562520476",
-   "size": 18156
+   "sha256": "49e59a44ca9f9b48d7b44f205fbe11214c54d01133590c12fb6bc3f27170dea4",
+   "size": 19708
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,8 +32,8 @@
    "size": 2582
   },
   "i18n.js": {
-   "sha256": "abc3695b78f5aaf69d48f4c02fa90cf3c6b769f177e2f85b0fa42e125e6ab3b8",
-   "size": 31984
+   "sha256": "a12f515b942dcd37e14317bbe1eb29989ad57d8a1d02600cf60d1c04dd15991f",
+   "size": 32393
   },
   "setup-i18n.js": {
    "sha256": "e5e10e56b3d4bf66fee7e4366a954f7fde1b2874a43dd271df07365800018936",
@@ -52,15 +52,15 @@
    "size": 4719
   },
   "app.js": {
-   "sha256": "166f17e5b6856a9d93708195f2de6dc888746fcb6cfc0de88a8573740225f7fb",
-   "size": 54162
+   "sha256": "204964cfbd16bfa559daad445821cb3343a5245a2e1eb8fff2922cb51a3714ad",
+   "size": 58843
   },
   "game.html": {
-   "sha256": "13f9f3704a2beccba2b22fcf2b798ff67de0a322ea88758ec51770da3d8a0034",
-   "size": 32895
+   "sha256": "70a9ae416c4df73c0c3c23d11dfb4d8baa385f64e7b068215857e4026ae76691",
+   "size": 34705
   },
   "index.html": {
-   "sha256": "1c6a9a2805c5f4305b3411e31eaca4d297895e6eff876256af0df6ed40cad9e9",
+   "sha256": "410cb6aa5879bc2664e00e1d9ab8f95db46504b05b2a546a1e9d921bc3e739e2",
    "size": 7606
   },
   "style.css": {
@@ -791,13 +791,81 @@
    "sha256": "44a34a2e4934b3326d8b66fcaafea7e7291e2ab7ed51a6bbb3a2c0b64c238b8a",
    "size": 39178
   },
+  "covers/pc_doom2.jpg": {
+   "sha256": "6bceab99c30ec3057d5fa1424821b20bde041a1e3ad59fb0826c4399abbce0c1",
+   "size": 130470
+  },
+  "covers/pc_duke_nukem.jpg": {
+   "sha256": "5724a499ff5fbc63608c2246f1ce83728417b07c5313670943000a1ff66b194c",
+   "size": 142588
+  },
   "covers/pc_duke_nukem_2.jpg": {
    "sha256": "aff0ec26b530e0027f20558eadb6768db5edcc3a226de9e8246cb02dfa6dad03",
    "size": 29282
   },
+  "covers/pc_duke_nukem_3d.jpg": {
+   "sha256": "8981e948709af5971da32d253cdf7672f26912435908a18778a17bbbab8a230e",
+   "size": 202451
+  },
   "covers/pc_dune2.jpg": {
    "sha256": "59082c788f975b7162f8f9ac3c93eadb4fee07932cbe2ca7651fb5b6aa9269ad",
    "size": 19464
+  },
+  "covers/pc_final_doom_plutonia.jpg": {
+   "sha256": "99be9bbb9d25eead7a2045efd09c91e7ea691005bf5773b68f3be268d679180b",
+   "size": 208238
+  },
+  "covers/pc_final_doom_tnt.jpg": {
+   "sha256": "99be9bbb9d25eead7a2045efd09c91e7ea691005bf5773b68f3be268d679180b",
+   "size": 208238
+  },
+  "covers/pc_keen2.jpg": {
+   "sha256": "894001e739e9f214be107a95dd59961301f37fba3435b324d64c4bd5afffa8e7",
+   "size": 143757
+  },
+  "covers/pc_keen3.jpg": {
+   "sha256": "d3a18c1ef22da74aca96e2cb67ad90c2858ac4052e682cb542cbf3a1d58ad9fa",
+   "size": 152298
+  },
+  "covers/pc_keen4.jpg": {
+   "sha256": "f320987703016fd15bdeb499b4a65d6488bb18e241969c3b51a673dd8cfc4bbd",
+   "size": 175765
+  },
+  "covers/pc_keen5.jpg": {
+   "sha256": "26cf14d417ab2f0ca3b8ed8a4ff05ffcf82d529d3a2823d75d6e6876211c4774",
+   "size": 182648
+  },
+  "covers/pc_keen6.jpg": {
+   "sha256": "83e317a235fb6803a6055b9f7d7abc80e92835830a8fab0742da5e6afdf07d79",
+   "size": 240230
+  },
+  "covers/pc_kq1.jpg": {
+   "sha256": "1c8c9eb67f53b15ddfbcdbe01e166848c351e42cf5ecb5ccfd28ff2f2cf7b999",
+   "size": 253643
+  },
+  "covers/pc_kq2.jpg": {
+   "sha256": "93f8c09e12edc7d94890b1b98a24ff32d2451e0d9d2abbf49cfc72d308bd4623",
+   "size": 180598
+  },
+  "covers/pc_kq3.jpg": {
+   "sha256": "1511aa3058d841a87246c34330f22342d18a0b5e005874399bedb06472cfdd1b",
+   "size": 195569
+  },
+  "covers/pc_kq4.jpg": {
+   "sha256": "613c13358d108f69c418adc0bb8c6915d76782d3f130f390d9ae4145017aee6d",
+   "size": 197207
+  },
+  "covers/pc_kq5.jpg": {
+   "sha256": "bcb0c4aa8a8ca2b286c6df2a6f24f00bbebc0a98da8877cd7e7373d0f3448f1b",
+   "size": 186154
+  },
+  "covers/pc_kq6.jpg": {
+   "sha256": "fa223b28c283f1639069a6e740ec9337676f6e3255ef5e1cc6b979901a152df9",
+   "size": 223418
+  },
+  "covers/pc_kq7.jpg": {
+   "sha256": "e1b664f9604ce1eaa0fa05446e27a0fc31a109b8a9a9bfff81c09bf7d175c59c",
+   "size": 226689
   },
   "covers/pc_leisure_suit_larry.jpg": {
    "sha256": "83b0fbfafe4c2577d714a7fac6f37626277270508042c7eb1d350f4efddefb4b",
@@ -815,6 +883,34 @@
    "sha256": "61b560e41836160bc234db6f2c93ab00abc9cff4896ade9ced035a234e0e03f4",
    "size": 79168
   },
+  "covers/pc_spear_of_destiny.jpg": {
+   "sha256": "3850a07566d51f42b8000f93d4e92294f2803c41fd8b1b5e3c45d51d033ee1c8",
+   "size": 234553
+  },
+  "covers/pc_sq1.jpg": {
+   "sha256": "27ed67a2d2bfac11521c840b66bd00fbf2fdf58d45c2959e1994ef60c882d50c",
+   "size": 216651
+  },
+  "covers/pc_sq2.jpg": {
+   "sha256": "e620c8ea2628949eeae6e0f51842ce91925b78508a7c3df676a064463ce4ccd7",
+   "size": 168913
+  },
+  "covers/pc_sq3.jpg": {
+   "sha256": "9da4d3772651f485d125cba88062b3db020d2b64b19e74c9d9cdc96d0c320a27",
+   "size": 167011
+  },
+  "covers/pc_sq4.jpg": {
+   "sha256": "5e8f4382969e16a46f5bbd7cc7d38d42836f3a9e7cb39ffc95fcbe55cec1b6fc",
+   "size": 203689
+  },
+  "covers/pc_sq5.jpg": {
+   "sha256": "18ec1ffe73605146769c68aeb2bc911c07e6340ee7485f8cd6c65a0a1bafe338",
+   "size": 267632
+  },
+  "covers/pc_sq6.jpg": {
+   "sha256": "d79188cde3749e86c0ff650e4f1a8bd3c6340f157dee040292cb72c66ac73336",
+   "size": 224246
+  },
   "covers/pc_tim.jpg": {
    "sha256": "06fc04fd1250f72a4b51c1b46e51b02a8d0fb2fca36a152d3aa7af384e24ea6b",
    "size": 87144
@@ -822,6 +918,10 @@
   "covers/pc_wolfenstein3d.jpg": {
    "sha256": "42d740d2b47a59570478b5f7dbcd9e59e97f2ab6576b9c041c5aca640e78f2ec",
    "size": 120538
+  },
+  "covers/pc_xcom_ufo_defense.jpg": {
+   "sha256": "c8c25ef36949d900f19fd4c994d671e454f9215b1312b368264f49ee7c013536",
+   "size": 129225
   },
   "covers/pr_clay-pigeon_pl.png": {
    "sha256": "71c8db5104d0798000fb77a993027b2e0d2c7aff7a7154bed046852c2dc0a1ac",

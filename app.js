@@ -1,8 +1,8 @@
 (function () {
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 25;
+  var COVER_V = 27;
   // Bump when you add or re-record anything in clips/ (C64 featured gameplay).
-  var CLIP_V = 1;
+  var CLIP_V = 2;
 
   // Attract-screen palette, same letters as the SELECT GAME splash. Declared
   // up here because render() runs before the code further down this file.
@@ -599,7 +599,96 @@
 
   // The C64 shelf's own homebrew panel - same idea as the Videopac one above,
   // separate data (c64homebrew in featured.js) and template so a C64 pick
-  // never leaks onto the Videopac page and vice versa.
+  // never leaks onto the Videopac page and vice versa. Unlike the Videopac
+  // panel, the right-hand slot here plays each pick's own gameplay clip
+  // instead of a static shot_ screenshot - same three-layer fallback as the
+  // top-of-page C64 panel (local clips/clip_<id>.mp4 -> YouTube embed ->
+  // cover art). Not a reuse of c64FeatureRotator because that one's main
+  // element is a plain <div> and builds its own inner <a> around the cover;
+  // this panel's main element is itself the <a> (see c64homebrewTpl), so
+  // nesting another link inside it would be invalid markup. Kept as its own
+  // function rather than patched into featureRotator so the Videopac
+  // homebrew panel (which has no clips) is untouched.
+  function c64HomebrewClipFallback(box) {
+    var vid = box.getAttribute("data-vid");
+    var gid = box.getAttribute("data-gid");
+    if (vid) {
+      box.innerHTML = '<iframe src="' + ytEmbed(vid) + '" title="" loading="lazy" ' +
+        'frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" ' +
+        'allowfullscreen></iframe>';
+    } else {
+      box.classList.add("feature-video-fallback");
+      box.innerHTML = '<img src="covers/' + gid + '.png?v=' + COVER_V +
+        '" alt="" onerror="this.onerror=null;this.src=\'covers/' + gid + '.jpg?v=' + COVER_V + '\'">';
+    }
+  }
+
+  function c64HomebrewFeatureRotator(main, list, picks) {
+    var at = 0, timer = null;
+
+    function videoSlot(g) {
+      var gp = (window.GAMEPAGES_DATA || {})[g.id] || {};
+      var vid = gp.video && gp.video.id ? gp.video.id : "";
+      return '<div class="feature-video" data-gid="' + g.id + '" data-vid="' + vid + '">' +
+        '<video class="feature-clip" src="clips/clip_' + g.id + '.mp4?v=' + CLIP_V + '" ' +
+        'autoplay muted loop playsinline preload="auto"></video></div>';
+    }
+
+    function wireClip() {
+      var box = main.querySelector(".feature-video");
+      if (!box) return;
+      var v = box.querySelector("video");
+      if (!v) return;
+      v.addEventListener("error", function () { c64HomebrewClipFallback(box); }, { once: true });
+      var p = v.play && v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
+    function show(n) {
+      at = (n + picks.length) % picks.length;
+      var pick = picks[at], g = gameById(pick.id);
+      var gen = (window.GENRE_DATA || {})[g.id] || {};
+      main.href = "game.html?id=" + encodeURIComponent(g.id);
+      main.innerHTML =
+        '<span class="feature-cover-wrap">' +
+        '<img class="feature-cover" src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
+        'onerror="this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
+        '<span class="cover-ribbon">' + window.t("cat_homebrew") + '</span>' +
+        '</span>' +
+        '<div class="feature-copy">' +
+        '<h3>' + g.title + '</h3>' +
+        '<p class="feature-blurb">' + pick.blurb + '</p>' +
+        '<div class="feature-meta">' +
+        '<span class="badge ' + platformBadge(g.platform) + '">' + g.platform + '</span>' +
+        (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
+        (gen.players ? '<span class="badge badge-cat">' + window.t("p_" + gen.players) + '</span>' : '') +
+        '</div></div>' + videoSlot(g);
+      wireClip();
+      list.querySelectorAll(".feature-thumb").forEach(function (b, n2) {
+        b.classList.toggle("on", n2 === at);
+      });
+    }
+
+    list.innerHTML = picks.map(function (p, n) {
+      var g = gameById(p.id);
+      return '<button class="feature-thumb" data-i="' + n + '">' +
+             '<img src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
+             'onerror="this.onerror=null;this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
+             '<span>' + g.title + '</span></button>';
+    }).join("");
+    list.querySelectorAll(".feature-thumb").forEach(function (b) {
+      b.addEventListener("click", function () {
+        show(parseInt(this.dataset.i, 10));
+        clearInterval(timer);
+        timer = null;
+      });
+    });
+
+    show(0);
+    timer = setInterval(function () { show(at + 1); }, 7000);
+    return function () { if (timer) clearInterval(timer); timer = null; };
+  }
+
   var c64HbStop = null;
   function c64HomebrewBlock() {
     var picks = ((window.FEATURED_DATA || {}).c64homebrew || []).filter(function (f) {
@@ -612,9 +701,31 @@
     node.querySelector("[data-i18n=homebrewHead]").textContent = window.t("homebrewHead");
     node.querySelector(".hb-word").textContent = window.t("cat_homebrew");
     node.querySelector(".hb-intro").textContent = window.t("homebrewIntro");
-    c64HbStop = featureRotator(node.querySelector(".feature-main"),
-                               node.querySelector(".feature-list"), picks);
+    c64HbStop = c64HomebrewFeatureRotator(node.querySelector(".feature-main"),
+                                          node.querySelector(".feature-list"), picks);
     return node;
+  }
+
+  // Loops the community carousel: Next past the last card wraps back to the
+  // first, Previous from the first wraps to the last. Shared by both the
+  // Videopac and C64 "keeping this console alive" panels so the behaviour
+  // stays identical on both shelves.
+  function wireCommunityCarousel(node, track) {
+    node.querySelectorAll(".car-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var dir = parseInt(this.dataset.dir, 10);
+        var max = track.scrollWidth - track.clientWidth;
+        var atEnd = track.scrollLeft >= max - 4;
+        var atStart = track.scrollLeft <= 4;
+        if (dir > 0 && atEnd) {
+          track.scrollTo({ left: 0, behavior: "smooth" });
+        } else if (dir < 0 && atStart) {
+          track.scrollTo({ left: max, behavior: "smooth" });
+        } else {
+          track.scrollBy({ left: track.clientWidth * 0.8 * dir, behavior: "smooth" });
+        }
+      });
+    });
   }
 
   // The community panel is a carousel: on a 14-inch screen six cards wrapped
@@ -634,12 +745,7 @@
         (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
         '<p class="cwhat">' + c.what + '</p></a>';
     }).join("");
-    node.querySelectorAll(".car-btn").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var step = track.clientWidth * 0.8 * parseInt(this.dataset.dir, 10);
-        track.scrollBy({ left: step, behavior: "smooth" });
-      });
-    });
+    wireCommunityCarousel(node, track);
     return node;
   }
 
@@ -661,12 +767,7 @@
         (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
         '<p class="cwhat">' + c.what + '</p></a>';
     }).join("");
-    node.querySelectorAll(".car-btn").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var step = track.clientWidth * 0.8 * parseInt(this.dataset.dir, 10);
-        track.scrollBy({ left: step, behavior: "smooth" });
-      });
-    });
+    wireCommunityCarousel(node, track);
     return node;
   }
 

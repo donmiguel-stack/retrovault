@@ -3899,5 +3899,276 @@ window.GAMEPAGES_DATA = {
   "history": {
    "text": "The Oregon Trail began in 1971 as a text-only teletype program three student teachers wrote in a couple of weeks to teach Minnesota schoolkids what the 1840s wagon migration actually involved; MECC picked it up, gave it graphics, and it became the software practically every American who went through a school computer lab in the 80s and 90s remembers &ndash; fording rivers, rationing food, and, for a startling number of players, dying of dysentery. This 1990 MS-DOS release is the MECC-era graphical version, not the original 1971 teletype game or the later CD-ROM Deluxe remake."
   }
+ },
+ "pc_keen2": {
+  "input": "keyboard",
+  "note": "Keyboard-only &ndash; arrow keys move and climb, Ctrl fires the raygun, Alt/pogo jumps. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "MLvFMPp6MJc",
+   "title": "Commander Keen: Invasion of the Vorticons EP#2 The Earth Explodes [1990]"
+  },
+  "history": {
+   "text": "Built in about two months at the end of 1990 by John Carmack, John Romero, Tom Hall and Adrian Carmack while all four were still moonlighting at Softdisk, this episode continued the Invasion of the Vorticons trilogy that convinced them their shareware sales could support a real company. Id Software was founded two months later, in February 1991."
+  }
+ },
+ "pc_keen3": {
+  "input": "keyboard",
+  "note": "Same keyboard-only controls as the earlier episodes &ndash; arrow keys move, Ctrl fires, Alt pogos. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "kPvWYDw8UvY",
+   "title": "[Longplay] Commander Keen 3 - Keen Must Die! (1990, PC DOS)"
+  },
+  "history": {
+   "text": "The third and final episode of Invasion of the Vorticons, finished in the same end-of-1990 crunch as episodes one and two. Its strong shareware sales over that Christmas were the direct proof id Software's four founders needed that self-publishing shareware games could actually pay the bills."
+  }
+ },
+ "pc_keen4": {
+  "input": "keyboard",
+  "note": "Keyboard-only, same scheme as the Vorticons trilogy. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "yCGABUTxAlE",
+   "title": "[Longplay] Commander Keen 4 - Secret of the Oracle (1991, PC DOS)"
+  },
+  "history": {
+   "text": "The first half of the two-episode Goodbye Galaxy set, sold together with Episode 5. It was among 1992's best-selling shareware titles and marked a visual step up from the Vorticons trilogy, with denser levels and a proper overworld map."
+  }
+ },
+ "pc_keen5": {
+  "input": "keyboard",
+  "note": "Keyboard-only, same scheme as Episode 4. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "66JKlQEbaWc",
+   "title": "Longplay: Commander Keen 5 - The Armageddon Machine (1991) [MS-DOS]"
+  },
+  "history": {
+   "text": "Concludes the Goodbye Galaxy duology and was effectively id's last shareware episode before the studio pivoted to Wolfenstein 3D the following year, moving the company from 2D platformers to the first-person shooter genre it would go on to define."
+  }
+ },
+ "pc_keen6": {
+  "input": "keyboard",
+  "note": "Keyboard-only, same scheme as the rest of the series. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "F7DLyZKNePs",
+   "title": "[Longplay] Commander Keen 6: Aliens Ate My Babysitter"
+  },
+  "history": {
+   "text": "Sold as a standalone retail game through FormGen rather than as Apogee shareware &ndash; a deal reportedly brokered by Mark Rein that upset Apogee's Scott Miller at the time. It was the last Commander Keen game id Software developed in-house."
+  }
+ },
+ "pc_duke_nukem": {
+  "input": "keyboard",
+  "note": "Keyboard-only side-scrolling platformer &ndash; arrow keys run and climb, Ctrl fires, Alt jumps. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "kYzZcko3F50",
+   "title": "Longplay: Duke Nukem - Episode 1: 'Shrapnel City' (1991) [MS-DOS]"
+  },
+  "history": {
+   "text": "The original Duke Nukem, three episodes of side-scrolling platforming released a year before Duke Nukem II refined the formula. Prototyped under the working title \"Heavy Metal,\" with young John Carmack pitching in on low-level assembly work before he left to co-found id Software. It sold a respectable 60,000-70,000 copies as shareware."
+  }
+ },
+ "pc_duke_nukem_3d": {
+  "input": "both",
+  "note": "Keyboard moves and turns, mouse aims &ndash; the classic Doom-era WASD-plus-mouse control scheme works here too. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "hxHCC3abKsA",
+   "title": "Duke Nukem 3D (PC) All Episodes Longplay & Ending"
+  },
+  "history": {
+   "text": "Built on 3D Realms' own Build engine, Duke Nukem 3D paired genuinely destructible, interactive environments (shootable windows, working strippers' poles, flushable toilets) with Duke's wisecracking one-liners, becoming one of the best-selling and most influential shooters of the DOS era. This is the original 1996 DOS release, not the 2016 \"20th Anniversary World Tour,\" which is a separate Windows-only rebuild with no DOS executable."
+  }
+ },
+ "pc_kq1": {
+  "input": "keyboard",
+  "note": "Keyboard text parser &ndash; arrow keys walk, and you type short commands like <code>open door</code> or <code>get key</code>. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "y69CtXCyWO4",
+   "title": "Kings Quest: Quest for the Crown SCI / VGA Remake - Complete Walkthrough / Playthrough HD"
+  },
+  "history": {
+   "text": "Commissioned by IBM to showcase the PCjr, the original 1984 King's Quest ran on Sierra's new AGI engine, which let King Graham walk in front of and behind background scenery instead of standing on a flat static screen &ndash; a real technical first. This 1990 SCI remake rebuilt the same game on the more capable engine used for King's Quest IV, and became the version Sierra itself kept selling as \"King's Quest I.\""
+  }
+ },
+ "pc_kq2": {
+  "input": "keyboard",
+  "note": "Keyboard text parser, same interface as KQ1. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "gfyOiqpJwKM",
+   "title": "King's Quest II - Romancing The Throne - Full Playthrough - Perfect Score"
+  },
+  "history": {
+   "text": "A direct sequel sending King Graham to rescue his future queen Valanice, reusing the AGI engine with an expanded parser vocabulary. The development team included future Space Quest creators Scott Murphy and Mark Crowe, and composer Al Lowe &ndash; talent that would go on to define Sierra's late-80s golden age."
+  }
+ },
+ "pc_kq3": {
+  "input": "keyboard",
+  "note": "Keyboard text parser. Some puzzles run on a real-time clock, so expect to reload often on a first run. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "7Xd1Ne5Ri5U",
+   "title": "King's Quest 3 - To Heir Is Human DOS / PC Longplay HD"
+  },
+  "history": {
+   "text": "Breaks from the series' rescue-the-royal formula, casting the player as a slave (secretly Graham's kidnapped son) forced to do chores for the wizard Manannan before the real plot unfolds. Its real-time wizard-patrol timer makes it widely regarded as the hardest and most obtuse AGI-era Sierra game."
+  }
+ },
+ "pc_kq4": {
+  "input": "keyboard",
+  "note": "Keyboard text parser &ndash; the last mainline King's Quest to use one. The game runs on a day/night clock, so some puzzles only solve at certain times. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "k8V0sIOQqCA",
+   "title": "King's Quest IV: The Perils of Rosella - DOS Version - English Longplay"
+  },
+  "history": {
+   "text": "The first major commercial graphical adventure with a female protagonist, sending Princess Rosella to save her dying father. It debuted Sierra's SCI0 engine at double AGI's resolution, and was the first PC game to support add-on sound cards like AdLib and Roland instead of just the PC speaker, with an original orchestral score by TV composer William Goldstein."
+  }
+ },
+ "pc_kq5": {
+  "input": "mouse",
+  "note": "The first King's Quest to drop the text parser for full point-and-click &ndash; right-click (or the icon bar) cycles look/action/talk cursors. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "JQ2yh0bo550",
+   "title": "PC Longplay [854] Kings Quest V: Absence Makes the Heart Go Yonder"
+  },
+  "history": {
+   "text": "The series' hinge point: it replaced typed commands with full point-and-click mouse control and introduced hand-painted VGA backgrounds that were a genuine visual showcase in 1990. It won the SPA Excellence in Software award and Computer Gaming World's Adventure Game of the Year, though the loss of the parser (and the notoriously oversized desert map) remains a point of fan debate."
+  }
+ },
+ "pc_kq6": {
+  "input": "mouse",
+  "note": "Point-and-click with an icon toolbar (walk/look/action/talk). <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "EvrZ5haT9rE",
+   "title": "PC Longplay [855] King's Quest VI: Heir Today, Gone Tomorrow"
+  },
+  "history": {
+   "text": "Widely regarded as the series' creative peak. Prince Alexander searches for Princess Cassima across the mysterious Isles of the Sirens, with two divergent story paths depending on player choices, co-designed by Roberta Williams and novelist Jane Jensen. The CD-ROM \"talkie\" edition added full voice acting and a landmark fully-rendered opening cinematic, and sold roughly 400,000 copies in its first week."
+  }
+ },
+ "pc_kq7": {
+  "input": "mouse",
+  "note": "Point-and-click with a \"smart cursor\" that changes shape over interactive objects &ndash; no separate verb bar like KQ6. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "egrOUpT_0EE",
+   "title": "King's Quest VII - The Princeless Bride - [1994 - DOS - Full Playthrough]"
+  },
+  "history": {
+   "text": "The last King's Quest from Sierra's original creative team, co-designed by Roberta Williams and Lorelei Shannon, and the first to fully replace the parser-era interface with an auto-highlighting smart cursor &ndash; a real usability leap, though its Disney-inspired art style split longtime fans. It's the only King's Quest with two playable protagonists (Valanice and Rosella) and the only one split into discrete chapters."
+  }
+ },
+ "pc_doom2": {
+  "input": "keyboard",
+  "note": "Arrow keys move/turn, Ctrl fires, Space uses &ndash; mouse can aim but only turns left/right, it can't look up or down. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "4cCfbyhh6nc",
+   "title": "Retro Longplay #113 - DOOM II: Hell on Earth (PC) [HD]"
+  },
+  "history": {
+   "text": "Id Software's first title sold at retail rather than given away as shareware. It reused the original Doom engine with denser, more maze-like levels, doubled the non-boss monster roster and added the Super Shotgun, and became the best-selling piece of US software of 1994."
+  }
+ },
+ "pc_final_doom_tnt": {
+  "input": "keyboard",
+  "note": "Same controls as Doom II. The maps run large and maze-like &ndash; keep an eye on the automap. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "RERSUIwKMpI",
+   "title": "Final DOOM : TNT Evilution Full Playthrough [60 FPS/FULL HD]"
+  },
+  "history": {
+   "text": "Originally built as a free megawad by the fan collective TeamTNT and finished in October 1995 for free release, until John Romero brokered a last-minute publishing deal that turned it commercial overnight. It runs on the same DOOM2.EXE engine as Doom II, just with a different set of levels (TNT.WAD)."
+  }
+ },
+ "pc_final_doom_plutonia": {
+  "input": "keyboard",
+  "note": "Same controls as Doom II. Widely considered the hardest official Doom content ever shipped &ndash; expect to need to memorize ambushes. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "Nj6rhctEl3c",
+   "title": "Final DOOM : The Plutonia Experiment Full Playthrough [60 FPS/FULL HD]"
+  },
+  "history": {
+   "text": "Brothers Dario and Milo Casali were hired by id after impressing lead artist American McGee with a sample level, and finished all 32 Plutonia maps in about four months, largely unrevised before shipping. Same DOOM2.EXE engine as Doom II and TNT Evilution, just a different level set (PLUTONIA.WAD), sold together with TNT in the same Final Doom box."
+  }
+ },
+ "pc_spear_of_destiny": {
+  "input": "keyboard",
+  "note": "Same controls as Wolfenstein 3D &ndash; no dedicated strafe key by default, diagonal movement takes practice. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "UXuftq-EiQM",
+   "title": "PC Longplay [609] Spear of Destiny"
+  },
+  "history": {
+   "text": "Id Software's first standalone retail-boxed spin-off, built on the Wolfenstein 3D engine with new enemies, bosses, textures, and a 21-level campaign &ndash; roughly double the length of a standard Wolfenstein episode. A prequel to Wolfenstein 3D's story, following B.J. Blazkowicz's earlier hunt for a Nazi holy relic."
+  }
+ },
+ "pc_xcom_ufo_defense": {
+  "input": "mouse",
+  "note": "Point-and-click throughout &ndash; watch each soldier's Time Units closely, since actions cost TUs and it's easy to strand someone with none left. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "history": {
+   "text": "Released in Europe as UFO: Enemy Unknown, X-COM blends strategic geoscape base-and-research management with turn-based squad tactics against a slowly escalating alien invasion. It defined the entire \"X-COM-like\" subgenre and directly inspired Firaxis's 2012 reboot; IGN named it the best PC game of all time in a 2007 readers' poll."
+  }
+ },
+ "pc_sq1": {
+  "input": "mouse",
+  "note": "Point-and-click via an icon bar (walk/look/talk/etc.), the 1991 VGA remake of the 1986 original. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "55iQwnHltzI",
+   "title": "Space Quest I: The Sarien Encounter (VGA Remake, 1991) - Full Longplay"
+  },
+  "history": {
+   "text": "Launched Sierra's parody-heavy sci-fi comedy line built around hapless janitor Roger Wilco, created by \"The Two Guys from Andromeda\" (Scott Murphy and Mark Crowe) as a deliberate B-movie spoof. This 1991 VGA remake rebuilt the original 1986 text-parser game on the newer SCI engine with a point-and-click interface, and became the version Sierra itself kept bundling in later compilations."
+  }
+ },
+ "pc_sq2": {
+  "input": "keyboard",
+  "note": "Keyboard text parser &ndash; type short direct verbs and save before any unfamiliar area. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "oCUwStdSoMM",
+   "title": "Space Quest 2 - Vohaul's Revenge DOS/PC Longplay HD"
+  },
+  "history": {
+   "text": "The direct sequel escalates the parody with an ambitious jungle-planet rescue plot and introduces series antagonist Sludge Vohaul. Built on the same AGI engine and keyboard parser as the original, praised at the time for an improved parser but still notorious for the series' signature unfair instant deaths."
+  }
+ },
+ "pc_sq3": {
+  "input": "keyboard",
+  "note": "Keyboard text parser is primary; the mouse can help you walk but doesn't replace typed verbs. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "0lirgkHZ-fE",
+   "title": "Space Quest III - The Pirates of Pestulon (Full Playthrough)"
+  },
+  "history": {
+   "text": "Breaks the fourth wall harder than its predecessors, opening with Roger literally trapped in the scrap-compactor of the company that makes his own games &ndash; a jab at Sierra itself &ndash; before a space-pirate plot proper kicks in. The last Space Quest built on the AGI engine, and the first to add rudimentary mouse-assisted movement."
+  }
+ },
+ "pc_sq4": {
+  "input": "mouse",
+  "note": "Point-and-click via an icon/verb bar &ndash; the first Space Quest where you never need to type anything. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "DpXuGxT7LuA",
+   "title": "Space Quest IV: Roger Wilco and the Time Rippers (PC) Playthrough"
+  },
+  "history": {
+   "text": "A fan-favorite turning point for the series: a time-travel plot that lets Roger visit deliberately clashing versions of the series' own past (blocky EGA) and future (a slick, hypothetical sequel-within-the-sequel), used as an extended joke about changing art styles in gaming itself. Moved the series fully to Sierra's SCI1 engine with a point-and-click interface, dropping the text parser entirely."
+  }
+ },
+ "pc_sq5": {
+  "input": "mouse",
+  "note": "Point-and-click, same icon-bar flow as SQ4. The game includes a printed-manual copy-protection puzzle, so keep the manual (or a walkthrough) handy. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "z-QFguqJOms",
+   "title": "Space Quest V: The Next Mutation (PC/DOS) Longplay, 1993"
+  },
+  "history": {
+   "text": "With series creators Scott Murphy and Mark Crowe stepping back, Sierra's sister studio Dynamix took the reins and recast Roger as captain of his own ship, leaning harder into Star Trek parody than the earlier entries. Generally regarded as tonally the odd one out in the series &ndash; competent, but noticeably different in humor and pacing from the games around it."
+  }
+ },
+ "pc_sq6": {
+  "input": "mouse",
+  "note": "Point-and-click via a verb bar closer to LucasArts' games than earlier Sierra titles. Launch the DOS executable, not <code>SIERRAW.EXE</code>, with the CD mounted. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "EUxFxz7XWK4",
+   "title": "Space Quest 6: Roger Wilco in The Spinal Frontier - English Longplay"
+  },
+  "history": {
+   "text": "The last mainline entry with direct involvement from series co-creator Scott Murphy, and the first built on Sierra's newer SCI32 engine, adding full-motion \"Robot\" video cutscenes. Frequently cited as a fan-favorite high point for the series' comedy writing, even as Sierra's adventure-game business was beginning its mid-90s decline."
+  }
  }
 };

@@ -1153,5 +1153,105 @@ window.GENRE_DATA = {
  "pc_oregon_trail": {
   "genre": "education",
   "players": "p1"
+ },
+ "pc_keen2": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_keen3": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_keen4": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_keen5": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_keen6": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_duke_nukem": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_duke_nukem_3d": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "pc_kq1": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_kq2": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_kq3": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_kq4": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_kq5": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_kq6": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_kq7": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_doom2": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "pc_final_doom_tnt": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "pc_final_doom_plutonia": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "pc_spear_of_destiny": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "pc_xcom_ufo_defense": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "pc_sq1": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_sq2": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_sq3": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_sq4": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_sq5": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_sq6": {
+  "genre": "adventure",
+  "players": "p1"
  }
 };
