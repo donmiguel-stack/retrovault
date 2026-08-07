@@ -3694,5 +3694,210 @@ window.GAMEPAGES_DATA = {
   "history": {
    "text": "Al Lowe built Larry out of an earlier, tamer Sierra game called Softporn Adventure, reworking it into an AGI-engine graphic adventure that leaned all the way into its double entendres rather than away from them. Sierra almost didn't ship it, worried a comedy about a middle-aged loser trying (and mostly failing) to get a date would embarrass the company; instead it became one of Sierra's best-selling titles and spawned a franchise that ran for decades. Its trivia-question age gate at the start - meant only to keep casual browsers out, and trivially skippable - became as much a part of its reputation as the jokes inside."
   }
+ },
+ "c64_hb_c64anabalt": {
+  "input": "joystick",
+  "video": {
+   "id": "elIoPajS_zk",
+   "title": "C64anabalt Canabalt Demake C64 Commodore Longplay Gameplay Playthrough"
+  },
+  "history": {
+   "text": "RGCD's 16KB cartridge conversion of Adam Saltsman's 2009 Flash hit Canabalt, released as a compo game in 2012. It strips the endless-runner down to pure timing and silhouette, proving the C64 could still do \"one button, infinite fall\" as well as any browser — free to download, or pay what you think is fair."
+  }
+ },
+ "c64_hb_doc_cosmos": {
+  "input": "joystick",
+  "video": {
+   "id": "bFM8HU7inxk",
+   "title": "[Commodore 64] Doc Cosmos (2019) Longplay"
+  },
+  "history": {
+   "text": "Simon Jameson's entry for RGCD's 2019 16k Cartridge Game Development Competition, a sci-fi adventure squeezed into the same 16KB ceiling as several other homebrew standouts of the decade. Part of a small wave of jam-born C64 games proving the machine's old constraints still make for good design discipline."
+  }
+ },
+ "c64_hb_tenebra2": {
+  "input": "joystick",
+  "video": {
+   "id": "sBcdpFPzNE8",
+   "title": "Commodore 64 -=Tenebra 2=-"
+  },
+  "history": {
+   "text": "The coder known as Haplo followed up 2016's Tenebra with this 2022 puzzle sequel, layering roguelike trappings — permadeath runs, procedurally-flavoured rooms — onto tight C64 puzzle design. Released across an unusually wide spread of 8-bit platforms simultaneously, a hallmark of the modern homebrew scene's cross-platform toolchains."
+  }
+ },
+ "c64_hb_bomberland": {
+  "input": "joystick",
+  "video": {
+   "id": "R9vDwO3QxWQ",
+   "title": "[Commodore 64] Bomberland (2018) Longplay"
+  },
+  "history": {
+   "text": "A coder going by \"Master\" built this Bomberman-style bomb-em-up for up to five simultaneous players, a rarity given the C64's limited native multiplayer input options. Version 1.1 shipped in 2018, part of the homebrew scene's steady output of party games designed for the machine's joystick ports rather than its keyboard."
+  }
+ },
+ "c64_hb_bruce_lee_return_of_fury": {
+  "input": "joystick",
+  "video": {
+   "id": "Pqc_KfSBoyw",
+   "title": "Commodore 64 Longplay [281] Bruce Lee: Return of Fury (Public Domain)"
+  },
+  "history": {
+   "text": "The demo group Megastyle built this unofficial sequel to 1984's Bruce Lee, keeping the original's ladders-and-lanterns platforming while expanding the moveset and level design well past what the 8-bit original attempted. Free and released into the public domain, it's a fan continuation rather than a licensed product."
+  }
+ },
+ "c64_hb_rocket_smash_ex": {
+  "input": "joystick",
+  "video": {
+   "id": "KoYlskxx-10",
+   "title": "Rocket Smash EX Longplay (C64) [50 FPS]"
+  },
+  "history": {
+   "text": "Richard Bayliss expanded his RGCD 16k Cart Compo 2013 entry into a full 64KB cartridge release in 2015, adding extra levels and polish to a fast, vertical-scrolling rocket-dodging shooter built originally under the compo's tight size limit."
+  }
+ },
+ "c64_hb_micro_hexagon": {
+  "input": "joystick",
+  "video": {
+   "id": "6RG5gEL84tg",
+   "title": "Micro Hexagon Gameplay (C64)"
+  },
+  "history": {
+   "text": "Onslaught's demake of Terry Cavanagh's Super Hexagon, squeezed into 16KB for the RGCD cartridge compo of 2013 — pure reflex geometry, rotating walls, and a game-over screen you'll see constantly."
+  }
+ },
+ "c64_hb_wolfling": {
+  "input": "joystick",
+  "video": {
+   "id": "uMYWehJ_DHU",
+   "title": "Wolfling Longplay (C64) [50 FPS]"
+  },
+  "history": {
+   "text": "Lazycow, one of the most prolific names in modern C64 homebrew, put out Wolfling's version 1.4 in 2019 — a tight platformer starring a wolf cub, trading the studio's usual puzzle leanings for straightforward jump-and-run action."
+  }
+ },
+ "c64_hb_runn_n_gunn": {
+  "input": "joystick",
+  "video": {
+   "id": "PprvKlzquBU",
+   "title": "Modern Retro Review - Runn'n'Gunn (Commodore 64)"
+  },
+  "history": {
+   "text": "Excess built Runn'n'Gunn in 2021 as a throwback to arcade run-and-gun shooters, splitting the action between platforming and near-constant enemy fire — one of a steady stream of releases from a group that's become a fixture of the current C64 scene."
+  }
+ },
+ "c64_hb_grid_pix": {
+  "input": "joystick",
+  "video": {
+   "id": "a9dV1OB79RQ",
+   "title": "Grid Pix (C64) - RGN Quick Play"
+  },
+  "history": {
+   "text": "Excess turned to logic puzzles for Grid Pix in 2020, a nonogram/Picross game filling a genre almost entirely absent from the original C64 library — later picked up for a boxed cartridge release by Thalamus Digital / RGCD."
+  }
+ },
+ "c64_hb_super_bread_box": {
+  "input": "joystick",
+  "video": {
+   "id": "USdUkFSE8Eo",
+   "title": "Super Bread Box (C64 2012) (Gameplay)"
+  },
+  "history": {
+   "text": "Paulko64 ported the 2010 indie arcade game Bread Box (better known by its later name, Super Crate Box) to the C64 in 2012, fitting the whole thing into a 16KB cartridge. Grab a crate, get a random new gun, survive the horde, repeat."
+  }
+ },
+ "c64_hb_hero_is_back": {
+  "input": "joystick",
+  "video": {
+   "id": "sZ9C8Vo4QAc",
+   "title": "H.E.R.O. Is Back (C64 Longplay)"
+  },
+  "history": {
+   "text": "Excess and Hokuto Force joined forces in 2025 to build an unofficial sequel to Activision's 1984 mining-rescue classic H.E.R.O., over four decades after the original. Same jetpack, same dynamite, a fresh set of caverns to burn through."
+  }
+ },
+ "c64_hb_luftrauserz": {
+  "input": "joystick",
+  "video": {
+   "id": "MUKSBemVAOA",
+   "title": "Luftrauserz - C64 version of the PC indie hit shooter LUFTRAUSERS"
+  },
+  "history": {
+   "text": "Triad's 2017 conversion took the 2014 PC dogfighter Luftrausers and squeezed its frantic, physics-driven plane combat onto real C64 hardware. Pick a hull, pick a weapon, and try to stay airborne against wave after wave of enemy planes and subs."
+  }
+ },
+ "c64_hb_bagman_strikes_back": {
+  "input": "joystick",
+  "video": {
+   "id": "fnWU-SIreGw",
+   "title": "Bagman Strikes Back (C64) - Longplay - Hard difficulty, All 24 stages"
+  },
+  "history": {
+   "text": "Laxity's 2022 unofficial follow-up to the 1983 arcade platformer Bagman keeps the core loop intact — a mustachioed thief hauling sacks of gold up ladders while dodging guards — nearly forty years after the coin-op original."
+  }
+ },
+ "c64_hb_galaxian_dx": {
+  "input": "joystick",
+  "video": {
+   "id": "W5ujiphcfak",
+   "title": "Galaxian DX (Commodore 64)"
+  },
+  "history": {
+   "text": "Army of Darkness reworked Namco's 1979 shoot-em-up Galaxian for the C64 in 2021, keeping the diving alien-formation attacks but adding smoother scrolling and modern touches — a loving tribute rather than a straight port."
+  }
+ },
+ "pc_civilization": {
+  "input": "keyboard",
+  "note": "Turn-based, menu-driven throughout &ndash; arrow keys and Enter move the cursor and confirm, and most screens also list a single-letter shortcut (<code>B</code> to build, <code>P</code> to found a city on the map, and so on). The very first launch asks <em>Select graphics mode</em> before anything else appears: press <strong>1</strong> for VGA. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "js42DMyAFGM",
+   "title": "Sid Meier's Civilization (MPS Labs) — MS-DOS Longplay"
+  },
+  "history": {
+   "text": "Sid Meier and Bruce Shelley built Civilization at MicroProse by asking what a board game like Risk or Empire would feel like if it ran across the whole of human history instead of one war. The turn-based loop it settled on &ndash; found cities, research technology, manage happiness, out-build or out-fight the neighbours &ndash; became the template the entire 4X genre still measures itself against, and the series it started is still being made today. This original 1991 DOS release is the one Meier and Shelley actually shipped, before Civilization II and everything after it layered on."
+  }
+ },
+ "pc_simcity": {
+  "input": "mouse",
+  "note": "Almost entirely mouse-driven &ndash; click the toolbar on the left to pick a tool (road, zone, power line), then click or drag on the map to place it. The keyboard is only needed for typing a city name and setting the starting budget. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "LHYMFgs20oE",
+   "title": "SimCity — original 1989 MS-DOS Longplay"
+  },
+  "history": {
+   "text": "Will Wright had already written the city-simulation engine while working on a level editor for a different game and realised the editor was more fun than the game it was building levels for. Maxis published it in 1989 as SimCity, with no win condition and no enemy &ndash; just a budget, a map, and a population that would riot, catch fire or move away depending on how well the city was actually run. It's usually credited as the game that invented the city-builder genre outright, and the one that made \"management sim\" a shelf category all its own."
+  }
+ },
+ "pc_dune2": {
+  "input": "mouse",
+  "note": "Select units by dragging a box around them with the mouse, then right-click (or left-click, depending on the command) to move or attack &ndash; the toolbar on the right builds units and structures. There's a long animated intro before the first mission; if it drags, <strong>Esc</strong> skips ahead (DOSBox's own menu also lives on Esc once in-game, so tap it just once to test which you get).",
+  "video": {
+   "id": "EiJLOjeyDxs",
+   "title": "Dune II: The Building of a Dynasty — MS-DOS Longplay"
+  },
+  "history": {
+   "text": "Westwood Studios had already made a strategy game set on Dune's desert planet Arrakis, but for the sequel they threw out the turn-based structure and let everything happen in real time &ndash; base-building, resource harvesting (the all-important spice) and combat, all running simultaneously against the clock instead of waiting for a turn. Command & Conquer, Warcraft and the whole real-time strategy genre trace their lineage straight back to this one; loosely tied to Frank Herbert's Dune, three noble houses (Atreides, Harkonnen, Ordos) fighting over the same desert Denis Villeneuve's films later put on screen."
+  }
+ },
+ "pc_tim": {
+  "input": "mouse",
+  "note": "Drag parts from the shelf on either side into the workspace, then press Go to run the contraption &ndash; there's no typing at all, just placing pulleys, fans, balloons and the occasional cat until the chain reaction actually works. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "pTbSMKGQ_rU",
+   "title": "The Incredible Machine (1993) — MS-DOS Longplay"
+  },
+  "history": {
+   "text": "Dynamix built The Incredible Machine as a physics-toy dressed up as a puzzle game: every level hands over a scattering of Rube Goldberg parts &ndash; ropes, gears, balloons, a cat, a bowling ball &ndash; and a goal (get the ball in the basket, pop the balloon) with no fixed way to solve it. Sierra published it in 1993 and it spawned a run of sequels through the 90s; its open-ended, build-anything-that-works design is the direct ancestor of it later spiritual successor Contraption Maker, made by two of TIM's own original designers."
+  }
+ },
+ "pc_oregon_trail": {
+  "input": "keyboard",
+  "note": "Menu-driven &ndash; number keys pick options at every screen, including the opening choice between travelling the trail, learning about it, or checking the Oregon Top Ten. The hunting minigame (option on the trail itself) uses the keyboard to aim and fire. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "29mzk7nZ6pA",
+   "title": "The Oregon Trail (1990, MECC) — MS-DOS Longplay"
+  },
+  "history": {
+   "text": "The Oregon Trail began in 1971 as a text-only teletype program three student teachers wrote in a couple of weeks to teach Minnesota schoolkids what the 1840s wagon migration actually involved; MECC picked it up, gave it graphics, and it became the software practically every American who went through a school computer lab in the 80s and 90s remembers &ndash; fording rivers, rationing food, and, for a startling number of players, dying of dysentery. This 1990 MS-DOS release is the MECC-era graphical version, not the original 1971 teletype game or the later CD-ROM Deluxe remake."
+  }
  }
 };

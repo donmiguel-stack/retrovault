@@ -1,6 +1,6 @@
 (function () {
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 23;
+  var COVER_V = 25;
   // Bump when you add or re-record anything in clips/ (C64 featured gameplay).
   var CLIP_V = 1;
 
@@ -597,11 +597,58 @@
     return node;
   }
 
+  // The C64 shelf's own homebrew panel - same idea as the Videopac one above,
+  // separate data (c64homebrew in featured.js) and template so a C64 pick
+  // never leaks onto the Videopac page and vice versa.
+  var c64HbStop = null;
+  function c64HomebrewBlock() {
+    var picks = ((window.FEATURED_DATA || {}).c64homebrew || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
+    });
+    var tpl = document.getElementById("c64homebrewTpl");
+    if (!picks.length || !tpl) return null;
+    if (c64HbStop) c64HbStop();
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector("[data-i18n=homebrewHead]").textContent = window.t("homebrewHead");
+    node.querySelector(".hb-word").textContent = window.t("cat_homebrew");
+    node.querySelector(".hb-intro").textContent = window.t("homebrewIntro");
+    c64HbStop = featureRotator(node.querySelector(".feature-main"),
+                               node.querySelector(".feature-list"), picks);
+    return node;
+  }
+
   // The community panel is a carousel: on a 14-inch screen six cards wrapped
   // onto a second line and webretro ended up orphaned down there on its own.
   function communityBlock() {
     var list = (window.FEATURED_DATA || {}).community || [];
     var tpl = document.getElementById("communityTpl");
+    if (!list.length || !tpl) return null;
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector("[data-i18n=communityHead]").textContent = window.t("communityHead");
+    node.querySelector(".community-intro").textContent = window.t("communityIntro");
+    var track = node.querySelector(".community-track");
+    track.innerHTML = list.map(function (c) {
+      return '<a class="community-item" href="' + c.url + '" target="_blank" rel="noopener" ' +
+        'style="--tint:' + (c.tint || "#8a8f98") + '">' +
+        '<span class="cname">' + c.name +
+        (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
+        '<p class="cwhat">' + c.what + '</p></a>';
+    }).join("");
+    node.querySelectorAll(".car-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var step = track.clientWidth * 0.8 * parseInt(this.dataset.dir, 10);
+        track.scrollBy({ left: step, behavior: "smooth" });
+      });
+    });
+    return node;
+  }
+
+  // The C64 shelf's own "keeping this console alive" panel - same carousel
+  // as the Videopac one above, separate data (c64community in featured.js)
+  // and template so a C64 site never shows on the Videopac page or vice versa.
+  function c64CommunityBlock() {
+    var list = (window.FEATURED_DATA || {}).c64community || [];
+    var tpl = document.getElementById("c64communityTpl");
     if (!list.length || !tpl) return null;
     var node = tpl.content.firstElementChild.cloneNode(true);
     node.querySelector("[data-i18n=communityHead]").textContent = window.t("communityHead");
@@ -649,6 +696,8 @@
     // homebrew/community panels (those are Videopac content).
     if (state.platform === "C64") {
       if (total >= 6) insertAt(c64AdBlock(), Math.min(12, Math.floor(total / 2)));
+      if (total >= 40) insertAt(c64HomebrewBlock(), Math.min(80, Math.floor(total * 2 / 3)));
+      if (total >= 20) insertAt(c64CommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
       return;
     }
     if (total < 60) return;                       // too short to bother

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retro Vault</title>
-<link rel="stylesheet" href="style.css?v=83">
+<link rel="stylesheet" href="style.css?v=87">
 </head>
 <body>
 <header class="topbar">
@@ -98,7 +98,38 @@
   </div>
 </template>
 
+<template id="c64homebrewTpl">
+  <div class="homebrew-strip">
+    <div class="hb-head">
+      <div>
+        <h3><span data-i18n="homebrewHead">Still being written</span><span class="hb-word"></span></h3>
+        <p class="hb-intro" data-i18n="homebrewIntro"></p>
+      </div>
+    </div>
+    <div class="feature-row">
+      <a class="feature-main" href="#"></a>
+      <div class="feature-list"></div>
+    </div>
+  </div>
+</template>
+
 <template id="communityTpl">
+  <div class="community">
+    <div class="community-head">
+      <div>
+        <h3 data-i18n="communityHead">Keeping this console alive</h3>
+        <p class="community-intro" data-i18n="communityIntro"></p>
+      </div>
+      <div class="carousel-nav">
+        <button class="car-btn" data-dir="-1" aria-label="Previous">&#8249;</button>
+        <button class="car-btn" data-dir="1" aria-label="Next">&#8250;</button>
+      </div>
+    </div>
+    <div class="community-track"></div>
+  </div>
+</template>
+
+<template id="c64communityTpl">
   <div class="community">
     <div class="community-head">
       <div>
@@ -161,17 +192,17 @@
   </div>
 </div>
 
-<script src="i18n.js?v=83"></script>
-<script src="setup-i18n.js?v=83"></script>
-<script src="games.js?v=83"></script>
-<script src="extras.js?v=83"></script>
-<script src="packaging.js?v=83"></script>
-<script src="genres.js?v=83"></script>
-<script src="gamepages.js?v=83"></script>
-<script src="featured.js?v=83"></script>
-<script src="brazil.js?v=83"></script>
-<script src="usa.js?v=83"></script>
-<script src="c64ad.js?v=83"></script>
-<script src="app.js?v=83"></script>
+<script src="i18n.js?v=87"></script>
+<script src="setup-i18n.js?v=87"></script>
+<script src="games.js?v=87"></script>
+<script src="extras.js?v=87"></script>
+<script src="packaging.js?v=87"></script>
+<script src="genres.js?v=87"></script>
+<script src="gamepages.js?v=87"></script>
+<script src="featured.js?v=87"></script>
+<script src="brazil.js?v=87"></script>
+<script src="usa.js?v=87"></script>
+<script src="c64ad.js?v=87"></script>
+<script src="app.js?v=87"></script>
 </body>
 </html>

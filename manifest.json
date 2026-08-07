@@ -1,19 +1,19 @@
 {
- "generated": "2026-08-06 20:49:33",
- "count": 293,
- "bytes": 101978283,
+ "generated": "2026-08-07 15:20:23",
+ "count": 328,
+ "bytes": 102422285,
  "files": {
   "games.js": {
-   "sha256": "bb037ef8d5d500392b3f7877f4104a0d0d3a5cf0aff28a35569149cae38bf8d4",
-   "size": 73256
+   "sha256": "3385c8df4520685bf5ec9e86383c5c234e56241442e663b84188fb259332bc1c",
+   "size": 79697
   },
   "gamepages.js": {
-   "sha256": "ffa9715d535f0f474105b57c59fb912bbaff6e46d4497f5b33222fe3000ca71c",
-   "size": 168233
+   "sha256": "b2ef4413cd5dc61a523472085338e507d1b59aca794afb6883273025d87e11de",
+   "size": 180508
   },
   "genres.js": {
-   "sha256": "331972f28e1bd0884ee3689c630a8e14181acac037600d8bb1a9621e76233cfc",
-   "size": 16776
+   "sha256": "dbf7728db206cbc9576ad0775deadc5fa9161ffacec0a0a2b8c825f562520476",
+   "size": 18156
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -40,8 +40,8 @@
    "size": 33675
   },
   "featured.js": {
-   "sha256": "c8e22895255e5c13ff191ece3e8a00d3c853d1945b0911c268ea489848529bf2",
-   "size": 8534
+   "sha256": "db737a5c37a61f0b866206334660a603599e6a61a21c7d99accd7630880172f9",
+   "size": 12283
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -52,16 +52,16 @@
    "size": 4719
   },
   "app.js": {
-   "sha256": "12ceb0e62a1153f754d57de9bade93c6b48c7e01e29f1719213108f804dc2d1f",
-   "size": 51533
+   "sha256": "166f17e5b6856a9d93708195f2de6dc888746fcb6cfc0de88a8573740225f7fb",
+   "size": 54162
   },
   "game.html": {
-   "sha256": "ff9ea831e87e75525286196a9bea81791e4ae6efa4690055dd3895d81954f386",
+   "sha256": "13f9f3704a2beccba2b22fcf2b798ff67de0a322ea88758ec51770da3d8a0034",
    "size": 32895
   },
   "index.html": {
-   "sha256": "faaa3d9afe4be57a2f08b0e5eeaa95238e111173b0b967a9abd59f87262c1438",
-   "size": 6636
+   "sha256": "1c6a9a2805c5f4305b3411e31eaca4d297895e6eff876256af0df6ed40cad9e9",
+   "size": 7606
   },
   "style.css": {
    "sha256": "f4d959a87c54daa392e23fc4c8061d3b9aa6c25bb3ece5247b86d7cb4e543ed5",
@@ -286,6 +286,66 @@
   "covers/c64_giana_sisters.png": {
    "sha256": "4d7a947531ff1a2c54e74eabefa161bb61708a8128d56187f6f16992adae0b2e",
    "size": 188475
+  },
+  "covers/c64_hb_bagman_strikes_back.png": {
+   "sha256": "8d04072d95a9399640d286bcbb77512cc833325e935af5f7e861ec9cb00b3428",
+   "size": 5250
+  },
+  "covers/c64_hb_bomberland.png": {
+   "sha256": "9722f591099174296d03a05fbba1f3bdfbce8c81c94ce08d1f29e157818a9afa",
+   "size": 7284
+  },
+  "covers/c64_hb_bruce_lee_return_of_fury.png": {
+   "sha256": "c3ca7eba91cf8be87f866bb4e5261ee3555766d9af423ebf6c775fc95c9e0bd4",
+   "size": 12800
+  },
+  "covers/c64_hb_c64anabalt.png": {
+   "sha256": "ba7fd8501cb4b902b0f4c1621a226a22d01da068d3c0767cbd7b10d4f626760b",
+   "size": 2688
+  },
+  "covers/c64_hb_doc_cosmos.png": {
+   "sha256": "e07c15b0095a81ea6fbedadaf11ef5f4be103e6dae22eee8f555e0e3b93aa75a",
+   "size": 2432
+  },
+  "covers/c64_hb_galaxian_dx.png": {
+   "sha256": "4474ff2445cd5b6c58ec52d5d97d3415494bf918368dc67893f3c57fa7b5a6c7",
+   "size": 4418
+  },
+  "covers/c64_hb_grid_pix.png": {
+   "sha256": "2f95ca8878f82ca8da51ed3bf7c7067d1e2e5a0b7bc7a28cf8b7321936235058",
+   "size": 4885
+  },
+  "covers/c64_hb_hero_is_back.png": {
+   "sha256": "04c589af57ad9d9dcb94c4008e0063095b9cde611b730ccbd400839c745c1a3e",
+   "size": 3885
+  },
+  "covers/c64_hb_luftrauserz.png": {
+   "sha256": "ba159e3bc9fc5705cb66bad2b7ad04271bcd3557e9e7e25397ed25db2adfa355",
+   "size": 2084
+  },
+  "covers/c64_hb_micro_hexagon.png": {
+   "sha256": "e1b47723ddcca902fc4686c9046c39e1c4bf9457f2441cdee47cafa9049dadbf",
+   "size": 3453
+  },
+  "covers/c64_hb_rocket_smash_ex.png": {
+   "sha256": "310565210d338cd29d55cffa0f4ef93fff044cf808f9387419be8e195e4039e5",
+   "size": 1933
+  },
+  "covers/c64_hb_runn_n_gunn.png": {
+   "sha256": "5098b89dc9b6c8fe99d4e383deead294bc6649d510c90f447981ede4350e124e",
+   "size": 5499
+  },
+  "covers/c64_hb_super_bread_box.png": {
+   "sha256": "3a2f077c55da400bcef17341f03f0cf815c69f480fe731429ff319ea4092bb49",
+   "size": 2205
+  },
+  "covers/c64_hb_tenebra2.png": {
+   "sha256": "9d6bf5bcef1c191f53c7e3ee4dfec11a793547373f22e0e91d994600ae5ef3c3",
+   "size": 3045
+  },
+  "covers/c64_hb_wolfling.png": {
+   "sha256": "e590432fe37846b9dc6df7b4ca14f9543b1b970eec73212b990c9e527680d4dd",
+   "size": 5379
   },
   "covers/c64_ik_plus.png": {
    "sha256": "303c9573140dc0312f172826bc3fa2c06a5bff872417d98b5420b5744d092e17",
@@ -719,6 +779,10 @@
    "sha256": "c56fae731cdea46425c845fa12c35801a00d7dc8ca43561deeae108a8bd5877e",
    "size": 458804
   },
+  "covers/pc_civilization.jpg": {
+   "sha256": "3aef3ef44dc580b5b6b0a31e6a010d3f8e54425505660c435c80847b67099082",
+   "size": 42151
+  },
   "covers/pc_commander_keen.jpg": {
    "sha256": "86f8cc6561178fb79dd4b340edf76d35a97eaff3d1d7da2637540eb882b9bb12",
    "size": 125926
@@ -731,13 +795,29 @@
    "sha256": "aff0ec26b530e0027f20558eadb6768db5edcc3a226de9e8246cb02dfa6dad03",
    "size": 29282
   },
+  "covers/pc_dune2.jpg": {
+   "sha256": "59082c788f975b7162f8f9ac3c93eadb4fee07932cbe2ca7651fb5b6aa9269ad",
+   "size": 19464
+  },
   "covers/pc_leisure_suit_larry.jpg": {
    "sha256": "83b0fbfafe4c2577d714a7fac6f37626277270508042c7eb1d350f4efddefb4b",
    "size": 110455
   },
+  "covers/pc_oregon_trail.jpg": {
+   "sha256": "4337889aaf2b1d998fcfab63a2ed4df00f84317f1464d3bc7ebf8ba481b80b4a",
+   "size": 54151
+  },
   "covers/pc_prince_of_persia.jpg": {
    "sha256": "8c03b31ef9ebe61f3290b720c10dc3e70035584e9c673cb250cef3419ba5389d",
    "size": 151869
+  },
+  "covers/pc_simcity.jpg": {
+   "sha256": "61b560e41836160bc234db6f2c93ab00abc9cff4896ade9ced035a234e0e03f4",
+   "size": 79168
+  },
+  "covers/pc_tim.jpg": {
+   "sha256": "06fc04fd1250f72a4b51c1b46e51b02a8d0fb2fca36a152d3aa7af384e24ea6b",
+   "size": 87144
   },
   "covers/pc_wolfenstein3d.jpg": {
    "sha256": "42d740d2b47a59570478b5f7dbcd9e59e97f2ab6576b9c041c5aca640e78f2ec",
@@ -806,6 +886,66 @@
   "covers/pr_tutankham.png": {
    "sha256": "b45da35e613e54a705e3150614a7db264dccdc4cc367d80444006556e8cf83ca",
    "size": 458729
+  },
+  "covers/shot_c64_hb_bagman_strikes_back.png": {
+   "sha256": "8d04072d95a9399640d286bcbb77512cc833325e935af5f7e861ec9cb00b3428",
+   "size": 5250
+  },
+  "covers/shot_c64_hb_bomberland.png": {
+   "sha256": "9722f591099174296d03a05fbba1f3bdfbce8c81c94ce08d1f29e157818a9afa",
+   "size": 7284
+  },
+  "covers/shot_c64_hb_bruce_lee_return_of_fury.png": {
+   "sha256": "c3ca7eba91cf8be87f866bb4e5261ee3555766d9af423ebf6c775fc95c9e0bd4",
+   "size": 12800
+  },
+  "covers/shot_c64_hb_c64anabalt.png": {
+   "sha256": "ba7fd8501cb4b902b0f4c1621a226a22d01da068d3c0767cbd7b10d4f626760b",
+   "size": 2688
+  },
+  "covers/shot_c64_hb_doc_cosmos.png": {
+   "sha256": "e07c15b0095a81ea6fbedadaf11ef5f4be103e6dae22eee8f555e0e3b93aa75a",
+   "size": 2432
+  },
+  "covers/shot_c64_hb_galaxian_dx.png": {
+   "sha256": "4474ff2445cd5b6c58ec52d5d97d3415494bf918368dc67893f3c57fa7b5a6c7",
+   "size": 4418
+  },
+  "covers/shot_c64_hb_grid_pix.png": {
+   "sha256": "2f95ca8878f82ca8da51ed3bf7c7067d1e2e5a0b7bc7a28cf8b7321936235058",
+   "size": 4885
+  },
+  "covers/shot_c64_hb_hero_is_back.png": {
+   "sha256": "04c589af57ad9d9dcb94c4008e0063095b9cde611b730ccbd400839c745c1a3e",
+   "size": 3885
+  },
+  "covers/shot_c64_hb_luftrauserz.png": {
+   "sha256": "ba159e3bc9fc5705cb66bad2b7ad04271bcd3557e9e7e25397ed25db2adfa355",
+   "size": 2084
+  },
+  "covers/shot_c64_hb_micro_hexagon.png": {
+   "sha256": "e1b47723ddcca902fc4686c9046c39e1c4bf9457f2441cdee47cafa9049dadbf",
+   "size": 3453
+  },
+  "covers/shot_c64_hb_rocket_smash_ex.png": {
+   "sha256": "310565210d338cd29d55cffa0f4ef93fff044cf808f9387419be8e195e4039e5",
+   "size": 1933
+  },
+  "covers/shot_c64_hb_runn_n_gunn.png": {
+   "sha256": "5098b89dc9b6c8fe99d4e383deead294bc6649d510c90f447981ede4350e124e",
+   "size": 5499
+  },
+  "covers/shot_c64_hb_super_bread_box.png": {
+   "sha256": "3a2f077c55da400bcef17341f03f0cf815c69f480fe731429ff319ea4092bb49",
+   "size": 2205
+  },
+  "covers/shot_c64_hb_tenebra2.png": {
+   "sha256": "9d6bf5bcef1c191f53c7e3ee4dfec11a793547373f22e0e91d994600ae5ef3c3",
+   "size": 3045
+  },
+  "covers/shot_c64_hb_wolfling.png": {
+   "sha256": "e590432fe37846b9dc6df7b4ca14f9543b1b970eec73212b990c9e527680d4dd",
+   "size": 5379
   },
   "covers/shot_jo_demon-attack_pl.jpg": {
    "sha256": "606aa2861c028c0e77859ab89f211eb12538e483ebb35c56f3165f0f09b08a7d",

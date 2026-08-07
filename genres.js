@@ -1073,5 +1073,85 @@ window.GENRE_DATA = {
  "pc_leisure_suit_larry": {
   "genre": "adventure",
   "players": "p1"
+ },
+ "c64_hb_c64anabalt": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_hb_doc_cosmos": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "c64_hb_tenebra2": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "c64_hb_bomberland": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "c64_hb_bruce_lee_return_of_fury": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "c64_hb_rocket_smash_ex": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_hb_micro_hexagon": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_hb_wolfling": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_hb_runn_n_gunn": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_hb_grid_pix": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "c64_hb_super_bread_box": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_hb_hero_is_back": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_hb_luftrauserz": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_hb_bagman_strikes_back": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "c64_hb_galaxian_dx": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "pc_civilization": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "pc_simcity": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "pc_dune2": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "pc_tim": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "pc_oregon_trail": {
+  "genre": "education",
+  "players": "p1"
  }
 };

@@ -70,6 +70,26 @@ window.FEATURED_DATA = {
       blurb: "Tetris, essentially, and a good one: four variations, polyphonic music and enhanced graphics on a G7400. This is the build made to run under emulation — the cartridge version plays its music through The Voice." }
   ],
 
+  // ---- Homebrew, C64 shelf ------------------------------------------
+  // Same shape as "homebrew" above, but only shown on the C64 shelf page
+  // (placeBlocks() in app.js gates it on state.platform === "C64"). Kept
+  // as its own array, not mixed into "homebrew", so Videopac's panel
+  // never shows a C64 game a Videopac visitor can't even play.
+  c64homebrew: [
+    { id: "c64_hb_c64anabalt", shot: "c64_hb_c64anabalt.png",
+      blurb: "RGCD's 16KB cartridge demake of Canabalt, 2012 — one button, infinite fall, and proof the C64 could still do a modern indie hit justice a decade after Philips-era rivals had all gone quiet." },
+    { id: "c64_hb_wolfling", shot: "c64_hb_wolfling.png",
+      blurb: "Lazycow, one of the most prolific names in modern C64 homebrew, sends a wolf cub jumping through a tight 2019 platformer built from scratch, thirty-six years after the machine launched." },
+    { id: "c64_hb_hero_is_back", shot: "c64_hb_hero_is_back.png",
+      blurb: "Excess and Hokuto Force built an unofficial sequel to Activision's 1984 H.E.R.O. in 2025 — same jetpack, same dynamite, brand new caverns, over four decades on." },
+    { id: "c64_hb_luftrauserz", shot: "c64_hb_luftrauserz.png",
+      blurb: "Triad squeezed 2014's PC dogfighter Luftrausers onto real C64 silicon in 2017 — physics-driven plane combat the hardware was never supposed to run." },
+    { id: "c64_hb_bagman_strikes_back", shot: "c64_hb_bagman_strikes_back.png",
+      blurb: "Laxity's 2022 tribute to the 1983 arcade platformer Bagman — a thief hauling gold up ladders, dodging guards, forty years and one homebrew scene later." },
+    { id: "c64_hb_grid_pix", shot: "c64_hb_grid_pix.png",
+      blurb: "Excess brought Picross to the C64 in 2020 — a genre the original Videopac and C64 shelves never had — later picked up for a real boxed cartridge release." }
+  ],
+
   // ---- Sponsors ---------------------------------------------------------
   // Shops and sellers. Each entry gets a banner slot, clearly marked as an
   // advert - a retro shop is welcome here, but nobody should mistake it for
@@ -89,6 +109,44 @@ window.FEATURED_DATA = {
       url:  "mailto:hello@example.com",
       text: "Selling Videopac cartridges, consoles or spare joysticks? This slot is for you.",
       attract: "ADVERTISE HERE" }
+  ],
+
+  // ---- Keeping this console alive, C64 shelf -----------------------------
+  // Same shape as "community" above, but for the C64 shelf - the sites and
+  // projects that document, catalogue and still actively support this
+  // machine. Shown only on the C64 shelf (placeBlocks() in app.js gates it
+  // on state.platform === "C64").
+  c64community: [
+    { name: "CSDb",
+      tint: "#5b8def",
+      url: "https://csdb.dk/",
+      lang: "International",
+      what: "The scene's own database - releases, screenshots and history for practically everything written for the machine since 1982, including several of the 2020s homebrews on this shelf." },
+    { name: "GameBase64",
+      tint: "#2fb47c",
+      url: "https://gamebase64.com/",
+      lang: "International",
+      what: "The exhaustive commercial-game catalogue project this shelf's C64 ROMs and cover art were largely sourced from." },
+    { name: "Lemon64",
+      tint: "#e0865a",
+      url: "https://www.lemon64.com/",
+      lang: "International",
+      what: "One of the oldest and most active English-language C64 communities - reviews, box scans and a forum running since 2000." },
+    { name: "C64-Wiki",
+      tint: "#c07de0",
+      url: "https://www.c64-wiki.com/wiki/Main_Page",
+      lang: "International",
+      what: "A community-run encyclopedia covering hardware, software and scene history, article by article." },
+    { name: "Protovision",
+      tint: "#e0c05a",
+      url: "https://www.protovision.games/",
+      lang: "Germany",
+      what: "Still publishing brand new physical C64 cartridges and hardware today - proof this machine never actually stopped." },
+    { name: "VICE",
+      tint: "#4fb3bf",
+      url: "https://vice-emu.sourceforge.io/",
+      lang: "Open source",
+      what: "The open-source emulator core this shelf's browser player actually runs on under the hood." }
   ],
 
   // ---- Community --------------------------------------------------------
