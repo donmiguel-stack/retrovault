@@ -689,6 +689,99 @@
     return function () { if (timer) clearInterval(timer); timer = null; };
   }
 
+  // The Master Strategy Series banner - three games, always all three shown
+  // at once (there are only three, and rotating one out of three defeats the
+  // point of a banner that exists specifically to give them room). Bigger
+  // and richer than the "featured" panel above it: box contents, a fact line,
+  // and two media slots per card instead of one.
+  //
+  // The gameplay slot reuses the same three-layer fallback as the C64
+  // homebrew panel - clips/clip_<id>.mp4 first (drop one in and it plays,
+  // no code change needed), then the game's own gamepages.js YouTube video,
+  // then the cover - so this works today and upgrades itself the moment a
+  // clip is added. The board slot is a static photo of the physical board,
+  // stored as covers/board_<id>.jpg (see the comment in featured.js for why
+  // it lives in covers/ rather than a new folder).
+  function msVideoFallback(box) {
+    var vid = box.getAttribute("data-vid");
+    var gid = box.getAttribute("data-gid");
+    if (vid) {
+      box.innerHTML = '<iframe src="' + ytEmbed(vid) + '" title="" loading="lazy" ' +
+        'frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" ' +
+        'allowfullscreen></iframe>';
+    } else {
+      box.innerHTML = '<img src="covers/' + gid + '.png?v=' + COVER_V +
+        '" alt="" onerror="this.onerror=null;this.src=\'covers/' + gid + '.jpg?v=' + COVER_V + '\'">';
+    }
+  }
+
+  function wireMsClips(host) {
+    host.querySelectorAll(".ms-video").forEach(function (box) {
+      var v = box.querySelector("video");
+      if (!v) return;
+      v.addEventListener("error", function () { msVideoFallback(box); }, { once: true });
+      var p = v.play && v.play();
+      if (p && p.catch) p.catch(function () {});
+    });
+  }
+
+  function msCard(pick) {
+    var g = gameById(pick.id);
+    if (!g) return "";
+    var href = "game.html?id=" + encodeURIComponent(g.id);
+    var gp = (window.GAMEPAGES_DATA || {})[g.id] || {};
+    var vid = gp.video && gp.video.id ? gp.video.id : "";
+    var contents = (pick.contents || []).map(function (c) { return "<li>" + c + "</li>"; }).join("");
+    return (
+      '<div class="ms-card">' +
+        '<div class="ms-card-top">' +
+          '<a href="' + href + '"><img class="ms-card-cover" src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
+          'onerror="this.onerror=null;this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'"></a>' +
+          '<div class="ms-card-head">' +
+            '<h3><a href="' + href + '">' + g.title + '</a></h3>' +
+            '<span class="ms-year">' + pick.year + '</span>' +
+            (pick.fact ? '<span class="ms-fact">' + pick.fact + '</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<p class="ms-blurb">' + pick.blurb + '</p>' +
+        (contents ? '<ul class="ms-contents">' + contents + '</ul>' : '') +
+        '<div class="ms-media">' +
+          '<div class="ms-media-box">' +
+            '<div class="ms-media-frame ms-video" data-gid="' + g.id + '" data-vid="' + vid + '">' +
+              '<video class="ms-clip" src="clips/clip_' + g.id + '.mp4?v=' + CLIP_V + '" ' +
+              'autoplay muted loop playsinline preload="auto"></video>' +
+            '</div>' +
+            '<span class="ms-media-cap">' + window.t("gameplay") + '</span>' +
+          '</div>' +
+          '<div class="ms-media-box">' +
+            '<div class="ms-media-frame ms-board-frame">' +
+              '<img src="covers/board_' + g.id + '.jpg" alt="">' +
+            '</div>' +
+            '<span class="ms-media-cap">' + window.t("msBoardLabel") + '</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  // Built the same way as homebrewBlock()/communityBlock() - a <template>
+  // clone dropped mid-grid by placeBlocks(), not a fixed section pinned to
+  // the top of the page. Sits on its own between the sponsor strip and the
+  // homebrew panel rather than immediately next to either one (see the
+  // spacing comment in placeBlocks()), so it reads as a banner you scroll
+  // to, not one stacked directly on top of another.
+  function masterStrategyBlock() {
+    var picks = ((window.FEATURED_DATA || {}).masterStrategy || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
+    });
+    var tpl = document.getElementById("msTpl");
+    if (!picks.length || !tpl) return null;
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector(".ms-grid").innerHTML = picks.map(msCard).join("");
+    wireMsClips(node);
+    return node;
+  }
+
   var c64HbStop = null;
   function c64HomebrewBlock() {
     var picks = ((window.FEATURED_DATA || {}).c64homebrew || []).filter(function (f) {
@@ -781,7 +874,7 @@
   }
 
   function placeBlocks(total) {
-    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .community, .c64-ad-strip")
+    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .ms-strip, .community, .c64-ad-strip")
         .forEach(function (n) { n.remove(); });
     var cols = gridColumns();
     var cards = grid.querySelectorAll(".card");
@@ -804,6 +897,12 @@
     if (total < 60) return;                       // too short to bother
     insertAt(sponsorBlock(), Math.min(36, Math.floor(total / 3)));
     insertAt(homebrewBlock(), Math.min(96, Math.floor(total * 2 / 3)));
+    // Sits between homebrew and community rather than at a literal total/2 -
+    // the middle of the list by fraction alone lands right on homebrew's own
+    // heels (2/3 of the way is only a handful of cards past 1/2), which would
+    // read as two banners stacked back to back. This keeps roughly a row or
+    // two of ordinary game cards on both sides of it instead.
+    insertAt(masterStrategyBlock(), Math.min(130, Math.floor(total * 3 / 5)));
     insertAt(communityBlock(), Math.min(160, Math.floor(total * 6 / 7)));
   }
 

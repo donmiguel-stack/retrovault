@@ -17,8 +17,8 @@ window.FEATURED_DATA = {
   featured: [
     { id: "vp_38", shot: "vp_38.jpg",
       blurb: "The one Atari sued over — and the best-selling cartridge the console ever had. Press P at the select screen to draw your own maze." },
-    { id: "vp_42", shot: "vp_42.jpg",
-      blurb: "A board game and a video game at once. The cartridge came with a physical map, tokens and a rulebook; two players hunt rings through shifting rooms." },
+    { id: "vp_01pl", shot: "vp_01pl.jpg",
+      blurb: "Cartridge number one, and the first game in every Videopac box: a two-lane race, an overhead maze chase, and a codebreaking puzzle called Cryptogram, three in one. This is the G7400+ cut - extra graphics chip, extra scenery either side of the track." },
     { id: "vp_43", shot: "vp_43.jpg",
       blurb: "Philips' answer to Donkey Kong, and a genuinely hard platformer. Dig for gold, dodge the boulders, mind the pickaxe." },
     { id: "jo_demon-attack_pl", shot: "jo_demon-attack_pl.jpg",
@@ -27,6 +27,53 @@ window.FEATURED_DATA = {
       blurb: "Ed Averett at his strangest: you are a swarm, and you eat other swarms. Nothing else on the machine plays like it." },
     { id: "vp_51pl", shot: "vp_51pl.png",
       blurb: "Sold as Attack of the Timelord in America, and licensed from a Gerry Anderson puppet series in Europe. One of the few cartridges written for the G7400's extra graphics chip." }
+  ],
+
+  // ---- Master Strategy Series --------------------------------------------
+  // Its own banner, bigger than "featured" above - three games, always all
+  // three shown at once rather than rotating, since there are only three and
+  // the whole point is that each shipped with a physical board. "id" must
+  // match an id in games.js. "year"/"fact" are the small print under the
+  // title; "contents" is what was actually in the box, sourced from
+  // odyssey2.info/strategy/. Two images per card, neither optional in the
+  // markup even if the file is missing yet:
+  //   - a gameplay slot, same three-layer fallback as the C64 homebrew
+  //     panel: clips/clip_<id>.mp4 (drop one in and it just plays) -> the
+  //     game's own gamepages.js YouTube video -> the cover.
+  //   - "the board" - a real photo of the physical game board, sourced from
+  //     odyssey2.info and stored as covers/board_<id>.jpg (the covers/
+  //     folder rather than a new one, same reasoning as the shot_ prefix
+  //     below: it is a folder every existing install can already receive an
+  //     update into).
+  masterStrategy: [
+    { id: "vp_42", year: 1981, fact: "Most Innovative Game of 1981 — Electronic Games",
+      blurb: "Ten rings are scattered through dungeons, caverns and shifting halls. Pick Warrior, Wizard, Phantom or Changeling and race a second player to find them first - the board, overlay and forty-plus tokens turn the TV into just one part of the table.",
+      contents: [
+        "Game board, overlay &amp; compartment lid",
+        "28-page rulebook",
+        "10 ring tokens + 1 quest token",
+        "3 nightmare &amp; 3 dragon tokens",
+        "8 possession tokens, 23 castle-location tokens",
+        "Hourglass"
+      ] },
+    { id: "vp_41", year: 1982, fact: "Honorable mention, Best Multi-Player Game of 1982 — Electronic Games",
+      blurb: "Risk with a video game instead of dice. Forty-three world powers, each rated for military and economic strength, and every battle is settled by playing the cartridge's own combat game rather than rolling anything.",
+      contents: [
+        "Game board &amp; compartment lid",
+        "Instruction manual",
+        "228 colored magnets on 6 uncut sheets",
+        "6 Homeland markers",
+        "9 uncut sheets of Power Base Unit chips (108 total)"
+      ] },
+    { id: "vp_46", year: 1982, fact: "Most Innovative Game of 1982 — Electronic Games",
+      blurb: "Twenty-seven real companies and commodities - IBM, McDonald's, gold, bonds - with prices that move on the news and never run the same way twice. Buy low, sell high, and end the year richer than up to three opponents.",
+      contents: [
+        "Game board &amp; compartment lid",
+        "Two investment record pads",
+        "7 green &amp; 7 gold margin/share tokens",
+        "Gold &amp; silver prime-rate tokens",
+        "Time-frame token"
+      ] }
   ],
 
   // ---- Featured and recommended, C64 shelf ------------------------------

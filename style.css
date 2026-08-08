@@ -372,6 +372,69 @@ body{
   .feature-shots .feature-shot:nth-child(2){display:none;}
 }
 
+/* ---- Master Strategy Series banner ---------------------------------------
+   Sits mid-grid like Homebrew/Community below, not pinned above the grid
+   next to Featured - placeBlocks() drops it roughly 60% of the way down the
+   list, clear of both the sponsor strip and the homebrew panel on either
+   side, so it reads as its own stop on the page rather than one banner
+   stacked on another. Deliberately bigger than .showcase up top all the
+   same: three cards always shown side by side (not a rotator - there are
+   only three games total, no need to hide any of them), each carrying more
+   copy (box contents) and two media slots instead of one. Amber/bronze
+   accent throughout - the "treasure chest" box style these three shipped
+   in - to read as its own thing next to the blue accent of Featured, the
+   pink of Homebrew and the yellow of Community. */
+.ms-strip{
+  grid-column:1/-1; margin:16px 0 10px; padding:18px 20px 20px;
+  background:var(--surface); border-radius:12px;
+  background-image:linear-gradient(180deg, color-mix(in srgb, #c9973b 6%, transparent), transparent 160px);
+  border:2px solid color-mix(in srgb, #c9973b 65%, transparent);
+}
+.ms-head{margin-bottom:14px;}
+.ms-head h3{margin:0 0 4px; font-size:17px; font-weight:600;}
+.ms-intro{margin:0; font-size:13px; line-height:1.6; color:var(--text-dim); max-width:980px;}
+.ms-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
+.ms-card{
+  display:flex; flex-direction:column; gap:12px;
+  background:var(--surface); border-radius:14px; padding:16px;
+  border:2px solid color-mix(in srgb, #c9973b 55%, transparent);
+}
+.ms-card-top{display:flex; gap:14px;}
+.ms-card-cover{display:block; width:104px; height:139px; object-fit:cover; border-radius:8px; flex-shrink:0;}
+.ms-card-head{display:flex; flex-direction:column; gap:5px; min-width:0; justify-content:center;}
+.ms-card-head h3{margin:0; font-size:18px; font-weight:600; line-height:1.25;}
+.ms-card-head h3 a{color:inherit; text-decoration:none;}
+.ms-card-head h3 a:hover{color:var(--accent);}
+.ms-year{font-size:12px; color:var(--text-mute);}
+.ms-fact{display:block; margin-top:3px; font-size:11.5px; font-weight:600; color:#c9973b; line-height:1.4;}
+.ms-blurb{margin:0; font-size:13px; line-height:1.6; color:var(--text-dim);}
+.ms-contents{margin:0; padding-left:17px; font-size:12px; line-height:1.55; color:var(--text-mute);}
+.ms-contents li{margin:0 0 2px;}
+.ms-media{display:flex; gap:10px; margin-top:auto;}
+.ms-media-box{flex:1 1 50%; min-width:0; display:flex; flex-direction:column; gap:5px;}
+.ms-media-frame{
+  position:relative; width:100%; aspect-ratio:4/3; border-radius:8px;
+  overflow:hidden; background:#000;
+}
+.ms-media-frame img, .ms-media-frame video{width:100%; height:100%; object-fit:cover; display:block;}
+.ms-media-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
+/* the board is a real photograph, not console pixel art - no pixelated hint */
+.ms-board-frame img{background:#1a1a1a;}
+.ms-media-cap{
+  font-size:10px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--text-mute); text-align:center;
+}
+@media (max-width:1300px){
+  .ms-grid{grid-template-columns:repeat(2, 1fr);}
+}
+@media (max-width:900px){
+  .ms-grid{grid-template-columns:1fr;}
+  .ms-card-cover{width:88px; height:117px;}
+}
+@media (max-width:640px){
+  .ms-media{flex-direction:column;}
+}
+
 /* Advert strip - full width, always labelled, never dressed up as content */
 .sponsor-strip{grid-column:1/-1; margin:16px 0 10px;}
 .sponsor{

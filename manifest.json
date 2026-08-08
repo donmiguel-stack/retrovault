@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-08 07:10:19",
- "count": 360,
- "bytes": 107471552,
+ "generated": "2026-08-08 09:03:18",
+ "count": 365,
+ "bytes": 107621270,
  "files": {
   "games.js": {
    "sha256": "627be72a9ff974ab8f33fb967926f9f5f1ac0dcdf73bbf021c2fa641e2ee2e98",
@@ -32,16 +32,16 @@
    "size": 2582
   },
   "i18n.js": {
-   "sha256": "a12f515b942dcd37e14317bbe1eb29989ad57d8a1d02600cf60d1c04dd15991f",
-   "size": 32393
+   "sha256": "a252224b97e109d0fcf262519073cf66cd88ad03b129b098322bd2075013e100",
+   "size": 34301
   },
   "setup-i18n.js": {
    "sha256": "e5e10e56b3d4bf66fee7e4366a954f7fde1b2874a43dd271df07365800018936",
    "size": 33675
   },
   "featured.js": {
-   "sha256": "db737a5c37a61f0b866206334660a603599e6a61a21c7d99accd7630880172f9",
-   "size": 12283
+   "sha256": "e0355f0f842ad12f08849c025811c14a9eaae24f9bf02b0c016cc84a7f338708",
+   "size": 15286
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -56,20 +56,20 @@
    "size": 10731
   },
   "app.js": {
-   "sha256": "204964cfbd16bfa559daad445821cb3343a5245a2e1eb8fff2922cb51a3714ad",
-   "size": 58843
+   "sha256": "8370a68b31ace14906c830815dac92c80927ba2c039969325f57a7527dd6a806",
+   "size": 63860
   },
   "game.html": {
-   "sha256": "e605f95b808ed74b3abbdbb69b79dc978fbf9e455832a6947a7f69b3f191a39f",
+   "sha256": "5f61fa81b6e8311d3ad603192e1ad49330ca92520c3b048b246c3be6111d489f",
    "size": 38220
   },
   "index.html": {
-   "sha256": "410cb6aa5879bc2664e00e1d9ab8f95db46504b05b2a546a1e9d921bc3e739e2",
-   "size": 7606
+   "sha256": "9be4d17e11ad31ef065fdbf32a08cc7ad996f02acccffa8e2060e7a938eec8a4",
+   "size": 7856
   },
   "style.css": {
-   "sha256": "f4d959a87c54daa392e23fc4c8061d3b9aa6c25bb3ece5247b86d7cb4e543ed5",
-   "size": 39041
+   "sha256": "2b9a35254c07f1d5bab4236357451d334d3f7e7529d1b01ccf94c80cc4f4b3ca",
+   "size": 42445
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -158,6 +158,18 @@
   "covers/Vp52+_F.png": {
    "sha256": "201e0e420daa66574337440224c38cd9471a7d9105fd8ba49a3bb09fd08b47a5",
    "size": 492150
+  },
+  "covers/board_vp_41.jpg": {
+   "sha256": "5c6bd986c2c6d6193c0f773f4b1ec60fa78127310ec57e6dbb9d9812ca3051b5",
+   "size": 26089
+  },
+  "covers/board_vp_42.jpg": {
+   "sha256": "390076e38aaf2e3e0a882f45b83e874a8f6bf885d7bf044727a1cbc3bf5770d7",
+   "size": 25772
+  },
+  "covers/board_vp_46.jpg": {
+   "sha256": "075aec020a0ed76a00d502df9a7a87d65165f4826a04103aaba93b7545394077",
+   "size": 16855
   },
   "covers/br_9434.jpg": {
    "sha256": "ae0f3b89617db2ee63a76f5b6dae0eb50f06311e54144447a4f8e3bee665c956",
@@ -1082,6 +1094,14 @@
   "covers/shot_new_route66.png": {
    "sha256": "02a237fc2169a41d70a510fe6e8af878589afbda0a3ad107ff44dc75b838672f",
    "size": 5559
+  },
+  "covers/shot_vp_01.jpg": {
+   "sha256": "50ea179c7884a4ce9b2ffe0298298cbfae776ad4c7858e7aa78c7a4fd024d338",
+   "size": 17830
+  },
+  "covers/shot_vp_01pl.jpg": {
+   "sha256": "a4e3f8f131c22b40e0482ea54db8226654d80c2a6f801811950eda5f075ba857",
+   "size": 49590
   },
   "covers/shot_vp_38.jpg": {
    "sha256": "d254ae06c50e6d670ae054b1888875451a5a20c2b84707a3cf955239e06d0a3d",
