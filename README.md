@@ -220,4 +220,49 @@ Emulation is the open-source [O2EM](https://o2em.sourceforge.net/) and
 Internet Archive's Videopac/Odyssey² manuals collection. Not affiliated with
 Philips, Magnavox, Commodore, id Software, Sierra or Broderbund.
 
+---
+
+## License — what you may and may not do
+
+Retro Vault is **free**. It always will be. But it isn't open source in the
+usual sense — it's released under the [Retro Vault License](LICENSE.md),
+which in everyday terms comes down to this:
+
+**You may:**
+
+- Download the Vault and run it on anything you like, at no cost.
+- Add your own game files — that's the whole idea. The Vault ships with no
+  ROMs, no BIOS files, and no manuals; you bring your own dumps of the
+  games you own.
+- Modify it for yourself: reskin it, translate it, rearrange the shelves,
+  hack on it to your heart's content — privately.
+- Keep backups, and tell everyone about it (please do). Link to this
+  repository or to the official website wherever you like.
+
+**You may not:**
+
+- Put the Vault — or a modified version of it — online anywhere else. No
+  mirrors, no rehosts, no "inspired by" clones built from this code, no app
+  store uploads, no bundles.
+- Sell it, charge for access to it, or build a paid product on top of it.
+- Use the Retro Vault name or look for a derivative project.
+
+**The fine print that matters:**
+
+- The emulator cores (VICE, O2EM, DOSBox) are separate projects with their
+  own licenses (GPL); those licenses fully apply to those files and nothing
+  here overrides them.
+- Forking on GitHub itself is fine — that's how GitHub works. Deploying
+  that fork anywhere is not.
+- Want to do something the license doesn't allow — a museum installation, a
+  mirror, a translation hosted elsewhere, a commercial idea? **Just ask** —
+  via the contact address on the official website, or by opening an issue
+  here. The answer is usually yes; the license exists so that the asking
+  happens.
+
+*Why this license?* The Vault is an archive and a labour of love. Keeping
+one official home for it means fixes, new games, cheats, and history
+write-ups reach everyone — instead of scattering across half-maintained
+copies. If you'd like to contribute, do it here, where everyone benefits.
+
 **Vault by @donmiguel2.0 · code by Claude**

@@ -25,7 +25,7 @@ FILES = [
     "packaging.js", "extras.js", "i18n.js", "setup-i18n.js", "featured.js",
     "shops.js", "c64ad.js", "cheats.js",
     "app.js", "game.html", "index.html", "style.css", "boot-splash.js",
-    "README.md",
+    "README.md", "LICENSE.md",
 ]
 # covers/ holds the box art and, under a shot_ prefix, the in-game screenshots
 # the featured and homebrew panels use. assets/cheats/ holds the small
