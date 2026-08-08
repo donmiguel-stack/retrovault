@@ -23,16 +23,19 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FILES = [
     "games.js", "gamepages.js", "genres.js", "brazil.js", "usa.js",
     "packaging.js", "extras.js", "i18n.js", "setup-i18n.js", "featured.js",
-    "shops.js", "c64ad.js",
+    "shops.js", "c64ad.js", "cheats.js",
     "app.js", "game.html", "index.html", "style.css", "boot-splash.js",
     "README.md",
 ]
 # covers/ holds the box art and, under a shot_ prefix, the in-game screenshots
-# the featured and homebrew panels use. Keep new artwork in here: the update
-# endpoint's folder whitelist lives in serve.py, which the updater never
-# overwrites, so a brand new folder can never reach an install that already
-# exists. covers/ is somewhere every copy already accepts writes.
-FOLDERS = ["covers"]
+# the featured and homebrew panels use. assets/cheats/ holds the small
+# diagram/screenshot images cheats.js points at (odyssey2.info's own cheat
+# illustrations - some are .gif, including one animated one). Keep new
+# artwork in here: the update endpoint's folder whitelist lives in
+# serve.py, which the updater never overwrites, so a brand new folder can
+# never reach an install that already exists. Both of these are folders
+# every copy already accepts writes to.
+FOLDERS = ["covers", "assets/cheats"]
 
 
 def digest(path):
@@ -58,7 +61,7 @@ def collect():
             # skip the parked-artwork subfolders and stray notes
             if not os.path.isfile(p) or name.startswith("."):
                 continue
-            if os.path.splitext(name)[1].lower() not in (".png", ".jpg", ".jpeg"):
+            if os.path.splitext(name)[1].lower() not in (".png", ".jpg", ".jpeg", ".gif"):
                 continue
             rel = folder + "/" + name
             out[rel] = {"sha256": digest(p), "size": os.path.getsize(p)}

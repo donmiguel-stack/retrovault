@@ -37,8 +37,8 @@ SOURCE_FILE = os.path.join(ROOT, "update-source.json")
 # consequence is that files in a folder listed here reach every install, and
 # files anywhere else reach nobody who has already installed. Put new artwork
 # in covers/.
-ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json")
-ALLOWED_DIRS = ("", "covers", "assets/shots")
+ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json", ".gif")
+ALLOWED_DIRS = ("", "covers", "assets/shots", "assets/cheats")
 
 
 def source_base():
