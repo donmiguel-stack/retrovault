@@ -6,10 +6,6 @@ manuals/
 extras/
 _brazil_staging/
 
-# Locally-recorded C64 featured gameplay clips - personal captures, same
-# footing as the ROMs. The panel falls back to the YouTube embed without them.
-clips/
-
 # Cover art set aside rather than deleted - working files, not part of the Vault.
 covers/_needs-art/
 covers/_replaced/
