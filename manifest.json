@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-08 19:42:33",
- "count": 366,
- "bytes": 107629360,
+ "generated": "2026-08-08 20:34:34",
+ "count": 367,
+ "bytes": 107632873,
  "files": {
   "games.js": {
    "sha256": "627be72a9ff974ab8f33fb967926f9f5f1ac0dcdf73bbf021c2fa641e2ee2e98",
@@ -59,13 +59,17 @@
    "sha256": "8370a68b31ace14906c830815dac92c80927ba2c039969325f57a7527dd6a806",
    "size": 63860
   },
+  "demo.js": {
+   "sha256": "1d25660687299e46cb3d5d13231f32c587d6ac346eb0e7a32e4c69121bcd6b50",
+   "size": 3439
+  },
   "game.html": {
-   "sha256": "5f61fa81b6e8311d3ad603192e1ad49330ca92520c3b048b246c3be6111d489f",
-   "size": 38220
+   "sha256": "2ef32e884f87c4f60ade5513c257067b0ec838c36b24be9e1c15b0b98d9bff28",
+   "size": 38257
   },
   "index.html": {
-   "sha256": "9be4d17e11ad31ef065fdbf32a08cc7ad996f02acccffa8e2060e7a938eec8a4",
-   "size": 7856
+   "sha256": "0bcfa8cfedb2c6bd1aae3eaa9da57382efab343ec81125469137c50a816db9df",
+   "size": 7893
   },
   "style.css": {
    "sha256": "2b9a35254c07f1d5bab4236357451d334d3f7e7529d1b01ccf94c80cc4f4b3ca",

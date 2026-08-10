@@ -24,7 +24,7 @@ FILES = [
     "games.js", "gamepages.js", "genres.js", "brazil.js", "usa.js",
     "packaging.js", "extras.js", "i18n.js", "setup-i18n.js", "featured.js",
     "shops.js", "c64ad.js", "cheats.js",
-    "app.js", "game.html", "index.html", "style.css", "boot-splash.js",
+    "app.js", "demo.js", "game.html", "index.html", "style.css", "boot-splash.js",
     "README.md", "LICENSE.md",
 ]
 # covers/ holds the box art and, under a shot_ prefix, the in-game screenshots
