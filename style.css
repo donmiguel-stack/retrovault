@@ -548,7 +548,7 @@ body{
 .pc-ad-strip{grid-column:1/-1;}
 .pcad-link{display:block;text-decoration:none;position:relative;}
 .pcad{background:#cec7ab;padding:16px;border-radius:8px;font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
-.pcad-screen{position:relative;background:#0000AA;height:260px;overflow:hidden;display:flex;flex-direction:column;box-shadow:inset 0 0 30px rgba(0,0,0,.55);}
+.pcad-screen{position:relative;background:#0000AA;height:172px;overflow:hidden;display:flex;flex-direction:column;box-shadow:inset 0 0 30px rgba(0,0,0,.55);}
 .pcad-bars{position:absolute;inset:0;opacity:.28;pointer-events:none;}
 .pcad-bars i{position:absolute;top:0;bottom:0;}
 .pcad-scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(rgba(0,0,0,.22) 0 1px, transparent 1px 3px);}
@@ -559,7 +559,7 @@ body{
 .pcad-scroller{position:absolute;white-space:nowrap;will-change:transform;}
 .pcad-scroller b{
   display:inline-block;font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;
-  font-weight:700;font-size:112px;letter-spacing:6px;text-transform:uppercase;
+  font-weight:700;font-size:112px;line-height:1;letter-spacing:6px;text-transform:uppercase;
   color:transparent;background:linear-gradient(180deg,#ffffff 0%,#eafcff 45%,#7eeaff 100%);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-stroke:4px #171a4a;
