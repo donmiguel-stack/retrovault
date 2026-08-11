@@ -1646,8 +1646,8 @@ window.GAMEPAGES_DATA = {
    "url": "https://en.wikipedia.org/wiki/Killer_Bees!"
   },
   "video": {
-   "id": "bewkGthH8WM",
-   "title": "Magnavox Odyssey 2 - Philips Videopac: Killer Bees! (1983) (Videopac 52) Longplay"
+   "id": "pTkjGszLefA",
+   "title": "Killer Bees! - Philips Videopac+ G7400 gameplay"
   }
  },
  "vp_32": {
@@ -2037,8 +2037,8 @@ window.GAMEPAGES_DATA = {
    "url": "https://en.wikipedia.org/wiki/Race_%E2%80%93_Spin-out_%E2%80%93_Cryptogram"
   },
   "video": {
-   "id": "QJECgFRqT5E",
-   "title": "Race/Spin Out/Cryptogram (Videopac/Odyssey²) [#01]"
+   "id": "yXNToAVW_50",
+   "title": "Race/Spin-out/Cryptogram - Philips Videopac+ G7400 gameplay"
   }
  },
  "vp_15": {

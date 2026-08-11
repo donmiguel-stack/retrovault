@@ -323,12 +323,16 @@ body{
 .feature-video-fallback img{
   width:100%; height:100%; object-fit:cover; display:block; image-rendering:pixelated;
 }
-/* the C64 feature card isn't one big link, so it shouldn't get the hover
-   border the Videopac one has; the cover and title link on their own */
-.feature-main-c64{cursor:default;}
-.feature-main-c64:hover{border-color:var(--border);}
-.feature-main-c64 .feature-cover-wrap, .feature-main-c64 h3 a{text-decoration:none; color:inherit;}
-.feature-main-c64 h3 a:hover{color:var(--accent);}
+/* the C64 and PC feature cards aren't one big link, so they shouldn't get
+   the hover border the Videopac one has; the cover and title link on their
+   own. Same rules for both - shared selector rather than a duplicate block,
+   since the PC panel reuses c64FeatureRotator() and renders identical
+   markup (see the app.js comment at that call site). */
+.feature-main-c64, .feature-main-pc{cursor:default;}
+.feature-main-c64:hover, .feature-main-pc:hover{border-color:var(--border);}
+.feature-main-c64 .feature-cover-wrap, .feature-main-c64 h3 a,
+.feature-main-pc .feature-cover-wrap, .feature-main-pc h3 a{text-decoration:none; color:inherit;}
+.feature-main-c64 h3 a:hover, .feature-main-pc h3 a:hover{color:var(--accent);}
 
 .feature-list{display:flex; flex-direction:column; gap:6px; width:196px; flex-shrink:0;}
 .feature-thumb{
@@ -539,6 +543,35 @@ body{
 .c64ad-bottom{position:relative;color:#B0A4FF;font-size:12px;letter-spacing:2px;padding:0 14px 10px;display:flex;justify-content:space-between;gap:12px;text-shadow:1px 1px 0 rgba(0,0,0,.35);}
 .c64ad-blk{color:#94E089;}
 @media (prefers-reduced-motion: reduce){ .c64ad-cur{animation:none;} }
+
+/* ---- PC/DOS-style "advertise here" banner (PC shelf ad slot) ---- */
+.pc-ad-strip{grid-column:1/-1;}
+.pcad-link{display:block;text-decoration:none;position:relative;}
+.pcad{background:#cec7ab;padding:16px;border-radius:8px;font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
+.pcad-screen{position:relative;background:#0000AA;height:260px;overflow:hidden;display:flex;flex-direction:column;box-shadow:inset 0 0 30px rgba(0,0,0,.55);}
+.pcad-bars{position:absolute;inset:0;opacity:.28;pointer-events:none;}
+.pcad-bars i{position:absolute;top:0;bottom:0;}
+.pcad-scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(rgba(0,0,0,.22) 0 1px, transparent 1px 3px);}
+.pcad-prompt{position:relative;color:#55FFFF;font-size:13px;letter-spacing:1px;padding:8px 12px 0;text-shadow:1px 1px 0 rgba(0,0,0,.45);}
+.pcad-cur{display:inline-block;width:8px;height:13px;background:#55FFFF;vertical-align:-2px;margin-left:2px;animation:pcblink 1.06s steps(1) infinite;}
+@keyframes pcblink{50%{opacity:0}}
+.pcad-band{position:relative;flex:1;display:flex;align-items:center;overflow:hidden;}
+.pcad-scroller{position:absolute;white-space:nowrap;will-change:transform;}
+.pcad-scroller b{
+  display:inline-block;font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;
+  font-weight:700;font-size:112px;letter-spacing:6px;text-transform:uppercase;
+  color:transparent;background:linear-gradient(180deg,#ffffff 0%,#eafcff 45%,#7eeaff 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-stroke:4px #171a4a;
+  text-shadow:0 10px 0 rgba(0,0,0,.4);
+}
+/* Fallback for the rare renderer that ignores background-clip:text
+   entirely (e.g. very old WebKit) - a plain bright, still-readable colour
+   instead of invisible/transparent text. */
+@supports not (background-clip:text){
+  .pcad-scroller b{color:#eafcff;background:none;}
+}
+@media (prefers-reduced-motion: reduce){ .pcad-cur{animation:none;} }
 
 /* Bundled retro pixel font (Press Start 2P, SIL OFL), embedded so it works
    offline. Drives the C64 ad scroller and the Videopac attract slot, both of

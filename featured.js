@@ -14,16 +14,25 @@ window.FEATURED_DATA = {
   // "shot" is a screenshot filename. The file goes in covers/ with a shot_
   // prefix - covers/shot_vp_38.jpg for shot: "vp_38.jpg" - because that is a
   // folder the update endpoint is already allowed to write to.
+  //
+  // "clipId" is an optional override for which recorded clip plays in this
+  // slot, when it's not the same game id as "id". Race and Killer Bees are
+  // only actually recorded on G7000 hardware (vp_01 / o2_47) - the G7400+
+  // carts featured here (vp_01pl / vp_52pl) have no gameplay clip of their
+  // own, only a YouTube video on their own game page. clipId lets the
+  // banner show the real G7000 footage instead of falling back to that
+  // embed, without changing what clip (if any) plays on the G7400+ game
+  // page itself - that's still keyed off "id" via game.html's own logic.
   featured: [
     { id: "vp_38", shot: "vp_38.jpg",
       blurb: "The one Atari sued over — and the best-selling cartridge the console ever had. Press P at the select screen to draw your own maze." },
-    { id: "vp_01pl", shot: "vp_01pl.jpg",
+    { id: "vp_01pl", shot: "vp_01pl.jpg", clipId: "vp_01",
       blurb: "Cartridge number one, and the first game in every Videopac box: a two-lane race, an overhead maze chase, and a codebreaking puzzle called Cryptogram, three in one. This is the G7400+ cut - extra graphics chip, extra scenery either side of the track." },
     { id: "vp_43", shot: "vp_43.jpg",
       blurb: "Philips' answer to Donkey Kong, and a genuinely hard platformer. Dig for gold, dodge the boulders, mind the pickaxe." },
     { id: "jo_demon-attack_pl", shot: "jo_demon-attack_pl.jpg",
       blurb: "Imagic's shooter, licensed to Thomson-Brandt and given G7400 backgrounds that exist nowhere else. The French got the best version." },
-    { id: "vp_52pl", shot: "vp_52pl.jpg",
+    { id: "vp_52pl", shot: "vp_52pl.jpg", clipId: "o2_47",
       blurb: "Ed Averett at his strangest: you are a swarm, and you eat other swarms. Nothing else on the machine plays like it." },
     { id: "vp_51pl", shot: "vp_51pl.png",
       blurb: "Sold as Attack of the Timelord in America, and licensed from a Gerry Anderson puppet series in Europe. One of the few cartridges written for the G7400's extra graphics chip." }
@@ -95,6 +104,35 @@ window.FEATURED_DATA = {
       blurb: "Sensible Software's strangest and best: bounce an unsteerable ball across the land to collect paint and give a grey world its colour back. A two-player cat helps." },
     { id: "c64_ik_plus",
       blurb: "Archer Maclean's three-way karate tournament — you, a rival, and a computer fighter all at once — with a bonus round batting bombs back. The high point of the genre on the 64." }
+  ],
+
+  // ---- Featured and recommended, PC shelf --------------------------------
+  // Same shape and same reused rotator as c64featured above - the PC panel
+  // calls c64FeatureRotator() directly rather than getting its own copy of
+  // that ~80-line function, since the two are structurally identical (a
+  // plain, non-link "main" box that builds its own inner cover link - see
+  // the app.js comment at the call site for why that's safe to share and
+  // c64HomebrewFeatureRotator isn't). "id" matches an id in games.js; the
+  // right-hand slot plays clips/clip_<id>.mp4, same three-layer fallback as
+  // every other clip-driven panel. Three of these six (Doom, Prince of
+  // Persia, Leisure Suit Larry) are already playable in this Vault; the
+  // other three (Keen 6, Duke Nukem, Space Quest IV) still need their ROM
+  // file added under emulator/roms - see the romFile table Mike's working
+  // from. Featured here regardless, same as any other shelf: this panel is
+  // about the clip, not whether the cartridge is loaded yet.
+  pcfeatured: [
+    { id: "pc_doom",
+      blurb: "id Software's 1993 shareware release redefined the genre it named — three episodes of BFG-toting carnage that ran on almost anything and got copied onto more office PCs than any game before it." },
+    { id: "pc_prince_of_persia",
+      blurb: "Jordan Mechner rotoscoped his own brother's movements to make a video game character move like a person for the first time — sixty minutes on the clock, a sword, and traps built to kill you the moment you stop paying attention." },
+    { id: "pc_leisure_suit_larry",
+      blurb: "Al Lowe's text-parser comedy, the one Sierra kept a straight face selling — a disco-suited loser trying, and mostly failing, his way through a night out in Lost Wages." },
+    { id: "pc_keen6",
+      blurb: "The last of the original trilogy-of-trilogies: platforming through an alien mothership to rescue Keen's babysitter, with a Big Red Cannon prize waiting for anyone who beats it fast enough." },
+    { id: "pc_duke_nukem",
+      blurb: "Before the one-liners and the 3D engine, Duke's first outing was a straightforward Apogee side-scroller — one disk, one wisecracking hero, and the template everything after it built on." },
+    { id: "pc_sq4",
+      blurb: "Roger Wilco gets thrown forward into his own sequel's marketing — Sierra's most self-aware entry in the series, parodying Star Trek, Terminator and its own back catalogue in the same breath." }
   ],
 
   // ---- Homebrew ---------------------------------------------------------

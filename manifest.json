@@ -1,15 +1,15 @@
 {
- "generated": "2026-08-08 20:34:34",
+ "generated": "2026-08-11 13:36:26",
  "count": 367,
- "bytes": 107632873,
+ "bytes": 107640090,
  "files": {
   "games.js": {
    "sha256": "627be72a9ff974ab8f33fb967926f9f5f1ac0dcdf73bbf021c2fa641e2ee2e98",
    "size": 87691
   },
   "gamepages.js": {
-   "sha256": "6fa067718a5f67dae836feb714bd2b3015d2b4801c8d684996a67de517e6fb9a",
-   "size": 198202
+   "sha256": "ecfbff07400259a1c1224cdf8269241e8b1c977dad01da08c3733bc00fe07e8e",
+   "size": 198176
   },
   "genres.js": {
    "sha256": "49e59a44ca9f9b48d7b44f205fbe11214c54d01133590c12fb6bc3f27170dea4",
@@ -40,8 +40,8 @@
    "size": 33675
   },
   "featured.js": {
-   "sha256": "e0355f0f842ad12f08849c025811c14a9eaae24f9bf02b0c016cc84a7f338708",
-   "size": 15286
+   "sha256": "6fe8c640775a1eed64aef2597396b9f9a176b7c696f067d0b92e31df0de365c7",
+   "size": 18408
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -56,24 +56,24 @@
    "size": 10731
   },
   "app.js": {
-   "sha256": "8370a68b31ace14906c830815dac92c80927ba2c039969325f57a7527dd6a806",
-   "size": 63860
+   "sha256": "f057d0fa02e3844f2483387d944d38bee52aa974930d24ffc1635f4dbee1504b",
+   "size": 67296
   },
   "demo.js": {
    "sha256": "1d25660687299e46cb3d5d13231f32c587d6ac346eb0e7a32e4c69121bcd6b50",
    "size": 3439
   },
   "game.html": {
-   "sha256": "2ef32e884f87c4f60ade5513c257067b0ec838c36b24be9e1c15b0b98d9bff28",
-   "size": 38257
+   "sha256": "8b26c3f23b97b836c0a3d9b1e553c50f6083ca57a29a46a5222fe54cced4e1c9",
+   "size": 38272
   },
   "index.html": {
-   "sha256": "0bcfa8cfedb2c6bd1aae3eaa9da57382efab343ec81125469137c50a816db9df",
-   "size": 7893
+   "sha256": "905303eb21c722509b30e0761ddc4acd36716c0d3d2804e91fd05355ca534495",
+   "size": 8222
   },
   "style.css": {
-   "sha256": "2b9a35254c07f1d5bab4236357451d334d3f7e7529d1b01ccf94c80cc4f4b3ca",
-   "size": 42445
+   "sha256": "cd13d94a8892c4312f5ab7de85d679a686254e5d49bd295e3567b4c8560fd75e",
+   "size": 42786
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",

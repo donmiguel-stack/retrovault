@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retro Vault</title>
-<link rel="stylesheet" href="style.css?v=89">
+<link rel="stylesheet" href="style.css?v=91">
 <style>
   .game-page{max-width:1100px;margin:0 auto;padding:24px;}
   .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
@@ -204,21 +204,22 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=97"></script>
-<script src="setup-i18n.js?v=97"></script>
-<script src="games.js?v=97"></script>
-<script src="extras.js?v=97"></script>
-<script src="packaging.js?v=97"></script>
-<script src="genres.js?v=97"></script>
-<script src="brazil.js?v=97"></script>
-<script src="usa.js?v=97"></script>
-<script src="shops.js?v=97"></script>
-<script src="support.js?v=97"></script>
-<script src="cheats.js?v=97"></script>
-<script src="featured.js?v=97"></script>
-<script src="c64ad.js?v=97"></script>
-<script src="gamepages.js?v=97"></script>
-<script src="demo.js?v=97"></script>
+<script src="i18n.js?v=102"></script>
+<script src="setup-i18n.js?v=102"></script>
+<script src="games.js?v=102"></script>
+<script src="extras.js?v=102"></script>
+<script src="packaging.js?v=102"></script>
+<script src="genres.js?v=102"></script>
+<script src="brazil.js?v=102"></script>
+<script src="usa.js?v=102"></script>
+<script src="shops.js?v=102"></script>
+<script src="support.js?v=102"></script>
+<script src="cheats.js?v=102"></script>
+<script src="featured.js?v=102"></script>
+<script src="c64ad.js?v=102"></script>
+<script src="pcad.js?v=102"></script>
+<script src="gamepages.js?v=102"></script>
+<script src="demo.js?v=102"></script>
 <script>
 (function () {
   var COVER_COLORS = ["#5b8def","#3ba97a","#c07de0","#e0865a","#d65a7e","#8a8f98","#e0c05a","#4fb3bf"];
@@ -793,7 +794,7 @@
   }
   page.appendChild(vSec);
 
-  // ---- advert (C64 shelf only) ----
+  // ---- advert (C64 / PC shelves) ----
   if (g.platform === "C64" && window.buildC64Ad) {
     var adSec = el("div","section c64ad-section");
     var adLink = document.createElement("a");
@@ -805,6 +806,18 @@
     adLink.appendChild(adTag);
     adSec.appendChild(adLink);
     page.appendChild(adSec);
+  }
+  if (g.platform === "PC" && window.buildPcAd) {
+    var pcAdSec = el("div","section pcad-section");
+    var pcAdLink = document.createElement("a");
+    var pcSp = ((window.FEATURED_DATA || {}).sponsors || [])[0] || null;
+    pcAdLink.href = (pcSp && pcSp.url) || "#"; pcAdLink.target = "_blank"; pcAdLink.rel = "noopener sponsored";
+    pcAdLink.className = "pcad-link";
+    pcAdLink.appendChild(window.buildPcAd(pcSp));
+    var pcAdTag = el("span","sponsor-tag", window.t("sponsored"));
+    pcAdLink.appendChild(pcAdTag);
+    pcAdSec.appendChild(pcAdLink);
+    page.appendChild(pcAdSec);
   }
 })();
 </script>

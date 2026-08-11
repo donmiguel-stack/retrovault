@@ -1,8 +1,8 @@
 (function () {
   // Bump when you add or replace anything in covers/ (see renderCard).
   var COVER_V = 27;
-  // Bump when you add or re-record anything in clips/ (C64 featured gameplay).
-  var CLIP_V = 2;
+  // Bump when you add or re-record anything in clips/ (featured gameplay clips).
+  var CLIP_V = 6;
 
   // Attract-screen palette, same letters as the SELECT GAME splash. Declared
   // up here because render() runs before the code further down this file.
@@ -219,13 +219,15 @@
     document.querySelectorAll("#platformChips .chip").forEach(function (c) {
       c.classList.toggle("active", c.dataset.platform === state.platform);
     });
-    // The featured panels are Videopac/C64-only content and always shown: the
-    // Videopac one on every shelf except C64/PC, the C64 one only on the C64
-    // shelf. The PC shelf gets neither (no PC-specific showcase yet).
+    // The featured panels are shelf-specific and always built, just shown or
+    // hidden per active shelf: the Videopac one on every shelf except C64/PC,
+    // the C64 one only on the C64 shelf, the PC one only on the PC shelf.
     var sc = document.getElementById("showcase");
     if (sc) sc.hidden = state.platform === "C64" || state.platform === "PC";
     var c64sc = document.getElementById("c64showcase");
     if (c64sc) c64sc.hidden = state.platform !== "C64";
+    var pcsc = document.getElementById("pcshowcase");
+    if (pcsc) pcsc.hidden = state.platform !== "PC";
   }
 
   function fillSelect(sel, allLabel, entries, current) {
@@ -361,6 +363,20 @@
     return strip;
   }
 
+  // The PC-style advert banner lives in pcad.js (shared with game.html):
+  // window.buildPcAd(sponsor) returns the animated banner element.
+  function pcAdBlock() {
+    var sp = ((window.FEATURED_DATA || {}).sponsors || [])[0] || null;
+    var strip = document.createElement("div"); strip.className = "sponsor-strip pc-ad-strip";
+    var a = document.createElement("a"); a.className = "pcad-link";
+    a.href = (sp && sp.url) || "#"; a.target = "_blank"; a.rel = "noopener sponsored";
+    a.appendChild(window.buildPcAd(sp));
+    var tag = document.createElement("span"); tag.className = "sponsor-tag"; tag.textContent = window.t("sponsored");
+    a.appendChild(tag);
+    strip.appendChild(a);
+    return strip;
+  }
+
   function sponsorBlock() {
     var list = (window.FEATURED_DATA || {}).sponsors || [];
     var tpl = document.getElementById("sponsorTpl");
@@ -419,10 +435,54 @@
     return list.length > 1 ? '<div class="feature-shots">' + imgs + '</div>' : imgs;
   }
 
+  // The right-hand slot prefers a locally-recorded gameplay clip over the
+  // static shot_ screenshot, same three-layer idea as the C64 panels below
+  // (clip -> YouTube -> still image) - but Videopac's still image is a
+  // curated shot_ screenshot (already good, deliberately picked per game),
+  // not generic cover art, so that's what the final fallback restores rather
+  // than a cover. Both callers of featureRotator() (the top-of-page panel
+  // and the Videopac homebrew panel) already use an <a class="feature-main">
+  // wrapper, so - unlike the C64 split - one shared implementation covers
+  // both without any nested-anchor problem.
+  function videopacClipFallback(box, shotVal) {
+    var vid = box.getAttribute("data-vid");
+    if (vid) {
+      box.innerHTML = '<iframe src="' + ytEmbed(vid) + '" title="" loading="lazy" ' +
+        'frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" ' +
+        'allowfullscreen></iframe>';
+    } else {
+      box.outerHTML = shotMarkup(shotVal);
+    }
+  }
+
   // Returns a function that stops the rotation - the homebrew panel is thrown
   // away and rebuilt on every resize, and its old timer has to go with it.
   function featureRotator(main, list, picks) {
     var at = 0, timer = null;
+
+    function videoSlot(g, pick) {
+      var gp = (window.GAMEPAGES_DATA || {})[g.id] || {};
+      var vid = gp.video && gp.video.id ? gp.video.id : "";
+      // clipId lets a featured pick play a different game's recorded clip
+      // than the one it links to - see the comment on "clipId" in
+      // featured.js. The YouTube fallback (data-vid) still comes from this
+      // pick's own game id, so a clip load failure recovers to the correct
+      // embed rather than the substitute game's.
+      var clipId = (pick && pick.clipId) || g.id;
+      return '<div class="feature-video" data-gid="' + g.id + '" data-vid="' + vid + '">' +
+        '<video class="feature-clip" src="clips/clip_' + clipId + '.mp4?v=' + CLIP_V + '" ' +
+        'autoplay muted loop playsinline preload="auto"></video></div>';
+    }
+
+    function wireClip(shotVal) {
+      var box = main.querySelector(".feature-video");
+      if (!box) return;
+      var v = box.querySelector("video");
+      if (!v) return;
+      v.addEventListener("error", function () { videopacClipFallback(box, shotVal); }, { once: true });
+      var p = v.play && v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
 
     function show(n) {
       at = (n + picks.length) % picks.length;
@@ -443,7 +503,8 @@
         '<span class="badge ' + platformBadge(g.platform) + '">' + g.platform + '</span>' +
         (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
         (gen.players ? '<span class="badge badge-cat">' + window.t("p_" + gen.players) + '</span>' : '') +
-        '</div></div>' + shotMarkup(pick.shot);
+        '</div></div>' + videoSlot(g, pick);
+      wireClip(pick.shot);
       list.querySelectorAll(".feature-thumb").forEach(function (b, n2) {
         b.classList.toggle("on", n2 === at);
       });
@@ -874,7 +935,7 @@
   }
 
   function placeBlocks(total) {
-    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .ms-strip, .community, .c64-ad-strip")
+    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .ms-strip, .community, .c64-ad-strip, .pc-ad-strip")
         .forEach(function (n) { n.remove(); });
     var cols = gridColumns();
     var cards = grid.querySelectorAll(".card");
@@ -892,6 +953,13 @@
       if (total >= 6) insertAt(c64AdBlock(), Math.min(12, Math.floor(total / 2)));
       if (total >= 40) insertAt(c64HomebrewBlock(), Math.min(80, Math.floor(total * 2 / 3)));
       if (total >= 20) insertAt(c64CommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
+      return;
+    }
+    // The PC shelf gets its own DOS-style advert and none of the Videopac
+    // homebrew/community panels (those are Videopac content) - same
+    // reasoning as the C64 branch above.
+    if (state.platform === "PC") {
+      if (total >= 6) insertAt(pcAdBlock(), Math.min(12, Math.floor(total / 2)));
       return;
     }
     if (total < 60) return;                       // too short to bother
@@ -1237,6 +1305,7 @@
   // featured.js. Any panel with an empty list simply doesn't appear.
   var featStop = null;
   var c64FeatStop = null;
+  var pcFeatStop = null;
 
   function buildShowcase() {
     var data = window.FEATURED_DATA || {};
@@ -1267,6 +1336,24 @@
       c64host.hidden = state.platform !== "C64";
       c64FeatStop = c64FeatureRotator(document.getElementById("c64FeatureMain"),
                                       document.getElementById("c64FeatureList"), c64picks);
+    }
+
+    // --- the PC featured panel, its own section, shown only on that shelf.
+    // Reuses c64FeatureRotator() as-is rather than a third copy of the same
+    // ~80 lines: #pcFeatureMain is a plain <div> that builds its own inner
+    // cover link, exactly like #c64FeatureMain (unlike the homebrew panels,
+    // whose "main" element IS the link, which is why those got their own
+    // function - see the comment above c64HomebrewFeatureRotator). Nothing
+    // inside c64FeatureRotator/c64ClipFallback is actually C64-specific -
+    // platform, id and clip path all come from the pick's own game data.
+    var pcpicks = (data.pcfeatured || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
+    });
+    var pchost = document.getElementById("pcshowcase");
+    if (pchost && pcpicks.length) {
+      pchost.hidden = state.platform !== "PC";
+      pcFeatStop = c64FeatureRotator(document.getElementById("pcFeatureMain"),
+                                     document.getElementById("pcFeatureList"), pcpicks);
     }
   }
 
