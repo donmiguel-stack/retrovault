@@ -10,9 +10,9 @@
 // Known games with physical extras worth scanning from your own copies:
 //   vp_09  Computer Programmer      (workbook/manual)
 //   vp_31  Musician                 (manual)
-//   vp_41  Conquest of the World    (map)
-//   vp_46  The Great Wall Street Fortune Hunt (board/map)
-// vp_42 Quest for the Rings done 2026-08-12 (see entry below).
+// vp_41 (Conquest of the World), vp_42 (Quest for the Rings) and vp_46
+// (The Great Wall Street Fortune Hunt) all done 2026-08-12 (see entries
+// below).
 window.EXTRAS_DATA = {
   "vp_09": { "manual": "computer-programmer-manual.pdf" },
   // The Quest for the Rings box is a wide wraparound painting - the card art
@@ -42,11 +42,16 @@ window.EXTRAS_DATA = {
   // is printed in eight languages side by side.
   "vp_a": { "box back": "newscaster-box-back.jpg" },
   // No French dump of Conquest of the World exists, so the French box has no
-  // entry of its own - it lives here alongside the English one. "german
-  // manual" (added 2026-08-12) is the full "Eroberung der Welt" manual,
-  // sourced the same way as vp_42's above - videopac.ch, credited in the
-  // Videopac "Keeping this console alive" banner (featured.js).
+  // entry of its own - it lives here alongside the English one. This game
+  // isn't in the archive.org Odyssey/Videopac manuals collection (the
+  // built-in page-by-page manual reader below has nothing for it), so
+  // "manual" here is the whole story for this title's English manual - the
+  // full U.S. scan, sourced from odyssey2.info/library/. "german manual"
+  // (added 2026-08-12) is the full "Eroberung der Welt" manual, sourced
+  // separately - videopac.ch, credited in the Videopac "Keeping this
+  // console alive" banner (featured.js).
   "vp_41": {
+    "manual": "conquest-of-the-world-manual.pdf",
     "french box": "conquete-du-monde-box.jpg",
     "german manual": "conquest-of-the-world-manual-de.pdf"
   },
