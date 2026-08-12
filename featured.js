@@ -262,6 +262,44 @@ window.FEATURED_DATA = {
       what: "The open-source emulator core this shelf's browser player actually runs on under the hood." }
   ],
 
+  // ---- Keeping this console alive, PC shelf ------------------------------
+  // Same shape as "c64community" above, but for the MS-DOS shelf - the
+  // forums, catalogues and jam communities that document and actively grow
+  // this shelf's homebrew section. Shown only on the PC shelf (placeBlocks()
+  // in app.js gates it on state.platform === "PC").
+  pccommunity: [
+    { name: "VOGONS",
+      tint: "#5b8def",
+      url: "https://www.vogons.org/",
+      lang: "International",
+      what: "The largest active DOS and vintage-PC hardware forum on the internet - troubleshooting real DOSBox configs and real 486s in the same threads since 2003." },
+    { name: "DOSGames.com",
+      tint: "#2fb47c",
+      url: "https://www.dosgames.com/",
+      lang: "International",
+      what: "Free DOS game downloads and reviews running since 1998, with an active homebrew-author section covering exactly this scene." },
+    { name: "DOS haven",
+      tint: "#e0865a",
+      url: "https://www.doshaven.eu/",
+      lang: "International",
+      what: "A blog and database built specifically around brand-new DOS releases - this shelf's homebrew picks lean on it more than anywhere else." },
+    { name: "Cyningstan DOS Games",
+      tint: "#e0c05a",
+      url: "http://dos.cyningstan.org.uk/",
+      lang: "International",
+      what: "One developer still writing original 8088/CGA-era DOS games and giving away the source - two of them, Barren Planet and The Chambers Beneath, are on this shelf." },
+    { name: "DOS Games Jam",
+      tint: "#c07de0",
+      url: "https://itch.io/jam/dos-games-jam",
+      lang: "International",
+      what: "The recurring itch.io jam family - DOSember every December, plus spring, summer and fall runs - that's the actual source of most of this shelf's homebrew, several of them jam entries themselves." },
+    { name: "js-dos",
+      tint: "#4fb3bf",
+      url: "https://js-dos.com/",
+      lang: "Open source",
+      what: "The open-source DOSBox-in-the-browser project this shelf's player actually runs on under the hood." }
+  ],
+
   // ---- Community --------------------------------------------------------
   // The people keeping this machine documented. Most of what is in the Vault
   // came from these sites; the least it can do is send traffic back.

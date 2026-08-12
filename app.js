@@ -2,7 +2,7 @@
   // Bump when you add or replace anything in covers/ (see renderCard).
   var COVER_V = 28;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
-  var CLIP_V = 6;
+  var CLIP_V = 7;
 
   // Attract-screen palette, same letters as the SELECT GAME splash. Declared
   // up here because render() runs before the code further down this file.
@@ -955,6 +955,29 @@
     return node;
   }
 
+  // The PC shelf's own "keeping this console alive" panel - same carousel
+  // as the Videopac/C64 ones above, separate data (pccommunity in
+  // featured.js) and template so a DOS site never shows on the Videopac or
+  // C64 pages or vice versa.
+  function pcCommunityBlock() {
+    var list = (window.FEATURED_DATA || {}).pccommunity || [];
+    var tpl = document.getElementById("pccommunityTpl");
+    if (!list.length || !tpl) return null;
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector("[data-i18n=communityHead]").textContent = window.t("communityHead");
+    node.querySelector(".community-intro").textContent = window.t("communityIntro");
+    var track = node.querySelector(".community-track");
+    track.innerHTML = list.map(function (c) {
+      return '<a class="community-item" href="' + c.url + '" target="_blank" rel="noopener" ' +
+        'style="--tint:' + (c.tint || "#8a8f98") + '">' +
+        '<span class="cname">' + c.name +
+        (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
+        '<p class="cwhat">' + c.what + '</p></a>';
+    }).join("");
+    wireCommunityCarousel(node, track);
+    return node;
+  }
+
   // The advert and community panels span the full grid width, so dropping one
   // mid-row leaves the rest of that row empty. Work out how many columns the
   // grid actually has and land them on a row boundary instead. The count
@@ -985,12 +1008,14 @@
       if (total >= 20) insertAt(c64CommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
       return;
     }
-    // The PC shelf gets its own DOS-style advert and its own homebrew panel,
-    // and none of the Videopac homebrew/community panels (those are Videopac
-    // content) - same reasoning as the C64 branch above.
+    // The PC shelf gets its own DOS-style advert, its own homebrew panel and
+    // its own "keeping this console alive" panel, and none of the Videopac
+    // homebrew/community panels (those are Videopac content) - same
+    // reasoning as the C64 branch above.
     if (state.platform === "PC") {
       if (total >= 6) insertAt(pcAdBlock(), Math.min(12, Math.floor(total / 2)));
       if (total >= 30) insertAt(pcHomebrewBlock(), Math.min(60, Math.floor(total * 2 / 3)));
+      if (total >= 20) insertAt(pcCommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
       return;
     }
     if (total < 60) return;                       // too short to bother

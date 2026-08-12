@@ -11,13 +11,21 @@
 //   vp_09  Computer Programmer      (workbook/manual)
 //   vp_31  Musician                 (manual)
 //   vp_41  Conquest of the World    (map)
-//   vp_42  Quest for the Rings      (board/map)
 //   vp_46  The Great Wall Street Fortune Hunt (board/map)
+// vp_42 Quest for the Rings done 2026-08-12 (see entry below).
 window.EXTRAS_DATA = {
   "vp_09": { "manual": "computer-programmer-manual.pdf" },
   // The Quest for the Rings box is a wide wraparound painting - the card art
-  // has to crop it, so the whole thing is here at full width.
-  "vp_42": { "box": "quest-for-the-rings-box.jpg" },
+  // has to crop it, so the whole thing is here at full width. "map" is the
+  // 2026-08-12 reshoot of the physical board (flat-laid, diffuse light,
+  // perspective-corrected - see WORKLOG) replacing the old glare-heavy
+  // photo; "printable map" is the same map tiled into 4 A4 sheets at
+  // 300dpi for anyone who wants to print and assemble their own copy.
+  "vp_42": {
+    "box": "quest-for-the-rings-box.jpg",
+    "map": "quest-for-the-rings-map.jpg",
+    "printable map": "quest-for-the-rings-map-print-4xA4.pdf"
+  },
   // Newscaster's box back - the same cart sold across Europe, so the blurb
   // is printed in eight languages side by side.
   "vp_a": { "box back": "newscaster-box-back.jpg" },

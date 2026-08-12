@@ -204,22 +204,22 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=103"></script>
-<script src="setup-i18n.js?v=103"></script>
-<script src="games.js?v=103"></script>
-<script src="extras.js?v=103"></script>
-<script src="packaging.js?v=103"></script>
-<script src="genres.js?v=103"></script>
-<script src="brazil.js?v=103"></script>
-<script src="usa.js?v=103"></script>
-<script src="shops.js?v=103"></script>
-<script src="support.js?v=103"></script>
-<script src="cheats.js?v=103"></script>
-<script src="featured.js?v=103"></script>
-<script src="c64ad.js?v=103"></script>
-<script src="pcad.js?v=103"></script>
-<script src="gamepages.js?v=103"></script>
-<script src="demo.js?v=103"></script>
+<script src="i18n.js?v=105"></script>
+<script src="setup-i18n.js?v=105"></script>
+<script src="games.js?v=105"></script>
+<script src="extras.js?v=105"></script>
+<script src="packaging.js?v=105"></script>
+<script src="genres.js?v=105"></script>
+<script src="brazil.js?v=105"></script>
+<script src="usa.js?v=105"></script>
+<script src="shops.js?v=105"></script>
+<script src="support.js?v=105"></script>
+<script src="cheats.js?v=105"></script>
+<script src="featured.js?v=105"></script>
+<script src="c64ad.js?v=105"></script>
+<script src="pcad.js?v=105"></script>
+<script src="gamepages.js?v=105"></script>
+<script src="demo.js?v=105"></script>
 <script>
 (function () {
   var COVER_COLORS = ["#5b8def","#3ba97a","#c07de0","#e0865a","#d65a7e","#8a8f98","#e0c05a","#4fb3bf"];
@@ -772,6 +772,19 @@
     // page works offline for the games you've made clips for, and still shows
     // the full video (online) for the ones you haven't.
     function youtubeEmbed() {
+      // A few entries have a locally-recorded clip but no YouTube upload to
+      // fall back to (nothing suitable was ever found/verified) - in that
+      // case just say so instead of building a broken embed:// pointing at
+      // an empty video id.
+      if (!data.video.id) {
+        // Don't leave the empty 16:9 .video-wrap box behind - it's sized and
+        // backgrounded for a video/iframe, so a plain text note inside it
+        // just sits pinned in a big black rectangle. Swap the whole wrap for
+        // a normal-flow note instead, same visual result as the "no video at
+        // all" branch below.
+        wrap.replaceWith(el("p", "missing-note", LT("s_noVideo")));
+        return;
+      }
       var ifr = document.createElement("iframe");
       ifr.src = "https://www.youtube-nocookie.com/embed/" + data.video.id;
       ifr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";

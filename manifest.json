@@ -1,15 +1,15 @@
 {
- "generated": "2026-08-11 16:39:00",
+ "generated": "2026-08-12 12:28:09",
  "count": 381,
- "bytes": 109658525,
+ "bytes": 109664163,
  "files": {
   "games.js": {
    "sha256": "52d310431345b81c45ef2c31be837950ee18d90eec273729348633110691d44e",
    "size": 92061
   },
   "gamepages.js": {
-   "sha256": "3682a6e8a878b0515a2cd26ef875a7ffd7a7c2729e2556662b342c56380ca2d4",
-   "size": 204686
+   "sha256": "ab7c0c0c7b0fc41902b7e8db06ac3a59c6f84b6982fb8ac5821b395a2d09eb9c",
+   "size": 205233
   },
   "genres.js": {
    "sha256": "9ab934d6ded931151d8376ef530acfb956277cf37aaac426572c010bb260a26c",
@@ -28,8 +28,8 @@
    "size": 2591
   },
   "extras.js": {
-   "sha256": "296a8d851844e553bfdd1d371b2ad36f9abdfa3664852967bd962239a4468746",
-   "size": 2582
+   "sha256": "c69edc85ca4ba55cc0ef88c6cf52ce563e62a145144ae8642d1bea445b96f45d",
+   "size": 3007
   },
   "i18n.js": {
    "sha256": "a252224b97e109d0fcf262519073cf66cd88ad03b129b098322bd2075013e100",
@@ -40,8 +40,8 @@
    "size": 33675
   },
   "featured.js": {
-   "sha256": "4dc77646e35a0c9f8cef0da8c0bcd867115b167857eeb2ef78ce5c00956e53d6",
-   "size": 20557
+   "sha256": "bec862c9fdbd61126add3e3c0e78aee5973c60dbf4345e7700e4f7e4e5d15586",
+   "size": 22620
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -56,20 +56,20 @@
    "size": 10731
   },
   "app.js": {
-   "sha256": "5592feb26e0d7620a108d335420235992685c7dc73188cf69a03a6ff9585cf80",
-   "size": 70239
+   "sha256": "e56d8da004f13b776ef318c92be40901699d130c01282343bd64e9521e622746",
+   "size": 71577
   },
   "demo.js": {
    "sha256": "1d25660687299e46cb3d5d13231f32c587d6ac346eb0e7a32e4c69121bcd6b50",
    "size": 3439
   },
   "game.html": {
-   "sha256": "514247ae655eb026842296c9b54d3741b2a0608745007b00fc86ee00b2d0c861",
-   "size": 38906
+   "sha256": "b316004f0f0c6de0c312856cdc673e46ae8ba6d2ad2dc424f917dc4a0f1c243d",
+   "size": 39621
   },
   "index.html": {
-   "sha256": "c4780a79058ae20dd533c5805f01b1ec361c1b18f6526718fdf1ec4ef4fb5807",
-   "size": 8691
+   "sha256": "b355d59011f5e2df2be69202ed7a9a7487e817e0b2de34fc851d22f0d939689e",
+   "size": 9241
   },
   "style.css": {
    "sha256": "c685ca673fd66418fafee51476ed3a8c897d3246c97641587efea6ee87e0b927",

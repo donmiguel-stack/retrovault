@@ -4174,6 +4174,10 @@ window.GAMEPAGES_DATA = {
  "pc_hb_gates": {
   "input": "keyboard",
   "note": "A from-scratch first-person dungeon RPG built the way the genre worked in 1990 &ndash; create a party at the Guild, then walk the maze in real time fighting whatever finds you. Menu-driven throughout: single letters pick every option, on both the Guild screen and in the dungeon itself. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "AxoEh9BaP74",
+   "title": "Gates Of Integrity: Intro, character creation and first fights"
+  },
   "history": {
    "source": "Tarjan's own devlogs on itch.io, where the game has had a dedicated MS-DOS build since 2022 alongside its original Windows release.",
    "text": "One of the more actively maintained pieces of new DOS-native software being written today &ndash; Tarjan has kept shipping numbered point releases (past v1.22) years after the first version, with a from-scratch first-person dungeon-crawler engine built specifically to run on real DOS hardware rather than as a retro-styled Windows game."
@@ -4182,6 +4186,7 @@ window.GAMEPAGES_DATA = {
  "pc_hb_disksweeper": {
   "input": "keyboard",
   "note": "Minesweeper reframed as repairing a corrupted floppy disk sector by sector &ndash; the rules are the same, the chrome is pure early-90s file-manager. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {"title": "DISKSWEEPER gameplay clip"},
   "history": {
    "source": "voxel's itch.io page, where DISKSWEEPER shipped as an entry to the DOS Games August Jam 2022.",
    "text": "Built for the DOS Games August Jam 2022, one of the recurring themed jams (see also DOSember every December) that make up most of the active new-DOS-software scene today."
@@ -4197,6 +4202,10 @@ window.GAMEPAGES_DATA = {
  "pc_hb_noudar": {
   "input": "keyboard",
   "note": "Arrow keys move and turn, <strong>Z</strong>/<strong>X</strong> strafe, <strong>S</strong> (or 1-3) cycles the inventory, <strong>A</strong> picks up items, <strong>Space</strong> uses the current item &ndash; all straight from the game's own title screen. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "fy8xPw_W32s",
+   "title": "New RPG for Dos (Dungeons of Noudar 3d)"
+  },
   "history": {
    "source": "Daniel \"MontyOnTheRun\" Monteiro's GitHub repository (open source) and archive.org preservation copy.",
    "text": "A first-person, tile-based dungeon crawler written in C++ with fixed-point math and pure software rendering, built 2014-2018 and still one of the most referenced examples of what a solo developer can do writing native DOS code today rather than emulating the look of it."
@@ -4205,6 +4214,10 @@ window.GAMEPAGES_DATA = {
  "pc_hb_alienintruder": {
   "input": "keyboard",
   "note": "A single-screen jump-and-run in the mould of Miner 2049er or Jumpman &ndash; clear every platform, dodge or outrun what's hunting you. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "cakmTfZWtOw",
+   "title": "Longplay: Alien Intruder (2024) [MS-DOS]"
+  },
   "history": {
    "source": "Juan J. Martínez's own site, usebox.net, and covered by Indie Retro News the week it shipped.",
    "text": "Released free in December 2024 by a developer who has spent years writing small, genuinely native DOS games (and MSX ones) with full source available &ndash; part of why this vault could ship it outright rather than wait for someone to grab it later."
@@ -4263,6 +4276,10 @@ window.GAMEPAGES_DATA = {
  "pc_hb_acronia": {
   "input": "keyboard",
   "note": "A smooth-scrolling VGA action game, originally a DOS Games Jam prototype. Pay-what-you-want on itch.io; still needs adding to emulator/roms.",
+  "video": {
+   "id": "cM_0QdRptEw",
+   "title": "Acronia | official teaser trailer"
+  },
   "history": {
    "source": "Hadrosaurus Software's itch.io page (hadrosaurus.itch.io/acronia), first shown at the DOS Games Spring Jam 2021."
   }
@@ -4270,6 +4287,10 @@ window.GAMEPAGES_DATA = {
  "pc_hb_catsbroombas": {
   "input": "keyboard",
   "note": "A puzzle game about cats and broomsticks, built for DOS from the ground up. Pay-what-you-want on itch.io; still needs adding to emulator/roms.",
+  "video": {
+   "id": "JEZq1GlYD7I",
+   "title": "Cats on Broombas Demo Release Trailer"
+  },
   "history": {
    "source": "Eigen Lenk's itch.io page (eigen.itch.io/cats-on-broombas)."
   }
