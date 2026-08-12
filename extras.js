@@ -21,10 +21,19 @@ window.EXTRAS_DATA = {
   // perspective-corrected - see WORKLOG) replacing the old glare-heavy
   // photo; "printable map" is the same map tiled into 4 A4 sheets at
   // 300dpi for anyone who wants to print and assemble their own copy.
+  // "printable tokens" (added 2026-08-12) is a cut-and-glue replacement for
+  // the game's 34 physical fiches (rings, monsters, quest/turn markers, and
+  // the 23 double-sided castle tokens) - original line art redrawn from the
+  // manual's own symbol key, not a photo scan, so anyone who owns just the
+  // cartridge can still assemble a full playable set. The game (and its
+  // components) has been out of print for decades, so this - together with
+  // the map above - is what actually makes it playable again from just a
+  // ROM dump.
   "vp_42": {
     "box": "quest-for-the-rings-box.jpg",
     "map": "quest-for-the-rings-map.jpg",
-    "printable map": "quest-for-the-rings-map-print-4xA4.pdf"
+    "printable map": "quest-for-the-rings-map-print-4xA4.pdf",
+    "printable tokens": "quest-for-the-rings-fiches-printable.pdf"
   },
   // Newscaster's box back - the same cart sold across Europe, so the blurb
   // is printed in eight languages side by side.

@@ -3,8 +3,19 @@
 emulator/roms/
 emulator/bios/
 manuals/
-extras/
+# extras/ is ignored file-by-file (not as a whole directory) so the specific
+# exceptions below can still be un-ignored. See those for why.
+extras/*
 _brazil_staging/
+
+# Quest for the Rings (Videopac vp_42) is long out of print - without its
+# fold-out map and fiches, someone who only has the ROM can't actually play.
+# These three are your own reshoot/redraws (not scans of the publisher's
+# manual or box), so unlike the rest of extras/ they're meant to ship with
+# every clone/download of the Vault, not just live on your own machine.
+!extras/quest-for-the-rings-map.jpg
+!extras/quest-for-the-rings-map-print-4xA4.pdf
+!extras/quest-for-the-rings-fiches-printable.pdf
 
 # Cover art set aside rather than deleted - working files, not part of the Vault.
 covers/_needs-art/
