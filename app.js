@@ -914,6 +914,21 @@
 
   // The community panel is a carousel: on a 14-inch screen six cards wrapped
   // onto a second line and webretro ended up orphaned down there on its own.
+
+  // Each card's "what" description can be a plain string (old data, or a
+  // future hand-edit) or an { en, nl, de, fr, pt } object keyed the same
+  // way as window.I18N (2026-08-12). Pick the current site language out of
+  // it, falling back to English so a card missing one language's text still
+  // shows something rather than nothing. This is what makes the community
+  // cards actually re-translate when the language flag is switched - before
+  // this, only the panel's own heading/intro line went through window.t();
+  // the cards themselves were always plain English regardless of language.
+  function communityWhat(c) {
+    var w = c.what;
+    if (w && typeof w === "object") return w[window.currentLang()] || w.en;
+    return w;
+  }
+
   function communityBlock() {
     var list = (window.FEATURED_DATA || {}).community || [];
     var tpl = document.getElementById("communityTpl");
@@ -927,7 +942,7 @@
         'style="--tint:' + (c.tint || "#8a8f98") + '">' +
         '<span class="cname">' + c.name +
         (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
-        '<p class="cwhat">' + c.what + '</p></a>';
+        '<p class="cwhat">' + communityWhat(c) + '</p></a>';
     }).join("");
     wireCommunityCarousel(node, track);
     return node;
@@ -949,7 +964,7 @@
         'style="--tint:' + (c.tint || "#8a8f98") + '">' +
         '<span class="cname">' + c.name +
         (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
-        '<p class="cwhat">' + c.what + '</p></a>';
+        '<p class="cwhat">' + communityWhat(c) + '</p></a>';
     }).join("");
     wireCommunityCarousel(node, track);
     return node;
@@ -972,7 +987,7 @@
         'style="--tint:' + (c.tint || "#8a8f98") + '">' +
         '<span class="cname">' + c.name +
         (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
-        '<p class="cwhat">' + c.what + '</p></a>';
+        '<p class="cwhat">' + communityWhat(c) + '</p></a>';
     }).join("");
     wireCommunityCarousel(node, track);
     return node;

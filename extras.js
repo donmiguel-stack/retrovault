@@ -28,19 +28,37 @@ window.EXTRAS_DATA = {
   // cartridge can still assemble a full playable set. The game (and its
   // components) has been out of print for decades, so this - together with
   // the map above - is what actually makes it playable again from just a
-  // ROM dump.
+  // ROM dump. "german manual" (added 2026-08-12) is the full "Die Suche
+  // Nach Den Ringen" manual, sourced from a Swiss collector's own boxed
+  // copy at videopac.ch - see the community credit in featured.js.
   "vp_42": {
     "box": "quest-for-the-rings-box.jpg",
     "map": "quest-for-the-rings-map.jpg",
     "printable map": "quest-for-the-rings-map-print-4xA4.pdf",
-    "printable tokens": "quest-for-the-rings-fiches-printable.pdf"
+    "printable tokens": "quest-for-the-rings-fiches-printable.pdf",
+    "german manual": "quest-for-the-rings-manual-de.pdf"
   },
   // Newscaster's box back - the same cart sold across Europe, so the blurb
   // is printed in eight languages side by side.
   "vp_a": { "box back": "newscaster-box-back.jpg" },
   // No French dump of Conquest of the World exists, so the French box has no
-  // entry of its own - it lives here alongside the English one.
-  "vp_41": { "french box": "conquete-du-monde-box.jpg" },
+  // entry of its own - it lives here alongside the English one. "german
+  // manual" (added 2026-08-12) is the full "Eroberung der Welt" manual,
+  // sourced the same way as vp_42's above - videopac.ch, credited in the
+  // Videopac "Keeping this console alive" banner (featured.js).
+  "vp_41": {
+    "french box": "conquete-du-monde-box.jpg",
+    "german manual": "conquest-of-the-world-manual-de.pdf"
+  },
+  // The English manual with a German/French/Dutch/Italian/Danish/Swedish/
+  // Finnish/Spanish glossary of the game's specific terms bound into the
+  // back (pages 24-39 of the scan) - not full manuals in those languages,
+  // but the closest thing that exists for this title. Same source as vp_41
+  // and vp_42's German manuals above: a Swiss collector's own boxed copy at
+  // videopac.ch (2026-08-12).
+  "vp_46": {
+    "multi-language manual": "great-wall-street-fortune-hunt-manual-multilang.pdf"
+  },
   // Play Tag never had a printed box - this typed Dutch sheet is the only
   // documentation there is, and it's the sole place the key mapping is written
   // down (1-7 pick the 2-player handicap, 9 / : / space / L / P the 1-player

@@ -17,6 +17,18 @@ _brazil_staging/
 !extras/quest-for-the-rings-map-print-4xA4.pdf
 !extras/quest-for-the-rings-fiches-printable.pdf
 
+# Master Strategy Series manuals (Conquest of the World, Quest for the
+# Rings, Great Wall Street Fortune Hunt) - unlike the exception above,
+# these ARE scans of the publisher's own manuals (sourced from
+# odyssey2.info and videopac.ch, see vault-sources.md), not your own work.
+# Un-ignored anyway: all three games are 40+ years out of print and no
+# longer sold in any form, so there's no active commercial product these
+# scans compete with - same abandonware footing already applied to the
+# C64/PC shelves elsewhere in this project.
+!extras/conquest-of-the-world-manual-de.pdf
+!extras/quest-for-the-rings-manual-de.pdf
+!extras/great-wall-street-fortune-hunt-manual-multilang.pdf
+
 # Cover art set aside rather than deleted - working files, not part of the Vault.
 covers/_needs-art/
 covers/_replaced/

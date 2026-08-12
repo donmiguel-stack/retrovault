@@ -229,115 +229,255 @@ window.FEATURED_DATA = {
   // projects that document, catalogue and still actively support this
   // machine. Shown only on the C64 shelf (placeBlocks() in app.js gates it
   // on state.platform === "C64").
+  //
+  // "what" (2026-08-12): now an { en, nl, de, fr, pt } object instead of a
+  // plain string, same five codes as window.I18N in i18n.js. app.js's
+  // communityWhat() picks window.currentLang() out of it, falling back to
+  // .en - a plain string still works too (same fallback path), so this
+  // isn't a breaking change for anyone editing this file by hand. Fixes the
+  // bug where switching the site's language translated the "Keeping this
+  // console alive" heading and intro line (those already went through
+  // window.t()) but left every card's own text stuck in English, because
+  // the card text was never hooked into i18n at all until now.
   c64community: [
     { name: "CSDb",
       tint: "#5b8def",
       url: "https://csdb.dk/",
       lang: "International",
-      what: "The scene's own database - releases, screenshots and history for practically everything written for the machine since 1982, including several of the 2020s homebrews on this shelf." },
+      what: {
+        en: "The scene's own database - releases, screenshots and history for practically everything written for the machine since 1982, including several of the 2020s homebrews on this shelf.",
+        nl: "De eigen database van de scene - releases, screenshots en geschiedenis van vrijwel alles wat sinds 1982 voor de machine is geschreven, inclusief verschillende homebrews uit de jaren 2020 op deze plank.",
+        de: "Die eigene Datenbank der Szene - Releases, Screenshots und Geschichte zu praktisch allem, was seit 1982 für die Maschine geschrieben wurde, einschließlich mehrerer Homebrews der 2020er in diesem Regal.",
+        fr: "La base de données de la scène elle-même - sorties, captures d'écran et histoire de pratiquement tout ce qui a été écrit pour la machine depuis 1982, y compris plusieurs homebrews des années 2020 présents sur cette étagère.",
+        pt: "O banco de dados da própria cena - lançamentos, capturas de tela e história de praticamente tudo que foi escrito para a máquina desde 1982, incluindo várias homebrews dos anos 2020 nesta prateleira."
+      } },
     { name: "GameBase64",
       tint: "#2fb47c",
       url: "https://gamebase64.com/",
       lang: "International",
-      what: "The exhaustive commercial-game catalogue project this shelf's C64 ROMs and cover art were largely sourced from." },
+      what: {
+        en: "The exhaustive commercial-game catalogue project this shelf's C64 ROMs and cover art were largely sourced from.",
+        nl: "Het uitputtende catalogusproject voor commerciële games waar de C64-roms en cover-art van deze plank grotendeels vandaan komen.",
+        de: "Das umfassende Katalogprojekt für kommerzielle Spiele, aus dem die C64-ROMs und Cover-Art dieses Regals größtenteils stammen.",
+        fr: "Le projet de catalogue exhaustif des jeux commerciaux dont proviennent en grande partie les ROMs C64 et les jaquettes de cette étagère.",
+        pt: "O extenso projeto de catálogo de jogos comerciais de onde vêm, em grande parte, as ROMs de C64 e as artes de capa desta prateleira."
+      } },
     { name: "Lemon64",
       tint: "#e0865a",
       url: "https://www.lemon64.com/",
       lang: "International",
-      what: "One of the oldest and most active English-language C64 communities - reviews, box scans and a forum running since 2000." },
+      what: {
+        en: "One of the oldest and most active English-language C64 communities - reviews, box scans and a forum running since 2000.",
+        nl: "Een van de oudste en actiefste Engelstalige C64-gemeenschappen - reviews, doosscans en een forum dat al sinds 2000 draait.",
+        de: "Eine der ältesten und aktivsten englischsprachigen C64-Communitys - Rezensionen, Verpackungsscans und ein Forum, das seit 2000 läuft.",
+        fr: "L'une des communautés C64 anglophones les plus anciennes et les plus actives - critiques, scans de boîtes et un forum actif depuis 2000.",
+        pt: "Uma das comunidades C64 de língua inglesa mais antigas e ativas - resenhas, digitalizações de caixas e um fórum ativo desde 2000."
+      } },
     { name: "C64-Wiki",
       tint: "#c07de0",
       url: "https://www.c64-wiki.com/wiki/Main_Page",
       lang: "International",
-      what: "A community-run encyclopedia covering hardware, software and scene history, article by article." },
+      what: {
+        en: "A community-run encyclopedia covering hardware, software and scene history, article by article.",
+        nl: "Een door de gemeenschap beheerde encyclopedie over hardware, software en scenegeschiedenis, artikel voor artikel.",
+        de: "Eine von der Community betriebene Enzyklopädie zu Hardware, Software und Szenegeschichte, Artikel für Artikel.",
+        fr: "Une encyclopédie animée par la communauté, couvrant le matériel, les logiciels et l'histoire de la scène, article par article.",
+        pt: "Uma enciclopédia mantida pela comunidade, cobrindo hardware, software e a história da cena, artigo por artigo."
+      } },
     { name: "Protovision",
       tint: "#e0c05a",
       url: "https://www.protovision.games/",
       lang: "Germany",
-      what: "Still publishing brand new physical C64 cartridges and hardware today - proof this machine never actually stopped." },
+      what: {
+        en: "Still publishing brand new physical C64 cartridges and hardware today - proof this machine never actually stopped.",
+        nl: "Publiceert vandaag de dag nog steeds gloednieuwe fysieke C64-cartridges en hardware - het bewijs dat deze machine nooit echt is gestopt.",
+        de: "Veröffentlicht bis heute brandneue physische C64-Module und Hardware - der Beweis, dass diese Maschine nie wirklich aufgehört hat.",
+        fr: "Publie encore aujourd'hui de toutes nouvelles cartouches C64 physiques et du matériel - la preuve que cette machine n'a jamais vraiment cessé d'exister.",
+        pt: "Ainda hoje lança cartuchos físicos e hardware totalmente novos para o C64 - prova de que esta máquina nunca realmente parou."
+      } },
     { name: "VICE",
       tint: "#4fb3bf",
       url: "https://vice-emu.sourceforge.io/",
       lang: "Open source",
-      what: "The open-source emulator core this shelf's browser player actually runs on under the hood." }
+      what: {
+        en: "The open-source emulator core this shelf's browser player actually runs on under the hood.",
+        nl: "De open-source emulatorkern waar de browserspeler van deze plank onder de motorkap eigenlijk op draait.",
+        de: "Der Open-Source-Emulatorkern, auf dem der Browser-Player dieses Regals unter der Haube tatsächlich läuft.",
+        fr: "Le cœur d'émulation open source sur lequel tourne réellement, sous le capot, le lecteur navigateur de cette étagère.",
+        pt: "O núcleo de emulação de código aberto sobre o qual o player do navegador desta prateleira realmente roda por baixo dos panos."
+      } }
   ],
 
   // ---- Keeping this console alive, PC shelf ------------------------------
   // Same shape as "c64community" above, but for the MS-DOS shelf - the
   // forums, catalogues and jam communities that document and actively grow
   // this shelf's homebrew section. Shown only on the PC shelf (placeBlocks()
-  // in app.js gates it on state.platform === "PC").
+  // in app.js gates it on state.platform === "PC"). "what" is a translated
+  // object, see the note above c64community.
   pccommunity: [
     { name: "VOGONS",
       tint: "#5b8def",
       url: "https://www.vogons.org/",
       lang: "International",
-      what: "The largest active DOS and vintage-PC hardware forum on the internet - troubleshooting real DOSBox configs and real 486s in the same threads since 2003." },
+      what: {
+        en: "The largest active DOS and vintage-PC hardware forum on the internet - troubleshooting real DOSBox configs and real 486s in the same threads since 2003.",
+        nl: "Het grootste actieve DOS- en vintage-pc-hardwareforum op internet - sinds 2003 worden in dezelfde topics zowel echte DOSBox-configuraties als echte 486's uitgeplozen.",
+        de: "Das größte aktive DOS- und Vintage-PC-Hardware-Forum im Internet - seit 2003 werden in denselben Threads echte DOSBox-Konfigurationen und echte 486er behandelt.",
+        fr: "Le plus grand forum actif sur le DOS et le matériel PC vintage sur internet - on y dépanne, dans les mêmes fils, de vraies configs DOSBox et de vrais 486 depuis 2003.",
+        pt: "O maior fórum ativo sobre DOS e hardware de PC vintage da internet - resolvendo problemas de configurações reais do DOSBox e de 486 de verdade nos mesmos tópicos desde 2003."
+      } },
     { name: "DOSGames.com",
       tint: "#2fb47c",
       url: "https://www.dosgames.com/",
       lang: "International",
-      what: "Free DOS game downloads and reviews running since 1998, with an active homebrew-author section covering exactly this scene." },
+      what: {
+        en: "Free DOS game downloads and reviews running since 1998, with an active homebrew-author section covering exactly this scene.",
+        nl: "Gratis DOS-gamedownloads en -reviews, al sinds 1998 online, met een actieve homebrew-auteurssectie die precies deze scene bestrijkt.",
+        de: "Kostenlose DOS-Spiele-Downloads und Rezensionen, seit 1998 online, mit einem aktiven Homebrew-Autoren-Bereich, der genau diese Szene abdeckt.",
+        fr: "Téléchargements et critiques de jeux DOS gratuits en ligne depuis 1998, avec une section active dédiée aux auteurs homebrew qui couvre exactement cette scène.",
+        pt: "Downloads e resenhas gratuitas de jogos DOS no ar desde 1998, com uma seção ativa de autores homebrew que cobre exatamente essa cena."
+      } },
     { name: "DOS haven",
       tint: "#e0865a",
       url: "https://www.doshaven.eu/",
       lang: "International",
-      what: "A blog and database built specifically around brand-new DOS releases - this shelf's homebrew picks lean on it more than anywhere else." },
+      what: {
+        en: "A blog and database built specifically around brand-new DOS releases - this shelf's homebrew picks lean on it more than anywhere else.",
+        nl: "Een blog en database die specifiek is opgebouwd rond gloednieuwe DOS-releases - de homebrew-keuzes van deze plank leunen hier meer op dan op wat dan ook.",
+        de: "Ein Blog und eine Datenbank, die sich gezielt um brandneue DOS-Veröffentlichungen dreht - die Homebrew-Auswahl dieses Regals stützt sich mehr darauf als auf alles andere.",
+        fr: "Un blog et une base de données construits spécifiquement autour des toutes nouvelles sorties DOS - les choix homebrew de cette étagère s'y appuient plus que sur toute autre source.",
+        pt: "Um blog e banco de dados construídos especificamente em torno de lançamentos DOS novinhos em folha - as escolhas homebrew desta prateleira dependem mais dele do que de qualquer outro lugar."
+      } },
     { name: "Cyningstan DOS Games",
       tint: "#e0c05a",
       url: "http://dos.cyningstan.org.uk/",
       lang: "International",
-      what: "One developer still writing original 8088/CGA-era DOS games and giving away the source - two of them, Barren Planet and The Chambers Beneath, are on this shelf." },
+      what: {
+        en: "One developer still writing original 8088/CGA-era DOS games and giving away the source - two of them, Barren Planet and The Chambers Beneath, are on this shelf.",
+        nl: "Eén ontwikkelaar die nog steeds originele DOS-spellen uit het 8088/CGA-tijdperk schrijft en de broncode weggeeft - twee daarvan, Barren Planet en The Chambers Beneath, staan op deze plank.",
+        de: "Ein Entwickler, der noch immer originale DOS-Spiele aus der 8088/CGA-Ära schreibt und den Quellcode verschenkt - zwei davon, Barren Planet und The Chambers Beneath, stehen in diesem Regal.",
+        fr: "Un développeur qui écrit encore des jeux DOS originaux de l'ère 8088/CGA et distribue le code source - deux d'entre eux, Barren Planet et The Chambers Beneath, sont sur cette étagère.",
+        pt: "Um desenvolvedor que ainda escreve jogos DOS originais da era 8088/CGA e distribui o código-fonte de graça - dois deles, Barren Planet e The Chambers Beneath, estão nesta prateleira."
+      } },
     { name: "DOS Games Jam",
       tint: "#c07de0",
       url: "https://itch.io/jam/dos-games-jam",
       lang: "International",
-      what: "The recurring itch.io jam family - DOSember every December, plus spring, summer and fall runs - that's the actual source of most of this shelf's homebrew, several of them jam entries themselves." },
+      what: {
+        en: "The recurring itch.io jam family - DOSember every December, plus spring, summer and fall runs - that's the actual source of most of this shelf's homebrew, several of them jam entries themselves.",
+        nl: "De terugkerende itch.io-jamfamilie - elke december DOSember, plus lente-, zomer- en herfsteditie - is de echte bron van het meeste homebrew op deze plank, waarvan meerdere zelf jam-inzendingen zijn.",
+        de: "Die wiederkehrende itch.io-Jam-Familie - jedes Jahr im Dezember DOSember, dazu Frühlings-, Sommer- und Herbstausgaben - ist die eigentliche Quelle für die meisten Homebrews in diesem Regal, von denen einige selbst Jam-Beiträge sind.",
+        fr: "La famille de jams itch.io récurrents - DOSember chaque décembre, plus les éditions de printemps, d'été et d'automne - est la véritable source de la plupart des homebrews de cette étagère, dont plusieurs sont eux-mêmes des créations de jam.",
+        pt: "A recorrente família de jams do itch.io - o DOSember todo mês de dezembro, além das edições de primavera, verão e outono - é a fonte real da maior parte das homebrews desta prateleira, várias delas próprias participantes de jam."
+      } },
     { name: "js-dos",
       tint: "#4fb3bf",
       url: "https://js-dos.com/",
       lang: "Open source",
-      what: "The open-source DOSBox-in-the-browser project this shelf's player actually runs on under the hood." }
+      what: {
+        en: "The open-source DOSBox-in-the-browser project this shelf's player actually runs on under the hood.",
+        nl: "Het open-source DOSBox-in-de-browser-project waar de speler van deze plank onder de motorkap eigenlijk op draait.",
+        de: "Das Open-Source-Projekt DOSBox-im-Browser, auf dem der Player dieses Regals unter der Haube tatsächlich läuft.",
+        fr: "Le projet open source DOSBox-dans-le-navigateur sur lequel tourne réellement, sous le capot, le lecteur de cette étagère.",
+        pt: "O projeto de código aberto DOSBox-no-navegador sobre o qual o player desta prateleira realmente roda por baixo dos panos."
+      } }
   ],
 
   // ---- Community --------------------------------------------------------
   // The people keeping this machine documented. Most of what is in the Vault
-  // came from these sites; the least it can do is send traffic back.
+  // came from these sites; the least it can do is send traffic back. "what"
+  // is a translated object, see the note above c64community. videopac.ch
+  // added 2026-08-12: source of the German Conquest of the World and Quest
+  // for the Rings manuals plus the multi-language glossary in the Wall
+  // Street Fortune Hunt one, all three now in their games' Extras sections.
   community: [
     { name: "Odyssey Clube",
       tint: "#2fb47c",
       url: "https://odysseyclube.com",
       lang: "Brazil",
-      what: "The Brazilian releases: box scans, manuals, magazines and the game descriptions used on those pages here." },
+      what: {
+        en: "The Brazilian releases: box scans, manuals, magazines and the game descriptions used on those pages here.",
+        nl: "De Braziliaanse releases: doosscans, handleidingen, tijdschriften en de spelomschrijvingen die hier gebruikt worden.",
+        de: "Die brasilianischen Veröffentlichungen: Verpackungsscans, Anleitungen, Magazine und die Spielbeschreibungen, die hier verwendet werden.",
+        fr: "Les éditions brésiliennes : scans de boîtes, notices, magazines et les descriptions de jeux utilisées ici.",
+        pt: "As edições brasileiras: digitalizações de caixas, manuais, revistas e as descrições dos jogos usadas aqui."
+      } },
     { name: "The Odyssey² Homepage",
       tint: "#5b8def",
       url: "https://odyssey2.info",
       lang: "USA",
-      what: "William Cassidy's database — every cartridge by region, with prototypes and rumours carefully separated from releases." },
+      what: {
+        en: "William Cassidy's database — every cartridge by region, with prototypes and rumours carefully separated from releases.",
+        nl: "William Cassidy's database — elke cartridge per regio, met prototypes en geruchten zorgvuldig gescheiden van echte releases.",
+        de: "William Cassidys Datenbank — jedes Modul nach Region, mit Prototypen und Gerüchten sorgfältig von echten Veröffentlichungen getrennt.",
+        fr: "La base de données de William Cassidy — chaque cartouche par région, avec prototypes et rumeurs soigneusement distingués des sorties officielles.",
+        pt: "O banco de dados de William Cassidy — cada cartucho por região, com protótipos e boatos cuidadosamente separados dos lançamentos reais."
+      } },
     { name: "Videopac.nl",
       tint: "#e0865a",
       url: "https://videopac.nl",
       lang: "Netherlands",
-      what: "Long-running fan site and forum, and the best source on the Jopac line and the French exclusives." },
+      what: {
+        en: "Long-running fan site and forum, and the best source on the Jopac line and the French exclusives.",
+        nl: "Al jarenlange fansite en forum, en de beste bron over de Jopac-lijn en de Franse exclusieves.",
+        de: "Seit Jahren aktive Fanseite und Forum, und die beste Quelle zur Jopac-Reihe und den französischen Exklusivtiteln.",
+        fr: "Site de fans et forum actif depuis des années, la meilleure source sur la gamme Jopac et les exclusivités françaises.",
+        pt: "Site de fãs e fórum ativo há muitos anos, e a melhor fonte sobre a linha Jopac e os exclusivos franceses."
+      } },
     { name: "Videopac.org",
       tint: "#c07de0",
       url: "http://www.videopac.org",
       lang: "International",
-      what: "Collector's database of cartridge variants, box numbers and packaging." },
+      what: {
+        en: "Collector's database of cartridge variants, box numbers and packaging.",
+        nl: "Verzamelaarsdatabase van cartridge-varianten, doosnummers en verpakking.",
+        de: "Sammlerdatenbank zu Modulvarianten, Verpackungsnummern und Verpackung.",
+        fr: "Base de données de collectionneurs sur les variantes de cartouches, numéros de boîte et emballages.",
+        pt: "Banco de dados de colecionadores sobre variantes de cartuchos, números de caixa e embalagens."
+      } },
     { name: "Internet Archive — Odyssey² manuals",
       tint: "#e0c05a",
       url: "https://archive.org/details/odysseymanuals",
       lang: "International",
-      what: "The scanned manual collection every manual reader in the Vault is drawn from." },
+      what: {
+        en: "The scanned manual collection every manual reader in the Vault is drawn from.",
+        nl: "De gescande handleidingencollectie waar elke handleiding-lezer in de Vault uit put.",
+        de: "Die gescannte Anleitungssammlung, aus der jeder Anleitungs-Reader im Vault stammt.",
+        fr: "La collection de notices numérisées dont provient chaque lecteur de notice dans le Vault.",
+        pt: "A coleção de manuais digitalizados da qual vem cada leitor de manual do Vault."
+      } },
     { name: "Rafael Cardoso — Jogos Odyssey",
       tint: "#e0865a",
       url: "https://www.youtube.com/@heatseekerbr",
       lang: "Brazil",
-      what: "The author of Route 66, still writing games for this console and posting each one as it comes — over a hundred videos of his own projects." },
+      what: {
+        en: "The author of Route 66, still writing games for this console and posting each one as it comes — over a hundred videos of his own projects.",
+        nl: "De maker van Route 66, die nog steeds spellen voor deze console schrijft en elk nieuw project deelt — meer dan honderd video's van zijn eigen werk.",
+        de: "Der Autor von Route 66, der immer noch Spiele für diese Konsole schreibt und jedes neue Projekt postet — über hundert Videos seiner eigenen Arbeiten.",
+        fr: "L'auteur de Route 66, qui écrit encore des jeux pour cette console et publie chacun d'eux au fil de l'eau — plus d'une centaine de vidéos de ses propres projets.",
+        pt: "O autor de Route 66, que ainda escreve jogos para este console e publica cada um assim que fica pronto — mais de cem vídeos de seus próprios projetos."
+      } },
     { name: "webretro",
       tint: "#4fb3bf",
       url: "https://github.com/BinBashBanana/webretro",
       lang: "Open source",
-      what: "The browser front-end for libretro that runs the games here, by BinBashBanana." }
+      what: {
+        en: "The browser front-end for libretro that runs the games here, by BinBashBanana.",
+        nl: "De browser-frontend voor libretro die de spellen hier draait, gemaakt door BinBashBanana.",
+        de: "Das Browser-Frontend für libretro, das die Spiele hier zum Laufen bringt, von BinBashBanana.",
+        fr: "L'interface navigateur pour libretro qui fait tourner les jeux ici, par BinBashBanana.",
+        pt: "A interface de navegador para o libretro que roda os jogos aqui, feita por BinBashBanana."
+      } },
+    { name: "videopac.ch",
+      tint: "#8a8f98",
+      url: "https://videopac.ch",
+      lang: "Switzerland",
+      what: {
+        en: "A Swiss collector's own boxed copies, scanned and shared — source of the German Conquest of the World and Quest for the Rings manuals in this Vault's Extras sections, plus the multi-language glossary bound into the Wall Street Fortune Hunt one.",
+        nl: "De eigen boxed exemplaren van een Zwitserse verzamelaar, gescand en gedeeld — hier komen de Duitse handleidingen van Conquest of the World en Quest for the Rings in de Extras van deze Vault vandaan, plus de meertalige woordenlijst in de handleiding van Wall Street Fortune Hunt.",
+        de: "Die eigenen originalverpackten Exemplare eines Schweizer Sammlers, gescannt und geteilt — Quelle der deutschen Anleitungen zu Conquest of the World und Quest for the Rings in den Extras dieses Vaults, sowie des mehrsprachigen Glossars in der Wall-Street-Fortune-Hunt-Anleitung.",
+        fr: "Les propres exemplaires en boîte d'un collectionneur suisse, numérisés et partagés — source des notices allemandes de Conquest of the World et Quest for the Rings dans les Extras de ce Vault, ainsi que du glossaire multilingue relié dans celle de Wall Street Fortune Hunt.",
+        pt: "Os próprios exemplares originais de um colecionador suíço, digitalizados e compartilhados — fonte dos manuais em alemão de Conquest of the World e Quest for the Rings nos Extras deste Vault, além do glossário multilíngue incluído no manual de Wall Street Fortune Hunt."
+      } }
   ]
 };
