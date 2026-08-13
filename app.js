@@ -1,6 +1,6 @@
 (function () {
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 28;
+  var COVER_V = 29;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
   var CLIP_V = 7;
 
@@ -793,6 +793,18 @@
     var gp = (window.GAMEPAGES_DATA || {})[g.id] || {};
     var vid = gp.video && gp.video.id ? gp.video.id : "";
     var contents = (pick.contents || []).map(function (c) { return "<li>" + c + "</li>"; }).join("");
+    // Regional/standalone releases of this same game that carry no
+    // vpNumber of their own (e.g. br_9434 for vp_46) - filtered against
+    // state.games the same way `picks` itself is, so a variant id typo'd
+    // or not yet in the catalogue just silently drops instead of 404ing.
+    var variants = (pick.variants || []).filter(function (v) {
+      return state.games.some(function (g2) { return g2.id === v.id; });
+    });
+    var variantsHtml = variants.length
+      ? '<p class="ms-variants">' + variants.map(function (v) {
+          return 'Also released as <a href="game.html?id=' + encodeURIComponent(v.id) + '">' + v.label + '</a>';
+        }).join(" &middot; ") + '</p>'
+      : "";
     return (
       '<div class="ms-card">' +
         '<div class="ms-card-top">' +
@@ -806,6 +818,7 @@
         '</div>' +
         '<p class="ms-blurb">' + pick.blurb + '</p>' +
         (contents ? '<ul class="ms-contents">' + contents + '</ul>' : '') +
+        variantsHtml +
         '<div class="ms-media">' +
           '<div class="ms-media-box">' +
             '<div class="ms-media-frame ms-video" data-gid="' + g.id + '" data-vid="' + vid + '">' +

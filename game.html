@@ -331,6 +331,19 @@
     info.appendChild(el("p","history-text","No published history for this one - it lives on through cartridge dumps and collections like this vault."));
   }
 
+  // Points a regional/standalone release at the game it's a variant of (or
+  // vice versa) when the two aren't already tied together by vpNumber - e.g.
+  // br_9434 (Wall Street, Brazil) is a standalone G7000 release of vp_46
+  // (The Great Wall Street Fortune Hunt) but carries no vpNumber of its own,
+  // so it never shows up next to vp_46 in the Master Strategy Series banner.
+  // innerHTML (not textContent) because the note is written with a link in
+  // it, same pattern as the variant-note block below.
+  if (data.relatedTo) {
+    var rel = el("p","variant-note");
+    rel.innerHTML = data.relatedTo.note;
+    info.appendChild(rel);
+  }
+
   // more than one dump of this cart survives - say what this one is
   if (variantKeys) {
     var vn = el("p","variant-note");

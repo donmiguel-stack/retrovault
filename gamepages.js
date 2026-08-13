@@ -2986,6 +2986,9 @@ window.GAMEPAGES_DATA = {
    "item": "br_9434",
    "pages": 13,
    "source": "Wall Street - manual scan, odysseyclube.com"
+  },
+  "relatedTo": {
+   "note": "Wall Street is the standalone Brazilian G7000 release of <a href=\"game.html?id=vp_46\">The Great Wall Street Fortune Hunt</a>, part of Philips' Master Strategy Series - see it there for the board, tokens and multi-language manual that shipped in other regions' boxes."
   }
  },
  "br_9461": {

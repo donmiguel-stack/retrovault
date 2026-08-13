@@ -414,6 +414,12 @@ body{
 .ms-blurb{margin:0; font-size:13px; line-height:1.6; color:var(--text-dim);}
 .ms-contents{margin:0; padding-left:17px; font-size:12px; line-height:1.55; color:var(--text-mute);}
 .ms-contents li{margin:0 0 2px;}
+/* Regional/standalone releases of the same game that don't share this
+   card's vpNumber, so they'd otherwise never surface next to it - see
+   msCard() in app.js and the "variants" field in featured.js. */
+.ms-variants{margin:6px 0 0; font-size:12px; line-height:1.5; color:var(--text-mute);}
+.ms-variants a{color:var(--accent); text-decoration:none;}
+.ms-variants a:hover{text-decoration:underline;}
 .ms-media{display:flex; gap:10px; margin-top:auto;}
 .ms-media-box{flex:1 1 50%; min-width:0; display:flex; flex-direction:column; gap:5px;}
 .ms-media-frame{

@@ -82,6 +82,15 @@ window.FEATURED_DATA = {
         "7 green &amp; 7 gold margin/share tokens",
         "Gold &amp; silver prime-rate tokens",
         "Time-frame token"
+      ],
+      // br_9434 (Wall Street) is a standalone Brazilian G7000 release of
+      // this same game, but it carries no vpNumber of its own, so it's
+      // otherwise invisible to anything that cross-references the vault by
+      // VP catalogue number - this is what puts it on the card (see
+      // msCard() in app.js). See the matching "relatedTo" note on
+      // br_9434's own page (gamepages.js) for the link back the other way.
+      variants: [
+        { id: "br_9434", label: "Brazil (standalone G7000 release, as \"Wall Street\")" }
       ] }
   ],
 

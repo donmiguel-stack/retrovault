@@ -30,6 +30,26 @@ _brazil_staging/
 !extras/quest-for-the-rings-manual-de.pdf
 !extras/great-wall-street-fortune-hunt-manual-multilang.pdf
 
+# 2026-08-13 videopac.ch batch - same abandonware footing as the block
+# above (all Videopac/G7000/G7400 carts, decades out of print, no active
+# commercial product these compete with). Covers box art variants, board/
+# map scans, keyboard overlays and manuals for titles that had none in the
+# Vault yet (Verkehrsspiele 1/2 had no manual at all; Computer Programmer's
+# old "manual" was actually a misfiled club newsletter, now relabeled and
+# replaced with the real thing - see extras.js).
+!extras/computer-programmer-manual.pdf
+!extras/computer-programmer-clubnews-issue3.pdf
+!extras/conquest-of-the-world-map.jpg
+!extras/musician-overlay-g7000.jpg
+!extras/musician-overlay-g7200.jpg
+!extras/quest-for-the-rings-overlay-g7000.jpg
+!extras/quest-for-the-rings-overlay-g7200.jpg
+!extras/verkehrsspiele-1-manual-de.pdf
+!extras/verkehrsspiele-2-manual-de.pdf
+!extras/great-wall-street-fortune-hunt-box.jpg
+!extras/great-wall-street-fortune-hunt-box-brazil.jpg
+!extras/great-wall-street-fortune-hunt-box-odyssey2.jpg
+
 # Cover art set aside rather than deleted - working files, not part of the Vault.
 covers/_needs-art/
 covers/_replaced/
