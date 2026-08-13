@@ -8,6 +8,13 @@ manuals/
 extras/*
 _brazil_staging/
 
+# Leftover advisory git-lock files (index.lock, HEAD.lock, maintenance.lock
+# and their stale/timestamped variants) moved here instead of deleted -
+# device_bash (the cloud session's bridge to this Mac) can't unlink files on
+# this mounted folder, only move them. Empty junk, never meant to be
+# committed; ignored so it stops showing up as changes.
+_to_delete/
+
 # Quest for the Rings (Videopac vp_42) is long out of print - without its
 # fold-out map and fiches, someone who only has the ROM can't actually play.
 # These three are your own reshoot/redraws (not scans of the publisher's
