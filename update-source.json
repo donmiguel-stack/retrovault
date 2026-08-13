@@ -1,4 +1,4 @@
 {
   "_comment": "Where the Update button looks for newer catalogue data - covers, the catalogue, translations. Nothing is fetched until you press the button. Point this somewhere else if you keep your own copy, or blank it to switch updates off entirely. This file is deliberately left out of manifest.json, so an update can never overwrite your choice.",
-  "base": "https://raw.githubusercontent.com/donmiguel-stack/videopac-odyssey-vault/main"
+  "base": "https://raw.githubusercontent.com/donmiguel-stack/retrovault/main"
 }
