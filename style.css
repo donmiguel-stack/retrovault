@@ -47,6 +47,17 @@ body{
 }
 .ghost-btn:hover{border-color:var(--accent);color:var(--text);}
 
+/* Icon-only social links (GitHub/X/Instagram) in the topbar - no text
+   labels, plain mute-gray until hovered, then the same accent blue as
+   everything else interactive on the page (search focus ring, chip
+   active state, ghost-btn hover). Lives on the far right of the topbar
+   on both index.html and game.html via margin-left:auto, same trick
+   .nav uses on the retrovault.world site. */
+.social-links{display:flex;align-items:center;gap:14px;margin-left:auto;}
+.social-links a{color:var(--text-mute);display:flex;line-height:0;}
+.social-links svg{width:18px;height:18px;fill:currentColor;transition:fill .15s;}
+.social-links a:hover svg{fill:var(--accent);}
+
 /* Update button, when the watcher has found something waiting. Yellow, like
    the import/export buttons - that reads on its own without a badge too. */
 #updateBtn.has-updates{
