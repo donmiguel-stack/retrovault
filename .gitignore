@@ -100,3 +100,6 @@ extras.js.bak
 # are); if you'd rather not redistribute the real scans, `git checkout` those
 # files before committing, or uncomment the next line.
 # covers/c64_*.png
+
+# Social-media clip drafts (Mike's own posts, not part of the app)
+social-clips/
