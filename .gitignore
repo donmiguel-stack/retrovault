@@ -35,10 +35,8 @@ _brazil_staging/
 # commercial product these compete with). Covers box art variants, board/
 # map scans, keyboard overlays and manuals for titles that had none in the
 # Vault yet (Verkehrsspiele 1/2 had no manual at all; Computer Programmer's
-# old "manual" was actually a misfiled club newsletter, now relabeled and
-# replaced with the real thing - see extras.js).
+# old placeholder "manual" replaced with the real thing - see extras.js).
 !extras/computer-programmer-manual.pdf
-!extras/computer-programmer-clubnews-issue3.pdf
 !extras/conquest-of-the-world-map.jpg
 !extras/musician-overlay-g7000.jpg
 !extras/musician-overlay-g7200.jpg

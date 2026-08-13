@@ -14,18 +14,15 @@
 // and vp_31 (Musician), csv1/csv2 (Verkehrsspiele) gained entries the
 // same day.
 window.EXTRAS_DATA = {
-  // The file that used to sit here as "manual" was actually a G7000
-  // Videogames Club News newsletter (Issue 3) that happens to include a
-  // "Spotlight on a great game - No.9 Computer Programmer" feature - not
-  // the cartridge's own manual. It's kept below as "club newsletter" so
-  // that curiosity isn't lost, now correctly labeled. "manual" now points
-  // to the actual, complete Computer Programmer manual (84 pages, covers
-  // COMMAND/ASSEMBLER/GTO. 32 and the rest of the language) - sourced
-  // 2026-08-13 from a Swiss collector's own boxed copy at videopac.ch, same
-  // source as the vp_41/vp_42/vp_46 non-English manuals below.
+  // The file that used to sit here as "manual" was just a placeholder (a
+  // G7000 Videogames Club News newsletter, Issue 3 - not the cartridge's
+  // own manual) - removed 2026-08-13. "manual" now points to the actual,
+  // complete Computer Programmer manual (84 pages, covers COMMAND/
+  // ASSEMBLER/GTO.32 and the rest of the language) - sourced 2026-08-13
+  // from a Swiss collector's own boxed copy at videopac.ch, same source as
+  // the vp_41/vp_42/vp_46 non-English manuals below.
   "vp_09": {
-    "manual": "computer-programmer-manual.pdf",
-    "club newsletter": "computer-programmer-clubnews-issue3.pdf"
+    "manual": "computer-programmer-manual.pdf"
   },
   // The Quest for the Rings box is a wide wraparound painting - the card art
   // has to crop it, so the whole thing is here at full width. "map" is the
