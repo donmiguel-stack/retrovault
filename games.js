@@ -3175,8 +3175,8 @@ window.GAMES_DATA = {
     "tags": [],
     "romFile": "Bagman Strikes Back.d64",
     "year": 2022,
-    "publisher": "Laxity",
-    "developer": "Laxity"
+    "publisher": "LC-Games",
+    "developer": "LC-Games"
   },
   {
     "id": "c64_hb_galaxian_dx",

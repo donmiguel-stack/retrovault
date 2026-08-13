@@ -179,7 +179,7 @@ window.FEATURED_DATA = {
     { id: "c64_hb_luftrauserz", shot: "c64_hb_luftrauserz.png",
       blurb: "Triad squeezed 2014's PC dogfighter Luftrausers onto real C64 silicon in 2017 — physics-driven plane combat the hardware was never supposed to run." },
     { id: "c64_hb_bagman_strikes_back", shot: "c64_hb_bagman_strikes_back.png",
-      blurb: "Laxity's 2022 tribute to the 1983 arcade platformer Bagman — a thief hauling gold up ladders, dodging guards, forty years and one homebrew scene later." },
+      blurb: "LC-Games' 2022 tribute to the 1983 arcade platformer Bagman — a thief hauling gold up ladders, dodging guards, forty years and one homebrew scene later." },
     { id: "c64_hb_grid_pix", shot: "c64_hb_grid_pix.png",
       blurb: "Excess brought Picross to the C64 in 2020 — a genre the original Videopac and C64 shelves never had — later picked up for a real boxed cartridge release." }
   ],

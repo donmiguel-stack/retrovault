@@ -3835,7 +3835,7 @@ window.GAMEPAGES_DATA = {
    "title": "Bagman Strikes Back (C64) - Longplay - Hard difficulty, All 24 stages"
   },
   "history": {
-   "text": "Laxity's 2022 unofficial follow-up to the 1983 arcade platformer Bagman keeps the core loop intact — a mustachioed thief hauling sacks of gold up ladders while dodging guards — nearly forty years after the coin-op original."
+   "text": "LC-Games' 2022 unofficial follow-up to the 1983 arcade platformer Bagman keeps the core loop intact — a mustachioed thief hauling sacks of gold up ladders while dodging guards — nearly forty years after the coin-op original."
   }
  },
  "c64_hb_galaxian_dx": {

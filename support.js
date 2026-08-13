@@ -91,7 +91,7 @@ window.SUPPORT_DATA = {
   ],
 
   "c64_hb_bagman_strikes_back": [
-    { creator: "LC-Games / Laxity",
+    { creator: "LC-Games",
       url:     "https://lowcarb.itch.io/bagman-strikes-back-c64",
       note:    "Click download - pay what you want",
       checked: "2026-08-07" }
