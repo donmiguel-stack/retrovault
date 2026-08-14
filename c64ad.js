@@ -1,12 +1,10 @@
 // The C64-style "advertise here" banner, shared by the library (app.js) and the
 // individual game pages (game.html). window.buildC64Ad(sponsor) returns a DOM
-// node: a C64 screen (light-blue border, blue paper) with rainbow raster bars
-// and a sine-wave demo-scene scroller. The sponsor object is the same shape as
+// node: a C64 screen (light-blue border, blue paper) with one big rainbow
+// raster bar and a bright-silver demo-scene scroller whose shine sweeps the
+// length of the text and back. The sponsor object is the same shape as
 // FEATURED_DATA.sponsors[] — { name, url, text, attract } — all optional.
 (function () {
-  var PAL = ["#c0564d", "#8B5429", "#BFCE72", "#55A049", "#67B6BD",
-             "#7869C4", "#8B3F96", "#B86962", "#94E089"];
-
   window.buildC64Ad = function (sp) {
     // Just the one line - "ADVERTISE HERE" between stars - repeated so it fills
     // the width and loops seamlessly. No shop copy, no top/bottom status lines.
@@ -16,25 +14,28 @@
     var wrap = document.createElement("div"); wrap.className = "c64ad";
     var screen = document.createElement("div"); screen.className = "c64ad-screen"; wrap.appendChild(screen);
 
-    // Classic C64 raster bars: a few thick bars, each a gradient that is bright
-    // in the middle and fades to nothing at top and bottom (a glowing tube),
-    // sliding smoothly up and down the screen.
+    // One big, thick classic C64 raster bar (used to be four thinner ones,
+    // then one thinner single bar - now doubled again) - a gradient bright
+    // in the middle with a punchy, high-contrast fade to nothing top and
+    // bottom (a glowing tube, not a soft haze), sliding smoothly up and
+    // down the screen.
     function rgba(hex, a) {
       var n = parseInt(hex.slice(1), 16);
       return "rgba(" + ((n >> 16) & 255) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")";
     }
     var rasters = document.createElement("div"); rasters.className = "c64ad-rasters"; screen.appendChild(rasters);
-    var BAR_COLORS = ["#c0564d", "#BFCE72", "#67B6BD", "#8B3F96"];
-    var BAR_H = 46, bars = [];
-    for (var i = 0; i < BAR_COLORS.length; i++) {
-      var bar = document.createElement("i"); var col = BAR_COLORS[i];
-      bar.style.height = BAR_H + "px";
-      bar.style.background = "linear-gradient(to bottom," +
-        rgba(col, 0) + " 0%," + rgba(col, .85) + " 34%," +
-        "rgba(255,255,255,.9) 50%," + rgba(col, .85) + " 66%," + rgba(col, 0) + " 100%)";
-      bar.style.top = (10 + i * 46) + "px";
-      rasters.appendChild(bar); bars.push(bar);
-    }
+    var BAR_COLOR = "#67B6BD", BAR_H = 220;   // twice the previous 110px
+    var bar = document.createElement("i");
+    bar.style.height = BAR_H + "px";
+    // Fewer, punchier stops than before: full-strength colour by 15%/85%
+    // instead of a slow 0->34% ramp, and full opacity instead of .85 - a
+    // harder-edged glowing tube rather than a gentle haze.
+    bar.style.background = "linear-gradient(to bottom," +
+      rgba(BAR_COLOR, 0) + " 0%," + rgba(BAR_COLOR, 1) + " 15%," +
+      "rgba(255,255,255,1) 50%," + rgba(BAR_COLOR, 1) + " 85%," + rgba(BAR_COLOR, 0) + " 100%)";
+    bar.style.top = "10px";
+    rasters.appendChild(bar);
+    var bars = [bar];   // still an array - the slide/animate loop below is unchanged, just one entry now
 
     var band = document.createElement("div"); band.className = "c64ad-band"; screen.appendChild(band);
     var scr = document.createElement("div"); scr.className = "c64ad-scroller"; band.appendChild(scr);
@@ -46,18 +47,31 @@
       scr.appendChild(b); letters.push(b);
     }
 
-
-    // Each letter gets a FIXED colour (a steady rainbow across the text) — no
-    // per-frame colour cycling, which is what made it strobe. Motion is kept
-    // smooth and slow: a horizontal scroll, a gentle vertical wave on the text,
-    // and the raster bars gliding up and down.
-    for (var k = 0; k < letters.length; k++) letters[k].style.color = PAL[k % PAL.length];
+    // Bright silver text with a soft shine that sweeps across the length of
+    // the string and back - like light catching brushed chrome - rather than
+    // the old fixed rainbow-per-letter colouring. "peak" is a position in
+    // letters[] (not screen space, same as the old per-letter rainbow used
+    // character index rather than pixel position); a Gaussian falloff around
+    // it gives a smooth glow with no hard edge.
+    var SILVER_DIM = [118, 122, 132], SILVER_BRIGHT = [255, 255, 255];
+    function paintSilver(peak) {
+      var span = Math.max(1, letters.length * 0.16);
+      for (var i = 0; i < letters.length; i++) {
+        var d = (i - peak) / span;
+        var g = Math.exp(-d * d * 2.2);
+        var r = SILVER_DIM[0] + (SILVER_BRIGHT[0] - SILVER_DIM[0]) * g;
+        var gg = SILVER_DIM[1] + (SILVER_BRIGHT[1] - SILVER_DIM[1]) * g;
+        var bl = SILVER_DIM[2] + (SILVER_BRIGHT[2] - SILVER_DIM[2]) * g;
+        letters[i].style.color = "rgb(" + (r | 0) + "," + (gg | 0) + "," + (bl | 0) + ")";
+      }
+    }
+    paintSilver(0);
 
     // Respect the OS "reduce motion" setting: leave it as a static banner.
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return wrap;
 
-    var x = 0, t = 0, half = 0, raf = null;
+    var x = 0, t = 0, sweepT = 0, half = 0, raf = null;
     function measure() { half = scr.scrollWidth / 2; }   // half = one copy of the (doubled) message
     function step() {
       if (!half) measure();                              // retry until laid out, so it always loops
@@ -68,8 +82,13 @@
       for (var i = 0; i < letters.length; i++) {
         letters[i].style.transform = "translateY(" + (Math.sin(t - i * 0.2) * 6) + "px)";
       }
-      // slide the raster bars up and down on a slow sine, phase-offset so they weave
-      var h = screen.clientHeight || 200, amp = (h - BAR_H) / 2;
+      // The silver shine sweeps from the start of the text to the end and
+      // back - sin() already ping-pongs smoothly, no separate reverse logic
+      // needed.
+      sweepT += 0.01;
+      paintSilver((Math.sin(sweepT) + 1) / 2 * (letters.length - 1));
+      // slide the raster bar up and down on a slow sine
+      var h = screen.clientHeight || 300, amp = (h - BAR_H) / 2;
       for (var r = 0; r < bars.length; r++) {
         var cy = h / 2 + Math.sin(t + r * 1.15) * amp;
         bars[r].style.top = (cy - BAR_H / 2) + "px";

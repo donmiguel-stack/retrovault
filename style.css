@@ -57,6 +57,16 @@ body{
 .social-links a{color:var(--text-mute);display:flex;line-height:0;}
 .social-links svg{width:18px;height:18px;fill:currentColor;transition:fill .15s;}
 .social-links a:hover svg{fill:var(--accent);}
+/* The local build version, sat right next to the GitHub icon - a small,
+   quiet pill rather than a loud badge, since it's reference info (which
+   copy is this) not a call to action. index.html only - see app.js's
+   VAULT_VERSION for the source of truth. */
+.vault-version{
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;font-weight:600;
+  color:var(--text-mute);letter-spacing:.02em;
+  border:1px solid var(--border);border-radius:999px;
+  padding:2px 7px;margin-left:-4px;white-space:nowrap;
+}
 
 /* Update button, when the watcher has found something waiting. Yellow, like
    the import/export buttons - that reads on its own without a badge too. */
@@ -548,15 +558,21 @@ body{
 .c64-ad-strip{grid-column:1/-1;}
 .c64ad-link{display:block;text-decoration:none;position:relative;}
 .c64ad{background:#7869C4;padding:16px;border-radius:var(--radius);font-family:ui-monospace,Menlo,Consolas,monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
-.c64ad-screen{position:relative;background:#40318D;height:200px;overflow:hidden;display:flex;flex-direction:column;}
-.c64ad-rasters{position:absolute;inset:0;opacity:.42;pointer-events:none;}
+.c64ad-screen{position:relative;background:#40318D;height:300px;overflow:hidden;display:flex;flex-direction:column;}
+/* One big raster bar now (was four thinner ones), doubled again to 220px -
+   height bumped 230->300 so it still has real room to glide, not just fill
+   the screen. Opacity raised again too (.5->.68) - the bar reads as a
+   vivid glowing band, not a faint wash. */
+.c64ad-rasters{position:absolute;inset:0;opacity:.68;pointer-events:none;}
 .c64ad-rasters i{position:absolute;left:0;right:0;height:14px;}
 .c64ad-top{position:relative;color:#B0A4FF;font-size:14px;letter-spacing:1px;padding:10px 14px 0;line-height:1.5;text-shadow:1px 1px 0 rgba(0,0,0,.35);}
 .c64ad-cur{display:inline-block;width:9px;height:15px;background:#B0A4FF;vertical-align:-3px;margin-left:2px;animation:c64blink 1.06s steps(1) infinite;}
 @keyframes c64blink{50%{opacity:0}}
 .c64ad-band{position:relative;flex:1;display:flex;align-items:center;overflow:hidden;}
 .c64ad-scroller{position:absolute;white-space:nowrap;will-change:transform;}
-.c64ad-scroller b{display:inline-block;font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;font-size:26px;letter-spacing:2px;text-transform:uppercase;text-shadow:3px 3px 0 rgba(0,0,0,.5);}
+/* Bigger font than before (26px -> 38px); colour is now set per-letter by
+   c64ad.js's silver-shine sweep, not a fixed value here. */
+.c64ad-scroller b{display:inline-block;font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;font-size:38px;letter-spacing:3px;text-transform:uppercase;text-shadow:4px 4px 0 rgba(0,0,0,.5);}
 .c64ad-bottom{position:relative;color:#B0A4FF;font-size:12px;letter-spacing:2px;padding:0 14px 10px;display:flex;justify-content:space-between;gap:12px;text-shadow:1px 1px 0 rgba(0,0,0,.35);}
 .c64ad-blk{color:#94E089;}
 @media (prefers-reduced-motion: reduce){ .c64ad-cur{animation:none;} }

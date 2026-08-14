@@ -1,4 +1,12 @@
 (function () {
+  // The version shown next to the GitHub icon in the topbar - this is the
+  // local build/catalogue version, not a cache-buster like COVER_V/CLIP_V
+  // below (those force a re-fetch of assets; this is just a human-readable
+  // label for "which copy of the Vault is this"). Bump it by hand whenever
+  // a release-worthy batch of changes lands - there's no automatic tie to
+  // the individual COVER_V/CLIP_V/script cache-bust numbers, which change
+  // far more often than this should.
+  var VAULT_VERSION = "1.0.0";
   // Bump when you add or replace anything in covers/ (see renderCard).
   var COVER_V = 29;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
@@ -1584,6 +1592,9 @@
     document.getElementById("setupBtn").textContent = window.t("setup");
     document.documentElement.lang = window.currentLang();
   }
+
+  var versionEl = document.getElementById("vaultVersion");
+  if (versionEl) versionEl.textContent = "v" + VAULT_VERSION;
 
   var setupModal = document.getElementById("setupModal");
   document.getElementById("setupBtn").addEventListener("click", function () { setupModal.hidden = false; });
