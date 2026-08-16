@@ -766,27 +766,41 @@
   if (data.video) {
     vH.appendChild(el("span","sec-note",data.video.title));
     var wrap = el("div","video-wrap");
-    // Prefer a locally-recorded clip (plays offline, no YouTube chrome). If it
-    // is missing, the <video> error event swaps in the YouTube embed - so the
-    // page works offline for the games you've made clips for, and still shows
-    // the full video (online) for the ones you haven't.
-    function youtubeEmbed() {
+    // The game's own page shows the real gameplay video (YouTube) when one
+    // exists - it's a proper playthrough with sound, which is what belongs
+    // on a dedicated page. The local mp4s are short muted preview loops made
+    // for the featured/homebrew banners; here they're only a fallback for
+    // entries that have no YouTube video at all (or if the embed's own
+    // network request fails).
+    function showClip() {
+      var clip = document.createElement("video");
+      clip.className = "video-clip";
+      clip.src = "clips/clip_" + g.id + ".mp4?v=" + (window.CLIP_V || 1);
+      clip.autoplay = true; clip.muted = true; clip.loop = true;
+      clip.playsInline = true; clip.preload = "auto"; clip.controls = true;
+      clip.addEventListener("error", function () {
+        // Neither a YouTube id nor a working local clip - say so instead of
+        // leaving the empty 16:9 .video-wrap box (sized/backgrounded for a
+        // video/iframe) sitting there as a big black rectangle.
+        wrap.replaceWith(el("p", "missing-note", LT("s_noVideo")));
+      }, { once: true });
+      wrap.innerHTML = "";
+      wrap.appendChild(clip);
+      var pr = clip.play && clip.play(); if (pr && pr.catch) pr.catch(function(){});
+    }
+    function showYouTube() {
       var ifr = document.createElement("iframe");
       ifr.src = "https://www.youtube-nocookie.com/embed/" + data.video.id;
       ifr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       ifr.allowFullscreen = true;
       ifr.title = data.video.title;
-      wrap.innerHTML = "";
       wrap.appendChild(ifr);
     }
-    var clip = document.createElement("video");
-    clip.className = "video-clip";
-    clip.src = "clips/clip_" + g.id + ".mp4?v=" + (window.CLIP_V || 1);
-    clip.autoplay = true; clip.muted = true; clip.loop = true;
-    clip.playsInline = true; clip.preload = "auto"; clip.controls = true;
-    clip.addEventListener("error", youtubeEmbed, { once: true });
-    wrap.appendChild(clip);
-    var pr = clip.play && clip.play(); if (pr && pr.catch) pr.catch(function(){});
+    if (data.video.id) {
+      showYouTube();
+    } else {
+      showClip();
+    }
     vSec.appendChild(wrap);
   } else {
     vSec.appendChild(el("p","missing-note",LT("s_noVideo")));
