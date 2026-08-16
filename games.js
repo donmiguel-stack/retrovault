@@ -3512,7 +3512,7 @@ window.GAMES_DATA = {
     "vpNumber": null,
     "tags": [],
     "romFile": "SQ1.zip",
-    "year": 1991,
+    "year": 1986,
     "publisher": "Sierra On-Line",
     "developer": "Sierra On-Line"
   },

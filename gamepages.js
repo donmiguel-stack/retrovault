@@ -3645,7 +3645,7 @@ window.GAMEPAGES_DATA = {
  },
  "pc_wolfenstein3d": {
   "input": "keyboard",
-  "note": "This vault ships the 1993 shareware release &ndash; Episode 1, <strong>Escape from Wolfenstein</strong>. Arrow keys move, <strong>Ctrl</strong> fires, <strong>Space</strong> opens doors, <strong>Shift</strong> runs, and <strong>Alt</strong> strafes. Full mouse-look isn't part of the original engine &ndash; expect a Doom-style keyboard shooter, not a modern one. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "note": "This vault ships the full six-episode registered version &ndash; the original trilogy plus the three <strong>Nocturnal Missions</strong> episodes. Arrow keys move, <strong>Ctrl</strong> fires, <strong>Space</strong> opens doors, <strong>Shift</strong> runs, and <strong>Alt</strong> strafes. Full mouse-look isn't part of the original engine &ndash; expect a Doom-style keyboard shooter, not a modern one. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "L9ucEzJQvIk",
    "title": "Wolfenstein 3D (1992) DOS Longplay"
@@ -3667,7 +3667,7 @@ window.GAMEPAGES_DATA = {
  },
  "pc_duke_nukem_2": {
   "input": "keyboard",
-  "note": "Shareware Episode 1. Arrow keys move, <strong>Ctrl</strong> fires, <strong>Alt</strong> jumps &ndash; the game's own options screen confirms the exact layout if a key doesn't do what you expect. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "note": "The full four-episode registered version. Arrow keys move, <strong>Ctrl</strong> fires, <strong>Alt</strong> jumps &ndash; the game's own options screen confirms the exact layout if a key doesn't do what you expect. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "tofpXhxv64U",
    "title": "Longplay: Duke Nukem II - Episode 1 (1993) [MS-DOS]"
@@ -3960,7 +3960,7 @@ window.GAMEPAGES_DATA = {
  },
  "pc_duke_nukem": {
   "input": "keyboard",
-  "note": "Keyboard-only side-scrolling platformer &ndash; arrow keys run and climb, Ctrl fires, Alt jumps. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "note": "All three episodes are included &ndash; press <strong>1</strong>, <strong>2</strong> or <strong>3</strong> at the launch menu to choose one. Keyboard-only side-scrolling platformer &ndash; arrow keys run and climb, Ctrl fires, Alt jumps. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "kYzZcko3F50",
    "title": "Longplay: Duke Nukem - Episode 1: 'Shrapnel City' (1991) [MS-DOS]"
@@ -4092,7 +4092,7 @@ window.GAMEPAGES_DATA = {
  },
  "pc_spear_of_destiny": {
   "input": "keyboard",
-  "note": "Same controls as Wolfenstein 3D &ndash; no dedicated strafe key by default, diagonal movement takes practice. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "note": "All three campaigns are included &ndash; at the launch menu press <strong>1</strong> for Spear of Destiny, <strong>2</strong> for Return to Danger or <strong>3</strong> for Ultimate Challenge. Same controls as Wolfenstein 3D &ndash; no dedicated strafe key by default, diagonal movement takes practice. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "UXuftq-EiQM",
    "title": "PC Longplay [609] Spear of Destiny"
@@ -4109,14 +4109,14 @@ window.GAMEPAGES_DATA = {
   }
  },
  "pc_sq1": {
-  "input": "mouse",
-  "note": "Point-and-click via an icon bar (walk/look/talk/etc.), the 1991 VGA remake of the 1986 original. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "input": "keyboard",
+  "note": "Keyboard text parser &ndash; arrow keys walk, and you type short commands like <code>look</code> or <code>get keycard</code>. This is the 1986 AGI original, not the 1991 VGA remake. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
-   "id": "55iQwnHltzI",
-   "title": "Space Quest I: The Sarien Encounter (VGA Remake, 1991) - Full Longplay"
+   "id": "UboQ_Td7NIk",
+   "title": "Space Quest: The Sarien Encounter (PC/DOS) Longplay, 1986, Sierra On-Line"
   },
   "history": {
-   "text": "Launched Sierra's parody-heavy sci-fi comedy line built around hapless janitor Roger Wilco, created by \"The Two Guys from Andromeda\" (Scott Murphy and Mark Crowe) as a deliberate B-movie spoof. This 1991 VGA remake rebuilt the original 1986 text-parser game on the newer SCI engine with a point-and-click interface, and became the version Sierra itself kept bundling in later compilations."
+   "text": "Launched Sierra's parody-heavy sci-fi comedy line built around hapless janitor Roger Wilco, created by \"The Two Guys from Andromeda\" (Scott Murphy and Mark Crowe) as a deliberate B-movie spoof. This is the original 1986 release, built on Sierra's AGI engine with a typed text parser &ndash; the version that established the series before the 1991 VGA remake rebuilt it on SCI with a point-and-click interface."
   }
  },
  "pc_sq2": {
@@ -4143,7 +4143,7 @@ window.GAMEPAGES_DATA = {
  },
  "pc_sq4": {
   "input": "mouse",
-  "note": "Point-and-click via an icon/verb bar &ndash; the first Space Quest where you never need to type anything. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "note": "Point-and-click via an icon/verb bar &ndash; the first Space Quest where you never need to type anything. This is the CD talkie release, so the dialogue is fully voiced; the <strong>TEXT</strong> button on the pause screen switches back to subtitles. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "DpXuGxT7LuA",
    "title": "Space Quest IV: Roger Wilco and the Time Rippers (PC) Playthrough"
