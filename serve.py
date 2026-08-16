@@ -9,7 +9,9 @@ Same as `python3 -m http.server`, but with two additions:
 
   * a small update endpoint, so the Setup panel can check for newer
     catalogue data and fetch it. DATA ONLY - covers, the catalogue, the
-    translations. Never ROMs, never the BIOS.
+    translations, gameplay clips and the extras (maps, overlays, manuals
+    that shipped with the Vault). Never ROMs, never the BIOS, never the
+    manual scans you added yourself under manuals/.
 
 Run from this folder:
     python3 serve.py            # port 8000
@@ -37,8 +39,9 @@ SOURCE_FILE = os.path.join(ROOT, "update-source.json")
 # consequence is that files in a folder listed here reach every install, and
 # files anywhere else reach nobody who has already installed. Put new artwork
 # in covers/.
-ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json", ".gif")
-ALLOWED_DIRS = ("", "covers", "assets/shots", "assets/cheats")
+ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json",
+                ".gif", ".mp4", ".pdf")
+ALLOWED_DIRS = ("", "covers", "assets/shots", "assets/cheats", "clips", "extras")
 
 
 def source_base():

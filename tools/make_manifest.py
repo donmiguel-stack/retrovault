@@ -7,13 +7,15 @@ what has changed.
 
     python3 tools/make_manifest.py
 
-Deliberately covers DATA ONLY - the catalogue, the artwork, the translations.
-No ROMs, no BIOS, no manual scans: those are not ours to distribute, and the
+Deliberately covers DATA ONLY - the catalogue, the artwork, the translations,
+the gameplay clips and the extras that already ship with the Vault. No ROMs,
+no BIOS, and nothing from manuals/: those are not ours to distribute, and the
 update button must never become a way to move them around.
 """
 import hashlib
 import json
 import os
+import subprocess
 import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,7 +37,26 @@ FILES = [
 # serve.py, which the updater never overwrites, so a brand new folder can
 # never reach an install that already exists. Both of these are folders
 # every copy already accepts writes to.
-FOLDERS = ["covers", "assets/cheats"]
+FOLDERS = ["covers", "assets/cheats", "clips", "extras"]
+
+
+def tracked():
+    """The set of paths git tracks.
+
+    The folder walk below reads the filesystem, but the update source is the
+    git repo - so a file that is gitignored (fetcher cache, working scans,
+    parked artwork) exists locally yet 404s for everyone else. Listing it in
+    the manifest would hand every install a download that cannot succeed.
+    Returns None if git is unavailable, in which case we fall back to listing
+    whatever is on disk.
+    """
+    try:
+        out = subprocess.run(
+            ["git", "--no-optional-locks", "-C", ROOT, "ls-files", "-z"],
+            capture_output=True, check=True).stdout
+        return set(p.decode("utf-8") for p in out.split(b"\0") if p)
+    except Exception:
+        return None
 
 
 def digest(path):
@@ -48,6 +69,9 @@ def digest(path):
 
 def collect():
     out = {}
+    keep = tracked()
+    if keep is None:
+        print("warning: git unavailable - manifest may list untracked files")
     for rel in FILES:
         p = os.path.join(ROOT, rel)
         if os.path.exists(p):
@@ -61,9 +85,12 @@ def collect():
             # skip the parked-artwork subfolders and stray notes
             if not os.path.isfile(p) or name.startswith("."):
                 continue
-            if os.path.splitext(name)[1].lower() not in (".png", ".jpg", ".jpeg", ".gif"):
+            if os.path.splitext(name)[1].lower() not in (
+                    ".png", ".jpg", ".jpeg", ".gif", ".mp4", ".pdf"):
                 continue
             rel = folder + "/" + name
+            if keep is not None and rel not in keep:
+                continue
             out[rel] = {"sha256": digest(p), "size": os.path.getsize(p)}
     return out
 

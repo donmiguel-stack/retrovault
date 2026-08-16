@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-16 17:34:22",
- "count": 381,
- "bytes": 106877771,
+ "generated": "2026-08-16 18:17:24",
+ "count": 435,
+ "bytes": 166743857,
  "files": {
   "games.js": {
    "sha256": "83307358dd57894efa1f7da8a388fdb9bcdad8ab818434c0cf1d8e755c5c92f2",
@@ -1526,6 +1526,222 @@
   "assets/cheats/qbert-cheat.png": {
    "sha256": "c4b698ca4e7f3f2a9a9bc91c9acb7374542bbb569981a1a203bd0b87e1391029",
    "size": 4565
+  },
+  "clips/clip_c64_hb_bagman_strikes_back.mp4": {
+   "sha256": "211200dc8a774bb8dbb2c765a4e60ebf68fbf79644bae3f0cf9485f6323132f1",
+   "size": 197722
+  },
+  "clips/clip_c64_hb_c64anabalt.mp4": {
+   "sha256": "82721bc9c901a580fcd510fdfe8a8a7dbe2ec15280db5320f48546352c5b2090",
+   "size": 209106
+  },
+  "clips/clip_c64_hb_grid_pix.mp4": {
+   "sha256": "d67a6c2bb5e6fcf2f052f043b6572f04bb18001d052011125f53a14f92e2affe",
+   "size": 112983
+  },
+  "clips/clip_c64_hb_hero_is_back.mp4": {
+   "sha256": "98ef1ae8525a970f7460df89b74a8eb83f447c2ad1e1bef633393a843fdae173",
+   "size": 365554
+  },
+  "clips/clip_c64_hb_luftrauserz.mp4": {
+   "sha256": "5a5a838cc89d2045da404a8628616be30101218a1231d14f59c684fa56030fa2",
+   "size": 282069
+  },
+  "clips/clip_c64_hb_wolfling.mp4": {
+   "sha256": "5f82ca1d151262a0f7100a09385480b956af8aa50ce56c97e95af36b59f9f79a",
+   "size": 307031
+  },
+  "clips/clip_c64_ik_plus.mp4": {
+   "sha256": "40d8834bf6933c9d9923a8bb996835803dc2300faca1c97a5f304a434c9dec0c",
+   "size": 431171
+  },
+  "clips/clip_c64_impossible_mission.mp4": {
+   "sha256": "e1416678e6efedd97ebb1b3cf1e399792c37f081ffc312cd58f5dea6ea93e14c",
+   "size": 196948
+  },
+  "clips/clip_c64_last_ninja.mp4": {
+   "sha256": "b97b237ccdde1b0012418ad1c9b452ad5c4c97cca2f5fab6314451396f5f915f",
+   "size": 1636610
+  },
+  "clips/clip_c64_paradroid.mp4": {
+   "sha256": "bf798481184e9efd946aafb27d94510b91ecfe6876dea843308d9be2dceded70",
+   "size": 1834745
+  },
+  "clips/clip_c64_turrican2.mp4": {
+   "sha256": "6cc15978409ffa6fefdbed2bdebbf8fef3caa3bb455ae238b5dabb117f5e5692",
+   "size": 573438
+  },
+  "clips/clip_c64_wizball.mp4": {
+   "sha256": "3460a015b7e0dae69e8e6ac2917dcd06c644fbe6cf825cb557a0a49fda7fbaa3",
+   "size": 560838
+  },
+  "clips/clip_jo_demon-attack_pl.mp4": {
+   "sha256": "16156b070ee0ff42f18c5e7ef03109326e34e5099d4ff61b9803380549dfbad7",
+   "size": 175694
+  },
+  "clips/clip_new_amok.mp4": {
+   "sha256": "b2b6d6ac8e5ad08f16f80aaa595c3b427609e319c85851a0745879a6fd1ed10f",
+   "size": 53465
+  },
+  "clips/clip_new_ktaa.mp4": {
+   "sha256": "8c6ec173c030ba646b4f0b80a8df9d1c78a57da830c14fc9a6932b2829cbc9c2",
+   "size": 62504
+  },
+  "clips/clip_new_mrroboto.mp4": {
+   "sha256": "435d1e4b9552ac0b8bfccdfb70a24f443ca0edae55d07ade9aa127102ad224fc",
+   "size": 79480
+  },
+  "clips/clip_new_pong_all.mp4": {
+   "sha256": "bbf4eddc1a8d6be0f7fc0a5f5b7290ab9c37504b8379baa83c257495c301592e",
+   "size": 49552
+  },
+  "clips/clip_new_ppp-o2em.mp4": {
+   "sha256": "c4a24a4a99b8f4bf2d1184a7927bbc7747ccd81bdd7aa70b40473bf748b67d89",
+   "size": 54486
+  },
+  "clips/clip_new_route66.mp4": {
+   "sha256": "d7939a38911757c28b08073c85802d9806226e1c8231464cdc7c6fd4d4e192a6",
+   "size": 121717
+  },
+  "clips/clip_o2_47.mp4": {
+   "sha256": "9fa97ad8cc21bfeb35c3d8fec35a1041639c03802f108772087f3621190d9ee6",
+   "size": 272537
+  },
+  "clips/clip_pc_doom.mp4": {
+   "sha256": "b74406f9a1bab317695c31480ede7908bb1702661744599c448e8d0fbc3e65c7",
+   "size": 1067521
+  },
+  "clips/clip_pc_duke_nukem.mp4": {
+   "sha256": "84e406a421a904212984859cc8a342ef55d81caff7c5d9d41b6c7e060f1caac5",
+   "size": 502205
+  },
+  "clips/clip_pc_hb_alienintruder.mp4": {
+   "sha256": "8409629ac5e4173f2952aa8c97f2bef72cc7ae5fc700b41ff1c59550ce7a8ff0",
+   "size": 259978
+  },
+  "clips/clip_pc_hb_disksweeper.mp4": {
+   "sha256": "cbc4a1e19c07e7c2deeea3ad6f1848245837836b297bb47f75cbf953d03b4385",
+   "size": 204834
+  },
+  "clips/clip_pc_hb_gates.mp4": {
+   "sha256": "f07e9df6474d990130b041e1794e1e89a25043b62b274b6c2ff7e52e059c5c2d",
+   "size": 363747
+  },
+  "clips/clip_pc_keen6.mp4": {
+   "sha256": "6ace7091c7c998185feb326175148e4d52bce136334838990c5dae1f9e8fd633",
+   "size": 1529815
+  },
+  "clips/clip_pc_leisure_suit_larry.mp4": {
+   "sha256": "81f04aaa57cb486f3be51bded27d0272b1b5274248a4245185e6eb62a14f8451",
+   "size": 1396489
+  },
+  "clips/clip_pc_prince_of_persia.mp4": {
+   "sha256": "1147ff61366494de914bb58716e0384f81e7cd838a83a385b6eaad2773622e4f",
+   "size": 206676
+  },
+  "clips/clip_pc_sq4.mp4": {
+   "sha256": "c7b044eea19aa5055aa0148a49e6b67924a5e4c227876ca79d174316fb1a08c4",
+   "size": 319440
+  },
+  "clips/clip_vp_01.mp4": {
+   "sha256": "efb7e446a43361fc5f9da04710abce68e3aaa13358c75a64edf82018b086386f",
+   "size": 191284
+  },
+  "clips/clip_vp_38.mp4": {
+   "sha256": "119cb82ffca5cedf34c1cfe220398f8ec7d03a7e28a2d80c567c970926160ee4",
+   "size": 92887
+  },
+  "clips/clip_vp_41.mp4": {
+   "sha256": "2fe5b3fec7b74d06e42c4a55487d3d0563fe5c572b38556cf7ad45b5a57f99d6",
+   "size": 72373
+  },
+  "clips/clip_vp_42.mp4": {
+   "sha256": "fcbc6530121b902b92866e071226584840570cd9d2a3096283dbd7a2fb52c861",
+   "size": 65225
+  },
+  "clips/clip_vp_43.mp4": {
+   "sha256": "27e05188207ebb6fb3e1bb809717337a64e67cb6a2ea3564991f22b525f3c970",
+   "size": 70343
+  },
+  "clips/clip_vp_46.mp4": {
+   "sha256": "5f073a8fd6c0007c02d8d1370e6908fa7ab8b0741fda595d2dd4e52e5eed4880",
+   "size": 108113
+  },
+  "clips/clip_vp_51pl.mp4": {
+   "sha256": "707770eda89758913920da1be1dce3c720c95c292223c389d5c8fd306615cf5d",
+   "size": 126599
+  },
+  "extras/computer-programmer-manual.pdf": {
+   "sha256": "927f0b90326242027e7d4623243d494d753ab7f62680e72916589bb3df3541b1",
+   "size": 8377001
+  },
+  "extras/conquest-of-the-world-manual-de.pdf": {
+   "sha256": "76aad7bf7ca82a0e57c967176bf3300cd99e08e1851fbad71d024623b6d37e4b",
+   "size": 4321278
+  },
+  "extras/conquest-of-the-world-manual.pdf": {
+   "sha256": "5ecd1dd2aa2145b129d66da2da194ead534bb291b0ffc431f65f71ecc8ed7e76",
+   "size": 4663478
+  },
+  "extras/conquest-of-the-world-map.jpg": {
+   "sha256": "fe06b7cae67f5ea90afb813dc2fc15a2b65ca2c66dfd413ae656a2c64aab9528",
+   "size": 492409
+  },
+  "extras/great-wall-street-fortune-hunt-box-brazil.jpg": {
+   "sha256": "83ee4c45fa9c1c83834891eb08716469373ce68cf9db22f3cde9992e7e39793c",
+   "size": 59097
+  },
+  "extras/great-wall-street-fortune-hunt-box-odyssey2.jpg": {
+   "sha256": "436847283ce36f7c7e6c1e549f9f09d7bb6fccebd6bf80b6cd9f2bb66b790112",
+   "size": 63840
+  },
+  "extras/great-wall-street-fortune-hunt-box.jpg": {
+   "sha256": "9bda1d18839cfbe9a16f9c69da9556024709d03c9a667eb70be1244ac69be243",
+   "size": 56216
+  },
+  "extras/great-wall-street-fortune-hunt-manual-multilang.pdf": {
+   "sha256": "9a451edfb2aa4da0749b4629f1ffabcc157323c2928d0ef54fbb74c49b2d3aca",
+   "size": 5935894
+  },
+  "extras/musician-overlay-g7000.jpg": {
+   "sha256": "81fff428fe96401177dea285c97f43f4c816d7fcc4a0cd715840bea8d78154ae",
+   "size": 275284
+  },
+  "extras/musician-overlay-g7200.jpg": {
+   "sha256": "bf26e39666a99d570b2c78d001efa00462f23d8f0034a0447483aaa3fde1bae2",
+   "size": 101471
+  },
+  "extras/quest-for-the-rings-fiches-printable.pdf": {
+   "sha256": "10693e7528d7debb4cd3aafde0c27e8018dcfc6c52751682c166881f8195875f",
+   "size": 110627
+  },
+  "extras/quest-for-the-rings-manual-de.pdf": {
+   "sha256": "a7fa74362fcf94c78af27ecd7cf39f8e6146db085eb08ee11f302885d7c80f14",
+   "size": 3922797
+  },
+  "extras/quest-for-the-rings-map-print-4xA4.pdf": {
+   "sha256": "4f6518d0c7e9d62528743cf00fb30ef33f3d681bbedf4f5e62f64bd05c91eecb",
+   "size": 9941951
+  },
+  "extras/quest-for-the-rings-map.jpg": {
+   "sha256": "cd6206db6235015f41f5fed983c412e4d60beee3d0a3cb99d81f42ed0c3a12ef",
+   "size": 2210458
+  },
+  "extras/quest-for-the-rings-overlay-g7000.jpg": {
+   "sha256": "ead25b56168264fda29d1f37b5cb2b45b803bb080be9bba1b91c7783dca6d715",
+   "size": 75197
+  },
+  "extras/quest-for-the-rings-overlay-g7200.jpg": {
+   "sha256": "e1ab51d3e50596ad846260bc82b4d17b6892ee6ecc323c8aabb2d3a5fbbcd95c",
+   "size": 61658
+  },
+  "extras/verkehrsspiele-1-manual-de.pdf": {
+   "sha256": "fab9514ec15ec32553b4dafe28c390abbf1312146edb67337af95ffe836d4b56",
+   "size": 2520937
+  },
+  "extras/verkehrsspiele-2-manual-de.pdf": {
+   "sha256": "8fe5867baa847b29340a16cfabe260537cb5b19e450a621960cb3abb7d585a63",
+   "size": 2521314
   }
  }
 }
