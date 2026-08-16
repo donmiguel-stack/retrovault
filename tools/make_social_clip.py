@@ -203,19 +203,33 @@ def run(cmd, what):
 # ------------------------------------------------------------------ metadata
 
 def fetch_meta(vid):
-    """Title + channel, without pulling any video. Never fatal."""
+    """Title, channel and length, without pulling any video. Never fatal."""
     r = subprocess.run(
         ["yt-dlp", "--quiet", "--no-warnings", "--skip-download",
-         "--print", "%(title)s\t%(channel)s",
+         "--print", "%(title)s\t%(channel)s\t%(duration)s",
          "https://www.youtube.com/watch?v=%s" % vid],
         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if r.returncode != 0:
-        return "", ""
+        return "", "", None
     line = r.stdout.decode("utf-8", "ignore").strip().split("\n")[0]
     parts = line.split("\t")
     title = parts[0].strip() if parts else ""
     channel = parts[1].strip() if len(parts) > 1 else ""
-    return title, channel
+    try:
+        dur = float(parts[2])
+    except (IndexError, ValueError):
+        dur = None
+    return title, channel, dur
+
+
+def media_duration(path):
+    r = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "csv=p=0", path], stdout=subprocess.PIPE)
+    try:
+        return float(r.stdout.decode().strip())
+    except ValueError:
+        return 0.0
 
 
 def log_source(outdir, name, vid, title, channel, start, length):
@@ -516,7 +530,29 @@ def main():
             die("--crop wants W:H:X:Y, e.g. 1440:1080:240:0")
         manual_crop = tuple(int(v) for v in a.crop.split(":"))
 
-    title, channel = fetch_meta(vid)
+    title, channel, vdur = fetch_meta(vid)
+
+    # Check every slot against the video's real length BEFORE downloading
+    # anything. Ask for 48:51 of a 20-minute upload and yt-dlp will hand back
+    # an empty section without complaining - which is how a whole segment
+    # once went missing from a finished clip without a single error.
+    if vdur:
+        for s, l in slots:
+            if s >= vdur:
+                die("this video is only %s long, but you asked for a segment "
+                    "starting at %s.\nCheck the timestamp - a longplay of the "
+                    "same game from another channel will have different ones."
+                    % (fmt_time(vdur), fmt_time(s)))
+        clipped = []
+        for i, (s, l) in enumerate(slots):
+            if s + l > vdur:
+                clipped.append((i, s, l, vdur - s))
+                slots[i] = (s, vdur - s)
+        for i, s, l, newl in clipped:
+            print("note    : segment %d would run past the end (%s); "
+                  "shortened to %.1fs" % (i + 1, fmt_time(vdur), newl))
+        total = sum(s[1] for s in slots)
+
     name = a.name.strip() or slugify(title or vid)
     name = re.sub(r"^clip_", "", name)              # so 'clip_x' doesn't double up
     out = os.path.join(outdir, "clip_%s.mp4" % name)
@@ -561,6 +597,19 @@ def main():
             path, needs_cut = download(vid, start, length, raw, tmpdir,
                                        a.srcheight, full_only=a.full,
                                        cache=cache)
+            # Catch a dud section here, while we can still say something
+            # useful about it. Left to the encoder it surfaces as a wall of
+            # ffmpeg stream-mapping errors that say nothing about timestamps.
+            have = media_duration(path)
+            if needs_cut and start >= have:
+                die("segment %d starts at %s but the video is only %s long."
+                    % (i, fmt_time(start), fmt_time(have)))
+            if not needs_cut and have < min(0.5, length * 0.5):
+                die("segment %d (%s +%.1fs) downloaded empty.\nThat timestamp "
+                    "is almost certainly past the end of the video - check it "
+                    "against the upload you are cutting from."
+                    % (i, fmt_time(start), length))
+
             srcw, srch = source_size(path)
             segs.append({
                 "i": i, "path": path, "start": start, "length": length,
@@ -621,6 +670,19 @@ def main():
             s["file"] = os.path.join(tmpdir, "seg_%d.mkv" % s["i"])
             encode_segment(s["path"], s["seek"], s["length"], s["crop"], box,
                            a.fps, s["audio"], s["file"])
+            # A segment that produced nothing must not slip through: an empty
+            # file concatenates to silence and you get a shorter clip with no
+            # error anywhere.
+            got = media_duration(s["file"])
+            if got < min(0.5, s["length"] * 0.5):
+                die("segment %d (%s +%.1fs) came out empty.\nThe download for "
+                    "it produced %.1fs of material. If that is near zero the "
+                    "timestamp is probably past the end of the video."
+                    % (s["i"], fmt_time(s["start"]), s["length"],
+                       media_duration(s["path"])))
+            if got < s["length"] - 0.25:
+                print("     ! segment %d is %.1fs, not the %.1fs you asked for"
+                      % (s["i"], got, s["length"]))
 
         listfile = write_concat_list([s["file"] for s in segs],
                                      os.path.join(tmpdir, "list.txt"))
@@ -671,12 +733,15 @@ def main():
         ["ffprobe", "-v", "error", "-show_entries", "format=duration",
          "-of", "csv=p=0", out], stdout=subprocess.PIPE).stdout.decode().strip()
     try:
-        dur = "%.1fs" % float(dur)
+        dur = float(dur)
     except ValueError:
-        dur = "%.1fs" % total
-    print("\ndone  %s  (%s, %s, %.2f MB%s)"
+        dur = total
+    print("\ndone  %s  (%s, %.1fs, %.2f MB%s)"
           % (os.path.basename(out), info, dur, size,
              ", silent" if not any_audio else ""))
+    if abs(dur - total) > 0.5:
+        print("!     you asked for %.1fs in total but got %.1fs - check the "
+              "segments above" % (total, dur))
     print("source logged in social-clips/%s%s"
           % (SOURCES, " (one row per segment)" if len(segs) > 1 else ""))
 

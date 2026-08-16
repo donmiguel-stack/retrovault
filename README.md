@@ -17,9 +17,10 @@ Subtitled in English, Portuguese, Dutch, German and French.
 ## First: add your dumps
 
 This repository carries the Vault itself — the catalogue, the box art, the
-translations — but **no ROMs, no BIOS and no manual scans**. Those aren't ours
-to distribute; you supply your own. They belong in three folders that arrive
-empty:
+translations — but **no ROMs and no BIOS**. Those aren't ours to distribute;
+you supply your own. The same goes for the per-title manual scans in
+`manuals/` (a handful of extras ship in `extras/` — see *Use it responsibly*).
+They belong in three folders that arrive empty:
 
 ```
 emulator/bios/      the console BIOS (g7400.bin)
@@ -210,8 +211,16 @@ browser keeps showing the blank it cached before the file existed.
 
 ## Use it responsibly
 
-This is a personal archive for cartridges you own. No ROMs, BIOS images or
-manual scans are distributed with the project — you supply your own dumps.
+This is a personal archive for cartridges you own. **No ROMs and no BIOS
+images are distributed with the project** — you supply your own dumps.
+
+A small number of scanned manuals, maps and keyboard overlays for
+long-out-of-print Videopac titles do ship in `extras/`, on the same
+abandonware footing this project applies to the C64 and PC shelves. The
+per-title `manuals/` collection is *not* distributed — you add those scans
+yourself, as with the ROMs. If you hold rights to anything in
+`extras/` and would rather it were not here, open an issue on the official
+repository and it will be taken down.
 
 Emulation is the open-source [O2EM](https://o2em.sourceforge.net/) and
 [VICE](https://vice-emu.sourceforge.io/) libretro cores running in
@@ -219,6 +228,32 @@ Emulation is the open-source [O2EM](https://o2em.sourceforge.net/) and
 [js-dos](https://js-dos.com/) for the PC shelf. Manual scans come from the
 Internet Archive's Videopac/Odyssey² manuals collection. Not affiliated with
 Philips, Magnavox, Commodore, id Software, Sierra or Broderbund.
+
+## Privacy — what Retro Vault counts
+
+Retro Vault includes **Cloudflare Web Analytics**, which counts page views so
+I can see roughly how many people use the Vault. It is deliberately the
+least-invasive option available:
+
+- **No cookies** and no browser storage used for tracking.
+- **No personal data**, no IP logging, no device fingerprinting.
+- **No cross-site tracking** and no advertising network involved.
+- It never runs from an offline (`file://`) copy.
+
+Your game files, saves, favourites and settings never leave your machine —
+they are not uploaded anywhere, and nothing about which games you own or play
+is transmitted.
+
+**To opt out completely**, open your browser's developer console (F12) on the
+Vault page and run:
+
+```js
+localStorage.setItem('rv-no-analytics', '1')
+```
+
+That setting is permanent for that browser. Alternatively, delete the
+`<script>` block marked *"anonymous usage counting"* from `index.html` and
+`game.html` — the Vault works identically without it.
 
 ---
 

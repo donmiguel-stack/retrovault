@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retro Vault</title>
 <link rel="stylesheet" href="style.css?v=95">
+<!-- Retro Vault — anonymous usage counting (Cloudflare Web Analytics).
+     Cookieless. No personal data, no cross-site tracking, no fingerprinting.
+     Does not run from an offline (file://) copy.
+     Opt out permanently from the browser console:
+       localStorage.setItem('rv-no-analytics', '1')
+-->
+<script>
+(function () {
+  var TOKEN = "ffd5bd26c2f548acaba24a6847413f1c";
+  if (location.protocol === "file:") return;         // offline copy: beacon cannot work
+  try {
+    if (localStorage.getItem("rv-no-analytics") === "1") return;
+  } catch (e) { /* storage blocked — carry on */ }
+  var s = document.createElement("script");
+  s.type = "module";
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: TOKEN }));
+  document.head.appendChild(s);
+})();
+</script>
 </head>
 <body>
 <header class="topbar">

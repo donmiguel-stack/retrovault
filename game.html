@@ -194,6 +194,26 @@
   .cheats-source{margin:14px 0 0;font-size:12px;color:var(--text-mute);}
   .cheats-source a{color:var(--accent);text-decoration:none;}
 </style>
+<!-- Retro Vault — anonymous usage counting (Cloudflare Web Analytics).
+     Cookieless. No personal data, no cross-site tracking, no fingerprinting.
+     Does not run from an offline (file://) copy.
+     Opt out permanently from the browser console:
+       localStorage.setItem('rv-no-analytics', '1')
+-->
+<script>
+(function () {
+  var TOKEN = "ffd5bd26c2f548acaba24a6847413f1c";
+  if (location.protocol === "file:") return;         // offline copy: beacon cannot work
+  try {
+    if (localStorage.getItem("rv-no-analytics") === "1") return;
+  } catch (e) { /* storage blocked — carry on */ }
+  var s = document.createElement("script");
+  s.type = "module";
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: TOKEN }));
+  document.head.appendChild(s);
+})();
+</script>
 </head>
 <body>
 <div class="topbar">
