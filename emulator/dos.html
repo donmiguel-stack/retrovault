@@ -69,18 +69,42 @@
 	// out of the way. kiosk hides js-dos's own bundle-editor sidebar (meant
 	// for people building their own bundles, not for playing one); autoStart
 	// skips its "press play" gate.
+	// js-dos keeps a copy of every bundle it downloads in the origin private
+	// file system, keyed by the bundle's URL. That's a real win for a 90 MB
+	// game, but it also means swapping a .zip in roms/ has no effect at all -
+	// the browser replays the old bundle forever, and no amount of reloading
+	// or cache-clearing in the usual places touches it. So: ask the server
+	// what the file looks like right now (ETag, else Last-Modified, else
+	// size) and hang that on the URL as ?v=. The key then changes exactly
+	// when the ROM changes and stays put when it doesn't, so the cache keeps
+	// working. If the HEAD fails (offline, file://), fall back to the plain
+	// URL and let js-dos serve whatever it already has.
+	function resolveBundleUrl(name) {
+		var base = "roms/" + name;
+		return fetch(base, { method: "HEAD", cache: "no-store" }).then(function (r) {
+			if (!r.ok) return base;
+			var tag = r.headers.get("etag") ||
+				[r.headers.get("last-modified"), r.headers.get("content-length")]
+					.filter(Boolean).join("-");
+			if (!tag) return base;
+			return base + "?v=" + String(tag).replace(/[^a-zA-Z0-9]/g, "").slice(-20);
+		}).catch(function () { return base; });
+	}
+
 	function boot() {
 		var loading = document.getElementById("loadingMsg");
 		if (typeof Dos !== "function") {
 			loading.textContent = "Couldn't load the DOS player. Refresh, or check emulator/dos/js-dos.js is in place.";
 			return;
 		}
-		Dos(document.getElementById("dos"), {
-			url: "roms/" + zip,
-			pathPrefix: "dos/emulators/",
-			backend: "dosbox",
-			kiosk: true,
-			autoStart: true
+		resolveBundleUrl(zip).then(function (bundleUrl) {
+			Dos(document.getElementById("dos"), {
+				url: bundleUrl,
+				pathPrefix: "dos/emulators/",
+				backend: "dosbox",
+				kiosk: true,
+				autoStart: true
+			});
 		});
 		// js-dos signals readiness in a few different ways across versions;
 		// simplest reliable signal is a <canvas> appearing in the container.
