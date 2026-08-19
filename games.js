@@ -1,6 +1,6 @@
 window.GAMES_DATA = {
   "generated": "picopac catalogue",
-  "count": 321,
+  "count": 330,
   "games": [
   {
     "id": "new_amok_alt",
@@ -2919,6 +2919,19 @@ window.GAMES_DATA = {
     "developer": "Silas Warner"
   },
   {
+    "id": "c64_blood_money",
+    "filename": "c64_blood_money.d64",
+    "title": "Blood Money",
+    "platform": "C64",
+    "category": "Commodore 64",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "Blood Money.d64",
+    "year": 1990,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
     "id": "pc_doom",
     "filename": "pc_doom.zip",
     "title": "Doom",
@@ -3582,6 +3595,97 @@ window.GAMES_DATA = {
     "developer": "Sierra On-Line"
   },
   {
+    "id": "pc_lemmings",
+    "filename": "pc_lemmings.zip",
+    "title": "Lemmings",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "PC_LEMMINGS.zip",
+    "year": 1991,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
+    "id": "pc_onml",
+    "filename": "pc_onml.zip",
+    "title": "Oh No! More Lemmings",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "onml.zip",
+    "year": 1991,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
+    "id": "pc_xmas_lemmings",
+    "filename": "pc_xmas_lemmings.zip",
+    "title": "Xmas Lemmings",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "xmas.zip",
+    "year": 1992,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
+    "id": "pc_holiday_lemmings",
+    "filename": "pc_holiday_lemmings.zip",
+    "title": "Holiday Lemmings 1994",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "holiday.zip",
+    "year": 1994,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
+    "id": "pc_lemmings2",
+    "filename": "pc_lemmings2.zip",
+    "title": "Lemmings 2: The Tribes",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "lem2.zip",
+    "year": 1993,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
+    "id": "pc_anwol",
+    "filename": "pc_anwol.zip",
+    "title": "All New World of Lemmings",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "anwol.zip",
+    "year": 1994,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
+    "id": "pc_blood_money",
+    "filename": "pc_blood_money.zip",
+    "title": "Blood Money",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "bloodmoney.zip",
+    "year": 1990,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
     "id": "pc_hb_gates",
     "filename": "pc_hb_gates.zip",
     "title": "Gates Of Integrity",
@@ -3752,6 +3856,19 @@ window.GAMES_DATA = {
     "romFile": "CATSBROOMBAS.zip",
     "publisher": "Eigen Lenk",
     "developer": "Eigen Lenk"
+  },
+  {
+    "id": "pc_gta1",
+    "filename": "pc_gta1.zip",
+    "title": "Grand Theft Auto",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "GTA1.zip",
+    "year": 1997,
+    "publisher": "BMG Interactive",
+    "developer": "DMA Design"
   }
 ]
 };

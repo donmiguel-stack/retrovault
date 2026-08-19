@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources &amp; Emulators — Retro Vault</title>
+<link rel="stylesheet" href="style.css?v=95">
+<style>
+  .resources-page{max-width:760px;margin:0 auto;padding:24px;}
+  .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
+  .back-link:hover{color:var(--text);}
+  .resources-page h1{font-size:24px;margin:0 0 18px;}
+  .resources-page .modal-body{padding:0;}
+  .resources-page .modal-body h3:first-child{margin-top:18px;}
+</style>
+<!-- Retro Vault — anonymous usage counting (Cloudflare Web Analytics).
+     Cookieless. No personal data, no cross-site tracking, no fingerprinting.
+     Does not run from an offline (file://) copy.
+     Opt out permanently from the browser console:
+       localStorage.setItem('rv-no-analytics', '1')
+-->
+<script>
+(function () {
+  var TOKEN = "ffd5bd26c2f548acaba24a6847413f1c";
+  if (location.protocol === "file:") return;         // offline copy: beacon cannot work
+  try {
+    if (localStorage.getItem("rv-no-analytics") === "1") return;
+  } catch (e) { /* storage blocked — carry on */ }
+  var s = document.createElement("script");
+  s.type = "module";
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: TOKEN }));
+  document.head.appendChild(s);
+})();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">&#9642;</span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; PC</span></div>
+  <div style="flex:1"></div>
+  <div id="langFlags" class="lang-flags" role="group" aria-label="Language"></div>
+</header>
+
+<div class="resources-page">
+  <a class="back-link" href="index.html"><span>&#9664;</span> <span data-i18n="back">Back to library</span></a>
+  <h1 data-s="h_sources">Where to find more</h1>
+  <div class="modal-body">
+    <div data-s="sources"></div>
+    <p data-s="sourcesNote"></p>
+  </div>
+</div>
+
+<script src="i18n.js?v=109"></script>
+<script src="setup-i18n.js?v=109"></script>
+<script>
+(function () {
+  function applyLang() {
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      el.textContent = window.t(el.dataset.i18n);
+    });
+    var pack = (window.SETUP_I18N || {})[window.currentLang()] || (window.SETUP_I18N || {}).en;
+    if (pack) {
+      document.querySelectorAll("[data-s]").forEach(function (el) {
+        if (pack[el.dataset.s]) el.innerHTML = pack[el.dataset.s];
+      });
+    }
+    document.documentElement.lang = window.currentLang();
+  }
+
+  // Same flag row as index.html/game.html — five clicks' worth of choice,
+  // no dropdown needed. Shares the VideopacVault_lang key so switching
+  // language here also carries over back to the library.
+  var langFlags = document.getElementById("langFlags");
+  if (langFlags && window.I18N) {
+    Object.keys(window.I18N).forEach(function (code) {
+      var b = document.createElement("button");
+      b.className = "flag-btn";
+      b.dataset.lang = code;
+      b.innerHTML = window.I18N[code]._flag;
+      b.title = window.I18N[code]._name;
+      b.setAttribute("aria-label", window.I18N[code]._name);
+      langFlags.appendChild(b);
+    });
+    function markLang() {
+      langFlags.querySelectorAll(".flag-btn").forEach(function (b) {
+        b.classList.toggle("active", b.dataset.lang === window.currentLang());
+      });
+    }
+    markLang();
+    langFlags.addEventListener("click", function (e) {
+      var b = e.target.closest(".flag-btn");
+      if (!b) return;
+      localStorage.setItem(window.I18N_KEY, b.dataset.lang);
+      markLang();
+      applyLang();
+    });
+  }
+
+  applyLang();
+})();
+</script>
+</body>
+</html>

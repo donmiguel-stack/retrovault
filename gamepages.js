@@ -3632,6 +3632,17 @@ window.GAMEPAGES_DATA = {
    "text": "Sneak, bluff and shoot your way out of a Nazi fortress, stealing disguises and secret plans while guards patrol a randomized, replayable layout. Written by Silas Warner and published by Muse Software in 1983, it introduced stealth mechanics to computer gaming years before the term existed, and its title and premise were later revived — and radically reinvented — as id Software's Wolfenstein 3D."
   }
  },
+ "c64_blood_money": {
+  "input": "joystick",
+  "note": "A dual-plane side-scrolling shooter &ndash; your ship can shift between two parallel layers, so half the challenge is picking which plane to be on. Press <strong>1</strong> for 1-player from the title screen once the credits finish drawing in.",
+  "video": {
+   "id": "an7SVBWH_lE",
+   "title": "Commodore 64 Longplay [209] Blood Money (EU)"
+  },
+  "history": {
+   "text": "DMA Design's second shoot-'em-up, coded by Mike Dailly with art by Tony Smith and published by Psygnosis in 1990. This C64 port carries the same organic, fleshy alien art style as the Amiga original across four sprawling worlds, each with a boss and an in-between shop for buying weapon upgrades &ndash; a genre DMA Design was known for before Lemmings made them famous, and again before Grand Theft Auto made them Rockstar North. This vault's PC shelf also carries the DOS release of the same game."
+  }
+ },
  "pc_doom": {
   "input": "keyboard",
   "note": "This vault ships id Software's free 1993 shareware episode, <strong>Knee-Deep in the Dead</strong> &ndash; the same disk that made Doom a phenomenon before anyone had paid a cent for it. Arrow keys move, <strong>Ctrl</strong> fires, <strong>Space</strong> opens doors and flips switches, <strong>Shift</strong> runs, and the number keys swap weapons. Click into the window once to give it your mouse for looking around; <strong>Esc</strong> opens DOSBox's own menu (exit, fullscreen, etc.), not the game's. If you own a full copy of Doom, its DOOM.WAD can replace the shareware DOOM1.WAD in a rebuilt DOOM.zip to unlock all three episodes &ndash; see the notes in the Vault project docs.",
@@ -4174,6 +4185,83 @@ window.GAMEPAGES_DATA = {
    "text": "The last mainline entry with direct involvement from series co-creator Scott Murphy, and the first built on Sierra's newer SCI32 engine, adding full-motion \"Robot\" video cutscenes. Frequently cited as a fan-favorite high point for the series' comedy writing, even as Sierra's adventure-game business was beginning its mid-90s decline."
   }
  },
+ "pc_lemmings": {
+  "input": "mouse",
+  "note": "The mouse builds and destroys the level; the eight skill icons along the bottom (Climber, Floater, Bomber, Blocker, Builder, Basher, Miner, Digger) assign a job to whichever lemming you click. The main menu opens straight into a machine-type prompt from the original installer &ndash; press <strong>Return</strong> once to accept &quot;PC compatibles&quot; and reach the real title screen. <strong>F1</strong> starts 1-player. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "xIuxB1oR2WQ",
+   "title": "Lemmings full playthrough (DOS)"
+  },
+  "history": {
+   "text": "DMA Design's puzzle-strategy breakout, published by Psygnosis in 1991, tasked players with steering an endless column of suicidally literal-minded green-haired creatures to safety by assigning a handful of them special jobs &ndash; digger, blocker, builder, bomber &ndash; before they walked off a cliff or into a fire. Built around a simple idea and an even simpler control scheme, it became one of the best-selling games of the early 90s and was ported to nearly every platform sold at the time, including this DOS release and, on this vault's other shelf, the Commodore 64."
+  }
+ },
+ "pc_onml": {
+  "input": "mouse",
+  "note": "The first Lemmings expansion pack &ndash; same eight skills, all-new levels pitched harder than the original's. Same machine-type prompt as the original on boot: press <strong>Return</strong> once for &quot;PC compatibles&quot;. <strong>F1</strong> starts 1-player. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "-ug5vxX8Vic",
+   "title": "Oh No! More Lemmings (Amiga 500 longplay) — no separate DOS longplay circulates; the DOS release plays identically"
+  },
+  "history": {
+   "text": "Released only months after the original, this stand-alone expansion swapped in 100 new, noticeably meaner levels while changing nothing about the core rules &ndash; the same read-the-terrain, assign-a-job puzzle logic, just tuned for players who had already cleared the first game. Its hardest difficulty tier was blunt about it: renamed from \"Mayhem\" to simply \"Tame\" on some releases' menus wouldn't have been out of place, since even its easiest levels out-punished the original's hardest."
+  }
+ },
+ "pc_xmas_lemmings": {
+  "input": "mouse",
+  "note": "A free four-level Christmas demo Psygnosis mailed out to registered Lemmings owners in 1992 &ndash; same controls, a snow-themed skin, and a much shorter level set. Boots into a &quot;PC Lemmings Demo Machine Type Selection Screen&quot;: press <strong>1</strong> then <strong>Return</strong> for the VGA game. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "su7bymGu-CA",
+   "title": "Longplay: Xmas Lemmings 1991 (1991) [MS-DOS]"
+  },
+  "history": {
+   "text": "Psygnosis's yearly holiday freebie for owners who'd mailed back their registration card &ndash; four new snow-and-present-themed levels on the same engine as the full game, sent out on a single disk with no purchase required. It's the same promotional lineage that became Holiday Lemmings in later years; this vault also carries the 1994 edition under that later name."
+  }
+ },
+ "pc_holiday_lemmings": {
+  "input": "mouse",
+  "note": "The last of Psygnosis's free yearly holiday Lemmings episodes, mailed to registered owners &ndash; a handful of new snow-themed levels, same skills and controls as the full game. <strong>F1</strong> starts the game straight from its own title screen, no machine-select prompt this time. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "su7bymGu-CA",
+   "title": "Longplay: Xmas Lemmings 1991 (1991) [MS-DOS] — the closest matching longplay; Holiday Lemmings 1994 is the same free yearly format's final release and doesn't have its own circulating longplay"
+  },
+  "history": {
+   "text": "Psygnosis kept sending registered Lemmings owners a free seasonal level pack every winter from 1991 through 1994, renaming it from Xmas Lemmings to Holiday Lemmings partway through as the pack grew to cover more than just Christmas. This 1994 edition was the last of the series, bundled here alongside the earlier Xmas Lemmings 1992 release this vault also carries."
+  }
+ },
+ "pc_lemmings2": {
+  "input": "mouse",
+  "note": "A much bigger sequel &ndash; ten lemming tribes, each with its own set of skills and look, and a hub map instead of a flat level list. Mouse-driven front end; click <strong>PLAY</strong> to pick a tribe and level. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "RSByEMmPJw8",
+   "title": "Amiga Longplay Lemmings 2: The Tribes (Part 1 of 3) — no single-video DOS longplay circulates; a DOS playlist exists but isn't linkable as one video ID"
+  },
+  "history": {
+   "text": "DMA Design's 1993 sequel kept the core save-the-lemmings idea but multiplied it: ten tribes (Classic, Egyptian, Highland, Polar and more) each carry a themed subset of skills instead of the original's fixed eight, spread across a hub-style world map rather than one long level list. Bigger, more varied, and less punishing than Oh No! More Lemmings, it's often cited as the series' most ambitious entry even if the original stayed the more iconic one."
+  }
+ },
+ "pc_anwol": {
+  "input": "mouse",
+  "note": "The third mainline sequel, retitled \"The Lemmings Chronicles\" in some releases &ndash; a moodier, more atmospheric take with pre-rendered cutscenes. Boots straight into an animated intro; click through or wait for the main menu. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "FbtLfaP6S9k",
+   "title": "All New World of Lemmings [1994] MS DOS - 5 minute gameplay - no commentary"
+  },
+  "history": {
+   "text": "Psygnosis's third full Lemmings sequel traded the earlier games' bright cartoon look for a darker, more painterly art style and framed its four themed worlds (Egyptian, Roman, Norse, Chinese) with rendered cutscenes rather than static menus &ndash; a noticeably more expensive-looking production than 1991's original. Reception was more divided than the earlier entries; some found the new tone a genuine step up, others missed the earlier games' immediacy."
+  }
+ },
+ "pc_blood_money": {
+  "input": "keyboard",
+  "note": "A side-scrolling shoot-'em-up, not a Lemmings game &ndash; DMA Design's other 1990 release. Arrow keys move, the fire key (bindable) shoots; four worlds, each ending in a boss. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "_gZf1wBCQ7E",
+   "title": "Blood Money gameplay (PC Game, 1989)"
+  },
+  "history": {
+   "text": "Before Lemmings made DMA Design famous, the Dundee studio built its name on shoot-'em-ups &ndash; Blood Money was its second, a four-world horizontal/vertical shooter with a distinctly alien, organic art style and a shop between levels for upgrading the ship. Published by Psygnosis in 1990 across Amiga, Atari ST, DOS and, as this vault's C64 shelf also carries, a Commodore 64 port."
+  }
+ },
  "pc_hb_gates": {
   "input": "keyboard",
   "note": "A from-scratch first-person dungeon RPG built the way the genre worked in 1990 &ndash; create a party at the Guild, then walk the maze in real time fighting whatever finds you. Menu-driven throughout: single letters pick every option, on both the Guild screen and in the dungeon itself. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
@@ -4228,7 +4316,7 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_queens": {
   "input": "keyboard",
-  "note": "A classic text parser adventure &ndash; type commands, read carefully. This vault has the catalogue entry and cover ready; the DOS build itself is pay-what-you-want (including &pound;0) on the developer's itch.io page and still needs adding to emulator/roms.",
+  "note": "A classic text parser adventure &ndash; type commands, read carefully. Boots straight into the introduction text; type <strong>help</strong> for the full instruction list.",
   "history": {
    "source": "Davide Bucci's itch.io page (darwinne.itch.io/the-queens-footsteps), where the game is also released as open source.",
    "text": "A steampunk-Italy text adventure whose author later open-sourced the whole project &ndash; one of several genuinely open homebrew DOS titles active today."
@@ -4236,21 +4324,21 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_spacecavern": {
   "input": "keyboard",
-  "note": "A cave-flyer shooter/platformer released simultaneously for C64, Amiga, Atari ST, DOS and Sega Genesis &ndash; same design, five 8/16-bit targets. DOS build is pay-what-you-want on itch.io and still needs adding to emulator/roms.",
+  "note": "A cave-flyer shooter/platformer released simultaneously for C64, Amiga, Atari ST, DOS and Sega Genesis &ndash; same design, five 8/16-bit targets. Boots into the credits screen; press <strong>Return</strong> (or Start) to begin.",
   "history": {
    "source": "dotmos's itch.io page (dotmos.itch.io/space-cavern-blaster), originally built for Retro Platform Jam #6."
   }
  },
  "pc_hb_barren": {
   "input": "keyboard",
-  "note": "A turn-based sci-fi strategy game, source available on GitHub. Pay-what-you-want on itch.io (including &pound;0); still needs adding to emulator/roms.",
+  "note": "A turn-based sci-fi strategy game, source available on GitHub. Boots straight into the title screen; press <strong>Fire</strong> to begin.",
   "history": {
    "source": "Cyningstan's itch.io page (cyningstan.itch.io/barren-planet) and GitHub repository (github.com/cyningstan/barren)."
   }
  },
  "pc_hb_chambers": {
   "input": "keyboard",
-  "note": "A dungeon-crawling roguelike from the same developer as Barren Planet. Pay-what-you-want on itch.io; still needs adding to emulator/roms.",
+  "note": "A dungeon-crawling roguelike from the same developer as Barren Planet. Boots into a short loading screen before the title.",
   "history": {
    "source": "Cyningstan's itch.io page (cyningstan.itch.io/the-chambers-beneath)."
   }
@@ -4271,14 +4359,14 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_lake": {
   "input": "keyboard",
-  "note": "A short text adventure. Pay-what-you-want on itch.io; still needs adding to emulator/roms.",
+  "note": "A short text adventure built on the AGT engine. Boots straight into the title screen.",
   "history": {
    "source": "B.J. Best's itch.io page (bjbest60.itch.io/lake-adventure)."
   }
  },
  "pc_hb_acronia": {
   "input": "keyboard",
-  "note": "A smooth-scrolling VGA action game, originally a DOS Games Jam prototype. Pay-what-you-want on itch.io; still needs adding to emulator/roms.",
+  "note": "A smooth-scrolling VGA action game, originally a DOS Games Jam prototype. Boots into the main menu with <strong>NEW GAME</strong> already highlighted &ndash; press <strong>Return</strong>.",
   "video": {
    "id": "cM_0QdRptEw",
    "title": "Acronia | official teaser trailer"
@@ -4289,13 +4377,24 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_catsbroombas": {
   "input": "keyboard",
-  "note": "A puzzle game about cats and broomsticks, built for DOS from the ground up. Pay-what-you-want on itch.io; still needs adding to emulator/roms.",
+  "note": "A puzzle game about cats and broomsticks, built for DOS from the ground up. Boots into a hand-drawn title screen.",
   "video": {
    "id": "JEZq1GlYD7I",
    "title": "Cats on Broombas Demo Release Trailer"
   },
   "history": {
    "source": "Eigen Lenk's itch.io page (eigen.itch.io/cats-on-broombas)."
+  }
+ },
+ "pc_gta1": {
+  "input": "keyboard",
+  "note": "Top-down, arrow keys to drive, <strong>Ctrl</strong> to fire once armed. <strong>F1</strong> brings up the in-game help/controls screen if you get stuck. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "Akmg6dUkwKc",
+   "title": "GTA 1 Longplay: Full Playthrough 100% (No Commentary)"
+  },
+  "history": {
+   "text": "DMA Design's last game before the studio became Rockstar North &ndash; a top-down crime spree across three fictional cities (Liberty City, San Andreas, Vice City, names the later 3D sequels would reuse) that let players steal cars, run from police and rack up points for chaos, developed under the working title \"Race'n'Chase.\" Published by BMG Interactive in Europe and ASC Games in North America; it drew tabloid controversy on release for rewarding crime rather than punishing it, and its top-down engine and free-roaming city design became the template for the franchise's next three decades."
   }
  }
 };

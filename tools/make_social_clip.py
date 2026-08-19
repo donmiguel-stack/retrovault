@@ -59,8 +59,23 @@ FLAGS:
     --source-height N   max height to pull from YouTube (default 1080)
     --outdir DIR    write somewhere else than social-clips/
     --force         overwrite an existing clip with the same name
+    --full          skip the section download, pull the whole video
+    --no-crop       keep the black bars instead of trimming them
+    --crop W:H:X:Y  crop by hand instead of detecting the border
+    --client NAME   force one YouTube player client (web_embedded, tv, mweb,
+                    ios) instead of rotating through several
+    --cookies-from-browser B   use your logged-in cookies (safari/chrome/firefox)
+                    for videos that otherwise answer with HTTP 403
     --keep-raw      keep the untouched download next to the clip
     --dry-run       show what would happen, download nothing
+
+IF A DOWNLOAD FAILS WITH 403:
+    YouTube is moving to SABR streaming and hands some clients media URLs
+    that need a PO token, which then get refused at the CDN. The script
+    already retries as several different players (web_embedded, tv, mweb),
+    which clears most of it by itself. If every one is refused, try
+    --cookies-from-browser safari, then --client ios, then another upload.
+    Keep yt-dlp current as well (brew upgrade yt-dlp) - the goalposts move.
 """
 
 import argparse
@@ -87,9 +102,40 @@ LRA = 11.0
 
 # --------------------------------------------------------------------- utils
 
+YTDLP_EXTRA = []          # filled in by setup_ytdlp()
+
+
 def need(tool):
     if shutil.which(tool) is None:
         sys.exit("Missing '%s'. Install it first:  brew install yt-dlp ffmpeg" % tool)
+
+
+def setup_ytdlp(cookies_from):
+    """Work out the extra yt-dlp flags this machine needs.
+
+    YouTube now scrambles the media URLs with a JavaScript challenge. yt-dlp
+    can solve it, but only with a JS engine to run it in - and it only looks
+    for deno unless you tell it otherwise. Without one, extraction still
+    'succeeds' and hands back URLs that the CDN answers with 403. That is why
+    a video can list its title happily and then refuse to download.
+    """
+    global YTDLP_EXTRA
+    helpout = subprocess.run(["yt-dlp", "--help"],
+                             stdout=subprocess.PIPE,
+                             stderr=subprocess.DEVNULL).stdout.decode("utf-8", "ignore")
+
+    if "--js-runtimes" in helpout:
+        runtimes = [r for r in ("deno", "node", "bun") if shutil.which(r)]
+        if runtimes:
+            YTDLP_EXTRA += ["--js-runtimes", ",".join(runtimes)]
+        else:
+            print("note    : no JavaScript engine found (deno/node/bun).")
+            print("          YouTube needs one to hand out working media URLs;")
+            print("          without it downloads fail with HTTP 403.")
+            print("          Fix it once with:  brew install deno")
+            print()
+    if cookies_from:
+        YTDLP_EXTRA += ["--cookies-from-browser", cookies_from]
 
 
 def die(msg):
@@ -205,8 +251,8 @@ def run(cmd, what):
 def fetch_meta(vid):
     """Title, channel and length, without pulling any video. Never fatal."""
     r = subprocess.run(
-        ["yt-dlp", "--quiet", "--no-warnings", "--skip-download",
-         "--print", "%(title)s\t%(channel)s\t%(duration)s",
+        ["yt-dlp", "--quiet", "--no-warnings", "--skip-download"] + YTDLP_EXTRA +
+        ["--print", "%(title)s\t%(channel)s\t%(duration)s",
          "https://www.youtube.com/watch?v=%s" % vid],
         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if r.returncode != 0:
@@ -362,7 +408,7 @@ def _clear(tmpdir, raw):
 
 
 def download(vid, start, length, raw, tmpdir, srcheight, full_only=False,
-             cache=None):
+             cache=None, client=""):
     """Fetch the wanted seconds, trying progressively duller options.
 
     yt-dlp's section download hands the byte-range fetching to ffmpeg, and
@@ -385,25 +431,37 @@ def download(vid, start, length, raw, tmpdir, srcheight, full_only=False,
                "--force-keyframes-at-cuts"]
 
     h = srcheight
+    best = ["-f", "bv*[height<=%d]+ba/b[height<=%d]/bv*+ba/b" % (h, h)]
+    avc = ["-f", "bv*[height<=%d][vcodec^=avc1]+ba[acodec^=mp4a]/"
+                 "b[height<=%d][ext=mp4]" % (h, h)]
+    avc720 = ["-f", "bv*[height<=720][vcodec^=avc1]+ba[acodec^=mp4a]/"
+                    "b[height<=720][ext=mp4]"]
+    full_fmt = ["-f", "bv*[height<=720]+ba/b[height<=720]/bv*+ba/b"]
+
+    def as_client(c):
+        return ["--extractor-args", "youtube:player_client=%s" % c] if c else []
+
+    # Which YouTube player to pretend to be. This is the lever that actually
+    # matters for 403s: YouTube is pushing everyone onto SABR streaming and
+    # handing out URLs that need a PO token, and not every client is subject
+    # to it. web_embedded is the one that has held up longest, so it sits
+    # right behind the default rather than at the bottom.
+    clients = [client] if client else [None, "web_embedded", "tv", "mweb"]
+
     ladder = []
     if not full_only:
-        ladder += [
-            ("best available up to %dp" % h,
-             section + ["-f", "bv*[height<=%d]+ba/b[height<=%d]/bv*+ba/b" % (h, h)],
-             False),
-            ("H.264 + AAC only",
-             section + ["-f", "bv*[height<=%d][vcodec^=avc1]+ba[acodec^=mp4a]/"
-                              "b[height<=%d][ext=mp4]" % (h, h)],
-             False),
-            ("H.264 + AAC, capped at 720p",
-             section + ["-f", "bv*[height<=720][vcodec^=avc1]+ba[acodec^=mp4a]/"
-                              "b[height<=720][ext=mp4]"],
-             False),
-        ]
-    ladder.append(
-        ("whole video, cut locally (slower)",
-         ["-f", "bv*[height<=720]+ba/b[height<=720]/bv*+ba/b"],
-         True))
+        ladder.append(("best available up to %dp" % h,
+                       section + best, False))
+        ladder.append(("H.264 + AAC only", section + avc, False))
+        for c in clients:
+            if c:
+                ladder.append(("as the %s player" % c,
+                               section + avc + as_client(c), False))
+        ladder.append(("H.264 + AAC, capped at 720p", section + avc720, False))
+    for c in clients:
+        ladder.append(("whole video, cut locally (slower)" if not c
+                       else "whole video as the %s player" % c,
+                       full_fmt + as_client(c), True))
 
     last = ""
     for i, (label, extra, needs_cut) in enumerate(ladder, 1):
@@ -414,19 +472,44 @@ def download(vid, start, length, raw, tmpdir, srcheight, full_only=False,
             print("     %s" % label)
         cmd = (["yt-dlp", "--quiet", "--no-warnings", "--no-playlist",
                 "--merge-output-format", "mp4", "-o", raw]
-               + extra + [url])
+               + YTDLP_EXTRA + extra + [url])
         r = subprocess.run(cmd, stderr=subprocess.PIPE)
         got = _produced(tmpdir, raw)
         if r.returncode == 0 and got:
-            if needs_cut and cache is not None:
-                cache["full"] = got
-            return got, needs_cut
-        last = r.stderr.decode("utf-8", "ignore").strip()[-300:] or "no file produced"
+            # Exit code 0 is not proof of content. A section far into a long
+            # video can come back as a valid container with nothing in it,
+            # and accepting that is how a segment silently disappears from
+            # the finished clip. Make it earn its place, or move on.
+            have = media_duration(got)
+            enough = (have > start + 0.25) if needs_cut \
+                else (have >= max(0.25, length * 0.5))
+            if enough:
+                if needs_cut and cache is not None:
+                    cache["full"] = got
+                return got, needs_cut
+            last = ("the download came back with only %.1fs of material - "
+                    "not enough for this section" % have)
+        else:
+            last = (r.stderr.decode("utf-8", "ignore").strip()[-300:]
+                    or "no file produced")
 
-    die("could not download this section after %d attempts. Last error:\n%s\n\n"
-        "If it says the video is unavailable or age-restricted, try another\n"
-        "upload of the same game. Otherwise --source-height 480 sometimes gets\n"
-        "past a stubborn stream." % (len(ladder), last))
+    hint = ("If it says the video is unavailable or age-restricted, try another\n"
+            "upload of the same game. Otherwise --source-height 480 sometimes\n"
+            "gets past a stubborn stream.")
+    if "403" in last or "Forbidden" in last:
+        hint = ("Every player client was refused, so this is YouTube's end,\n"
+                "not your setup - it is pushing SABR streaming and handing out\n"
+                "URLs that need a PO token this video will not give up.\n"
+                "Worth trying, in order:\n"
+                "  1.  --cookies-from-browser safari   (or chrome, firefox)\n"
+                "      Log in to YouTube in that browser first.\n"
+                "  2.  --client ios      or  --client android_vr\n"
+                "      Clients not in the default rotation.\n"
+                "  3.  Make sure yt-dlp is current:  brew upgrade yt-dlp\n"
+                "If none of it works, this upload is simply locked down today.\n"
+                "Another longplay of the same game is usually the fast way out.")
+    die("could not download this section after %d attempts. Last error:\n%s\n\n%s"
+        % (len(ladder), last, hint))
 
 
 # -------------------------------------------------------------------- stitch
@@ -509,6 +592,13 @@ def main():
     ap.add_argument("--crop", default="",
                     help="crop by hand: W:H:X:Y (skips the detection)")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--client", default="", metavar="NAME",
+                    help="force one YouTube player client (web_embedded, tv, "
+                         "mweb, ios) instead of trying several")
+    ap.add_argument("--cookies-from-browser", default="", dest="cookies",
+                    metavar="BROWSER",
+                    help="use your logged-in cookies (safari, chrome, firefox) "
+                         "for videos that refuse to download otherwise")
     ap.add_argument("--full", action="store_true",
                     help="skip the section download, pull the whole video")
     ap.add_argument("--keep-raw", action="store_true", dest="keepraw")
@@ -523,6 +613,7 @@ def main():
     need("yt-dlp")
     need("ffmpeg")
     need("ffprobe")
+    setup_ytdlp(a.cookies)
 
     manual_crop = None
     if a.crop:
@@ -596,7 +687,7 @@ def main():
             raw = os.path.join(tmpdir, "raw_%d.mp4" % i)
             path, needs_cut = download(vid, start, length, raw, tmpdir,
                                        a.srcheight, full_only=a.full,
-                                       cache=cache)
+                                       cache=cache, client=a.client)
             # Catch a dud section here, while we can still say something
             # useful about it. Left to the encoder it surfaces as a wall of
             # ffmpeg stream-mapping errors that say nothing about timestamps.

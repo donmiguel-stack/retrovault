@@ -1050,6 +1050,10 @@ window.GENRE_DATA = {
   "genre": "action",
   "players": "p1"
  },
+ "c64_blood_money": {
+  "genre": "shooter",
+  "players": "p1"
+ },
  "pc_doom": {
   "genre": "shooter",
   "players": "p1"
@@ -1254,6 +1258,34 @@ window.GENRE_DATA = {
   "genre": "adventure",
   "players": "p1"
  },
+ "pc_lemmings": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "pc_onml": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "pc_xmas_lemmings": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "pc_holiday_lemmings": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "pc_lemmings2": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "pc_anwol": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "pc_blood_money": {
+  "genre": "shooter",
+  "players": "p1"
+ },
  "pc_hb_gates": {
   "genre": "adventure",
   "players": "p1"
@@ -1308,6 +1340,10 @@ window.GENRE_DATA = {
  },
  "pc_hb_catsbroombas": {
   "genre": "puzzle",
+  "players": "p1"
+ },
+ "pc_gta1": {
+  "genre": "action",
   "players": "p1"
  }
 };

@@ -63,6 +63,13 @@ covers/_withheld/
 # Your private link to wherever your dumps live. Never commit this.
 sources.local.json
 
+# Personal-only game picks (e.g. still-commercial titles you own but don't
+# want listed in the public catalogue/games.js) - a standalone page that
+# links straight to emulator/dos.html or emulator/index.html outside the
+# normal library, so it never needs a games.js/gamepages.js/genres.js entry
+# or public cover art. Same ".local." convention as sources.local.json above.
+*.local.html
+
 .DS_Store
 
 # Zips built for handing the Vault to someone else - not part of the repo.

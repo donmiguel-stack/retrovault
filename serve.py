@@ -41,7 +41,13 @@ SOURCE_FILE = os.path.join(ROOT, "update-source.json")
 # in covers/.
 ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json",
                 ".gif", ".mp4", ".pdf")
-ALLOWED_DIRS = ("", "covers", "assets/shots", "assets/cheats", "clips", "extras")
+# homebrew-downloads/ ships actual game files - the one exception to "DATA
+# ONLY" above, and only for titles that passed the redistribution-license
+# check in downloads.js. These formats are allowed ONLY inside that one
+# folder; covers/clips/extras/etc still can't receive a .zip or .d64.
+HOMEBREW_EXT = (".d64", ".zip", ".crt", ".prg", ".bin")
+ALLOWED_DIRS = ("", "covers", "assets/shots", "assets/cheats", "clips", "extras",
+                 "homebrew-downloads")
 
 
 def source_base():
@@ -70,7 +76,10 @@ def safe(rel):
     folder = "/".join(parts[:-1])          # "", "covers", "assets/shots"
     if folder not in ALLOWED_DIRS:
         return False
-    return os.path.splitext(rel)[1].lower() in ALLOWED_EXT
+    ext = os.path.splitext(rel)[1].lower()
+    if folder == "homebrew-downloads":
+        return ext in HOMEBREW_EXT
+    return ext in ALLOWED_EXT
 
 
 def fetch(url, timeout=30):

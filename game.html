@@ -77,6 +77,24 @@
     position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
     font-size:12px;color:var(--text-mute);
   }
+  /* Download button - homebrew/copyright-free game the Vault hosts itself
+     (homebrew-downloads/), not a purchase and not a link to the creator's
+     own page. Amber so it reads as its own third thing next to Buy (green)
+     and Support (pink). */
+  .dl-col{
+    position:relative;
+    margin-top:18px;margin-left:16px;
+  }
+  .dl-btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    background:#d9a441;color:#2a1c02;font-weight:700;font-size:15px;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .dl-btn:hover{background:#e6b658;}
+  .dl-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
   .alt-name{margin:0 0 6px;font-size:13.5px;color:var(--text-dim);}
   .alt-name strong{color:var(--text);}
   .alt-num{
@@ -218,27 +236,30 @@
 <body>
 <div class="topbar">
   <div class="brand"><span class="brand-mark">&#9632;</span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; PC</span></div>
+  <div style="flex:1"></div>
+  <a id="resourcesLink" class="ghost-btn" href="resources.html" data-i18n="resources" style="display:inline-block;text-decoration:none;">Resources</a>
 </div>
 <div class="game-page" id="page">
   <a class="back-link" href="index.html" id="backLink">&#9664; <span data-i18n="back">Back to library</span></a>
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=103"></script>
-<script src="setup-i18n.js?v=103"></script>
-<script src="games.js?v=103"></script>
-<script src="extras.js?v=103"></script>
-<script src="packaging.js?v=103"></script>
-<script src="genres.js?v=103"></script>
-<script src="brazil.js?v=103"></script>
-<script src="usa.js?v=103"></script>
-<script src="shops.js?v=103"></script>
-<script src="support.js?v=103"></script>
-<script src="cheats.js?v=103"></script>
-<script src="featured.js?v=103"></script>
-<script src="c64ad.js?v=103"></script>
-<script src="gamepages.js?v=103"></script>
-<script src="demo.js?v=103"></script>
+<script src="i18n.js?v=107"></script>
+<script src="setup-i18n.js?v=107"></script>
+<script src="games.js?v=107"></script>
+<script src="extras.js?v=107"></script>
+<script src="packaging.js?v=107"></script>
+<script src="genres.js?v=107"></script>
+<script src="brazil.js?v=107"></script>
+<script src="usa.js?v=107"></script>
+<script src="shops.js?v=107"></script>
+<script src="support.js?v=107"></script>
+<script src="downloads.js?v=107"></script>
+<script src="cheats.js?v=107"></script>
+<script src="featured.js?v=107"></script>
+<script src="c64ad.js?v=107"></script>
+<script src="gamepages.js?v=107"></script>
+<script src="demo.js?v=107"></script>
 <script>
 (function () {
   var COVER_COLORS = ["#5b8def","#3ba97a","#c07de0","#e0865a","#d65a7e","#8a8f98","#e0c05a","#4fb3bf"];
@@ -501,6 +522,30 @@
     scol.appendChild(sline);
     actions.appendChild(scol);
   });
+
+  // ---- download from the Vault ----
+  // Homebrew/copyright-free games the Vault hosts itself, in
+  // homebrew-downloads/ (see downloads.js) - not user-supplied ROMs, and
+  // unlike Buy/Support, not a link elsewhere. Hidden until a HEAD request
+  // confirms the file is really there, same discipline as the START button
+  // above - no button that leads to a 404.
+  var dl = (window.DOWNLOAD_DATA || {})[g.id];
+  if (dl) {
+    var dcol = el("div","dl-col");
+    dcol.style.display = "none";
+    var da = document.createElement("a");
+    da.className = "dl-btn";
+    da.href = "homebrew-downloads/" + encodeURIComponent(dl.file);
+    da.setAttribute("download", "");
+    da.innerHTML = '<span class="dl-icon">&#8681;</span>' +
+                   '<span class="dl-label">' + window.t("downloadRom") + '</span>';
+    dcol.appendChild(da);
+    dcol.appendChild(el("p","dl-note", dl.note || window.t("dlFree")));
+    actions.appendChild(dcol);
+    fetch("homebrew-downloads/" + encodeURIComponent(dl.file), { method: "HEAD" })
+      .then(function (r) { if (r.ok) dcol.style.display = ""; })
+      .catch(function () {});
+  }
   hero.appendChild(info);
   page.appendChild(hero);
 

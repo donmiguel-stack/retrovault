@@ -1,19 +1,19 @@
 {
- "generated": "2026-08-16 20:14:02",
- "count": 435,
- "bytes": 166744510,
+ "generated": "2026-08-19 16:16:37",
+ "count": 472,
+ "bytes": 182181077,
  "files": {
   "games.js": {
-   "sha256": "c7ec9540098dd2c5368216dc59485fd6b4e31493298f14660128b45acffcb446",
-   "size": 92065
+   "sha256": "655e57bdeb592f475f0ec1d00ec50fe55d043d5798b3a45dcd3544c7f1881267",
+   "size": 94762
   },
   "gamepages.js": {
-   "sha256": "ab9fe7dd8152681e2ab46966248ab4266a612bb7be07e57084f9ff5a7fe40ba9",
-   "size": 206191
+   "sha256": "a6466c8b2d41f909347676482943125c80938e794717599711f4d83a1994f1e5",
+   "size": 215160
   },
   "genres.js": {
-   "sha256": "9ab934d6ded931151d8376ef530acfb956277cf37aaac426572c010bb260a26c",
-   "size": 20643
+   "sha256": "7b97fdf0395ad83d550eb689614aa25150cdb008ac88c67378d073e873508e1d",
+   "size": 21204
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,12 +32,12 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "a252224b97e109d0fcf262519073cf66cd88ad03b129b098322bd2075013e100",
-   "size": 34301
+   "sha256": "8e1b4d40b9aebb55d2bc0d76578b396b217ba6a01d83a4cbbb11644258a6eb9a",
+   "size": 35109
   },
   "setup-i18n.js": {
-   "sha256": "e5e10e56b3d4bf66fee7e4366a954f7fde1b2874a43dd271df07365800018936",
-   "size": 33675
+   "sha256": "624afa3a1b3d81356a16e7d105d2d132fed12c793b70f47f3447c52eeff3e818",
+   "size": 47400
   },
   "featured.js": {
    "sha256": "98bfe6dbd22ef34753ee20a7c905d3d779a5b94f7614c151520da9216f8c52a4",
@@ -55,8 +55,12 @@
    "sha256": "a836b278094bae14d7ec17a72dcd8f4c2e419a42322f7d97bec848f5a9f52885",
    "size": 10731
   },
+  "downloads.js": {
+   "sha256": "1d5030ed446d2aa5c74c63fa06ec790ebe740ecdb8ddcd4e6dc9bcce848206c3",
+   "size": 8873
+  },
   "app.js": {
-   "sha256": "220cade32d16d9d49a455519cbaac9443898fe9910ee3e429c6d77842dc1c4a8",
+   "sha256": "86187292a1a589688fd78523f9d2248dd2f4e5aca9fb28c83b87cb4ec9b78231",
    "size": 73724
   },
   "demo.js": {
@@ -64,12 +68,16 @@
    "size": 3439
   },
   "game.html": {
-   "sha256": "464da87702ee83e108343f2998569869460904fcf2b2a4e30e03a53b47f375c9",
-   "size": 39656
+   "sha256": "0d0fdfe6cebe84ceda1fbb9452a1f9c1f0aa9bffcfe66d5b20695e25fc56c97c",
+   "size": 41714
   },
   "index.html": {
-   "sha256": "8f795d0c568d405a90ddae8a22abf6b1b9eb475970b35aa2347d57638e136a78",
-   "size": 14741
+   "sha256": "fdeb634524f3de6ed21fe0a5fa66f97f0babf3ef5e899707f74e819d02e5a631",
+   "size": 15098
+  },
+  "resources.html": {
+   "sha256": "8b97d785c5368ed820a2ee41f943720e63fa6dbfa21447aef40aa3f532e5e9ad",
+   "size": 3847
   },
   "style.css": {
    "sha256": "9ac55663ffb7a1a7e0aa1437df44535204b868a88e619dc590a1205411e73705",
@@ -250,6 +258,10 @@
   "covers/c64_barbarian.png": {
    "sha256": "1091e86f55356edf167e049d303e030f8d8855ee47ea50553e5bc0fd5c6ad2d0",
    "size": 136437
+  },
+  "covers/c64_blood_money.jpg": {
+   "sha256": "1964a85163ed06aae18b7357b0846beb6b769616c8802a360b9d7ecd5226aca3",
+   "size": 37872
   },
   "covers/c64_boulder_dash.png": {
    "sha256": "bb3f6cb2f3f8100c1d1beca3ea32651bbc5c7b8892f5e985b5b511c5c5abfb9f",
@@ -803,6 +815,14 @@
    "sha256": "c56fae731cdea46425c845fa12c35801a00d7dc8ca43561deeae108a8bd5877e",
    "size": 458804
   },
+  "covers/pc_anwol.jpg": {
+   "sha256": "c6c3ad62ea5ed2daf580e326da40e75a2c8fffe81735c93262e8d5112266ada8",
+   "size": 37769
+  },
+  "covers/pc_blood_money.jpg": {
+   "sha256": "1964a85163ed06aae18b7357b0846beb6b769616c8802a360b9d7ecd5226aca3",
+   "size": 37872
+  },
   "covers/pc_civilization.jpg": {
    "sha256": "3aef3ef44dc580b5b6b0a31e6a010d3f8e54425505660c435c80847b67099082",
    "size": 42151
@@ -842,6 +862,10 @@
   "covers/pc_final_doom_tnt.jpg": {
    "sha256": "99be9bbb9d25eead7a2045efd09c91e7ea691005bf5773b68f3be268d679180b",
    "size": 208238
+  },
+  "covers/pc_gta1.jpg": {
+   "sha256": "e7382ad360f71a1d0c94241da9f61103d0eb0c219acbd73b24dd6257881321c0",
+   "size": 121738
   },
   "covers/pc_hb_acronia.png": {
    "sha256": "09c0a5498b89acfdbaa85c5bba57492d1c736c5b7e8323da1e143dac0178ae0b",
@@ -899,6 +923,10 @@
    "sha256": "cbd6766648a25439aae87a2c109431e2e766f9a700842bef99869a8937ccdf1c",
    "size": 19778
   },
+  "covers/pc_holiday_lemmings.jpg": {
+   "sha256": "58edd98cfccebd1afaa36be38cbf276beffc99dd6a438f739e14fc63cdf28b3d",
+   "size": 108793
+  },
   "covers/pc_keen2.jpg": {
    "sha256": "894001e739e9f214be107a95dd59961301f37fba3435b324d64c4bd5afffa8e7",
    "size": 143757
@@ -951,6 +979,18 @@
    "sha256": "83b0fbfafe4c2577d714a7fac6f37626277270508042c7eb1d350f4efddefb4b",
    "size": 110455
   },
+  "covers/pc_lemmings.jpg": {
+   "sha256": "d29b64a0b520126b58d6414ef9a4b086c884c42cd684bdb0b58ad2f053a96fae",
+   "size": 43213
+  },
+  "covers/pc_lemmings2.jpg": {
+   "sha256": "e4aed8a4d10f6dad62167d8b124ecb4cff10ced8158e43433941778c1cc028c8",
+   "size": 37386
+  },
+  "covers/pc_onml.jpg": {
+   "sha256": "b0564413cc896b889e3d87542a602c0ef8fa3e09baebd713fda7d4b0b1ea807f",
+   "size": 113585
+  },
   "covers/pc_oregon_trail.jpg": {
    "sha256": "4337889aaf2b1d998fcfab63a2ed4df00f84317f1464d3bc7ebf8ba481b80b4a",
    "size": 54151
@@ -1002,6 +1042,10 @@
   "covers/pc_xcom_ufo_defense.jpg": {
    "sha256": "c8c25ef36949d900f19fd4c994d671e454f9215b1312b368264f49ee7c013536",
    "size": 129225
+  },
+  "covers/pc_xmas_lemmings.jpg": {
+   "sha256": "cd78166347ae1ec742f216c41dc308717200472940ff3a617c726260b95fc24b",
+   "size": 109313
   },
   "covers/pr_clay-pigeon_pl.png": {
    "sha256": "71c8db5104d0798000fb77a993027b2e0d2c7aff7a7154bed046852c2dc0a1ac",
@@ -1742,6 +1786,110 @@
   "extras/verkehrsspiele-2-manual-de.pdf": {
    "sha256": "8fe5867baa847b29340a16cfabe260537cb5b19e450a621960cb3abb7d585a63",
    "size": 2521314
+  },
+  "homebrew-downloads/ACRONIA.zip": {
+   "sha256": "8ba8f39d54b267f0cc841787f4f674050971618634984c62691fb4b9fc0f2dcd",
+   "size": 5501745
+  },
+  "homebrew-downloads/ALIENINTRUDER.zip": {
+   "sha256": "f647777ce56816bd3cdf66aead7999f9dfd8ead157f82fc55f7808a8dbc61ee8",
+   "size": 82739
+  },
+  "homebrew-downloads/BARRENPLANET.zip": {
+   "sha256": "1c119f48ac164d1a1642453e5aa9b37f0f8f277cf284f397f720a61b77cbe26b",
+   "size": 125908
+  },
+  "homebrew-downloads/Bagman Strikes Back.d64": {
+   "sha256": "5e71c42824eebe5146e5c77a70711e8190bab51c6dd1d42de53da10dd71d17ff",
+   "size": 174848
+  },
+  "homebrew-downloads/Bomberland.d64": {
+   "sha256": "87a4e21d20183c9cd0c92dbb2b33661aca910bdd69e4a73bb41d38b171e7f33e",
+   "size": 174848
+  },
+  "homebrew-downloads/Bruce Lee Return of Fury.d64": {
+   "sha256": "b4c7266f82bc9e9843d9d6bec051209cc357c262398cc8c8ae0c2fe9a4bf1e73",
+   "size": 174848
+  },
+  "homebrew-downloads/C64anabalt.d64": {
+   "sha256": "505dd5095acc28ddc4e20d6121e73479d109c8b45c1611cb5f3b7484e7160eec",
+   "size": 174848
+  },
+  "homebrew-downloads/CATSBROOMBAS.zip": {
+   "sha256": "949f0508fcc2e799fe6b2543f70c4258b72e9a96a538f950ad95786501a3b2e4",
+   "size": 1146631
+  },
+  "homebrew-downloads/CHAMBERSBENEATH.zip": {
+   "sha256": "f8b5cc579f2eea8b0617fbe59824f171c944f223a79436f1d02b6f307ba49145",
+   "size": 124827
+  },
+  "homebrew-downloads/DISKSWEEPER.zip": {
+   "sha256": "57c0b6c3e48815e83cb4634b41bec0d530ded47bf0d660d3bca22183e95a57de",
+   "size": 1194660
+  },
+  "homebrew-downloads/Doc Cosmos.d64": {
+   "sha256": "3eec196089257e33653acccb037ab4a96fa56ed1456d9748cdd75767f4bb4214",
+   "size": 174848
+  },
+  "homebrew-downloads/GATES.zip": {
+   "sha256": "5f2b54c9ba0c8149977a408e982c98aa767d4dadfcdea553da8dd92f7fa934f2",
+   "size": 2400949
+  },
+  "homebrew-downloads/Galaxian DX.d64": {
+   "sha256": "8ca562760a02c2d1e7b78ce5a2c1f63b3fca4c2701c642f2e690ee5a92140a3c",
+   "size": 174848
+  },
+  "homebrew-downloads/HERO Is Back.d64": {
+   "sha256": "457a2e394522dea5ff98342f5031bf90484e75a95960f1d0d8b215ef100fd64e",
+   "size": 174848
+  },
+  "homebrew-downloads/Kill the Attacking Aliens \u2014 demo 1.bin": {
+   "sha256": "538a9277fb21c8651e647665fa8665b1ef3b508bfc0ea7f84b26339592539113",
+   "size": 8192
+  },
+  "homebrew-downloads/Kill the Attacking Aliens \u2014 demo 2.bin": {
+   "sha256": "edff7d1a5ed2c4f6aaa0453114f5db87359423fc4d071e9678f3001b5a117f6b",
+   "size": 8192
+  },
+  "homebrew-downloads/LAKEADVENTURE.zip": {
+   "sha256": "a2c8cbc0a010f776164c979bbc62c9b2a17ceb5d8f7de6c1dfa301f451ca15df",
+   "size": 1083014
+  },
+  "homebrew-downloads/Micro Hexagon.d64": {
+   "sha256": "1da9c6def65f00364af04f7695824052e34fcbe9f1df1ad80883772d2ef7a025",
+   "size": 174848
+  },
+  "homebrew-downloads/NOUDAR.zip": {
+   "sha256": "2c5c1f735ce2e94acbf91a0894bc066f30129be5686f1ad348c4331ec63e54fe",
+   "size": 525322
+  },
+  "homebrew-downloads/PANTSMO.zip": {
+   "sha256": "ac5e15ab7fb62c4076d7eefcb41aa95b68373881324ab7bd3cad1b856547fea0",
+   "size": 507629
+  },
+  "homebrew-downloads/QUEENSFOOTSTEPS.zip": {
+   "sha256": "063e2b7a6e606f4b4bc142b22ebf211e3ca63f3a755fce99c5d2d62e962f905e",
+   "size": 91947
+  },
+  "homebrew-downloads/Rocket Smash EX.crt": {
+   "sha256": "d4c3d61f9dd67ec28f361c93ec186eb35c85d935283846e8b683a25860485cd6",
+   "size": 65728
+  },
+  "homebrew-downloads/SPACECAVERN.zip": {
+   "sha256": "5681ad041fb8fc1311fc0c666239f3c943df78138ff9aff5af953fd448eced01",
+   "size": 426391
+  },
+  "homebrew-downloads/Super Bread Box.prg": {
+   "sha256": "1ceea5d0cc1669acfd5805c203ee0dfb3ffb0044b881d7253ec261de1ed990d6",
+   "size": 16313
+  },
+  "homebrew-downloads/Wolfling.prg": {
+   "sha256": "cf0a878235e9b5301ee5f382a2093570db68cd20caae1c575428423b72d53d9b",
+   "size": 34756
+  },
+  "homebrew-downloads/makejg.zip": {
+   "sha256": "278137d213c8ab4798cc06da3eb76c18ed81a347075ca2ae0f19db86f92ae89e",
+   "size": 3404
   }
  }
 }

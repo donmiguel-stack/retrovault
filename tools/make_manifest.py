@@ -25,8 +25,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FILES = [
     "games.js", "gamepages.js", "genres.js", "brazil.js", "usa.js",
     "packaging.js", "extras.js", "i18n.js", "setup-i18n.js", "featured.js",
-    "shops.js", "c64ad.js", "cheats.js",
-    "app.js", "demo.js", "game.html", "index.html", "style.css", "boot-splash.js",
+    "shops.js", "c64ad.js", "cheats.js", "downloads.js",
+    "app.js", "demo.js", "game.html", "index.html", "resources.html", "style.css", "boot-splash.js",
     "README.md", "LICENSE.md",
 ]
 # covers/ holds the box art and, under a shot_ prefix, the in-game screenshots
@@ -37,7 +37,17 @@ FILES = [
 # serve.py, which the updater never overwrites, so a brand new folder can
 # never reach an install that already exists. Both of these are folders
 # every copy already accepts writes to.
-FOLDERS = ["covers", "assets/cheats", "clips", "extras"]
+#
+# homebrew-downloads/ is different from the rest of this list: it's the one
+# folder that ships actual playable game files, not catalogue data - only
+# titles that passed the redistribution-license check in downloads.js live
+# here (see that file's own comment for the CLEAR/LIKELY-OK criteria).
+# EXT below has its own homebrew branch for exactly this reason.
+FOLDERS = ["covers", "assets/cheats", "clips", "extras", "homebrew-downloads"]
+EXT = {
+    "homebrew-downloads": (".d64", ".zip", ".crt", ".prg", ".bin"),
+}
+DEFAULT_EXT = (".png", ".jpg", ".jpeg", ".gif", ".mp4", ".pdf")
 
 
 def tracked():
@@ -85,8 +95,7 @@ def collect():
             # skip the parked-artwork subfolders and stray notes
             if not os.path.isfile(p) or name.startswith("."):
                 continue
-            if os.path.splitext(name)[1].lower() not in (
-                    ".png", ".jpg", ".jpeg", ".gif", ".mp4", ".pdf"):
+            if os.path.splitext(name)[1].lower() not in EXT.get(folder, DEFAULT_EXT):
                 continue
             rel = folder + "/" + name
             if keep is not None and rel not in keep:
