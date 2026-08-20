@@ -1,20 +1,29 @@
-// Community cheats for the Videopac / Odyssey2 shelf, sourced from
-// https://odyssey2.info/cheats/ (checked 2026-08-08) and lightly reworded
-// for length. Keyed by games.js id - the same cheat text is attached to
-// every regional/variant dump of a given cartridge (EU, French, US,
-// Brazilian, G7400+ "Plus", modified/fixed) since it's the same game code
-// underneath - including cross-region renames, e.g. Smithereens!'s EU
-// release as Stone Sling. Rendered by game.html as a hidden "Reveal Cheats"
-// block inside the controls box, Videopac shelf only (see the cBox wiring
-// in game.html's inline script) - not shown on the C64 or PC shelves.
+// Community cheats/tips for the Videopac and C64 shelves.
 //
-// A cheat entry may carry an optional `img` (filename under
+// Videopac/Odyssey2 section: sourced from https://odyssey2.info/cheats/
+// (checked 2026-08-08) and lightly reworded for length. Keyed by games.js
+// id - the same cheat text is attached to every regional/variant dump of a
+// given cartridge (EU, French, US, Brazilian, G7400+ "Plus", modified/fixed)
+// since it's the same game code underneath - including cross-region
+// renames, e.g. Smithereens!'s EU release as Stone Sling. Rendered by
+// game.html as a hidden "Reveal Cheats" block inside the controls box, not
+// shown on the PC shelf.
+//
+// A Videopac cheat entry may carry an optional `img` (filename under
 // assets/cheats/) and `alt` - the site's own diagrams/screenshots for
 // cheats where the trick is a specific on-screen spot (K.C. Munchkin,
 // Power Lords, Take the Money and Run) or a message screen (Nimble Numbers
 // Ned, Q*bert, P.T. Barnum's Acrobats - the last one an animated GIF, shown
 // exactly as an animated GIF plays), pulled from the same source page and
 // checked 2026-08-08.
+//
+// C64 section (below, "--- C64 shelf ---"): researched 2026-08-20 across
+// several sites (GameFAQs, C64-Wiki, StrategyWiki, Mix n' Mojo - see
+// claude/vault-c64-cheat-codes.md for the full writeup incl. games that
+// were checked but skipped for lack of a credible source). Since these
+// entries don't share one fixed source page the way the Videopac ones do,
+// each C64 entry carries its own `source` (a ready-to-render "Source: <a>
+// ..." string) instead of relying on a single hardcoded link in game.html.
 window.CHEATS_DATA = (function () {
   var D = {};
   function set(ids, entries) {
@@ -140,6 +149,218 @@ window.CHEATS_DATA = (function () {
   // War of Nerves! (EU: Battlefield)
   set(["vp_30"], [
     { text: "Summon your men up into the score area's top-left corner - jumbled in there, they can form a pulsing light-bar that shoots straight down. If the enemy general wanders in, he often gets stuck or gets knocked clean off the screen." }
+  ]);
+
+  // --- C64 shelf ---
+  // Community cheats/POKEs/tricks for the Commodore 64 shelf, researched
+  // 2026-08-20 from GameFAQs, C64-Wiki, StrategyWiki and Mix n' Mojo (see
+  // claude/vault-c64-cheat-codes.md for the full research writeup). Unlike
+  // the Videopac shelf, C64 entries carry their own per-entry `source` since
+  // they're pulled from several different sites rather than one. Rendered
+  // by game.html's C64 branch the same way as the Videopac cheats block.
+  set(["c64_boulder_dash"], [
+    { label: "Cheat mode POKE", text: "Before running (or after resetting) the game, type <strong>POKE 34670,165</strong> in BASIC to enable a cheat mode.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/566187-boulder-dash/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_impossible_mission"], [
+    { label: "Instant cheat mode", text: "Load or reset the game and enter <strong>POKE 26831,169</strong> before running it to activate a built-in cheat mode.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/574037-impossible-mission/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "No opponents", text: "For a robot-free run, POKE three addresses before starting: <strong>POKE 27028,0</strong>, <strong>POKE 31005,12</strong>, <strong>POKE 21006,221</strong>.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/574037-impossible-mission/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "Code-room tone puzzle", text: "The two chessboard-patterned computer terminal rooms play a tone sequence that must be replayed back in ascending pitch order to earn a lift/robot password - the sequence gets longer each time you succeed.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Impossible_Mission" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_last_ninja"], [
+    { label: "Full shurikens/smoke bombs", text: "<strong>POKE 1019,255</strong> maxes out your shuriken count and <strong>POKE 1018,255</strong> maxes out smoke bombs - enter before running.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/564371-the-last-ninja/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "Unlimited lives & magic", text: "<strong>POKE 30855,165</strong> grants unlimited lives; <strong>POKE 22085,197</strong> grants unlimited ninja magic.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/564371-the-last-ninja/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_wizball"], [
+    { label: "Invincibility POKE", text: "<strong>POKE 32508,96</strong> makes Wizball invincible for the run.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572275-wizball/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "Infinite lives POKE", text: "<strong>POKE 27440,189</strong> gives infinite lives for all players - cross-confirmed on a second independent C64 POKE archive.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572275-wizball/cheats" target="_blank" rel="noopener">GameFAQs</a> &amp; <a href="https://www.ilmatar.net/~np/c64cheats.html" target="_blank" rel="noopener">The Great C64 Cheats Compendium</a>' }
+  ]);
+
+  set(["c64_paradroid"], [
+    { label: "Cheat mode", text: "Load the game, then enter <strong>POKE 5182,234</strong>, <strong>POKE 5183,234</strong>, then <strong>SYS 4096</strong> to enable a cheat mode before play.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/578087-paradroid/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "No opponents / unlimited lives", text: "<strong>POKE 7276,197</strong> then <strong>SYS 4096</strong> removes opposing droids; <strong>POKE 8314,123</strong> then <strong>SYS 4096</strong> gives unlimited lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/578087-paradroid/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_turrican"], [
+    { label: "Freezer POKEs (cartridge only)", text: "These need a freezer/cartridge like an Action Replay to apply mid-game, so they may not work through the browser emulator here: <strong>POKE 16347,189</strong> unlimited energy, <strong>POKE 4133,173</strong> unlimited gyroscopes, <strong>POKE 15985,96</strong> unlimited lives, <strong>POKE 2991,173</strong> unlimited time, <strong>POKE 16365,0</strong> unlimited weapons.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572119-turrican/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "No enemies", text: "Press Shift Lock, then hold the joystick fire button to move around a level without spawning any enemies.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572119-turrican/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_turrican2"], [
+    { label: "Unlimited energy & lives", text: "Before running: <strong>POKE 19514,173</strong> for unlimited energy, <strong>POKE 19305,173</strong> for unlimited lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572120-turrican-ii-the-final-fight/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "Unlimited power lines & time", text: "<strong>POKE 19645,189</strong> keeps your power-line weapon topped up; <strong>POKE 3085,173</strong> freezes the countdown timer.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572120-turrican-ii-the-final-fight/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_maniac_mansion"], [
+    { label: "The hamster in the microwave", text: "You can put Weird Ed's pet hamster in the mansion's microwave to kill it - and if a kid character shows the remains to Weird Ed, he keels over dead on the spot.",
+      source: 'Source: <a href="https://mixnmojo.com/features/sitefeatures/LucasArts-Secret-History-1-Maniac-Mansion/3" target="_blank" rel="noopener">Mix n&rsquo; Mojo</a>' },
+    { label: "Meteor Police easter egg number", text: "One of the valid phone numbers for the Meteor Police is 1138 - a nod to George Lucas's first film, THX 1138.",
+      source: 'Source: <a href="https://mixnmojo.com/features/sitefeatures/LucasArts-Secret-History-1-Maniac-Mansion/3" target="_blank" rel="noopener">Mix n&rsquo; Mojo</a>' }
+  ]);
+
+  set(["c64_elite"], [
+    { label: "Quick-buy trick", text: "While docked at a station and looking at the &ldquo;grating&rdquo; screen, quickly tap the 1/2/3/4 keys one at a time (not together) to fast-buy/sell cargo.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Elite" target="_blank" rel="noopener">C64-Wiki</a>' },
+    { label: "Full credits & elite status POKEs", text: "Loading screen POKEs let you set your finances and rank directly, e.g. <strong>POKE 1249,255</strong> sets Elite combat status, and the 1186&ndash;1189 range controls your credit balance.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Elite" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_ik_plus"], [
+    { label: "Get back up instantly", text: "If you're knocked down, press Run/Stop twice and your fighter stands back up immediately.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/IK%2B" target="_blank" rel="noopener">C64-Wiki</a>' },
+    { label: "Hidden pants-off gag", text: "Press E and S together during a match and both karate fighters' trousers fall down - one of several undocumented key-combo gags coded into the game (the original high-score table's default names spell out a hint to try it).",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/IK%2B" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_bruce_lee"], [
+    { label: "Unlimited lives POKE", text: "<strong>POKE 5472,99</strong> before running gives Bruce unlimited lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/566326-bruce-lee/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_commando"], [
+    { label: "Cheat mode & unlimited lives", text: "<strong>POKE 2180,250</strong> enables a cheat mode; <strong>POKE 2454,173</strong> gives unlimited lives - enter either before running.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/569370-commando/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "Farm lives on level 1", text: "You earn an extra life every 10,000 points, and a few spots on the first level let you rack up points almost without limit - used by players to stockpile lives (the counter caps at 256).",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Commando" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_bubble_bobble"], [
+    { label: "Infinite lives POKE", text: "<strong>POKE 1240,184</strong> before running gives infinite lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/566327-bubble-bobble/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_giana_sisters"], [
+    { label: "Unlimited lives POKE", text: "<strong>POKE 2446,255</strong> before running (followed by <strong>SYS 2098</strong>) gives unlimited lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572482-the-great-giana-sisters/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "Level warps", text: "At the end of level 3, jumping on the last block in the row hits an invisible block that warps you straight to level 6; a similar trick at the end of level 8 warps to level 11.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572482-the-great-giana-sisters/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_katakis"], [
+    { label: "Unlimited lives POKEs", text: "Two POKEs give player 1 unlimited lives: <strong>POKE 13999,173</strong> and <strong>POKE 14103,173</strong>. These are the &ldquo;safest&rdquo; POKEs for this game since Katakis's tight cycle-timing means other trainers can cause flicker or crashes.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Katakis" target="_blank" rel="noopener">C64-Wiki</a>' },
+    { label: "Level 10 boss point farm", text: "The level 10 end boss can be shot at a specific spot (its knee) for an effectively endless stream of points without ever finishing it off.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Katakis" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_creatures"], [
+    { label: "Invincibility & lives POKEs", text: "<strong>POKE 15596,60</strong> gives invincibility; <strong>POKE 7328,208</strong> gives unlimited lives in the main game (separate POKEs exist for each of the torture-screen bonus rounds).",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/567396-creatures/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_mayhem"], [
+    { label: "Invincibility & unlimited lives", text: "<strong>POKE 46621,173</strong> before running grants invincibility; <strong>POKE 48587,0</strong> grants unlimited lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/576276-mayhem-in-monsterland/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_california_games"], [
+    { label: "UFO snatches the frisbee", text: "In the Flying Disc event, if you hold onto the disc too long without throwing it, a UFO flies in and abducts the catcher.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/California_Games" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_winter_games"], [
+    { label: "Guaranteed 6.0 in Figure Skating", text: "Deliberately falling at every flag marker (joystick down + fire) causes the judges to award a perfect 6.0 score - a well-known scoring quirk, though it's considered poor form for legitimate high-score runs.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Winter_Games" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_defender_crown"], [
+    { label: "2048 free knights", text: "Hold down the K key while the game is loading - when it finishes you'll start with 2048 knights for your offense/defense pool.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/568225-defender-of-the-crown/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
+    { label: "Infinite money glitch", text: "Provoke a jousting tournament, then deliberately lance your opponent's horse in the head to get thrown out - this strips your land. Raid your old (now stripped) castle but don't retake it; done correctly this triggers a bookkeeping glitch that gives you infinite money.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/568225-defender-of-the-crown/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_barbarian"], [
+    { label: "Invincibility key", text: "At the title screen, press C - the screen flashes red and your fighter becomes invincible (though pits will still kill you).",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/565296-barbarian/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_microprose_soccer"], [
+    { label: "Freeze the CPU defense", text: "Run your player straight into the opposing goalkeeper to lure him out of the box - while he's tracking you, the rest of the CPU team's outfield players freeze in place, giving you time to line up a shot.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Microprose_Soccer" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_paperboy"], [
+    { label: "Save a mistimed throw", text: "If you throw a paper too early, pull the joystick forward right after releasing it - this gives the flying paper (and the Paperboy's own momentum) an extra push that can still land it in the mailbox.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Paperboy" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_test_drive"], [
+    { label: "Ignore crashes and cliffs", text: "<strong>POKE 27916,165</strong> before running lets you hold Fire during play to ignore collisions and drive off cliffs without wrecking.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572011-test-drive/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_target_renegade"], [
+    { label: "Unlimited lives POKE", text: "<strong>POKE 36217,173</strong> before running gives unlimited lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/571987-target-renegade/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_sword_of_fargoal"], [
+    { label: "The &ldquo;P&rdquo; stand-off trick", text: "Press P, then step onto the same square as a monster - because it can no longer move toward you to attack, you can stand on its tile indefinitely without taking damage.",
+      source: 'Source: <a href="https://strategywiki.org/wiki/Sword_of_Fargoal/Cheats" target="_blank" rel="noopener">StrategyWiki</a>' }
+  ]);
+
+  set(["c64_shadow_of_the_beast"], [
+    { label: "Falls never hurt you", text: "No matter how far you drop, fall damage never applies in Shadow of the Beast - so it's always safe to jump down instead of finding the long way around.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Shadow_of_the_Beast" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_operation_wolf"], [
+    { label: "Unlimited ammo & energy", text: "<strong>POKE 35107,173</strong> before running gives unlimited ammunition; <strong>POKE 36009,165</strong> gives unlimited energy.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/577864-operation-wolf/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_double_dragon"], [
+    { label: "Unlimited lives & time", text: "<strong>POKE 24853,173</strong> before running gives unlimited lives; <strong>POKE 25299,173</strong> gives unlimited time.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/568836-double-dragon/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_spy_vs_spy"], [
+    { label: "Win every stick fight", text: "In the 1-on-1 stick fight minigame, hold the fire button down and slowly move the joystick up and down - this reliably beats the other spy.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Spy_vs_Spy" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_ghostbusters"], [
+    { label: "Cheat mode & unlimited lives", text: "<strong>POKE 38454,96</strong> then <strong>SYS 24576</strong> before running enables a cheat mode; <strong>POKE 22014,9</strong> gives unlimited lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/575568-ghostbusters/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_pool_of_radiance"], [
+    { label: "The &ldquo;Jug&rdquo; one-hit weapon", text: "Split a stack of arrows repeatedly until a character's inventory is completely full, then keep splitting the same half-stack down to 1 arrow - this glitches an overpowered melee item into existence that almost never misses and can drop nearly any enemy in one hit (though it has limited uses before vanishing).",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Pool_of_Radiance" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_wasteland"], [
+    { label: "Refill supply lockers by disk-swapping", text: "To loot the ammo bunker or Ugly's safe more than once, create a duplicate character disk - when the game asks &ldquo;ENTER NEW LOCATION (Y/N)&rdquo;, swap in the new disk and answer Y to restock.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Wasteland" target="_blank" rel="noopener">C64-Wiki</a>' },
+    { label: "Temple of Blood entry code", text: "To get into the Temple of Blood and retrieve the Bloodstaff, walk the sequence N W W W W N N E E E E E S E N N N N W W S W W W W N N E E, then report &ldquo;30&rdquo; steps to the guard.",
+      source: 'Source: <a href="https://www.c64-wiki.com/wiki/Wasteland" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_frogger"], [
+    { label: "Unlimited lives POKE", text: "<strong>POKE 22341,173</strong> and <strong>POKE 22347,173</strong> before running give unlimited lives.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/571580-frogger/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
+  ]);
+
+  set(["c64_blood_money"], [
+    { label: "Invincibility POKE", text: "<strong>POKE 12734,189</strong> before running makes your ship invincible.",
+      source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/565885-blood-money/cheats" target="_blank" rel="noopener">GameFAQs</a>' }
   ]);
 
   return D;

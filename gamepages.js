@@ -4401,5 +4401,27 @@ window.GAMEPAGES_DATA = {
   "history": {
    "text": "DMA Design's last game before the studio became Rockstar North &ndash; a top-down crime spree across three fictional cities (Liberty City, San Andreas, Vice City, names the later 3D sequels would reuse) that let players steal cars, run from police and rack up points for chaos, developed under the working title \"Race'n'Chase.\" Published by BMG Interactive in Europe and ASC Games in North America; it drew tabloid controversy on release for rewarding crime rather than punishing it, and its top-down engine and free-roaming city design became the template for the franchise's next three decades."
   }
+ },
+ "c64_outrun": {
+  "input": "joystick",
+  "note": "Joystick in port 2: push left/right to steer, forward/back to accelerate/brake, tap Fire to shift between 1st and 2nd gear. Space pauses, Restore restarts. Like most C64 dumps floating around, this one boots into a crack-group intro (D&amp;F / Dr. Who) before the real Sega title screen &ndash; that's the dump, not a bug, just wait it out or press a key.",
+  "video": {
+   "id": "pnuYHmSLUY4",
+   "title": "Commodore 64 Longplay [308] OutRun (US Gold) (EU)"
+  },
+  "history": {
+   "text": "Sega's 1986 arcade smash, brought to the C64 for Mindscape's US release (credited to Martin Webb, Dennis Webb, Chris Oberth and Lou Haehn) with US Gold handling the European release. Squeezes Yu Suzuki's branching, checkpoint-based route selection and pick-your-track soundtrack (Passing Breeze, Splash Wave, Magical Sound Shower) onto 8-bit hardware &ndash; no small feat for a game built around a scaling, forking road."
+  }
+ },
+ "pc_outrun": {
+  "input": "keyboard",
+  "note": "Arrow keys drive: <strong>Up</strong> accelerates, <strong>Down</strong> brakes, <strong>Left</strong>/<strong>Right</strong> steer. <strong>Space</strong> shifts gears. <strong>Ctrl+P</strong> pauses, <strong>Ctrl+Q</strong> toggles sound, <strong>Ctrl+J</strong>/<strong>Ctrl+K</strong> swap between joystick and keyboard control. On first launch you'll be asked to pick a graphics mode &ndash; press <strong>3</strong> for EGA/VGA.",
+  "video": {
+   "id": "pTf9s7iTJn4",
+   "title": "Out Run (Unlimited Software) (MS-DOS) [1989] [PC Longplay]"
+  },
+  "history": {
+   "text": "Sega's 1986 arcade smash, ported to MS-DOS in 1989 by Unlimited Software &ndash; the porting arm of Distinctive Software, the Vancouver studio that later became EA Canada &ndash; for Mindscape. Trades the arcade's sit-down cabinet and moving hardware for CGA/EGA/VGA graphics and a PC speaker/AdLib rendition of the soundtrack, but keeps the branching, checkpoint-based route selection intact."
+  }
  }
 };

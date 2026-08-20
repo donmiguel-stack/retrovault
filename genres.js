@@ -1345,5 +1345,13 @@ window.GENRE_DATA = {
  "pc_gta1": {
   "genre": "action",
   "players": "p1"
+ },
+ "c64_outrun": {
+  "genre": "racing",
+  "players": "p1"
+ },
+ "pc_outrun": {
+  "genre": "racing",
+  "players": "p1"
  }
 };

@@ -2932,6 +2932,19 @@ window.GAMES_DATA = {
     "developer": "DMA Design"
   },
   {
+    "id": "c64_outrun",
+    "filename": "c64_outrun.d64",
+    "title": "OutRun",
+    "platform": "C64",
+    "category": "Commodore 64",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "OutRun.d64",
+    "year": 1988,
+    "publisher": "Mindscape / US Gold",
+    "developer": "Martin Webb, Dennis Webb, Chris Oberth, Lou Haehn (arcade: Sega)"
+  },
+  {
     "id": "pc_doom",
     "filename": "pc_doom.zip",
     "title": "Doom",
@@ -3869,6 +3882,19 @@ window.GAMES_DATA = {
     "year": 1997,
     "publisher": "BMG Interactive",
     "developer": "DMA Design"
+  },
+  {
+    "id": "pc_outrun",
+    "filename": "pc_outrun.zip",
+    "title": "OutRun",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "OUTRUN.zip",
+    "year": 1989,
+    "publisher": "Mindscape",
+    "developer": "Unlimited Software / Distinctive Software (arcade: Sega)"
   }
 ]
 };
