@@ -211,6 +211,29 @@
   }
   .cheats-source{margin:14px 0 0;font-size:12px;color:var(--text-mute);}
   .cheats-source a{color:var(--accent);text-decoration:none;}
+
+  /* Tips - C64/PC shelves, sourced from StrategyWiki (tips.js). Same
+     "hidden but revealed on demand" <details> pattern as the cheats box
+     above, kept as its own class since the data source (and per-entry
+     source link) is different - not styled differently on purpose, so the
+     two read as the same kind of thing to a visitor. */
+  .tips-box{
+    margin-top:14px;border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;background:var(--surface-2);
+  }
+  .tips-box summary{
+    cursor:pointer;list-style:none;padding:11px 16px;font-weight:700;font-size:14px;
+    color:var(--text);display:flex;align-items:center;gap:8px;user-select:none;
+  }
+  .tips-box summary::-webkit-details-marker{display:none;}
+  .tips-box summary::after{content:"\25BE";margin-left:auto;color:var(--text-mute);transition:transform .15s;}
+  .tips-box[open] summary::after{transform:rotate(180deg);}
+  .tips-box summary:hover{color:var(--accent);}
+  .tips-body{padding:2px 16px 14px;border-top:1px solid var(--border);}
+  .tips-item{margin:12px 0 0;}
+  .tips-item p{margin:0;font-size:13.5px;line-height:1.6;color:var(--text-dim);}
+  .tips-source{margin:14px 0 0;font-size:12px;color:var(--text-mute);}
+  .tips-source a{color:var(--accent);text-decoration:none;}
 </style>
 <!-- Retro Vault — anonymous usage counting (Cloudflare Web Analytics).
      Cookieless. No personal data, no cross-site tracking, no fingerprinting.
@@ -244,22 +267,23 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=108"></script>
-<script src="setup-i18n.js?v=108"></script>
-<script src="games.js?v=108"></script>
-<script src="extras.js?v=108"></script>
-<script src="packaging.js?v=108"></script>
-<script src="genres.js?v=108"></script>
-<script src="brazil.js?v=108"></script>
-<script src="usa.js?v=108"></script>
-<script src="shops.js?v=108"></script>
-<script src="support.js?v=108"></script>
-<script src="downloads.js?v=108"></script>
-<script src="cheats.js?v=108"></script>
-<script src="featured.js?v=108"></script>
-<script src="c64ad.js?v=108"></script>
-<script src="gamepages.js?v=108"></script>
-<script src="demo.js?v=108"></script>
+<script src="i18n.js?v=110"></script>
+<script src="setup-i18n.js?v=110"></script>
+<script src="games.js?v=110"></script>
+<script src="extras.js?v=110"></script>
+<script src="packaging.js?v=110"></script>
+<script src="genres.js?v=110"></script>
+<script src="brazil.js?v=110"></script>
+<script src="usa.js?v=110"></script>
+<script src="shops.js?v=110"></script>
+<script src="support.js?v=110"></script>
+<script src="downloads.js?v=110"></script>
+<script src="cheats.js?v=110"></script>
+<script src="tips.js?v=110"></script>
+<script src="featured.js?v=110"></script>
+<script src="c64ad.js?v=110"></script>
+<script src="gamepages.js?v=110"></script>
+<script src="demo.js?v=110"></script>
 <script>
 (function () {
   var COVER_COLORS = ["#5b8def","#3ba97a","#c07de0","#e0865a","#d65a7e","#8a8f98","#e0c05a","#4fb3bf"];
@@ -666,6 +690,35 @@
     cBox.appendChild(cheatsBox);
   }
 
+  // ---- tips (C64/PC shelves, StrategyWiki) ----
+  // Same idea as the cheats block above but a different source: one short
+  // in-house tip per game, each linking back to its own StrategyWiki guide
+  // page (tips.js) rather than one shared source link. Written as a shared
+  // helper since it's called from three different places below (Videopac's
+  // cBox, plus the C64 and PC boxes further down, which - unlike cBox -
+  // don't currently carry the cheats block). Returns null (renders nothing)
+  // when tips.js has no entry for this game id.
+  function buildTipsBox(id) {
+    var tip = (window.TIPS_DATA && window.TIPS_DATA[id]) || null;
+    if (!tip) return null;
+    var box = document.createElement("details");
+    box.className = "tips-box";
+    var sum = document.createElement("summary");
+    sum.innerHTML = "💡 Reveal Tips";
+    box.appendChild(sum);
+    var body = el("div","tips-body");
+    var item = el("div","tips-item");
+    item.appendChild(el("p",null,tip.text));
+    body.appendChild(item);
+    var src = el("p","tips-source");
+    src.innerHTML = 'Source: <a href="'+tip.url+'" target="_blank" rel="noopener">StrategyWiki</a> — full walkthrough there.';
+    body.appendChild(src);
+    box.appendChild(body);
+    return box;
+  }
+  var vpTipsBox = buildTipsBox(g.id);
+  if (vpTipsBox) cBox.appendChild(vpTipsBox);
+
   cSec.appendChild(cBox);
   if (g.platform === "PC") {
     // DOS games ran on a real PC keyboard (and sometimes a mouse), not a
@@ -688,6 +741,8 @@
     var pcEsc = el("p","controls-note");
     pcEsc.innerHTML = window.t("pc_escNote");
     pcBox.appendChild(pcEsc);
+    var pcTipsBox = buildTipsBox(g.id);
+    if (pcTipsBox) pcBox.appendChild(pcTipsBox);
     pcSec.appendChild(pcBox);
     page.appendChild(pcSec);
   } else if (g.platform !== "C64") {
@@ -726,6 +781,8 @@
     var c64Mac = el("p","controls-note");
     c64Mac.innerHTML = window.t("c64_macNote");
     c64Box.appendChild(c64Mac);
+    var c64TipsBox = buildTipsBox(g.id);
+    if (c64TipsBox) c64Box.appendChild(c64TipsBox);
     c64Sec.appendChild(c64Box);
     page.appendChild(c64Sec);
   }

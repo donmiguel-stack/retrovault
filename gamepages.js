@@ -4388,6 +4388,11 @@ window.GAMEPAGES_DATA = {
  },
  "pc_gta1": {
   "input": "keyboard",
+  "manual": {
+   "item": "pc_gta1",
+   "pages": 13,
+   "source": "Grand Theft Auto (PC, 1997) - original printed manual, scanned copy via oldgames.sk"
+  },
   "note": "Top-down, arrow keys to drive. <strong>Space</strong> is the handbrake, <strong>Enter</strong> gets you in/out of a car. Once you're on foot and armed: <strong>Ctrl</strong> fires, <strong>Z</strong>/<strong>X</strong> cycle to the previous/next weapon. On first launch you'll see a text-mode Miles Sound System hardware-detection screen before the game itself starts &ndash; press a key to continue through it, this only needs doing once per session. <strong>F1</strong> brings up the in-game help/controls screen if you get stuck. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "Akmg6dUkwKc",

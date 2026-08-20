@@ -25,7 +25,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FILES = [
     "games.js", "gamepages.js", "genres.js", "brazil.js", "usa.js",
     "packaging.js", "extras.js", "i18n.js", "setup-i18n.js", "featured.js",
-    "shops.js", "c64ad.js", "cheats.js", "downloads.js",
+    "shops.js", "c64ad.js", "cheats.js", "downloads.js", "tips.js",
     "app.js", "demo.js", "game.html", "index.html", "resources.html", "style.css", "boot-splash.js",
     "README.md", "LICENSE.md",
 ]
