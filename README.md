@@ -1,9 +1,10 @@
 # Retro Vault
 
-A private, offline library for classic game systems, organised as shelves:
-Philips Videopac / Magnavox Odyssey², Commodore 64 and MS-DOS PC — box art,
-manuals, history and gameplay clips, with the games playable in the browser.
-One shelf is visible at a time; the counts never mix.
+A private, offline library for classic game systems, organised into three
+shelves — Videopac / Magnavox Odyssey², Commodore 64 and MS-DOS PC — each
+with its own box art, manuals, history and gameplay clips, and its games
+playable straight in the browser. One shelf is visible at a time, each with
+its own count.
 
 *(Previously "Videopac Odyssey Vault" — the folder keeps that name.)*
 

@@ -110,3 +110,7 @@ extras.js.bak
 
 # Social-media clip drafts (Mike's own posts, not part of the app)
 social-clips/
+
+# Landing-site source zip (retrovault.world) - deployed manually to Hostinger,
+# not part of the vault app itself and doesn't need to ship in this repo.
+retrovault-world-site.zip

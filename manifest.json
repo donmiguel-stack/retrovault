@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-20 16:03:23",
+ "generated": "2026-08-21 08:38:49",
  "count": 473,
- "bytes": 182218014,
+ "bytes": 182231230,
  "files": {
   "games.js": {
    "sha256": "9a3518d378a0c9a8c80d8f7a453db95ccabea50f2d5966d282236f6691ef5db5",
@@ -32,12 +32,12 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "8e1b4d40b9aebb55d2bc0d76578b396b217ba6a01d83a4cbbb11644258a6eb9a",
-   "size": 35109
+   "sha256": "38edc484fae10ede8c1385ebc3c2e634d79fb5da45f84c7d98f245daf56e0091",
+   "size": 35334
   },
   "setup-i18n.js": {
-   "sha256": "624afa3a1b3d81356a16e7d105d2d132fed12c793b70f47f3447c52eeff3e818",
-   "size": 47400
+   "sha256": "1301b2983592e51a3110dfb67b86291947f37aadebccb6243e6a555b25e937ee",
+   "size": 48471
   },
   "featured.js": {
    "sha256": "98bfe6dbd22ef34753ee20a7c905d3d779a5b94f7614c151520da9216f8c52a4",
@@ -72,28 +72,28 @@
    "size": 3439
   },
   "game.html": {
-   "sha256": "e8cbf8164523a44f4e1058684d27ed40acc2d6915856a331f5cebf30311090d9",
-   "size": 43639
+   "sha256": "b4008a3ba2b03ce402001d55a9dfd5ae767a4806ed1d3a8bbdb5d9eb7897efb7",
+   "size": 48195
   },
   "index.html": {
-   "sha256": "4054eb04b43888421fe4db0ad82275cf46dce98673f750423514deec39955a38",
-   "size": 15098
+   "sha256": "f09beace7c4e1e2f0a2a526c6436ece3c22cde87e159714e7a29f2aa744ea82f",
+   "size": 15218
   },
   "resources.html": {
-   "sha256": "8b97d785c5368ed820a2ee41f943720e63fa6dbfa21447aef40aa3f532e5e9ad",
-   "size": 3847
+   "sha256": "ef009036ca6da9286a95ccf3604cdd33540525b567817e679aa98968eadc0a59",
+   "size": 10128
   },
   "style.css": {
-   "sha256": "9ac55663ffb7a1a7e0aa1437df44535204b868a88e619dc590a1205411e73705",
-   "size": 46800
+   "sha256": "b456489b6e71ce94107ffe3a5dd702560f5f958d560a9f2307a84b3a469b7b25",
+   "size": 47731
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
    "size": 3768
   },
   "README.md": {
-   "sha256": "fa6a8af5181ee4a4d9c4ee6c160f114aee9d4e8b1b1343f146dfe8f49d81e432",
-   "size": 13017
+   "sha256": "f64c3a6cfba4a4b99ae78cfe5a3f401567f9e8d62bec757f182f04836b6735e8",
+   "size": 13049
   },
   "LICENSE.md": {
    "sha256": "f9facf4ae69f17530f6eac066d5f4bc71d0240f17e9c39350fa06d7c90a9bfa9",

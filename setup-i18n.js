@@ -50,6 +50,7 @@ window.SETUP_I18N = {
   "dumps": "The Vault ships without games. The console BIOS, the cartridge dumps and the manual scans are downloaded separately and go in three folders here:",
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     the cartridges\nmanuals/           the manual scans",
   "dumpsNote": "If you were given a <code>videopac-odyssey-dumps.zip</code>, extract it at the top level of this folder and everything lands in place. Get it wrong and the Vault still looks fine &mdash; covers and all &mdash; but no game will start.",
+  "dumpsHomebrewNote": "Homebrews and copyright-free releases are already included with the Vault. Most ROMs can be sourced online &mdash; check our <a href=\"resources.html\">Resources page</a>.",
   "step2win": "On Windows:"
  },
  "nl": {
@@ -100,6 +101,7 @@ window.SETUP_I18N = {
   "dumps": "De Vault komt zonder spellen. De BIOS van de console, de cartridge-dumps en de gescande handleidingen download je apart; ze horen in drie mappen hier:",
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     de cartridges\nmanuals/           de handleidingen",
   "dumpsNote": "Heb je een <code>videopac-odyssey-dumps.zip</code> gekregen? Pak die uit op het bovenste niveau van deze map, dan komt alles op zijn plek. Doe je het verkeerd, dan ziet de Vault er nog prima uit &mdash; inclusief hoesjes &mdash; maar start geen enkel spel.",
+  "dumpsHomebrewNote": "Homebrews en auteursrechtvrije releases zitten al bij de Vault. De meeste roms zijn online te vinden &mdash; bekijk onze <a href=\"resources.html\">Bronnenpagina</a>.",
   "step2win": "Op Windows:"
  },
  "de": {
@@ -150,6 +152,7 @@ window.SETUP_I18N = {
   "dumps": "Der Vault kommt ohne Spiele. Das Konsolen-BIOS, die Moduldumps und die eingescannten Anleitungen lädst du separat; sie gehören in drei Ordner hier:",
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     die Module\nmanuals/           die Anleitungen",
   "dumpsNote": "Hast du eine <code>videopac-odyssey-dumps.zip</code> bekommen? Entpacke sie auf oberster Ebene dieses Ordners, dann landet alles richtig. Machst du es falsch, sieht der Vault trotzdem gut aus &mdash; Cover inklusive &mdash; aber kein Spiel startet.",
+  "dumpsHomebrewNote": "Homebrews und urheberrechtsfreie Veröffentlichungen sind bereits im Vault enthalten. Die meisten ROMs lassen sich online finden &mdash; sieh dir unsere <a href=\"resources.html\">Ressourcen-Seite</a> an.",
   "step2win": "Unter Windows:"
  },
  "fr": {
@@ -200,6 +203,7 @@ window.SETUP_I18N = {
   "dumps": "Le Vault arrive sans jeux. Le BIOS de la console, les dumps de cartouches et les notices numérisées se téléchargent à part et vont dans trois dossiers ici :",
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     les cartouches\nmanuals/           les notices",
   "dumpsNote": "On vous a donné un <code>videopac-odyssey-dumps.zip</code> ? Extrayez-le à la racine de ce dossier et tout se met en place. En cas d'erreur, le Vault a l'air parfait &mdash; jaquettes comprises &mdash; mais aucun jeu ne démarre.",
+  "dumpsHomebrewNote": "Les homebrews et les sorties libres de droits sont déjà incluses dans le Vault. La plupart des ROM se trouvent en ligne &mdash; consultez notre <a href=\"resources.html\">page Ressources</a>.",
   "step2win": "Sous Windows :"
  },
  "pt": {
@@ -250,6 +254,7 @@ window.SETUP_I18N = {
   "dumps": "O Vault vem sem jogos. A BIOS do console, as dumps dos cartuchos e os manuais digitalizados são baixados à parte e vão em três pastas aqui:",
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     os cartuchos\nmanuals/           os manuais",
   "dumpsNote": "Recebeu um <code>videopac-odyssey-dumps.zip</code>? Extraia no nível de cima desta pasta e tudo cai no lugar certo. Se errar, o Vault continua com boa aparência &mdash; capas e tudo &mdash; mas nenhum jogo inicia.",
+  "dumpsHomebrewNote": "Homebrews e lançamentos livres de direitos autorais já vêm incluídos no Vault. A maioria das roms pode ser encontrada online &mdash; confira nossa <a href=\"resources.html\">página de Recursos</a>.",
   "step2win": "No Windows:"
  }
 };

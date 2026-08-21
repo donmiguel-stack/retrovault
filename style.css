@@ -177,6 +177,15 @@ body{
 .modal-body code{background:var(--surface-2);color:var(--accent);padding:1px 6px;border-radius:4px;font-size:13px;}
 .modal-body pre{background:var(--surface-2);padding:10px 12px;border-radius:8px;overflow-x:auto;}
 .modal-body ul,.modal-body ol{padding-left:20px;}
+/* Raw links inside these long-form blurbs (the Sources list, the Setup
+   panel) come straight from setup-i18n.js as plain <a> tags with no class,
+   so without this they render in the browser's unstyled default blue/
+   visited-purple - unreadable against this page's near-black background.
+   One rule fixes it everywhere .modal-body appears (the Setup modal on
+   index.html and the standalone resources.html page alike). */
+.modal-body a{color:var(--accent);text-decoration:none;}
+.modal-body a:visited{color:var(--accent);}
+.modal-body a:hover{text-decoration:underline;}
 .modal-body li{margin-bottom:5px;}
 .modal-body .credits{
   margin-top:24px;padding-top:14px;border-top:1px solid var(--border);
@@ -416,6 +425,13 @@ body{
   border:2px solid color-mix(in srgb, #c9973b 65%, transparent);
 }
 .ms-head{margin-bottom:14px;}
+/* Eyebrow label above the heading - the exhibit-plaque framing ("these are
+   the ones you'd find in a museum case") that gives the banner's amber/
+   treasure-chest styling a reason beyond just "old game with a board". */
+.ms-kicker{
+  margin:0 0 4px; font-size:11px; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; color:#c9973b;
+}
 .ms-head h3{margin:0 0 4px; font-size:17px; font-weight:600;}
 .ms-intro{margin:0; font-size:13px; line-height:1.6; color:var(--text-dim); max-width:980px;}
 .ms-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
