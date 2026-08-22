@@ -274,12 +274,35 @@
   // never collide with a CATEGORY_GROUPS key), so matches() below treats them
   // as just another category value.
   function buildCategoryChips(games) {
-    var counts = {};
-    games.forEach(function (g) { var key = groupFor(g).key; counts[key] = (counts[key] || 0) + 1; });
+    // Counts mirror what selecting each category actually shows: shelf
+    // primaries always, plus the folded alternates that selecting that
+    // category reveals (their own category differs from their primary's -
+    // see the reveal rule in matches()). Same-category alternates (EU
+    // alt/hack dumps) count nowhere, so the numbers never promise doubles.
+    function findGame(id) {
+      var all = (window.GAMES_DATA && window.GAMES_DATA.games) || [];
+      for (var i = 0; i < all.length; i++) if (all[i].id === id) return all[i];
+      return null;
+    }
+    var counts = {}, visibleTotal = 0;
+    games.forEach(function (g) {
+      var key = groupFor(g).key;
+      if (window.VAULT_ALT && window.VAULT_ALT.isAlternate(g.id)) {
+        var pg = findGame(window.VAULT_ALT.primaryOf(g.id));
+        if (!pg || groupFor(pg).key !== key) counts[key] = (counts[key] || 0) + 1;
+      } else {
+        counts[key] = (counts[key] || 0) + 1;
+        visibleTotal++;
+      }
+    });
     var entries = [];
     if (state.platform === "videopac") {
       var consoleCounts = { "G7000": 0, "G7400+": 0 };
-      games.forEach(function (g) { if (consoleCounts[g.platform] !== undefined) consoleCounts[g.platform]++; });
+      games.forEach(function (g) {
+        if (consoleCounts[g.platform] === undefined) return;
+        if (window.VAULT_ALT && window.VAULT_ALT.isAlternate(g.id)) return;
+        consoleCounts[g.platform]++;
+      });
       ["G7000", "G7400+"].forEach(function (p) {
         if (consoleCounts[p]) entries.push({ key: p, label: p, count: consoleCounts[p] });
       });
@@ -287,7 +310,7 @@
     CATEGORY_GROUPS.forEach(function (grp) {
       if (counts[grp.key]) entries.push({ key: grp.key, label: catLabel(grp), count: counts[grp.key] });
     });
-    fillSelect(categorySel, window.t("allCats") + " (" + games.length + ")", entries, state.category);
+    fillSelect(categorySel, window.t("allCats") + " (" + visibleTotal + ")", entries, state.category);
   }
 
   function matches(g) {
@@ -297,7 +320,25 @@
     // the non-chosen G7000/G7400+ variant) are listed on their primary's
     // game page instead of the shelf - see alternates.js. Favorites still
     // surface an alternate you starred before this change.
-    if (window.VAULT_ALT && window.VAULT_ALT.isAlternate(g.id) && state.list !== "fav") return false;
+    if (window.VAULT_ALT && window.VAULT_ALT.isAlternate(g.id) && state.list !== "fav") {
+      // Picking a category in the dropdown means "show me those dumps", so an
+      // alternate comes back when its own category is the one selected AND
+      // differs from its primary's (French dumps, PAL conversions, mods,
+      // Brazil twins). Same-category alternates (EU alt/hack dumps, homebrew
+      // demo builds) stay folded so the category view shows no doubles.
+      var revealed = false;
+      if (state.category !== "all" && state.category !== "G7000" && state.category !== "G7400+") {
+        if (groupFor(g).key === state.category) {
+          var altPrimary = null, altPid = window.VAULT_ALT.primaryOf(g.id);
+          var allGames = (window.GAMES_DATA && window.GAMES_DATA.games) || [];
+          for (var api = 0; api < allGames.length; api++) {
+            if (allGames[api].id === altPid) { altPrimary = allGames[api]; break; }
+          }
+          if (!altPrimary || groupFor(altPrimary).key !== state.category) revealed = true;
+        }
+      }
+      if (!revealed) return false;
+    }
     if (state.platform === "videopac") { if (g.platform === "C64" || g.platform === "PC") return false; }
     else if (state.platform !== "all" && g.platform !== state.platform) return false;
     if (state.genre !== "all" && genreOf(g) !== state.genre) return false;
