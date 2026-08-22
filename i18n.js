@@ -105,7 +105,10 @@ window.I18N = {
     communityIntro: "Most of what is in this Vault came from these people. Worth a visit.",
     sponsored: "Sponsored",
     visitSite: "Visit",
-    plusGraphics: "G7400+ (Plus graphics)", language: "Language"
+    plusGraphics: "G7400+ (Plus graphics)", language: "Language",
+    altVersions: "Other versions of this game",
+    altNote: "The shelf shows one entry per game — these other dumps of the same cartridge are in the vault too:",
+    altOf: "This is an alternative dump of {title} — that's the entry the shelf shows."
   },
   nl: { _name: "Nederlands", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><rect width=\"20\" height=\"4.67\" fill=\"#AE1C28\"/><rect y=\"9.33\" width=\"20\" height=\"4.67\" fill=\"#21468B\"/></svg>",
     search: "Zoek in {n} spellen...", setup: "Instellingen", resources: "Bronnen",
@@ -206,7 +209,10 @@ window.I18N = {
     communityIntro: "Het meeste in deze Vault komt van deze mensen. Een bezoek waard.",
     sponsored: "Advertentie",
     visitSite: "Bekijken",
-    plusGraphics: "G7400+ (Plus-graphics)", language: "Taal"
+    plusGraphics: "G7400+ (Plus-graphics)", language: "Taal",
+    altVersions: "Andere versies van dit spel",
+    altNote: "De plank toont één kaart per spel — deze andere dumps van dezelfde cartridge zitten ook in de vault:",
+    altOf: "Dit is een alternatieve dump van {title} — dat is het exemplaar dat op de plank staat."
   },
   de: { _name: "Deutsch", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"4.67\" fill=\"#000\"/><rect y=\"4.67\" width=\"20\" height=\"4.67\" fill=\"#D00\"/><rect y=\"9.33\" width=\"20\" height=\"4.67\" fill=\"#FFCE00\"/></svg>",
     search: "{n} Spiele durchsuchen...", setup: "Einrichtung", resources: "Ressourcen",
@@ -307,7 +313,10 @@ window.I18N = {
     communityIntro: "Das meiste in diesem Vault stammt von diesen Leuten. Einen Besuch wert.",
     sponsored: "Anzeige",
     visitSite: "Ansehen",
-    plusGraphics: "G7400+ (Plus-Grafik)", language: "Sprache"
+    plusGraphics: "G7400+ (Plus-Grafik)", language: "Sprache",
+    altVersions: "Weitere Versionen dieses Spiels",
+    altNote: "Das Regal zeigt einen Eintrag pro Spiel — diese weiteren Dumps derselben Cartridge sind ebenfalls im Vault:",
+    altOf: "Dies ist ein alternativer Dump von {title} — diesen Eintrag zeigt das Regal."
   },
   fr: { _name: "Français", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><rect width=\"6.67\" height=\"14\" fill=\"#002395\"/><rect x=\"13.33\" width=\"6.67\" height=\"14\" fill=\"#ED2939\"/></svg>",
     search: "Rechercher parmi {n} jeux...", setup: "Configuration", resources: "Ressources",
@@ -408,7 +417,10 @@ window.I18N = {
     communityIntro: "L'essentiel de ce Vault vient de ces gens. Allez y faire un tour.",
     sponsored: "Publicité",
     visitSite: "Visiter",
-    plusGraphics: "G7400+ (graphismes Plus)", language: "Langue"
+    plusGraphics: "G7400+ (graphismes Plus)", language: "Langue",
+    altVersions: "Autres versions de ce jeu",
+    altNote: "L'étagère affiche une seule fiche par jeu — ces autres dumps de la même cartouche sont aussi dans le vault :",
+    altOf: "Ceci est un dump alternatif de {title} — c'est cette fiche que montre l'étagère."
   },
   pt: { _name: "Português (BR)", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#009B3A\"/><path d=\"M10 1.6L18.2 7 10 12.4 1.8 7z\" fill=\"#FEDF00\"/><circle cx=\"10\" cy=\"7\" r=\"3.1\" fill=\"#002776\"/><path d=\"M6.9 6.2a3.1 3.1 0 0 0 6.2 .55\" stroke=\"#fff\" stroke-width=\".85\" fill=\"none\"/></svg>",
     search: "Buscar entre {n} jogos...", setup: "Configuração", resources: "Recursos",
@@ -509,7 +521,10 @@ window.I18N = {
     communityIntro: "Quase tudo neste Vault veio dessas pessoas. Vale a visita.",
     sponsored: "Publicidade",
     visitSite: "Visitar",
-    plusGraphics: "G7400+ (gráficos Plus)", language: "Idioma"
+    plusGraphics: "G7400+ (gráficos Plus)", language: "Idioma",
+    altVersions: "Outras versões deste jogo",
+    altNote: "A estante mostra uma entrada por jogo — estes outros dumps do mesmo cartucho também estão no vault:",
+    altOf: "Este é um dump alternativo de {title} — é essa a entrada que a estante mostra."
   }
 };
 

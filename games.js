@@ -837,7 +837,7 @@ window.GAMES_DATA = {
     "tags": [
       "banked-rom"
     ],
-    "romFile": "VP58 - Air Battle (Banked).bin"
+    "romFile": "VP58 - Air Battle (16K).bin"
   },
   {
     "id": "vp_04",

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retro Vault</title>
-<link rel="stylesheet" href="style.css?v=93">
+<link rel="stylesheet" href="style.css?v=99">
 <style>
   .game-page{max-width:1100px;margin:0 auto;padding:24px;}
   .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
@@ -156,8 +156,318 @@
 
   /* Controls box */
   .controls-box{
+    position:relative;
     max-width:760px;background:var(--surface);border:1px solid var(--border);
     border-radius:var(--radius);padding:16px 18px;font-size:14px;color:var(--text-dim);
+  }
+
+  /* Pick Axe Pete easter egg: the man himself, chipping away at the corner
+     of his own controls box. Only ever inserted for the vp_43/vp_43pl/mod_43pl
+     game ids - see the g.id check near cSec.appendChild(cBox). */
+  .pete-axe{
+    position:absolute;top:20px;left:-27px;width:38px;height:38px;
+    image-rendering:pixelated;pointer-events:none;z-index:3;
+    transform-origin:30% 55%;
+    animation:pete-swing 1.3s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .pete-axe img{display:block;width:100%;height:100%;}
+  @keyframes pete-swing{
+    0%{transform:rotate(-26deg);}
+    14%{transform:rotate(32deg);}
+    22%{transform:rotate(26deg);}
+    45%{transform:rotate(-26deg);}
+    100%{transform:rotate(-26deg);}
+  }
+  .controls-box.pete-hit{animation:pete-box-shake 1.3s ease-in-out infinite;}
+  @keyframes pete-box-shake{
+    0%,13%{transform:translate(0,0);}
+    16%{transform:translate(-2px,1px);}
+    19%{transform:translate(2px,-1px);}
+    23%,100%{transform:translate(0,0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pete-axe{animation:none;transform:rotate(-10deg);}
+    .controls-box.pete-hit{animation:none;}
+  }
+
+  /* The Mousing Cat easter egg: he tilts his head and purrs on the right
+     side of his own controls box. Only inserted for vp_47/Vp47_F - see the
+     g.id check near cSec.appendChild(cBox). */
+  .cat-wrap{
+    position:absolute;top:-24px;right:16px;width:46px;
+    pointer-events:none;z-index:3;
+  }
+  .cat-img{
+    display:block;transform-origin:50% 70%;
+    animation:cat-tilt 3.2s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .cat-img img{display:block;width:100%;height:auto;image-rendering:pixelated;}
+  .purr-text{
+    position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+    font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent);
+    white-space:nowrap;opacity:0;
+    animation:cat-purr-fade 3.2s ease-in-out infinite;
+  }
+  @keyframes cat-tilt{
+    0%,100%{transform:rotate(0deg) translate(0,0);}
+    6%{transform:rotate(-7deg) translate(-1px,0);}
+    12%{transform:rotate(-9deg) translate(1px,-1px);}
+    18%{transform:rotate(-6deg) translate(-1px,1px);}
+    24%{transform:rotate(-8deg) translate(1px,0);}
+    30%{transform:rotate(-7deg) translate(-1px,-1px);}
+    38%{transform:rotate(-6deg) translate(0,0);}
+    48%{transform:rotate(0deg) translate(0,0);}
+  }
+  @keyframes cat-purr-fade{
+    0%{opacity:0;}
+    8%{opacity:1;}
+    38%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cat-img{animation:none;transform:rotate(-7deg);}
+    .purr-text{animation:none;opacity:1;}
+  }
+
+  /* Morse easter egg: a little indicator lamp on the controls box blinks
+     out "WELCOME VISITOR" in real International Morse timing (1 unit = a
+     dot, 3 units = a dash, 1/3/7 unit gaps between symbols/letters/words),
+     then pauses and repeats. Only inserted for vp_45/Vp45_F - see the g.id
+     check near cSec.appendChild(cBox). Timeline generated from the actual
+     Morse alphabet, not hand-tuned, so it decodes correctly if you time it.
+  */
+  .morse-lamp{
+    position:absolute;top:-6px;left:16px;width:11px;height:11px;border-radius:50%;
+    background:#3a1210;box-shadow:0 0 0 2px var(--surface);
+    z-index:3;pointer-events:none;
+    animation:morse-msg 17.88s steps(1,end) infinite;
+  }
+  @keyframes morse-msg{
+    0%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    0.651%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    0.671%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    1.322%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    1.342%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    3.336%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    3.356%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    4.007%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    4.027%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    6.02%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    6.04%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    8.034%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    8.054%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    8.705%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    8.725%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    10.718%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    10.738%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    11.389%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    11.409%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    12.061%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    12.081%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    14.074%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    14.094%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    14.745%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    14.765%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    15.416%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    15.436%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    16.087%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    16.107%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    16.759%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    16.779%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    18.772%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    18.792%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    20.785%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    20.805%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    21.457%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    21.477%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    22.128%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    22.148%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    22.799%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    22.819%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    24.812%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    24.832%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    25.483%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    25.503%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    26.154%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    26.174%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    28.168%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    28.188%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    30.181%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    30.201%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    30.852%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    30.872%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    32.866%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    32.886%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    33.537%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    33.557%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    35.55%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    35.57%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    37.564%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    37.584%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    39.577%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    39.597%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    40.248%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    40.268%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    42.262%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    42.282%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    44.275%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    44.295%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    44.946%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    44.966%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    49.644%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    49.664%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    50.316%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    50.336%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    50.987%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    51.007%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    51.658%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    51.678%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    52.329%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    52.349%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    53%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    53.02%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    53.671%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    53.691%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    55.685%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    55.705%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    57.698%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    57.718%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    58.369%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    58.389%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    59.04%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    59.06%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    59.712%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    59.732%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    61.725%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    61.745%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    62.396%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    62.416%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    63.067%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    63.087%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    63.738%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    63.758%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    64.41%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    64.43%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    65.081%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    65.101%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    67.094%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    67.114%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    67.765%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    67.785%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    68.436%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    68.456%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    69.108%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    69.128%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    71.121%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    71.141%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    73.134%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    73.154%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    75.148%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    75.168%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    77.161%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    77.181%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    77.832%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    77.852%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    79.846%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    79.866%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    80.517%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    80.537%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    82.53%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    82.55%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    84.544%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    84.564%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    85.215%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    85.235%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    85.886%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    85.906%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    87.899%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    87.919%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    88.571%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    88.591%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    89.242%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    89.262%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    99.98%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .morse-lamp{animation:none;background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+  }
+
+  /* Wall Street ticker: a green stock-ticker strip above the controls box,
+     "BUY BITCOIN [symbol]" scrolling left to right, endlessly. Only inserted
+     for vp_46/br_9434 - see the WALLST_IDS check above cSec's h2. The seamless
+     loop is the classic duplicate-content trick: the track holds two identical
+     copies of the message back to back, and animates from -50% to 0%, so
+     percentages resolve against the track's own (2x) width with no JS needed
+     to measure anything.
+  */
+  .wallst-ticker{
+    max-width:760px;overflow:hidden;
+    background:#0b2e1a;border:1px solid var(--border);border-radius:var(--radius);
+    padding:8px 0;margin:0 0 10px;
+  }
+  .wallst-ticker-track{
+    display:inline-flex;white-space:nowrap;
+    animation:wallst-scroll 20s linear infinite;
+  }
+  .wallst-msg{
+    display:inline-flex;align-items:center;flex-shrink:0;
+    font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;
+    font-size:13px;letter-spacing:2px;text-transform:uppercase;
+    color:#eafff0;text-shadow:0 0 4px rgba(80,255,140,.55);
+    padding-right:48px;
+  }
+  .btc-sym{position:relative;display:inline-block;margin:0 3px;}
+  .btc-sym::before,.btc-sym::after{
+    content:"";position:absolute;width:2px;background:currentColor;
+    top:-.3em;bottom:-.3em;
+  }
+  .btc-sym::before{left:32%;}
+  .btc-sym::after{left:58%;}
+  @keyframes wallst-scroll{
+    from{transform:translateX(-50%);}
+    to{transform:translateX(0%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wallst-ticker-track{animation:none;transform:translateX(0%);}
+  }
+
+  /* The Last Ninja easter egg: a fighter ripped from the game's own .d64
+     sprite bank stands guard on the controls box and strikes with his staff
+     every few seconds. Two pose frames swap via steps() so it snaps like the
+     real 1987 animation would, with a small lunge to the left on the strike.
+     Only inserted for c64_last_ninja - see the g.id check near
+     c64Sec.appendChild(c64Box). */
+  .ninja-wrap{
+    position:absolute;top:-66px;right:26px;width:38px;height:66px;
+    pointer-events:none;z-index:3;
+    animation:ninja-lunge 6s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.45));
+  }
+  .ninja-pose{
+    position:absolute;inset:0;width:100%;height:100%;
+    image-rendering:pixelated;
+  }
+  .ninja-stance{animation:ninja-show-stance 6s steps(1,end) infinite;}
+  .ninja-strike{opacity:0;animation:ninja-show-strike 6s steps(1,end) infinite;}
+  @keyframes ninja-show-stance{
+    0%{opacity:1;} 78%{opacity:0;} 92%{opacity:1;}
+  }
+  @keyframes ninja-show-strike{
+    0%{opacity:0;} 78%{opacity:1;} 92%{opacity:0;}
+  }
+  @keyframes ninja-lunge{
+    0%,76%{transform:translateX(0);}
+    80%{transform:translateX(-9px);}
+    90%{transform:translateX(-9px);}
+    94%,100%{transform:translateX(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ninja-wrap{animation:none;}
+    .ninja-stance{animation:none;opacity:1;}
+    .ninja-strike{animation:none;opacity:0;}
   }
   .controls-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0 0 12px;}
   .controls-grid .kact{color:var(--text);}
@@ -173,6 +483,19 @@
     color:var(--text);background:var(--surface-2);border-left:3px solid var(--accent);
     border-radius:0 6px 6px 0;padding:9px 12px;margin-top:12px;
   }
+
+  /* Other versions of this game (alternates.js) */
+  .alt-box{
+    max-width:760px;background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:14px 18px;font-size:14px;color:var(--text-dim);
+  }
+  .alt-note{margin:0 0 10px;line-height:1.6;font-size:13.5px;}
+  .alt-backref .alt-note{margin:0;}
+  .alt-list{margin:0;padding-left:20px;line-height:1.9;}
+  .alt-list a{color:var(--accent);text-decoration:none;}
+  .alt-list a:hover{text-decoration:underline;}
+  .alt-meta{color:var(--text-mute);font-size:12.5px;}
+  .alt-box a{color:var(--accent);text-decoration:none;}
 
   /* Extras (own scans) */
   .extras-list{display:flex;flex-direction:column;gap:16px;max-width:760px;}
@@ -235,7 +558,7 @@
 </head>
 <body>
 <div class="topbar">
-  <div class="brand"><span class="brand-mark">&#9632;</span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; PC</span></div>
+  <div class="brand"><span class="brand-mark"><img src="assets/kcmunch.png" alt="" width="22" height="22"></span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; PC</span></div>
   <div style="flex:1"></div>
   <a id="resourcesLink" class="ghost-btn" href="resources.html" data-i18n="resources" style="display:inline-block;text-decoration:none;">Resources</a>
   <div class="social-links">
@@ -261,9 +584,10 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=110"></script>
+<script src="i18n.js?v=113"></script>
 <script src="setup-i18n.js?v=111"></script>
-<script src="games.js?v=111"></script>
+<script src="games.js?v=112"></script>
+<script src="alternates.js?v=4"></script>
 <script src="extras.js?v=109"></script>
 <script src="packaging.js?v=109"></script>
 <script src="genres.js?v=111"></script>
@@ -273,9 +597,9 @@
 <script src="support.js?v=109"></script>
 <script src="downloads.js?v=109"></script>
 <script src="cheats.js?v=111"></script>
-<script src="featured.js?v=109"></script>
+<script src="featured.js?v=111"></script>
 <script src="c64ad.js?v=109"></script>
-<script src="gamepages.js?v=111"></script>
+<script src="gamepages.js?v=112"></script>
 <script src="demo.js?v=109"></script>
 <script>
 (function () {
@@ -590,6 +914,25 @@
   // keyboard-driven title. Those binds are now "nul".
   var cSec = el("div","section");
   cSec.appendChild(el("h2",null,window.t("controls")));
+
+  // Wall Street ticker - a green stock-ticker banner above the controls box,
+  // "BUY BITCOIN [symbol]" scrolling left to right on a loop. The EU release
+  // and its standalone Brazilian rebrand (br_9434, same game per gamepages.js
+  // relatedTo note) both get it.
+  var WALLST_IDS = ["vp_46", "br_9434"];
+  if (WALLST_IDS.indexOf(g.id) !== -1) {
+    var tickerWrap = el("div", "wallst-ticker");
+    var track = el("div", "wallst-ticker-track");
+    var phrase = 'BUY BITCOIN <span class="btc-sym">B</span>';
+    var repeated = Array(6).fill(phrase).join(" &bull; ");
+    var msg1 = el("span", "wallst-msg"); msg1.innerHTML = repeated;
+    var msg2 = el("span", "wallst-msg"); msg2.innerHTML = repeated;
+    track.appendChild(msg1);
+    track.appendChild(msg2);
+    tickerWrap.appendChild(track);
+    cSec.appendChild(tickerWrap);
+  }
+
   // long-form control text lives in setup-i18n.js, one pack per language
   var L = (window.SETUP_I18N || {})[window.currentLang()] || (window.SETUP_I18N || {}).en || {};
   function LT(key){ return L[key] || ((window.SETUP_I18N||{}).en||{})[key] || ""; }
@@ -683,6 +1026,44 @@
     cheatsBody.appendChild(cheatsSrc);
     cheatsBox.appendChild(cheatsBody);
     cBox.appendChild(cheatsBox);
+  }
+
+  // Pick Axe Pete easter egg - the miner himself, taking a swing at his own
+  // controls box, on every dump of VP43 (EU + G7400+ Plus-graphics + the
+  // community mod all share the id list below).
+  var PETE_IDS = ["vp_43", "vp_43pl", "mod_43pl"];
+  if (PETE_IDS.indexOf(g.id) !== -1) {
+    cBox.classList.add("pete-hit");
+    var peteWrap = el("span", "pete-axe");
+    var peteImg = new Image();
+    peteImg.src = "assets/pickaxe-pete.png";
+    peteImg.alt = "";
+    peteWrap.appendChild(peteImg);
+    cBox.appendChild(peteWrap);
+  }
+
+  // The Mousing Cat easter egg - tilts his head and purrs, EU + French
+  // releases both share the same id list below.
+  var CAT_IDS = ["vp_47", "Vp47_F"];
+  if (CAT_IDS.indexOf(g.id) !== -1) {
+    var catWrap = el("span", "cat-wrap");
+    var purrText = el("span", "purr-text", "purrrr");
+    catWrap.appendChild(purrText);
+    var catImgWrap = el("span", "cat-img");
+    var catImg = new Image();
+    catImg.src = "assets/mousing-cat.png";
+    catImg.alt = "";
+    catImgWrap.appendChild(catImg);
+    catWrap.appendChild(catImgWrap);
+    cBox.appendChild(catWrap);
+  }
+
+  // Morse easter egg - a little lamp on the box blinks "WELCOME VISITOR"
+  // in real Morse timing. EU + French releases share the same id list.
+  var MORSE_IDS = ["vp_45", "Vp45_F"];
+  if (MORSE_IDS.indexOf(g.id) !== -1) {
+    var morseLamp = el("span", "morse-lamp");
+    cBox.appendChild(morseLamp);
   }
 
   cSec.appendChild(cBox);
@@ -790,8 +1171,73 @@
       c64Box.appendChild(c64CheatsBox);
     }
 
+    // The Last Ninja easter egg - a fighter ripped straight from this very
+    // .d64's sprite bank (see tools note: 63-byte multicolor sprite blocks,
+    // top/bottom halves stored 10 blocks apart in the level file), standing
+    // guard on the controls box and striking with his staff every few seconds.
+    if (g.id === "c64_last_ninja") {
+      var njWrap = el("span", "ninja-wrap");
+      var njStance = new Image();
+      njStance.src = "assets/ninja-stance.png";
+      njStance.alt = "";
+      njStance.className = "ninja-pose ninja-stance";
+      var njStrike = new Image();
+      njStrike.src = "assets/ninja-strike.png";
+      njStrike.alt = "";
+      njStrike.className = "ninja-pose ninja-strike";
+      njWrap.appendChild(njStance);
+      njWrap.appendChild(njStrike);
+      c64Box.appendChild(njWrap);
+    }
+
     c64Sec.appendChild(c64Box);
     page.appendChild(c64Sec);
+  }
+
+  // ---- other versions of this game (see alternates.js) ----
+  // The shelf shows one card per game; the other dumps of the same cartridge
+  // (French release, G7000/G7400+ variant, community mods, alt dumps) are
+  // listed here on the primary's page. An alternate's own page gets a note
+  // pointing back at the entry the shelf actually shows.
+  if (window.VAULT_ALT) {
+    var altIds = window.VAULT_ALT.altsOf(g.id);
+    var primId = window.VAULT_ALT.primaryOf(g.id);
+    function gameById(id){ return games.find(function(x){ return x.id === id; }); }
+    if (altIds && altIds.length) {
+      var aSec = el("div","section");
+      aSec.appendChild(el("h2",null,window.t("altVersions")));
+      var aBox = el("div","alt-box");
+      var aNote = el("p","alt-note",window.t("altNote"));
+      aBox.appendChild(aNote);
+      var aList = el("ul","alt-list");
+      altIds.forEach(function(id){
+        var ag = gameById(id);
+        if (!ag) return;
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = "game.html?id=" + encodeURIComponent(id);
+        a.textContent = ag.title;
+        li.appendChild(a);
+        var meta = el("span","alt-meta"," — " + ag.platform + " · " + ag.category);
+        li.appendChild(meta);
+        aList.appendChild(li);
+      });
+      aBox.appendChild(aList);
+      aSec.appendChild(aBox);
+      page.appendChild(aSec);
+    } else if (primId) {
+      var pg = gameById(primId);
+      if (pg) {
+        var pSec = el("div","section");
+        var pBox = el("div","alt-box alt-backref");
+        var pNote = el("p","alt-note");
+        pNote.innerHTML = window.t("altOf", { title:
+          '<a href="game.html?id=' + encodeURIComponent(primId) + '">' + pg.title + '</a>' });
+        pBox.appendChild(pNote);
+        pSec.appendChild(pBox);
+        page.appendChild(pSec);
+      }
+    }
   }
 
   // ---- extras (your own scans: original manual, maps, boards) ----

@@ -8,7 +8,7 @@
   // far more often than this should.
   var VAULT_VERSION = "1.0.0";
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 32;
+  var COVER_V = 35;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
   var CLIP_V = 7;
 
@@ -107,7 +107,11 @@
     return [isNaN(n) ? 1 : 0, isNaN(n) ? 0 : n, rank === undefined ? 12 : rank, g.title.toLowerCase()];
   }
   function bySort(a, b) {
-    if (state.sort === "az") return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
+    // C64 and PC titles have no vpNumber, so number-sorting is meaningless
+    // there - those shelves always sort A-Z (the dropdown is hidden too,
+    // see syncShelfChips).
+    var az = state.sort === "az" || state.platform === "C64" || state.platform === "PC";
+    if (az) return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
     var ka = shelfKey(a), kb = shelfKey(b);
     for (var i = 0; i < ka.length; i++) {
       if (ka[i] < kb[i]) return -1;
@@ -236,6 +240,21 @@
     if (c64sc) c64sc.hidden = state.platform !== "C64";
     var pcsc = document.getElementById("pcshowcase");
     if (pcsc) pcsc.hidden = state.platform !== "PC";
+    // Sorting by number and the packaging filter only mean something on the
+    // Videopac shelf - vpNumbers and boxed boards/overlays/workbooks don't
+    // exist for C64 or PC titles - so both controls disappear there. The
+    // stored sort choice is left alone (bySort falls back to A-Z on these
+    // shelves, see below) so it comes back when you return to Videopac.
+    var nonVp = state.platform === "C64" || state.platform === "PC";
+    if (sortSel) sortSel.hidden = nonVp;
+    var packBtn = document.getElementById("packChip");
+    if (packBtn) {
+      packBtn.hidden = nonVp;
+      if (nonVp && state.list === "pack") {
+        state.list = "all";
+        updateListChips();
+      }
+    }
   }
 
   function fillSelect(sel, allLabel, entries, current) {
@@ -274,6 +293,11 @@
   function matches(g) {
     if (state.list === "fav" && !isFav(g.id)) return false;
     if (state.list === "pack" && !hasPackaging(g.id)) return false;
+    // One card per game: alternate dumps (French, mods, alt/hack revisions,
+    // the non-chosen G7000/G7400+ variant) are listed on their primary's
+    // game page instead of the shelf - see alternates.js. Favorites still
+    // surface an alternate you starred before this change.
+    if (window.VAULT_ALT && window.VAULT_ALT.isAlternate(g.id) && state.list !== "fav") return false;
     if (state.platform === "videopac") { if (g.platform === "C64" || g.platform === "PC") return false; }
     else if (state.platform !== "all" && g.platform !== state.platform) return false;
     if (state.genre !== "all" && genreOf(g) !== state.genre) return false;

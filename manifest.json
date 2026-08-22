@@ -1,15 +1,15 @@
 {
- "generated": "2026-08-21 10:24:18",
+ "generated": "2026-08-22 12:59:02",
  "count": 473,
- "bytes": 182232971,
+ "bytes": 182644403,
  "files": {
   "games.js": {
-   "sha256": "9a3518d378a0c9a8c80d8f7a453db95ccabea50f2d5966d282236f6691ef5db5",
-   "size": 95443
+   "sha256": "59e72b5a42598c44c38b9a8cf88dccc35f92acc48be9f71956e75147cae3e723",
+   "size": 95440
   },
   "gamepages.js": {
-   "sha256": "6d1a0255371cf2ad4bb5f371952e9fd1f7409dbadb638602cce0f8532ff37a03",
-   "size": 217700
+   "sha256": "b324e1933641d809026a5b27f343c69e2e826f28162e47493e0793ab005d6ea5",
+   "size": 218530
   },
   "genres.js": {
    "sha256": "ebfaeab2485cf72f65bc9dd93bd21ebe6433fed92cdf26be40c886988e483dec",
@@ -32,16 +32,16 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "38edc484fae10ede8c1385ebc3c2e634d79fb5da45f84c7d98f245daf56e0091",
-   "size": 35334
+   "sha256": "0cf26f3c3d64dfa9c89b253f395ed9ac157a5954e0938b5403d539915f43fcf4",
+   "size": 36672
   },
   "setup-i18n.js": {
    "sha256": "50ecae4fc25fc19068ede9b44fb9ae517b4bea7f2d52153bea0695342693aeba",
    "size": 50212
   },
   "featured.js": {
-   "sha256": "98bfe6dbd22ef34753ee20a7c905d3d779a5b94f7614c151520da9216f8c52a4",
-   "size": 37991
+   "sha256": "f69c0b62738d2b7f481e7cfdd8d7eea6f2ff8b6e98628208cf1db912c3b3e624",
+   "size": 37993
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -64,28 +64,28 @@
    "size": 12321
   },
   "app.js": {
-   "sha256": "86187292a1a589688fd78523f9d2248dd2f4e5aca9fb28c83b87cb4ec9b78231",
-   "size": 73724
+   "sha256": "1949704eec4dcf872dea3412a9fa6be608470810bfb6ddad7b6381c8242ca980",
+   "size": 75064
   },
   "demo.js": {
    "sha256": "1d25660687299e46cb3d5d13231f32c587d6ac346eb0e7a32e4c69121bcd6b50",
    "size": 3439
   },
   "game.html": {
-   "sha256": "8c3ed11cf39c034265245995b0424e63e3adfc899c34beee2dad01cc0a7160b1",
-   "size": 48195
+   "sha256": "bd1ffd566c57074df3a48b5f20242eb9842b3393ada9d7e652c2c797704d1de0",
+   "size": 72638
   },
   "index.html": {
-   "sha256": "17b5f9f1ccc1bf1721613bcacea421079ee6f65d2a66bd18e6f61cde1156c496",
-   "size": 15218
+   "sha256": "4a898af8b3c224fd56678f8eacf69e2c1f6da7be4a28f43a44017f5092d0a349",
+   "size": 15313
   },
   "resources.html": {
-   "sha256": "1d90a4a4db115d1449317a3b7346de992ca59ab37f5e3e01ab187ed09867ca45",
-   "size": 10128
+   "sha256": "d7ff8eec42034c224411543e2b211a7068efa38f248744f98ac41369b248a8dd",
+   "size": 10181
   },
   "style.css": {
-   "sha256": "b456489b6e71ce94107ffe3a5dd702560f5f958d560a9f2307a84b3a469b7b25",
-   "size": 47731
+   "sha256": "b8625110c84ada727f97fd67941a9df4a97d6cd514019530b65c523d63b9dcf5",
+   "size": 48016
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -1300,20 +1300,20 @@
    "size": 693527
   },
   "covers/vp_11pl.png": {
-   "sha256": "cf5c7ea699ca9a203965b5dc368a9ebafd20e0ba53ae9023e31a1a9993d95922",
-   "size": 245904
+   "sha256": "00c319caa2c3d9a0ffe867685dcbc748b25906062b1e3df06eb79adf90d9e1de",
+   "size": 182721
   },
   "covers/vp_12.jpg": {
    "sha256": "32603b61321e9badf03adc5e5a308725a6aaa7dc2d87b3d2373f31ede225ace0",
    "size": 123464
   },
   "covers/vp_13.png": {
-   "sha256": "d40347c72ad50f192fb20fa5b30dd61b573a6720aea4d9bb9068c9cac0f40b70",
-   "size": 379110
+   "sha256": "0cc7c4a5109195db409bda3237fc9c06f826c538cac3b6c2a21ccd4e61c9e3dd",
+   "size": 216595
   },
   "covers/vp_14.png": {
-   "sha256": "12a1fad466ed956a6338fa530dc2e4e42e6df8b3cf30cedbec2ebe88a36b0881",
-   "size": 485139
+   "sha256": "800f084e6f76ba30a0aa9721388158defa5e1708bf7e3e5a23ac9b2b4ce62099",
+   "size": 96041
   },
   "covers/vp_15.png": {
    "sha256": "f9d4a17bb2d66c67f7fd344bf6fdc8741b4ad99ebe70e92c6716ee5bb5506bd4",
@@ -1340,16 +1340,16 @@
    "size": 700960
   },
   "covers/vp_20pl.png": {
-   "sha256": "e3dfb2e89347d7fd4331edb8a72f2f2d7ca98f42b3ee2f0b896dec4af88a0ea2",
-   "size": 268791
+   "sha256": "b9859e15e6a818f5e36f5afaa2a367520688ad3e91be86e5e5a10e00a51e2051",
+   "size": 701080
   },
   "covers/vp_21.png": {
    "sha256": "26c31f17829de52ef95ef7ac6decd46141b82a46e3081a5e2d295d606a3f35ad",
    "size": 649712
   },
   "covers/vp_22.png": {
-   "sha256": "695be5eaece04558dc888aa70fe02a251c56ca52bac9b6a5affbd6dde1aa2928",
-   "size": 649952
+   "sha256": "52ef2d26755f197dd6e90251310eca987c91f77fea04ac2414b3c2c256b9e0b5",
+   "size": 260483
   },
   "covers/vp_22hack.png": {
    "sha256": "695be5eaece04558dc888aa70fe02a251c56ca52bac9b6a5affbd6dde1aa2928",
@@ -1364,8 +1364,8 @@
    "size": 474218
   },
   "covers/vp_24pl.png": {
-   "sha256": "907ed343c97ce18acaab30550920ad90da44515adb40386b8bd12a4b445ae1ec",
-   "size": 474218
+   "sha256": "37569746e0446956969c51e6bacf63c39720a6bcf643a4cfb18efc3a57b08dac",
+   "size": 662786
   },
   "covers/vp_25.png": {
    "sha256": "18b728883ab1da1039d6277da4a9723b1373e45d96d51ad5de972cebfd0e0c6b",
@@ -1412,8 +1412,8 @@
    "size": 700815
   },
   "covers/vp_34pl.png": {
-   "sha256": "cf2b60383b5ca3fba4526c627f2a1df915b358aad49932c3d39f0bb38dfe2568",
-   "size": 268604
+   "sha256": "f1705972b5fd3a35c9455ad014cd874cbb83de43ca919ad1b21ed9fd88bafef0",
+   "size": 250526
   },
   "covers/vp_35.png": {
    "sha256": "e417d557bfc42cd07b960af7b96f09fb2812ecb890eaee6e7c7775118f794bdf",
@@ -1440,8 +1440,8 @@
    "size": 697786
   },
   "covers/vp_39pl.png": {
-   "sha256": "e2e22df9b0b4655217dd1f4b41d98325fee4052abde925f5b1b98dd866fce294",
-   "size": 244837
+   "sha256": "4eb4a80b1d1cf3563acaa68579be87ea6848f960860de79d75b13fda892b5739",
+   "size": 311242
   },
   "covers/vp_40.png": {
    "sha256": "508474bceb260ed62a9905a220a11b613da78942740b442771e087f6078a2ee8",
@@ -1460,8 +1460,8 @@
    "size": 818270
   },
   "covers/vp_43pl.png": {
-   "sha256": "c1042ff7c485157f5d5197aa32832c9bdd6fca30738b1b2837a7c1c4c26bab00",
-   "size": 325581
+   "sha256": "1ed170057d8e0ae0940d923522f6151b9e5037cf167dbe63a45dd0f7606361ab",
+   "size": 818270
   },
   "covers/vp_44.png": {
    "sha256": "e7cfd479f5a0760d073fcfafda2a41009016a7ce12d5ef092132b547ff7c7b8d",
@@ -1536,8 +1536,8 @@
    "size": 678342
   },
   "covers/vp_58_12.png": {
-   "sha256": "542e94f13b8c1b65f84cd41fe9692b6d3f4a42583c0aefbc8bd3377cb881b5bd",
-   "size": 411046
+   "sha256": "e85a6a047403bd4747631deda514d7fe75dfc8bcc93ece67df25538f5a6244ac",
+   "size": 636487
   },
   "covers/vp_59_16.png": {
    "sha256": "c5fac80f9430736b044d34d27ff1cbf6f0b39fab7795d4b24f97ed5183c89a21",

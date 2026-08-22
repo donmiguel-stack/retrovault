@@ -228,7 +228,7 @@ window.FEATURED_DATA = {
     // No "image" = the slot runs the console's attract screen instead:
     // rainbow letters bouncing off the edges. Add an image and it takes over.
     { name: "Your shop here",
-      url:  "mailto:hello@example.com",
+      url:  "mailto:hq@retrovault.world",
       text: "Selling Videopac cartridges, consoles or spare joysticks? This slot is for you.",
       attract: "ADVERTISE HERE" }
   ],

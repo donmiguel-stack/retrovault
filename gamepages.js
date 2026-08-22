@@ -1060,6 +1060,7 @@ window.GAMEPAGES_DATA = {
  },
  "vp_58_12": {
   "input": "joystick",
+  "note": "Take-off is a manoeuvre in itself, and getting it wrong ends in the fence. Pick a variant on the SELECT GAME screen, press <span class='kbd'>0</span> to sit on the runway, then hold <span class='kbd'>&#8593;</span> (stick forward) to build speed &mdash; when the take-off indicator flashes you have flying speed &mdash; and pull <span class='kbd'>&#8595;</span> to climb. Fire with <span class='kbd'>G</span>. Verified working in this vault with the keys above (joystick&nbsp;1).",
   "manual": {
    "item": "58_PLUS_Air_Battle_1983_Philips_EU",
    "pages": 4,
@@ -2884,6 +2885,7 @@ window.GAMEPAGES_DATA = {
  },
  "pr_red-baron": {
   "input": "joystick",
+  "note": "This unreleased prototype shares its engine and title screen with <a href=\"game.html?id=vp_58_12\">Air Battle (VP58)</a>, so the same take-off drill applies: hold <span class='kbd'>&#8593;</span> (stick forward) to build speed, wait for the take-off indicator to flash, then pull <span class='kbd'>&#8595;</span> to climb.",
   "video": {
    "id": "xCFb7B_N-n8",
    "title": "Red Baron  [prototype] ~ Magnavox Odyssey 2"
