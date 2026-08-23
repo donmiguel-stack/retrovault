@@ -1881,9 +1881,9 @@ window.GAMEPAGES_DATA = {
    "source": "Nightmare (1983)(Philips)(en-de)"
   },
   "history": {
-   "text": "An escape adventure for one or two players. Each nightmare is a run of three attempts to get out, and the computer shows how many you have left before the dream is over.",
-   "source": "the cartridge manual",
-   "url": "https://archive.org/details/53_PLUS_Nightmare_1983_Philips_en-de"
+   "text": "An escape adventure for one or two players. Each nightmare is a run of three attempts to get out, and the computer shows how many you have left before the dream is over. The haunted-house theme is practically a family heirloom on this console: the original 1972 Magnavox Odyssey — the Odyssey²'s direct ancestor — shipped a Haunted House overlay game, arguably the first horror video game ever made, with one player as the detective and the other as the ghost. A decade on, Nightmare brought the haunting back to the family in real graphics instead of a plastic screen overlay.",
+   "source": "the cartridge manual · haunted-house lineage: Computer History Museum",
+   "url": "https://computerhistory.org/blog/the-haunted-house/"
   },
   "video": {
    "id": "WUlqZezZoB0",
@@ -1898,9 +1898,9 @@ window.GAMEPAGES_DATA = {
    "source": "Nightmare (1983)(Philips)(en-de)"
   },
   "history": {
-   "text": "An escape adventure for one or two players. Each nightmare is a run of three attempts to get out, and the computer shows how many you have left before the dream is over.",
-   "source": "the cartridge manual",
-   "url": "https://archive.org/details/53_PLUS_Nightmare_1983_Philips_en-de"
+   "text": "An escape adventure for one or two players. Each nightmare is a run of three attempts to get out, and the computer shows how many you have left before the dream is over. The haunted-house theme is practically a family heirloom on this console: the original 1972 Magnavox Odyssey — the Odyssey²'s direct ancestor — shipped a Haunted House overlay game, arguably the first horror video game ever made, with one player as the detective and the other as the ghost. A decade on, Nightmare brought the haunting back to the family in real graphics instead of a plastic screen overlay.",
+   "source": "the cartridge manual · haunted-house lineage: Computer History Museum",
+   "url": "https://computerhistory.org/blog/the-haunted-house/"
   },
   "video": {
    "id": "WUlqZezZoB0",
@@ -3274,7 +3274,9 @@ window.GAMEPAGES_DATA = {
    "title": "Commodore 64 Longplay [378] Maniac Mansion (US)"
   },
   "history": {
-   "text": "Break into Dr. Fred's mansion to rescue a kidnapped cheerleader, armed with three playable teenagers and the very first SCUMM engine — written by Ron Gilbert on this machine. Hamster jokes, meteor police and multiple endings: the entire LucasArts adventure tradition starts here, on the C64."
+   "text": "Break into Dr. Fred's mansion to rescue a kidnapped cheerleader, armed with three playable teenagers and the very first SCUMM engine — written by Ron Gilbert on this machine. Hamster jokes, meteor police and multiple endings: the entire LucasArts adventure tradition starts here, on the C64. The Edison mansion itself was modelled on the Main House at Skywalker Ranch, and the Computer History Museum counts this among the best-known of all haunted-house games — a theme video games had been chasing since the very first Odyssey console in 1972.",
+   "source": "Chris Garcia, Computer History Museum",
+   "url": "https://computerhistory.org/blog/the-haunted-house/"
   }
  },
  "c64_zak_mckracken": {
