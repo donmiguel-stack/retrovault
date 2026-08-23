@@ -3727,6 +3727,10 @@ window.GAMEPAGES_DATA = {
  "c64_hb_rescuing_orc": {
   "input": "joystick",
   "note": "Fire on the title screen starts the game. Jump with <strong>&#8593;</strong>, slash your sword with fire (<strong>G</strong>), duck/action with <strong>&#8595;</strong>. Pause with <strong>1</strong>.",
+  "video": {
+   "id": "y3HkZD5LmHs",
+   "title": "C64 Longplay: Rescuing Orc (2017)"
+  },
   "history": {
    "source": "Juan J. Martínez (reidrac), usebox.net; loading screen by Vanja Utne.",
    "url": "https://www.usebox.net/jjm/rescuing-orc/",
@@ -4332,6 +4336,10 @@ window.GAMEPAGES_DATA = {
  "pc_hb_goldmine": {
   "input": "keyboard",
   "note": "Grab every piece of gold before the 60-second clock runs out &ndash; dawdle and a time monster comes for you. Coloured keys open matching doors, the pickaxe buys a moment of protection. Arrows move, <strong>Z</strong> jumps, <strong>P</strong> pauses. 30 stages.",
+  "video": {
+   "id": "9GLnL8Vasdw",
+   "title": "Longplay: Gold Mine Run! (2023) [MS-DOS] | 4K/60"
+  },
   "history": {
    "source": "Juan J. Martínez (reidrac), usebox.net",
    "url": "https://www.usebox.net/jjm/gold-mine-run/",
