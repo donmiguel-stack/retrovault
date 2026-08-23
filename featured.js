@@ -304,6 +304,17 @@ window.FEATURED_DATA = {
         fr: "Publie encore aujourd'hui de toutes nouvelles cartouches C64 physiques et du matériel - la preuve que cette machine n'a jamais vraiment cessé d'exister.",
         pt: "Ainda hoje lança cartuchos físicos e hardware totalmente novos para o C64 - prova de que esta máquina nunca realmente parou."
       } },
+    { name: "usebox.net",
+      tint: "#e05a7e",
+      url: "https://www.usebox.net/jjm/games/",
+      lang: "Spain",
+      what: {
+        en: "Juan J. Martínez's one-man studio, still writing genuinely native C64, DOS, MSX, CPC and Spectrum games and releasing them free under Creative Commons - this shelf's Rescuing Orc is his.",
+        nl: "De eenmansstudio van Juan J. Martínez, die nog steeds echt native C64-, DOS-, MSX-, CPC- en Spectrum-spellen schrijft en ze gratis uitbrengt onder Creative Commons - Rescuing Orc op deze plank is van hem.",
+        de: "Das Ein-Mann-Studio von Juan J. Martínez, das noch immer wirklich native C64-, DOS-, MSX-, CPC- und Spectrum-Spiele schreibt und sie kostenlos unter Creative Commons veröffentlicht - Rescuing Orc in diesem Regal stammt von ihm.",
+        fr: "Le studio individuel de Juan J. Martínez, qui écrit encore de vrais jeux natifs pour C64, DOS, MSX, CPC et Spectrum et les publie gratuitement sous Creative Commons - le Rescuing Orc de cette étagère est de lui.",
+        pt: "O estúdio de uma pessoa só de Juan J. Martínez, que ainda escreve jogos genuinamente nativos para C64, DOS, MSX, CPC e Spectrum e os lança de graça sob Creative Commons - o Rescuing Orc desta prateleira é dele."
+      } },
     { name: "VICE",
       tint: "#4fb3bf",
       url: "https://vice-emu.sourceforge.io/",
@@ -378,6 +389,17 @@ window.FEATURED_DATA = {
         de: "Die wiederkehrende itch.io-Jam-Familie - jedes Jahr im Dezember DOSember, dazu Frühlings-, Sommer- und Herbstausgaben - ist die eigentliche Quelle für die meisten Homebrews in diesem Regal, von denen einige selbst Jam-Beiträge sind.",
         fr: "La famille de jams itch.io récurrents - DOSember chaque décembre, plus les éditions de printemps, d'été et d'automne - est la véritable source de la plupart des homebrews de cette étagère, dont plusieurs sont eux-mêmes des créations de jam.",
         pt: "A recorrente família de jams do itch.io - o DOSember todo mês de dezembro, além das edições de primavera, verão e outono - é a fonte real da maior parte das homebrews desta prateleira, várias delas próprias participantes de jam."
+      } },
+    { name: "usebox.net",
+      tint: "#e05a7e",
+      url: "https://www.usebox.net/jjm/games/",
+      lang: "Spain",
+      what: {
+        en: "Juan J. Martínez's one-man studio, writing genuinely native DOS games this decade and releasing them free under Creative Commons - three of this shelf's homebrews (Alien Intruder, Gold Mine Run! and The Return of Traxtor) are his.",
+        nl: "De eenmansstudio van Juan J. Martínez, die dit decennium echt native DOS-spellen schrijft en ze gratis uitbrengt onder Creative Commons - drie homebrews op deze plank (Alien Intruder, Gold Mine Run! en The Return of Traxtor) zijn van hem.",
+        de: "Das Ein-Mann-Studio von Juan J. Martínez, das in diesem Jahrzehnt wirklich native DOS-Spiele schreibt und sie kostenlos unter Creative Commons veröffentlicht - drei Homebrews in diesem Regal (Alien Intruder, Gold Mine Run! und The Return of Traxtor) stammen von ihm.",
+        fr: "Le studio individuel de Juan J. Martínez, qui écrit cette décennie de vrais jeux DOS natifs et les publie gratuitement sous Creative Commons - trois homebrews de cette étagère (Alien Intruder, Gold Mine Run! et The Return of Traxtor) sont de lui.",
+        pt: "O estúdio de uma pessoa só de Juan J. Martínez, que escreve nesta década jogos DOS genuinamente nativos e os lança de graça sob Creative Commons - três homebrews desta prateleira (Alien Intruder, Gold Mine Run! e The Return of Traxtor) são dele."
       } },
     { name: "js-dos",
       tint: "#4fb3bf",
