@@ -50,6 +50,12 @@ window.DOWNLOAD_DATA = {
     source: "https://rgcddev.itch.io/c64anabalt",
     checked: "2026-08-18"
   },
+  "c64_hb_rescuing_orc": {
+    file: "Rescuing Orc.d64",
+    verdict: "CLEAR",
+    source: "https://www.usebox.net/jjm/rescuing-orc/ — CC BY-NC-SA 4.0, the author's own free download (boxed disk/tape/cart editions exist via Poly Play, but the ROM itself is explicitly CC-licensed, same situation as his Alien Intruder already hosted here)",
+    checked: "2026-08-23"
+  },
   "c64_hb_bomberland": {
     file: "Bomberland.d64",
     verdict: "CLEAR",
@@ -123,6 +129,18 @@ window.DOWNLOAD_DATA = {
     verdict: "CLEAR",
     source: "https://www.usebox.net/jjm/alien-intruder/ — Juan J. Martínez's own site, free download with a Ko-fi tip jar",
     checked: "2026-08-18"
+  },
+  "pc_hb_goldmine": {
+    file: "GOLDMINE.zip",
+    verdict: "CLEAR",
+    source: "https://www.usebox.net/jjm/gold-mine-run/ — CC BY-NC-SA 4.0, the author's own free download",
+    checked: "2026-08-23"
+  },
+  "pc_hb_traxtor": {
+    file: "TRAXTOR.zip",
+    verdict: "CLEAR",
+    source: "https://www.usebox.net/jjm/return-of-traxtor-dos/ — CC BY-NC-SA 4.0, the author's own free download",
+    checked: "2026-08-23"
   },
   "pc_hb_gates": {
     file: "GATES.zip",

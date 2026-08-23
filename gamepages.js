@@ -3724,6 +3724,15 @@ window.GAMEPAGES_DATA = {
    "text": "RGCD's 16KB cartridge conversion of Adam Saltsman's 2009 Flash hit Canabalt, released as a compo game in 2012. It strips the endless-runner down to pure timing and silhouette, proving the C64 could still do \"one button, infinite fall\" as well as any browser — free to download, or pay what you think is fair."
   }
  },
+ "c64_hb_rescuing_orc": {
+  "input": "joystick",
+  "note": "Fire on the title screen starts the game. Jump with <strong>&#8593;</strong>, slash your sword with fire (<strong>G</strong>), duck/action with <strong>&#8595;</strong>. Pause with <strong>1</strong>.",
+  "history": {
+   "source": "Juan J. Martínez (reidrac), usebox.net; loading screen by Vanja Utne.",
+   "url": "https://www.usebox.net/jjm/rescuing-orc/",
+   "text": "Your best friend Orc (an orc, coincidentally) hasn't shown up for tea in two weeks, so you &ndash; a goblin &ndash; set out across the World of Magica to find him: five areas of jump-and-slash platforming from the Black Forest to Bluestone Keep. A 2017 release, in PAL and NTSC, by the same one-man studio behind the vault's Alien Intruder, Gold Mine Run! and The Return of Traxtor on the PC shelf. Free under CC BY-NC-SA (boxed disk, tape and cartridge editions exist via Poly Play); the open licence is why this vault hosts the download itself."
+  }
+ },
  "c64_hb_doc_cosmos": {
   "input": "joystick",
   "video": {
@@ -4318,6 +4327,24 @@ window.GAMEPAGES_DATA = {
    "source": "Juan J. Martínez (reidrac), usebox.net &ndash; also covered by Indie Retro News the week it shipped.",
    "url": "https://www.usebox.net/jjm/alien-intruder/",
    "text": "\"In space no one can hear you scream, so use your blaster instead!\" A commercial spacecraft's crew has been captured by aliens, and you're the rescue mission: 50 single-screen stages, 60 seconds apiece, on anything from a 286 with VGA up. Released free in December 2024 under a Creative Commons licence (CC BY-NC-SA) by Juan J. Martínez, a Spanish developer who has spent years writing genuinely native games for DOS, MSX, Amstrad CPC, ZX Spectrum and C64 &ndash; real 8/16-bit code, not a modern engine in retro clothes. There's even a boxed Collector's Edition through Poly Play for cartridge-and-manual people. The open licence is why this vault can host the download outright."
+  }
+ },
+ "pc_hb_goldmine": {
+  "input": "keyboard",
+  "note": "Grab every piece of gold before the 60-second clock runs out &ndash; dawdle and a time monster comes for you. Coloured keys open matching doors, the pickaxe buys a moment of protection. Arrows move, <strong>Z</strong> jumps, <strong>P</strong> pauses. 30 stages.",
+  "history": {
+   "source": "Juan J. Martínez (reidrac), usebox.net",
+   "url": "https://www.usebox.net/jjm/gold-mine-run/",
+   "text": "A single-screen gold-grabbing platformer in the spirit of the early-80s arcades, from the same one-man studio as Alien Intruder &ndash; and a DOS descendant of his own MSX game Night Knight. Native 386 protected-mode code with VGA graphics, released free under CC BY-NC-SA; the open licence is why this vault hosts the download itself."
+  }
+ },
+ "pc_hb_traxtor": {
+  "input": "keyboard",
+  "note": "Catch blocks with your tractor beam, load the bay, and fire them back into the descending wall &ndash; three of a kind clears them before they cross your defense line. Arrows move the ship, <strong>Space</strong> (or <strong>&#8593;</strong>) fires. 25 levels.",
+  "history": {
+   "source": "Juan J. Martínez (reidrac), usebox.net",
+   "url": "https://www.usebox.net/jjm/return-of-traxtor-dos/",
+   "text": "A match-3 puzzler that runs on a genuine 8086 IBM PC/XT with CGA graphics and PC speaker sound &ndash; the whole game is a single 16-kilobyte .COM file, built for the DOS COM Game Jam in 2023. Set a thousand years after the legendary Traxtor's last stand. Free under CC BY-NC-SA, from the same developer as Alien Intruder and Gold Mine Run!."
   }
  },
  "pc_hb_queens": {

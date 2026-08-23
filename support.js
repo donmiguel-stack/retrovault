@@ -125,6 +125,27 @@ window.SUPPORT_DATA = {
       checked: "2026-08-11" }
   ],
 
+  "pc_hb_goldmine": [
+    { creator: "Juan J. Martínez",
+      url:     "https://www.usebox.net/jjm/gold-mine-run/",
+      note:    "Free download - Ko-fi tip jar on the page",
+      checked: "2026-08-23" }
+  ],
+
+  "pc_hb_traxtor": [
+    { creator: "Juan J. Martínez",
+      url:     "https://www.usebox.net/jjm/return-of-traxtor-dos/",
+      note:    "Free download - Ko-fi tip jar on the page",
+      checked: "2026-08-23" }
+  ],
+
+  "c64_hb_rescuing_orc": [
+    { creator: "Juan J. Martínez",
+      url:     "https://www.usebox.net/jjm/rescuing-orc/",
+      note:    "Free download - boxed editions sold via Poly Play",
+      checked: "2026-08-23" }
+  ],
+
   "pc_hb_queens": [
     { creator: "Davide Bucci",
       url:     "https://darwinne.itch.io/the-queens-footsteps",

@@ -1082,6 +1082,10 @@ window.GENRE_DATA = {
   "genre": "action",
   "players": "p1"
  },
+ "c64_hb_rescuing_orc": {
+  "genre": "platformer",
+  "players": "p1"
+ },
  "c64_hb_doc_cosmos": {
   "genre": "adventure",
   "players": "p1"
@@ -1304,6 +1308,14 @@ window.GENRE_DATA = {
  },
  "pc_hb_alienintruder": {
   "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_hb_goldmine": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "pc_hb_traxtor": {
+  "genre": "puzzle",
   "players": "p1"
  },
  "pc_hb_queens": {

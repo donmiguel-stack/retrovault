@@ -1,19 +1,19 @@
 {
- "generated": "2026-08-22 15:26:02",
- "count": 473,
- "bytes": 182653507,
+ "generated": "2026-08-23 17:19:50",
+ "count": 479,
+ "bytes": 183565337,
  "files": {
   "games.js": {
-   "sha256": "59e72b5a42598c44c38b9a8cf88dccc35f92acc48be9f71956e75147cae3e723",
-   "size": 95440
+   "sha256": "aeb54193e03275adddc4c8f4bb30da401c4e26e53760249fcd0f161719d86242",
+   "size": 95695
   },
   "gamepages.js": {
-   "sha256": "b324e1933641d809026a5b27f343c69e2e826f28162e47493e0793ab005d6ea5",
-   "size": 218530
+   "sha256": "e0c6208bf3a1c209b6386580e39c792bd321b5d763a50198050fc1cd72391fa3",
+   "size": 223494
   },
   "genres.js": {
-   "sha256": "ebfaeab2485cf72f65bc9dd93bd21ebe6433fed92cdf26be40c886988e483dec",
-   "size": 21323
+   "sha256": "9b7e66ca7c007a07ca4b8d83ba78c9fac218b7cf419062015ce1c7ec8ae5d3c3",
+   "size": 21527
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,8 +32,8 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "0cf26f3c3d64dfa9c89b253f395ed9ac157a5954e0938b5403d539915f43fcf4",
-   "size": 36672
+   "sha256": "b574f06e77dcbff52f2a714a0af1a791ac8a079e42d7c04608b5d3372a362e72",
+   "size": 35702
   },
   "setup-i18n.js": {
    "sha256": "50ecae4fc25fc19068ede9b44fb9ae517b4bea7f2d52153bea0695342693aeba",
@@ -56,27 +56,27 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "1d5030ed446d2aa5c74c63fa06ec790ebe740ecdb8ddcd4e6dc9bcce848206c3",
-   "size": 8873
+   "sha256": "84804aabb8f7cc48eb68f519f60ee84e6d1159120621d688b987856af1ea6f94",
+   "size": 9673
   },
   "tips.js": {
    "sha256": "9eabdba1dceb0fc6ac9db066e9e41c948b6cd5ab0f9fc58ea99d303e805d2ef6",
    "size": 12321
   },
   "app.js": {
-   "sha256": "3956b7e0f2224873e5c4a7875dcc6276a01d68445169a6723198de8a62e5df6b",
-   "size": 77040
+   "sha256": "cb511513958b01bf5fd89004027b057ea55f78dc6b1f3b2260caf2e34fc24de5",
+   "size": 78621
   },
   "demo.js": {
    "sha256": "1d25660687299e46cb3d5d13231f32c587d6ac346eb0e7a32e4c69121bcd6b50",
    "size": 3439
   },
   "game.html": {
-   "sha256": "ec1401b2b5d690894e8b13000c787d7fa4b9063fbcc794443d08a6c50f6b0053",
+   "sha256": "efc4fc9a1496255635115014515ff642a751e447ee94a40d5388cbda8c370636",
    "size": 77688
   },
   "index.html": {
-   "sha256": "948fb8f43e02465c72a1b347585021bf8b0104fe309577ed47bed9d45f983fb5",
+   "sha256": "75d3fbe9eee8c3446d478a75e2e9cb11154552faca34a1f5a57ac398a05daa5c",
    "size": 15312
   },
   "resources.html": {
@@ -366,6 +366,10 @@
   "covers/c64_hb_micro_hexagon.png": {
    "sha256": "e1b47723ddcca902fc4686c9046c39e1c4bf9457f2441cdee47cafa9049dadbf",
    "size": 3453
+  },
+  "covers/c64_hb_rescuing_orc.png": {
+   "sha256": "683ceb7f8f2850ba8999cdc7cdbcfb3a13f9c45567d3ffaab97a15dc599c45f8",
+   "size": 56291
   },
   "covers/c64_hb_rocket_smash_ex.png": {
    "sha256": "310565210d338cd29d55cffa0f4ef93fff044cf808f9387419be8e195e4039e5",
@@ -903,6 +907,10 @@
    "sha256": "e2fd4892e1df978e6423519fd50d0c4c6d5c10fac109cc62b5255155d0bf0f43",
    "size": 301153
   },
+  "covers/pc_hb_goldmine.png": {
+   "sha256": "445d0c3e280e037641c2009ad2405667095c4f3d6a48b7d169a657344cd3b8c6",
+   "size": 23974
+  },
   "covers/pc_hb_hibernated1.png": {
    "sha256": "9757a408545ff0888e8df0d541721a6efcd98d1458d6c96741a49878c8b6b3ab",
    "size": 49381
@@ -926,6 +934,10 @@
   "covers/pc_hb_spacecavern.png": {
    "sha256": "cbd6766648a25439aae87a2c109431e2e766f9a700842bef99869a8937ccdf1c",
    "size": 19778
+  },
+  "covers/pc_hb_traxtor.png": {
+   "sha256": "7ee12f09bfbcb96e2358ccede81bfbfdded08f668ce16c3be3c16c80c9a06223",
+   "size": 35691
   },
   "covers/pc_holiday_lemmings.jpg": {
    "sha256": "58edd98cfccebd1afaa36be38cbf276beffc99dd6a438f739e14fc63cdf28b3d",
@@ -1839,6 +1851,10 @@
    "sha256": "5f2b54c9ba0c8149977a408e982c98aa767d4dadfcdea553da8dd92f7fa934f2",
    "size": 2400949
   },
+  "homebrew-downloads/GOLDMINE.zip": {
+   "sha256": "795d2426b12138cc094b8ea9d238d98aba1c3871e49d6ebf869698b1104638be",
+   "size": 602906
+  },
   "homebrew-downloads/Galaxian DX.d64": {
    "sha256": "8ca562760a02c2d1e7b78ce5a2c1f63b3fca4c2701c642f2e690ee5a92140a3c",
    "size": 174848
@@ -1875,6 +1891,10 @@
    "sha256": "063e2b7a6e606f4b4bc142b22ebf211e3ca63f3a755fce99c5d2d62e962f905e",
    "size": 91947
   },
+  "homebrew-downloads/Rescuing Orc.d64": {
+   "sha256": "981b7725deea5d56a1339b33f283aa526a5a59f25cc32f7e190f248c8e548600",
+   "size": 174848
+  },
   "homebrew-downloads/Rocket Smash EX.crt": {
    "sha256": "d4c3d61f9dd67ec28f361c93ec186eb35c85d935283846e8b683a25860485cd6",
    "size": 65728
@@ -1886,6 +1906,10 @@
   "homebrew-downloads/Super Bread Box.prg": {
    "sha256": "1ceea5d0cc1669acfd5805c203ee0dfb3ffb0044b881d7253ec261de1ed990d6",
    "size": 16313
+  },
+  "homebrew-downloads/TRAXTOR.zip": {
+   "sha256": "1d1e162847bebc7972142cfd546b418ab94b0a4421bf0036e4e817eaa1019b7c",
+   "size": 11286
   },
   "homebrew-downloads/Wolfling.prg": {
    "sha256": "cf0a878235e9b5301ee5f382a2093570db68cd20caae1c575428423b72d53d9b",

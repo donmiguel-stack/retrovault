@@ -3017,6 +3017,19 @@ window.GAMES_DATA = {
     "developer": "RGCD"
   },
   {
+    "id": "c64_hb_rescuing_orc",
+    "filename": "c64_hb_rescuing_orc.d64",
+    "title": "Rescuing Orc",
+    "platform": "C64",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "Rescuing Orc.d64",
+    "year": 2017,
+    "publisher": "Juan J. Martínez",
+    "developer": "Juan J. Martínez"
+  },
+  {
     "id": "c64_hb_doc_cosmos",
     "filename": "c64_hb_doc_cosmos.d64",
     "title": "Doc Cosmos",
@@ -3739,6 +3752,32 @@ window.GAMES_DATA = {
     "tags": [],
     "romFile": "ALIENINTRUDER.zip",
     "year": 2024,
+    "publisher": "Juan J. Martínez",
+    "developer": "Juan J. Martínez"
+  },
+  {
+    "id": "pc_hb_goldmine",
+    "filename": "pc_hb_goldmine.zip",
+    "title": "Gold Mine Run!",
+    "platform": "PC",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "GOLDMINE.zip",
+    "year": 2023,
+    "publisher": "Juan J. Martínez",
+    "developer": "Juan J. Martínez"
+  },
+  {
+    "id": "pc_hb_traxtor",
+    "filename": "pc_hb_traxtor.zip",
+    "title": "The Return of Traxtor",
+    "platform": "PC",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "TRAXTOR.zip",
+    "year": 2023,
     "publisher": "Juan J. Martínez",
     "developer": "Juan J. Martínez"
   },
