@@ -4309,14 +4309,15 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_alienintruder": {
   "input": "keyboard",
-  "note": "A single-screen jump-and-run in the mould of Miner 2049er or Jumpman &ndash; clear every platform, dodge or outrun what's hunting you. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "note": "A single-screen jump-and-shoot in the mould of Miner 2049er or Jumpman: 50 stages, 60 seconds each &ndash; rescue the crew, reach the exit, and grab the pizza, soda and diskettes on the way. Arrows move, <strong>Z</strong> fires, <strong>X</strong> jumps, <strong>P</strong> pauses. <strong>Esc</strong> quits to DOSBox's own menu, not the game's.",
   "video": {
    "id": "cakmTfZWtOw",
    "title": "Longplay: Alien Intruder (2024) [MS-DOS]"
   },
   "history": {
-   "source": "Juan J. Martínez's own site, usebox.net, and covered by Indie Retro News the week it shipped.",
-   "text": "Released free in December 2024 by a developer who has spent years writing small, genuinely native DOS games (and MSX ones) with full source available &ndash; part of why this vault could ship it outright rather than wait for someone to grab it later."
+   "source": "Juan J. Martínez (reidrac), usebox.net &ndash; also covered by Indie Retro News the week it shipped.",
+   "url": "https://www.usebox.net/jjm/alien-intruder/",
+   "text": "\"In space no one can hear you scream, so use your blaster instead!\" A commercial spacecraft's crew has been captured by aliens, and you're the rescue mission: 50 single-screen stages, 60 seconds apiece, on anything from a 286 with VGA up. Released free in December 2024 under a Creative Commons licence (CC BY-NC-SA) by Juan J. Martínez, a Spanish developer who has spent years writing genuinely native games for DOS, MSX, Amstrad CPC, ZX Spectrum and C64 &ndash; real 8/16-bit code, not a modern engine in retro clothes. There's even a boxed Collector's Edition through Poly Play for cartridge-and-manual people. The open licence is why this vault can host the download outright."
   }
  },
  "pc_hb_queens": {
