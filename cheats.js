@@ -24,6 +24,19 @@
 // entries don't share one fixed source page the way the Videopac ones do,
 // each C64 entry carries its own `source` (a ready-to-render "Source: <a>
 // ..." string) instead of relying on a single hardcoded link in game.html.
+//
+// Update 2026-08-22: Mike supplied four more C64 cheat sites to check
+// (ilmatar.net, artmoney.ru, commodorecheetah.co.uk, a GameFAQs compilation
+// page). Cross-referencing found almost total overlap with what's already
+// above - the two genuinely new games are `c64_uridium` and `c64_dropzone`
+// (both previously in the "skipped, no credible source" list), sourced from
+// Commodore Cheetah. Everything else those four sites covered was already
+// in this file from a different source, often with a different POKE
+// address for the same effect (different cracked releases drift) - left
+// as-is per Mike's call rather than piling alternates onto entries that
+// already work. artmoney.ru turned out to be a dead end for actual cheat
+// text: every entry there links only to a binary ArtMoney memory-table
+// (.amt) download, nothing human-readable to extract.
 window.CHEATS_DATA = (function () {
   var D = {};
   function set(ids, entries) {
@@ -184,6 +197,11 @@ window.CHEATS_DATA = (function () {
       source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572275-wizball/cheats" target="_blank" rel="noopener">GameFAQs</a>' },
     { label: "Infinite lives POKE", text: "<strong>POKE 27440,189</strong> gives infinite lives for all players - cross-confirmed on a second independent C64 POKE archive.",
       source: 'Source: <a href="https://gamefaqs.gamespot.com/c64/572275-wizball/cheats" target="_blank" rel="noopener">GameFAQs</a> &amp; <a href="https://www.ilmatar.net/~np/c64cheats.html" target="_blank" rel="noopener">The Great C64 Cheats Compendium</a>' }
+  ]);
+
+  set(["c64_uridium"], [
+    { label: "Invincibility & unlimited lives", text: "<strong>POKE 3394,255</strong> before running gives invincibility; <strong>POKE 3400,255</strong> and <strong>POKE 3406,255</strong> give unlimited lives.",
+      source: 'Source: <a href="https://www.commodorecheetah.co.uk/Cheats/_000221.htm" target="_blank" rel="noopener">Commodore Cheetah</a>' }
   ]);
 
   set(["c64_paradroid"], [
@@ -351,6 +369,13 @@ window.CHEATS_DATA = (function () {
       source: 'Source: <a href="https://www.c64-wiki.com/wiki/Wasteland" target="_blank" rel="noopener">C64-Wiki</a>' },
     { label: "Temple of Blood entry code", text: "To get into the Temple of Blood and retrieve the Bloodstaff, walk the sequence N W W W W N N E E E E E S E N N N N W W S W W W W N N E E, then report &ldquo;30&rdquo; steps to the guard.",
       source: 'Source: <a href="https://www.c64-wiki.com/wiki/Wasteland" target="_blank" rel="noopener">C64-Wiki</a>' }
+  ]);
+
+  set(["c64_dropzone"], [
+    { label: "100 lives & 133 bombs", text: "<strong>POKE 2311,100</strong> for 100 lives (or <strong>POKE 3060,173</strong> as an alternate lives address); <strong>POKE 2316,100</strong> for 133 bombs (or <strong>POKE 14424,173</strong> as an alternate).",
+      source: 'Source: <a href="https://www.commodorecheetah.co.uk/Cheats/_000396.htm" target="_blank" rel="noopener">Commodore Cheetah</a>' },
+    { label: "Adjustable attack rate & gravity", text: "<strong>POKE 8575,0</strong> slows the enemy attack rate; <strong>POKE 5901,192</strong>, <strong>POKE 5930,128</strong> and <strong>POKE 5947,2</strong> change your vertical speed and gravity effects.",
+      source: 'Source: <a href="https://www.commodorecheetah.co.uk/Cheats/_000396.htm" target="_blank" rel="noopener">Commodore Cheetah</a>' }
   ]);
 
   set(["c64_frogger"], [

@@ -1,7 +1,7 @@
 {
- "generated": "2026-08-22 13:49:10",
+ "generated": "2026-08-22 15:26:02",
  "count": 473,
- "bytes": 182648631,
+ "bytes": 182653507,
  "files": {
   "games.js": {
    "sha256": "59e72b5a42598c44c38b9a8cf88dccc35f92acc48be9f71956e75147cae3e723",
@@ -52,8 +52,8 @@
    "size": 5878
   },
   "cheats.js": {
-   "sha256": "220ee8e6e00ea61d89c0bf13152618c8cb806cbab2754c0cef39b16c07c34e1e",
-   "size": 30082
+   "sha256": "54279647b7ee56e4c8bc5a1f303473d3effec19ae6ac8f3f1d7cb18a89f6f32d",
+   "size": 32177
   },
   "downloads.js": {
    "sha256": "1d5030ed446d2aa5c74c63fa06ec790ebe740ecdb8ddcd4e6dc9bcce848206c3",
@@ -72,8 +72,8 @@
    "size": 3439
   },
   "game.html": {
-   "sha256": "f0b34fda32116dab8130cf78a51b39bae006af768e0e018370dc95e25da68df4",
-   "size": 74907
+   "sha256": "ec1401b2b5d690894e8b13000c787d7fa4b9063fbcc794443d08a6c50f6b0053",
+   "size": 77688
   },
   "index.html": {
    "sha256": "948fb8f43e02465c72a1b347585021bf8b0104fe309577ed47bed9d45f983fb5",
