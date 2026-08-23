@@ -310,6 +310,16 @@
     CATEGORY_GROUPS.forEach(function (grp) {
       if (counts[grp.key]) entries.push({ key: grp.key, label: catLabel(grp), count: counts[grp.key] });
     });
+    // "Banked ROM" is a tag, not a catalogue category, so it doesn't come from
+    // CATEGORY_GROUPS - it cuts across EU/US origins to surface bank-switched
+    // dumps specifically. Counts every tagged game, including ones normally
+    // folded away as an alternate (e.g. Neutron Star's banked dump under its
+    // plain one) - selecting this filter reveals them, see matches() below.
+    var bankedCount = 0;
+    games.forEach(function (g) {
+      if (g.tags && g.tags.indexOf("banked-rom") !== -1) bankedCount++;
+    });
+    if (bankedCount) entries.push({ key: "banked-rom", label: window.t("cat_banked"), count: bankedCount });
     fillSelect(categorySel, window.t("allCats") + " (" + visibleTotal + ")", entries, state.category);
   }
 
@@ -326,8 +336,20 @@
       // differs from its primary's (French dumps, PAL conversions, mods,
       // Brazil twins). Same-category alternates (EU alt/hack dumps, homebrew
       // demo builds) stay folded so the category view shows no doubles.
-      var revealed = false;
-      if (state.category !== "all" && state.category !== "G7000" && state.category !== "G7400+") {
+      //
+      // Two more escapes: the "Banked ROM" filter reveals any tagged
+      // alternate regardless of category (Neutron Star's banked dump shares
+      // its plain dump's EU category, so the rule above alone would never
+      // reveal it). And an active search reveals a matching alternate by
+      // name even with no filter set - Red Baron is a real, differently
+      // named prototype folded onto Air Battle's page; it should still turn
+      // up if someone searches "red baron", even though it stays off the
+      // shelf grid by default. It still has to pass the query match below,
+      // so an unrelated search doesn't un-fold it.
+      var revealed = !!state.query ||
+        (state.category === "banked-rom" && g.tags && g.tags.indexOf("banked-rom") !== -1);
+      if (!revealed && state.category !== "all" && state.category !== "G7000" && state.category !== "G7400+" &&
+          state.category !== "banked-rom") {
         if (groupFor(g).key === state.category) {
           var altPrimary = null, altPid = window.VAULT_ALT.primaryOf(g.id);
           var allGames = (window.GAMES_DATA && window.GAMES_DATA.games) || [];
@@ -346,6 +368,8 @@
     if (state.category !== "all") {
       if (state.category === "G7000" || state.category === "G7400+") {
         if (g.platform !== state.category) return false;
+      } else if (state.category === "banked-rom") {
+        if (!g.tags || g.tags.indexOf("banked-rom") === -1) return false;
       } else if (groupFor(g).key !== state.category) return false;
     }
     if (state.query) {
