@@ -692,9 +692,7 @@ window.GAMES_DATA = {
     "platform": "G7000",
     "category": "Official Odyssey2 (US)",
     "vpNumber": null,
-    "tags": [
-      "banked-rom"
-    ],
+    "tags": [],
     "romFile": "Showdown in 2100 A.D. (US).bin"
   },
   {
@@ -1020,9 +1018,7 @@ window.GAMES_DATA = {
     "platform": "G7000",
     "category": "Official Videopac (EU)",
     "vpNumber": "16",
-    "tags": [
-      "banked-rom"
-    ],
+    "tags": [],
     "romFile": "VP16 - Depth Charge - Marksman (Banked).bin"
   },
   {
@@ -1632,9 +1628,7 @@ window.GAMES_DATA = {
     "platform": "G7000",
     "category": "Official Videopac (EU)",
     "vpNumber": "12",
-    "tags": [
-      "banked-rom"
-    ],
+    "tags": [],
     "romFile": "Take the Money and Run (EU).bin"
   },
   {
