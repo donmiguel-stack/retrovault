@@ -835,7 +835,7 @@ window.GAMES_DATA = {
     "tags": [
       "banked-rom"
     ],
-    "romFile": "VP58 - Air Battle (Banked).bin"
+    "romFile": "VP58 - Air Battle (16K).bin"
   },
   {
     "id": "vp_04",
@@ -1325,7 +1325,7 @@ window.GAMES_DATA = {
     "tags": [
       "banked-rom"
     ],
-    "romFile": "VP55 - Neutron Star (Banked).bin"
+    "romFile": "VP55 - Neutron Star (16K).bin"
   },
   {
     "id": "vp_55_12fix",
@@ -1337,7 +1337,7 @@ window.GAMES_DATA = {
     "tags": [
       "alt-dump"
     ],
-    "romFile": "VP55 - Neutron Star (Alt).bin"
+    "romFile": "VP55 - Neutron Star (Alt 16K).bin"
   },
   {
     "id": "vp_53",
