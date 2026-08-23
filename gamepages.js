@@ -1060,7 +1060,7 @@ window.GAMEPAGES_DATA = {
  },
  "vp_58_12": {
   "input": "joystick",
-  "note": "Take-off is a manoeuvre in itself, and getting it wrong ends in the fence. Pick a variant on the SELECT GAME screen, press <span class='kbd'>0</span> to sit on the runway, then hold <span class='kbd'>&#8593;</span> (stick forward) to build speed &mdash; when the take-off indicator flashes you have flying speed &mdash; and pull <span class='kbd'>&#8595;</span> to climb. Fire with <span class='kbd'>G</span>. Verified working in this vault with the keys above (joystick&nbsp;1).",
+  "note": "This game reads <strong>joystick&nbsp;2</strong> &mdash; fly with <span class='kbd'>W</span> <span class='kbd'>A</span> <span class='kbd'>S</span> <span class='kbd'>D</span> and fire with <span class='kbd'>Q</span>; the arrow keys do nothing here. Take-off is a manoeuvre in itself, and getting it wrong ends in the fence within seconds: the moment you pick a variant, hold <span class='kbd'>W</span> (stick forward) to build speed &mdash; when the take-off indicator flashes you have flying speed &mdash; then pull <span class='kbd'>S</span> to climb. Verified working in this vault with the keys above.",
   "manual": {
    "item": "58_PLUS_Air_Battle_1983_Philips_EU",
    "pages": 4,
