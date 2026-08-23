@@ -1840,6 +1840,7 @@ window.GAMEPAGES_DATA = {
  },
  "vp_55_12": {
   "input": "joystick",
+  "note": "This is the untouched original dump, kept for the archive &mdash; in this emulator it shows a grey screen after SELECT GAME. To actually play, use the <em>alt dump</em> version of Neutron Star: it carries a two-byte community fix (one redirected BIOS call) that routes around the snag and runs fine.",
   "manual": {
    "item": "55_PLUS_Neutron_Star_1983_Philips_EU",
    "pages": 4,
