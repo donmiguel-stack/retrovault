@@ -59,6 +59,18 @@ var smooth = document.getElementById("smooth");
 var canvas = document.getElementById("canvas");
 var canvasMask = document.getElementById("canvasmask");
 var saveState = document.getElementById("savestate");
+var stateSlotSelect = document.getElementById("stateslot");
+var stateSlotRow = document.getElementById("stateslotrow");
+var stateFsPath = "/home/web_user/retroarch/userdata/states/rom.state";
+var stateSlotCount = 9;
+/* RetroArch's own slot mechanism is overridden here - it always writes
+ * states/rom.state, and the slot hotkeys are bound to "nul" - so slots live one
+ * level up instead: the file is the scratch pad both directions go through, and
+ * the chosen slot decides which IndexedDB entry it is copied to or from. */
+var stateSlot = Math.min(stateSlotCount, Math.max(1, parseInt(localStorage.getItem("webretro_settings_stateslot"), 10) || 1));
+/* Set before writing stateFsPath ourselves, so the write-tracking hook doesn't
+ * mistake a state we just restored for a state the user asked to save. */
+var skipNextStateTrack = false;
 var loadState = document.getElementById("loadstate");
 var undoSaveState = document.getElementById("undosavestate");
 var undoLoadState = document.getElementById("undoloadstate");
@@ -1125,8 +1137,10 @@ function createSaveList() {
 			if ((/^RetroArch_(saves|states)_/).test(items[i].key)) {
 				var sName = items[i].key.replace(/^RetroArch_(saves|states)_/, "");
 				var sType = (/^RetroArch_saves_/).test(items[i].key) ? "save" : "state";
+				var slotMatch = sType == "state" ? (/^(.*)_([1-9])$/).exec(sName) : null;
+				var sLabel = slotMatch ? (slotMatch[1] + " (slot " + slotMatch[2] + ")") : sName;
 				saveIDs.push({id: items[i].key, name: sName, type: sType});
-				saveTable.innerHTML += "<tr><td>" + capitalize(sType) + ": " + sName + '</td><td><span data-action="download">Download</span><span data-action="delete">Delete</span></td></tr>';
+				saveTable.innerHTML += "<tr><td>" + capitalize(sType) + ": " + sLabel + '</td><td><span data-action="download">Download</span><span data-action="delete">Delete</span></td></tr>';
 			}
 		}
 	});
@@ -1564,22 +1578,30 @@ function doNotRename() {
 }
 
 // converting save lists
+// Most save files are named after the content ("rom.srm"), so they are stored
+// with the name replaced by a ROMNAME token and rebuilt on the way back in.
+// Some cores write files under a fixed name of their own instead - VICE's
+// work disk is always "vice_work.d64" - which has no token to substitute. Those
+// carry a literal "name" instead of dir/ext, and are restored verbatim.
 function saveArrToObj(arr) {
 	let obj = {};
 	for (var i = 0; i < arr.length; i++) {
-		obj[arr[i].dir + "ROMNAME" + arr[i].ext] = arr[i].data;
+		obj[arr[i].name ? arr[i].name : (arr[i].dir + "ROMNAME" + arr[i].ext)] = arr[i].data;
 	}
 	return obj;
 }
 
 function saveObjToArr(obj) {
-	return Object.entries(obj).map(i => ({ext: i[0].split("ROMNAME")[1], dir: i[0].split("ROMNAME")[0], data: i[1]}));
+	return Object.entries(obj).map(function(i) {
+		if (i[0].indexOf("ROMNAME") == -1) return {ext: "", dir: "", name: i[0], data: i[1]};
+		return {ext: i[0].split("ROMNAME")[1], dir: i[0].split("ROMNAME")[0], data: i[1]};
+	});
 }
 
 function saveArrToFiles(arr) {
 	let files = [];
 	for (var i = 0; i < arr.length; i++) {
-		files.push({path: arr[i].dir + "ROMNAME" + arr[i].ext, data: arr[i].data.buffer});
+		files.push({path: arr[i].name ? arr[i].name : (arr[i].dir + "ROMNAME" + arr[i].ext), data: arr[i].data.buffer});
 	}
 	return files;
 }
@@ -1587,7 +1609,11 @@ function saveArrToFiles(arr) {
 function saveFilesToArr(files) {
 	let arr = [];
 	for (var i = 0; i < files.length; i++) {
-		arr.push({ext: files[i].path.split("ROMNAME")[1], dir: files[i].path.split("ROMNAME")[0], data: new Uint8Array(files[i].data)});
+		if (files[i].path.indexOf("ROMNAME") == -1) {
+			arr.push({ext: "", dir: "", name: files[i].path, data: new Uint8Array(files[i].data)});
+		} else {
+			arr.push({ext: files[i].path.split("ROMNAME")[1], dir: files[i].path.split("ROMNAME")[0], data: new Uint8Array(files[i].data)});
+		}
 	}
 	return arr;
 }
@@ -1602,10 +1628,55 @@ function saveSRAMHandler(path) {
 	doNotRename();
 }
 
+// state slots
+function stateKey(slot) {
+	return "RetroArch_states_" + romName + "_" + (slot || stateSlot);
+}
+
+// Mark the slots that already hold something, so the picker says which is which.
+function refreshStateSlots() {
+	if (!stateSlotSelect || !romName) return;
+	getAllIdbItems().then(function(items) {
+		var used = {};
+		for (var i = 0; i < (items || []).length; i++) {
+			var m = (/^RetroArch_states_(.*)_([1-9])$/).exec(items[i].key);
+			if (m && m[1] == romName) used[m[2]] = true;
+		}
+		for (var n = 1; n <= stateSlotCount; n++) {
+			var opt = stateSlotSelect.options[n - 1];
+			if (opt) opt.textContent = used[n] ? (n + " \u25cf") : String(n);
+		}
+	});
+}
+
+/* Keep states/rom.state in sync with the chosen slot, so RetroArch's own F3
+ * (and undo) act on the same state the menu would load. An empty slot clears
+ * the file rather than leaving another slot's state sitting there. */
+function applyStateSlotToFs() {
+	return getIdbItem(stateKey()).then(function(data) {
+		if (data) {
+			skipNextStateTrack = true;
+			safeWriteFile(stateFsPath, data);
+			return true;
+		}
+		try { if (FS.analyzePath(stateFsPath).exists) FS.unlink(stateFsPath); } catch (e) {}
+		return false;
+	});
+}
+
 // save state
 function saveStateHandler() {
-	if (FS.analyzePath("/home/web_user/retroarch/userdata/states/rom.state").exists) {
-		setIdbItem("RetroArch_states_" + romName, FS.readFile("/home/web_user/retroarch/userdata/states/rom.state"));
+	// Our own restore writes trip the same hook; they are not a save.
+	if (skipNextStateTrack) {
+		skipNextStateTrack = false;
+		return;
+	}
+	if (FS.analyzePath(stateFsPath).exists) {
+		setIdbItem(stateKey(), FS.readFile(stateFsPath));
+		refreshStateSlots();
+		
+		new sideAlert("State saved to slot " + stateSlot, 3000);
+		log("State saved to slot " + stateSlot + " for " + romName);
 		
 		doNotRename();
 	} else {
@@ -1657,25 +1728,55 @@ function afterStart() {
 			alert("Core does not support save states.");
 		} else {
 			uploadFile(".bin, .state", function(file) {
-				setIdbItem("RetroArch_states_" + romName, new Uint8Array(file.data));
-				FS.writeFile("/home/web_user/retroarch/userdata/states/rom.state", new Uint8Array(file.data));
-				new sideAlert("Imported state (press load state)", 3000);
+				setIdbItem(stateKey(), new Uint8Array(file.data));
+				skipNextStateTrack = true;
+				safeWriteFile(stateFsPath, new Uint8Array(file.data));
+				refreshStateSlots();
+				new sideAlert("Imported into slot " + stateSlot + " (press load state)", 3000);
 			});
 		}
 	}
 	
 	loadState.classList.remove("disabled");
 	loadState.onclick = function() {
-		Module._cmd_load_state();
+		applyStateSlotToFs().then(function(present) {
+			if (!present) {
+				new sideAlert("Slot " + stateSlot + " is empty.", 3000);
+				return;
+			}
+			Module._cmd_load_state();
+		});
 	}
+	
+	// slot picker
+	stateSlotSelect.innerHTML = "";
+	for (var slotNo = 1; slotNo <= stateSlotCount; slotNo++) {
+		var slotOpt = document.createElement("option");
+		slotOpt.value = String(slotNo);
+		slotOpt.textContent = String(slotNo);
+		stateSlotSelect.appendChild(slotOpt);
+	}
+	stateSlotSelect.value = String(stateSlot);
+	stateSlotSelect.removeAttribute("disabled");
+	stateSlotRow.classList.remove("disabled");
+	stateSlotSelect.onchange = function() {
+		stateSlot = parseInt(stateSlotSelect.value, 10) || 1;
+		localStorage.setItem("webretro_settings_stateslot", String(stateSlot));
+		applyStateSlotToFs().then(function(present) {
+			new sideAlert("Slot " + stateSlot + (present ? " selected." : " selected (empty)."), 3000);
+		});
+	}
+	refreshStateSlots();
 	
 	exportState.classList.remove("disabled");
 	exportState.onclick = function() {
-		if (FS.analyzePath("/home/web_user/retroarch/userdata/states/rom.state").exists) {
-			downloadFile(FS.readFile("/home/web_user/retroarch/userdata/states/rom.state"), "game-state-" + romName + "-" + getTime() + ".state");
-		} else {
-			alert("No state to export.");
-		}
+		getIdbItem(stateKey()).then(function(data) {
+			if (data) {
+				downloadFile(data, "game-state-" + romName + "-slot" + stateSlot + "-" + getTime() + ".state");
+			} else {
+				alert("Slot " + stateSlot + " is empty - save state before exporting it.");
+			}
+		});
 	}
 	
 	undoSaveState.classList.remove("disabled");
@@ -1945,19 +2046,30 @@ function initFromData(data) {
 				saveObj = saveArrToObj(cSave);
 				FS.createPath("/", baseFsSaveDir.substring(1), true, true);
 				for (var i = 0; i < cSave.length; i++) {
-					safeWriteFile(baseFsSaveDir + cSave[i].dir + "rom" + cSave[i].ext, cSave[i].data);
+					safeWriteFile(baseFsSaveDir + (cSave[i].name ? cSave[i].name : (cSave[i].dir + "rom" + cSave[i].ext)), cSave[i].data);
 				}
 				new sideAlert("Save loaded for " + romName, 5000);
 				log("Save loaded for " + romName);
 			}
 			
 			// import state
-			var cState = await getIdbItem("RetroArch_states_" + romName);
+			// Pre-slot builds kept one unnumbered state per game; adopt it as slot 1.
+			var legacyState = await getIdbItem("RetroArch_states_" + romName);
+			if (legacyState) {
+				if (!(await getIdbItem("RetroArch_states_" + romName + "_1"))) {
+					setIdbItem("RetroArch_states_" + romName + "_1", legacyState);
+					log("Migrated the pre-slot state for " + romName + " into slot 1");
+				}
+				removeIdbItem("RetroArch_states_" + romName);
+			}
+			
+			var cState = await getIdbItem(stateKey());
 			if (cState) {
 				FS.createPath("/", "home/web_user/retroarch/userdata/states", true, true);
-				FS.writeFile("/home/web_user/retroarch/userdata/states/rom.state", cState);
-				new sideAlert("State imported for " + romName + " (press load state)", 5000);
-				log("State imported for " + romName);
+				skipNextStateTrack = true;
+				FS.writeFile(stateFsPath, cState);
+				new sideAlert("Slot " + stateSlot + " ready for " + romName + " (press load state)", 5000);
+				log("State slot " + stateSlot + " imported for " + romName);
 			}
 			
 			// config
@@ -2021,7 +2133,17 @@ function initFromData(data) {
 						coreOptionsString +
 						'vice_drive_true_emulation = "' + (viceNeedsTrueDrive ? "enabled" : "disabled") + '"\n' +
 						'vice_autoloadwarp = "enabled"\n' +
-						'vice_warp_boost = "enabled"\n');
+						'vice_warp_boost = "enabled"\n' +
+						// Games that save do it to a disk in device 8, and a cartridge
+						// launch has no disk attached at all - which is why Zak McKracken's
+						// EasyFlash savegame manager sits forever on "INSERT SAVEGAME DISK".
+						// The work disk is an empty d64 the core creates in the save
+						// directory and mounts on device 8, so there is always somewhere to
+						// save to. It is skipped automatically when the content itself is a
+						// floppy (that disk owns device 8). Writes land in the save
+						// directory, which webretro mirrors to IndexedDB, so they survive a
+						// reload like any other save.
+						'vice_work_disk = "8_d64"\n');
 					break;
 				case "parallel_n64":
 					safeWriteFile(baseFsConfigDir + "ParaLLEl N64/ParaLLEl N64.opt", coreOptionsString);

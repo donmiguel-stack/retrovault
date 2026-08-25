@@ -648,8 +648,8 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=113"></script>
-<script src="setup-i18n.js?v=111"></script>
+<script src="i18n.js?v=114"></script>
+<script src="setup-i18n.js?v=114"></script>
 <script src="games.js?v=113"></script>
 <script src="alternates.js?v=4"></script>
 <script src="extras.js?v=109"></script>
@@ -1016,6 +1016,9 @@
   }
   row(grid, '<span class="kbd">A</span>&ndash;<span class="kbd">Z</span> <span class="kbd">Space</span> <span class="kbd">Enter</span>', LT("c_kbd"));
   row(grid, '<span class="kbd">F5</span>', LT("c_reset"));
+  // F2/F3 are RetroArch's save/load state hotkeys and act on whichever slot is
+  // picked in the emulator's States menu - see c_saveNote below.
+  row(grid, '<span class="kbd">F2</span> <span class="kbd">F3</span>', LT("c_state"));
   row(grid, '<span class="kbd">Right Shift</span>', LT("c_osk"));
   if (style === "keyboard" || style === "mixed") {
     row(grid, '<span class="kbd">Tab</span>', LT("c_focus"));
@@ -1049,6 +1052,9 @@
   var nStick2 = el("p","controls-note");
   nStick2.innerHTML = LT("c_stick2");
   cBox.appendChild(nStick2);
+  var nSave = el("p","controls-note");
+  nSave.innerHTML = LT("c_saveNote");
+  cBox.appendChild(nSave);
 
   // ---- cheats (Videopac shelf) ----
   // cBox is built for every platform but only ever appended to the page via
@@ -1198,6 +1204,12 @@
     var pcEsc = el("p","controls-note");
     pcEsc.innerHTML = window.t("pc_escNote");
     pcBox.appendChild(pcEsc);
+    // The DOS shelf has no save states - js-dos holds filesystem changes in
+    // memory until the player commits them, which is what the Save link in
+    // dos.html's top bar does.
+    var pcSave = el("p","controls-note");
+    pcSave.innerHTML = window.t("pc_saveNote");
+    pcBox.appendChild(pcSave);
     var pcTipsBox = buildTipsBox(g.id);
     if (pcTipsBox) pcBox.appendChild(pcTipsBox);
     pcSec.appendChild(pcBox);
@@ -1224,6 +1236,7 @@
     // control box already had this tip for "keyboard"/"mixed" games; the C64
     // box just never carried it.
     row(c64Grid, '<span class="kbd">Tab</span>', LT("c_focus"));
+    row(c64Grid, '<span class="kbd">F2</span> <span class="kbd">F3</span>', LT("c_state"));
     c64Box.appendChild(c64Grid);
     // a per-game tip (gamepages.js "note"), then the two things that trip
     // everyone up on the C64 shelf: cracked-intro screens and the Mac F-keys.
@@ -1238,6 +1251,9 @@
     var c64Mac = el("p","controls-note");
     c64Mac.innerHTML = window.t("c64_macNote");
     c64Box.appendChild(c64Mac);
+    var c64Save = el("p","controls-note");
+    c64Save.innerHTML = window.t("c64_saveNote");
+    c64Box.appendChild(c64Save);
 
     // ---- cheats (C64 shelf) ----
     // Same CHEATS_DATA source as the Videopac cBox block above, but C64

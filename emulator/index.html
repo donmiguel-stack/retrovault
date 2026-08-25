@@ -56,6 +56,7 @@
 					</li>
 					<li>States
 						<ul>
+							<li class="disabled" id="stateslotrow"><label>Slot <select id="stateslot" disabled></select></label></li>
 							<li class="pointer disabled" id="savestate">Save State</li>
 							<li class="pointer disabled" id="loadstate">Load State</li>
 							<li class="pointer disabled" id="undosavestate">Undo Save State</li>
@@ -63,7 +64,7 @@
 							<li class="pointer disabled" id="exportstate">Export State</li>
 							<li class="pointer disabled" id="importstate">Import State</li>
 							<li><a id="statesbutton" href="">Recover States</a></li>
-							<li class="menu-long menu-nohover" style="width: 200px;">You must save state before you export state; exported states are not states from the time of exporting.</li>
+							<li class="menu-long menu-nohover" style="width: 200px;">Save State and Load State both act on the slot chosen above; a dot marks a slot that already holds a state. Saving to a slot overwrites what was there. You must save state before you export state; exported states are not states from the time of exporting.</li>
 						</ul>
 					</li>
 					<li>Screenshots
@@ -296,7 +297,7 @@
 		<script type="text/javascript" src="assets/jswindow.js"></script>
 		<script type="text/javascript" src="pwa.js"></script>
 		<script type="text/javascript" src="assets/charToCodeMap.js?v=6.5"></script>
-		<script type="text/javascript" src="assets/base.js?v=7.2"></script>
+		<script type="text/javascript" src="assets/base.js?v=7.4"></script>
 		<script type="text/javascript" src="gamepad-bridge.js"></script>
 	</body>
 </html>

@@ -41,6 +41,7 @@
 <body>
 <div id="topbar">
 	<a href="#" id="backLink">&larr; Back</a>
+	<a href="#" id="saveLink" title="Write your in-game saves to this browser">Save</a>
 	<span class="title" id="titleText"></span>
 </div>
 <div id="dosWrap">
@@ -53,14 +54,61 @@
 (function () {
 	var params = new URLSearchParams(window.location.search);
 	var zip = params.get("zip");
+	var dosApi = null;
+	var saving = false;
 	var title = params.get("title") ? decodeURIComponent(params.get("title")) : "DOS";
 	var gameId = params.get("id") || "";
 
 	document.title = title + " - Retro Vault";
 	document.getElementById("titleText").textContent = title;
-	document.getElementById("backLink").href = gameId
+	var backHref = gameId
 		? "../game.html?id=" + encodeURIComponent(gameId)
 		: "../index.html";
+	var backLink = document.getElementById("backLink");
+	var saveLink = document.getElementById("saveLink");
+	backLink.href = backHref;
+
+	// Commit whatever the game wrote to C:, then report back on the link itself -
+	// js-dos's own toasts are part of the sidebar UI that kiosk mode hides.
+	function commitSave(then) {
+		if (saving) return;
+		if (!dosApi || typeof dosApi.save !== "function") {
+			if (then) then();
+			return;
+		}
+		saving = true;
+		var label = saveLink.textContent;
+		saveLink.textContent = "Saving\u2026";
+		var done = false;
+		var finish = function (ok) {
+			if (done) return;
+			done = true;
+			saving = false;
+			saveLink.textContent = ok ? "Saved" : "Save failed";
+			window.setTimeout(function () { saveLink.textContent = label; }, 2500);
+			if (then) then();
+		};
+		// Don't let a hung save trap someone on the page.
+		window.setTimeout(function () { finish(true); }, 8000);
+		try {
+			Promise.resolve(dosApi.save()).then(function () { finish(true); },
+				function (e) { console.error(e); finish(false); });
+		} catch (e) {
+			console.error(e);
+			finish(false);
+		}
+	}
+
+	saveLink.addEventListener("click", function (e) {
+		e.preventDefault();
+		commitSave(null);
+	});
+
+	// Leaving the page is the one moment a save is guaranteed to matter.
+	backLink.addEventListener("click", function (e) {
+		e.preventDefault();
+		commitSave(function () { window.location.href = backHref; });
+	});
 
 	// Each PC game's zip in roms/ is a self-contained js-dos bundle: the game
 	// files plus a .jsdos/dosbox.conf that mounts C: and launches the game's
@@ -98,12 +146,27 @@
 			return;
 		}
 		resolveBundleUrl(zip).then(function (bundleUrl) {
-			Dos(document.getElementById("dos"), {
+			dosApi = Dos(document.getElementById("dos"), {
 				url: bundleUrl,
 				pathPrefix: "dos/emulators/",
 				backend: "dosbox",
 				kiosk: true,
-				autoStart: true
+				autoStart: true,
+				// Games that save (Larry, the Quest games) write to C:, but js-dos
+				// keeps every filesystem change in memory and only commits it to
+				// browser storage when told to. Its own Save button lives in the
+				// sidebar, which kiosk mode hides - so without this a save made in
+				// game is gone on reload. autoSave commits on the moments js-dos
+				// notices (leaving fullscreen, releasing the pointer); the Save
+				// link above and the Back link below cover the rest.
+				autoSave: true,
+				// The key js-dos files changes under is derived from the bundle URL,
+				// and resolveBundleUrl hangs a ?v= cache tag on that URL. Left alone,
+				// every ROM update would strand the saves made against the previous
+				// version. Strip the query so the key is the game, not the revision.
+				fsChanges: {
+					urlToKey: function (url) { return String(url).split("?")[0] + ".changes"; }
+				}
 			});
 		});
 		// js-dos signals readiness in a few different ways across versions;
