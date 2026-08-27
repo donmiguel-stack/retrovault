@@ -46,6 +46,37 @@ and every game fails to start.
 
 ## How to run it
 
+### The easy way — double-click and play
+
+Every download ships two launchers. Double-click the one for your computer:
+
+| | |
+| --- | --- |
+| **Mac** | `Start Retro Vault.command` |
+| **Windows** | `Start Retro Vault.bat` |
+
+It checks whether Python is installed (and installs it if not — official
+python.org build, or Homebrew/winget if you already have those), starts the
+Vault's local server, and opens **http://localhost:8000/** in your browser
+(Chrome if you have it). Leave the window it opens in the background while you
+play; close it or press **Control+C** to stop. Run it again any time — if the
+Vault is already running it just opens the browser, and if port 8000 is busy it
+picks the next free one.
+
+Two one-time prompts you may see:
+
+- **Mac:** *"cannot be opened because it is from an unidentified developer"* —
+  right-click the file → **Open** → **Open**. macOS remembers after that.
+- **Windows:** *"Windows protected your PC"* — click **More info** → **Run
+  anyway**. A Windows Firewall prompt for Python may follow; **Cancel** is fine,
+  the Vault only talks to your own browser.
+
+The launcher also works on its own: copy just `Start Retro Vault.command` or
+`.bat` to a friend's machine, double-click it, and it downloads the latest
+release into `RetroVault` in their home folder and starts it from there.
+
+Prefer to do it by hand? Read on.
+
 ### First, install Python
 
 The Vault needs it to run its little local server. **Mac:** open Terminal and
