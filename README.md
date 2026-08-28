@@ -48,7 +48,8 @@ and every game fails to start.
 
 ### The easy way — double-click and play
 
-Every download ships two launchers. Double-click the one for your computer:
+**Unzip the download first** — the launcher has to run from inside the extracted
+folder, not from the zip itself. Then double-click the one for your computer:
 
 | | |
 | --- | --- |
