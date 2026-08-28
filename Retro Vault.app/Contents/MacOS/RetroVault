@@ -1,0 +1,13 @@
+#!/bin/bash
+# Trampoline: a double-clicked app bundle gets no Terminal window by
+# default, so this just asks Terminal.app to run the real launcher
+# (Contents/Resources/launcher.sh), which is the part that actually
+# checks Python, finds/downloads the Vault, and serves it.
+DIR="$(cd "$(dirname "$0")/../Resources" && pwd)"
+SCRIPT="$DIR/launcher.sh"
+osascript <<APPLESCRIPT
+tell application "Terminal"
+    activate
+    do script "bash '$SCRIPT'"
+end tell
+APPLESCRIPT

@@ -49,14 +49,15 @@ and every game fails to start.
 ### The easy way — double-click and play
 
 **Unzip the download first** — the launcher has to run from inside the extracted
-folder, not from the zip itself. Then double-click the one for your computer:
+folder, not from the zip itself. Then:
 
-| | |
-| --- | --- |
-| **Mac** | `Start Retro Vault.command` |
-| **Windows** | `Start Retro Vault.bat` |
+- **Mac:** double-click `Retro Vault.app` — it has its own icon, so you can drag
+  it to your Desktop, your Applications folder, or the Dock and launch it from
+  there any time. Prefer a plain script instead? `Start Retro Vault.command`
+  does exactly the same thing, no icon.
+- **Windows:** double-click `Start Retro Vault.bat`.
 
-It checks whether Python is installed (and installs it if not — official
+Either way it checks whether Python is installed (and installs it if not — official
 python.org build, or Homebrew/winget if you already have those), starts the
 Vault's local server, and opens **http://localhost:8000/** in your browser
 (Chrome if you have it). Leave the window it opens in the background while you
@@ -67,14 +68,16 @@ picks the next free one.
 Two one-time prompts you may see:
 
 - **Mac:** *"cannot be opened because it is from an unidentified developer"* —
-  right-click the file → **Open** → **Open**. macOS remembers after that.
+  right-click `Retro Vault.app` (or `Start Retro Vault.command`) → **Open** →
+  **Open**. macOS remembers after that.
 - **Windows:** *"Windows protected your PC"* — click **More info** → **Run
   anyway**. A Windows Firewall prompt for Python may follow; **Cancel** is fine,
   the Vault only talks to your own browser.
 
-The launcher also works on its own: copy just `Start Retro Vault.command` or
-`.bat` to a friend's machine, double-click it, and it downloads the latest
-release into `RetroVault` in their home folder and starts it from there.
+The launcher also works on its own: copy just `Retro Vault.app` (or
+`Start Retro Vault.command`/`.bat`) to a friend's machine, double-click it, and
+it downloads the latest release into `RetroVault` in their home folder and
+starts it from there.
 
 Prefer to do it by hand? Read on.
 
