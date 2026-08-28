@@ -838,14 +838,37 @@ function readyRomFetch() {
 	var romPath = queries.rom.split("/").map(encodeURIComponent).join("/");
 	var romloc = (/^(https?:)?\/\//i).test(queries.rom) ? queries.rom : relativeBase + "roms/" + romPath;
 	var romFilename = queries.rom.split("/").slice(-1)[0];
-	grab(romloc, "arraybuffer", function(data) {
-		log("Succesfully fetched ROM from " + romloc);
+	function romFetched(data) {
 		romMode = "querystring";
 		romUploadCallback([{path: romFilename, data: data}]);
-	}, function(error) {
+	}
+	function romGiveUp(error) {
 		alert("Could not get ROM at " + romloc + " (Error " + error + ")");
 		romMode = "upload";
 		ffd.style.display = "block";
+	}
+	/* Videopac Vault: a handful of homebrew/copyright-free games ship inside
+	 * the download itself (homebrew-downloads/, one level up from emulator/ -
+	 * see downloads.js) rather than emulator/roms/, which is 100% gitignored
+	 * and empty on a fresh install until someone drops files in themselves.
+	 * game.html only ever appends &dlfallback=<file> after its own HEAD
+	 * check already confirmed roms/ is missing this file but
+	 * homebrew-downloads/ has it - so this second attempt only fires for the
+	 * small set of titles the Vault is actually allowed to ship playable out
+	 * of the box, never as a guess. */
+	grab(romloc, "arraybuffer", function(data) {
+		log("Succesfully fetched ROM from " + romloc);
+		romFetched(data);
+	}, function(error) {
+		if (!queries.dlfallback) { romGiveUp(error); return; }
+		var dlPath = queries.dlfallback.split("/").map(encodeURIComponent).join("/");
+		var dlloc = relativeBase + "../homebrew-downloads/" + dlPath;
+		grab(dlloc, "arraybuffer", function(data) {
+			log("Succesfully fetched ROM from " + dlloc);
+			romFetched(data);
+		}, function(error2) {
+			romGiveUp(error2);
+		});
 	});
 }
 

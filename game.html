@@ -828,6 +828,11 @@
   });
   paintFav();
 
+  // Homebrew/copyright-free titles the Vault ships as a direct download
+  // (homebrew-downloads/, see downloads.js) - looked up here too, not just
+  // in the "download from the Vault" block below, so the gating logic just
+  // past this can offer it as a fallback when emulator/roms/ is empty.
+  var dl = (window.DOWNLOAD_DATA || {})[g.id];
   var start = el("button","start-btn");
   start.appendChild(el("span","tri"));
   start.appendChild(document.createTextNode("START"));
@@ -835,37 +840,50 @@
   // libretro cores, PC through js-dos (see emulator/dos.html)
   var CORES = { "C64": "vice_x64" };
   start.addEventListener("click", function(){
+    var fb = start.dataset.dlfallback ? "&dlfallback=" + encodeURIComponent(start.dataset.dlfallback) : "";
     if (g.platform === "PC") {
       location.href = "emulator/dos.html?zip=" + encodeURIComponent(g.romFile) +
                       "&title=" + encodeURIComponent(g.title) +
-                      "&id=" + encodeURIComponent(g.id);
+                      "&id=" + encodeURIComponent(g.id) + fb;
     } else {
       location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
-                      "&rom=" + encodeURIComponent(g.romFile);
+                      "&rom=" + encodeURIComponent(g.romFile) + fb;
     }
   });
   info.appendChild(document.createElement("br"));
   var actions = el("div","hero-actions");
-  // On the C64 and PC shelves, START appears only when the rom/zip really is
-  // in emulator/roms/ - checked live with a HEAD request, so dropping the
-  // file in is all it takes. No button that leads to an error screen.
-  if (g.platform === "C64" || g.platform === "PC") {
-    var romNote = el("p","missing-note","");
-    info.appendChild(romNote);
-    fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" })
-      .then(function (r) {
-        if (!r.ok) throw 0;
-        romNote.remove();
-        actions.insertBefore(start, actions.firstChild);
-      })
-      .catch(function () {
-        romNote.textContent = g.platform === "PC"
-          ? window.t("pc_noRom", { file: g.romFile })
-          : window.t("c64_noRom", { file: g.romFile });
-      });
-  } else {
-    actions.appendChild(start);
+  // START appears only once we know something will actually load - checked
+  // live with a HEAD request, so dropping a file into emulator/roms/ is all
+  // it takes, and nobody hits an error screen (or, on the Videopac shelf,
+  // the emulator core's raw browser alert()) from a button that was always
+  // going to fail. For the handful of homebrew/copyright-free titles the
+  // Vault ships itself (homebrew-downloads/, see downloads.js), a missing
+  // emulator/roms/ file isn't the end of it - checked there too before
+  // giving up, and the emulator page is told where to find it via
+  // &dlfallback= so it can actually play it (see assets/base.js /
+  // dos.html's resolveBundleUrl - both only try this path when told to).
+  var romNote = el("p","missing-note","");
+  info.appendChild(romNote);
+  function vaultShowStart(fromDownloads) {
+    romNote.remove();
+    if (fromDownloads) start.dataset.dlfallback = dl.file;
+    actions.insertBefore(start, actions.firstChild);
   }
+  function vaultShowMissing() {
+    var key = g.platform === "PC" ? "pc_noRom" : (g.platform === "C64" ? "c64_noRom" : "vp_noRom");
+    romNote.textContent = window.t(key, { file: g.romFile });
+  }
+  fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" })
+    .then(function (r) {
+      if (r.ok) { vaultShowStart(false); return; }
+      throw 0;
+    })
+    .catch(function () {
+      if (!dl) { vaultShowMissing(); return; }
+      fetch("homebrew-downloads/" + encodeURIComponent(dl.file), { method: "HEAD" })
+        .then(function (r) { if (r.ok) vaultShowStart(true); else vaultShowMissing(); })
+        .catch(vaultShowMissing);
+    });
   actions.appendChild(favBtn);
   info.appendChild(actions);
 
@@ -935,7 +953,6 @@
   // unlike Buy/Support, not a link elsewhere. Hidden until a HEAD request
   // confirms the file is really there, same discipline as the START button
   // above - no button that leads to a 404.
-  var dl = (window.DOWNLOAD_DATA || {})[g.id];
   if (dl) {
     var dcol = el("div","dl-col");
     dcol.style.display = "none";

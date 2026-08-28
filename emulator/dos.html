@@ -58,6 +58,7 @@
 	var saving = false;
 	var title = params.get("title") ? decodeURIComponent(params.get("title")) : "DOS";
 	var gameId = params.get("id") || "";
+	var dlfallback = params.get("dlfallback") || "";
 
 	document.title = title + " - Retro Vault";
 	document.getElementById("titleText").textContent = title;
@@ -127,15 +128,26 @@
 	// when the ROM changes and stays put when it doesn't, so the cache keeps
 	// working. If the HEAD fails (offline, file://), fall back to the plain
 	// URL and let js-dos serve whatever it already has.
+	function versionedUrl(url, headers) {
+		var tag = headers.get("etag") ||
+			[headers.get("last-modified"), headers.get("content-length")]
+				.filter(Boolean).join("-");
+		return tag ? url + "?v=" + String(tag).replace(/[^a-zA-Z0-9]/g, "").slice(-20) : url;
+	}
+	// A handful of homebrew/copyright-free PC games ship inside the download
+	// itself (../homebrew-downloads/, see downloads.js) rather than roms/,
+	// which is 100% gitignored and empty on a fresh install. game.html only
+	// ever sends dlfallback after its own HEAD check already confirmed
+	// roms/ is missing this zip but homebrew-downloads/ has it.
 	function resolveBundleUrl(name) {
 		var base = "roms/" + name;
 		return fetch(base, { method: "HEAD", cache: "no-store" }).then(function (r) {
-			if (!r.ok) return base;
-			var tag = r.headers.get("etag") ||
-				[r.headers.get("last-modified"), r.headers.get("content-length")]
-					.filter(Boolean).join("-");
-			if (!tag) return base;
-			return base + "?v=" + String(tag).replace(/[^a-zA-Z0-9]/g, "").slice(-20);
+			if (r.ok) return versionedUrl(base, r.headers);
+			if (!dlfallback) return base;
+			var fb = "../homebrew-downloads/" + encodeURIComponent(dlfallback);
+			return fetch(fb, { method: "HEAD", cache: "no-store" }).then(function (r2) {
+				return r2.ok ? versionedUrl(fb, r2.headers) : base;
+			}).catch(function () { return base; });
 		}).catch(function () { return base; });
 	}
 
