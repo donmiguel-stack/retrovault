@@ -109,7 +109,11 @@ PORT=$FIRST_PORT
 while port_in_use "$PORT"; do
   if vault_answering "$PORT"; then
     say "The Vault is already running on port $PORT - just opening it."
-    open "http://localhost:$PORT/"
+        if [ -d "/Applications/Google Chrome.app" ]; then
+      open -a "Google Chrome" "http://localhost:$PORT/"
+    else
+      open "http://localhost:$PORT/"
+    fi
     echo; read -r -p "Press Return to close this window." _; exit 0
   fi
   PORT=$((PORT + 1))

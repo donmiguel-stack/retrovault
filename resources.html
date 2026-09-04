@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resources &amp; Emulators — Retro Vault</title>
-<link rel="stylesheet" href="style.css?v=100">
+<link rel="stylesheet" href="style.css?v=101">
 <style>
   .resources-page{max-width:820px;margin:0 auto;padding:32px 24px 60px;}
   .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:22px;}
@@ -34,6 +34,24 @@
     background:var(--surface);border:1px solid var(--border);border-radius:12px;
     padding:16px 18px;margin:4px 0 0;color:var(--text-dim);
   }
+  /* Per-shelf sections: bigger heading with a platform-coloured bar, and the
+     "what this shelf needs" hint as its own tinted box above that shelf's
+     cards - so a visitor can jump straight to their own console. */
+  .resources-page .modal-body h4.src-shelf{
+    font-size:19px;letter-spacing:0;text-transform:none;margin:34px 0 10px;
+    padding-left:14px;border-left:5px solid var(--accent);gap:0;
+  }
+  .resources-page .modal-body h4.src-shelf::before{display:none;}
+  .resources-page .modal-body h4.src-vp{border-left-color:var(--g7000);}
+  .resources-page .modal-body h4.src-c64{border-left-color:var(--c64);}
+  .resources-page .modal-body h4.src-pc{border-left-color:var(--pc);}
+  .resources-page .modal-body h4.src-hb{border-left-color:#e05a7e;}
+  .resources-page .modal-body>div>p.src-hint{
+    font-size:14.5px;line-height:1.6;max-width:none;margin:0 0 14px;
+    background:color-mix(in srgb, var(--surface) 70%, var(--bg));
+    border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--text-dim);
+  }
+  .resources-page .modal-body>div>p.src-hint strong{color:var(--text);}
   @media (max-width:640px){
     .resources-page .modal-body ul{grid-template-columns:1fr;}
   }
@@ -93,7 +111,7 @@
 </div>
 
 <script src="i18n.js?v=114"></script>
-<script src="setup-i18n.js?v=114"></script>
+<script src="setup-i18n.js?v=115"></script>
 <script>
 (function () {
   function applyLang() {

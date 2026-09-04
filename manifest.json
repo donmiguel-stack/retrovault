@@ -1,15 +1,15 @@
 {
- "generated": "2026-08-23 17:19:50",
+ "generated": "2026-09-03 21:34:07",
  "count": 479,
- "bytes": 183565337,
+ "bytes": 183590635,
  "files": {
   "games.js": {
    "sha256": "aeb54193e03275adddc4c8f4bb30da401c4e26e53760249fcd0f161719d86242",
    "size": 95695
   },
   "gamepages.js": {
-   "sha256": "e0c6208bf3a1c209b6386580e39c792bd321b5d763a50198050fc1cd72391fa3",
-   "size": 223494
+   "sha256": "581c5e508d7359ba6d4dfef588fbf6c36b5ba0385c2c1a2808b262c2481a3a02",
+   "size": 223689
   },
   "genres.js": {
    "sha256": "9b7e66ca7c007a07ca4b8d83ba78c9fac218b7cf419062015ce1c7ec8ae5d3c3",
@@ -32,16 +32,16 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "b574f06e77dcbff52f2a714a0af1a791ac8a079e42d7c04608b5d3372a362e72",
-   "size": 35702
+   "sha256": "99afa7475bfc87c745eacfc020bb80dffed7c6b119706a1285ad8ea205ca2a0c",
+   "size": 40977
   },
   "setup-i18n.js": {
-   "sha256": "50ecae4fc25fc19068ede9b44fb9ae517b4bea7f2d52153bea0695342693aeba",
-   "size": 50212
+   "sha256": "8776188af74b0651d9d02dd1767a2fa074ca2a241d57ab9bc463ba7e1a494892",
+   "size": 61376
   },
   "featured.js": {
-   "sha256": "f69c0b62738d2b7f481e7cfdd8d7eea6f2ff8b6e98628208cf1db912c3b3e624",
-   "size": 37993
+   "sha256": "7b51d31ee3edf0358885e40a48a69e11bebcf92a754c9c4f52f2c07a206c90a6",
+   "size": 40731
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -72,28 +72,28 @@
    "size": 3439
   },
   "game.html": {
-   "sha256": "efc4fc9a1496255635115014515ff642a751e447ee94a40d5388cbda8c370636",
-   "size": 77688
+   "sha256": "df3ea586e88d966700b3a439768d5c77c5f0e46a4492cb5f0c29688db2316c68",
+   "size": 79788
   },
   "index.html": {
-   "sha256": "75d3fbe9eee8c3446d478a75e2e9cb11154552faca34a1f5a57ac398a05daa5c",
+   "sha256": "acc43814de8b97eaf8bc8eae81edbd2f7c735e2e87981505cd0c2070da51071b",
    "size": 15312
   },
   "resources.html": {
-   "sha256": "b9d2b9dc642df138911591a402fe80dac8e19135e58db0a48c51d2698db1ad9b",
-   "size": 10182
+   "sha256": "d7cf23ed995ded82eaf225d86a97b24391aeb7c70cfac964dac6e6cb5bc36ee5",
+   "size": 11294
   },
   "style.css": {
-   "sha256": "e1b064beef62aa656faead08dc76b4b5bc30c7523f978517fd6da2064bf20e98",
-   "size": 47999
+   "sha256": "0688fe27a7c2136b2f647f18c615a4f959ad0d2eea8b4aa0beb22169db56c760",
+   "size": 48987
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
    "size": 3768
   },
   "README.md": {
-   "sha256": "f64c3a6cfba4a4b99ae78cfe5a3f401567f9e8d62bec757f182f04836b6735e8",
-   "size": 13049
+   "sha256": "bb46b1473e3feaf385b586faf519c3e3a69894ad52635e10f4352a1b7bf7beae",
+   "size": 14775
   },
   "LICENSE.md": {
    "sha256": "f9facf4ae69f17530f6eac066d5f4bc71d0240f17e9c39350fa06d7c90a9bfa9",

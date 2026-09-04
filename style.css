@@ -188,6 +188,21 @@ body{
 .modal-body a:visited{color:var(--accent);}
 .modal-body a:hover{text-decoration:underline;}
 .modal-body li{margin-bottom:5px;}
+/* Per-shelf source sections (setup-i18n.js "sources"): each shelf gets its
+   own heading with a platform-coloured marker and a "what this shelf needs"
+   hint, so it's obvious which sites/files belong to Videopac vs C64 vs PC.
+   Shared by the Setup modal and resources.html. */
+.modal-body h4.src-shelf{
+  display:flex;align-items:center;gap:9px;margin:20px 0 6px;
+  font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text);
+}
+.modal-body h4.src-shelf::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--accent);flex:none;}
+.modal-body h4.src-vp::before{background:var(--g7000);box-shadow:0 0 0 2px color-mix(in srgb, var(--g7400) 70%, transparent);}
+.modal-body h4.src-c64::before{background:var(--c64);}
+.modal-body h4.src-pc::before{background:var(--pc);}
+.modal-body h4.src-hb::before{background:#e05a7e;}
+.modal-body p.src-hint{color:var(--text-dim);margin:0 0 8px;}
+.modal-body p.src-hint strong{color:var(--text);}
 .modal-body .credits{
   margin-top:24px;padding-top:14px;border-top:1px solid var(--border);
   font-size:13px;color:var(--text-mute);
