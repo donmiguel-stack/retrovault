@@ -50,6 +50,7 @@
 </div>
 
 <script src="dos/js-dos.js"></script>
+<script src="dos-launch.js?v=1"></script>
 <script>
 (function () {
 	var params = new URLSearchParams(window.location.search);
@@ -59,6 +60,12 @@
 	var title = params.get("title") ? decodeURIComponent(params.get("title")) : "DOS";
 	var gameId = params.get("id") || "";
 	var dlfallback = params.get("dlfallback") || "";
+	// The Vault's own file host (hosted.js, see game.html) - an absolute URL
+	// to this same zip on retrovault.world, only ever sent after game.html's
+	// HEAD check found it there. Anything that isn't an absolute URL is
+	// ignored, so a stray parameter can't point js-dos at a relative path.
+	var hosted = params.get("hosted") || "";
+	if (!/^(https?:)?\/\//i.test(hosted)) hosted = "";
 
 	document.title = title + " - Retro Vault";
 	document.getElementById("titleText").textContent = title;
@@ -139,17 +146,171 @@
 	// which is 100% gitignored and empty on a fresh install. game.html only
 	// ever sends dlfallback after its own HEAD check already confirmed
 	// roms/ is missing this zip but homebrew-downloads/ has it.
+	// Third and last place to look: the Vault's file host (&hosted=). The
+	// server there sends ETag/Last-Modified with CORS exposed, so the same
+	// ?v= cache-busting works; if the HEAD fails the plain URL still goes in.
+	function tryHosted(base) {
+		if (!hosted) return base;
+		return fetch(hosted, { method: "HEAD", mode: "cors", cache: "no-store" }).then(function (r3) {
+			return r3.ok ? versionedUrl(hosted, r3.headers) : hosted;
+		}).catch(function () { return hosted; });
+	}
 	function resolveBundleUrl(name) {
 		var base = "roms/" + name;
 		return fetch(base, { method: "HEAD", cache: "no-store" }).then(function (r) {
 			if (r.ok) return versionedUrl(base, r.headers);
-			if (!dlfallback) return base;
+			if (!dlfallback) return tryHosted(base);
 			var fb = "../homebrew-downloads/" + encodeURIComponent(dlfallback);
 			return fetch(fb, { method: "HEAD", cache: "no-store" }).then(function (r2) {
-				return r2.ok ? versionedUrl(fb, r2.headers) : base;
-			}).catch(function () { return base; });
-		}).catch(function () { return base; });
+				return r2.ok ? versionedUrl(fb, r2.headers) : tryHosted(base);
+			}).catch(function () { return tryHosted(base); });
+		}).catch(function () { return tryHosted(base); });
 	}
+
+	// ---- plain zips (2026-09-06) -------------------------------------------
+	// Somebody who downloads a game from archive.org and drops the zip into
+	// roms/ under the games.js name gets a zip of game files, not a js-dos
+	// bundle - js-dos would stop with "Broken bundle, .jsdos/dosbox.conf not
+	// found". So before handing anything to js-dos, look inside: a real
+	// bundle goes through untouched (same URL, so js-dos's own cache still
+	// applies); a plain zip is unpacked here with zip.js, a top-level folder
+	// holding the whole game is stripped (archive.org's "Ppersia/",
+	// "LSL1/"), a dosbox.conf is written around the files with the launch
+	// command from dos-launch.js (or a guess - see pickLaunch), and the
+	// result goes to js-dos as an in-memory blob. Nothing touches the disk;
+	// this runs again on every start.
+	var CONF_TEMPLATE = {
+		sdl: { autolock: false, fullscreen: false, fulldouble: false, output: "surface", waitonerror: true, usescancodes: true, vsync: false },
+		dosbox: { machine: "svga_s3", memsize: 16 },
+		cpu: { core: "auto", cputype: "auto", cycles: "auto", cycleup: 10, cycledown: 20 },
+		mixer: { nosound: false, rate: 44100, blocksize: 1024, prebuffer: 20 },
+		render: { frameskip: 0, aspect: false, scaler: "none" },
+		sblaster: { sbtype: "sb16" }
+	};
+	function buildConf(overrides, runLines) {
+		var out = [];
+		Object.keys(CONF_TEMPLATE).forEach(function (sec) {
+			var vals = Object.assign({}, CONF_TEMPLATE[sec], (overrides || {})[sec] || {});
+			out.push("[" + sec + "]");
+			Object.keys(vals).forEach(function (k) { out.push(k + "=" + vals[k]); });
+		});
+		out.push("[autoexec]", "SET BLASTER=A220 I7 D1 H5 P330 T6", "mount c .", "c:");
+		return out.concat(runLines).join("\n") + "\n";
+	}
+	// Which command starts the game. The table first; otherwise the Sierra
+	// loader, then a name match with the zip, then whatever executable is
+	// alone at the top level, then first .BAT / .EXE / .COM in that order.
+	function pickLaunch(names, zipName) {
+		var table = (window.DOS_LAUNCH || {})[zipName];
+		if (table) return { run: [].concat(table.run), conf: table.conf || null };
+		var top = names.filter(function (n) { return n.indexOf("/") === -1; });
+		var lower = top.map(function (n) { return n.toLowerCase(); });
+		function find(pred) { var i = lower.findIndex(pred); return i === -1 ? null : top[i]; }
+		var base = zipName.replace(/\.zip$/i, "").toLowerCase();
+		var exes = top.filter(function (n) { return /\.(bat|exe|com)$/i.test(n); });
+		var hit = find(function (n) { return n === "sierra.com" || n === "sierra.exe"; }) ||
+			find(function (n) { return /\.(bat|exe|com)$/.test(n) && n.replace(/\.(bat|exe|com)$/, "") === base; }) ||
+			(exes.length === 1 ? exes[0] : null) ||
+			find(function (n) { return /\.bat$/.test(n); }) ||
+			find(function (n) { return /\.exe$/.test(n); }) ||
+			find(function (n) { return /\.com$/.test(n); });
+		return hit ? { run: [hit], conf: null } : null;
+	}
+	// A zip reader/writer of its own rather than assets/zip-2.4.7.min.js -
+	// that build ships without an inflate codec (it expects worker scripts
+	// the Vault doesn't carry). Reading: central directory + the browser's
+	// DecompressionStream("deflate-raw"). Writing: stored entries only,
+	// which is all js-dos needs and keeps this short.
+	function parseZip(buf) {
+		var dv = new DataView(buf), u8 = new Uint8Array(buf), eocd = -1;
+		for (var i = buf.byteLength - 22; i >= Math.max(0, buf.byteLength - 65557); i--) {
+			if (dv.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+		}
+		if (eocd < 0) throw new Error("not a zip file");
+		var count = dv.getUint16(eocd + 10, true), p = dv.getUint32(eocd + 16, true), out = [];
+		var td = new TextDecoder("utf-8");
+		for (var k = 0; k < count; k++) {
+			if (dv.getUint32(p, true) !== 0x02014b50) throw new Error("bad central directory");
+			var nlen = dv.getUint16(p + 28, true), elen = dv.getUint16(p + 30, true), clen = dv.getUint16(p + 32, true);
+			var name = td.decode(u8.subarray(p + 46, p + 46 + nlen));
+			out.push({ name: name, method: dv.getUint16(p + 10, true), csize: dv.getUint32(p + 20, true),
+				lho: dv.getUint32(p + 42, true), dir: /\/$/.test(name) });
+			p += 46 + nlen + elen + clen;
+		}
+		return out;
+	}
+	function entryData(buf, e) {
+		var dv = new DataView(buf);
+		var start = e.lho + 30 + dv.getUint16(e.lho + 26, true) + dv.getUint16(e.lho + 28, true);
+		var raw = new Uint8Array(buf, start, e.csize);
+		if (e.method === 0) return Promise.resolve(raw);
+		if (e.method !== 8) return Promise.reject(new Error("unsupported compression method " + e.method + " in " + e.name));
+		return new Response(new Blob([raw]).stream().pipeThrough(new DecompressionStream("deflate-raw")))
+			.arrayBuffer().then(function (b) { return new Uint8Array(b); });
+	}
+	var CRC_T = (function () { var t = new Uint32Array(256); for (var n = 0; n < 256; n++) { var c = n; for (var k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c; } return t; })();
+	function crc32(u8) { var c = 0xFFFFFFFF; for (var i = 0; i < u8.length; i++) c = CRC_T[(c ^ u8[i]) & 0xFF] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; }
+	function buildZip(files) {
+		var enc = new TextEncoder(), parts = [], cd = [], off = 0, cdLen = 0;
+		files.forEach(function (f) {
+			var n = enc.encode(f.name), crc = crc32(f.data), L = f.data.length;
+			var lh = new DataView(new ArrayBuffer(30));
+			lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(12, 0x21, true);
+			lh.setUint32(14, crc, true); lh.setUint32(18, L, true); lh.setUint32(22, L, true); lh.setUint16(26, n.length, true);
+			parts.push(lh.buffer, n, f.data);
+			var c = new DataView(new ArrayBuffer(46));
+			c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true); c.setUint16(14, 0x21, true);
+			c.setUint32(16, crc, true); c.setUint32(20, L, true); c.setUint32(24, L, true); c.setUint16(28, n.length, true);
+			c.setUint32(42, off, true);
+			cd.push(c.buffer, n); cdLen += 46 + n.length; off += 30 + n.length + L;
+		});
+		var e = new DataView(new ArrayBuffer(22));
+		e.setUint32(0, 0x06054b50, true); e.setUint16(8, files.length, true); e.setUint16(10, files.length, true);
+		e.setUint32(12, cdLen, true); e.setUint32(16, off, true);
+		return new Blob(parts.concat(cd, [e.buffer]), { type: "application/zip" });
+	}
+	function wrapPlainZip(bundleUrl, loading) {
+		if (typeof DecompressionStream !== "function") return Promise.resolve(bundleUrl);   // old browser: js-dos gets the zip as is
+		var opts = /^(https?:)?\/\//i.test(bundleUrl) ? { mode: "cors" } : {};
+		return fetch(bundleUrl, opts).then(function (r) {
+			if (!r.ok) throw new Error("HTTP " + r.status);
+			return r.arrayBuffer();
+		}).then(function (buf) {
+			var entries = parseZip(buf).filter(function (e) { return !e.dir; });
+			var names = entries.map(function (e) { return e.name.replace(/^\/+/, ""); });
+			if (names.indexOf(".jsdos/dosbox.conf") !== -1) return bundleUrl;   // a real bundle - untouched
+			// one folder holding everything? strip it
+			var roots = {};
+			names.forEach(function (n) { roots[n.indexOf("/") === -1 ? "" : n.split("/")[0]] = 1; });
+			var rk = Object.keys(roots);
+			var prefix = (rk.length === 1 && rk[0] !== "") ? rk[0] + "/" : "";
+			if (prefix) names = names.map(function (n) { return n.slice(prefix.length); });
+			var launch = pickLaunch(names, zip_name);
+			if (!launch) throw new Error("no .EXE/.COM/.BAT found in " + zip_name);
+			if (loading) loading.textContent = "Unpacking " + zip_name + "…";
+			var enc = new TextEncoder();
+			var files = [
+				{ name: ".jsdos/jsdos.json", data: enc.encode('{"version":"8"}') },
+				{ name: ".jsdos/dosbox.conf", data: enc.encode(buildConf(launch.conf, launch.run)) }
+			];
+			var chain = Promise.resolve();
+			entries.forEach(function (e, i) {
+				chain = chain.then(function () { return entryData(buf, e); })
+					.then(function (data) { files.push({ name: names[i], data: data }); });
+			});
+			return chain.then(function () {
+				console.log("dos.html: wrapped plain zip " + zip_name + " (" + names.length + " files" +
+					(prefix ? ", stripped " + prefix : "") + "), launch: " + launch.run.join(" / "));
+				wrappedFrom = bundleUrl;
+				return URL.createObjectURL(buildZip(files));
+			});
+		}).catch(function (e) {
+			console.warn("dos.html: could not inspect/wrap " + bundleUrl + " - " + e + "; handing it to js-dos as is");
+			return bundleUrl;
+		});
+	}
+	var zip_name = zip || "";
+	var wrappedFrom = null;
 
 	function boot() {
 		var loading = document.getElementById("loadingMsg");
@@ -157,7 +318,7 @@
 			loading.textContent = "Couldn't load the DOS player. Refresh, or check emulator/dos/js-dos.js is in place.";
 			return;
 		}
-		resolveBundleUrl(zip).then(function (bundleUrl) {
+		resolveBundleUrl(zip).then(function (u) { return wrapPlainZip(u, loading); }).then(function (bundleUrl) {
 			dosApi = Dos(document.getElementById("dos"), {
 				url: bundleUrl,
 				pathPrefix: "dos/emulators/",
@@ -176,8 +337,14 @@
 				// and resolveBundleUrl hangs a ?v= cache tag on that URL. Left alone,
 				// every ROM update would strand the saves made against the previous
 				// version. Strip the query so the key is the game, not the revision.
+				// A wrapped plain zip arrives as a blob: URL that is different on
+				// every start - key its saves off the URL the zip really came from.
 				fsChanges: {
-					urlToKey: function (url) { return String(url).split("?")[0] + ".changes"; }
+					urlToKey: function (url) {
+						var u = String(url);
+						if (/^blob:/i.test(u) && wrappedFrom) u = wrappedFrom;
+						return u.split("?")[0] + ".changes";
+					}
 				}
 			});
 		});

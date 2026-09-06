@@ -12,7 +12,13 @@
      runs, and swaps in a "download the Vault to play" note instead of
      navigating to an emulator that has no ROM or BIOS to load. C64/PC
      pages never show START without the file (they HEAD-check first), so
-     in practice this guards the Videopac shelf. */
+     in practice this guards the Videopac shelf.
+   - EXCEPT when hosted.js is present: the BIOS and the abandonware part
+     of all three shelves (Videopac since 2026-09-04, C64 and MS-DOS since
+     2026-09-06) then live on the Vault's own file host (retrovault.world,
+     never in this repo), and game.html only shows START for those after
+     a HEAD check against that host - so those clicks are let through and
+     the game really plays. */
 (function () {
   "use strict";
 
@@ -44,7 +50,11 @@
   ready(function () {
     var b = document.createElement("div");
     b.className = "demo-banner";
-    b.innerHTML =
+    var hosted = !!(window.HOSTED_FILES && window.HOSTED_FILES.base);
+    b.innerHTML = hosted ?
+      "<b>Live demo</b> — out-of-print games on all three shelves play right " +
+      "here (files come from retrovault.world); titles still on sale need your own copy. " +
+      "<a href=\"" + SITE + "/#download\">Get your own copy&nbsp;→</a>" :
       "<b>Live demo</b> — browse the whole Vault; games don't play here " +
       "because it ships without ROMs. " +
       "<a href=\"" + SITE + "/#download\">Get your own copy&nbsp;→</a>";
@@ -62,6 +72,11 @@
   document.addEventListener("click", function (e) {
     var btn = e.target && e.target.closest && e.target.closest(".start-btn");
     if (!btn) return;
+    // game.html marks START with data-hosted when the ROM is on the Vault's
+    // own file host (hosted.js) - those play for real on the demo too, and
+    // the homebrew-downloads/ titles do as well once the BIOS is hosted
+    // (game.html passes &biosbase= for every Videopac start).
+    if (btn.dataset.hosted || (btn.dataset.dlfallback && window.HOSTED_FILES && window.HOSTED_FILES.bios)) return;
     e.preventDefault();
     if (e.stopImmediatePropagation) e.stopImmediatePropagation();
     e.stopPropagation();

@@ -1,15 +1,15 @@
 {
- "generated": "2026-09-03 21:34:07",
- "count": 479,
- "bytes": 183590635,
+ "generated": "2026-09-06 21:43:05",
+ "count": 485,
+ "bytes": 183724358,
  "files": {
   "games.js": {
-   "sha256": "aeb54193e03275adddc4c8f4bb30da401c4e26e53760249fcd0f161719d86242",
-   "size": 95695
+   "sha256": "3007efa0bb469a4db031c41f0ee52319d9abfd1eec22e189abd2ee489bae076d",
+   "size": 96376
   },
   "gamepages.js": {
-   "sha256": "581c5e508d7359ba6d4dfef588fbf6c36b5ba0385c2c1a2808b262c2481a3a02",
-   "size": 223689
+   "sha256": "8125ea16b811d321e34ec02a3099c5d369022e9dcc9790fd60cc30e549d5c5cb",
+   "size": 223893
   },
   "genres.js": {
    "sha256": "9b7e66ca7c007a07ca4b8d83ba78c9fac218b7cf419062015ce1c7ec8ae5d3c3",
@@ -32,12 +32,12 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "99afa7475bfc87c745eacfc020bb80dffed7c6b119706a1285ad8ea205ca2a0c",
-   "size": 40977
+   "sha256": "f883e677a42f86e38cad067cb9cc76086785d9cb26337bcc18de09358e938323",
+   "size": 43989
   },
   "setup-i18n.js": {
-   "sha256": "8776188af74b0651d9d02dd1767a2fa074ca2a241d57ab9bc463ba7e1a494892",
-   "size": 61376
+   "sha256": "ec0b9856bd3c5c500ae2e62b31ac8bf0d4568853e2a3a740cc3005f9e18d21b9",
+   "size": 63520
   },
   "featured.js": {
    "sha256": "7b51d31ee3edf0358885e40a48a69e11bebcf92a754c9c4f52f2c07a206c90a6",
@@ -63,37 +63,53 @@
    "sha256": "9eabdba1dceb0fc6ac9db066e9e41c948b6cd5ab0f9fc58ea99d303e805d2ef6",
    "size": 12321
   },
+  "alternates.js": {
+   "sha256": "fb2573298e9e485bdd0b7f8fa1e1fbe319889c2d3fed426d387fd2b5a63cf441",
+   "size": 4597
+  },
+  "hosted.js": {
+   "sha256": "f3766314db0f76706c8d975992081362f752236d9f2f825c2ee3dc0de7c59c09",
+   "size": 9087
+  },
+  "products.js": {
+   "sha256": "3350ebca26e65d0f1642b528e4e393a093219257f109ad10e1e71d6cd890dfb1",
+   "size": 5879
+  },
+  "support.js": {
+   "sha256": "7ff838291d57742e833482d9190ec0df70a68c00d125c37987fffd011e3778e6",
+   "size": 7296
+  },
   "app.js": {
-   "sha256": "cb511513958b01bf5fd89004027b057ea55f78dc6b1f3b2260caf2e34fc24de5",
+   "sha256": "27e0d7d42ec8bbcdc5589187a9080bb324d2376b085fef8dee7020f0388b4fc3",
    "size": 78621
   },
   "demo.js": {
-   "sha256": "1d25660687299e46cb3d5d13231f32c587d6ac346eb0e7a32e4c69121bcd6b50",
-   "size": 3439
+   "sha256": "ea1f31b72eb923b63e98d7f24a02e260af471222b8e2c4025d60581e1a1b4d20",
+   "size": 4572
   },
   "game.html": {
-   "sha256": "df3ea586e88d966700b3a439768d5c77c5f0e46a4492cb5f0c29688db2316c68",
-   "size": 79788
+   "sha256": "06984c7b6a9c726c023471f593d88b0bb86f11fe6b09dfa81260961f287be861",
+   "size": 83695
   },
   "index.html": {
-   "sha256": "acc43814de8b97eaf8bc8eae81edbd2f7c735e2e87981505cd0c2070da51071b",
-   "size": 15312
+   "sha256": "f1922048432dd0ee7a8f2de1ab414e18aec11ea9dee8f4bacfecb6092a0f02ba",
+   "size": 15389
   },
   "resources.html": {
-   "sha256": "d7cf23ed995ded82eaf225d86a97b24391aeb7c70cfac964dac6e6cb5bc36ee5",
-   "size": 11294
+   "sha256": "0dfaeecc8a677e465102c0af185ac207c6a767fcdcc334344ec6db9bdb86d6b1",
+   "size": 11349
   },
   "style.css": {
-   "sha256": "0688fe27a7c2136b2f647f18c615a4f959ad0d2eea8b4aa0beb22169db56c760",
-   "size": 48987
+   "sha256": "5b9cf41bfcf0c0ed75ca063984298238a5cbe568808562df8657ca65577c852a",
+   "size": 50169
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
    "size": 3768
   },
   "README.md": {
-   "sha256": "bb46b1473e3feaf385b586faf519c3e3a69894ad52635e10f4352a1b7bf7beae",
-   "size": 14775
+   "sha256": "822ad3747d553ef03a4ca3c70d939aa9e5856b5e1fd8dae4a79229f40a0a5787",
+   "size": 15032
   },
   "LICENSE.md": {
    "sha256": "f9facf4ae69f17530f6eac066d5f4bc71d0240f17e9c39350fa06d7c90a9bfa9",
@@ -430,6 +446,10 @@
   "covers/c64_operation_wolf.png": {
    "sha256": "78c2abb1dfe3268f541186d9248d6335dc183f865b623f82b27dd74e5c1585d1",
    "size": 173177
+  },
+  "covers/c64_outrun.jpg": {
+   "sha256": "95e69cc7e206e24aa4123d00321ed234690ed5e110309ef5d780953b087221f0",
+   "size": 47106
   },
   "covers/c64_paperboy.png": {
    "sha256": "e5c7b010a0915355006a85b078f608628ee1d80619d6f0dc69c4462b4d0e3c7b",
@@ -1010,6 +1030,10 @@
   "covers/pc_oregon_trail.jpg": {
    "sha256": "4337889aaf2b1d998fcfab63a2ed4df00f84317f1464d3bc7ebf8ba481b80b4a",
    "size": 54151
+  },
+  "covers/pc_outrun.jpg": {
+   "sha256": "95e69cc7e206e24aa4123d00321ed234690ed5e110309ef5d780953b087221f0",
+   "size": 47106
   },
   "covers/pc_prince_of_persia.jpg": {
    "sha256": "8c03b31ef9ebe61f3290b720c10dc3e70035584e9c673cb250cef3419ba5389d",

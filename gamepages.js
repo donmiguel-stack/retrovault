@@ -4445,7 +4445,7 @@ window.GAMEPAGES_DATA = {
  },
  "c64_outrun": {
   "input": "joystick",
-  "note": "Joystick in port 2: push left/right to steer, forward/back to accelerate/brake, tap Fire to shift between 1st and 2nd gear. Space pauses, Restore restarts. Like most C64 dumps floating around, this one boots into a crack-group intro (D&amp;F / Dr. Who) before the real Sega title screen &ndash; that's the dump, not a bug, just wait it out or press a key.",
+  "note": "When it boots you&rsquo;ll see a blue <strong>UNLIMITED TIME ? (Y/N)</strong> trainer prompt &ndash; press <strong>N</strong> for the normal game (or <strong>Y</strong> to never run out of time). Steer left/right at the &ldquo;Select music&rdquo; screen to pick a tune, then press <strong>Fire</strong> to start. Controls use the <strong>second</strong> joystick set: on the keyboard that&rsquo;s <strong>W</strong> accelerate, <strong>S</strong> brake, <strong>A</strong>/<strong>D</strong> steer, and <strong>Q</strong> for gear-shift and to start the race.",
   "video": {
    "id": "pnuYHmSLUY4",
    "title": "Commodore 64 Longplay [308] OutRun (US Gold) (EU)"

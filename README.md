@@ -217,17 +217,20 @@ matching entry in `genres.js` and (optionally) a history in `gamepages.js`.
 The library also has an **MS-DOS** shelf — the PC chip in the filter bar,
 playable through [js-dos](https://js-dos.com/) (a self-hosted DOSBox, in
 `emulator/dos/`), not the RetroArch/webretro cores the other two shelves use.
-Each game is a single zip in `emulator/roms/` that's also a self-contained
-js-dos bundle: the game's own files plus a `.jsdos/dosbox.conf` that mounts
-the zip as drive C: and launches the right .EXE/.BAT automatically. Drop the
-file named on the game's page into `emulator/roms/` and START appears by
-itself, exactly like the C64 shelf.
+Each game is a single zip in `emulator/roms/`. Drop the file named on the
+game's page into `emulator/roms/` and START appears by itself, exactly like
+the C64 shelf. **A plain zip of the game's DOS files is enough** — the kind
+you download from the Internet Archive's MS-DOS collection, top-level folder
+and all: `emulator/dos.html` looks inside before starting, unpacks it in the
+browser, strips that folder, and adds the DOSBox config js-dos needs with
+the launch command from `emulator/dos-launch.js` (or a sensible guess: the
+Sierra loader, an .EXE matching the zip's name, the only executable there).
+A ready-made js-dos bundle (files plus `.jsdos/dosbox.conf`) still works
+unchanged and is what the Vault's own file host serves.
 
-To add another DOS title yourself: put the game's files in a folder, add a
-`.jsdos/dosbox.conf` to it (copy one from an existing PC game's zip and change
-the `[autoexec]` line to your game's .EXE/.BAT), zip the folder's *contents*
-(not the folder itself) so the .EXE ends up at the zip's root, and drop that
-zip into `emulator/roms/`. Then give it an id starting with `pc_`, platform
+To add another DOS title yourself: zip the game's files, drop the zip into
+`emulator/roms/`, and if the game doesn't start with the right command add a
+line for it in `emulator/dos-launch.js`. Then give it an id starting with `pc_`, platform
 `"PC"` and category `"MS-DOS"` in `games.js`, plus a matching entry in
 `genres.js` and (optionally) a history in `gamepages.js`.
 

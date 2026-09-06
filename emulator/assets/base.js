@@ -837,7 +837,11 @@ function readyRomFetch() {
 	 * separates directories. */
 	var romPath = queries.rom.split("/").map(encodeURIComponent).join("/");
 	var romloc = (/^(https?:)?\/\//i).test(queries.rom) ? queries.rom : relativeBase + "roms/" + romPath;
+	/* An absolute rom= URL (hosted.js, see game.html) arrives with its last
+	 * segment already percent-encoded; decode it so the core sees the real
+	 * filename (save-state slots key off it). Relative names are raw. */
 	var romFilename = queries.rom.split("/").slice(-1)[0];
+	if ((/^(https?:)?\/\//i).test(queries.rom)) { try { romFilename = decodeURIComponent(romFilename); } catch (e) {} }
 	function romFetched(data) {
 		romMode = "querystring";
 		romUploadCallback([{path: romFilename, data: data}]);
@@ -1577,15 +1581,36 @@ function prepareBios() {
 		let num = 0;
 		
 		FS.createPath("/", baseFsSystemDir.substring(1) + bios.path, true, true);
+		/* Retro Vault: bios/ is gitignored, so on the public demo mirror (and
+		 * on a fresh download before anyone has dropped their own dump in)
+		 * the local fetch 404s. game.html appends &biosbase=<url> when
+		 * hosted.js says the Vault's own file host has a copy; that is only
+		 * ever tried AFTER the local file failed, so a dump someone put in
+		 * bios/ themselves always wins over the hosted one. */
+		var biosBase = queries.biosbase && /^(https?:)?\/\//i.test(queries.biosbase) ? queries.biosbase : null;
 		for (let i = 0; i < bios.files.length; i++) {
-			grab(biosCdn + bios.files[i], "arraybuffer", function(data) {
-				FS.writeFile(baseFsSystemDir + bios.path + bios.files[i], new Uint8Array(data));
-				log("BIOS fetch: Success " + bios.files[i]);
-				if (++num == bios.files.length) biosReady = true;
-			}, function() {
-				log("BIOS fetch: Failed " + bios.files[i]);
-				if (++num == bios.files.length) biosReady = true;
-			});
+			(function (name) {
+				function done(data, where) {
+					FS.writeFile(baseFsSystemDir + bios.path + name, new Uint8Array(data));
+					log("BIOS fetch: Success " + name + " (" + where + ")");
+					if (++num == bios.files.length) biosReady = true;
+				}
+				grab(biosCdn + name, "arraybuffer", function(data) {
+					done(data, "local");
+				}, function() {
+					if (!biosBase) {
+						log("BIOS fetch: Failed " + name);
+						if (++num == bios.files.length) biosReady = true;
+						return;
+					}
+					grab(biosBase + name, "arraybuffer", function(data) {
+						done(data, "hosted");
+					}, function() {
+						log("BIOS fetch: Failed " + name + " (local and hosted)");
+						if (++num == bios.files.length) biosReady = true;
+					});
+				});
+			})(bios.files[i]);
 		}
 	} else {
 		biosReady = true;

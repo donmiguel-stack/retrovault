@@ -53,6 +53,7 @@ window.SETUP_I18N = {
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     the cartridges\nmanuals/           the manual scans",
   "dumpsNote": "If you were given a <code>videopac-odyssey-dumps.zip</code>, extract it at the top level of this folder and everything lands in place. Get it wrong and the Vault still looks fine &mdash; covers and all &mdash; but no game will start.",
   "dumpsHomebrewNote": "Homebrews and copyright-free releases are already included with the Vault. Most ROMs can be sourced online &mdash; check our <a href=\"resources.html\">Resources page</a>.",
+  "dumpsHostedNote": "The BIOS is the one file every Videopac game needs. If you don't have a dump of your own, <a href=\"https://retrovault.world/files/bios/g7400.bin\">download g7400.bin here</a> and drop it into <code>emulator/bios/</code>. The Vault also plays the out-of-print Philips catalogue straight from that same file host, so the START button works on those pages even before you add anything.",
   "step2win": "On Windows:"
  },
  "nl": {
@@ -106,6 +107,7 @@ window.SETUP_I18N = {
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     de cartridges\nmanuals/           de handleidingen",
   "dumpsNote": "Heb je een <code>videopac-odyssey-dumps.zip</code> gekregen? Pak die uit op het bovenste niveau van deze map, dan komt alles op zijn plek. Doe je het verkeerd, dan ziet de Vault er nog prima uit &mdash; inclusief hoesjes &mdash; maar start geen enkel spel.",
   "dumpsHomebrewNote": "Homebrews en auteursrechtvrije releases zitten al bij de Vault. De meeste roms zijn online te vinden &mdash; bekijk onze <a href=\"resources.html\">Bronnenpagina</a>.",
+  "dumpsHostedNote": "De BIOS is het ene bestand dat elk Videopac-spel nodig heeft. Heb je geen eigen dump, <a href=\"https://retrovault.world/files/bios/g7400.bin\">download g7400.bin dan hier</a> en zet het in <code>emulator/bios/</code>. De Vault speelt de niet meer verkrijgbare Philips-catalogus ook rechtstreeks vanaf diezelfde bestandshost, dus op die pagina's werkt START al voordat je iets toevoegt.",
   "step2win": "Op Windows:"
  },
  "de": {
@@ -159,6 +161,7 @@ window.SETUP_I18N = {
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     die Module\nmanuals/           die Anleitungen",
   "dumpsNote": "Hast du eine <code>videopac-odyssey-dumps.zip</code> bekommen? Entpacke sie auf oberster Ebene dieses Ordners, dann landet alles richtig. Machst du es falsch, sieht der Vault trotzdem gut aus &mdash; Cover inklusive &mdash; aber kein Spiel startet.",
   "dumpsHomebrewNote": "Homebrews und urheberrechtsfreie Veröffentlichungen sind bereits im Vault enthalten. Die meisten ROMs lassen sich online finden &mdash; sieh dir unsere <a href=\"resources.html\">Ressourcen-Seite</a> an.",
+  "dumpsHostedNote": "Das BIOS ist die eine Datei, die jedes Videopac-Spiel braucht. Hast du keinen eigenen Dump, <a href=\"https://retrovault.world/files/bios/g7400.bin\">lade g7400.bin hier herunter</a> und lege es in <code>emulator/bios/</code>. Der Vault spielt den vergriffenen Philips-Katalog auch direkt von demselben Datei-Host, sodass START auf diesen Seiten schon funktioniert, bevor du etwas hinzufügst.",
   "step2win": "Unter Windows:"
  },
  "fr": {
@@ -212,6 +215,7 @@ window.SETUP_I18N = {
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     les cartouches\nmanuals/           les notices",
   "dumpsNote": "On vous a donné un <code>videopac-odyssey-dumps.zip</code> ? Extrayez-le à la racine de ce dossier et tout se met en place. En cas d'erreur, le Vault a l'air parfait &mdash; jaquettes comprises &mdash; mais aucun jeu ne démarre.",
   "dumpsHomebrewNote": "Les homebrews et les sorties libres de droits sont déjà incluses dans le Vault. La plupart des ROM se trouvent en ligne &mdash; consultez notre <a href=\"resources.html\">page Ressources</a>.",
+  "dumpsHostedNote": "Le BIOS est le seul fichier dont chaque jeu Videopac a besoin. Si vous n'avez pas votre propre dump, <a href=\"https://retrovault.world/files/bios/g7400.bin\">téléchargez g7400.bin ici</a> et placez-le dans <code>emulator/bios/</code>. Le Vault lit aussi le catalogue Philips épuisé directement depuis ce même hébergement, donc le bouton START fonctionne sur ces pages avant même que vous n'ajoutiez quoi que ce soit.",
   "step2win": "Sous Windows :"
  },
  "pt": {
@@ -265,6 +269,7 @@ window.SETUP_I18N = {
   "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     os cartuchos\nmanuals/           os manuais",
   "dumpsNote": "Recebeu um <code>videopac-odyssey-dumps.zip</code>? Extraia no nível de cima desta pasta e tudo cai no lugar certo. Se errar, o Vault continua com boa aparência &mdash; capas e tudo &mdash; mas nenhum jogo inicia.",
   "dumpsHomebrewNote": "Homebrews e lançamentos livres de direitos autorais já vêm incluídos no Vault. A maioria das roms pode ser encontrada online &mdash; confira nossa <a href=\"resources.html\">página de Recursos</a>.",
+  "dumpsHostedNote": "A BIOS é o único ficheiro de que todos os jogos Videopac precisam. Se não tiver uma dump própria, <a href=\"https://retrovault.world/files/bios/g7400.bin\">descarregue o g7400.bin aqui</a> e coloque-o em <code>emulator/bios/</code>. O Vault também executa o catálogo Philips esgotado diretamente a partir desse mesmo servidor de ficheiros, por isso o botão START já funciona nessas páginas antes de adicionar seja o que for.",
   "step2win": "No Windows:"
  }
 };
