@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-07 18:29:21",
+ "generated": "2026-09-07 19:10:18",
  "count": 494,
- "bytes": 184306165,
+ "bytes": 184308635,
  "files": {
   "games.js": {
    "sha256": "685037582184f4510571a3c63cdafc2da0b3d9331b7a42cdb44524e73c38b1de",
@@ -96,8 +96,8 @@
    "size": 4572
   },
   "game.html": {
-   "sha256": "0c975fb2118d3fc9254223639d3fb7a2219205956f4574d93ccd9b5b3692998a",
-   "size": 87739
+   "sha256": "eefdc4b747dfbc3b00ea7df774f358e4b32a537f665e85cb687f9b4492b5a541",
+   "size": 90209
   },
   "index.html": {
    "sha256": "d934a8bcb6a899be14310e8e0129fb3354ebdfe44d870ae9e1da553e8a24d346",
