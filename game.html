@@ -200,6 +200,22 @@
     .controls-box.pete-hit{animation:none;}
   }
 
+  /* Leisure Suit Larry easter egg: the chalk "Ken sent me" (the secret
+     password at Lefty's back door) leans against the right side of the
+     controls box, slightly tilted. Only for pc_leisure_suit_larry - see the
+     g.id check near pcSec.appendChild(pcBox). Sits in the empty space to the
+     right of the 760px box; below the tips block on narrow screens. */
+  .ken-note{
+    position:absolute;left:100%;top:34px;margin-left:26px;
+    width:min(300px,28vw);pointer-events:none;z-index:3;
+    transform:rotate(-7deg);transform-origin:20% 50%;
+    opacity:.92;filter:drop-shadow(0 2px 3px rgba(0,0,0,.6));
+  }
+  .ken-note img{display:block;width:100%;height:auto;}
+  @media (max-width: 1100px){
+    .ken-note{position:static;display:block;margin:14px auto 0;width:min(240px,60%);transform:rotate(-5deg);}
+  }
+
   /* The Mousing Cat easter egg: he tilts his head and purrs on the right
      side of his own controls box. Only inserted for vp_47/Vp47_F - see the
      g.id check near cSec.appendChild(cBox). */
@@ -657,8 +673,8 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=118"></script>
-<script src="setup-i18n.js?v=118"></script>
+<script src="i18n.js?v=119"></script>
+<script src="setup-i18n.js?v=119"></script>
 <script src="games.js?v=116"></script>
 <script src="alternates.js?v=4"></script>
 <script src="extras.js?v=109"></script>
@@ -669,7 +685,7 @@
 <script src="shops.js?v=109"></script>
 <script src="support.js?v=110"></script>
 <script src="downloads.js?v=111"></script>
-<script src="romsources.js?v=2"></script>
+<script src="romsources.js?v=3"></script>
 <script src="hosted.js?v=2"></script>
 <script src="products.js?v=1"></script>
 <script src="cheats.js?v=112"></script>
@@ -677,7 +693,7 @@
 <script src="walkthroughs.js?v=1"></script>
 <script src="featured.js?v=112"></script>
 <script src="c64ad.js?v=109"></script>
-<script src="gamepages.js?v=116"></script>
+<script src="gamepages.js?v=117"></script>
 <script src="demo.js?v=112"></script>
 <script>
 (function () {
@@ -929,6 +945,11 @@
     s3.innerHTML = window.t("getRomStep3", { folder: "<code>emulator/roms/</code>" });
     ol.appendChild(s1); ol.appendChild(s2); ol.appendChild(s3);
     box.appendChild(ol);
+    if (src.manual) {
+      var mn = el("p", "get-note");
+      mn.innerHTML = window.t("getRomManual") + ' <a href="' + esc(src.manual) + '" target="_blank" rel="noopener nofollow">' + esc(src.site || "archive.org") + "</a>";
+      box.appendChild(mn);
+    }
     if (src.note) box.appendChild(el("p", "get-note", src.note));
     romNote.insertAdjacentElement("afterend", box);
   }
@@ -1351,6 +1372,15 @@
     pcBox.appendChild(pcSave);
     var pcTipsBox = buildTipsBox(g.id);
     if (pcTipsBox) pcBox.appendChild(pcTipsBox);
+    if (g.id === "pc_leisure_suit_larry") {
+      var ken = el("span", "ken-note");
+      var kenImg = new Image();
+      kenImg.src = "assets/ken-sent-me.png";
+      kenImg.alt = "Ken sent me";
+      kenImg.title = "Ken sent me";
+      ken.appendChild(kenImg);
+      pcBox.appendChild(ken);
+    }
     pcSec.appendChild(pcBox);
     page.appendChild(pcSec);
   } else if (g.platform !== "C64") {

@@ -3705,6 +3705,11 @@ window.GAMEPAGES_DATA = {
  },
  "pc_leisure_suit_larry": {
   "input": "keyboard",
+  "manual": {
+   "item": "pc_leisure_suit_larry",
+   "pages": 13,
+   "source": "Leisure Suit Larry in the Land of the Lounge Lizards (PC, 1987) - original manual, scan via archive.org (Leisure_Suit_Larry_1_-_Manual)"
+  },
   "note": "A text-parser graphic adventure, not an action game &ndash; type what Larry should do (<code>look</code>, <code>get money</code>, <code>talk to bartender</code>) and use the arrow keys to walk once he's on his feet. The game opens with an age/trivia gate typical of Sierra's adult-comedy line at the time; answer its questions to get past the title screen. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "V0k5nzLbnNU",
@@ -3727,6 +3732,11 @@ window.GAMEPAGES_DATA = {
  },
  "pc_lsl1_vga": {
   "input": "mouse",
+  "manual": {
+   "item": "pc_leisure_suit_larry",
+   "pages": 13,
+   "source": "Leisure Suit Larry 1 (1987) manual - same booklet the VGA remake shipped with, scan via archive.org (Leisure_Suit_Larry_1_-_Manual)"
+  },
   "note": "Point-and-click: the icon bar at the top of the screen (or right-click to cycle) gives you walk, look, touch, talk and the inventory &ndash; no typing this time. It opens with the same age-check quiz as the original; get a question wrong and it politely throws you out. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "9lmGg1-GI0A",
@@ -3738,7 +3748,12 @@ window.GAMEPAGES_DATA = {
  },
  "pc_lsl2": {
   "input": "keyboard",
-  "note": "Text parser plus arrow keys, like the original: type what Larry should do and steer him with the arrows. The copy-protection check at the start wants a phone number from the manual's \"little black book\" &ndash; not in the download, but the answers are a web search away. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "manual": {
+   "item": "pc_lsl2",
+   "pages": 8,
+   "source": "Leisure Suit Larry Goes Looking for Love (PC, 1988) - original manual incl. the 'little black book' photos the copy protection asks about, scan via archive.org (Leisure_Suit_Larry_2_-_Manual)"
+  },
+  "note": "Text parser plus arrow keys, like the original: type what Larry should do and steer him with the arrows. The copy-protection check at the start wants a phone number from the manual's \"little black book\" &ndash; see the Manual section on this page, or the scan linked under Where to get it. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "xs1POSo5dGI",
    "title": "PC Longplay [043] Leisure Suit Larry 2 - Goes Looking for Love (In Several Wrong Places)"
@@ -3749,6 +3764,11 @@ window.GAMEPAGES_DATA = {
  },
  "pc_lsl3": {
   "input": "keyboard",
+  "manual": {
+   "item": "pc_lsl3",
+   "pages": 24,
+   "source": "Leisure Suit Larry III (PC, 1989) - original manual incl. the pages the copy protection asks about, scan via archive.org (Leisure_Suit_Larry_3_-_Manual)"
+  },
   "note": "Text parser plus arrow keys. Halfway through you switch characters and play Passionate Patti, chasing Larry &ndash; the inventory changes with her. Copy protection asks for a girl's measurements from the manual. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "L_S4wpqENWk",
@@ -3760,6 +3780,11 @@ window.GAMEPAGES_DATA = {
  },
  "pc_lsl5": {
   "input": "mouse",
+  "manual": {
+   "item": "pc_lsl5",
+   "pages": 9,
+   "source": "Leisure Suit Larry 5 (PC, 1991) - 'PlaySpy' magazine-style manual, scan via archive.org (lsl5-playspy)"
+  },
   "note": "Point-and-click on Sierra's icon bar, no typing; you alternate between Larry (scouting three women for a TV show) and Patti (undercover for the FBI). No copy protection. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "_mccH_HsVg4",
@@ -3771,6 +3796,11 @@ window.GAMEPAGES_DATA = {
  },
  "pc_lsl6": {
   "input": "mouse",
+  "manual": {
+   "item": "pc_lsl6",
+   "pages": 3,
+   "source": "Leisure Suit Larry 6 (PC, 1993) - manual, scan via archive.org (Leisure_Suit_Larry_6_-_Manual)"
+  },
   "note": "Point-and-click. The CD version linked below has full voice acting; expect a long load, because the whole 469 MB is unpacked in the browser before it starts. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "video": {
    "id": "0Bj3TSdYZNY",
