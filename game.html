@@ -16,6 +16,23 @@
     font-size:42px;font-weight:700;color:#fff;border:1px solid var(--border);
   }
   .hero-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+  /* American Football (vp_03) easter egg: the ball the runner is tucking
+     under his arm on the box art launches out of his grip and sails off
+     the screen a beat after the cover loads (and again on click - the
+     cover doubles as a button). Ball starts exactly over its painted spot
+     in covers/vp_03.png (~9.8% across, ~72.6% down, ~16.4% of the cover's
+     width wide) so the hand-off looks continuous. Gated to vp_03 only -
+     see the g.id check near hero.appendChild(cover). */
+  .af-ball{
+    position:fixed;z-index:10000;pointer-events:none;top:0;left:0;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,.45));
+    will-change:transform,opacity;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .af-ball{display:none;}
+  }
+
   .hero-info{flex:1;min-width:280px;}
   .hero-info h1{margin:0 0 10px;font-size:26px;line-height:1.25;}
   .hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
@@ -770,6 +787,53 @@
     cover.appendChild(rib);
   }
   hero.appendChild(cover);
+
+  // American Football (vp_03) easter egg - the ball the runner is
+  // cradling launches out of his grip and sails off screen, a beat after
+  // the cover art loads (and again on click, since the cover doubles as a
+  // button here). Position/size are read off the painted ball's actual
+  // spot in covers/vp_03.png - see the CSS comment above .af-ball for the
+  // measurements. Skips itself entirely under prefers-reduced-motion.
+  if (g.id === "vp_03") {
+    cover.style.cursor = "pointer";
+    cover.title = "Hut hut - hike it!";
+    var afPlaying = false;
+    var launchFootball = function(){
+      if (afPlaying) return;
+      var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduced) return;
+      var rect = cover.getBoundingClientRect();
+      if (!rect.width) return;
+      afPlaying = true;
+      var startSize = rect.width * 0.164;
+      var startLeft = rect.left + rect.width * 0.0977 - startSize / 2;
+      var startTop = rect.top + rect.height * 0.7263 - startSize / 2;
+      var ball = new Image();
+      ball.className = "af-ball";
+      ball.alt = "";
+      ball.src = "assets/football-launch.png";
+      ball.style.width = startSize + "px";
+      ball.style.height = "auto";
+      ball.style.transform = "translate(" + startLeft + "px," + startTop + "px)";
+      document.body.appendChild(ball);
+      var finalWidth = Math.min(190, Math.max(110, window.innerWidth * 0.12));
+      var scale = finalWidth / startSize;
+      var dx = (window.innerWidth - startLeft) + 260;
+      var dy = -(startTop + startSize) - 220;
+      var anim = ball.animate([
+        { transform:"translate("+startLeft+"px,"+startTop+"px) scale(1) rotate(0deg)", offset:0, opacity:1 },
+        { transform:"translate("+(startLeft+dx*0.12)+"px,"+(startTop+dy*0.08)+"px) scale(1.15) rotate(70deg)", offset:0.16, opacity:1 },
+        { transform:"translate("+(startLeft+dx)+"px,"+(startTop+dy)+"px) scale("+scale+") rotate(620deg)", offset:1, opacity:0.15 }
+      ], { duration:1400, easing:"cubic-bezier(.4,0,.2,1)", fill:"forwards" });
+      anim.onfinish = function(){ ball.remove(); afPlaying = false; };
+    };
+    img.addEventListener("load", function onAfLoad(){
+      if (img.dataset.stage === "manual") return;
+      img.removeEventListener("load", onAfLoad);
+      setTimeout(launchFootball, 800);
+    });
+    cover.addEventListener("click", launchFootball);
+  }
 
   var info = el("div","hero-info");
   info.appendChild(el("h1",null,g.title));
