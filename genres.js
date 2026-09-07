@@ -1082,6 +1082,26 @@ window.GENRE_DATA = {
   "genre": "adventure",
   "players": "p1"
  },
+ "pc_lsl1_vga": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_lsl2": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_lsl3": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_lsl5": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_lsl6": {
+  "genre": "adventure",
+  "players": "p1"
+ },
  "c64_hb_c64anabalt": {
   "genre": "action",
   "players": "p1"

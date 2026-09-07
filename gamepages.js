@@ -3725,6 +3725,61 @@ window.GAMEPAGES_DATA = {
    "text": "Before Larry there was Softporn. Chuck Benton wrote it in Applesoft BASIC in 1981 as a way of learning database programming, and On-Line Systems (the company that became Sierra) published it with a box photo of three women and a waiter in a hot tub - one of the women being Roberta Williams, the company's co-founder. It sold a reported 25,000 copies at a time when only a few hundred thousand Apple IIs existed, drew enough hate mail that it was quietly pulled from the catalogue, and six years later Al Lowe rebuilt its exact puzzles and geography as Leisure Suit Larry in the Land of the Lounge Lizards. This PC version is Gary Thompson's: a fan who had kept a printout of the Apple BASIC and rewrote it in C in 1991, released it as shareware, and only then discovered he had recreated the game underneath Larry. Sierra liked it enough to put it on the 1994 Leisure Suit Larry's Greatest Hits (and Misses) CD as the game's official history lesson, and Al Lowe later offered it as a free download on his own site. Play it next to Larry 1 and you'll recognise every room."
   }
  },
+ "pc_lsl1_vga": {
+  "input": "mouse",
+  "note": "Point-and-click: the icon bar at the top of the screen (or right-click to cycle) gives you walk, look, touch, talk and the inventory &ndash; no typing this time. It opens with the same age-check quiz as the original; get a question wrong and it politely throws you out. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "9lmGg1-GI0A",
+   "title": "Leisure Suit Larry in the Land of the Lounge Lizards VGA (Full Playthrough)"
+  },
+  "history": {
+   "text": "Four years after the original, Sierra redrew Larry's first night out in 256-colour VGA on its point-and-click SCI engine, the same treatment King's Quest I and Space Quest I got. The parser is gone, the rooms, jokes and puzzles are not, and the Lefty's bar, the casino and the honeymoon suite look the way most people who played Larry in the nineties remember them. The 1987 AGI original is on its own page on this shelf; this is the version Sierra kept selling, which is also why GOG still does – so the Vault can't host it, only show you where a preserved copy lives."
+  }
+ },
+ "pc_lsl2": {
+  "input": "keyboard",
+  "note": "Text parser plus arrow keys, like the original: type what Larry should do and steer him with the arrows. The copy-protection check at the start wants a phone number from the manual's \"little black book\" &ndash; not in the download, but the answers are a web search away. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "xs1POSo5dGI",
+   "title": "PC Longplay [043] Leisure Suit Larry 2 - Goes Looking for Love (In Several Wrong Places)"
+  },
+  "history": {
+   "text": "Larry's second outing (1988) sends him from a lottery win to a cruise ship, a tropical island and a mad scientist's lair, on Sierra's newer SCI0 engine with a proper soundtrack and much bigger screens. Al Lowe toned the sex down after the mail Sierra got for the first game and turned the dial up on slapstick instead; it's the one where the disguises, the KGB agents and the wrong-place-wrong-time gags really start. Still sold as part of Sierra's Larry bundle, so bring your own copy."
+  }
+ },
+ "pc_lsl3": {
+  "input": "keyboard",
+  "note": "Text parser plus arrow keys. Halfway through you switch characters and play Passionate Patti, chasing Larry &ndash; the inventory changes with her. Copy protection asks for a girl's measurements from the manual. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "L_S4wpqENWk",
+   "title": "PC Longplay [475] Leisure Suit Larry 3 (Adult)"
+  },
+  "history": {
+   "text": "Passionate Patti in Pursuit of the Pulsating Pectorals (1989) is the one where Larry gets divorced, stranded on the island resort of Nontoonyt, and, for the second half of the game, replaced as the player character by Patti, the lounge pianist chasing after him. Al Lowe wrote it as a farewell to the series – the ending has Larry and Patti fall into the Sierra offices – and there was famously no Larry 4 at all, a running joke the later games keep alive. Still sold in Sierra's bundle; the Vault only tells you where a preserved copy lives."
+  }
+ },
+ "pc_lsl5": {
+  "input": "mouse",
+  "note": "Point-and-click on Sierra's icon bar, no typing; you alternate between Larry (scouting three women for a TV show) and Patti (undercover for the FBI). No copy protection. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "_mccH_HsVg4",
+   "title": "Leisure Suit Larry 5 (PC DOS, 1991) Longplay"
+  },
+  "history": {
+   "text": "Released in 1991 straight after the missing fourth game – the joke being that Larry 4 was never made, and Larry 5 opens with Larry having lost his memory of it – this was the series' move to 256-colour VGA and to point-and-click. Larry works for a soft-porn video company scouting talent across New York, Atlantic City and Miami while Patti goes undercover for the FBI in the record industry; the two threads meet at the end. Gentler and broader than the earlier games, and the last one Al Lowe wrote with a parser-free interface before the CD-ROM era. Still sold, so it isn't hosted here."
+  }
+ },
+ "pc_lsl6": {
+  "input": "mouse",
+  "note": "Point-and-click. The CD version linked below has full voice acting; expect a long load, because the whole 469 MB is unpacked in the browser before it starts. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "0Bj3TSdYZNY",
+   "title": "PC Longplay [044] Leisure Suit Larry 6 - Shape Up or Slip Out"
+  },
+  "history": {
+   "text": "Shape Up or Slip Out! (1993) puts Larry in a health spa full of women he'll never get, with a bigger budget, hand-painted backgrounds and, on the CD-ROM release, voices for everyone including Jan Rabson as Larry. It was Sierra's last DOS Larry before Love for Sail, and one of the first of its adventures built with a talkie release in mind rather than patched with one later. Still sold in Sierra's bundle; the Vault shows you where a preserved copy lives."
+  }
+ },
  "c64_hb_c64anabalt": {
   "input": "joystick",
   "video": {

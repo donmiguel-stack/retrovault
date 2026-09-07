@@ -8,7 +8,7 @@
   // far more often than this should.
   var VAULT_VERSION = "1.0.0";
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 38;
+  var COVER_V = 39;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
   var CLIP_V = 7;
 

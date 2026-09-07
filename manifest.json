@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-07 11:04:12",
- "count": 487,
- "bytes": 183850563,
+ "generated": "2026-09-07 11:52:49",
+ "count": 493,
+ "bytes": 184292216,
  "files": {
   "games.js": {
-   "sha256": "4e27398db3eb6c795010bb8ede83e1626474f608914ca0cd464340a08d389330",
-   "size": 96773
+   "sha256": "685037582184f4510571a3c63cdafc2da0b3d9331b7a42cdb44524e73c38b1de",
+   "size": 98479
   },
   "gamepages.js": {
-   "sha256": "1f7452a1970f2c99933bb831487faeb595d9184de5238b8bf0f79ed4f3910592",
-   "size": 225627
+   "sha256": "0b5192d152f5182b02c9cd6be64c7167f3781ccccdc6e29bb029a9d775a7eb13",
+   "size": 230702
   },
   "genres.js": {
-   "sha256": "f849b2e100936c1ec3d3b01c0edaee9773dbc6e7fed6d0b84fa1e862854d3200",
-   "size": 21591
+   "sha256": "9bdd2e8cb3b9b429737d08bcb09601f2833370f63e826b2979619c1388c371bb",
+   "size": 21895
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,8 +32,8 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "f883e677a42f86e38cad067cb9cc76086785d9cb26337bcc18de09358e938323",
-   "size": 43989
+   "sha256": "1a9443927f49ea89a52b7c24ebbe420f1c3b2d6c5427647588ac7a3a246d9a8a",
+   "size": 45433
   },
   "setup-i18n.js": {
    "sha256": "ec0b9856bd3c5c500ae2e62b31ac8bf0d4568853e2a3a740cc3005f9e18d21b9",
@@ -59,6 +59,10 @@
    "sha256": "1d527f49d7d80a4c8eb24ce189d50c9c1ae2ef098809cca34c0c2e37064eaed9",
    "size": 10175
   },
+  "romsources.js": {
+   "sha256": "69240bd90510dafbf5810ed0b7b2cd88ca88491988f5c4fe4f4beb5d1ce13293",
+   "size": 3486
+  },
   "tips.js": {
    "sha256": "9eabdba1dceb0fc6ac9db066e9e41c948b6cd5ab0f9fc58ea99d303e805d2ef6",
    "size": 12321
@@ -80,7 +84,7 @@
    "size": 7296
   },
   "app.js": {
-   "sha256": "1f7f3adadd656218dd0723f9bfe1685ffb661653ebfa3a87ae5bd477913bc5c3",
+   "sha256": "84519467496106188d876d2ea2e3efd71393cc7aa59e923c70668fa5806dc8ce",
    "size": 78621
   },
   "demo.js": {
@@ -88,15 +92,15 @@
    "size": 4572
   },
   "game.html": {
-   "sha256": "f8701a44471d53a4fc9098a3299a3618e4f44972f9ea53e89fb37898aaaf1fbf",
-   "size": 83695
+   "sha256": "7a63b4ac21c99c05929724ac5952739d8b8921eb1fefd1629165f55e52498aa5",
+   "size": 85678
   },
   "index.html": {
-   "sha256": "c04b00b515769e8e3774bf3d27efb00fba0e52735f61a307cdf6136e4e97d684",
+   "sha256": "fde6a2e387ca77ce6620b9832eb86f0c700dc62e2a75455fe3802f63af6950ff",
    "size": 15389
   },
   "resources.html": {
-   "sha256": "0dfaeecc8a677e465102c0af185ac207c6a767fcdcc334344ec6db9bdb86d6b1",
+   "sha256": "9bd1015a994a5d25bebce8b2f23fbe0b9a3b7ba372ca5352ca17477b0863d8d6",
    "size": 11349
   },
   "style.css": {
@@ -1022,6 +1026,26 @@
   "covers/pc_lemmings2.jpg": {
    "sha256": "e4aed8a4d10f6dad62167d8b124ecb4cff10ced8158e43433941778c1cc028c8",
    "size": 37386
+  },
+  "covers/pc_lsl1_vga.jpg": {
+   "sha256": "041837bd021eb1b7e10a4d6738ca38d7d569bc1f0d83b46629306cae8585c03c",
+   "size": 84327
+  },
+  "covers/pc_lsl2.jpg": {
+   "sha256": "9d9e439fe379a60f0d45c0f03b6ca04099b131bac2c872be875f0d51fc74c3e1",
+   "size": 93447
+  },
+  "covers/pc_lsl3.jpg": {
+   "sha256": "3f696119a75ead5081a4f755638cee5257a1ca58fec01383d34da55d2fc9781e",
+   "size": 99060
+  },
+  "covers/pc_lsl5.jpg": {
+   "sha256": "119232ba9b279e9099bab229da09618a0c8ce532083504825c7c57c12eac6b03",
+   "size": 119586
+  },
+  "covers/pc_lsl6.jpg": {
+   "sha256": "c60655423e1792377b6977976dc951f506c3b4b43d0b13e17fb95f658b320dd8",
+   "size": 31235
   },
   "covers/pc_onml.jpg": {
    "sha256": "b0564413cc896b889e3d87542a602c0ef8fa3e09baebd713fda7d4b0b1ea807f",

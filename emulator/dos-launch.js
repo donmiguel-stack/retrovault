@@ -29,6 +29,11 @@ window.DOS_LAUNCH = {
   "LSL1.zip":        { run: "LSL1.COM" },        // the bundle used _LSL1.BAT, which just cd's into a folder that isn't there and runs this
   "PRINCE.zip":      { run: "PRINCE.EXE" },
   "SOFTPORN.zip":    { run: "SOFTPORN.EXE" },
+  "LSL1VGA.zip":     { run: "SCIDHUV.EXE" },     // archive.org VGA remake zip; the fallback would pick LSL1VGA.BAT, same thing
+  "LSL2.zip":        { run: "SIERRA.COM" },
+  "LSL3.zip":        { run: "SIERRA.COM" },
+  "LSL5.zip":        { run: "SCIDHUV.EXE" },
+  "LSL6.zip":        { run: "SIERRA.EXE" },       // CD version (unverified - 469 MB)
   "DOOM.zip":        { run: "DOOM.EXE" },
   "KEEN1.zip":       { run: "KEEN1.EXE" },
   "CIVILIZATION.zip":{ run: "CIV.EXE" },
