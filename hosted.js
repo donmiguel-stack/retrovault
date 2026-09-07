@@ -12,7 +12,7 @@
 window.HOSTED_FILES = {
   "base": "https://retrovault.world/files/",
   "bios": "bios/",
-  "generated": "2026-09-06",
+  "generated": "2026-09-07",
   "roms": [
     "anwol.zip",
     "Archon.d64",
@@ -105,6 +105,7 @@ window.HOSTED_FILES = {
     "Sid the Spellbinder! (US).bin",
     "SIMCITY.zip",
     "Smithereens! (US).bin",
+    "SOFTPORN.zip",
     "Spy vs Spy.d64",
     "Syracuse.bin",
     "Take the Money and Run (EU).bin",

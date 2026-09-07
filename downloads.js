@@ -215,6 +215,12 @@ window.DOWNLOAD_DATA = {
     source: "https://odyssey2.info/jgmunchkin/makejg.zip — a patcher tool (MAKEJG.BAS) that requires the user's own \"Attack of the Timelord!\" ROM as input; no commercial game data is redistributed here",
     note: "Patcher tool only — needs your own Attack of the Timelord! ROM to run",
     checked: "2026-08-19"
+  },
+  "pc_softporn": {
+    file: "SOFTPORN.zip",
+    verdict: "LIKELY-OK",
+    source: "Shareware release by Gary Thompson (ReadMe.txt in the archive asks for a $20 registration, no restriction on copying); per Wikipedia the PC version was later put up as a free download by Al Lowe (allowe.com), and Sierra itself shipped it on the 1994 Greatest Hits (and Misses) CD. Sourced from archive.org item SoftpornAdventureV2.4SW1991GaryThompsonInteractiveFictionAdult (soft.ZIP)",
+    checked: "2026-09-07"
   }
 
 };

@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-06 21:43:05",
- "count": 485,
- "bytes": 183724358,
+ "generated": "2026-09-07 11:04:12",
+ "count": 487,
+ "bytes": 183850563,
  "files": {
   "games.js": {
-   "sha256": "3007efa0bb469a4db031c41f0ee52319d9abfd1eec22e189abd2ee489bae076d",
-   "size": 96376
+   "sha256": "4e27398db3eb6c795010bb8ede83e1626474f608914ca0cd464340a08d389330",
+   "size": 96773
   },
   "gamepages.js": {
-   "sha256": "8125ea16b811d321e34ec02a3099c5d369022e9dcc9790fd60cc30e549d5c5cb",
-   "size": 223893
+   "sha256": "1f7452a1970f2c99933bb831487faeb595d9184de5238b8bf0f79ed4f3910592",
+   "size": 225627
   },
   "genres.js": {
-   "sha256": "9b7e66ca7c007a07ca4b8d83ba78c9fac218b7cf419062015ce1c7ec8ae5d3c3",
-   "size": 21527
+   "sha256": "f849b2e100936c1ec3d3b01c0edaee9773dbc6e7fed6d0b84fa1e862854d3200",
+   "size": 21591
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -56,8 +56,8 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "84804aabb8f7cc48eb68f519f60ee84e6d1159120621d688b987856af1ea6f94",
-   "size": 9673
+   "sha256": "1d527f49d7d80a4c8eb24ce189d50c9c1ae2ef098809cca34c0c2e37064eaed9",
+   "size": 10175
   },
   "tips.js": {
    "sha256": "9eabdba1dceb0fc6ac9db066e9e41c948b6cd5ab0f9fc58ea99d303e805d2ef6",
@@ -68,8 +68,8 @@
    "size": 4597
   },
   "hosted.js": {
-   "sha256": "f3766314db0f76706c8d975992081362f752236d9f2f825c2ee3dc0de7c59c09",
-   "size": 9087
+   "sha256": "abda0cd6a31b5d2c7d49b97563fb2b26425349c6c29908a690f665974f8f2184",
+   "size": 9107
   },
   "products.js": {
    "sha256": "3350ebca26e65d0f1642b528e4e393a093219257f109ad10e1e71d6cd890dfb1",
@@ -80,7 +80,7 @@
    "size": 7296
   },
   "app.js": {
-   "sha256": "27e0d7d42ec8bbcdc5589187a9080bb324d2376b085fef8dee7020f0388b4fc3",
+   "sha256": "1f7f3adadd656218dd0723f9bfe1685ffb661653ebfa3a87ae5bd477913bc5c3",
    "size": 78621
   },
   "demo.js": {
@@ -88,11 +88,11 @@
    "size": 4572
   },
   "game.html": {
-   "sha256": "06984c7b6a9c726c023471f593d88b0bb86f11fe6b09dfa81260961f287be861",
+   "sha256": "f8701a44471d53a4fc9098a3299a3618e4f44972f9ea53e89fb37898aaaf1fbf",
    "size": 83695
   },
   "index.html": {
-   "sha256": "f1922048432dd0ee7a8f2de1ab414e18aec11ea9dee8f4bacfecb6092a0f02ba",
+   "sha256": "c04b00b515769e8e3774bf3d27efb00fba0e52735f61a307cdf6136e4e97d684",
    "size": 15389
   },
   "resources.html": {
@@ -1043,6 +1043,10 @@
    "sha256": "61b560e41836160bc234db6f2c93ab00abc9cff4896ade9ced035a234e0e03f4",
    "size": 79168
   },
+  "covers/pc_softporn.jpg": {
+   "sha256": "24556afe5f977de50842ac34b61d77acd4c1c8278a3e461ac008d46176c5a789",
+   "size": 70642
+  },
   "covers/pc_spear_of_destiny.jpg": {
    "sha256": "3850a07566d51f42b8000f93d4e92294f2803c41fd8b1b5e3c45d51d033ee1c8",
    "size": 234553
@@ -1922,6 +1926,10 @@
   "homebrew-downloads/Rocket Smash EX.crt": {
    "sha256": "d4c3d61f9dd67ec28f361c93ec186eb35c85d935283846e8b683a25860485cd6",
    "size": 65728
+  },
+  "homebrew-downloads/SOFTPORN.zip": {
+   "sha256": "d5a19af2ca523d9d012b11de86f170dbfb98ec706cc713602b67547ff522a8d8",
+   "size": 52846
   },
   "homebrew-downloads/SPACECAVERN.zip": {
    "sha256": "5681ad041fb8fc1311fc0c666239f3c943df78138ff9aff5af953fd448eced01",

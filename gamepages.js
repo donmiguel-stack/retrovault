@@ -3714,6 +3714,17 @@ window.GAMEPAGES_DATA = {
    "text": "Al Lowe built Larry out of an earlier, tamer Sierra game called Softporn Adventure, reworking it into an AGI-engine graphic adventure that leaned all the way into its double entendres rather than away from them. Sierra almost didn't ship it, worried a comedy about a middle-aged loser trying (and mostly failing) to get a date would embarrass the company; instead it became one of Sierra's best-selling titles and spawned a franchise that ran for decades. Its trivia-question age gate at the start - meant only to keep casual browsers out, and trivially skippable - became as much a part of its reputation as the jokes inside."
   }
  },
+ "pc_softporn": {
+  "input": "keyboard",
+  "note": "Pure text, no pictures &ndash; a two-word parser: <code>look</code>, <code>north</code>, <code>get money</code>, <code>talk bartender</code>, <code>buy whiskey</code>. Click the screen once before typing so the keys reach DOS (the first keystroke otherwise gets swallowed). You start with $2,500 and everything is overpriced, so the casino is not optional. <strong>Esc</strong> opens DOSBox's own menu, not the game's. Adult humour throughout, as the box says: for adults only.",
+  "video": {
+   "id": "nBNirHuD4Xg",
+   "title": "PC Longplay [914] Softporn Adventure"
+  },
+  "history": {
+   "text": "Before Larry there was Softporn. Chuck Benton wrote it in Applesoft BASIC in 1981 as a way of learning database programming, and On-Line Systems (the company that became Sierra) published it with a box photo of three women and a waiter in a hot tub - one of the women being Roberta Williams, the company's co-founder. It sold a reported 25,000 copies at a time when only a few hundred thousand Apple IIs existed, drew enough hate mail that it was quietly pulled from the catalogue, and six years later Al Lowe rebuilt its exact puzzles and geography as Leisure Suit Larry in the Land of the Lounge Lizards. This PC version is Gary Thompson's: a fan who had kept a printout of the Apple BASIC and rewrote it in C in 1991, released it as shareware, and only then discovered he had recreated the game underneath Larry. Sierra liked it enough to put it on the 1994 Leisure Suit Larry's Greatest Hits (and Misses) CD as the game's official history lesson, and Al Lowe later offered it as a free download on his own site. Play it next to Larry 1 and you'll recognise every room."
+  }
+ },
  "c64_hb_c64anabalt": {
   "input": "joystick",
   "video": {

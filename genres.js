@@ -1078,6 +1078,10 @@ window.GENRE_DATA = {
   "genre": "adventure",
   "players": "p1"
  },
+ "pc_softporn": {
+  "genre": "adventure",
+  "players": "p1"
+ },
  "c64_hb_c64anabalt": {
   "genre": "action",
   "players": "p1"

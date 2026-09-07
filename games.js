@@ -3017,6 +3017,19 @@ window.GAMES_DATA = {
     "developer": "Al Lowe"
   },
   {
+    "id": "pc_softporn",
+    "filename": "pc_softporn.zip",
+    "title": "Softporn Adventure",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "SOFTPORN.zip",
+    "year": 1991,
+    "publisher": "Gary Thompson (shareware; original 1981: On-Line Systems)",
+    "developer": "Chuck Benton (Apple II original), Gary Thompson (PC version)"
+  },
+  {
     "id": "c64_hb_c64anabalt",
     "filename": "c64_hb_c64anabalt.d64",
     "title": "C64anabalt",

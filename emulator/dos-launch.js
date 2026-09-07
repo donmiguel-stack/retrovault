@@ -28,6 +28,7 @@ window.DOS_LAUNCH = {
   // ---- the shelf as it was built (commands copied from each bundle) ----
   "LSL1.zip":        { run: "LSL1.COM" },        // the bundle used _LSL1.BAT, which just cd's into a folder that isn't there and runs this
   "PRINCE.zip":      { run: "PRINCE.EXE" },
+  "SOFTPORN.zip":    { run: "SOFTPORN.EXE" },
   "DOOM.zip":        { run: "DOOM.EXE" },
   "KEEN1.zip":       { run: "KEEN1.EXE" },
   "CIVILIZATION.zip":{ run: "CIV.EXE" },
