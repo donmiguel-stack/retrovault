@@ -657,8 +657,8 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=117"></script>
-<script src="setup-i18n.js?v=117"></script>
+<script src="i18n.js?v=118"></script>
+<script src="setup-i18n.js?v=118"></script>
 <script src="games.js?v=116"></script>
 <script src="alternates.js?v=4"></script>
 <script src="extras.js?v=109"></script>
@@ -669,11 +669,12 @@
 <script src="shops.js?v=109"></script>
 <script src="support.js?v=110"></script>
 <script src="downloads.js?v=111"></script>
-<script src="romsources.js?v=1"></script>
+<script src="romsources.js?v=2"></script>
 <script src="hosted.js?v=2"></script>
 <script src="products.js?v=1"></script>
 <script src="cheats.js?v=112"></script>
 <script src="tips.js?v=110"></script>
+<script src="walkthroughs.js?v=1"></script>
 <script src="featured.js?v=112"></script>
 <script src="c64ad.js?v=109"></script>
 <script src="gamepages.js?v=116"></script>
@@ -922,7 +923,8 @@
       site: '<a href="' + esc(src.url) + '" target="_blank" rel="noopener nofollow">' + esc(src.site || "archive.org") + "</a>"
     });
     var s2 = document.createElement("li");
-    s2.innerHTML = window.t("getRomStep2", { file: "<code>" + esc(g.romFile) + "</code>" });
+    var bare = /\.(d64|crt|prg|t64|bin)$/i.test(src.file);   // a disk image, not a zip - no "no need to unzip"
+    s2.innerHTML = window.t(bare ? "getRomStep2file" : "getRomStep2", { file: "<code>" + esc(g.romFile) + "</code>" });
     var s3 = document.createElement("li");
     s3.innerHTML = window.t("getRomStep3", { folder: "<code>emulator/roms/</code>" });
     ol.appendChild(s1); ol.appendChild(s2); ol.appendChild(s3);
@@ -1235,19 +1237,29 @@
   // (renders nothing) when tips.js has no entry for this game id.
   function buildTipsBox(id) {
     var tip = (window.TIPS_DATA && window.TIPS_DATA[id]) || null;
-    if (!tip) return null;
+    // walkthroughs.js: a full step-by-step walkthrough elsewhere (The
+    // Walkthrough King) - listed under the tip, or alone when there is none
+    var wt = (window.WALKTHROUGH_DATA && window.WALKTHROUGH_DATA[id]) || null;
+    if (!tip && !wt) return null;
     var box = document.createElement("details");
     box.className = "tips-box";
     var sum = document.createElement("summary");
     sum.innerHTML = "💡 Reveal Tips";
     box.appendChild(sum);
     var body = el("div","tips-body");
-    var item = el("div","tips-item");
-    item.appendChild(el("p",null,tip.text));
-    body.appendChild(item);
-    var src = el("p","tips-source");
-    src.innerHTML = 'Source: <a href="'+tip.url+'" target="_blank" rel="noopener">StrategyWiki</a> — full walkthrough there.';
-    body.appendChild(src);
+    if (tip) {
+      var item = el("div","tips-item");
+      item.appendChild(el("p",null,tip.text));
+      body.appendChild(item);
+      var src = el("p","tips-source");
+      src.innerHTML = 'Source: <a href="'+tip.url+'" target="_blank" rel="noopener">StrategyWiki</a> — full walkthrough there.';
+      body.appendChild(src);
+    }
+    if (wt) {
+      var w = el("p","tips-source tips-walkthrough");
+      w.innerHTML = '📖 ' + window.t("fullWalkthrough") + ' <a href="'+wt.url+'" target="_blank" rel="noopener">'+wt.site+'</a>';
+      body.appendChild(w);
+    }
     box.appendChild(body);
     return box;
   }

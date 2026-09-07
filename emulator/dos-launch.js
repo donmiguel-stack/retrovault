@@ -13,6 +13,17 @@
 //   run:   the command(s) - a string, or an array of lines for a menu
 //   conf:  optional per-section overrides of the standard dosbox.conf
 //          template (see dos.html), e.g. {sblaster: {irq: 5}}
+//   alt:   a single program to try when "run" doesn't fit the zip's layout
+//          (Spear of Destiny: the GOG bundle has M1/M2/M3 folders and a menu
+//          script, archive.org's zip has id's own picker SOD.EXE instead)
+//   keepRoot: true to NOT strip a single top-level folder - for games whose
+//          config hard-codes C:\<folder>\... paths (Larry 6 CD)
+//
+// If the file a "run" line names isn't actually in the zip (an archive.org
+// zip laid out differently from the bundle the line was written for),
+// dos.html ignores the entry and falls back to the guessing rules; when the
+// file sits in a subfolder it gets a "cd" in front automatically, so
+// "DOOM2.EXE" also works for Final Doom's tnt/ and plutonia/ folders.
 //
 // Games not listed here still start: dos.html falls back to (1) SIERRA.COM /
 // SIERRA.EXE if present (every Sierra AGI/SCI game), (2) an .EXE/.COM/.BAT
@@ -33,7 +44,7 @@ window.DOS_LAUNCH = {
   "LSL2.zip":        { run: "SIERRA.COM" },
   "LSL3.zip":        { run: "SIERRA.COM" },
   "LSL5.zip":        { run: "SCIDHUV.EXE" },
-  "LSL6.zip":        { run: "SIERRA.EXE" },       // CD version (unverified - 469 MB)
+  "LSL6.zip":        { run: ["cd LSL6CD", "SIERRA.EXE"], keepRoot: true },   // archive.org CD repack: RESOURCE.CFG points at C:\lsl6cd\aud, so the folder must stay
   "DOOM.zip":        { run: "DOOM.EXE" },
   "KEEN1.zip":       { run: "KEEN1.EXE" },
   "CIVILIZATION.zip":{ run: "CIV.EXE" },
@@ -51,7 +62,7 @@ window.DOS_LAUNCH = {
   "OUTRUN.zip":      { run: "OUTRUN.EXE" },
   "WOLF3D.zip":      { run: "wolf3d.exe" },
   "DUKE2.zip":       { run: "nukem2.exe" },
-  "DUKE3D.zip":      { run: "duke3d.exe", conf: { sblaster: { sbbase: 220, irq: 5, dma: 1, hdma: 5 }, cpu: { cycles: "max" } } },
+  "DUKE3D.zip":      { run: "duke3d.exe", conf: { cpu: { cycles: "max" } } },   // no IRQ override here: the GOG bundle's DUKE3D.CFG wants IRQ 5 (baked into that bundle's own conf), archive.org's wants DOSBox's default 7 - the game refuses to start on a mismatch
   "GTA1.zip":        { run: ["cd gtados", "k.exe", "call dino.bat"] },   // k.exe picks the Miles sound driver first
   "SQ1.zip":         { run: "sq.com" },
   "SQ2.zip":         { run: "sierra.com" },
@@ -69,7 +80,7 @@ window.DOS_LAUNCH = {
     "choice /c123 /s Episode [1-3]: /n",
     "if errorlevel 3 goto e3", "if errorlevel 2 goto e2", "if errorlevel 1 goto e1",
     ":e1", "dn1.exe", "exit", ":e2", "dn2.exe", "exit", ":e3", "dn3.exe", "exit" ] },
-  "SPEAR.zip":       { run: [
+  "SPEAR.zip":       { alt: "SOD.EXE", run: [
     "@echo off", "cls", "echo.",
     "echo   ==========================================",
     "echo    SPEAR OF DESTINY (1992) - id Software",

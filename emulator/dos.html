@@ -197,24 +197,76 @@
 		out.push("[autoexec]", "SET BLASTER=A220 I7 D1 H5 P330 T6", "mount c .", "c:");
 		return out.concat(runLines).join("\n") + "\n";
 	}
-	// Which command starts the game. The table first; otherwise the Sierra
-	// loader, then a name match with the zip, then whatever executable is
-	// alone at the top level, then first .BAT / .EXE / .COM in that order.
-	function pickLaunch(names, zipName) {
-		var table = (window.DOS_LAUNCH || {})[zipName];
-		if (table) return { run: [].concat(table.run), conf: table.conf || null };
-		var top = names.filter(function (n) { return n.indexOf("/") === -1; });
-		var lower = top.map(function (n) { return n.toLowerCase(); });
-		function find(pred) { var i = lower.findIndex(pred); return i === -1 ? null : top[i]; }
+	// Which command starts the game. The table first - but only if the file it
+	// names is really in the zip (a table entry written for a hand-built bundle
+	// shouldn't break an archive.org zip with a different layout); otherwise
+	// the Sierra loader, then a name match with the zip, then whatever
+	// executable is alone at the top level, then first .BAT / .EXE / .COM in
+	// that order. Executables in subfolders count too (shallowest first) and
+	// get a "cd" in front - archive.org zips often nest the game a level or
+	// two down ("SoD3D/WOLF3D/SOD/SOD.EXE").
+	function pickLaunch(names, zipName, forcedTable) {
+		var strict = !!forcedTable;   // used by the alt check: no guessing, just "does the table entry fit"
 		var base = zipName.replace(/\.zip$/i, "").toLowerCase();
-		var exes = top.filter(function (n) { return /\.(bat|exe|com)$/i.test(n); });
+		var exes = names.filter(function (n) { return /\.(bat|exe|com)$/i.test(n); })
+			.sort(function (x, y) { return x.split("/").length - y.split("/").length; });
+		function dirOf(n) { return n.indexOf("/") === -1 ? "" : n.slice(0, n.lastIndexOf("/")); }
+		function fileOf(n) { return n.slice(n.lastIndexOf("/") + 1); }
+		function withCd(n, lines) {
+			var d = dirOf(n);
+			return d ? d.split("/").map(function (seg) { return "cd " + seg; }).concat(lines) : lines;
+		}
+		var table = forcedTable || (window.DOS_LAUNCH || {})[zipName];
+		if (!strict && table && table.alt) {
+			// try the main entry; if it doesn't fit this zip, the "alt" file
+			// (single program name) gets a turn before the guessing rules
+			var main = pickLaunch(names, zipName, table);
+			if (main) return main;
+			var hits0 = exes.filter(function (n) { return fileOf(n).toLowerCase() === String(table.alt).toLowerCase(); });
+			if (hits0.length) return { run: withCd(hits0[0], [fileOf(hits0[0])]), conf: table.conf || null };
+		}
+		if (table) {
+			var lines = [].concat(table.run);
+			var first = String(lines[0]).trim().split(/\s+/)[0].toLowerCase();
+			if (!/\.(bat|exe|com)$/.test(first)) {
+				// a menu script: trust it only if the folders it cd's into (or, with
+				// no cd at all, the programs it runs) are really at the top level
+				var tops = {};
+				names.forEach(function (n) { tops[(n.indexOf("/") === -1 ? n : n.split("/")[0]).toLowerCase()] = 1; });
+				var cds = [], runs = [];
+				lines.forEach(function (l) {
+					var m = /^\s*cd\s+([^\s\\]+)/i.exec(l);
+					if (m) cds.push(m[1].toLowerCase());
+					var t = String(l).trim().split(/\s+/)[0].toLowerCase();
+					if (/\.(bat|exe|com)$/.test(t)) runs.push(t);
+				});
+				var ok = cds.length ? cds.every(function (d) { return tops[d]; }) : runs.every(function (r) { return tops[r]; });
+				if (ok) return { run: lines, conf: table.conf || null };
+				if (strict) return null;
+				console.warn("dos.html: dos-launch.js menu for " + zipName + " doesn't match this zip's layout - guessing instead");
+			} else {
+			var hits = exes.filter(function (n) { return fileOf(n).toLowerCase() === first; });
+			if (hits.length) {
+				// several copies (Final Doom's tnt/ and plutonia/ both hold DOOM2.EXE):
+				// prefer the folder that shares its name with the zip
+				var pick = hits.filter(function (n) { return dirOf(n).toLowerCase().indexOf(base) !== -1; })[0] || hits[0];
+				return { run: withCd(pick, lines), conf: table.conf || null };
+			}
+			if (strict) return null;
+			console.warn("dos.html: dos-launch.js says " + first + " for " + zipName + " but it isn't in the zip - guessing instead");
+			}
+		}
+		if (strict) return null;
+		var shallow = exes.length ? exes.filter(function (n) { return n.split("/").length === exes[0].split("/").length; }) : [];
+		var lower = shallow.map(function (n) { return fileOf(n).toLowerCase(); });
+		function find(pred) { var i = lower.findIndex(pred); return i === -1 ? null : shallow[i]; }
 		var hit = find(function (n) { return n === "sierra.com" || n === "sierra.exe"; }) ||
-			find(function (n) { return /\.(bat|exe|com)$/.test(n) && n.replace(/\.(bat|exe|com)$/, "") === base; }) ||
-			(exes.length === 1 ? exes[0] : null) ||
-			find(function (n) { return /\.bat$/.test(n); }) ||
-			find(function (n) { return /\.exe$/.test(n); }) ||
+			find(function (n) { return n.replace(/\.(bat|exe|com)$/, "") === base; }) ||
+			(shallow.length === 1 ? shallow[0] : null) ||
+			find(function (n) { return /\.bat$/.test(n) && !/^(install|setup|readme|check)/.test(n); }) ||
+			find(function (n) { return /\.exe$/.test(n) && !/^(install|setup|readme|unzip|pkunzip)/.test(n); }) ||
 			find(function (n) { return /\.com$/.test(n); });
-		return hit ? { run: [hit], conf: null } : null;
+		return hit ? { run: withCd(hit, [fileOf(hit)]), conf: null } : null;
 	}
 	// A zip reader/writer of its own rather than assets/zip-2.4.7.min.js -
 	// that build ships without an inflate codec (it expects worker scripts
@@ -279,12 +331,17 @@
 			var entries = parseZip(buf).filter(function (e) { return !e.dir; });
 			var names = entries.map(function (e) { return e.name.replace(/^\/+/, ""); });
 			if (names.indexOf(".jsdos/dosbox.conf") !== -1) return bundleUrl;   // a real bundle - untouched
-			// one folder holding everything? strip it
-			var roots = {};
-			names.forEach(function (n) { roots[n.indexOf("/") === -1 ? "" : n.split("/")[0]] = 1; });
-			var rk = Object.keys(roots);
-			var prefix = (rk.length === 1 && rk[0] !== "") ? rk[0] + "/" : "";
-			if (prefix) names = names.map(function (n) { return n.slice(prefix.length); });
+			// one folder holding everything? strip it (unless dos-launch.js says
+			// keepRoot - a few games hard-code C:\<folder> paths in their config)
+			var tableEntry = (window.DOS_LAUNCH || {})[zip_name];
+			var prefix = "";
+			if (!(tableEntry && tableEntry.keepRoot)) {
+				var roots = {};
+				names.forEach(function (n) { roots[n.indexOf("/") === -1 ? "" : n.split("/")[0]] = 1; });
+				var rk = Object.keys(roots);
+				prefix = (rk.length === 1 && rk[0] !== "") ? rk[0] + "/" : "";
+				if (prefix) names = names.map(function (n) { return n.slice(prefix.length); });
+			}
 			var launch = pickLaunch(names, zip_name);
 			if (!launch) throw new Error("no .EXE/.COM/.BAT found in " + zip_name);
 			if (loading) loading.textContent = "Unpacking " + zip_name + "…";
@@ -293,6 +350,16 @@
 				{ name: ".jsdos/jsdos.json", data: enc.encode('{"version":"8"}') },
 				{ name: ".jsdos/dosbox.conf", data: enc.encode(buildConf(launch.conf, launch.run)) }
 			];
+			// Explicit directory entries, parents first: js-dos's unzipper only
+			// creates a file's immediate parent, so "WOLF3D/SOD/SOD.EXE" fails
+			// unless WOLF3D/ was listed before it.
+			var dirs = {};
+			names.forEach(function (n) {
+				var parts = n.split("/");
+				for (var d = 1; d < parts.length; d++) dirs[parts.slice(0, d).join("/") + "/"] = 1;
+			});
+			Object.keys(dirs).sort(function (x, y) { return x.split("/").length - y.split("/").length || (x < y ? -1 : 1); })
+				.forEach(function (d) { files.push({ name: d, data: new Uint8Array(0) }); });
 			var chain = Promise.resolve();
 			entries.forEach(function (e, i) {
 				chain = chain.then(function () { return entryData(buf, e); })
