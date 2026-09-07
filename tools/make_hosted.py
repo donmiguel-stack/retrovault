@@ -91,6 +91,9 @@ OUT = os.path.join(ROOT, "_hosted")
 ZIP = os.path.join(ROOT, "_bundles", "retrovault-files.zip")
 BASE_URL = "https://retrovault.world/files/"
 BIOS = "g7400.bin"
+# o2rom.bin = the G7000 BIOS, needed by VP05 Blackjack (its shuffle calls a
+# G7000-only BIOS routine); game.html asks the emulator for it per title.
+BIOS_FILES = ["g7400.bin", "o2rom.bin"]
 
 INCLUDE_CATEGORIES = {
     "Official Videopac (EU)", "Official Videopac (French)",
@@ -148,7 +151,7 @@ AddType application/zip .zip
 
 INDEX_HTML = """<!doctype html><meta charset="utf-8"><title>Retro Vault files</title>
 <p>File host for <a href="https://retrovault.world">Retro Vault</a>: the Videopac G7400 BIOS and the out-of-print Videopac, Commodore 64 and MS-DOS games the Vault plays online (plus the official id/Apogee shareware episodes). Nothing here is for sale, nothing here is still sold by its makers as far as we could find; if you hold rights to any of it and want it gone, write to the address on retrovault.world.</p>
-<p><a href="bios/g7400.bin">bios/g7400.bin</a> &mdash; drop it into <code>emulator/bios/</code> of your own copy.</p>
+<p><a href="bios/g7400.bin">bios/g7400.bin</a> and <a href="bios/o2rom.bin">bios/o2rom.bin</a> (G7400 and G7000 BIOS) &mdash; drop them into <code>emulator/bios/</code> of your own copy.</p>
 """
 
 
@@ -214,15 +217,16 @@ def main():
     if "--list" in sys.argv:
         return
 
-    bios_src = os.path.join(ROOT, "emulator", "bios", BIOS)
-    if not os.path.exists(bios_src):
-        sys.exit("no emulator/bios/%s - nothing to host without the BIOS" % BIOS)
+    for b in BIOS_FILES:
+        if not os.path.exists(os.path.join(ROOT, "emulator", "bios", b)):
+            sys.exit("no emulator/bios/%s - nothing to host without the BIOS" % b)
 
     if os.path.exists(OUT):
         shutil.rmtree(OUT)
     os.makedirs(os.path.join(OUT, "roms"))
     os.makedirs(os.path.join(OUT, "bios"))
-    shutil.copy2(bios_src, os.path.join(OUT, "bios", BIOS))
+    for b in BIOS_FILES:
+        shutil.copy2(os.path.join(ROOT, "emulator", "bios", b), os.path.join(OUT, "bios", b))
     total = 0
     for rf in files:
         shutil.copy2(os.path.join(roms_dir, rf), os.path.join(OUT, "roms", rf))

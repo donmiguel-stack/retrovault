@@ -719,7 +719,7 @@
 <script src="walkthroughs.js?v=1"></script>
 <script src="featured.js?v=112"></script>
 <script src="c64ad.js?v=109"></script>
-<script src="gamepages.js?v=117"></script>
+<script src="gamepages.js?v=118"></script>
 <script src="demo.js?v=112"></script>
 <script>
 (function () {
@@ -911,6 +911,15 @@
     if (g.platform === "PC" || g.platform === "C64") return "";
     return "&biosbase=" + encodeURIComponent(HOSTED.base + HOSTED.bios);
   }
+  // Videopac only: a cartridge can ask for a specific BIOS image (gamepages.js
+  // "bios"). Default is g7400.bin for every title; VP05 Blackjack needs the
+  // G7000 one (o2rom.bin) because its shuffle calls an undocumented BIOS
+  // routine that only exists there.
+  function gameBiosParam() {
+    var b = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id] || {}).bios;
+    if (!b || g.platform === "PC" || g.platform === "C64") return "";
+    return "&bios=" + encodeURIComponent(b);
+  }
   start.addEventListener("click", function(){
     var fb = start.dataset.dlfallback ? "&dlfallback=" + encodeURIComponent(start.dataset.dlfallback) : "";
     if (g.platform === "PC") {
@@ -923,7 +932,7 @@
     } else {
       var rom = start.dataset.hosted ? start.dataset.hosted : g.romFile;
       location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
-                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam();
+                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam() + gameBiosParam();
     }
   });
   info.appendChild(document.createElement("br"));

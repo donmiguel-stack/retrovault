@@ -43,7 +43,7 @@ var nulKeys = 'input_ai_service = "nul"\ninput_ai_service_axis = "nul"\ninput_ai
 // menu_driver = "rgui" uses RetroArch's built-in menu, which needs no
 // downloadable asset bundle - this removes the "assets missing / use the
 // online updater" notice for every core and keeps the Vault fully offline.
-var extraConfig = 'rgui_show_start_screen = "false"\nnotification_show_remap_load = "false"\nmenu_mouse_enable = "true"\nmenu_pointer_enable = "true"\nmenu_driver = "rgui"\no2em_bios = "g7400.bin"\n';
+var extraConfig = 'rgui_show_start_screen = "false"\nnotification_show_remap_load = "false"\nmenu_mouse_enable = "true"\nmenu_pointer_enable = "true"\nmenu_driver = "rgui"\n';
 var pdKeys = [8, 9, 13, 19, 27, 32, 33, 34, 35, 36, 42, 44, 45, 91, 92, 93, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135];
 var webretroVersion = 6.5;
 var maxConsoleLength = 10000;
@@ -192,6 +192,14 @@ try {
 
 // query string into object
 var queries = Object.fromEntries(window.location.search.substring(1).split("&").map(i => i.split("=")).map(i => i.map(i => i && decodeURIComponent(i))));
+// Retro Vault: which Videopac BIOS the o2em core boots with. g7400.bin for
+// everything by default (the G7400 runs G7000 carts and adds the Plus chip
+// for the titles that use it); game.html passes &bios=o2rom.bin for the few
+// carts that call into undocumented G7000 BIOS internals and hang on the
+// G7400 one - VP05 Blackjack's shuffle is the known case (its random-number
+// routine lives at an address the G7400 BIOS uses for something else).
+var o2emBios = /^(o2rom|g7400|c52|jopac)\.bin$/.test(queries.bios || "") ? queries.bios : "g7400.bin";
+extraConfig += 'o2em_bios = "' + o2emBios + '"\n';
 
 // core lists
 function sortArray(array, sortTo) {
@@ -2164,7 +2172,7 @@ function initFromData(data) {
 					safeWriteFile(baseFsConfigDir + "Mupen64Plus-Next/Mupen64Plus-Next.opt", coreOptionsString + 'mupen64plus-ThreadedRenderer = "False"\nmupen64plus-EnableCopyColorToRDRAM = "Off"\nmupen64plus-EnableCopyDepthToRDRAM = "Off"\n');
 					break;
 				case "o2em":
-					safeWriteFile(baseFsConfigDir + "O2EM/O2EM.opt", coreOptionsString + 'o2em_bios = "g7400.bin"\n');
+					safeWriteFile(baseFsConfigDir + "O2EM/O2EM.opt", coreOptionsString + 'o2em_bios = "' + o2emBios + '"\n');
 					break;
 				case "vice_x64":
 					// True 1541 drive emulation loads at authentic (very slow) C64

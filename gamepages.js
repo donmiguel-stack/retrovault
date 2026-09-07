@@ -1094,6 +1094,7 @@ window.GAMEPAGES_DATA = {
   }
  },
  "vp_03": {
+  "note": "Two players only &mdash; there is no computer opponent, and nothing moves until <strong>both</strong> Action buttons have been pressed: on one keyboard that is <span class='kbd'>G</span> for the arrow-key joystick and <span class='kbd'>Q</span> for the <span class='kbd'>W</span> <span class='kbd'>A</span> <span class='kbd'>S</span> <span class='kbd'>D</span> one. The direction each player holds while pressing picks that side's play (see the manual for the play list); then the play runs on the sticks.",
   "input": "joystick",
   "manual": {
    "item": "American_Football_1978_Philips_EU",
@@ -1179,6 +1180,8 @@ window.GAMEPAGES_DATA = {
   }
  },
  "vp_05": {
+  "note": "Runs on the <strong>G7000 BIOS</strong> (o2rom.bin) &mdash; on the G7400 one this cartridge freezes on a green screen right after SHUFFLE, because its shuffle routine calls a random-number generator that only exists inside the original G7000 BIOS. The vault switches BIOS for this title automatically. Play: press the number of players, type your bet on the number keys and press <span class='kbd'>Enter</span>; answer <em>HIT ?</em> and <em>DOUBLE ?</em> with the YES / NO keys, which are <span class='kbd'>Y</span> and <span class='kbd'>N</span> on your keyboard.",
+  "bios": "o2rom.bin",
   "input": "mixed",
   "manual": {
    "item": "Blackjack_1978_Philips_en-de",
@@ -2340,6 +2343,8 @@ window.GAMEPAGES_DATA = {
   }
  },
  "Vp05_F": {
+  "note": "Runs on the <strong>G7000 BIOS</strong> (o2rom.bin) &mdash; on the G7400 one this cartridge freezes on a green screen right after SHUFFLE, because its shuffle routine calls a random-number generator that only exists inside the original G7000 BIOS. The vault switches BIOS for this title automatically. Play: press the number of players, type your bet on the number keys and press <span class='kbd'>Enter</span>; answer <em>HIT ?</em> and <em>DOUBLE ?</em> with the YES / NO keys, which are <span class='kbd'>Y</span> and <span class='kbd'>N</span> on your keyboard.",
+  "bios": "o2rom.bin",
   "input": "mixed",
   "manual": {
    "item": "Blackjack_1978_Philips_en-de",
