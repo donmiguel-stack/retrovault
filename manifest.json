@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-07 20:09:49",
- "count": 494,
- "bytes": 184314040,
+ "generated": "2026-09-08 09:44:19",
+ "count": 499,
+ "bytes": 184342648,
  "files": {
   "games.js": {
    "sha256": "685037582184f4510571a3c63cdafc2da0b3d9331b7a42cdb44524e73c38b1de",
@@ -96,16 +96,16 @@
    "size": 4572
   },
   "game.html": {
-   "sha256": "debe8727150f41d577637a2ced5868cbb5ffe7d29fbac9c18f47757de404bedc",
-   "size": 93891
+   "sha256": "524704d95a3354ab69a558328a3b2e66f1797bc76e190d7838509248ce659d22",
+   "size": 94218
   },
   "index.html": {
-   "sha256": "c8a8c16cc43665faa770e15bd6b2754d7442b224731c7e89f3ffa3e2a5c8f166",
-   "size": 15389
+   "sha256": "daf6ba0919cfa0ee38564e6300ca3261fd466065619fe5c0517c7f792f15ce46",
+   "size": 15716
   },
   "resources.html": {
-   "sha256": "ac667b83350fb7f4937b09bc2dd68d68ede48c0e2aee312cd43a4669b6bc590e",
-   "size": 11349
+   "sha256": "b34f2c6bc4eaa9f4a0c749a07aadf44d52cc97b065f63c3e52ef1d392c84c3a0",
+   "size": 11676
   },
   "style.css": {
    "sha256": "5b9cf41bfcf0c0ed75ca063984298238a5cbe568808562df8657ca65577c852a",
@@ -114,6 +114,26 @@
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
    "size": 3768
+  },
+  "favicon.ico": {
+   "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",
+   "size": 12639
+  },
+  "icon-16.png": {
+   "sha256": "070a4b68b2310f06caaf32593589c445361981f190530e893a252e6330b33567",
+   "size": 655
+  },
+  "icon-32.png": {
+   "sha256": "dc0bda26eddae6b430b2ab5e79e2d17c7f6f075c73493db97af856336247f250",
+   "size": 1837
+  },
+  "icon-48.png": {
+   "sha256": "c537953b4386db36c3878ea225dbd53dc51892b0ade56e4be20c15a3957915db",
+   "size": 3543
+  },
+  "apple-touch-icon.png": {
+   "sha256": "176259e7e2297c695b1629eb4859af89d2602729cee1b3de4a93fba5aebba64a",
+   "size": 8953
   },
   "README.md": {
    "sha256": "822ad3747d553ef03a4ca3c70d939aa9e5856b5e1fd8dae4a79229f40a0a5787",

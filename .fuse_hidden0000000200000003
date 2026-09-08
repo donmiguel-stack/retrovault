@@ -39,7 +39,7 @@ SOURCE_FILE = os.path.join(ROOT, "update-source.json")
 # consequence is that files in a folder listed here reach every install, and
 # files anywhere else reach nobody who has already installed. Put new artwork
 # in covers/.
-ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json", ".ico",
+ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json",
                 ".gif", ".mp4", ".pdf")
 # homebrew-downloads/ ships actual game files - the one exception to "DATA
 # ONLY" above, and only for titles that passed the redistribution-license

@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Vault</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/icon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css?v=102">
+<style>
+  .game-page{max-width:1100px;margin:0 auto;padding:24px;}
+  .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
+  .back-link:hover{color:var(--text);}
+  .game-hero{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;}
+  .hero-cover{
+    width:220px;flex-shrink:0;aspect-ratio:3/4;border-radius:var(--radius);
+    overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;
+    font-size:42px;font-weight:700;color:#fff;border:1px solid var(--border);
+  }
+  .hero-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+  /* American Football (vp_03) easter egg: the ball the runner is tucking
+     under his arm on the box art launches out of his grip and sails off
+     the screen a beat after the cover loads (and again on click - the
+     cover doubles as a button). Ball starts exactly over its painted spot
+     in covers/vp_03.png (~9.8% across, ~72.6% down, ~16.4% of the cover's
+     width wide) so the hand-off looks continuous. Gated to vp_03 only -
+     see the g.id check near hero.appendChild(cover). */
+  .af-ball{
+    position:fixed;z-index:10000;pointer-events:none;top:0;left:0;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,.45));
+    will-change:transform,opacity;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .af-ball{display:none;}
+  }
+
+  .hero-info{flex:1;min-width:280px;}
+  .hero-info h1{margin:0 0 10px;font-size:26px;line-height:1.25;}
+  .hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  .hero-meta .badge{font-size:12px;padding:4px 10px;}
+  .history-text{color:var(--text-dim);font-size:14.5px;line-height:1.7;margin:0 0 10px;}
+  .history-source{font-size:12px;color:var(--text-mute);}
+  .history-source a{color:var(--accent);text-decoration:none;}
+  .start-btn{
+    display:inline-flex;align-items:center;gap:10px;margin-top:18px;
+    background:var(--accent);color:#fff;border:none;cursor:pointer;
+    font-size:17px;font-weight:700;letter-spacing:.06em;
+    padding:14px 38px;border-radius:var(--radius);
+    box-shadow:0 2px 14px rgba(91,141,239,.4);
+    transition:transform .12s, box-shadow .12s;
+  }
+  .start-btn:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(91,141,239,.55);}
+  .start-btn .tri{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:12px solid #fff;}
+  .hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .fav-toggle{
+    margin-top:18px;background:transparent;border:1px solid var(--border);
+    color:var(--text-dim);padding:13px 20px;border-radius:var(--radius);
+    cursor:pointer;font-size:14px;
+  }
+  .fav-toggle:hover{border-color:#ffc400;color:#ffc400;}
+  .fav-toggle.on{border-color:#ffc400;color:#ffc400;}
+  /* Buy button - an outside shop, so it is styled apart from START rather
+     than dressed up to look like part of the Vault */
+  .buy-col{
+    position:relative;                  /* the shop line hangs off this */
+    margin-top:18px;margin-left:16px;   /* row gap is 14px, so 30px from the star */
+  }
+  .buy-btn{
+    display:inline-flex;align-items:center;gap:11px;text-decoration:none;
+    background:#2fb47c;color:#052a1d;font-weight:700;font-size:15px;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .buy-btn:hover{background:#3ecd90;}
+  .buy-price{
+    background:rgba(0,0,0,.18);border-radius:6px;padding:2px 9px;font-size:14px;
+  }
+  .buy-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
+  /* Support button - a free/pay-what-you-want release, linking straight to
+     the creator's own page rather than anything the Vault runs itself */
+  .support-col{
+    position:relative;
+    margin-top:18px;margin-left:16px;
+  }
+  .support-btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    background:#e0567a;color:#2a0512;font-weight:700;font-size:15px;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .support-btn:hover{background:#ea6f8f;}
+  .support-heart{font-size:15px;}
+  .support-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
+  /* Download button - homebrew/copyright-free game the Vault hosts itself
+     (homebrew-downloads/), not a purchase and not a link to the creator's
+     own page. Amber so it reads as its own third thing next to Buy (green)
+     and Support (pink). */
+  .dl-col{
+    position:relative;
+    margin-top:18px;margin-left:16px;
+  }
+  .dl-btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    background:#d9a441;color:#2a1c02;font-weight:700;font-size:15px;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .dl-btn:hover{background:#e6b658;}
+  .dl-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
+  .alt-name{margin:0 0 6px;font-size:13.5px;color:var(--text-dim);}
+  .alt-name strong{color:var(--text);}
+  .alt-num{
+    display:inline-block;margin-left:4px;padding:1px 7px;border-radius:999px;
+    background:var(--surface-2);border:1px solid var(--border);
+    font-size:11px;color:var(--text-mute);font-family:ui-monospace,Menlo,monospace;
+  }
+  .pack-line{
+    margin:0 0 4px;font-size:13.5px;line-height:1.6;color:var(--text-dim);
+    display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
+  }
+  .section{margin-top:36px;}
+  .section h2{font-size:16px;margin:0 0 14px;color:var(--text);display:flex;align-items:center;gap:8px;}
+  .section h2 .sec-note{font-size:12px;color:var(--text-mute);font-weight:400;}
+  .video-wrap{position:relative;width:100%;max-width:760px;aspect-ratio:16/9;background:#000;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);}
+  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  /* a local clip fills the same 16:9 box; contain keeps the 4:3 game from being
+     cropped (pillar-boxed on black, exactly like the YouTube embed shows it) */
+  .video-wrap video.video-clip{position:absolute;inset:0;width:100%;height:100%;
+    object-fit:contain;background:#000;display:block;}
+  /* link through to the full video on YouTube, under the clip */
+  .video-link{display:inline-flex;align-items:center;gap:8px;margin-top:10px;
+    font-size:13px;color:var(--text-dim);text-decoration:none;}
+  .video-link:hover{color:var(--text);}
+  .video-link-tri{width:0;height:0;border-top:5px solid transparent;
+    border-bottom:5px solid transparent;border-left:8px solid currentColor;}
+
+  /* Manual reader */
+  .manual-reader{max-width:760px;}
+  .manual-stage{
+    background:#000;border:1px solid var(--border);border-radius:var(--radius);
+    display:flex;align-items:center;justify-content:center;position:relative;
+    min-height:420px;user-select:none;
+  }
+  .manual-stage img{max-width:100%;max-height:76vh;display:block;cursor:zoom-in;}
+  .manual-stage img.zoomed{max-height:none;cursor:zoom-out;}
+  .manual-nav{
+    position:absolute;top:0;bottom:0;width:20%;cursor:pointer;
+    display:flex;align-items:center;opacity:0;transition:opacity .15s;
+    font-size:34px;color:#fff;text-shadow:0 0 8px #000;
+  }
+  .manual-nav:hover{opacity:.9;}
+  .manual-nav.prev{left:0;justify-content:flex-start;padding-left:12px;}
+  .manual-nav.next{right:0;justify-content:flex-end;padding-right:12px;}
+  .manual-bar{display:flex;align-items:center;gap:14px;margin-top:10px;color:var(--text-dim);font-size:13px;}
+  .manual-bar button{
+    background:var(--surface);border:1px solid var(--border);color:var(--text);
+    padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:13px;
+  }
+  .manual-bar button:hover{border-color:var(--accent);}
+  .manual-thumbs{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+  .manual-thumbs img{
+    width:52px;height:70px;object-fit:cover;border-radius:4px;cursor:pointer;
+    border:2px solid transparent;opacity:.65;
+  }
+  .manual-thumbs img:hover{opacity:1;}
+  .manual-thumbs img.active{border-color:var(--accent);opacity:1;}
+  .missing-note{color:var(--text-mute);font-size:14px;}
+  /* "Where to get it" - romsources.js, shown under the missing-file note */
+  .get-box{max-width:760px;margin:10px 0 0;padding:12px 16px;background:var(--surface);
+    border:1px solid var(--border);border-left:3px solid #d9a441;border-radius:8px;font-size:14px;}
+  .get-box h3{margin:0 0 6px;font-size:14px;color:#d9a441;}
+  .get-box ol{margin:0;padding-left:20px;}
+  .get-box li{margin:3px 0;color:var(--text-dim);}
+  .get-box code{background:rgba(255,255,255,.07);padding:1px 5px;border-radius:4px;color:var(--text);word-break:break-all;}
+  .get-box a{color:var(--accent);}
+  .get-box .get-note{margin:8px 0 0;color:var(--text-mute);font-size:13px;}
+
+  /* Controls box */
+  .controls-box{
+    position:relative;
+    max-width:760px;background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:16px 18px;font-size:14px;color:var(--text-dim);
+  }
+
+  /* Pick Axe Pete easter egg: the man himself, chipping away at the corner
+     of his own controls box. Only ever inserted for the vp_43/vp_43pl/mod_43pl
+     game ids - see the g.id check near cSec.appendChild(cBox). */
+  .pete-axe{
+    position:absolute;top:20px;left:-27px;width:38px;height:38px;
+    image-rendering:pixelated;pointer-events:none;z-index:3;
+    transform-origin:30% 55%;
+    animation:pete-swing 1.3s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .pete-axe img{display:block;width:100%;height:100%;}
+  @keyframes pete-swing{
+    0%{transform:rotate(-26deg);}
+    14%{transform:rotate(32deg);}
+    22%{transform:rotate(26deg);}
+    45%{transform:rotate(-26deg);}
+    100%{transform:rotate(-26deg);}
+  }
+  .controls-box.pete-hit{animation:pete-box-shake 1.3s ease-in-out infinite;}
+  @keyframes pete-box-shake{
+    0%,13%{transform:translate(0,0);}
+    16%{transform:translate(-2px,1px);}
+    19%{transform:translate(2px,-1px);}
+    23%,100%{transform:translate(0,0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pete-axe{animation:none;transform:rotate(-10deg);}
+    .controls-box.pete-hit{animation:none;}
+  }
+
+  /* Leisure Suit Larry easter egg: the chalk "Ken sent me" (the secret
+     password at Lefty's back door) leans against the right side of the
+     controls box, slightly tilted. Only for pc_leisure_suit_larry - see the
+     g.id check near pcSec.appendChild(pcBox). Sits in the empty space to the
+     right of the 760px box; below the tips block on narrow screens. */
+  .ken-note{
+    position:absolute;left:100%;top:34px;margin-left:26px;
+    width:min(300px,28vw);pointer-events:none;z-index:3;
+    transform:rotate(-7deg);transform-origin:20% 50%;
+    opacity:.92;filter:drop-shadow(0 2px 3px rgba(0,0,0,.6));
+  }
+  .ken-note img{display:block;width:100%;height:auto;}
+  @media (max-width: 1100px){
+    .ken-note{position:static;display:block;margin:14px auto 0;width:min(240px,60%);transform:rotate(-5deg);}
+  }
+
+  /* The Mousing Cat easter egg: he tilts his head and purrs on the right
+     side of his own controls box. Only inserted for vp_47/Vp47_F - see the
+     g.id check near cSec.appendChild(cBox). */
+  .cat-wrap{
+    position:absolute;top:-24px;right:16px;width:46px;
+    pointer-events:none;z-index:3;
+  }
+  .cat-img{
+    display:block;transform-origin:50% 70%;
+    animation:cat-tilt 3.2s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .cat-img img{display:block;width:100%;height:auto;image-rendering:pixelated;}
+  .purr-text{
+    position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+    font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent);
+    white-space:nowrap;opacity:0;
+    animation:cat-purr-fade 3.2s ease-in-out infinite;
+  }
+  @keyframes cat-tilt{
+    0%,100%{transform:rotate(0deg) translate(0,0);}
+    6%{transform:rotate(-7deg) translate(-1px,0);}
+    12%{transform:rotate(-9deg) translate(1px,-1px);}
+    18%{transform:rotate(-6deg) translate(-1px,1px);}
+    24%{transform:rotate(-8deg) translate(1px,0);}
+    30%{transform:rotate(-7deg) translate(-1px,-1px);}
+    38%{transform:rotate(-6deg) translate(0,0);}
+    48%{transform:rotate(0deg) translate(0,0);}
+  }
+  @keyframes cat-purr-fade{
+    0%{opacity:0;}
+    8%{opacity:1;}
+    38%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cat-img{animation:none;transform:rotate(-7deg);}
+    .purr-text{animation:none;opacity:1;}
+  }
+
+  /* Morse easter egg: a little indicator lamp on the controls box blinks
+     out "WELCOME VISITOR" in real International Morse timing (1 unit = a
+     dot, 3 units = a dash, 1/3/7 unit gaps between symbols/letters/words),
+     then pauses and repeats. Only inserted for vp_45/Vp45_F - see the g.id
+     check near cSec.appendChild(cBox). Timeline generated from the actual
+     Morse alphabet, not hand-tuned, so it decodes correctly if you time it.
+  */
+  .morse-lamp{
+    position:absolute;top:-6px;left:16px;width:11px;height:11px;border-radius:50%;
+    background:#3a1210;box-shadow:0 0 0 2px var(--surface);
+    z-index:3;pointer-events:none;
+    animation:morse-msg 17.88s steps(1,end) infinite;
+  }
+  @keyframes morse-msg{
+    0%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    0.651%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    0.671%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    1.322%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    1.342%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    3.336%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    3.356%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    4.007%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    4.027%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    6.02%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    6.04%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    8.034%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    8.054%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    8.705%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    8.725%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    10.718%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    10.738%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    11.389%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    11.409%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    12.061%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    12.081%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    14.074%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    14.094%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    14.745%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    14.765%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    15.416%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    15.436%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    16.087%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    16.107%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    16.759%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    16.779%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    18.772%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    18.792%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    20.785%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    20.805%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    21.457%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    21.477%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    22.128%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    22.148%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    22.799%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    22.819%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    24.812%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    24.832%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    25.483%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    25.503%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    26.154%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    26.174%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    28.168%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    28.188%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    30.181%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    30.201%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    30.852%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    30.872%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    32.866%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    32.886%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    33.537%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    33.557%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    35.55%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    35.57%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    37.564%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    37.584%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    39.577%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    39.597%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    40.248%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    40.268%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    42.262%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    42.282%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    44.275%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    44.295%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    44.946%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    44.966%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    49.644%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    49.664%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    50.316%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    50.336%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    50.987%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    51.007%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    51.658%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    51.678%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    52.329%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    52.349%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    53%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    53.02%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    53.671%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    53.691%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    55.685%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    55.705%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    57.698%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    57.718%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    58.369%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    58.389%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    59.04%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    59.06%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    59.712%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    59.732%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    61.725%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    61.745%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    62.396%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    62.416%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    63.067%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    63.087%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    63.738%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    63.758%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    64.41%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    64.43%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    65.081%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    65.101%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    67.094%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    67.114%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    67.765%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    67.785%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    68.436%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    68.456%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    69.108%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    69.128%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    71.121%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    71.141%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    73.134%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    73.154%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    75.148%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    75.168%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    77.161%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    77.181%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    77.832%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    77.852%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    79.846%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    79.866%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    80.517%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    80.537%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    82.53%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    82.55%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    84.544%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    84.564%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    85.215%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    85.235%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    85.886%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    85.906%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    87.899%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    87.919%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    88.571%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    88.591%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    89.242%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    89.262%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    99.98%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .morse-lamp{animation:none;background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+  }
+
+  /* Wall Street ticker: a green stock-ticker strip above the controls box,
+     "BUY BITCOIN [symbol]" scrolling left to right, endlessly. Only inserted
+     for vp_46/br_9434 - see the WALLST_IDS check above cSec's h2. The seamless
+     loop is the classic duplicate-content trick: the track holds two identical
+     copies of the message back to back, and animates from -50% to 0%, so
+     percentages resolve against the track's own (2x) width with no JS needed
+     to measure anything.
+  */
+  .wallst-ticker{
+    max-width:760px;overflow:hidden;
+    background:#0b2e1a;border:1px solid var(--border);border-radius:var(--radius);
+    padding:8px 0;margin:0 0 10px;
+  }
+  .wallst-ticker-track{
+    display:inline-flex;white-space:nowrap;
+    animation:wallst-scroll 20s linear infinite;
+  }
+  .wallst-msg{
+    display:inline-flex;align-items:center;flex-shrink:0;
+    font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;
+    font-size:13px;letter-spacing:2px;text-transform:uppercase;
+    color:#eafff0;text-shadow:0 0 4px rgba(80,255,140,.55);
+    padding-right:48px;
+  }
+  .btc-sym{position:relative;display:inline-block;margin:0 3px;}
+  .btc-sym::before,.btc-sym::after{
+    content:"";position:absolute;width:2px;background:currentColor;
+    top:-.3em;bottom:-.3em;
+  }
+  .btc-sym::before{left:32%;}
+  .btc-sym::after{left:58%;}
+  @keyframes wallst-scroll{
+    from{transform:translateX(-50%);}
+    to{transform:translateX(0%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wallst-ticker-track{animation:none;transform:translateX(0%);}
+  }
+
+  /* The Last Ninja easter egg: a fighter ripped from the game's own .d64
+     sprite bank stands guard on the controls box and strikes with his staff
+     every few seconds. Two pose frames swap via steps() so it snaps like the
+     real 1987 animation would, with a small lunge to the left on the strike.
+     Only inserted for c64_last_ninja - see the g.id check near
+     c64Sec.appendChild(c64Box). */
+  .ninja-wrap{
+    position:absolute;top:-66px;right:26px;width:38px;height:66px;
+    pointer-events:none;z-index:3;
+    animation:ninja-lunge 6s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.45));
+  }
+  .ninja-pose{
+    position:absolute;inset:0;width:100%;height:100%;
+    image-rendering:pixelated;
+  }
+  .ninja-stance{animation:ninja-show-stance 6s steps(1,end) infinite;}
+  .ninja-strike{opacity:0;animation:ninja-show-strike 6s steps(1,end) infinite;}
+  @keyframes ninja-show-stance{
+    0%{opacity:1;} 78%{opacity:0;} 92%{opacity:1;}
+  }
+  @keyframes ninja-show-strike{
+    0%{opacity:0;} 78%{opacity:1;} 92%{opacity:0;}
+  }
+  @keyframes ninja-lunge{
+    0%,76%{transform:translateX(0);}
+    80%{transform:translateX(-9px);}
+    90%{transform:translateX(-9px);}
+    94%,100%{transform:translateX(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ninja-wrap{animation:none;}
+    .ninja-stance{animation:none;opacity:1;}
+    .ninja-strike{animation:none;opacity:0;}
+  }
+
+  /* Quest for the Rings easter egg: the green dragon perched on the controls
+     box, breathing fire every few seconds. Flame is three plain pixel blocks
+     growing out of the mouth (transform eased, visibility flickered with a
+     separate steps() animation). Only inserted for vp_42/Vp42_F - see the
+     g.id check near cSec.appendChild(cBox). */
+  .qr-wrap{
+    position:absolute;top:-56px;right:22px;width:56px;height:56px;
+    pointer-events:none;z-index:3;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .qr-dragon{position:absolute;inset:0;}
+  .qr-dragon img{display:block;width:100%;height:100%;image-rendering:pixelated;}
+  .qr-flame{
+    position:absolute;left:-30px;top:9px;width:32px;height:12px;
+    opacity:0;transform-origin:right center;
+    animation:qr-flame-show 7s steps(1,end) infinite,
+              qr-flame-grow 7s ease-out infinite;
+  }
+  .qr-flame i{position:absolute;display:block;}
+  .qr-flame i:nth-child(1){right:0;top:4px;width:8px;height:4px;background:#ffd23f;}
+  .qr-flame i:nth-child(2){right:7px;top:2px;width:10px;height:8px;background:#ff8c1a;}
+  .qr-flame i:nth-child(3){right:16px;top:3px;width:13px;height:6px;background:#e5484d;}
+  @keyframes qr-flame-show{
+    0%,54%{opacity:0;}
+    56%{opacity:1;}
+    62%{opacity:0;}
+    63%{opacity:1;}
+    68%{opacity:0;}
+    69%{opacity:1;}
+    76%,100%{opacity:0;}
+  }
+  @keyframes qr-flame-grow{
+    0%,54%{transform:scaleX(.3);}
+    58%{transform:scaleX(.75);}
+    66%{transform:scaleX(1);}
+    76%,100%{transform:scaleX(1);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .qr-flame{animation:none;opacity:0;}
+  }
+  /* Zak McKracken easter egg: Zak pops his head up from behind the top edge
+     of his own controls box, looks around, ducks back down, then pops up
+     somewhere else along the edge. Sprite is the classic 1988 C64 Zak (yellow
+     hat, glasses, black suit). The wrapper's overflow:hidden is the box edge;
+     the img slides up into it. Only inserted for c64_zak_mckracken - see the
+     g.id check near c64Sec.appendChild(c64Box). */
+  .zak-peek{
+    position:absolute;bottom:100%;left:40%;width:47px;height:62px;
+    overflow:hidden;pointer-events:none;z-index:3;
+  }
+  .zak-peek img{
+    display:block;width:47px;height:152px;image-rendering:pixelated;
+    transform:translateY(100%);
+    transition:transform .45s cubic-bezier(.2,1.4,.4,1);
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .zak-peek.up img{transform:translateY(0);animation:zak-look 2.4s ease-in-out .5s infinite;}
+  @keyframes zak-look{
+    0%,100%{transform:translateY(0) rotate(0deg);}
+    30%{transform:translateY(0) rotate(-6deg);}
+    60%{transform:translateY(0) rotate(6deg);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .zak-peek img{transition:none;}
+    .zak-peek.up img{animation:none;transform:translateY(0);}
+  }
+  .controls-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0 0 12px;}
+  .controls-grid .kact{color:var(--text);}
+  .kbd{
+    display:inline-block;background:var(--surface-2);border:1px solid var(--border);
+    border-bottom-width:2px;border-radius:5px;padding:1px 8px;font-size:12.5px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--text);white-space:nowrap;
+  }
+  .controls-note{margin:10px 0 0;line-height:1.6;font-size:13.5px;}
+  .controls-note strong{color:var(--text);}
+  /* a tip about this cartridge specifically - worth more than the generic ones */
+  .own-note{
+    color:var(--text);background:var(--surface-2);border-left:3px solid var(--accent);
+    border-radius:0 6px 6px 0;padding:9px 12px;margin-top:12px;
+  }
+
+  /* Other versions of this game (alternates.js) */
+  .alt-box{
+    max-width:760px;background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:14px 18px;font-size:14px;color:var(--text-dim);
+  }
+  .alt-note{margin:0 0 10px;line-height:1.6;font-size:13.5px;}
+  .alt-backref .alt-note{margin:0;}
+  .alt-list{margin:0;padding-left:20px;line-height:1.9;}
+  .alt-list a{color:var(--accent);text-decoration:none;}
+  .alt-list a:hover{text-decoration:underline;}
+  .alt-meta{color:var(--text-mute);font-size:12.5px;}
+  .alt-box a{color:var(--accent);text-decoration:none;}
+
+  /* Extras (own scans) */
+  .extras-list{display:flex;flex-direction:column;gap:16px;max-width:760px;}
+  .extras-pdf{
+    width:100%;height:70vh;border:1px solid var(--border);border-radius:var(--radius);
+    background:#000;
+  }
+  .extras-img{max-width:100%;border:1px solid var(--border);border-radius:var(--radius);}
+  .extras-dl{font-size:13px;color:var(--text-mute);}
+  .extras-dl a{color:var(--accent);text-decoration:none;}
+
+  /* Cheats - Videopac shelf only. A native <details> block so "hidden but
+     revealed on demand" needs no extra JS state; sits under the controls
+     box it's appended to. */
+  .cheats-box{
+    margin-top:14px;border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;background:var(--surface-2);
+  }
+  .cheats-box summary{
+    cursor:pointer;list-style:none;padding:11px 16px;font-weight:700;font-size:14px;
+    color:var(--text);display:flex;align-items:center;gap:8px;user-select:none;
+  }
+  .cheats-box summary::-webkit-details-marker{display:none;}
+  .cheats-box summary::after{content:"\25BE";margin-left:auto;color:var(--text-mute);transition:transform .15s;}
+  .cheats-box[open] summary::after{transform:rotate(180deg);}
+  .cheats-box summary:hover{color:var(--accent);}
+  .cheats-body{padding:2px 16px 14px;border-top:1px solid var(--border);}
+  .cheats-item{margin:12px 0 0;}
+  .cheats-item h4{margin:0 0 4px;font-size:13.5px;color:var(--accent);}
+  .cheats-item p{margin:0;font-size:13.5px;line-height:1.6;color:var(--text-dim);}
+  /* the source's diagrams/screenshots are tiny native-res console
+     captures (~155px) - shown at a readable size rather than stretched */
+  .cheats-img{
+    display:block;margin-top:10px;width:220px;max-width:100%;image-rendering:pixelated;
+    border:1px solid var(--border);border-radius:6px;background:#000;
+  }
+  .cheats-source{margin:14px 0 0;font-size:12px;color:var(--text-mute);}
+  .cheats-source a{color:var(--accent);text-decoration:none;}
+
+  /* Tips - C64/PC shelves, sourced from StrategyWiki (tips.js). Same
+     "hidden but revealed on demand" <details> pattern as the cheats box
+     above, kept as its own class since the data source (and per-entry
+     source link) is different - not styled differently on purpose, so the
+     two read as the same kind of thing to a visitor. */
+  .tips-box{
+    margin-top:14px;border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;background:var(--surface-2);
+  }
+  .tips-box summary{
+    cursor:pointer;list-style:none;padding:11px 16px;font-weight:700;font-size:14px;
+    color:var(--text);display:flex;align-items:center;gap:8px;user-select:none;
+  }
+  .tips-box summary::-webkit-details-marker{display:none;}
+  .tips-box summary::after{content:"\25BE";margin-left:auto;color:var(--text-mute);transition:transform .15s;}
+  .tips-box[open] summary::after{transform:rotate(180deg);}
+  .tips-box summary:hover{color:var(--accent);}
+  .tips-body{padding:2px 16px 14px;border-top:1px solid var(--border);}
+  .tips-item{margin:12px 0 0;}
+  .tips-item p{margin:0;font-size:13.5px;line-height:1.6;color:var(--text-dim);}
+  .tips-source{margin:14px 0 0;font-size:12px;color:var(--text-mute);}
+  .tips-source a{color:var(--accent);text-decoration:none;}
+</style>
+<!-- Retro Vault — anonymous usage counting (Cloudflare Web Analytics).
+     Cookieless. No personal data, no cross-site tracking, no fingerprinting.
+     Does not run from an offline (file://) copy.
+     Opt out permanently from the browser console:
+       localStorage.setItem('rv-no-analytics', '1')
+-->
+<script>
+(function () {
+  var TOKEN = "ffd5bd26c2f548acaba24a6847413f1c";
+  if (location.protocol === "file:") return;         // offline copy: beacon cannot work
+  try {
+    if (localStorage.getItem("rv-no-analytics") === "1") return;
+  } catch (e) { /* storage blocked — carry on */ }
+  var s = document.createElement("script");
+  s.type = "module";
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: TOKEN }));
+  document.head.appendChild(s);
+})();
+</script>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand"><span class="brand-mark"><img src="assets/kcmunch.png" alt="" width="22" height="22"></span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; PC</span></div>
+  <div style="flex:1"></div>
+  <a id="resourcesLink" class="ghost-btn" href="resources.html" data-i18n="resources" style="display:inline-block;text-decoration:none;">Resources</a>
+  <div class="social-links">
+    <a href="https://retrovault.world" target="_blank" rel="noopener" aria-label="retrovault.world" title="retrovault.world">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+    </a>
+    <a href="https://github.com/donmiguel-stack/retrovault" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    <a href="https://x.com/retrovaultworld" target="_blank" rel="noopener" aria-label="X" title="X">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://instagram.com/retrovault_world" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793 0 1.44.645 1.44 1.44z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61593364675822" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+      <svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0 0 3.603 0 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg>
+    </a>
+  </div>
+</div>
+<div class="game-page" id="page">
+  <a class="back-link" href="index.html" id="backLink">&#9664; <span data-i18n="back">Back to library</span></a>
+  <p class="missing-note" id="loading">Loading&hellip;</p>
+</div>
+
+<script src="i18n.js?v=119"></script>
+<script src="setup-i18n.js?v=119"></script>
+<script src="games.js?v=116"></script>
+<script src="alternates.js?v=4"></script>
+<script src="extras.js?v=109"></script>
+<script src="packaging.js?v=109"></script>
+<script src="genres.js?v=114"></script>
+<script src="brazil.js?v=109"></script>
+<script src="usa.js?v=109"></script>
+<script src="shops.js?v=109"></script>
+<script src="support.js?v=110"></script>
+<script src="downloads.js?v=111"></script>
+<script src="romsources.js?v=3"></script>
+<script src="hosted.js?v=2"></script>
+<script src="products.js?v=1"></script>
+<script src="cheats.js?v=112"></script>
+<script src="tips.js?v=110"></script>
+<script src="walkthroughs.js?v=1"></script>
+<script src="featured.js?v=112"></script>
+<script src="c64ad.js?v=109"></script>
+<script src="gamepages.js?v=118"></script>
+<script src="demo.js?v=112"></script>
+<script>
+(function () {
+  var COVER_COLORS = ["#5b8def","#3ba97a","#c07de0","#e0865a","#d65a7e","#8a8f98","#e0c05a","#4fb3bf"];
+  function hashColor(str){var h=0;for(var i=0;i<str.length;i++)h=(h*31+str.charCodeAt(i))>>>0;return COVER_COLORS[h%COVER_COLORS.length];}
+  function initials(title){
+    var w=title.replace(/[^a-zA-Z0-9 ]/g,"").trim().split(/\s+/).filter(Boolean);
+    if(!w.length)return "?";
+    if(w.length===1)return w[0].slice(0,2).toUpperCase();
+    return (w[0][0]+w[1][0]).toUpperCase();
+  }
+  function el(tag, cls, text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+
+  document.querySelectorAll("[data-i18n]").forEach(function(el){ el.textContent = window.t(el.dataset.i18n); });
+  document.documentElement.lang = window.currentLang();
+
+  var id = new URLSearchParams(location.search).get("id");
+  var games = (window.GAMES_DATA && window.GAMES_DATA.games) || [];
+  var g = games.find(function(x){return x.id===id;});
+  var page = document.getElementById("page");
+  document.getElementById("loading").remove();
+
+  if (!g) {
+    page.appendChild(el("p","missing-note",(((window.SETUP_I18N||{})[window.currentLang()]||(window.SETUP_I18N||{}).en||{}).s_notFound)||"Game not found."));
+    return;
+  }
+  document.title = g.title + " | Retro Vault";
+  var data = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id]) || {};
+
+  // ---- hero ----
+  var hero = el("div","game-hero");
+  var cover = el("div","hero-cover", initials(g.title));
+  cover.style.background = hashColor(g.category + g.title);
+  var img = new Image();
+  img.alt = g.title + " box art";
+  // ?v= so a newly added cover isn't hidden behind the browser's cached miss
+  var COVER_V = 22;
+  img.onerror = function(){
+    if(this.dataset.stage==="png"){this.dataset.stage="jpg";this.src="covers/"+g.id+".jpg?v="+COVER_V;}
+    else if(data.manual){this.dataset.stage="manual";this.src="manuals/"+data.manual.item+"/p00.jpg";}
+    else this.remove();
+  };
+  img.dataset.stage="png";
+  img.src="covers/"+g.id+".png?v="+COVER_V;
+  cover.appendChild(img);
+  if (/Homebrew/.test(g.category)) {
+    var rib = el("span","cover-ribbon", window.t("cat_homebrew"));
+    cover.appendChild(rib);
+  }
+  hero.appendChild(cover);
+
+  // American Football (vp_03) easter egg - the ball the runner is
+  // cradling launches out of his grip and sails off screen, a beat after
+  // the cover art loads (and again on click, since the cover doubles as a
+  // button here). Position/size are read off the painted ball's actual
+  // spot in covers/vp_03.png - see the CSS comment above .af-ball for the
+  // measurements. Skips itself entirely under prefers-reduced-motion.
+  if (g.id === "vp_03") {
+    cover.style.cursor = "pointer";
+    cover.title = "Hut hut - hike it!";
+    var afPlaying = false;
+    var launchFootball = function(){
+      if (afPlaying) return;
+      var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduced) return;
+      var rect = cover.getBoundingClientRect();
+      if (!rect.width) return;
+      afPlaying = true;
+      var startSize = rect.width * 0.164;
+      var startLeft = rect.left + rect.width * 0.0977 - startSize / 2;
+      var startTop = rect.top + rect.height * 0.7263 - startSize / 2;
+      var ball = new Image();
+      ball.className = "af-ball";
+      ball.alt = "";
+      ball.src = "assets/football-launch.png";
+      ball.style.width = startSize + "px";
+      ball.style.height = "auto";
+      ball.style.transform = "translate(" + startLeft + "px," + startTop + "px)";
+      document.body.appendChild(ball);
+      var finalWidth = Math.min(190, Math.max(110, window.innerWidth * 0.12));
+      var scale = finalWidth / startSize;
+      var dx = (window.innerWidth - startLeft) + 260;
+      var dy = -(startTop + startSize) - 220;
+      var anim = ball.animate([
+        { transform:"translate("+startLeft+"px,"+startTop+"px) scale(1) rotate(0deg)", offset:0, opacity:1 },
+        { transform:"translate("+(startLeft+dx*0.12)+"px,"+(startTop+dy*0.08)+"px) scale(1.15) rotate(70deg)", offset:0.16, opacity:1 },
+        { transform:"translate("+(startLeft+dx)+"px,"+(startTop+dy)+"px) scale("+scale+") rotate(620deg)", offset:1, opacity:0.15 }
+      ], { duration:1400, easing:"cubic-bezier(.4,0,.2,1)", fill:"forwards" });
+      anim.onfinish = function(){ ball.remove(); afPlaying = false; };
+    };
+    img.addEventListener("load", function onAfLoad(){
+      if (img.dataset.stage === "manual") return;
+      img.removeEventListener("load", onAfLoad);
+      setTimeout(launchFootball, 800);
+    });
+    cover.addEventListener("click", launchFootball);
+  }
+
+  var info = el("div","hero-info");
+  info.appendChild(el("h1",null,g.title));
+  var meta = el("div","hero-meta");
+  var pb = el("span","badge "+(g.platform==="G7400+"?"badge-g7400":g.platform==="C64"?"badge-c64":g.platform==="PC"?"badge-pc":"badge-g7000"), g.platform);
+  meta.appendChild(pb);
+  // same wording as the library chips, so the category follows the language too
+  var CAT_KEYS = {
+    "Official Videopac (EU)":"cat_eu", "Official Videopac (French)":"cat_french",
+    "Official Odyssey2 (US)":"cat_us", "Imagic":"cat_imagic",
+    "Parker Brothers":"cat_parker", "Jopac (French)":"cat_jopac",
+    "Philips Brazil":"cat_brazil", "PAL dumps":"cat_pal",
+    "Modified / fixed":"cat_modified", "Rare / unreleased":"cat_rare",
+    "Utility / unknown":"cat_rare", "Homebrew (community)":"cat_homebrew",
+    "Homebrew (this project)":"cat_homebrew",
+    "Commodore 64":"cat_c64",
+    "MS-DOS":"cat_pc"
+  };
+  var catKey = CAT_KEYS[g.category];
+  meta.appendChild(el("span","badge badge-cat", catKey ? window.t(catKey) : g.category));
+  if (g.vpNumber) meta.appendChild(el("span","badge badge-cat","VP #"+g.vpNumber));
+  // which surviving dump this entry is - see VARIANT_LABELS in app.js
+  var VARIANT_LABELS = {"banked-rom":["var_banked","varx_banked"],"alt-dump":["var_alt","varx_alt"]};
+  var variantKeys = (g.tags||[]).map(function(t){return VARIANT_LABELS[t];}).filter(Boolean)[0];
+  if (variantKeys) meta.appendChild(el("span","badge badge-variant", window.t(variantKeys[0])));
+  // what kind of game it is, from genres.js
+  var gen = (window.GENRE_DATA || {})[g.id];
+  if (gen) {
+    meta.appendChild(el("span","badge badge-cat", window.t("g_"+gen.genre)));
+    meta.appendChild(el("span","badge badge-cat", window.t("p_"+gen.players)));
+  }
+  info.appendChild(meta);
+  // year, publisher and developer, for shelves whose catalogue carries them
+  if (g.year || g.publisher) {
+    var credits = [g.year, g.publisher];
+    if (g.developer && g.developer !== g.publisher) credits.push(g.developer);
+    info.appendChild(el("p","alt-name", credits.filter(Boolean).join(" \u00b7 ")));
+  }
+  if (gen && gen.unsure) {
+    var un = el("p","variant-note", window.t("unsureNote"));
+    info.appendChild(un);
+  }
+
+  if (data.history) {
+    info.appendChild(el("p","history-text", data.history.text));
+    // Most histories are lifted from Wikipedia and credited as such. The
+    // homebrews mostly aren't in Wikipedia at all, so those carry a written
+    // note and either their own source link or none.
+    var src = el("p","history-source");
+    if (data.history.wikiTitle) {
+      src.innerHTML = 'From <a href="'+data.history.url+'" target="_blank" rel="noopener">Wikipedia: '+data.history.wikiTitle+'</a>';
+      info.appendChild(src);
+    } else if (data.history.source) {
+      src.innerHTML = data.history.url
+        ? 'Source: <a href="'+data.history.url+'" target="_blank" rel="noopener">'+data.history.source+'</a>'
+        : 'Source: '+data.history.source;
+      info.appendChild(src);
+    }
+  } else {
+    info.appendChild(el("p","history-text","No published history for this one - it lives on through cartridge dumps and collections like this vault."));
+  }
+
+  // more than one dump of this cart survives - say what this one is
+  if (variantKeys) {
+    var vn = el("p","variant-note");
+    vn.innerHTML = window.t(variantKeys[1]);
+    info.appendChild(vn);
+  }
+
+  // Brazilian release of the same cartridge, if there was one
+  var br = (window.BRAZIL_DATA && window.BRAZIL_DATA[g.id]) || null;
+  if (br) {
+    var bl = el("p","alt-name");
+    bl.innerHTML = window.t('knownAs') + ' <strong>' + br.title + '</strong> ' +
+                   '<span class="alt-num">' + br.num + '</span>';
+    info.appendChild(bl);
+  }
+
+  // US release of the same cartridge, if it was renamed over there
+  var usa = (window.USA_DATA && window.USA_DATA[g.id]) || null;
+  if (usa) {
+    var ul = el("p","alt-name");
+    ul.innerHTML = window.t('usAs') + ' <strong>' + usa.title + '</strong> ' +
+                   '<span class="alt-num">' + usa.num + '</span>';
+    info.appendChild(ul);
+  }
+
+  // what was in the original box besides the cartridge
+  var pack = (window.PACKAGING_DATA && window.PACKAGING_DATA[g.id]) || null;
+  if (pack) {
+    var pl = el("p","pack-line");
+    pl.innerHTML = '<span class="badge badge-pack">' + pack.kind + '</span> ' + pack.detail;
+    info.appendChild(pl);
+  }
+
+  // favorite toggle - same localStorage key the library grid uses
+  var FAV_KEY = "VideopacVault_favorites";
+  function readFavs(){ try { return JSON.parse(localStorage.getItem(FAV_KEY)||"{}")||{}; } catch(e){ return {}; } }
+  var favBtn = el("button","fav-toggle");
+  function paintFav(){
+    var on = !!readFavs()[g.id];
+    favBtn.classList.toggle("on", on);
+    favBtn.innerHTML = (on ? "&#9733; " : "&#9734; ") + (on ? window.t("inFav") : window.t("addFav"));
+  }
+  favBtn.type = "button";
+  favBtn.addEventListener("click", function(){
+    var f = readFavs();
+    if (f[g.id]) delete f[g.id]; else f[g.id] = 1;
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(f)); } catch(e){}
+    paintFav();
+  });
+  paintFav();
+
+  // Homebrew/copyright-free titles the Vault ships as a direct download
+  // (homebrew-downloads/, see downloads.js) - looked up here too, not just
+  // in the "download from the Vault" block below, so the gating logic just
+  // past this can offer it as a fallback when emulator/roms/ is empty.
+  var dl = (window.DOWNLOAD_DATA || {})[g.id];
+  var start = el("button","start-btn");
+  start.appendChild(el("span","tri"));
+  start.appendChild(document.createTextNode("START"));
+  // each shelf plays through its own emulator - Videopac/C64 through webretro's
+  // libretro cores, PC through js-dos (see emulator/dos.html)
+  var CORES = { "C64": "vice_x64" };
+  // The Vault's own file host (hosted.js): the BIOS plus the abandonware
+  // part of all three shelves (Videopac since 2026-09-04, C64 and MS-DOS
+  // since 2026-09-06), served from retrovault.world rather than from this
+  // repo. Used two ways below - as a third place to look for the ROM after
+  // emulator/roms/ and homebrew-downloads/, and (Videopac only) as a BIOS
+  // fallback the emulator page only tries when its local bios/ is empty.
+  var HOSTED = window.HOSTED_FILES || null;
+  function hostedRomUrl() {
+    if (!HOSTED || !HOSTED.base || !HOSTED.roms) return null;
+    if (HOSTED.roms.indexOf(g.romFile) === -1) return null;
+    return HOSTED.base + "roms/" + encodeURIComponent(g.romFile);
+  }
+  function hostedBiosParam() {
+    if (!HOSTED || !HOSTED.base || !HOSTED.bios) return "";
+    if (g.platform === "PC" || g.platform === "C64") return "";
+    return "&biosbase=" + encodeURIComponent(HOSTED.base + HOSTED.bios);
+  }
+  // Videopac only: a cartridge can ask for a specific BIOS image (gamepages.js
+  // "bios"). Default is g7400.bin for every title; VP05 Blackjack needs the
+  // G7000 one (o2rom.bin) because its shuffle calls an undocumented BIOS
+  // routine that only exists there.
+  function gameBiosParam() {
+    var b = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id] || {}).bios;
+    if (!b || g.platform === "PC" || g.platform === "C64") return "";
+    return "&bios=" + encodeURIComponent(b);
+  }
+  start.addEventListener("click", function(){
+    var fb = start.dataset.dlfallback ? "&dlfallback=" + encodeURIComponent(start.dataset.dlfallback) : "";
+    if (g.platform === "PC") {
+      // dos.html keeps the zip name (js-dos keys its saves off it) and gets
+      // the hosted copy as a separate &hosted= URL to fall back to.
+      var hz = start.dataset.hosted ? "&hosted=" + encodeURIComponent(start.dataset.hosted) : "";
+      location.href = "emulator/dos.html?zip=" + encodeURIComponent(g.romFile) +
+                      "&title=" + encodeURIComponent(g.title) +
+                      "&id=" + encodeURIComponent(g.id) + fb + hz;
+    } else {
+      var rom = start.dataset.hosted ? start.dataset.hosted : g.romFile;
+      location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
+                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam() + gameBiosParam();
+    }
+  });
+  info.appendChild(document.createElement("br"));
+  var actions = el("div","hero-actions");
+  // START appears only once we know something will actually load - checked
+  // live with a HEAD request, so dropping a file into emulator/roms/ is all
+  // it takes, and nobody hits an error screen (or, on the Videopac shelf,
+  // the emulator core's raw browser alert()) from a button that was always
+  // going to fail. For the handful of homebrew/copyright-free titles the
+  // Vault ships itself (homebrew-downloads/, see downloads.js), a missing
+  // emulator/roms/ file isn't the end of it - checked there too before
+  // giving up, and the emulator page is told where to find it via
+  // &dlfallback= so it can actually play it (see assets/base.js /
+  // dos.html's resolveBundleUrl - both only try this path when told to).
+  var romNote = el("p","missing-note","");
+  info.appendChild(romNote);
+  function vaultShowStart(fromDownloads, hostedUrl) {
+    romNote.remove();
+    if (fromDownloads) start.dataset.dlfallback = dl.file;
+    if (hostedUrl) {
+      start.dataset.hosted = hostedUrl;
+      start.title = window.t("playsHosted");
+    }
+    actions.insertBefore(start, actions.firstChild);
+  }
+  function vaultShowMissing() {
+    var key = g.platform === "PC" ? "pc_noRom" : (g.platform === "C64" ? "c64_noRom" : "vp_noRom");
+    romNote.textContent = window.t(key, { file: g.romFile });
+    // Where to get it (romsources.js): for titles the Vault can neither ship
+    // nor host, point at a preservation copy and spell out the three steps.
+    var src = (window.ROM_SOURCES || {})[g.id];
+    if (!src || !src.url || !src.file) return;
+    var box = el("div", "get-box");
+    box.appendChild(el("h3", null, window.t("getRomHead")));
+    var ol = document.createElement("ol");
+    var s1 = document.createElement("li");
+    s1.innerHTML = window.t("getRomStep1", {
+      file: "<code>" + esc(src.file) + "</code>",
+      site: '<a href="' + esc(src.url) + '" target="_blank" rel="noopener nofollow">' + esc(src.site || "archive.org") + "</a>"
+    });
+    var s2 = document.createElement("li");
+    var bare = /\.(d64|crt|prg|t64|bin)$/i.test(src.file);   // a disk image, not a zip - no "no need to unzip"
+    s2.innerHTML = window.t(bare ? "getRomStep2file" : "getRomStep2", { file: "<code>" + esc(g.romFile) + "</code>" });
+    var s3 = document.createElement("li");
+    s3.innerHTML = window.t("getRomStep3", { folder: "<code>emulator/roms/</code>" });
+    ol.appendChild(s1); ol.appendChild(s2); ol.appendChild(s3);
+    box.appendChild(ol);
+    if (src.manual) {
+      var mn = el("p", "get-note");
+      mn.innerHTML = window.t("getRomManual") + ' <a href="' + esc(src.manual) + '" target="_blank" rel="noopener nofollow">' + esc(src.site || "archive.org") + "</a>";
+      box.appendChild(mn);
+    }
+    if (src.note) box.appendChild(el("p", "get-note", src.note));
+    romNote.insertAdjacentElement("afterend", box);
+  }
+  function esc(str) { return String(str).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  // Last resort, after roms/ and homebrew-downloads/: the Vault's own file
+  // host (hosted.js). Same HEAD-before-button discipline - the host has to
+  // answer, with CORS, before START appears.
+  function vaultTryHosted() {
+    var url = hostedRomUrl();
+    if (!url) { vaultShowMissing(); return; }
+    fetch(url, { method: "HEAD", mode: "cors" })
+      .then(function (r) { if (r.ok) vaultShowStart(false, url); else vaultShowMissing(); })
+      .catch(vaultShowMissing);
+  }
+  fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" })
+    .then(function (r) {
+      if (r.ok) { vaultShowStart(false); return; }
+      throw 0;
+    })
+    .catch(function () {
+      if (!dl) { vaultTryHosted(); return; }
+      fetch("homebrew-downloads/" + encodeURIComponent(dl.file), { method: "HEAD" })
+        .then(function (r) { if (r.ok) vaultShowStart(true); else vaultTryHosted(); })
+        .catch(vaultTryHosted);
+    });
+  actions.appendChild(favBtn);
+  info.appendChild(actions);
+
+  // ---- for sale ----
+  // Somebody selling the real cartridge, from shops.js. An outside shop, no
+  // cut taken, and the price carries the date it was checked - second-hand
+  // stock moves, and a number with no date on it quietly becomes a lie.
+  // The button sits in the same row as START and the favourite toggle, set a
+  // little further off so it reads as a different kind of thing; the shop and
+  // the date it was priced go on a line underneath.
+  var offers = (window.SHOPS_DATA && window.SHOPS_DATA[g.id]) || [];
+  offers.forEach(function (o) {
+    var col = el("div","buy-col");
+    var a = document.createElement("a");
+    a.className = "buy-btn";
+    a.href = o.url; a.target = "_blank"; a.rel = "noopener nofollow";
+    a.innerHTML = '<span class="buy-label">' + window.t("buyThis") + '</span>' +
+                  '<span class="buy-price">' + o.price + '</span>';
+    col.appendChild(a);
+    // Just the shop on screen. The condition and the date the price was last
+    // seen stay in shops.js and ride along as the hover title, so the line
+    // reads clean but the number is still dated somewhere. Hung below the
+    // button rather than placed in the flow, so the row still centres on the
+    // buttons alone and START does not shift.
+    // "variant" is for when the cartridge on sale is not the one on this page
+    // - the same game in another region's box. Says so on the line itself,
+    // because someone who knows the boxes will spot it anyway. An i18n key
+    // (rel_eu, rel_us, rel_br, rel_fr) follows the language picker; anything
+    // else is printed as written.
+    var vt = "";
+    if (o.variant) {
+      var tr = window.t(o.variant);
+      vt = " · " + (tr && tr !== o.variant ? tr : o.variant);
+    }
+    var line = el("p","buy-note", o.shop + vt);
+    line.title = (o.note ? o.note + " · " : "") +
+      (o.checked ? window.t("priceChecked", { date: o.checked }) : "");
+    col.appendChild(line);
+    actions.appendChild(col);
+  });
+
+  // ---- support the creator ----
+  // Free/pay-what-you-want homebrew, from support.js. A link straight to the
+  // creator's own release page - itch.io or wherever they actually put it -
+  // so a tip goes to them, not through the Vault. Styled apart from Buy so
+  // the two do not read as the same kind of link; nothing here is a purchase.
+  var support = (window.SUPPORT_DATA && window.SUPPORT_DATA[g.id]) || [];
+  support.forEach(function (s) {
+    var scol = el("div","support-col");
+    var sa = document.createElement("a");
+    sa.className = "support-btn";
+    sa.href = s.url; sa.target = "_blank"; sa.rel = "noopener nofollow";
+    sa.innerHTML = '<span class="support-heart">&#9829;</span>' +
+                   '<span class="support-label">' + window.t("supportCreator") + '</span>';
+    scol.appendChild(sa);
+    var sline = el("p","support-note", s.note || s.creator);
+    sline.title = (s.creator || "") +
+      (s.creator && s.checked ? " \u00b7 " : "") +
+      (s.checked ? window.t("linkChecked", { date: s.checked }) : "");
+    scol.appendChild(sline);
+    actions.appendChild(scol);
+  });
+
+  // ---- the cartridge release ----
+  // Facts about the physical homebrew cartridge, from products.js - author,
+  // year, ROM size, what came in the box, whether the shop still has it -
+  // lifted from the shop's own product page (Packrat Video Games / Good
+  // Deal Games) and linked back to it. Not a Buy button (shops.js stays
+  // off) and no price: that is the shop's to print, not ours. Rendered as
+  // a small spec sheet underneath the action row.
+  var product = (window.PRODUCT_DATA && window.PRODUCT_DATA[g.id]) || null;
+  if (product) {
+    var pbox = el("div","product-box");
+    pbox.appendChild(el("div","product-head", window.t("productHead")));
+    var pgrid = el("dl","product-grid");
+    function prow(labelKey, val) {
+      if (!val) return;
+      pgrid.appendChild(el("dt","", window.t(labelKey)));
+      pgrid.appendChild(el("dd","", val));
+    }
+    prow("productAuthor", product.author);
+    prow("productYear", product.year);
+    prow("productPublisher", product.publisher);
+    prow("productRom", product.rom);
+    prow("productTv", product.tv);
+    prow("productSystems", product.systems);
+    prow("productVoice", product.voice);
+    prow("productPlayers", product.players);
+    prow("productBox", product.box);
+    prow("productAvail", product.availability);
+    pbox.appendChild(pgrid);
+    if (product.blurb) pbox.appendChild(el("p","product-blurb", product.blurb));
+    if (product.url) {
+      var pl = el("p","product-source");
+      pl.appendChild(document.createTextNode(window.t("productSource") + " "));
+      var pa = document.createElement("a");
+      pa.href = product.url; pa.target = "_blank"; pa.rel = "noopener nofollow";
+      pa.textContent = product.shop || product.url;
+      pl.appendChild(pa);
+      if (product.checked) pl.appendChild(document.createTextNode(" \u00b7 " + window.t("linkChecked", { date: product.checked })));
+      pbox.appendChild(pl);
+    }
+    info.appendChild(pbox);
+  }
+
+  // ---- download from the Vault ----
+  // Homebrew/copyright-free games the Vault hosts itself, in
+  // homebrew-downloads/ (see downloads.js) - not user-supplied ROMs, and
+  // unlike Buy/Support, not a link elsewhere. Hidden until a HEAD request
+  // confirms the file is really there, same discipline as the START button
+  // above - no button that leads to a 404.
+  if (dl) {
+    var dcol = el("div","dl-col");
+    dcol.style.display = "none";
+    var da = document.createElement("a");
+    da.className = "dl-btn";
+    da.href = "homebrew-downloads/" + encodeURIComponent(dl.file);
+    da.setAttribute("download", "");
+    da.innerHTML = '<span class="dl-icon">&#8681;</span>' +
+                   '<span class="dl-label">' + window.t("downloadRom") + '</span>';
+    dcol.appendChild(da);
+    dcol.appendChild(el("p","dl-note", dl.note || window.t("dlFree")));
+    actions.appendChild(dcol);
+    fetch("homebrew-downloads/" + encodeURIComponent(dl.file), { method: "HEAD" })
+      .then(function (r) { if (r.ok) dcol.style.display = ""; })
+      .catch(function () {});
+  }
+  hero.appendChild(info);
+  page.appendChild(hero);
+
+  // ---- controls ----
+  // Mapping verified against the O2EM libretro core source + this build's
+  // RetroArch keybinds: RetroPad B = "G" = the joystick's single action
+  // button; arrows = the joystick; number keys pass straight through.
+  //
+  // Tab/Game Focus does NOT gate whether key presses reach the console's
+  // keyboard - it only stops the browser/RetroArch grabbing keys as hotkeys.
+  // Letters and numbers always reach the console directly.
+  //
+  // The G-key bleed into on-screen name fields is NOT authentic hardware
+  // behaviour (an earlier version of this note said it was - wrong). Standalone
+  // O2EM keeps a joykeystab[] table so a key used for the joystick is masked
+  // out of the keyboard scan; the libretro port never populates it (set_joykeys
+  // is commented out in src/keyboard.c), so "g" registers as BOTH fire and the
+  // console's G key. Fixable only by moving fire off a key that exists on the
+  // Odyssey2 keyboard.
+  //
+  // Related, and now fixed in emulator/assets/base.js: webretro's stock binds
+  // put RetroPad buttons on "y","e","p","r","o", and this core maps those
+  // buttons to console number keys 0-4 - so typing P also typed 2, which broke
+  // K.C. Munchkin's create-a-maze (RESET then P) and every other
+  // keyboard-driven title. Those binds are now "nul".
+  var cSec = el("div","section");
+  cSec.appendChild(el("h2",null,window.t("controls")));
+
+  // Wall Street ticker - a green stock-ticker banner above the controls box,
+  // "BUY BITCOIN [symbol]" scrolling left to right on a loop. The EU release
+  // and its standalone Brazilian rebrand (br_9434, same game per gamepages.js
+  // relatedTo note) both get it.
+  var WALLST_IDS = ["vp_46", "br_9434"];
+  if (WALLST_IDS.indexOf(g.id) !== -1) {
+    var tickerWrap = el("div", "wallst-ticker");
+    var track = el("div", "wallst-ticker-track");
+    var phrase = 'BUY BITCOIN <span class="btc-sym">B</span>';
+    var repeated = Array(6).fill(phrase).join(" &bull; ");
+    var msg1 = el("span", "wallst-msg"); msg1.innerHTML = repeated;
+    var msg2 = el("span", "wallst-msg"); msg2.innerHTML = repeated;
+    track.appendChild(msg1);
+    track.appendChild(msg2);
+    tickerWrap.appendChild(track);
+    cSec.appendChild(tickerWrap);
+  }
+
+  // long-form control text lives in setup-i18n.js, one pack per language
+  var L = (window.SETUP_I18N || {})[window.currentLang()] || (window.SETUP_I18N || {}).en || {};
+  function LT(key){ return L[key] || ((window.SETUP_I18N||{}).en||{})[key] || ""; }
+  var cBox = el("div","controls-box");
+  var style = data.input || "joystick";
+
+  function row(grid, keysHtml, action){
+    var k = el("span"); k.innerHTML = keysHtml; grid.appendChild(k);
+    var a = el("span","kact"); a.innerHTML = action; grid.appendChild(a);
+  }
+  var grid = el("div","controls-grid");
+  row(grid, '<span class="kbd">0</span>&ndash;<span class="kbd">9</span>', LT("c_pick"));
+  if (style === "joystick" || style === "mixed") {
+    row(grid, '<span class="kbd">&#8592;</span> <span class="kbd">&#8593;</span> <span class="kbd">&#8595;</span> <span class="kbd">&#8594;</span> + <span class="kbd">G</span>', LT("c_j1"));
+    row(grid, '<span class="kbd">W</span> <span class="kbd">A</span> <span class="kbd">S</span> <span class="kbd">D</span> + <span class="kbd">Q</span>', LT("c_j2"));
+  }
+  row(grid, '<span class="kbd">A</span>&ndash;<span class="kbd">Z</span> <span class="kbd">Space</span> <span class="kbd">Enter</span>', LT("c_kbd"));
+  row(grid, '<span class="kbd">F5</span>', LT("c_reset"));
+  // F2/F3 are RetroArch's save/load state hotkeys and act on whichever slot is
+  // picked in the emulator's States menu - see c_saveNote below.
+  row(grid, '<span class="kbd">F2</span> <span class="kbd">F3</span>', LT("c_state"));
+  row(grid, '<span class="kbd">Right Shift</span>', LT("c_osk"));
+  if (style === "keyboard" || style === "mixed") {
+    row(grid, '<span class="kbd">Tab</span>', LT("c_focus"));
+  }
+  cBox.appendChild(grid);
+
+  // A tip that only applies to this cartridge, from gamepages.js. Written once,
+  // in English, because it describes one game rather than the machine — the
+  // notes below it come from setup-i18n.js and follow the language picker.
+  if (data.note) {
+    var nOwn = el("p","controls-note own-note");
+    nOwn.innerHTML = data.note;
+    cBox.appendChild(nOwn);
+  }
+
+  if (style === "keyboard") {
+    var n1 = el("p","controls-note");
+    n1.innerHTML = LT("c_kbdNote");
+    cBox.appendChild(n1);
+  } else if (style === "mixed") {
+    var n2 = el("p","controls-note");
+    n2.innerHTML = LT("c_mixNote");
+    cBox.appendChild(n2);
+  }
+  var nHidden = el("p","controls-note");
+  nHidden.innerHTML = LT("c_hidden");
+  cBox.appendChild(nHidden);
+  var nBleed = el("p","controls-note");
+  nBleed.innerHTML = LT("c_bleed");
+  cBox.appendChild(nBleed);
+  var nStick2 = el("p","controls-note");
+  nStick2.innerHTML = LT("c_stick2");
+  cBox.appendChild(nStick2);
+  var nSave = el("p","controls-note");
+  nSave.innerHTML = LT("c_saveNote");
+  cBox.appendChild(nSave);
+
+  // ---- cheats (Videopac shelf) ----
+  // cBox is built for every platform but only ever appended to the page via
+  // cSec below, in the G7000/G7400+ branch - the PC and C64 branches build
+  // their own separate boxes and never touch cBox at all. So attaching the
+  // cheats block here, unconditionally, is enough to keep it off the PC
+  // shelf without extra platform checks (the C64 branch has its own,
+  // near-identical cheats block further down, since it needs per-entry
+  // source links instead of the single odyssey2.info one used here). Data
+  // comes from cheats.js (sourced from odyssey2.info's community cheat
+  // page), keyed by games.js id - hidden by default behind a native
+  // <details> disclosure so it doesn't spoil the page, revealed on click.
+  var cheats = (window.CHEATS_DATA && window.CHEATS_DATA[g.id]) || null;
+  if (cheats) {
+    var cheatsBox = document.createElement("details");
+    cheatsBox.className = "cheats-box";
+    var cheatsSum = document.createElement("summary");
+    cheatsSum.innerHTML = "😎 Reveal Cheats";
+    cheatsBox.appendChild(cheatsSum);
+    var cheatsBody = el("div","cheats-body");
+    cheats.forEach(function (c) {
+      var item = el("div","cheats-item");
+      if (c.label) item.appendChild(el("h4",null,c.label));
+      item.appendChild(el("p",null,c.text));
+      // the site's own diagram/screenshot for cheats where the trick is a
+      // specific on-screen spot or message - shown as-is, including the
+      // handful that are animated GIFs (P.T. Barnum's Acrobats)
+      if (c.img) {
+        var cImg = new Image();
+        cImg.className = "cheats-img";
+        cImg.src = "assets/cheats/" + c.img;
+        cImg.alt = c.alt || "";
+        cImg.loading = "lazy";
+        item.appendChild(cImg);
+      }
+      cheatsBody.appendChild(item);
+    });
+    var cheatsSrc = el("p","cheats-source");
+    cheatsSrc.innerHTML = 'Source: <a href="https://odyssey2.info/cheats/" target="_blank" rel="noopener">odyssey2.info</a>';
+    cheatsBody.appendChild(cheatsSrc);
+    cheatsBox.appendChild(cheatsBody);
+    cBox.appendChild(cheatsBox);
+  }
+
+  // ---- tips (C64/PC shelves, StrategyWiki) ----
+  // Same idea as the cheats block above but a different source: one short
+  // in-house tip per game, each linking back to its own StrategyWiki guide
+  // page (tips.js) rather than one shared source link. Written as a shared
+  // helper since it's called from three different places (Videopac's cBox
+  // right here, plus the C64 and PC boxes further down). Returns null
+  // (renders nothing) when tips.js has no entry for this game id.
+  function buildTipsBox(id) {
+    var tip = (window.TIPS_DATA && window.TIPS_DATA[id]) || null;
+    // walkthroughs.js: a full step-by-step walkthrough elsewhere (The
+    // Walkthrough King) - listed under the tip, or alone when there is none
+    var wt = (window.WALKTHROUGH_DATA && window.WALKTHROUGH_DATA[id]) || null;
+    if (!tip && !wt) return null;
+    var box = document.createElement("details");
+    box.className = "tips-box";
+    var sum = document.createElement("summary");
+    sum.innerHTML = "💡 Reveal Tips";
+    box.appendChild(sum);
+    var body = el("div","tips-body");
+    if (tip) {
+      var item = el("div","tips-item");
+      item.appendChild(el("p",null,tip.text));
+      body.appendChild(item);
+      var src = el("p","tips-source");
+      src.innerHTML = 'Source: <a href="'+tip.url+'" target="_blank" rel="noopener">StrategyWiki</a> — full walkthrough there.';
+      body.appendChild(src);
+    }
+    if (wt) {
+      var w = el("p","tips-source tips-walkthrough");
+      w.innerHTML = '📖 ' + window.t("fullWalkthrough") + ' <a href="'+wt.url+'" target="_blank" rel="noopener">'+wt.site+'</a>';
+      body.appendChild(w);
+    }
+    box.appendChild(body);
+    return box;
+  }
+  var vpTipsBox = buildTipsBox(g.id);
+  if (vpTipsBox) cBox.appendChild(vpTipsBox);
+
+  // Pick Axe Pete easter egg - the miner himself, taking a swing at his own
+  // controls box, on every dump of VP43 (EU + G7400+ Plus-graphics + the
+  // community mod all share the id list below).
+  var PETE_IDS = ["vp_43", "vp_43pl", "mod_43pl"];
+  if (PETE_IDS.indexOf(g.id) !== -1) {
+    cBox.classList.add("pete-hit");
+    var peteWrap = el("span", "pete-axe");
+    var peteImg = new Image();
+    peteImg.src = "assets/pickaxe-pete.png";
+    peteImg.alt = "";
+    peteWrap.appendChild(peteImg);
+    cBox.appendChild(peteWrap);
+  }
+
+  // The Mousing Cat easter egg - tilts his head and purrs, EU + French
+  // releases both share the same id list below.
+  var CAT_IDS = ["vp_47", "Vp47_F"];
+  if (CAT_IDS.indexOf(g.id) !== -1) {
+    var catWrap = el("span", "cat-wrap");
+    var purrText = el("span", "purr-text", "purrrr");
+    catWrap.appendChild(purrText);
+    var catImgWrap = el("span", "cat-img");
+    var catImg = new Image();
+    catImg.src = "assets/mousing-cat.png";
+    catImg.alt = "";
+    catImgWrap.appendChild(catImg);
+    catWrap.appendChild(catImgWrap);
+    cBox.appendChild(catWrap);
+  }
+
+  // Quest for the Rings easter egg - the green dragon perched on the box,
+  // breathing fire. EU + French releases share the same id list.
+  var QR_IDS = ["vp_42", "Vp42_F"];
+  if (QR_IDS.indexOf(g.id) !== -1) {
+    var qrWrap = el("span", "qr-wrap");
+    var qrDragon = el("span", "qr-dragon");
+    var qrImg = new Image();
+    qrImg.src = "assets/qr-dragon.png";
+    qrImg.alt = "";
+    qrDragon.appendChild(qrImg);
+    var qrFlame = el("span", "qr-flame");
+    for (var qf = 0; qf < 3; qf++) qrFlame.appendChild(document.createElement("i"));
+    qrWrap.appendChild(qrFlame);
+    qrWrap.appendChild(qrDragon);
+    cBox.appendChild(qrWrap);
+  }
+
+  // Morse easter egg - a little lamp on the box blinks "WELCOME VISITOR"
+  // in real Morse timing. EU + French releases share the same id list.
+  var MORSE_IDS = ["vp_45", "Vp45_F"];
+  if (MORSE_IDS.indexOf(g.id) !== -1) {
+    var morseLamp = el("span", "morse-lamp");
+    cBox.appendChild(morseLamp);
+  }
+
+  cSec.appendChild(cBox);
+  if (g.platform === "PC") {
+    // DOS games ran on a real PC keyboard (and sometimes a mouse), not a
+    // joystick, and js-dos reads keys straight off the browser once the page
+    // has focus - there's no RetroArch-style hotkey layer fighting it for
+    // Tab/Enter/etc the way the Videopac and C64 shelves have. So this box is
+    // just the per-game note (exact keys for that title) plus the couple of
+    // things every DOS game on this shelf shares.
+    var pcSec = el("div","section");
+    pcSec.appendChild(el("h2",null,window.t("controls")));
+    var pcBox = el("div","controls-box");
+    if (data.note) {
+      var pcNote = el("p","controls-note own-note");
+      pcNote.innerHTML = data.note;
+      pcBox.appendChild(pcNote);
+    }
+    var pcClick = el("p","controls-note");
+    pcClick.innerHTML = window.t("pc_clickNote");
+    pcBox.appendChild(pcClick);
+    var pcEsc = el("p","controls-note");
+    pcEsc.innerHTML = window.t("pc_escNote");
+    pcBox.appendChild(pcEsc);
+    // The DOS shelf has no save states - js-dos holds filesystem changes in
+    // memory until the player commits them, which is what the Save link in
+    // dos.html's top bar does.
+    var pcSave = el("p","controls-note");
+    pcSave.innerHTML = window.t("pc_saveNote");
+    pcBox.appendChild(pcSave);
+    var pcTipsBox = buildTipsBox(g.id);
+    if (pcTipsBox) pcBox.appendChild(pcTipsBox);
+    if (g.id === "pc_leisure_suit_larry") {
+      var ken = el("span", "ken-note");
+      var kenImg = new Image();
+      kenImg.src = "assets/ken-sent-me.png";
+      kenImg.alt = "Ken sent me";
+      kenImg.title = "Ken sent me";
+      ken.appendChild(kenImg);
+      pcBox.appendChild(ken);
+    }
+    pcSec.appendChild(pcBox);
+    page.appendChild(pcSec);
+  } else if (g.platform !== "C64") {
+    page.appendChild(cSec);
+  } else {
+    var c64Sec = el("div","section");
+    c64Sec.appendChild(el("h2",null,window.t("controls")));
+    var c64Box = el("div","controls-box");
+    var c64Grid = el("div","controls-grid");
+    row(c64Grid, '<span class="kbd">&#8592;</span> <span class="kbd">&#8593;</span> <span class="kbd">&#8595;</span> <span class="kbd">&#8594;</span> + <span class="kbd">G</span>', window.t("c64_j1"));
+    row(c64Grid, '<span class="kbd">W</span> <span class="kbd">A</span> <span class="kbd">S</span> <span class="kbd">D</span> + <span class="kbd">Q</span>', window.t("c64_j2"));
+    row(c64Grid, '<span class="kbd">Right&nbsp;Shift</span>', window.t("c64_vkbd"));
+    row(c64Grid, '<span class="kbd">A</span>&ndash;<span class="kbd">Z</span> <span class="kbd">0</span>&ndash;<span class="kbd">9</span> <span class="kbd">Space</span> <span class="kbd">Enter</span>', LT("c_kbd"));
+    // Missing before this fix: on the C64 shelf, Arrows/G and WASD/Q are wired
+    // as joystick 1/2 (see the two rows above), which means those specific
+    // keys - including Enter/Return, since RETURN doubles as "joystick 1
+    // start" - are intercepted before they reach the C64's own keyboard,
+    // unless Game Focus is on. Any keyboard-driven C64 game whose real
+    // controls happen to land on one of those letters (checked against
+    // Castle Wolfenstein: RETURN to begin, and G/T/Q are all real in-game
+    // keys there) is unplayable without this row. The generic (non-C64)
+    // control box already had this tip for "keyboard"/"mixed" games; the C64
+    // box just never carried it.
+    row(c64Grid, '<span class="kbd">Tab</span>', LT("c_focus"));
+    row(c64Grid, '<span class="kbd">F2</span> <span class="kbd">F3</span>', LT("c_state"));
+    c64Box.appendChild(c64Grid);
+    // a per-game tip (gamepages.js "note"), then the two things that trip
+    // everyone up on the C64 shelf: cracked-intro screens and the Mac F-keys.
+    if (data.note) {
+      var c64Note = el("p","controls-note own-note");
+      c64Note.innerHTML = data.note;
+      c64Box.appendChild(c64Note);
+    }
+    var c64Start = el("p","controls-note");
+    c64Start.innerHTML = window.t("c64_startHelp");
+    c64Box.appendChild(c64Start);
+    var c64Mac = el("p","controls-note");
+    c64Mac.innerHTML = window.t("c64_macNote");
+    c64Box.appendChild(c64Mac);
+    var c64Save = el("p","controls-note");
+    c64Save.innerHTML = window.t("c64_saveNote");
+    c64Box.appendChild(c64Save);
+
+    // ---- cheats (C64 shelf) ----
+    // Same CHEATS_DATA source as the Videopac cBox block above, but C64
+    // entries carry their own per-entry `source` line (GameFAQs, C64-Wiki,
+    // StrategyWiki, Mix n' Mojo...) instead of one hardcoded odyssey2.info
+    // link, and the label/text are set via innerHTML rather than the el()
+    // helper's textContent so the <strong>/entity formatting in cheats.js
+    // renders instead of showing up as literal markup.
+    var c64Cheats = (window.CHEATS_DATA && window.CHEATS_DATA[g.id]) || null;
+    if (c64Cheats) {
+      var c64CheatsBox = document.createElement("details");
+      c64CheatsBox.className = "cheats-box";
+      var c64CheatsSum = document.createElement("summary");
+      c64CheatsSum.innerHTML = "😎 Reveal Cheats";
+      c64CheatsBox.appendChild(c64CheatsSum);
+      var c64CheatsBody = el("div","cheats-body");
+      c64Cheats.forEach(function (c) {
+        var item = el("div","cheats-item");
+        if (c.label) {
+          var h4 = document.createElement("h4");
+          h4.innerHTML = c.label;
+          item.appendChild(h4);
+        }
+        var p = document.createElement("p");
+        p.innerHTML = c.text;
+        item.appendChild(p);
+        if (c.img) {
+          var cImg = new Image();
+          cImg.className = "cheats-img";
+          cImg.src = "assets/cheats/" + c.img;
+          cImg.alt = c.alt || "";
+          cImg.loading = "lazy";
+          item.appendChild(cImg);
+        }
+        if (c.source) {
+          var cSrcP = el("p","cheats-source");
+          cSrcP.innerHTML = c.source;
+          item.appendChild(cSrcP);
+        }
+        c64CheatsBody.appendChild(item);
+      });
+      c64CheatsBox.appendChild(c64CheatsBody);
+      c64Box.appendChild(c64CheatsBox);
+    }
+
+    var c64TipsBox = buildTipsBox(g.id);
+    if (c64TipsBox) c64Box.appendChild(c64TipsBox);
+
+    // The Last Ninja easter egg - a fighter ripped straight from this very
+    // .d64's sprite bank (see tools note: 63-byte multicolor sprite blocks,
+    // top/bottom halves stored 10 blocks apart in the level file), standing
+    // guard on the controls box and striking with his staff every few seconds.
+    if (g.id === "c64_last_ninja") {
+      var njWrap = el("span", "ninja-wrap");
+      var njStance = new Image();
+      njStance.src = "assets/ninja-stance.png";
+      njStance.alt = "";
+      njStance.className = "ninja-pose ninja-stance";
+      var njStrike = new Image();
+      njStrike.src = "assets/ninja-strike.png";
+      njStrike.alt = "";
+      njStrike.className = "ninja-pose ninja-strike";
+      njWrap.appendChild(njStance);
+      njWrap.appendChild(njStrike);
+      c64Box.appendChild(njWrap);
+    }
+
+    // Zak McKracken easter egg - Zak peeks over the top edge of the controls
+    // box, ducks back down and pops up again somewhere else. See .zak-peek.
+    if (g.id === "c64_zak_mckracken") {
+      var zkWrap = el("span", "zak-peek");
+      var zkImg = new Image();
+      zkImg.src = "assets/zak-peek.png";
+      zkImg.alt = "";
+      zkWrap.appendChild(zkImg);
+      c64Box.appendChild(zkWrap);
+      var zkReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (zkReduced) {
+        zkWrap.classList.add("up");
+      } else {
+        var zkLast = -1;
+        function zkPop(){
+          var boxW = c64Box.clientWidth || 700;
+          var slots = Math.max(3, Math.floor((boxW - 60) / 90));
+          var pick;
+          do { pick = Math.floor(Math.random() * slots); } while (pick === zkLast && slots > 1);
+          zkLast = pick;
+          zkWrap.style.left = (24 + pick * ((boxW - 60 - 47) / Math.max(1, slots - 1))) + "px";
+          zkWrap.classList.add("up");
+          setTimeout(function(){
+            zkWrap.classList.remove("up");
+            setTimeout(zkPop, 900 + Math.random() * 2600);
+          }, 2200 + Math.random() * 1800);
+        }
+        setTimeout(zkPop, 1200);
+      }
+    }
+
+    c64Sec.appendChild(c64Box);
+    page.appendChild(c64Sec);
+  }
+
+  // ---- other versions of this game (see alternates.js) ----
+  // The shelf shows one card per game; the other dumps of the same cartridge
+  // (French release, G7000/G7400+ variant, community mods, alt dumps) are
+  // listed here on the primary's page. An alternate's own page gets a note
+  // pointing back at the entry the shelf actually shows.
+  if (window.VAULT_ALT) {
+    var altIds = window.VAULT_ALT.altsOf(g.id);
+    var primId = window.VAULT_ALT.primaryOf(g.id);
+    function gameById(id){ return games.find(function(x){ return x.id === id; }); }
+    if (altIds && altIds.length) {
+      var aSec = el("div","section");
+      aSec.appendChild(el("h2",null,window.t("altVersions")));
+      var aBox = el("div","alt-box");
+      var aNote = el("p","alt-note",window.t("altNote"));
+      aBox.appendChild(aNote);
+      var aList = el("ul","alt-list");
+      altIds.forEach(function(id){
+        var ag = gameById(id);
+        if (!ag) return;
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = "game.html?id=" + encodeURIComponent(id);
+        a.textContent = ag.title;
+        li.appendChild(a);
+        var meta = el("span","alt-meta"," — " + ag.platform + " · " + ag.category);
+        li.appendChild(meta);
+        aList.appendChild(li);
+      });
+      aBox.appendChild(aList);
+      aSec.appendChild(aBox);
+      page.appendChild(aSec);
+    } else if (primId) {
+      var pg = gameById(primId);
+      if (pg) {
+        var pSec = el("div","section");
+        var pBox = el("div","alt-box alt-backref");
+        var pNote = el("p","alt-note");
+        pNote.innerHTML = window.t("altOf", { title:
+          '<a href="game.html?id=' + encodeURIComponent(primId) + '">' + pg.title + '</a>' });
+        pBox.appendChild(pNote);
+        pSec.appendChild(pBox);
+        page.appendChild(pSec);
+      }
+    }
+  }
+
+  // ---- extras (your own scans: original manual, maps, boards) ----
+  var extras = (window.EXTRAS_DATA && window.EXTRAS_DATA[g.id]) || null;
+  if (extras) {
+    var eSec = el("div","section");
+    var eH = el("h2",null,window.t("extras"));
+    eH.appendChild(el("span","sec-note",LT("s_extras")));
+    eSec.appendChild(eH);
+    var eList = el("div","extras-list");
+    Object.keys(extras).forEach(function(kind){
+      var file = "extras/" + extras[kind];
+      var label = kind === "manual" ? LT("s_origManual") : kind === "map" ? LT("s_map") : kind.charAt(0).toUpperCase()+kind.slice(1);
+      var wrap = el("div");
+      wrap.appendChild(el("h3",null,label));
+      if (/\.pdf$/i.test(file)) {
+        var ifr = document.createElement("iframe");
+        ifr.className = "extras-pdf";
+        ifr.src = file;
+        ifr.title = label + " - " + g.title;
+        wrap.appendChild(ifr);
+      } else {
+        var im = new Image();
+        im.className = "extras-img";
+        im.src = file;
+        im.alt = label + " - " + g.title;
+        wrap.appendChild(im);
+      }
+      var dl = el("p","extras-dl");
+      dl.innerHTML = '<a href="'+file+'" target="_blank" rel="noopener">Open ' + label.toLowerCase() + ' in a new tab</a>';
+      wrap.appendChild(dl);
+      eList.appendChild(wrap);
+    });
+    eSec.appendChild(eList);
+    page.appendChild(eSec);
+  }
+
+  // ---- manual ----
+  var mSec = el("div","section");
+  var mH = el("h2",null,window.t("manual"));
+  if (data.manual) mH.appendChild(el("span","sec-note","scan: "+data.manual.source+" (archive.org)"));
+  mSec.appendChild(mH);
+
+  if (data.manual) {
+    var m = data.manual, cur = 0;
+    var reader = el("div","manual-reader");
+    var stage = el("div","manual-stage");
+    var pageImg = new Image();
+    pageImg.alt = "Manual page";
+    pageImg.addEventListener("click", function(){ pageImg.classList.toggle("zoomed"); });
+    stage.appendChild(pageImg);
+    var prev = el("div","manual-nav prev","◀");
+    var next = el("div","manual-nav next","▶");
+    stage.appendChild(prev); stage.appendChild(next);
+    reader.appendChild(stage);
+
+    var bar = el("div","manual-bar");
+    var bPrev = el("button",null,"◀ Prev");
+    var counter = el("span",null,"");
+    var bNext = el("button",null,"Next ▶");
+    bar.appendChild(bPrev); bar.appendChild(counter); bar.appendChild(bNext);
+    reader.appendChild(bar);
+
+    var thumbs = el("div","manual-thumbs");
+    var thumbImgs = [];
+    for (var p=0;p<m.pages;p++)(function(p){
+      var t = new Image();
+      t.loading="lazy";
+      t.src = "manuals/"+m.item+"/p"+String(p).padStart(2,"0")+".jpg";
+      t.addEventListener("click", function(){ show(p); });
+      thumbs.appendChild(t); thumbImgs.push(t);
+    })(p);
+    reader.appendChild(thumbs);
+
+    function show(p){
+      cur = Math.max(0, Math.min(m.pages-1, p));
+      pageImg.classList.remove("zoomed");
+      pageImg.src = "manuals/"+m.item+"/p"+String(cur).padStart(2,"0")+".jpg";
+      counter.textContent = "Page " + (cur+1) + " / " + m.pages;
+      thumbImgs.forEach(function(t,i){ t.classList.toggle("active", i===cur); });
+    }
+    prev.addEventListener("click", function(){ show(cur-1); });
+    next.addEventListener("click", function(){ show(cur+1); });
+    bPrev.addEventListener("click", function(){ show(cur-1); });
+    bNext.addEventListener("click", function(){ show(cur+1); });
+    document.addEventListener("keydown", function(e){
+      if(e.key==="ArrowLeft") show(cur-1);
+      if(e.key==="ArrowRight") show(cur+1);
+    });
+    show(0);
+    mSec.appendChild(reader);
+  } else {
+    mSec.appendChild(el("p","missing-note",LT("s_noManual")));
+  }
+  page.appendChild(mSec);
+
+  // ---- video ----
+  var vSec = el("div","section");
+  var vH = el("h2",null,window.t("gameplay"));
+  vSec.appendChild(vH);
+  if (data.video) {
+    vH.appendChild(el("span","sec-note",data.video.title));
+    var wrap = el("div","video-wrap");
+    // The game's own page shows the real gameplay video (YouTube) when one
+    // exists - it's a proper playthrough with sound, which is what belongs
+    // on a dedicated page. The local mp4s are short muted preview loops made
+    // for the featured/homebrew banners; here they're only a fallback for
+    // entries that have no YouTube video at all (or if the embed's own
+    // network request fails).
+    function showClip() {
+      var clip = document.createElement("video");
+      clip.className = "video-clip";
+      clip.src = "clips/clip_" + g.id + ".mp4?v=" + (window.CLIP_V || 1);
+      clip.autoplay = true; clip.muted = true; clip.loop = true;
+      clip.playsInline = true; clip.preload = "auto"; clip.controls = true;
+      clip.addEventListener("error", function () {
+        // Neither a YouTube id nor a working local clip - say so instead of
+        // leaving the empty 16:9 .video-wrap box (sized/backgrounded for a
+        // video/iframe) sitting there as a big black rectangle.
+        wrap.replaceWith(el("p", "missing-note", LT("s_noVideo")));
+      }, { once: true });
+      wrap.innerHTML = "";
+      wrap.appendChild(clip);
+      var pr = clip.play && clip.play(); if (pr && pr.catch) pr.catch(function(){});
+    }
+    function showYouTube() {
+      var ifr = document.createElement("iframe");
+      ifr.src = "https://www.youtube-nocookie.com/embed/" + data.video.id;
+      ifr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      ifr.allowFullscreen = true;
+      ifr.title = data.video.title;
+      wrap.appendChild(ifr);
+    }
+    if (data.video.id) {
+      showYouTube();
+    } else {
+      showClip();
+    }
+    vSec.appendChild(wrap);
+  } else {
+    vSec.appendChild(el("p","missing-note",LT("s_noVideo")));
+  }
+  page.appendChild(vSec);
+
+  // ---- advert (C64 shelf only) ----
+  if (g.platform === "C64" && window.buildC64Ad) {
+    var adSec = el("div","section c64ad-section");
+    var adLink = document.createElement("a");
+    var sp = ((window.FEATURED_DATA || {}).sponsors || [])[0] || null;
+    adLink.href = (sp && sp.url) || "#"; adLink.target = "_blank"; adLink.rel = "noopener sponsored";
+    adLink.className = "c64ad-link";
+    adLink.appendChild(window.buildC64Ad(sp));
+    var adTag = el("span","sponsor-tag", window.t("sponsored"));
+    adLink.appendChild(adTag);
+    adSec.appendChild(adLink);
+    page.appendChild(adSec);
+  }
+})();
+</script>
+</body>
+</html>

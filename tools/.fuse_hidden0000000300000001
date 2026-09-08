@@ -28,7 +28,6 @@ FILES = [
     "shops.js", "c64ad.js", "cheats.js", "downloads.js", "romsources.js", "walkthroughs.js", "tips.js",
     "alternates.js", "hosted.js", "products.js", "support.js",
     "app.js", "demo.js", "game.html", "index.html", "resources.html", "style.css", "boot-splash.js",
-    "favicon.ico", "icon-16.png", "icon-32.png", "icon-48.png", "apple-touch-icon.png",
     "README.md", "LICENSE.md",
 ]
 # covers/ holds the box art and, under a shot_ prefix, the in-game screenshots
