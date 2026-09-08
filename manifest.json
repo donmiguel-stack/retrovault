@@ -1,10 +1,10 @@
 {
- "generated": "2026-09-08 09:44:19",
+ "generated": "2026-09-08 21:39:37",
  "count": 499,
- "bytes": 184342648,
+ "bytes": 184384909,
  "files": {
   "games.js": {
-   "sha256": "685037582184f4510571a3c63cdafc2da0b3d9331b7a42cdb44524e73c38b1de",
+   "sha256": "287017f3562a873e9f69f4e33e6a76da30e2062b764255fe803b849fd277b05b",
    "size": 98479
   },
   "gamepages.js": {
@@ -32,24 +32,24 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "917ae65dd987841323864e122fc0a5aea3b5adb07a41b5d2bff6356916e874ff",
-   "size": 46544
+   "sha256": "f9b54674393823c078a34fb735e8e93c992d569cf05d007520c7d54b04d3924b",
+   "size": 47318
   },
   "setup-i18n.js": {
    "sha256": "ec0b9856bd3c5c500ae2e62b31ac8bf0d4568853e2a3a740cc3005f9e18d21b9",
    "size": 63520
   },
   "featured.js": {
-   "sha256": "7b51d31ee3edf0358885e40a48a69e11bebcf92a754c9c4f52f2c07a206c90a6",
-   "size": 40731
+   "sha256": "6a6a87956339d0b4bad55c6ada7f5edcf30df07eae108890546eeda1b7bc06ff",
+   "size": 80542
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
    "size": 2535
   },
   "c64ad.js": {
-   "sha256": "5b991bca865065b26110de30228dc84e53e77d23444f518ed5dddfc64b0e3bbd",
-   "size": 5878
+   "sha256": "a220703ce9363bcab58666f6e801b997aace32325b017ececfda35c8c705f3ee",
+   "size": 5902
   },
   "cheats.js": {
    "sha256": "54279647b7ee56e4c8bc5a1f303473d3effec19ae6ac8f3f1d7cb18a89f6f32d",
@@ -88,23 +88,23 @@
    "size": 7296
   },
   "app.js": {
-   "sha256": "84519467496106188d876d2ea2e3efd71393cc7aa59e923c70668fa5806dc8ce",
-   "size": 78621
+   "sha256": "42e92f79d3fe7e70f4b93679663cf0145e34734be42171790b830abf274e5270",
+   "size": 80273
   },
   "demo.js": {
    "sha256": "ea1f31b72eb923b63e98d7f24a02e260af471222b8e2c4025d60581e1a1b4d20",
    "size": 4572
   },
   "game.html": {
-   "sha256": "524704d95a3354ab69a558328a3b2e66f1797bc76e190d7838509248ce659d22",
+   "sha256": "45f68917da9fceeeba0b0c3a19f3f9f21f83633020f5c4c05b0e3073883a585f",
    "size": 94218
   },
   "index.html": {
-   "sha256": "daf6ba0919cfa0ee38564e6300ca3261fd466065619fe5c0517c7f792f15ce46",
+   "sha256": "3864457bbb4f6fba25d1e569d9cd69f88ea772584084f958a0f35c8f20af85f9",
    "size": 15716
   },
   "resources.html": {
-   "sha256": "b34f2c6bc4eaa9f4a0c749a07aadf44d52cc97b065f63c3e52ef1d392c84c3a0",
+   "sha256": "9e959161d042a6bf759d1a089922f1af1775848ecf658b13b312de37d9f56528",
    "size": 11676
   },
   "style.css": {

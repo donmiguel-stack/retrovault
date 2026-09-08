@@ -1,6 +1,6 @@
 window.GAMES_DATA = {
   "generated": "picopac catalogue",
-  "count": 330,
+  "count": 341,
   "games": [
   {
     "id": "new_amok_alt",

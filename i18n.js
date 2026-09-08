@@ -642,3 +642,18 @@ window.t = function (key, vars) {
 window.currentLang = function () {
   return localStorage.getItem(window.I18N_KEY) || "en";
 };
+
+// Prose that lives in a data file rather than in this one - the featured
+// blurbs, the Master Strategy fact/box-contents lines, the community card
+// descriptions, the sponsor banner copy - can be written either as a plain
+// string (English only) or as an { en, nl, de, fr, pt } object keyed exactly
+// like window.I18N. window.tx() resolves one of those against the current
+// language and falls back to English, so a field that only has English text
+// still renders instead of showing "[object Object]". Use it on every
+// featured.js / data-file string that reaches the page.
+window.tx = function (v) {
+  if (v && typeof v === "object" && !Array.isArray(v)) {
+    return v[window.currentLang()] || v.en || "";
+  }
+  return v === undefined || v === null ? "" : v;
+};

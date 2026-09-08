@@ -8,7 +8,7 @@
   window.buildC64Ad = function (sp) {
     // Just the one line - "ADVERTISE HERE" between stars - repeated so it fills
     // the width and loops seamlessly. No shop copy, no top/bottom status lines.
-    var unit = "★ " + ((sp && sp.attract) || "ADVERTISE HERE") + " ★   ";
+    var unit = "★ " + ((sp && window.tx && window.tx(sp.attract)) || "ADVERTISE HERE") + " ★   ";
     var msg = unit + unit + unit + unit;
 
     var wrap = document.createElement("div"); wrap.className = "c64ad";

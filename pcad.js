@@ -14,7 +14,7 @@
   window.buildPcAd = function (sp) {
     // One line, doubled up so it loops seamlessly - same trick as the C64
     // banner. No shop copy of its own, just the attract text.
-    var unit = "\u2605 " + ((sp && sp.attract) || "ADVERTISE HERE") + " \u2605   ";
+    var unit = "\u2605 " + ((sp && window.tx && window.tx(sp.attract)) || "ADVERTISE HERE") + " \u2605   ";
     var msg = unit + unit + unit + unit;
 
     var wrap = document.createElement("div"); wrap.className = "pcad";

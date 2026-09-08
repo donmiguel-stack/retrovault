@@ -185,6 +185,18 @@
     savedShelf = "videopac";
   }
   if (["videopac", "C64", "PC"].indexOf(savedShelf) === -1) savedShelf = "videopac";
+  // ?shelf=videopac|c64|pc deep-links a shelf, so retrovault.world can point
+  // straight at the shelf a screenshot shows instead of always landing on
+  // whichever one the visitor last had open (2026-09-08). Case-insensitive
+  // and aliased, since the value that reads naturally in a URL ("c64") is not
+  // the value the state uses ("C64"); anything unrecognised is ignored and
+  // the saved shelf wins, so a stray parameter can never blank the page.
+  try {
+    var SHELF_ALIAS = { videopac: "videopac", vp: "videopac", odyssey: "videopac",
+                        c64: "C64", commodore: "C64", pc: "PC", dos: "PC", msdos: "PC" };
+    var wanted = (new URLSearchParams(window.location.search).get("shelf") || "").toLowerCase();
+    if (SHELF_ALIAS[wanted]) savedShelf = SHELF_ALIAS[wanted];
+  } catch (e) {}
   localStorage.setItem(SHELF_KEY, savedShelf);
   var state = {
     games: [], platform: savedShelf, category: savedConsole || "all", query: "", list: "all",
@@ -491,7 +503,7 @@
         img.alt = "";
         a.appendChild(img);
       } else {
-        a.appendChild(attractBanner(sp.attract || "ADVERTISE HERE"));
+        a.appendChild(attractBanner(window.tx(sp.attract) || "ADVERTISE HERE"));
       }
       var tag = document.createElement("span");
       tag.className = "sponsor-tag";
@@ -499,7 +511,7 @@
       a.appendChild(tag);
       var sr = document.createElement("span");
       sr.className = "sponsor-sr";
-      sr.textContent = sp.name + " — " + (sp.text || "");
+      sr.textContent = sp.name + " — " + window.tx(sp.text);
       a.appendChild(sr);
       node.appendChild(a);
     });
@@ -595,7 +607,7 @@
         '</span>' +
         '<div class="feature-copy">' +
         '<h3>' + g.title + '</h3>' +
-        '<p class="feature-blurb">' + pick.blurb + '</p>' +
+        '<p class="feature-blurb">' + window.tx(pick.blurb) + '</p>' +
         '<div class="feature-meta">' +
         '<span class="badge ' + platformBadge(g.platform) + '">' + g.platform + '</span>' +
         (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
@@ -703,7 +715,7 @@
         'onerror="this.onerror=null;this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'"></a>' +
         '<div class="feature-copy">' +
         '<h3><a href="' + href + '">' + g.title + '</a></h3>' +
-        '<p class="feature-blurb">' + pick.blurb + '</p>' +
+        '<p class="feature-blurb">' + window.tx(pick.blurb) + '</p>' +
         '<div class="feature-meta">' +
         '<span class="badge ' + platformBadge(g.platform) + '">' + g.platform + '</span>' +
         (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
@@ -815,7 +827,7 @@
         '</span>' +
         '<div class="feature-copy">' +
         '<h3>' + g.title + '</h3>' +
-        '<p class="feature-blurb">' + pick.blurb + '</p>' +
+        '<p class="feature-blurb">' + window.tx(pick.blurb) + '</p>' +
         '<div class="feature-meta">' +
         '<span class="badge ' + platformBadge(g.platform) + '">' + g.platform + '</span>' +
         (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
@@ -889,7 +901,7 @@
     var href = "game.html?id=" + encodeURIComponent(g.id);
     var gp = (window.GAMEPAGES_DATA || {})[g.id] || {};
     var vid = gp.video && gp.video.id ? gp.video.id : "";
-    var contents = (pick.contents || []).map(function (c) { return "<li>" + c + "</li>"; }).join("");
+    var contents = (pick.contents || []).map(function (c) { return "<li>" + window.tx(c) + "</li>"; }).join("");
     // Regional/standalone releases of this same game that carry no
     // vpNumber of their own (e.g. br_9434 for vp_46) - filtered against
     // state.games the same way `picks` itself is, so a variant id typo'd
@@ -910,10 +922,10 @@
           '<div class="ms-card-head">' +
             '<h3><a href="' + href + '">' + g.title + '</a></h3>' +
             '<span class="ms-year">' + pick.year + '</span>' +
-            (pick.fact ? '<span class="ms-fact">' + pick.fact + '</span>' : '') +
+            (pick.fact ? '<span class="ms-fact">' + window.tx(pick.fact) + '</span>' : '') +
           '</div>' +
         '</div>' +
-        '<p class="ms-blurb">' + pick.blurb + '</p>' +
+        '<p class="ms-blurb">' + window.tx(pick.blurb) + '</p>' +
         (contents ? '<ul class="ms-contents">' + contents + '</ul>' : '') +
         variantsHtml +
         '<div class="ms-media">' +
@@ -1033,10 +1045,12 @@
   // cards actually re-translate when the language flag is switched - before
   // this, only the panel's own heading/intro line went through window.t();
   // the cards themselves were always plain English regardless of language.
+  // Kept as a named wrapper for readability at the three call sites; the
+  // actual { en, nl, de, fr, pt }-or-string resolution is window.tx() in
+  // i18n.js, shared with the featured blurbs, the Master Strategy panel and
+  // the sponsor banners (2026-09-08).
   function communityWhat(c) {
-    var w = c.what;
-    if (w && typeof w === "object") return w[window.currentLang()] || w.en;
-    return w;
+    return window.tx(c.what);
   }
 
   function communityBlock() {
@@ -1477,6 +1491,7 @@
       buildCategoryChips(platformGames());
       buildFacets();
       updateListChips();
+      buildShowcase();
       render();
     });
   }
@@ -1492,6 +1507,15 @@
     var data = window.FEATURED_DATA || {};
     var host = document.getElementById("showcase");
     if (!host) return;
+
+    // Re-runnable: the language switcher calls this again so the featured
+    // blurbs re-render in the new language (they come from featured.js, not
+    // from window.t, so applyLang() alone can't touch them). Kill the old
+    // rotation timers first or every switch would leave another one running
+    // and the panels would start flicking through picks faster and faster.
+    if (featStop) { featStop(); featStop = null; }
+    if (c64FeatStop) { c64FeatStop(); c64FeatStop = null; }
+    if (pcFeatStop) { pcFeatStop(); pcFeatStop = null; }
 
     var picks = (data.featured || []).filter(function (f) {
       return state.games.some(function (g) { return g.id === f.id; });
