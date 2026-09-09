@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-08 21:39:37",
- "count": 499,
- "bytes": 184384909,
+ "generated": "2026-09-09 16:41:22",
+ "count": 507,
+ "bytes": 184737121,
  "files": {
   "games.js": {
-   "sha256": "287017f3562a873e9f69f4e33e6a76da30e2062b764255fe803b849fd277b05b",
-   "size": 98479
+   "sha256": "ba7eb616825fa090801f819a1d5b14b546e18f1ac1744316cdec62df913cbc63",
+   "size": 105594
   },
   "gamepages.js": {
-   "sha256": "6ba5eb2a726ae93955b1405128554311e1cd98b1132ffdeb43db77d47879d71e",
-   "size": 233712
+   "sha256": "3fde08b6e87cb6b7dbeb06da66515831b78799fba3263d7614ddfd32dbcd194e",
+   "size": 241774
   },
   "genres.js": {
-   "sha256": "9bdd2e8cb3b9b429737d08bcb09601f2833370f63e826b2979619c1388c371bb",
-   "size": 21895
+   "sha256": "6e89468a06aec34d86f03af9f4dff193ef20f9b6e8442d8bd085d560da27fe4c",
+   "size": 23299
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -56,8 +56,8 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "1d527f49d7d80a4c8eb24ce189d50c9c1ae2ef098809cca34c0c2e37064eaed9",
-   "size": 10175
+   "sha256": "f8c7ade97f8f3e235b38d8821f241cf8b6f0fbb491b7dce4ad75795e9dd6868d",
+   "size": 16265
   },
   "romsources.js": {
    "sha256": "1d1a80e689c47174f768e971f3f3d2b81a8459b6968a0c6b7236a6d1b5a8ab81",
@@ -411,6 +411,10 @@
    "sha256": "e1b47723ddcca902fc4686c9046c39e1c4bf9457f2441cdee47cafa9049dadbf",
    "size": 3453
   },
+  "covers/c64_hb_munchkin64.png": {
+   "sha256": "c800ad6e205859aafb9c54a44d35e7ded1088c55a99df0ba05ca8be44d8d70fa",
+   "size": 2441
+  },
   "covers/c64_hb_rescuing_orc.png": {
    "sha256": "683ceb7f8f2850ba8999cdc7cdbcfb3a13f9c45567d3ffaab97a15dc599c45f8",
    "size": 56291
@@ -419,9 +423,17 @@
    "sha256": "310565210d338cd29d55cffa0f4ef93fff044cf808f9387419be8e195e4039e5",
    "size": 1933
   },
+  "covers/c64_hb_roguebot.png": {
+   "sha256": "1bed570de4d45c802a8c752742dcad45a22fb0561a1d40dd83cb67f3ea1fd955",
+   "size": 6598
+  },
   "covers/c64_hb_runn_n_gunn.png": {
    "sha256": "5098b89dc9b6c8fe99d4e383deead294bc6649d510c90f447981ede4350e124e",
    "size": 5499
+  },
+  "covers/c64_hb_shallow_domains.png": {
+   "sha256": "92cec68bc2b2b07d125098cdef693f614e92f92303ecb432958822a5e9096134",
+   "size": 5971
   },
   "covers/c64_hb_super_bread_box.png": {
    "sha256": "3a2f077c55da400bcef17341f03f0cf815c69f480fe731429ff319ea4092bb49",
@@ -430,6 +442,10 @@
   "covers/c64_hb_tenebra2.png": {
    "sha256": "9d6bf5bcef1c191f53c7e3ee4dfec11a793547373f22e0e91d994600ae5ef3c3",
    "size": 3045
+  },
+  "covers/c64_hb_veggies_vs_undead.png": {
+   "sha256": "bf2825e8931f1cdf706429117ef46ec853f6fe5db7d820f3cf3d3a6cdd32aa5f",
+   "size": 9163
   },
   "covers/c64_hb_wolfling.png": {
    "sha256": "e590432fe37846b9dc6df7b4ca14f9543b1b970eec73212b990c9e527680d4dd",
@@ -1955,6 +1971,10 @@
    "sha256": "1da9c6def65f00364af04f7695824052e34fcbe9f1df1ad80883772d2ef7a025",
    "size": 174848
   },
+  "homebrew-downloads/Munchkin64.prg": {
+   "sha256": "7d08b070c1ad94724f33681cd75ac5cb15b20c55f57fc0d0107cea8b25aa2a50",
+   "size": 28968
+  },
   "homebrew-downloads/NOUDAR.zip": {
    "sha256": "2c5c1f735ce2e94acbf91a0894bc066f30129be5686f1ad348c4331ec63e54fe",
    "size": 525322
@@ -1975,6 +1995,10 @@
    "sha256": "d4c3d61f9dd67ec28f361c93ec186eb35c85d935283846e8b683a25860485cd6",
    "size": 65728
   },
+  "homebrew-downloads/Roguebot.d64": {
+   "sha256": "76e2f7383ed3b998029684a51bfdd4a055093ef08978a9420d3d256ce9bb9c63",
+   "size": 174848
+  },
   "homebrew-downloads/SOFTPORN.zip": {
    "sha256": "d5a19af2ca523d9d012b11de86f170dbfb98ec706cc713602b67547ff522a8d8",
    "size": 52846
@@ -1983,6 +2007,10 @@
    "sha256": "5681ad041fb8fc1311fc0c666239f3c943df78138ff9aff5af953fd448eced01",
    "size": 426391
   },
+  "homebrew-downloads/Shallow Domains.prg": {
+   "sha256": "701099e917c685bb90f6e5854c00d2ea441abd1cee96b128e699ba818d06499f",
+   "size": 50442
+  },
   "homebrew-downloads/Super Bread Box.prg": {
    "sha256": "1ceea5d0cc1669acfd5805c203ee0dfb3ffb0044b881d7253ec261de1ed990d6",
    "size": 16313
@@ -1990,6 +2018,10 @@
   "homebrew-downloads/TRAXTOR.zip": {
    "sha256": "1d1e162847bebc7972142cfd546b418ab94b0a4421bf0036e4e817eaa1019b7c",
    "size": 11286
+  },
+  "homebrew-downloads/Veggies vs Undead.prg": {
+   "sha256": "9ffe602282ce7411385f8e5aece4def6896bf1c98f6ad71f9b8dace0a2f1f755",
+   "size": 51110
   },
   "homebrew-downloads/Wolfling.prg": {
    "sha256": "cf0a878235e9b5301ee5f382a2093570db68cd20caae1c575428423b72d53d9b",

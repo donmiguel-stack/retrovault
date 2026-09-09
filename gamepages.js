@@ -4565,5 +4565,202 @@ window.GAMEPAGES_DATA = {
   "history": {
    "text": "Sega's 1986 arcade smash, ported to MS-DOS in 1989 by Unlimited Software &ndash; the porting arm of Distinctive Software, the Vancouver studio that later became EA Canada &ndash; for Mindscape. Trades the arcade's sit-down cabinet and moving hardware for CGA/EGA/VGA graphics and a PC speaker/AdLib rendition of the soundtrack, but keeps the branching, checkpoint-based route selection intact."
   }
+ },
+ "c64_hb_munchkin64": {
+  "input": "joystick",
+  "note": "A free-roam K.C. Munchkin homage: random maze generation plus a built-in maze editor, ten user-made mazes, and a 96-level Arcade mode. Same original-cartridge chase the Videopac shelf's own K.C. Munchkin! ran in 1981.",
+  "video": {
+   "id": "EvJ9rJYgoyA",
+   "title": "Munchkin 64 PL Pretzel Logic 2MODES COMMODORE 64 PACMAN CLONE PAC MAN ELEMENTS LOOK INDIE RETRO NEWS"
+  },
+  "history": {
+   "text": "Pretzel Logic's 2022 C64 recreation of K.C. Munchkin &ndash; the Videopac maze-eater whose resemblance to Pac-Man got it pulled from sale after Atari sued (see this vault's own vp_38). Munchkin 64 rebuilds the chase from scratch for the C64: random mazes, a maze editor, ten hand-built mazes to try, and a 96-level arcade mode. Free, name-your-own-price, with all donations going to cancer research."
+  }
+ },
+ "c64_hb_roguebot": {
+  "input": "keyboard",
+  "video": {
+   "id": "XuIZqFJ0YS4",
+   "title": "Commodore 64 -=Roguebot=-"
+  },
+  "history": {
+   "text": "A 2023 deck-building roguelike dungeon crawler for the C64 from drmortalwombat &ndash; better known for the C compiler/toolchain (oscar64) much of the modern C64 homebrew scene builds with. Draft and play cards to fight your way deeper into a procedurally generated dungeon."
+  }
+ },
+ "c64_hb_veggies_vs_undead": {
+  "input": "joystick",
+  "video": {
+   "id": "XAQ70gO0UQs",
+   "title": "Commodore 64 -=Veggies vs Undead=-"
+  },
+  "history": {
+   "text": "drmortalwombat's 2023 C64 demake of Plants vs. Zombies &ndash; lane-based tower defense with the same read-the-wave, plant-your-defenses rhythm, squeezed into 8-bit hardware. Free download; source published on GitHub."
+  }
+ },
+ "c64_hb_shallow_domains": {
+  "input": "keyboard",
+  "video": {
+   "id": "Ruipg2cFJ7o",
+   "title": "Commodore 64 -=Shallow Domains=-"
+  },
+  "history": {
+   "text": "A 2022 round-based strategy game for the C64 by drmortalwombat, played on a hexagonal map &ndash; pay-what-you-want, with the source code later published on GitHub."
+  }
+ },
+ "c64_hb_comchinko": {
+  "input": "joystick",
+  "video": {
+   "id": "_otmF7kUfOc",
+   "title": "Commodore 64 -=Comchinko=-"
+  },
+  "history": {
+   "text": "A 2026 pachinko-inspired casual game for the C64 by drmortalwombat &ndash; drop balls down a pegboard for chain-reaction bonuses, with Infinite, Highscore and Achievement modes."
+  }
+ },
+ "c64_hb_broken_altars": {
+  "input": "joystick",
+  "video": {
+   "id": "moGEyj685f8",
+   "title": "Commodore 64 -=Broken Altars=-"
+  },
+  "history": {
+   "text": "A 2026 puzzle game for the C64 by drmortalwombat &ndash; play archaeologist \"Fumbling Fred\", excavating gold and fragments to piece sixteen ancient altars back together. Supports mouse and keyboard."
+  }
+ },
+ "c64_hb_trenchangle": {
+  "input": "joystick",
+  "video": {
+   "id": "otT7XVQ89JQ",
+   "title": "c64 - trenchangle (tower defense game on the c64)"
+  },
+  "history": {
+   "text": "A 2026 tower-defense game for the C64 by drmortalwombat, with six tower types, a gold economy, and a meta-currency tech tree of permanent upgrades between runs."
+  }
+ },
+ "c64_hb_overload": {
+  "input": "keyboard",
+  "history": {
+   "text": "A 2024 incremental/idle clicker for the C64 by drmortalwombat &ndash; manually detonate fuel pellets in a nuclear reactor, then automate production, aiming for one billion energy units."
+  }
+ },
+ "c64_hb_terminal_walker": {
+  "input": "joystick",
+  "video": {
+   "id": "HSfxhuy4ajY",
+   "title": "Commodore 64 -=Terminal Walker=-"
+  },
+  "history": {
+   "text": "A 2025 first-person stealth-infiltration game for the C64 by drmortalwombat, set in a 2029 AI datacenter &ndash; disable four control points and escape before the reactor overheats, avoiding slow-moving maintenance robots across 16 elevator-linked levels."
+  }
+ },
+ "c64_hb_soiled_iron": {
+  "input": "joystick",
+  "video": {
+   "id": "d6qIzRTU_vg",
+   "title": "Commodore 64 -=Soiled Iron=-"
+  },
+  "history": {
+   "text": "A 2024 two-player barbarian-style sword-fighting game for the C64 by drmortalwombat, with a single-player Quest mode (dungeon exploration with an auto-map and healing potions) alongside one-on-one duels. Music by Crisps."
+  }
+ },
+ "c64_hb_portal_buster": {
+  "input": "joystick",
+  "video": {
+   "id": "nas_f3KeI90",
+   "title": "Commodore 64 -=Portal Buster=-"
+  },
+  "history": {
+   "text": "A 2024 horizontally-scrolling shooter for the C64 by drmortalwombat, across a 32,000-pixel-wide level with nine weapon power-ups and color-coded hyperspace portals. Music by Crisps."
+  }
+ },
+ "c64_hb_mineshaft_gap": {
+  "input": "joystick",
+  "video": {
+   "id": "gAV8hlKNnLA",
+   "title": "Commodore 64 -=Mineshaft Gap=-"
+  },
+  "history": {
+   "text": "A 2024 real-time strategy game for the C64 by drmortalwombat &ndash; manage up to 32 dwellers in a post-nuclear-war underground bunker, balancing oxygen, minerals and research against rival bunkers. A nod to Dr. Strangelove's \"mineshaft gap\"."
+  }
+ },
+ "c64_hb_metal_mayhem": {
+  "input": "joystick",
+  "video": {
+   "id": "l-n6xwA_TtI",
+   "title": "Commodore 64 -=Metal Mayhem=-"
+  },
+  "history": {
+   "text": "A 2024 vertical split-screen tank battle for the C64 by drmortalwombat &ndash; two-player (or vs. computer) capture-the-flag combat, addressing what the developer called \"a severe lack of vertical split screen scrolling games\" on the platform."
+  }
+ },
+ "c64_hb_corescape": {
+  "input": "joystick",
+  "video": {
+   "id": "e-uqijgkWco",
+   "title": "Commodore 64 -=Corescape=-"
+  },
+  "history": {
+   "text": "A 2024 arcade space shooter for the C64 by drmortalwombat &ndash; fight through eight memorization-heavy stages to escape a galactic empire's hub station. Optional trainer modes for casual play."
+  }
+ },
+ "c64_hb_missile_defence": {
+  "input": "mouse",
+  "video": {
+   "id": "B8t8H-FPX6s",
+   "title": "Commodore 64 -=Missile Defence=-"
+  },
+  "history": {
+   "text": "A 2023 Missile Command-style conversion for the C64 by drmortalwombat &ndash; defend six cities with three anti-missile batteries against incoming ICBMs, with 1351 mouse support and dual-SID audio by Crisps."
+  }
+ },
+ "c64_hb_balls_like_a_frog": {
+  "input": "joystick",
+  "video": {
+   "id": "36fvpUFDm_M",
+   "title": "Balls like a Frog / C64"
+  },
+  "history": {
+   "text": "A 2023 Zuma-style puzzle game for the C64 by drmortalwombat &ndash; fire projectiles from a temple frog to clear rolling spheres before they reach the skull, across 76 levels in Adventure mode plus Gauntlet and Training."
+  }
+ },
+ "c64_hb_minotrace": {
+  "input": "joystick",
+  "video": {
+   "id": "oRCoTpERrvM",
+   "title": "Commodore 64 -=Minotrace=-"
+  },
+  "history": {
+   "text": "A 2022 maze racing game for the C64 by drmortalwombat, built around a fast grid-based ray-casting routine for 3D labyrinth visuals &ndash; race the clock through 27 levels across eight maze-generation styles."
+  }
+ },
+ "c64_hb_ball_and_chain": {
+  "input": "joystick",
+  "video": {
+   "id": "7q5xXS5AURM",
+   "title": "Commodore 64 -=Ball and Chain=-"
+  },
+  "history": {
+   "text": "A 2022 endless runner for the C64 by drmortalwombat &ndash; control a helium-filled bouncy ball tethered to a heavy iron ball, shortening or releasing the chain to steer past enemies and walls. Music by Crisps."
+  }
+ },
+ "c64_hb_gates_of_the_ancient": {
+  "input": "joystick",
+  "video": {
+   "id": "h82gPUcPcS0",
+   "title": "Commodore 64 -=Gates of the Ancient=-"
+  },
+  "history": {
+   "text": "A 2021 3D space exploration and combat game for the C64 by drmortalwombat, in the Elite tradition &ndash; explore wormhole-linked galaxies, trade and fight pirates, and upgrade your ship in a roguelike loop where death lets you restart with accumulated credits."
+  }
+ },
+ "c64_hb_plekthora": {
+  "input": "joystick",
+  "video": {
+   "id": "duRgp8Mgj5Y",
+   "title": "Commodore 64 -=Plekthora=-"
+  },
+  "history": {
+   "text": "A 2021 horizontal shoot-'em-up for the C64 by drmortalwombat, with couch co-op across 20 levels, three upgradeable weapons, and a classic 1980s arcade feel."
+  }
  }
 };

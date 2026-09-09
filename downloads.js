@@ -221,6 +221,127 @@ window.DOWNLOAD_DATA = {
     verdict: "LIKELY-OK",
     source: "Shareware release by Gary Thompson (ReadMe.txt in the archive asks for a $20 registration, no restriction on copying); per Wikipedia the PC version was later put up as a free download by Al Lowe (allowe.com), and Sierra itself shipped it on the 1994 Greatest Hits (and Misses) CD. Sourced from archive.org item SoftpornAdventureV2.4SW1991GaryThompsonInteractiveFictionAdult (soft.ZIP)",
     checked: "2026-09-07"
+  },
+
+  "c64_hb_munchkin64": {
+    file: "Munchkin64.prg",
+    verdict: "LIKELY-OK",
+    source: "https://pretzel-logic.itch.io/munchkin64 — name-your-own-price, all donations forwarded to cancer research; no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_roguebot": {
+    file: "Roguebot.d64",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/roguebot — pay-what-you-want, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_veggies_vs_undead": {
+    file: "Veggies vs Undead.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/veggies-vs-undead — free download, source code public on GitHub, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_shallow_domains": {
+    file: "Shallow Domains.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/shallow-domains — pay-what-you-want, source code public on GitHub, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_comchinko": {
+    file: "comchinko.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/comchinko — pay-what-you-want, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_broken_altars": {
+    file: "brokenaltars.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/broken-altars — pay-what-you-want, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_trenchangle": {
+    file: "trenchangle.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/trenchangle — pay-what-you-want, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_overload": {
+    file: "overload.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/overload — pay-what-you-want, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_terminal_walker": {
+    file: "walker.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/terminal-walker — pay-what-you-want, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_soiled_iron": {
+    file: "soiledquest.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/soiled-iron — pay-what-you-want, no explicit redistribution statement, no commercial version found. Hosted as the Quest-mode .prg (soiledquest.prg) rather than the .d64 — the .d64 failed to autostart in a real boot test (blank screen, same symptom class as the Munchkin 64 .d64 issue), while the standalone Quest .prg boots straight into gameplay.",
+    checked: "2026-09-09"
+  },
+  "c64_hb_portal_buster": {
+    file: "portalbuster.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/portal-buster — pay-what-you-want, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_mineshaft_gap": {
+    file: "mineshaftgap.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/mineshaft-gap — pay-what-you-want, source code public on GitHub, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_metal_mayhem": {
+    file: "metalmayhem.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/metal-mayhem — pay-what-you-want, source code public on GitHub, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_corescape": {
+    file: "corescape.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/corescape — pay-what-you-want, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_missile_defence": {
+    file: "missiledefence.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/missile-defence — free download; the developer states \"You are welcome to distribute it any way you like, as long as you don't take money for it,\" no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_balls_like_a_frog": {
+    file: "blaf.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/balls-like-a-frog — free download, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_minotrace": {
+    file: "minotrace.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/minotrace — pay-what-you-want, source code public on GitHub, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_ball_and_chain": {
+    file: "ballnchain.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/ball-and-chain — pay-what-you-want, source code public on GitHub, no explicit redistribution statement, no commercial version found",
+    checked: "2026-09-09"
+  },
+  "c64_hb_gates_of_the_ancient": {
+    file: "goftancient.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/gates-of-the-ancient — pay-what-you-want, no explicit redistribution statement. A commenter (Protovision) floated a possible commercial physical release, but no confirmed boxed edition exists — treated as LIKELY-OK, not RESTRICTED, since an offer isn't evidence of an actual competing release.",
+    checked: "2026-09-09"
+  },
+  "c64_hb_plekthora": {
+    file: "plekthora.prg",
+    verdict: "LIKELY-OK",
+    source: "https://drmortalwombat.itch.io/plekthora — pay-what-you-want, source code public (published for modding/reverse-engineering), no explicit redistribution statement, no commercial version found. Developer explicitly allowed inclusion on Reset Magazine's coverdisk.",
+    checked: "2026-09-09"
   }
 
 };

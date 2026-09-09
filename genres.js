@@ -1389,5 +1389,85 @@ window.GENRE_DATA = {
  "pc_outrun": {
   "genre": "racing",
   "players": "p1"
+ },
+ "c64_hb_munchkin64": {
+  "genre": "maze",
+  "players": "p1"
+ },
+ "c64_hb_roguebot": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_hb_veggies_vs_undead": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_hb_shallow_domains": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_hb_comchinko": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "c64_hb_broken_altars": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "c64_hb_trenchangle": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_hb_overload": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "c64_hb_terminal_walker": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_hb_soiled_iron": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "c64_hb_portal_buster": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_hb_mineshaft_gap": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "c64_hb_metal_mayhem": {
+  "genre": "shooter",
+  "players": "p12"
+ },
+ "c64_hb_corescape": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_hb_missile_defence": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "c64_hb_balls_like_a_frog": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "c64_hb_minotrace": {
+  "genre": "maze",
+  "players": "p1"
+ },
+ "c64_hb_ball_and_chain": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_hb_gates_of_the_ancient": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "c64_hb_plekthora": {
+  "genre": "shooter",
+  "players": "p12"
  }
 };
