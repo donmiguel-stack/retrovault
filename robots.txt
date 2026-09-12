@@ -1,0 +1,16 @@
+# demo.retrovault.world - the Retro Vault library itself.
+#
+# The game pages are the point: each one is a real write-up of a real release,
+# and they are what someone searching a game's name should be able to find.
+# They are all listed in the sitemap below, because the shelf grid is built in
+# JavaScript and a crawler following links alone would never reach them.
+User-agent: *
+Allow: /
+
+# Nothing useful to index here, and emulator/ is large.
+Disallow: /emulator/
+Disallow: /narration/
+Disallow: /subtitles/
+Disallow: /tools/
+
+Sitemap: https://demo.retrovault.world/sitemap.xml

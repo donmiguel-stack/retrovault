@@ -4,6 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retro Vault</title>
+<!-- Per-game title, description, canonical and structured data are written by
+     setGameMeta() below, once the game is known from ?id=. Google renders the
+     page's JavaScript, so it sees those.
+
+     The og:/twitter: tags here are deliberately STATIC and generic. Social
+     scrapers (X, Facebook, LinkedIn, Slack, WhatsApp) do not run JavaScript,
+     so a per-game card written at runtime would never reach them - they would
+     fall back to whatever is in this head. A correct generic card beats a
+     per-game one that nobody's crawler ever sees. Real per-game social cards
+     would need the HTML to be generated per game at build or serve time. -->
+<meta name="description" content="A game page in Retro Vault: box art, history, controls, manual scans and gameplay video for a Videopac, Odyssey&sup2;, Commodore 64 or MS-DOS release - playable in the browser.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retro Vault">
+<meta property="og:description" content="Box art, history, controls and cheats for a classic Videopac, Odyssey&sup2;, C64 or MS-DOS release - and it plays in your browser.">
+<meta name="theme-color" content="#0f1115">
+<meta property="og:site_name" content="Retro Vault">
+<meta property="og:image" content="https://retrovault.world/assets/shot_videopac.jpg">
+<meta property="og:image:width" content="1409">
+<meta property="og:image:height" content="905">
+<meta property="og:image:alt" content="The Retro Vault library, showing a shelf as a grid of original box art">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://retrovault.world/assets/shot_videopac.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
@@ -721,7 +744,7 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=121"></script>
+<script src="i18n.js?v=122"></script>
 <script src="setup-i18n.js?v=120"></script>
 <script src="games.js?v=117"></script>
 <script src="alternates.js?v=4"></script>
@@ -799,8 +822,103 @@
     page.appendChild(el("p","missing-note",(((window.SETUP_I18N||{})[window.currentLang()]||(window.SETUP_I18N||{}).en||{}).s_notFound)||"Game not found."));
     return;
   }
-  document.title = g.title + " | Retro Vault";
   var data = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id]) || {};
+
+  // ---- per-game metadata for search engines -------------------------------
+  // Every game page is the same game.html with a different ?id=, so without
+  // this all 361 of them look like one page called "Retro Vault" and none can
+  // rank for its own game. Google runs the page's JavaScript, so setting these
+  // here works; social scrapers do not, which is why the og:/twitter: tags in
+  // the head are static and generic (see the note up there).
+  function setGameMeta() {
+    var PLATFORM = {
+      "G7000": "Philips Videopac G7000 / Magnavox Odyssey\u00b2",
+      "G7400+": "Philips Videopac G7400",
+      "C64": "Commodore 64",
+      "PC": "MS-DOS"
+    };
+    var platform = PLATFORM[g.platform] || g.platform;
+
+    // Title: the game, then just enough to tell it apart from the same title
+    // on another machine, then the site. Kept short - search results cut off
+    // around 60 characters.
+    var bits = [];
+    if (g.vpNumber) bits.push("Videopac " + g.vpNumber);
+    else bits.push(g.platform === "PC" ? "MS-DOS" : (g.platform === "C64" ? "C64" : "Videopac"));
+    if (g.year) bits.push(g.year);
+    document.title = g.title + " \u2014 " + bits.join(", ") + " | Retro Vault";
+
+    // Description: the game's own history, which is real prose a person wrote,
+    // trimmed at a sentence end rather than mid-word. Falls back to a built
+    // sentence for the titles that have no history on file.
+    var jp = jaPage(g.id);
+    var prose = (jp && jp.history) || (data.history && data.history.text) || "";
+    var tail = window.t("metaTail");
+    // A search result shows roughly 155 characters of this, and about half
+    // that many when they are Japanese - so budget for the tail sentence and
+    // trim the history to fit, at a sentence end where there is one and a word
+    // boundary otherwise. A description cut mid-word looks broken in results.
+    var cjk = /[\u3040-\u30ff\u4e00-\u9fff]/.test(prose);
+    var budget = (cjk ? 75 : 155) - tail.length - 1;
+    var desc;
+    if (prose) {
+      desc = prose.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+      if (desc.length > budget) {
+        var cut = desc.slice(0, budget);
+        var stop = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("\u3002"));
+        desc = stop > budget * 0.45
+          ? cut.slice(0, stop + 1)
+          : cut.replace(/\s+\S*$/, "").replace(/[,;:\u3001\-\u2014]$/, "") + "\u2026";
+      }
+    } else {
+      desc = g.title + " for the " + platform +
+             (g.year ? ", released in " + g.year : "") +
+             (g.publisher ? " by " + g.publisher : "") + ".";
+    }
+    desc = desc.replace(/\s+$/, "") + " " + tail;
+
+    function meta(sel, attr, val) {
+      var m = document.head.querySelector(sel);
+      if (!m) { m = document.createElement("meta"); m.setAttribute(attr, sel.replace(/.*="|"\]$/g, "")); document.head.appendChild(m); }
+      m.setAttribute("content", val);
+    }
+    meta('meta[name="description"]', "name", desc);
+    meta('meta[property="og:title"]', "property", document.title);
+    meta('meta[property="og:description"]', "property", desc);
+
+    // The canonical deliberately drops every query string except id - ?lang=
+    // and any utm_ tags are the same page, not new ones.
+    var canon = "https://demo.retrovault.world/game.html?id=" + encodeURIComponent(g.id);
+    var link = document.head.querySelector('link[rel="canonical"]');
+    if (!link) { link = document.createElement("link"); link.rel = "canonical"; document.head.appendChild(link); }
+    link.href = canon;
+    meta('meta[property="og:url"]', "property", canon);
+
+    var gen = (window.GENRE_DATA && window.GENRE_DATA[g.id]) || {};
+    var ld = {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": g.title,
+      "url": canon,
+      "gamePlatform": platform,
+      "description": desc,
+      "inLanguage": "en",
+      "isPartOf": { "@type": "CollectionPage", "name": "Retro Vault", "url": "https://demo.retrovault.world/" }
+    };
+    if (g.year) ld.datePublished = String(g.year);
+    if (g.publisher) ld.publisher = { "@type": "Organization", "name": g.publisher };
+    if (g.developer) ld.author = { "@type": "Organization", "name": g.developer };
+    if (gen.genre) ld.genre = gen.genre;
+    if (data.video && data.video.id) {
+      ld.trailer = { "@type": "VideoObject", "name": data.video.title || (g.title + " gameplay"),
+                     "embedUrl": "https://www.youtube.com/embed/" + data.video.id };
+    }
+    var tag = document.createElement("script");
+    tag.type = "application/ld+json";
+    tag.textContent = JSON.stringify(ld);
+    document.head.appendChild(tag);
+  }
+  try { setGameMeta(); } catch (e) { document.title = g.title + " | Retro Vault"; }
 
   // ---- hero ----
   var hero = el("div","game-hero");

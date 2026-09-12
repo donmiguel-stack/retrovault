@@ -10,6 +10,7 @@
 // readers can follow it. Keep it that way when editing.
 window.I18N = {
   en: { _name: "English", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#012169\"/><path d=\"M0 0l20 14M20 0L0 14\" stroke=\"#fff\" stroke-width=\"2.8\"/><path d=\"M0 0l20 14M20 0L0 14\" stroke=\"#C8102E\" stroke-width=\"1.4\"/><path d=\"M10 0v14M0 7h20\" stroke=\"#fff\" stroke-width=\"4.6\"/><path d=\"M10 0v14M0 7h20\" stroke=\"#C8102E\" stroke-width=\"2.6\"/></svg>",
+    metaTail: "Plays in your browser on Retro Vault.",
     altVersions: "Other dumps of this cartridge",
     altNote: "The same game, read from the cartridge more than once. Dumps can differ in padding, in a handful of bytes, or in how much of the chip was read - usually without changing how the game plays. They are kept off the shelf grid and listed here instead.",
     altOf: "This is an alternate dump of {title}.",
@@ -144,6 +145,7 @@ window.I18N = {
     plusGraphics: "G7400+ (Plus graphics)", language: "Language"
   },
   nl: { _name: "Nederlands", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><rect width=\"20\" height=\"4.67\" fill=\"#AE1C28\"/><rect y=\"9.33\" width=\"20\" height=\"4.67\" fill=\"#21468B\"/></svg>",
+    metaTail: "Speelt in je browser op Retro Vault.",
     altVersions: "Andere dumps van deze cartridge",
     altNote: "Hetzelfde spel, meer dan één keer van de cartridge gelezen. Dumps kunnen verschillen in opvulling, in een handvol bytes, of in hoeveel van de chip is uitgelezen - meestal zonder dat het spel anders speelt. Ze staan niet in het schap, maar hier.",
     altOf: "Dit is een alternatieve dump van {title}.",
@@ -278,6 +280,7 @@ window.I18N = {
     plusGraphics: "G7400+ (Plus-graphics)", language: "Taal"
   },
   de: { _name: "Deutsch", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"4.67\" fill=\"#000\"/><rect y=\"4.67\" width=\"20\" height=\"4.67\" fill=\"#D00\"/><rect y=\"9.33\" width=\"20\" height=\"4.67\" fill=\"#FFCE00\"/></svg>",
+    metaTail: "Spielt im Browser auf Retro Vault.",
     altVersions: "Weitere Dumps dieses Moduls",
     altNote: "Dasselbe Spiel, mehrfach vom Modul ausgelesen. Dumps können sich im Padding, in einer Handvoll Bytes oder darin unterscheiden, wie viel des Chips gelesen wurde - meist ohne dass sich das Spiel anders spielt. Sie erscheinen nicht im Regal, sondern hier.",
     altOf: "Dies ist ein alternativer Dump von {title}.",
@@ -412,6 +415,7 @@ window.I18N = {
     plusGraphics: "G7400+ (Plus-Grafik)", language: "Sprache"
   },
   fr: { _name: "Français", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><rect width=\"6.67\" height=\"14\" fill=\"#002395\"/><rect x=\"13.33\" width=\"6.67\" height=\"14\" fill=\"#ED2939\"/></svg>",
+    metaTail: "Jouable dans le navigateur sur Retro Vault.",
     altVersions: "Autres dumps de cette cartouche",
     altNote: "Le même jeu, lu plusieurs fois depuis la cartouche. Les dumps peuvent différer par le remplissage, par quelques octets, ou par la portion de puce lue - sans changer, en général, la façon dont le jeu se joue. Ils n'apparaissent pas dans l'étagère mais ici.",
     altOf: "Ceci est un dump alternatif de {title}.",
@@ -546,6 +550,7 @@ window.I18N = {
     plusGraphics: "G7400+ (graphismes Plus)", language: "Langue"
   },
   pt: { _name: "Português (BR)", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#009B3A\"/><path d=\"M10 1.6L18.2 7 10 12.4 1.8 7z\" fill=\"#FEDF00\"/><circle cx=\"10\" cy=\"7\" r=\"3.1\" fill=\"#002776\"/><path d=\"M6.9 6.2a3.1 3.1 0 0 0 6.2 .55\" stroke=\"#fff\" stroke-width=\".85\" fill=\"none\"/></svg>",
+    metaTail: "Joga no navegador no Retro Vault.",
     altVersions: "Outros dumps deste cartucho",
     altNote: "O mesmo jogo, lido do cartucho mais de uma vez. Dumps podem diferir no preenchimento, em alguns bytes, ou em quanto do chip foi lido - normalmente sem mudar como o jogo se joga. Eles ficam fora da prateleira e são listados aqui.",
     altOf: "Este é um dump alternativo de {title}.",
@@ -680,6 +685,7 @@ window.I18N = {
     plusGraphics: "G7400+ (gráficos Plus)", language: "Idioma"
   },
   ja: { _name: "にほんご", _flag: "<svg viewBox=\"0 0 20 14\" width=\"20\" height=\"14\"><rect width=\"20\" height=\"14\" fill=\"#fff\"/><circle cx=\"10\" cy=\"7\" r=\"4.2\" fill=\"#BC002D\"/></svg>",
+    metaTail: "ブラウザで あそべます。Retro Vault",
     altVersions: "この カートリッジの ほかの ダンプ",
     altNote: "おなじ ゲームを、カートリッジから なんども よみとった ものです。ダンプは うめぐさや すうバイト、チップを どこまで よんだかで ちがうことが あります。たいていは あそびかたは かわりません。たなには ならばず、ここに ならびます。",
     altOf: "これは {title} の べつの ダンプです。",
@@ -835,18 +841,61 @@ window.I18N = {
 };
 
 window.I18N_KEY = "VideopacVault_lang";
+
+// Which language a visitor lands on, decided once when this file loads.
+//
+// In order:
+//   1. ?lang=xx in the URL. This is how retrovault.world hands a choice over
+//      to this domain - browser storage cannot cross between the two - so it
+//      counts as a deliberate choice and is remembered.
+//   2. A language this visitor picked from the flag row on a previous visit.
+//   3. The browser's own language list, matched on the primary subtag, so a
+//      Japanese or Dutch browser gets its own language on the first visit
+//      instead of having to find the flags.
+//   4. English.
+//
+// Only 1 and 2 are written to storage. An auto-detected language is
+// deliberately NOT stored: it should keep following the browser if that
+// changes, and a stored value should always mean "the visitor chose this".
+window.I18N_AUTO = (function () {
+  function known(code) {
+    if (!code) return null;
+    code = String(code).toLowerCase();
+    if (window.I18N[code]) return code;
+    var base = code.split("-")[0];          // ja-JP -> ja, pt-BR -> pt
+    return window.I18N[base] ? base : null;
+  }
+  var urlLang = null;
+  try { urlLang = known(new URLSearchParams(location.search).get("lang")); } catch (e) {}
+  if (urlLang) {
+    try { localStorage.setItem(window.I18N_KEY, urlLang); } catch (e) {}
+    return urlLang;
+  }
+  var saved = null;
+  try { saved = known(localStorage.getItem(window.I18N_KEY)); } catch (e) {}
+  if (saved) return saved;
+  var list = [];
+  try { list = navigator.languages || (navigator.language ? [navigator.language] : []); } catch (e) {}
+  for (var i = 0; i < list.length; i++) {
+    var m = known(list[i]);
+    if (m) return m;
+  }
+  return "en";
+})();
+
+window.currentLang = function () {
+  var v = null;
+  try { v = localStorage.getItem(window.I18N_KEY); } catch (e) {}
+  return (v && window.I18N[v]) ? v : window.I18N_AUTO;
+};
 window.t = function (key, vars) {
-  var lang = localStorage.getItem(window.I18N_KEY) || "en";
-  var pack = window.I18N[lang] || window.I18N.en;
+  var pack = window.I18N[window.currentLang()] || window.I18N.en;
   var s = pack[key] !== undefined ? pack[key] : window.I18N.en[key];
   if (s === undefined) return key;
   if (vars) Object.keys(vars).forEach(function (k) {
     s = s.replace("{" + k + "}", vars[k]);
   });
   return s;
-};
-window.currentLang = function () {
-  return localStorage.getItem(window.I18N_KEY) || "en";
 };
 
 // Prose that lives in a data file rather than in this one - the featured
