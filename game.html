@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=102">
+<link rel="stylesheet" href="style.css?v=103">
 <style>
   .game-page{max-width:1100px;margin:0 auto;padding:24px;}
   .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
@@ -721,8 +721,8 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=120"></script>
-<script src="setup-i18n.js?v=119"></script>
+<script src="i18n.js?v=121"></script>
+<script src="setup-i18n.js?v=120"></script>
 <script src="games.js?v=117"></script>
 <script src="alternates.js?v=4"></script>
 <script src="extras.js?v=109"></script>
@@ -736,12 +736,15 @@
 <script src="romsources.js?v=3"></script>
 <script src="hosted.js?v=2"></script>
 <script src="products.js?v=1"></script>
-<script src="cheats.js?v=112"></script>
-<script src="tips.js?v=110"></script>
+<script src="cheats.js?v=113"></script>
+<script src="cheats-ja.js?v=1"></script>
+<script src="tips.js?v=111"></script>
+<script src="tips-ja.js?v=1"></script>
 <script src="walkthroughs.js?v=1"></script>
-<script src="featured.js?v=113"></script>
+<script src="featured.js?v=114"></script>
 <script src="c64ad.js?v=110"></script>
-<script src="gamepages.js?v=118"></script>
+<script src="gamepages.js?v=119"></script>
+<script src="gamepages-ja.js?v=1"></script>
 <script src="demo.js?v=112"></script>
 <script>
 (function () {
@@ -757,6 +760,34 @@
 
   document.querySelectorAll("[data-i18n]").forEach(function(el){ el.textContent = window.t(el.dataset.i18n); });
   document.documentElement.lang = window.currentLang();
+
+  // ---- Japanese (hiragana) prose ----------------------------------------
+  // The per-game prose (gamepages.js history/note, cheats.js, tips.js) is
+  // written once in English. The Japanese pack is a sidecar keyed by the same
+  // games.js ids (gamepages-ja.js / cheats-ja.js / tips-ja.js) rather than
+  // {en,ja} objects inside the data files, so the catalogue keeps one source
+  // of truth and the other four languages are untouched. Every lookup below
+  // falls back to the English string, so a gap in the translation still
+  // renders instead of going blank.
+  var JA_ON = window.currentLang() === "ja";
+  function jaPage(gid){ return (JA_ON && window.GAMEPAGES_JA && window.GAMEPAGES_JA[gid]) || null; }
+  function jaTip(gid){ return (JA_ON && window.TIPS_JA && window.TIPS_JA[gid]) || null; }
+  // cheats are an array per id; the Japanese file holds the same number of
+  // entries in the same order, so merge by index and keep the English
+  // entry's img/alt/source fields. A length mismatch means the packs have
+  // drifted - fall back to English whole rather than pairing them up wrong.
+  function jaCheats(list, gid){
+    if (!JA_ON || !list || !window.CHEATS_JA) return list;
+    var j = window.CHEATS_JA[gid];
+    if (!j || j.length !== list.length) return list;
+    return list.map(function (c, i) {
+      var m = {};
+      Object.keys(c).forEach(function (k) { m[k] = c[k]; });
+      if (j[i].label !== undefined) m.label = j[i].label;
+      if (j[i].text !== undefined) m.text = j[i].text;
+      return m;
+    });
+  }
 
   var id = new URLSearchParams(location.search).get("id");
   var games = (window.GAMES_DATA && window.GAMES_DATA.games) || [];
@@ -883,22 +914,23 @@
   }
 
   if (data.history) {
-    info.appendChild(el("p","history-text", data.history.text));
+    var jp = jaPage(g.id);
+    info.appendChild(el("p","history-text", (jp && jp.history) || data.history.text));
     // Most histories are lifted from Wikipedia and credited as such. The
     // homebrews mostly aren't in Wikipedia at all, so those carry a written
     // note and either their own source link or none.
     var src = el("p","history-source");
     if (data.history.wikiTitle) {
-      src.innerHTML = 'From <a href="'+data.history.url+'" target="_blank" rel="noopener">Wikipedia: '+data.history.wikiTitle+'</a>';
+      src.innerHTML = window.t("histFrom")+' <a href="'+data.history.url+'" target="_blank" rel="noopener">Wikipedia: '+data.history.wikiTitle+'</a>';
       info.appendChild(src);
     } else if (data.history.source) {
       src.innerHTML = data.history.url
-        ? 'Source: <a href="'+data.history.url+'" target="_blank" rel="noopener">'+data.history.source+'</a>'
-        : 'Source: '+data.history.source;
+        ? window.t("srcLabel")+' <a href="'+data.history.url+'" target="_blank" rel="noopener">'+data.history.source+'</a>'
+        : window.t("srcLabel")+' '+data.history.source;
       info.appendChild(src);
     }
   } else {
-    info.appendChild(el("p","history-text","No published history for this one - it lives on through cartridge dumps and collections like this vault."));
+    info.appendChild(el("p","history-text", window.t("noHistory")));
   }
 
   // more than one dump of this cart survives - say what this one is
@@ -1284,7 +1316,7 @@
   // notes below it come from setup-i18n.js and follow the language picker.
   if (data.note) {
     var nOwn = el("p","controls-note own-note");
-    nOwn.innerHTML = data.note;
+    nOwn.innerHTML = (jaPage(g.id) || {}).note || data.note;
     cBox.appendChild(nOwn);
   }
 
@@ -1321,12 +1353,12 @@
   // comes from cheats.js (sourced from odyssey2.info's community cheat
   // page), keyed by games.js id - hidden by default behind a native
   // <details> disclosure so it doesn't spoil the page, revealed on click.
-  var cheats = (window.CHEATS_DATA && window.CHEATS_DATA[g.id]) || null;
+  var cheats = jaCheats((window.CHEATS_DATA && window.CHEATS_DATA[g.id]) || null, g.id);
   if (cheats) {
     var cheatsBox = document.createElement("details");
     cheatsBox.className = "cheats-box";
     var cheatsSum = document.createElement("summary");
-    cheatsSum.innerHTML = "😎 Reveal Cheats";
+    cheatsSum.innerHTML = window.t("revealCheats");
     cheatsBox.appendChild(cheatsSum);
     var cheatsBody = el("div","cheats-body");
     cheats.forEach(function (c) {
@@ -1347,7 +1379,7 @@
       cheatsBody.appendChild(item);
     });
     var cheatsSrc = el("p","cheats-source");
-    cheatsSrc.innerHTML = 'Source: <a href="https://odyssey2.info/cheats/" target="_blank" rel="noopener">odyssey2.info</a>';
+    cheatsSrc.innerHTML = window.t("srcLabel")+' <a href="https://odyssey2.info/cheats/" target="_blank" rel="noopener">odyssey2.info</a>';
     cheatsBody.appendChild(cheatsSrc);
     cheatsBox.appendChild(cheatsBody);
     cBox.appendChild(cheatsBox);
@@ -1369,15 +1401,16 @@
     var box = document.createElement("details");
     box.className = "tips-box";
     var sum = document.createElement("summary");
-    sum.innerHTML = "💡 Reveal Tips";
+    sum.innerHTML = window.t("revealTips");
     box.appendChild(sum);
     var body = el("div","tips-body");
     if (tip) {
       var item = el("div","tips-item");
-      item.appendChild(el("p",null,tip.text));
+      var jt = jaTip(id);
+      item.appendChild(el("p",null,(jt && jt.text) || tip.text));
       body.appendChild(item);
       var src = el("p","tips-source");
-      src.innerHTML = 'Source: <a href="'+tip.url+'" target="_blank" rel="noopener">StrategyWiki</a> — full walkthrough there.';
+      src.innerHTML = window.t("srcLabel")+' <a href="'+tip.url+'" target="_blank" rel="noopener">StrategyWiki</a> '+window.t("tipsSrcTail");
       body.appendChild(src);
     }
     if (wt) {
@@ -1459,7 +1492,7 @@
     var pcBox = el("div","controls-box");
     if (data.note) {
       var pcNote = el("p","controls-note own-note");
-      pcNote.innerHTML = data.note;
+      pcNote.innerHTML = (jaPage(g.id) || {}).note || data.note;
       pcBox.appendChild(pcNote);
     }
     var pcClick = el("p","controls-note");
@@ -1515,7 +1548,7 @@
     // everyone up on the C64 shelf: cracked-intro screens and the Mac F-keys.
     if (data.note) {
       var c64Note = el("p","controls-note own-note");
-      c64Note.innerHTML = data.note;
+      c64Note.innerHTML = (jaPage(g.id) || {}).note || data.note;
       c64Box.appendChild(c64Note);
     }
     var c64Start = el("p","controls-note");
@@ -1535,12 +1568,12 @@
     // link, and the label/text are set via innerHTML rather than the el()
     // helper's textContent so the <strong>/entity formatting in cheats.js
     // renders instead of showing up as literal markup.
-    var c64Cheats = (window.CHEATS_DATA && window.CHEATS_DATA[g.id]) || null;
+    var c64Cheats = jaCheats((window.CHEATS_DATA && window.CHEATS_DATA[g.id]) || null, g.id);
     if (c64Cheats) {
       var c64CheatsBox = document.createElement("details");
       c64CheatsBox.className = "cheats-box";
       var c64CheatsSum = document.createElement("summary");
-      c64CheatsSum.innerHTML = "😎 Reveal Cheats";
+      c64CheatsSum.innerHTML = window.t("revealCheats");
       c64CheatsBox.appendChild(c64CheatsSum);
       var c64CheatsBody = el("div","cheats-body");
       c64Cheats.forEach(function (c) {
@@ -1563,7 +1596,10 @@
         }
         if (c.source) {
           var cSrcP = el("p","cheats-source");
-          cSrcP.innerHTML = c.source;
+          // cheats.js stores these as a ready-to-render 'Source: <a>...</a>'
+          // string, one per entry. The link is the same in every language, so
+          // only the label in front of it is swapped for the translated one.
+          cSrcP.innerHTML = c.source.replace(/^Source:/, window.t("srcLabel"));
           item.appendChild(cSrcP);
         }
         c64CheatsBody.appendChild(item);
@@ -1751,7 +1787,7 @@
       cur = Math.max(0, Math.min(m.pages-1, p));
       pageImg.classList.remove("zoomed");
       pageImg.src = "manuals/"+m.item+"/p"+String(cur).padStart(2,"0")+".jpg";
-      counter.textContent = "Page " + (cur+1) + " / " + m.pages;
+      counter.textContent = window.t("pageLabel") + " " + (cur+1) + " / " + m.pages;
       thumbImgs.forEach(function(t,i){ t.classList.toggle("active", i===cur); });
     }
     prev.addEventListener("click", function(){ show(cur-1); });

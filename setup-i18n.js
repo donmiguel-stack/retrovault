@@ -1,6 +1,8 @@
 // The long-form text: the Setup panel and the controls notes on each game
 // page. Kept separate from i18n.js because these are paragraphs rather than
 // labels, and there is a lot of them.
+// The "ja" pack is kanji-free on purpose (hiragana + katakana only) - the
+// Japanese audience for the Vault is young readers. Keep it that way.
 window.SETUP_I18N = {
  "en": {
   "updateSetup": "Not seeing the buttons work? Updates need a source. Put the address of the repository this Vault came from into <code>update-source.json</code>, then restart <code>serve.py</code>.",
@@ -271,5 +273,59 @@ window.SETUP_I18N = {
   "dumpsHomebrewNote": "Homebrews e lançamentos livres de direitos autorais já vêm incluídos no Vault. A maioria das roms pode ser encontrada online &mdash; confira nossa <a href=\"resources.html\">página de Recursos</a>.",
   "dumpsHostedNote": "A BIOS é o único ficheiro de que todos os jogos Videopac precisam. Se não tiver uma dump própria, <a href=\"https://retrovault.world/files/bios/g7400.bin\">descarregue o g7400.bin aqui</a> e coloque-o em <code>emulator/bios/</code>. O Vault também executa o catálogo Philips esgotado diretamente a partir desse mesmo servidor de ficheiros, por isso o botão START já funciona nessas páginas antes de adicionar seja o que for.",
   "step2win": "No Windows:"
+ },
+ "ja": {
+  "updateSetup": "ボタンが うごきませんか？ アップデートには 「もとになる ばしょ」が ひつようです。この ヴォールトが どこから きたのか、その リポジトリの アドレスを <code>update-source.json</code> に かきこんで、<code>serve.py</code> を さいきどうしてください。",
+  "updateBlurb": "ヴォールトは、この コピーの もとに なった ばしょから あたらしい <em>カタログデータ</em>（パッケージの え、ジャンル、なおされた どうが、ほんやくなど）を とってくることが できます。ROM や BIOS、おきにいりには いっさい さわりません。かってに じっこうされることも ありません。ふたつめの ボタンを おすまでは、なにも ダウンロードされません。",
+  "c_pick": "SELECT GAME がめんで あそぶ ゲームの タイプを えらぶ",
+  "c_j1": "ジョイスティック 1 &mdash; いどう + アクション/ショット",
+  "c_j2": "ジョイスティック 2 &mdash; いどう + アクション/ショット",
+  "c_kbd": "ゲームきの キーボード &mdash; そのまま にゅうりょく",
+  "c_reset": "ゲームきの キーボードの RESET key（または More &rsaquo; Console RESET key）",
+  "c_osk": "オンスクリーンの ゲームき キーボードの ひょうじを きりかえる",
+  "c_focus": "Game Focus を きりかえる：ブラウザに キーを うばわれないように する",
+  "c_kbdNote": "この ソフトは ゲームきの <strong>アルファベット・すうじ キーボード</strong>を つかって あそびます。ロードが おわったら <strong>Tab</strong> を いちど おして、そのあとは ふつうに タイプしてください &mdash; もじ、すうじ、Enter など。Game Focus は おもに ブラウザが キーを ショートカットとして うばうのを ふせぐ ものです。ゲームきに つたわる ないようは かわりません。",
+  "c_mixNote": "ほとんどは ジョイスティックですが、この ソフトは <strong>ゲームきの キーボードへの にゅうりょく</strong>も もとめてきます（なまえの にゅうりょく、ベット、セットアップコードなど）。<strong>Tab</strong> を おすと ブラウザが キーを ショートカットとして うばうのを ふせげます &mdash; ただし ちゅうい：いどうや ショットボタンの にゅうりょくも キーボードに とどいてしまうのは <em>ふせげません</em>（したの ちゅういを みてください）。",
+  "c_hidden": "<strong>かくれた モード：</strong> いくつかの カートリッジは、SELECT GAME の すうじではなく、ゲームき じしんの キーボードから とくべつな きのうを ひらきます。K.C. Munchkin's の めいろを つくる エディターも その ひとつです &mdash; SELECT GAME がめんで <span class='kbd'>P</span> を おします。<span class='kbd'>Right Shift</span>（または <strong>More &rsaquo; Console keyboard</strong>）を おすと、ほんものの ゲームき キーボードの えが でてきます：やじるしキーで ハイライトを うごかし、ハイライトされた キーを <span class='kbd'>G</span> で おします。マウスで それらの キーを クリックしても なにも おきません &mdash; タッチスクリーンからの タップだけが うけつけられます。<span class='kbd'>F5</span> は ゲームきの RESET キーですが、macOS では Dictation に わりあてられて いるので、Mac では かわりに <strong>More &rsaquo; Console RESET key</strong> を つかってください。",
+  "c_bleed": "<strong>プレイちゅうに がめんの なまえらんに もじが はいって しまいますか？</strong> ショットボタンは ゲームき じしんの Gキーと おなじ <span class='kbd'>G</span> を つかっているので、キーボードを よんでいる ゲームには りょうほうとも つたわります。うごきはじめる まえに なまえを にゅうりょくしておけば、そのまま のこります。",
+  "c_stick2": "<strong>やじるしキーが ゲームちゅうに きかないですか？</strong> ゲームきには ジョイスティックが ふたつ あり、どちらを つかうかは ゲームごとに きまっています &mdash; いくつかの ソフト（たとえば Race）は、ひとりで あそぶ ときでも <em>2ばんめ</em>の ジョイスティックしか よみません。やじるしキーが きかない ときは、いどうを <strong>W A S D</strong>に、ショットを <strong>Q</strong>に きりかえてください。ふたりで あそぶ ソフトでは、やじるし+G と WASD+Q が ふたつの ジョイスティックに あたるので、ひとつの キーボードで ふたりとも あそべます。",
+  "c_state": "セーブステート / ロードステート（えらんだ スロット）",
+  "c_saveNote": "<strong>セーブについて。</strong> Videopac の カートリッジ じたいには セーブきのうが ありません。かきこむ さきが なかったのです。エミュレーターの <strong>States</strong> メニューで たいおうします。スロットを 1から9の なかから えらんで <strong>Save State</strong> を おすと、その しゅんかんが この ブラウザに ほぞんされます。つぎに あそぶ ときは <strong>Load State</strong> を おせば、そこに もどれます。じどうで さいかいすることは ありません。",
+  "s_extras": "じっさいの カートリッジの はこから スキャン",
+  "s_origManual": "げんばんの せつめいしょ",
+  "s_map": "マップ",
+  "s_noManual": "archive.org の Odyssey/Videopac せつめいしょ コレクションには、この ソフトの せつめいしょスキャンが みつかりませんでした。",
+  "s_noVideo": "この ソフトには プレイえいぞうの リンクが ありません。",
+  "s_fullVideo": "YouTube で どうがの ぜんぶを みる",
+  "s_notFound": "ゲームが みつかりません。ライブラリに もどって えらびなおしてください。",
+  "h_browser": "Chrome を つかう",
+  "browser": "Firefox でも ヴォールトは もんだいなく うごきますが、ゲームまでに もう いちど クリックが ひつようになります。<strong>Safari</strong>は さけてください：1しゅうかん あそんでいない サイトの データを けしてしまいます。そこには おきにいりや セーブデータも はいっています。",
+  "h_step1": "ステップ 1 &mdash; この フォルダで ターミナルを ひらく",
+  "step1": "Mac では <strong>Terminal</strong>、Windows では <strong>Command Prompt</strong> と よばれます。これから ヴォールトの フォルダを しめします。",
+  "mac": "<strong>Mac：</strong>Finder &rarr; <code>VIDEOPAC ODYSSEY VAULT</code> を さがす &rarr; みぎクリック &rarr; <strong>New Terminal at Folder</strong>を えらぶ。",
+  "win": "<strong>Windows：</strong>File Explorer &rarr; <code>VIDEOPAC ODYSSEY VAULT</code> を ひらく &rarr; <strong>アドレスバー</strong>を クリック &rarr; <code>cmd</code> と にゅうりょく &rarr; Enter。",
+  "h_step2": "ステップ 2 &mdash; きどうする",
+  "step2": "つぎを にゅうりょくして Return を おします：",
+  "step2b": "とまっているように みえますが、それで あっています &mdash; ブラウザを まっているのです。あそんでいる あいだは ウィンドウを ひらいたままに しておいてください。",
+  "h_step3": "ステップ 3 &mdash; ひらく",
+  "step3": "ここに アクセスして、ゲームを クリックしてください。",
+  "step3b": "あそびおわったら？ ターミナルの ウィンドウを クリックして <strong>Control + C</strong> を おしてください。",
+  "h_wrong": "うまく いかない ときは",
+  "w1": "<strong>\"command not found: python3\"</strong> &mdash; Python が インストールされていません。Mac：<code>xcode-select --install</code> と にゅうりょくします。Windows：python.org から ダウンロードして、<em>Add Python to PATH</em> に チェックを いれてください。",
+  "w2": "<strong>\"Address already in use\"</strong> &mdash; サーバーが すでに うごいています。ひらいている タブを つかうか、べつの ポートを えらんでください：<code>python3 serve.py 8080</code>。",
+  "w3": "<strong>\"No such file or directory\"</strong> &mdash; ターミナルが ただしい フォルダを さしていません。ステップ 1を やりなおして、<code>serve.py</code> が はいっている フォルダを えらんでください。",
+  "w4": "<strong>ページが よみこまれない</strong> &mdash; ターミナルの ウィンドウが まだ ひらいているか かくにんしてください。",
+  "h_sources": "もっと さがすには",
+  "sources": "<p>ヴォールトには じっさいの ゲームファイルは 1つも はいっていません &mdash; じぶんで ついかします（うえを みてください）。たなごとに ひつような ファイルの しゅるいが ちがい、レトロゲームの コミュニティの いろいろな ばしょから あつめる ことに なるので、ここでは たなごとに しょうかいします：</p><h4 class='src-shelf src-vp'>Videopac / Odyssey&sup2;</h4><p class='src-hint'><strong>この たなに ひつような もの：</strong> カートリッジダンプ（<code>.bin</code>）の ばしょは <code>emulator/roms/</code>、<em>さらに</em> ゲームきの BIOS <code>g7400.bin</code> の ばしょは <code>emulator/bios/</code>。BIOS が ないと、カートリッジを いくつ ついかしても、この たなの ゲームは 1つも うごきません。</p><ul><li><a href='https://odysseyclube.com/en/downloads' target='_blank' rel='noopener'>Odyssey Clube</a> &mdash; ブラジルの ながく つづいている Odyssey&sup2;/Videopac コミュニティで、じぶんの ダウンロードコーナーも あります &mdash; カートリッジダンプを さがすなら まず ここが いちばんです。</li><li><a href='https://odyssey2.info/' target='_blank' rel='noopener'>odyssey2.info</a> &mdash; えいごで いちばん くわしい Odyssey&sup2;/Videopac の データベースと せつめいしょライブラリです。</li><li><a href='https://github.com/BatoceraPLUS/Batocera.PLUS-bios/blob/main/g7400.bin' target='_blank' rel='noopener'>Batocera.PLUS BIOS pack</a> &mdash; ここに ふくまれるのは <code>g7400.bin</code> の ダンプで、この たなの ゲームを ブラウザで うごかすのに ひつようです。</li><li><a href='https://videopac.ch/' target='_blank' rel='noopener'>videopac.ch</a> &mdash; スイスの コレクターの ページで、カートリッジ ごとに はこと せつめいしょの スキャンが あります。</li><li><a href='https://videopac.nl/' target='_blank' rel='noopener'>videopac.nl</a> &mdash; オランダの Videopac コミュニティと フォーラムです。</li></ul><h4 class='src-shelf src-c64'>Commodore 64</h4><p class='src-hint'><strong>この たなに ひつような もの：</strong> ディスクイメージ（<code>.d64</code>）または カートリッジファイル（<code>.crt</code>）の ばしょは <code>emulator/roms/</code>。BIOS は ひつようありません。ディスク 1まいの ソフトが いちばん つかいやすいです。ディスクが すうまいに なる ゲームでは、OneLoad64 カートリッジを つかうと ディスクの いれかえが いりません。</p><ul><li><a href='https://gb64.com/' target='_blank' rel='noopener'>GameBase64</a> &mdash; いちばん おおきい けんさくできる Commodore 64 ゲームデータベースで、きれいな ディスクイメージを さがすなら ここが ていばんです。</li><li><a href='https://www.lemon64.com/' target='_blank' rel='noopener'>Lemon64</a> &mdash; えいごの C64 コミュニティの ちゅうしんてきな サイトです：レビュー、フォーラム、ゲームごとの ダウンロードリンクが あります。</li><li><a href='https://oneload64.github.io/' target='_blank' rel='noopener'>OneLoad64</a> &mdash; えらばれた、ゲーム 1つに つき 1ファイルの C64 コレクションです &mdash; ディスクが すうまいの ゲームも 1つの カートリッジに まとめられています。</li><li><a href='https://archive.org/details/commodore-64-romset-us' target='_blank' rel='noopener'>Internet Archive &mdash; Commodore 64 Romset</a> &mdash; いっぱんてきな C64 の ROM/ディスク コレクションです。</li></ul><h4 class='src-shelf src-pc'>MS-DOS PC</h4><p class='src-hint'><strong>この たなに ひつような もの：</strong> ゲームの DOS ファイルが はいった zip フォルダを <code>emulator/roms/</code> に いれます。せいしきの シェアウェアエピソード（Doom、Wolfenstein 3D、Commander Keen、Duke Nukem II）は むりょうで ごうほうてきに ダウンロードできます。はいばんが おわった ソフトは、Internet Archive じしんの ほぞん コレクションを さがすと よいです。</p><ul><li><a href='https://archive.org/details/softwarelibrary_msdos_games' target='_blank' rel='noopener'>Internet Archive &mdash; MS-DOS Games</a> &mdash; なんせんもの DOS ゲームが あり、おおくは ブラウザで そのまま あそべます。たいてい それぞれの アイテムは そのまま つかえる zip ファイルです。</li></ul><h4 class='src-shelf src-hb'>ホームブリュー（すべての たな）</h4><p class='src-hint'>さがす ひつようは ありません：さいはいふが むりょうの ホームブリューは、すべて ここに ホストされています。ゲームの ページを ひらいて、オレンジいろの <strong>ダウンロード</strong> ボタンを さがしてください。</p><p>エミュレーター：ブラウザの そとで うごかしたい ときは、<a href='https://vice-emu.sourceforge.io/' target='_blank' rel='noopener'>VICE</a> が C64よう です（ここで ブラウザ ないで うごいているのと おなじ コアです）。そして <a href='https://www.dosbox.com/' target='_blank' rel='noopener'>DOSBox</a> が MS-DOSよう です（この サイトは PCの たなに js-dos という WebAssembly ばんを つかっています）。Videopac/Odyssey&sup2; の たなは O2EM で うごいており、この ページに すでに くみこまれています &mdash; それでも じぶんの <code>g7400.bin</code> BIOS ダンプが なにかを きどうさせるのに ひつようです（うえを みてください）。</p>",
+  "sourcesNote": "ここに あげた サイトは すべて どくりつした、べつの かいしゃの サイトです &mdash; ヴォールトは それらを うんえいしたり コントロールしたり していません。ここで リンクした ないよう いじょうの ことは ほしょうできません。ダウンロードが ごうほうか どうかは、すんでいる くにの ほうりつや、すでに げんばんを もっているかに よります。まよったら さきに かくにんしてください。",
+  "h_python": "つぎに Python を インストール",
+  "python": "ヴォールトは ちいさな ローカルサーバーを うごかす ために Python が ひつようです。<strong>Mac：</strong>Terminal を ひらいて <code>xcode-select --install</code> と にゅうりょくします。<strong>Windows：</strong>python.org から てにいれます。インストーラーに <strong>\"Add python.exe to PATH\"</strong> という こうもくが でたら、チェックを いれてください &mdash; いれないと ターミナルが Python を みつけられません。",
+  "h_dumps": "まずは ダンプを ついかしよう",
+  "dumps": "ヴォールトには ゲームが はいっていません。ゲームきの BIOS、カートリッジダンプ、せつめいしょの スキャンは べつべつに ダウンロードして、ここの 3つの フォルダに いれます：",
+  "dumpsPaths": "emulator/bios/     g7400.bin\nemulator/roms/     カートリッジ\nmanuals/           せつめいしょの スキャン",
+  "dumpsNote": "<code>videopac-odyssey-dumps.zip</code> を もらった ばあいは、この フォルダの いちばん うえの かいそうで てんかいすれば、すべて ただしい ばしょに はいります。まちがえても ヴォールトは いつも どおりに みえます &mdash; パッケージの えなども ふくめて &mdash; でも ゲームは 1つも うごきません。",
+  "dumpsHomebrewNote": "ホームブリューと ちょさくけんの ない ソフトは、すでに ヴォールトに ふくまれています。ほとんどの ROM は ネットで さがせます &mdash; <a href=\"resources.html\">リソースページ</a>を みてください。",
+  "dumpsHostedNote": "BIOS は すべての Videopac ゲームに ひつような、たった 1つの ファイルです。じぶんの ダンプが ない ときは、<a href=\"https://retrovault.world/files/bios/g7400.bin\">ここで g7400.bin を ダウンロード</a>して、<code>emulator/bios/</code> に いれてください。ヴォールトは、はいばんに なった Philips の カタログも おなじ ファイルホストから ちょくせつ さいせいするので、なにも ついかしなくても これらの ページの START ボタンは うごきます。",
+  "step2win": "Windows では："
  }
 };

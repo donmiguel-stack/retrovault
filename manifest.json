@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-09 16:41:22",
- "count": 507,
- "bytes": 184737121,
+ "generated": "2026-09-12 12:30:37",
+ "count": 542,
+ "bytes": 187170290,
  "files": {
   "games.js": {
    "sha256": "ba7eb616825fa090801f819a1d5b14b546e18f1ac1744316cdec62df913cbc63",
@@ -32,16 +32,16 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "f9b54674393823c078a34fb735e8e93c992d569cf05d007520c7d54b04d3924b",
-   "size": 47318
+   "sha256": "bc53d2e8d246e289ad24b872214ede6bbbeba38cb05084de995f485f7edd52fc",
+   "size": 65013
   },
   "setup-i18n.js": {
-   "sha256": "ec0b9856bd3c5c500ae2e62b31ac8bf0d4568853e2a3a740cc3005f9e18d21b9",
-   "size": 63520
+   "sha256": "3aa9aa7e6398c7a2955036c0e09040e5e24c25e916a7ae1a3a48ca75791acf1d",
+   "size": 81915
   },
   "featured.js": {
-   "sha256": "6a6a87956339d0b4bad55c6ada7f5edcf30df07eae108890546eeda1b7bc06ff",
-   "size": 80542
+   "sha256": "42c882e6fd3a4da2fac4a6feff2afcad0a36450efe1da8df5e76b5cd5880d504",
+   "size": 99837
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -71,6 +71,18 @@
    "sha256": "9eabdba1dceb0fc6ac9db066e9e41c948b6cd5ab0f9fc58ea99d303e805d2ef6",
    "size": 12321
   },
+  "gamepages-ja.js": {
+   "sha256": "abcd8e7fea1fb52530e7037331f103f4af7757f75bfc34e5d4f4b62cb1b6bd2e",
+   "size": 231227
+  },
+  "cheats-ja.js": {
+   "sha256": "ed49c7466a24426bd9337e3e8ec77d86877a310a291c34b911e8a6224af19ed0",
+   "size": 46346
+  },
+  "tips-ja.js": {
+   "sha256": "44a431123a5d4420ee4960d571528288a9c7430e04988cdce884bc6de4cc6c1d",
+   "size": 13953
+  },
   "alternates.js": {
    "sha256": "fb2573298e9e485bdd0b7f8fa1e1fbe319889c2d3fed426d387fd2b5a63cf441",
    "size": 4597
@@ -96,20 +108,20 @@
    "size": 4572
   },
   "game.html": {
-   "sha256": "45f68917da9fceeeba0b0c3a19f3f9f21f83633020f5c4c05b0e3073883a585f",
-   "size": 94218
+   "sha256": "d4e16879abc47e0a2033e4775f0f9573d4e2fabd6399e62221110235bc67d2e9",
+   "size": 96395
   },
   "index.html": {
-   "sha256": "3864457bbb4f6fba25d1e569d9cd69f88ea772584084f958a0f35c8f20af85f9",
+   "sha256": "7b523e016b4aece6d09854bfeeb2db059a077beb6fe7289cb89e6fcfa0ee5eda",
    "size": 15716
   },
   "resources.html": {
-   "sha256": "9e959161d042a6bf759d1a089922f1af1775848ecf658b13b312de37d9f56528",
+   "sha256": "9fe8a7d68ed45c571aa2bea7fadaae0aaf1fd1f520a7f6b84428239f3a61d9f5",
    "size": 11676
   },
   "style.css": {
-   "sha256": "5b9cf41bfcf0c0ed75ca063984298238a5cbe568808562df8657ca65577c852a",
-   "size": 50169
+   "sha256": "1d6b8ce06821627882b76944ebb380294b1cfc84421757e380e0ae2a332a3150",
+   "size": 52858
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -375,9 +387,21 @@
    "sha256": "8d04072d95a9399640d286bcbb77512cc833325e935af5f7e861ec9cb00b3428",
    "size": 5250
   },
+  "covers/c64_hb_ball_and_chain.png": {
+   "sha256": "2b029eb1c23df1dfea74fbbad7a6de10a2aea0e0608ac02f4ba38305a946c7c9",
+   "size": 13801
+  },
+  "covers/c64_hb_balls_like_a_frog.png": {
+   "sha256": "35c58da7493ea3cac2c072ba9ccfa285d13cb880bbaa6bc0c7a5e999acb2907f",
+   "size": 9899
+  },
   "covers/c64_hb_bomberland.png": {
    "sha256": "9722f591099174296d03a05fbba1f3bdfbce8c81c94ce08d1f29e157818a9afa",
    "size": 7284
+  },
+  "covers/c64_hb_broken_altars.png": {
+   "sha256": "850e9c0f77b3908d7f0f0f642989ed4f4f21f486d9ce6c14cbcbd607669dc8df",
+   "size": 127546
   },
   "covers/c64_hb_bruce_lee_return_of_fury.png": {
    "sha256": "c3ca7eba91cf8be87f866bb4e5261ee3555766d9af423ebf6c775fc95c9e0bd4",
@@ -387,6 +411,14 @@
    "sha256": "ba7fd8501cb4b902b0f4c1621a226a22d01da068d3c0767cbd7b10d4f626760b",
    "size": 2688
   },
+  "covers/c64_hb_comchinko.png": {
+   "sha256": "587d668d9266be4fab8a09a541e98e57f3efa29504ace48f3a281b7b9254e797",
+   "size": 104356
+  },
+  "covers/c64_hb_corescape.png": {
+   "sha256": "754c2b3fb84d129643f75c459225a64ff7f34faa95f72561d3536a343afc38dc",
+   "size": 209481
+  },
   "covers/c64_hb_doc_cosmos.png": {
    "sha256": "e07c15b0095a81ea6fbedadaf11ef5f4be103e6dae22eee8f555e0e3b93aa75a",
    "size": 2432
@@ -394,6 +426,10 @@
   "covers/c64_hb_galaxian_dx.png": {
    "sha256": "4474ff2445cd5b6c58ec52d5d97d3415494bf918368dc67893f3c57fa7b5a6c7",
    "size": 4418
+  },
+  "covers/c64_hb_gates_of_the_ancient.png": {
+   "sha256": "02ea4780b3c0e7233671ad187aa0cbf581b55e8a395424168d12be92370269ed",
+   "size": 5950
   },
   "covers/c64_hb_grid_pix.png": {
    "sha256": "2f95ca8878f82ca8da51ed3bf7c7067d1e2e5a0b7bc7a28cf8b7321936235058",
@@ -407,13 +443,41 @@
    "sha256": "ba159e3bc9fc5705cb66bad2b7ad04271bcd3557e9e7e25397ed25db2adfa355",
    "size": 2084
   },
+  "covers/c64_hb_metal_mayhem.png": {
+   "sha256": "6d6c906ddecb8842181fbceb87b88a7148d484a5e90767e13aacaa6fc3cb100f",
+   "size": 32032
+  },
   "covers/c64_hb_micro_hexagon.png": {
    "sha256": "e1b47723ddcca902fc4686c9046c39e1c4bf9457f2441cdee47cafa9049dadbf",
    "size": 3453
   },
+  "covers/c64_hb_mineshaft_gap.png": {
+   "sha256": "d267dbec0acd239236dd4e795186a426da4a8d1b35875f2c40a3fb7919c2e3f4",
+   "size": 8461
+  },
+  "covers/c64_hb_minotrace.png": {
+   "sha256": "829db7f8c744ba9aaf6673abbc6d7664cd2a39a15b5efc45d567a0b1801c9901",
+   "size": 10154
+  },
+  "covers/c64_hb_missile_defence.png": {
+   "sha256": "d1ebe356df3286abe286d551f87a830f9f5ded12e47883a15cf0795735a5c799",
+   "size": 2481
+  },
   "covers/c64_hb_munchkin64.png": {
    "sha256": "c800ad6e205859aafb9c54a44d35e7ded1088c55a99df0ba05ca8be44d8d70fa",
    "size": 2441
+  },
+  "covers/c64_hb_overload.png": {
+   "sha256": "bbe0e4f1a70fa7a87ec72a12c9cade2b71a67195d4a99be6d4d333599f4151b7",
+   "size": 117170
+  },
+  "covers/c64_hb_plekthora.png": {
+   "sha256": "d774a9b86968a3afda3f3596524cb8e2b0daf8974a81c187d4dd272cea0034e1",
+   "size": 5781
+  },
+  "covers/c64_hb_portal_buster.png": {
+   "sha256": "6b99927b349a1c7601226d33ae1743e48a8ae8c53acebb3cd7df6365bccc8603",
+   "size": 89618
   },
   "covers/c64_hb_rescuing_orc.png": {
    "sha256": "683ceb7f8f2850ba8999cdc7cdbcfb3a13f9c45567d3ffaab97a15dc599c45f8",
@@ -435,6 +499,10 @@
    "sha256": "92cec68bc2b2b07d125098cdef693f614e92f92303ecb432958822a5e9096134",
    "size": 5971
   },
+  "covers/c64_hb_soiled_iron.png": {
+   "sha256": "a108ddd12b7fa745155529a34d3e743bb9a1eb8d1ea7edf65492a3e7f89db9d0",
+   "size": 176030
+  },
   "covers/c64_hb_super_bread_box.png": {
    "sha256": "3a2f077c55da400bcef17341f03f0cf815c69f480fe731429ff319ea4092bb49",
    "size": 2205
@@ -442,6 +510,14 @@
   "covers/c64_hb_tenebra2.png": {
    "sha256": "9d6bf5bcef1c191f53c7e3ee4dfec11a793547373f22e0e91d994600ae5ef3c3",
    "size": 3045
+  },
+  "covers/c64_hb_terminal_walker.png": {
+   "sha256": "bc63e88e59d13ed04e00cf0f17c6996d7303f37655c05074c99669e4421f42d3",
+   "size": 223857
+  },
+  "covers/c64_hb_trenchangle.png": {
+   "sha256": "5a6d6783bb3efc05007ce343f58362a70cadf48874d25f818e0343e3f390d43a",
+   "size": 170373
   },
   "covers/c64_hb_veggies_vs_undead.png": {
    "sha256": "bf2825e8931f1cdf706429117ef46ec853f6fe5db7d820f3cf3d3a6cdd32aa5f",
@@ -2027,9 +2103,73 @@
    "sha256": "cf0a878235e9b5301ee5f382a2093570db68cd20caae1c575428423b72d53d9b",
    "size": 34756
   },
+  "homebrew-downloads/ballnchain.prg": {
+   "sha256": "4374367a1f3d8ce6ff694e3b6970c64824ba002e93d98ba4c321c06313afead0",
+   "size": 51200
+  },
+  "homebrew-downloads/blaf.prg": {
+   "sha256": "d290b41313ffb901d571f4d0f9553bd2414aae415b3b742252dadca15d1a91e0",
+   "size": 50285
+  },
+  "homebrew-downloads/brokenaltars.prg": {
+   "sha256": "2eaaa4bb0613773fecaeca718fde8ee0dbc58c27c343a468746c60ccf96ba2bd",
+   "size": 49997
+  },
+  "homebrew-downloads/comchinko.prg": {
+   "sha256": "e9393c9ed33208c84c31a0d774c68a7e1a7d04e265fb9ba09fdf8d0d546f501c",
+   "size": 45420
+  },
+  "homebrew-downloads/corescape.prg": {
+   "sha256": "e888cc6c2d5cde96d79697113b82438f95d1c8b7915dd8dfd51ce2a7443a9625",
+   "size": 51161
+  },
+  "homebrew-downloads/goftancient.prg": {
+   "sha256": "e3ccf9b2c8c950c07a52ac2b3073eb87fc2eb57f6ab54fe39b221050801c1f70",
+   "size": 51201
+  },
   "homebrew-downloads/makejg.zip": {
    "sha256": "278137d213c8ab4798cc06da3eb76c18ed81a347075ca2ae0f19db86f92ae89e",
    "size": 3404
+  },
+  "homebrew-downloads/metalmayhem.prg": {
+   "sha256": "274ffeb77ebe01dc30f5171b852d08fc6182a06e21f8db0acd650c2b060ccb1c",
+   "size": 43337
+  },
+  "homebrew-downloads/mineshaftgap.prg": {
+   "sha256": "6f9fea2bbf7d3825ebfb6a6ef0f1847217dd178633aca1ae14695954fe31fbfa",
+   "size": 50257
+  },
+  "homebrew-downloads/minotrace.prg": {
+   "sha256": "41b3c6d2a27535f92034af0d7fd1929b984cf311c85f695dd08ee0ecffded483",
+   "size": 50276
+  },
+  "homebrew-downloads/missiledefence.prg": {
+   "sha256": "1988f3962cba7497fd0a1656c63e77a5b2597f4bc3c325bb92d0153c9cad1756",
+   "size": 45270
+  },
+  "homebrew-downloads/overload.prg": {
+   "sha256": "01edfd8d33c9c6f13a6c74738116dde00f8690be291cb816b68384e86a02d911",
+   "size": 38552
+  },
+  "homebrew-downloads/plekthora.prg": {
+   "sha256": "46417dab4b80c015b34326c7f70926477e517f3be6033e7c3887e33618d67405",
+   "size": 50936
+  },
+  "homebrew-downloads/portalbuster.prg": {
+   "sha256": "281455d45e62d6070b79cb1e391afb36fb6cdbbba4a294fd471519d6809630a9",
+   "size": 49498
+  },
+  "homebrew-downloads/soiledquest.prg": {
+   "sha256": "3106cee5e54871c916a0aba35f82aff3b1c190bc49ea24627cc6441c4390e3c1",
+   "size": 51033
+  },
+  "homebrew-downloads/trenchangle.prg": {
+   "sha256": "782aac64100c64936aa51a0becb995ae16692ee96036ce4fa449eab94ab44b44",
+   "size": 47847
+  },
+  "homebrew-downloads/walker.prg": {
+   "sha256": "2f04004e679b807d507bed145e6daea8804f597091e907c7e9252821f242a676",
+   "size": 48132
   }
  }
 }

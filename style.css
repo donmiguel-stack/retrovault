@@ -16,7 +16,7 @@
 *{box-sizing:border-box;}
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,sans-serif;
   background:var(--bg);
   color:var(--text);
 }
@@ -63,7 +63,7 @@ body{
    copy is this) not a call to action. index.html only - see app.js's
    VAULT_VERSION for the source of truth. */
 .vault-version{
-  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;font-weight:600;
+  font-family:ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;font-size:10px;font-weight:600;
   color:var(--text-mute);letter-spacing:.02em;
   border:1px solid var(--border);border-radius:999px;
   padding:2px 7px;white-space:nowrap;
@@ -226,7 +226,7 @@ body{
 #bootSplashField{
   position:absolute;inset:0;
   display:flex;align-items:center;justify-content:center;
-  font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;
+  font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;
   font-size:clamp(24px,5.5vw,56px);
   white-space:nowrap;
 }
@@ -521,7 +521,7 @@ body{
 }
 .attract-word{
   position:absolute; top:0; left:0; white-space:nowrap;
-  font-family:"Press Start 2P", ui-monospace, Menlo, Consolas, monospace;
+  font-family:"Press Start 2P", ui-monospace, Menlo, Consolas, "Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo, monospace;
   font-size:clamp(19px, 3.1vw, 40px); letter-spacing:.06em; line-height:1;
   padding:6px 8px; will-change:transform;
 }
@@ -592,7 +592,7 @@ body{
 /* ---- C64-style "advertise here" banner (C64 shelf ad slot) ---- */
 .c64-ad-strip{grid-column:1/-1;}
 .c64ad-link{display:block;text-decoration:none;position:relative;}
-.c64ad{background:#7869C4;padding:16px;border-radius:var(--radius);font-family:ui-monospace,Menlo,Consolas,monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
+.c64ad{background:#7869C4;padding:16px;border-radius:var(--radius);font-family:ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
 .c64ad-screen{position:relative;background:#40318D;height:300px;overflow:hidden;display:flex;flex-direction:column;}
 /* One big raster bar now (was four thinner ones), doubled again to 220px -
    height bumped 230->300 so it still has real room to glide, not just fill
@@ -607,7 +607,7 @@ body{
 .c64ad-scroller{position:absolute;white-space:nowrap;will-change:transform;}
 /* Bigger font than before (26px -> 38px); colour is now set per-letter by
    c64ad.js's silver-shine sweep, not a fixed value here. */
-.c64ad-scroller b{display:inline-block;font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;font-size:38px;letter-spacing:3px;text-transform:uppercase;text-shadow:4px 4px 0 rgba(0,0,0,.5);}
+.c64ad-scroller b{display:inline-block;font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;font-size:38px;letter-spacing:3px;text-transform:uppercase;text-shadow:4px 4px 0 rgba(0,0,0,.5);}
 .c64ad-bottom{position:relative;color:#B0A4FF;font-size:12px;letter-spacing:2px;padding:0 14px 10px;display:flex;justify-content:space-between;gap:12px;text-shadow:1px 1px 0 rgba(0,0,0,.35);}
 .c64ad-blk{color:#94E089;}
 @media (prefers-reduced-motion: reduce){ .c64ad-cur{animation:none;} }
@@ -615,7 +615,7 @@ body{
 /* ---- PC/DOS-style "advertise here" banner (PC shelf ad slot) ---- */
 .pc-ad-strip{grid-column:1/-1;}
 .pcad-link{display:block;text-decoration:none;position:relative;}
-.pcad{background:#cec7ab;padding:16px;border-radius:8px;font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
+.pcad{background:#cec7ab;padding:16px;border-radius:8px;font-family:ui-monospace,Menlo,Consolas,"Courier New","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
 .pcad-screen{position:relative;background:#0000AA;height:172px;overflow:hidden;display:flex;flex-direction:column;box-shadow:inset 0 0 30px rgba(0,0,0,.55);}
 .pcad-bars{position:absolute;inset:0;opacity:.28;pointer-events:none;}
 .pcad-bars i{position:absolute;top:0;bottom:0;}
@@ -626,7 +626,7 @@ body{
 .pcad-band{position:relative;flex:1;display:flex;align-items:center;overflow:hidden;}
 .pcad-scroller{position:absolute;white-space:nowrap;will-change:transform;}
 .pcad-scroller b{
-  display:inline-block;font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;
+  display:inline-block;font-family:ui-monospace,Menlo,Consolas,"Courier New","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;
   font-weight:700;font-size:112px;line-height:1;letter-spacing:6px;text-transform:uppercase;
   color:transparent;background:linear-gradient(180deg,#ffffff 0%,#eafcff 45%,#7eeaff 100%);
   -webkit-background-clip:text;background-clip:text;
@@ -663,3 +663,43 @@ body{
 .product-source a{color:var(--accent,#5b8def);text-decoration:none}
 .product-source a:hover{text-decoration:underline}
 .resources-page .bios-note{margin-top:18px;padding:12px 14px;border-left:3px solid var(--accent,#5b8def);background:rgba(91,141,239,.08);border-radius:6px}
+
+/* ---- Japanese (ja) ----------------------------------------------------------
+   The interface pack for Japanese is written without kanji - hiragana with
+   katakana for loanwords - so that young readers can follow it. All-hiragana
+   text has no kanji to break up a line, which makes it much harder to find
+   word boundaries at the default metrics, so the ja pages get a little more
+   air: looser line-height, a touch of letter-spacing, and no hyphenation or
+   mid-word breaking (Japanese wraps between characters instead). Every
+   font-family above also names a Japanese family explicitly, because neither
+   "Press Start 2P" nor the mono stacks carry kana.
+
+   The hook is documentElement.lang, which index.html (app.js), game.html and
+   resources.html all set from the language picker. ---------------------------- */
+html[lang="ja"] body{
+  line-height:1.85;
+  letter-spacing:.02em;
+  word-break:normal;
+  line-break:strict;
+}
+/* Japanese wraps between characters, so a short label in a flex row can
+   collapse to one character per line the moment the row runs short of
+   space. The topbar controls, chips and filter labels are all single
+   short phrases - keep them on one line. */
+html[lang="ja"] .ghost-btn,
+html[lang="ja"] .chip,
+html[lang="ja"] .results,
+html[lang="ja"] .fav-btn,
+html[lang="ja"] select,
+html[lang="ja"] .badge,
+html[lang="ja"] .pill{ white-space:nowrap; }
+html[lang="ja"] .history-text,
+html[lang="ja"] .controls-note,
+html[lang="ja"] .cheats-body,
+html[lang="ja"] .tips-body,
+html[lang="ja"] .modal-body{
+  line-height:1.95;
+}
+/* the pixel-font display type is set in Latin capitals by design; kana fall
+   back to a Japanese family at that size and read better a shade smaller */
+html[lang="ja"] .c64ad-scroller b{font-size:32px;letter-spacing:2px;}
