@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-12 15:55:51",
+ "generated": "2026-09-14 16:25:07",
  "count": 544,
- "bytes": 187250151,
+ "bytes": 187250799,
  "files": {
   "games.js": {
    "sha256": "ba7eb616825fa090801f819a1d5b14b546e18f1ac1744316cdec62df913cbc63",
@@ -72,8 +72,8 @@
    "size": 12321
   },
   "gamepages-ja.js": {
-   "sha256": "abcd8e7fea1fb52530e7037331f103f4af7757f75bfc34e5d4f4b62cb1b6bd2e",
-   "size": 231227
+   "sha256": "f4e81aeba6ebf42399e8f146853cc7e0891fec7ce3300303cb61ca6d07a88ae9",
+   "size": 231875
   },
   "cheats-ja.js": {
    "sha256": "ed49c7466a24426bd9337e3e8ec77d86877a310a291c34b911e8a6224af19ed0",
@@ -108,7 +108,7 @@
    "size": 4572
   },
   "game.html": {
-   "sha256": "2946cff1c042154abfbac8a8c7cdb9884bca84325204d99087febc33d052b1f6",
+   "sha256": "fa9a51a9466a52dec323893072631299f1dce8630e61351173c09d6a763d5a2a",
    "size": 102842
   },
   "index.html": {
