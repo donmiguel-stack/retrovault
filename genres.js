@@ -1497,5 +1497,85 @@ window.GENRE_DATA = {
  "am_megaball": {
   "genre": "action",
   "players": "p1"
+ },
+ "am_zerg": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "am_doctor_strange_2": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_pollymorf": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "am_dogfight": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "am_drip": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "am_bobs_garden": {
+  "genre": "maze",
+  "players": "p1"
+ },
+ "am_super_obliteration": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_asteroids": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_alien_fish_finger": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_wibble_world_giddy": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_crazy_sue": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_pengo2": {
+  "genre": "maze",
+  "players": "p1"
+ },
+ "am_toado": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_deluxe_pacman": {
+  "genre": "maze",
+  "players": "p1"
+ },
+ "am_llamatron": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_gorf": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_dropzone": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_elevation": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_trailblazer": {
+  "genre": "racing",
+  "players": "p1"
+ },
+ "am_space_taxi": {
+  "genre": "action",
+  "players": "p1"
  }
 };

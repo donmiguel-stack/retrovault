@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-15 17:22:39",
- "count": 558,
- "bytes": 193635781,
+ "generated": "2026-09-15 18:29:16",
+ "count": 598,
+ "bytes": 211844880,
  "files": {
   "games.js": {
-   "sha256": "81ab654dfd72293d26ec33b1aead16eb6d09fe44b24aa2e764f34fa40d5a1da2",
-   "size": 107899
+   "sha256": "0909952638ffc548b61037e077f12f825f5e208b4c34d50916944ca8f0387d51",
+   "size": 114247
   },
   "gamepages.js": {
-   "sha256": "030b57fd2522a3cea1882793f5032ed13df4d37d6812a8b4686cbca6dc917f53",
-   "size": 243869
+   "sha256": "6ccc9e4423adc02ceb847ecaea7cbcb8b4460c402d30cfe1dad58247dd913c8d",
+   "size": 250573
   },
   "genres.js": {
-   "sha256": "25b0cc2f070290662bd42c704e4ec54e24b2132f061acb280bc6044ff7a6cc9c",
-   "size": 23748
+   "sha256": "b334703654756662ea8c2f3e28d5260dd4392536c78b4ca3795a5b3d1d84770f",
+   "size": 25024
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -56,8 +56,8 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "24fed3bbb111730cda52a88bf987c650cf2f7134a1d25abd1ed1c44fe7db793d",
-   "size": 18488
+   "sha256": "be8a428649171f41e128f564aba93ce3821f1a088ac27ce287c8b4a4da59dd8b",
+   "size": 24537
   },
   "romsources.js": {
    "sha256": "1d1a80e689c47174f768e971f3f3d2b81a8459b6968a0c6b7236a6d1b5a8ab81",
@@ -160,8 +160,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "b7d0d8b058cba3cf1426c90ce28f9b646e608d7ffa4a8bae5a1dfdc7d42baf3b",
-   "size": 67625
+   "sha256": "377842141309d2f20c67360fc17d2836a530acffd8953ad1cdb10fb0143c3543",
+   "size": 72689
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -243,6 +243,22 @@
    "sha256": "201e0e420daa66574337440224c38cd9471a7d9105fd8ba49a3bb09fd08b47a5",
    "size": 492150
   },
+  "covers/am_alien_fish_finger.png": {
+   "sha256": "18544af75ae4d2cb3d51bc47a53d0de4e02b05530ac20d39998aec4a3b7a7f48",
+   "size": 3757
+  },
+  "covers/am_asteroids.png": {
+   "sha256": "b4ad9071013994ebe6b57fa08e4787b89bd7683228862cfbccbf43a0f30af142",
+   "size": 1684
+  },
+  "covers/am_bobs_garden.png": {
+   "sha256": "8e2d033bd323f46556de03117e03c0ea0fd833f2a73f67146646a7615af0e209",
+   "size": 6894
+  },
+  "covers/am_crazy_sue.png": {
+   "sha256": "585072645835cf3da85234b594d5dda17006bbbfaa34e350854db6fc13f20dbc",
+   "size": 5462
+  },
   "covers/am_cybernetix.png": {
    "sha256": "305b289e1f9b9b49c3a10cd9f0b292508f6dfa6685a791ad7f3fe38b6bbd3529",
    "size": 3649
@@ -251,9 +267,53 @@
    "sha256": "ed5c764ca55ce89c8b863fdc0eaec4df37245d517185ab87d70250a6ffc9838c",
    "size": 6669
   },
+  "covers/am_deluxe_pacman.png": {
+   "sha256": "ae61463217e99a2c76979ea0ad636941848158928672e469745178cb7ca261e0",
+   "size": 6071
+  },
+  "covers/am_doctor_strange_2.png": {
+   "sha256": "28b38d6ad9a46e782353523b064552f976f6802cf0983acf030b054cc87e59e7",
+   "size": 3943
+  },
+  "covers/am_dogfight.png": {
+   "sha256": "996fcbba8f8cc859a3fc293626144fe8617b82baafef36da6bd313f0eadf53aa",
+   "size": 17023
+  },
+  "covers/am_drip.png": {
+   "sha256": "1b970ede77ead39ac8fab4ac5b1a9cc4473000d9244e58cc17f1d07d3460af95",
+   "size": 6554
+  },
+  "covers/am_dropzone.png": {
+   "sha256": "30526d79029a757fd2a189aac547bb1ca18841f9e9f47d74626f8f5ebf3a88ca",
+   "size": 12049
+  },
+  "covers/am_elevation.png": {
+   "sha256": "e160854a13c8cf725524d4f2ad186f27bb2ea8f13d5445dc755adfd7c7ab0e2a",
+   "size": 7468
+  },
+  "covers/am_gorf.png": {
+   "sha256": "d13ec44b9f1a8fb1a8651a5c7754ed5ac1675a782b2b1081d78e244e5e82ba03",
+   "size": 813
+  },
+  "covers/am_llamatron.png": {
+   "sha256": "b052cce9990177fcafac49cdd014dfec81f011f5491f22812cbee847a0246f7b",
+   "size": 5313
+  },
   "covers/am_megaball.png": {
    "sha256": "a9dff540b0c6d1dd46fd833f9077faa711e130ab747bb355513cf5bbe4d37d49",
    "size": 6019
+  },
+  "covers/am_pengo2.png": {
+   "sha256": "25ef61e647c0ca8e3f4e75197b8a1ca9ba48f5529c282c635eb5fdde99e1c3dd",
+   "size": 20528
+  },
+  "covers/am_pollymorf.png": {
+   "sha256": "afe536f5eea399126cd8191a32075ad5e80afc54facc542d713a93e5197906d2",
+   "size": 22602
+  },
+  "covers/am_space_taxi.png": {
+   "sha256": "778114b230d800699244e8ce9a597804263912a7ebbf06cfd3ee3168d2cb5d51",
+   "size": 1655
   },
   "covers/am_sqrxz.png": {
    "sha256": "2d42d638e4ae7faa9275de130470fef0528e634cb45c38e11c1a1e9ba3002b61",
@@ -267,9 +327,29 @@
    "sha256": "7ba52d01b17333509d8a31adf5d4493968037ce03678393f2d2b891c50dc79fa",
    "size": 10797
   },
+  "covers/am_super_obliteration.png": {
+   "sha256": "3ae3ccfbf70737612c86c826674e3efd11141cc38568ff11a246623c045e774c",
+   "size": 9655
+  },
+  "covers/am_toado.png": {
+   "sha256": "9d044d65a4cf27b247f8beeeebbe3bf1f7d924c7f31f99c3bc4034fd5ae7f86b",
+   "size": 20866
+  },
+  "covers/am_trailblazer.png": {
+   "sha256": "f5412df56b14fbf8a7cea8c458e98ab4e6f8601789f0cd8b5eddbdfc28a62e37",
+   "size": 4320
+  },
+  "covers/am_wibble_world_giddy.png": {
+   "sha256": "cec67b52787753eaa65b6bfa6f10871cc3b33b318f86c4e20036c8128188bd67",
+   "size": 3558
+  },
   "covers/am_wizzys_quest.png": {
    "sha256": "17db38fd5d487c7be65c1bea5b61c0837f7a6b9ff80cded7097e24fcedf0f99f",
    "size": 13029
+  },
+  "covers/am_zerg.png": {
+   "sha256": "42c998a8d352ce268b97e79a2f7577be54341c8f8522b081f8fc35f3215ebd1e",
+   "size": 1043
   },
   "covers/board_vp_41.jpg": {
    "sha256": "5c6bd986c2c6d6193c0f773f4b1ec60fa78127310ec57e6dbb9d9812ca3051b5",
@@ -2139,6 +2219,22 @@
    "sha256": "cf0a878235e9b5301ee5f382a2093570db68cd20caae1c575428423b72d53d9b",
    "size": 34756
   },
+  "homebrew-downloads/amiga_alien_fish_finger.adf": {
+   "sha256": "6cb565b46bffe9d01ffbc296782b6d5256f2641d890646390ec56f2408d72286",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_asteroids.adf": {
+   "sha256": "3a218c2522fc331b779b78d8c182d7d57fd766b4cef1660c4ca42bc49dd87769",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_bobs_garden.adf": {
+   "sha256": "9a4d6ed5b51de7679ea82b76eb554ffa28dff1ddcc78de73667b24628005f379",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_crazy_sue.adf": {
+   "sha256": "a0dfa2a7c26b10ed526bac7a823e07bbe6a56176197164c50a103acc5b35c860",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_cybernetix.adf": {
    "sha256": "2a1372fc6c4fe02165c119c009ffbda8226ad4be2ff64194f69bb1ceb41ff826",
    "size": 901120
@@ -2147,8 +2243,52 @@
    "sha256": "910aaec1909d0af8362a11e504f462f6b0cfcbd534d7dc0d28b2b7d0abbb8f09",
    "size": 901120
   },
+  "homebrew-downloads/amiga_deluxe_pacman.adf": {
+   "sha256": "e929243b490e08e8c93ab9809147f82c2ebd1c63539858b65c139741747b82aa",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_doctor_strange_2.adf": {
+   "sha256": "e34a449fcc4f433332ed342111cce593df63b1ec9864b5775fd7d0393bf19c26",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_dogfight.adf": {
+   "sha256": "974b617e2af6daefaec7badf18fac1cc3b0df60fda746ca54ab1c227087cebc2",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_drip.adf": {
+   "sha256": "62b6f005951be08e3e6a2de9fdf79fd1fe94cd31f4b9a71d21ce8806aa02c4c8",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_dropzone.adf": {
+   "sha256": "1ae36161b3758c450d8229a5c5b36712a907ae82498747f5bf6a9d142af45d5e",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_elevation.adf": {
+   "sha256": "623a4fad3508892ede5c8ba8d89df7eeacd1f31ed285dee1c3ada791eea75404",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_gorf.adf": {
+   "sha256": "95af1fecd2fd88189d2a0d73f19e5b55baf09918d3488c32bc33dcf2e2c50f6e",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_llamatron.adf": {
+   "sha256": "5879efd7276a19d2c7b304ecca7e2fc81a67372cef8b71399212d95c3ac6d5a3",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_megaball.adf": {
    "sha256": "24bf6e2eef4a2d8ac6ecaa9ffed4324700c92bae3e225061f2fc9204e0c9ed57",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_pengo2.adf": {
+   "sha256": "ef5e565215c23c2b47100cbf749671245f05cb90b840577b20344468717de595",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_pollymorf.adf": {
+   "sha256": "afa0a531f23bd5fb4104f2ee32a2bc9684b3fb3a5dfce1054e3173bda119c221",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_space_taxi.adf": {
+   "sha256": "bb84f572512dd96b3597c0b072fe9ec0f1bd5ae5763a3aafe87ef760eba6c644",
    "size": 901120
   },
   "homebrew-downloads/amiga_sqrxz.adf": {
@@ -2163,8 +2303,28 @@
    "sha256": "5218a1ad66e73a7e571d17e3f77665d48355111511f7285839e9661d8ff413c1",
    "size": 901120
   },
+  "homebrew-downloads/amiga_super_obliteration.adf": {
+   "sha256": "e4f37d461c9e9720511f00c93fdd573143eb8ebe7e28be9cb484f5913c6bafd7",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_toado.adf": {
+   "sha256": "d7cc25ac38e879192e74ad2872cad4c8367f602bf98e9ae55f76226bb7ec27fb",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_trailblazer.adf": {
+   "sha256": "4e073c0bc39bdb1d3a2a3bb2e5e351d3c1ea12b347673a49a6ec5319a5de696a",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_wibble_world_giddy.adf": {
+   "sha256": "71e5da7e9fe327b704dd55d89df947871c28453673345920553e103ab95775c5",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_wizzys_quest.adf": {
    "sha256": "0255189c3ebbed32f43834bd4211dfa6848197d4319c86378dcfcded29c462c7",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_zerg.adf": {
+   "sha256": "b689fe385f99f393f4e849ec513a294c346f89f74a362c5643c13c3bb1df976f",
    "size": 901120
   },
   "homebrew-downloads/ballnchain.prg": {

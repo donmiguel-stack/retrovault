@@ -4818,5 +4818,193 @@ window.GAMEPAGES_DATA = {
   "history": {
    "text": "MegaBall, Ed and Al Mackey's mouse-controlled Breakout/Arkanoid-style Amiga classic &ndash; clear each brick layout with power-ups and multi-ball chaos, steering the paddle with the mouse."
   }
+ },
+ "am_zerg": {
+  "input": "keyboard",
+  "video": {
+   "id": "7OXhnQJ-4PA",
+   "title": "AMIGA Zerg By Mike Shapiro (1990)"
+  },
+  "history": {
+   "text": "A 1989 shareware/PD dungeon-crawler RPG by Mike Shapiro &ndash; simple keyboard-driven stats and combat, one of the more ambitious solo-coder RPGs to come out of the Amiga PD scene."
+  }
+ },
+ "am_doctor_strange_2": {
+  "input": "joystick",
+  "video": {
+   "id": "hkoaiyo_hKk",
+   "title": "Amiga Longplay: Doctor Strange 2 (reupload with better quality)"
+  },
+  "history": {
+   "text": "A 1995 freeware platformer by Ouija Board (distributed via 17-Bit Software) &ndash; the pick-armed hero returns with a green squirting gun, collecting his way through single-screen levels."
+  }
+ },
+ "am_pollymorf": {
+  "input": "joystick",
+  "video": {
+   "id": "vSxNQwFAX4E",
+   "title": "Amga Longplay: Pollymorf"
+  },
+  "history": {
+   "text": "A 1993 public-domain puzzle game by Andrew Campbell &ndash; group balls of matching colour together to clear them, with a gentle start and a sharp difficulty ramp."
+  }
+ },
+ "am_dogfight": {
+  "input": "joystick",
+  "video": {
+   "id": "fWMkUdoBWco",
+   "title": "AMIGA Dogfight OTHER GAME AMIGA OCS v1.1 AMOS 19xx By Richard Ling"
+  },
+  "history": {
+   "text": "A 1996 public-domain two-player biplane dogfighting game by Richard Ling, built in AMOS &ndash; a PD scene favourite for split-screen First World War dogfights against a friend."
+  }
+ },
+ "am_drip": {
+  "input": "joystick",
+  "video": {
+   "id": "fKuW8EadQGw",
+   "title": "AMIGA DRIP AMIGA OCS OTHER GAME By Skiles Art In 1989 PD adf"
+  },
+  "history": {
+   "text": "A 1989 public-domain puzzle game by Art Skiles &ndash; guide a drip of water along a network of pipes, turning them rusty red, on a fresh screen layout every time you play."
+  }
+ },
+ "am_bobs_garden": {
+  "input": "joystick",
+  "video": {
+   "id": "a8gyZeAJdcA",
+   "title": "Bob's Garden Amiga"
+  },
+  "history": {
+   "text": "A 1993 shareware Mr. Do! clone by Justin Leck &ndash; dig through a single-screen garden collecting cherries while avoiding the enemies chasing you down."
+  }
+ },
+ "am_super_obliteration": {
+  "input": "joystick",
+  "video": {
+   "id": "UzGfOl1ub-4",
+   "title": "Amiga 500 Longplay [414] Super Obliteration (Public Domain)"
+  },
+  "history": {
+   "text": "A 1993 public-domain Pang clone by David Papworth, set in a futuristic sci-fi setting &ndash; pop the descending bubbles before they split, land, and crush you."
+  }
+ },
+ "am_asteroids": {
+  "input": "joystick",
+  "video": {
+   "id": "jSyuFwGEKRw",
+   "title": "cabaret asteroids for Amiga"
+  },
+  "history": {
+   "text": "Cabaret Asteroids, a 1991 shareware arcade-perfect port of the coin-op classic by Vertical Developments &ndash; the same stark black-and-white vector look, rendered on the Amiga."
+  }
+ },
+ "am_alien_fish_finger": {
+  "input": "joystick",
+  "video": {
+   "id": "y1VVQhdSiu8",
+   "title": "Amiga 500 Longplay [394] Alien Fish Finger (Public Domain)"
+  },
+  "history": {
+   "text": "A 1996 platformer by Skull Army (David Cruickshank) &ndash; one of the Amiga PD scene's most fondly remembered platform games, still being updated years after its original release."
+  }
+ },
+ "am_wibble_world_giddy": {
+  "input": "joystick",
+  "video": {
+   "id": "wsphnFR68s8",
+   "title": "Wibble World Giddy: Wibble Mania! (Amiga Longplay)"
+  },
+  "history": {
+   "text": "A 1993 public-domain platformer by Phillip Ruston &ndash; a well-loved take on the Dizzy games, popular enough on the PD scene that it was later updated for the PC too."
+  }
+ },
+ "am_crazy_sue": {
+  "input": "joystick",
+  "video": {
+   "id": "ECQD0vXzwYo",
+   "title": "Amiga 500 Longplay [112] Crazy Sue (Public Domain)"
+  },
+  "history": {
+   "text": "A 1991 public-domain platformer published by MC Publications &ndash; its clear references to The Great Giana Sisters made it an instant PD scene favourite, popular enough to get its own sequel."
+  }
+ },
+ "am_pengo2": {
+  "input": "joystick",
+  "history": {
+   "text": "Pengo 2, a 1994 giftware maze game by Reploid &ndash; push and crush the enemies between ice blocks, in the Amiga PD scene's spin on the Sega arcade classic."
+  }
+ },
+ "am_toado": {
+  "input": "joystick",
+  "video": {
+   "id": "Es7QK3FEhC8",
+   "title": "Amiga 500 - Toado (Public Domain)"
+  },
+  "history": {
+   "text": "A 1994 public-domain Frogger clone by J. Wills &ndash; guide your character across traffic and a river of hazards to safety, with lovely hand-drawn graphics for a PD title."
+  }
+ },
+ "am_deluxe_pacman": {
+  "input": "joystick",
+  "video": {
+   "id": "EDAPh3Tk7mw",
+   "title": "Amiga 1200 Longplay [014] Deluxe Pac-Man (Public Domain)"
+  },
+  "history": {
+   "text": "A 1992 shareware Pac-Man clone by Edgar Vigdal, the same author as the vault's own Deluxe Galaga &ndash; updated repeatedly over the years to near-arcade-perfect polish."
+  }
+ },
+ "am_llamatron": {
+  "input": "joystick",
+  "video": {
+   "id": "Zp5bSasqHC0",
+   "title": "Llamatron on the Amiga"
+  },
+  "history": {
+   "text": "Llamatron: 2112, Jeff Minter's 1991 shareware reworking of Robotron: 2084 for Llamasoft &ndash; blast waves of enemies from every direction while rescuing llamas, sheep in tow."
+  }
+ },
+ "am_gorf": {
+  "input": "joystick",
+  "history": {
+   "text": "A 1993 shareware tribute to the classic multi-stage arcade shooter Gorf, by Towerbyte &ndash; fly through a gauntlet of distinct space-combat stages back to back."
+  }
+ },
+ "am_dropzone": {
+  "input": "joystick",
+  "history": {
+   "text": "DropZone, a 1994 shareware Defender-style side-scrolling shooter by Richard Tunstall &ndash; rescue stranded troopers from the surface while fending off waves of alien attackers."
+  }
+ },
+ "am_elevation": {
+  "input": "joystick",
+  "video": {
+   "id": "mRqzq-98CPE",
+   "title": "Elevation - Commodore Amiga Longplay Public Domain/Freeware"
+  },
+  "history": {
+   "text": "A 1995 shareware arcade game by Delta-9 &ndash; move your character across the screen while dodging the lifts, a clever twist on a familiar avoid-the-hazard format."
+  }
+ },
+ "am_trailblazer": {
+  "input": "joystick",
+  "video": {
+   "id": "v-9asLyNNww",
+   "title": "trailblazer for Amiga"
+  },
+  "history": {
+   "text": "A 1992 public-domain update of the C64 classic by Alchemy Productions &ndash; roll your ball along a tiled, hazard-strewn courseway as fast as you dare."
+  }
+ },
+ "am_space_taxi": {
+  "input": "joystick",
+  "video": {
+   "id": "cooHU5hipoA",
+   "title": "AMIGA Space Taxi AMIGA OCS 19xx Effect PD adf"
+  },
+  "history": {
+   "text": "A public-domain update of the C64 classic Space Taxi by Effect &ndash; land precisely on numbered pads to pick up and deliver fares across the galaxy."
+  }
  }
 };

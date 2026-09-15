@@ -384,6 +384,126 @@ window.DOWNLOAD_DATA = {
     verdict: "LIKELY-OK",
     source: "TOSEC-tagged (SW) shareware release — sourced from the archive.org TOSEC Amiga public-domain-games collection. Ed & Al Mackey distributed MegaBall as shareware; the authors' own site (fur.com/~almackey/megaball) still offers it for free download.",
     checked: "2026-09-15"
+  },
+  "am_zerg": {
+    file: "amiga_zerg.adf",
+    verdict: "CLEAR",
+    source: "amigapd.com's own write-up (“Zerg Amiga Public Domain”) and the amigapd interview with author Michael Gordon Shapiro both describe it as public domain; sourced from the archive.org “Software Library: Amiga: Public Domain Games” collection (softwarelibrary_amiga_pd) — curated as public domain by that archive; the TOSEC filename itself carries no separate (PD)/(SW) suffix.",
+    checked: "2026-09-15"
+  },
+  "am_doctor_strange_2": {
+    file: "amiga_doctor_strange_2.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (FW) freeware release, distributed via 17-Bit Software, with source code included.",
+    checked: "2026-09-15"
+  },
+  "am_pollymorf": {
+    file: "amiga_pollymorf.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) public domain release by Andrew Campbell.",
+    checked: "2026-09-15"
+  },
+  "am_dogfight": {
+    file: "amiga_dogfight.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) public domain release by Richard Ling (AMOS).",
+    checked: "2026-09-15"
+  },
+  "am_drip": {
+    file: "amiga_drip.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) public domain release by Art Skiles.",
+    checked: "2026-09-15"
+  },
+  "am_bobs_garden": {
+    file: "amiga_bobs_garden.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release by Justin Leck; no evidence of a competing commercial version.",
+    checked: "2026-09-15"
+  },
+  "am_super_obliteration": {
+    file: "amiga_super_obliteration.adf",
+    verdict: "CLEAR",
+    source: "amigapd.com's own top-ten write-up describes it plainly as a public domain title by David Papworth; sourced from the archive.org “Software Library: Amiga: Public Domain Games” collection (softwarelibrary_amiga_pd) — curated as public domain by that archive; the TOSEC filename itself carries no separate (PD)/(SW) suffix.",
+    checked: "2026-09-15"
+  },
+  "am_asteroids": {
+    file: "amiga_asteroids.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release (“Cabaret Asteroids”) by Vertical Developments; no evidence of a competing commercial version.",
+    checked: "2026-09-15"
+  },
+  "am_alien_fish_finger": {
+    file: "amiga_alien_fish_finger.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) public domain release by Skull Army — sourced deliberately over the disk's separately-circulated (SW-R) “registered” variant, which was skipped per the standard TOSEC skip-registered-versions rule.",
+    checked: "2026-09-15"
+  },
+  "am_wibble_world_giddy": {
+    file: "amiga_wibble_world_giddy.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) public domain release by Phillip Ruston.",
+    checked: "2026-09-15"
+  },
+  "am_crazy_sue": {
+    file: "amiga_crazy_sue.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) public domain release, published by MC Publications.",
+    checked: "2026-09-15"
+  },
+  "am_pengo2": {
+    file: "amiga_pengo2.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (GW) giftware release by Reploid — freely distributable, with a gift to the author requested but not enforced. Sourced deliberately over the earlier MartinSoft “Pengo” disk, which TOSEC tags (SW-R) “registered” and which the standard skip-registered-versions rule excludes.",
+    checked: "2026-09-15"
+  },
+  "am_toado": {
+    file: "amiga_toado.adf",
+    verdict: "CLEAR",
+    source: "Sourced from the archive.org “software library: amiga: public domain games” collection (softwarelibrary_amiga_pd) — curated as public domain by that archive; the tosec filename itself carries no separate (pd)/(sw) suffix; developer J. Wills's game is referenced throughout the Amiga PD scene (including an amigapd.com author interview) without any indication of a commercial release.",
+    checked: "2026-09-15"
+  },
+  "am_deluxe_pacman": {
+    file: "amiga_deluxe_pacman.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release (v1.2) by Edgar Vigdal — sourced deliberately over the later v1.7 AGA disk, which TOSEC tags (SW-R) “registered” and which the standard skip-registered-versions rule excludes.",
+    checked: "2026-09-15"
+  },
+  "am_llamatron": {
+    file: "amiga_llamatron.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release of Jeff Minter's Llamatron: 2112 for Llamasoft; Minter has long distributed his older catalogue, this title included, for free from his own sites, and no competing paid Amiga release exists.",
+    checked: "2026-09-15"
+  },
+  "am_gorf": {
+    file: "amiga_gorf.adf",
+    verdict: "CLEAR",
+    source: "Sourced from the archive.org “software library: amiga: public domain games” collection (softwarelibrary_amiga_pd) — curated as public domain by that archive; the tosec filename itself carries no separate (pd)/(sw) suffix; Towerbyte's Amiga tribute to the arcade original, with no indication anywhere of a commercial Amiga release.",
+    checked: "2026-09-15"
+  },
+  "am_dropzone": {
+    file: "amiga_dropzone.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release by Richard Tunstall; no evidence of a competing commercial version.",
+    checked: "2026-09-15"
+  },
+  "am_elevation": {
+    file: "amiga_elevation.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release by Delta-9; no evidence of a competing commercial version.",
+    checked: "2026-09-15"
+  },
+  "am_trailblazer": {
+    file: "amiga_trailblazer.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) public domain release by Alchemy Productions — an original-game tribute inspired by the C64 Trailblazer, not a port of Gremlin Graphics' commercial code.",
+    checked: "2026-09-15"
+  },
+  "am_space_taxi": {
+    file: "amiga_space_taxi.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) public domain release by Effect — an original-game tribute inspired by the C64 Space Taxi, not a port of the commercial original.",
+    checked: "2026-09-15"
   }
 
 };
