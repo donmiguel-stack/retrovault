@@ -11,6 +11,7 @@
   --g7400:#c07de0;
   --c64:#b98a5f;
   --pc:#4a7fd6;
+  --amiga:#ff8a3d;
   --radius:10px;
 }
 *{box-sizing:border-box;}
@@ -126,6 +127,7 @@ body{
 .badge-g7400{background:rgba(192,125,224,.18);color:var(--g7400);}
 .badge-c64{background:rgba(185,138,95,.2);color:var(--c64);}
 .badge-pc{background:rgba(74,127,214,.2);color:var(--pc);}
+.badge-amiga{background:rgba(255,138,61,.2);color:var(--amiga);}
 .badge-cat{background:var(--surface-2);color:var(--text-mute);}
 .badge-cat-dyn{background:color-mix(in srgb, var(--badge-color) 20%, transparent);color:var(--badge-color);}
 /* dump variant (alt dump / 12K banked) - tells apart entries that are
@@ -200,6 +202,7 @@ body{
 .modal-body h4.src-vp::before{background:var(--g7000);box-shadow:0 0 0 2px color-mix(in srgb, var(--g7400) 70%, transparent);}
 .modal-body h4.src-c64::before{background:var(--c64);}
 .modal-body h4.src-pc::before{background:var(--pc);}
+.modal-body h4.src-amiga::before{background:var(--amiga);}
 .modal-body h4.src-hb::before{background:#e05a7e;}
 .modal-body p.src-hint{color:var(--text-dim);margin:0 0 8px;}
 .modal-body p.src-hint strong{color:var(--text);}
@@ -377,11 +380,12 @@ body{
    own. Same rules for both - shared selector rather than a duplicate block,
    since the PC panel reuses c64FeatureRotator() and renders identical
    markup (see the app.js comment at that call site). */
-.feature-main-c64, .feature-main-pc{cursor:default;}
-.feature-main-c64:hover, .feature-main-pc:hover{border-color:var(--border);}
+.feature-main-c64, .feature-main-pc, .feature-main-amiga{cursor:default;}
+.feature-main-c64:hover, .feature-main-pc:hover, .feature-main-amiga:hover{border-color:var(--border);}
 .feature-main-c64 .feature-cover-wrap, .feature-main-c64 h3 a,
-.feature-main-pc .feature-cover-wrap, .feature-main-pc h3 a{text-decoration:none; color:inherit;}
-.feature-main-c64 h3 a:hover, .feature-main-pc h3 a:hover{color:var(--accent);}
+.feature-main-pc .feature-cover-wrap, .feature-main-pc h3 a,
+.feature-main-amiga .feature-cover-wrap, .feature-main-amiga h3 a{text-decoration:none; color:inherit;}
+.feature-main-c64 h3 a:hover, .feature-main-pc h3 a:hover, .feature-main-amiga h3 a:hover{color:var(--accent);}
 
 .feature-list{display:flex; flex-direction:column; gap:6px; width:196px; flex-shrink:0;}
 .feature-thumb{

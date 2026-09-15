@@ -4753,14 +4753,70 @@ window.GAMEPAGES_DATA = {
    "text": "A 2021 3D space exploration and combat game for the C64 by drmortalwombat, in the Elite tradition &ndash; explore wormhole-linked galaxies, trade and fight pirates, and upgrade your ship in a roguelike loop where death lets you restart with accumulated credits."
   }
  },
- "c64_hb_plekthora": {
+ "am_sqrxz": {
   "input": "joystick",
   "video": {
-   "id": "duRgp8Mgj5Y",
-   "title": "Commodore 64 -=Plekthora=-"
+   "id": "TCORbwf5Q78",
+   "title": "Sqrxz - Mindblasting Frustration Deluxe! (Amiga OCS)"
   },
   "history": {
-   "text": "A 2021 horizontal shoot-'em-up for the C64 by drmortalwombat, with couch co-op across 20 levels, three upgradeable weapons, and a classic 1980s arcade feel."
+   "text": "A 2012 Amiga OCS port of Retroguru's minimalist, brutally hard platformer &ndash; one screen at a time, instant death, and a Sokoban-esque puzzle sensibility layered onto pixel-perfect jumping."
+  }
+ },
+ "am_sqrxz3": {
+  "input": "joystick",
+  "video": {
+   "id": "E0-95KOtX2M",
+   "title": "Amiga Longplay: Sqrxz 3"
+  },
+  "history": {
+   "text": "Sqrxz 3: Adventure for Love, released for Amiga OCS in 2015 &ndash; the series keeps its one-hit-death platforming but adds new hazards and a longer campaign than the original."
+  }
+ },
+ "am_sqrxz4": {
+  "input": "joystick",
+  "video": {
+   "id": "MN_5mF6cqTU",
+   "title": "Amiga Longplay: Sqrxz 4 - Cold Cash"
+  },
+  "history": {
+   "text": "Sqrxz 4: Cold Cash, a 2018 Amiga OCS release &ndash; the fourth entry in Retroguru's uncompromising platform series, with the same instant-death, memorize-and-retry design as the rest."
+  }
+ },
+ "am_wizzys_quest": {
+  "input": "joystick",
+  "video": {
+   "id": "MtLfBuGVSPg",
+   "title": "Amiga 500 Longplay [370] Wizzy's Quest (Public Domain)"
+  },
+  "history": {
+   "text": "A 1990 public-domain Amiga puzzle-platformer by Guido and Sören Appenzeller, built around pushing and stacking blocks Boulder-Dash style to clear a path to the exit on each screen."
+  }
+ },
+ "am_cybernetix": {
+  "input": "joystick",
+  "video": {
+   "id": "fuKtR_ATXDk",
+   "title": "1GO Short Play - Cybernetix: The First Battle (Amiga)"
+  },
+  "history": {
+   "text": "Cybernetix: The First Battle, a 1991 Amiga shoot-'em-up from Vision Software (Paul Andrews, Rodney Smith, Blair Zuppicich) with side-scrolling combat and a distinctive sci-fi look."
+  }
+ },
+ "am_deluxe_galaga": {
+  "input": "joystick",
+  "video": {
+   "id": "MRY22mFcACs",
+   "title": "Deluxe Galaga [Amiga 600 Longplay] (1995) Edgar Vigdal"
+  },
+  "history": {
+   "text": "Deluxe Galaga, Edgar Vigdal's freeware Amiga tribute to Namco's arcade classic, first released in the early 1990s and refined across several later updates."
+  }
+ },
+ "am_megaball": {
+  "input": "mouse",
+  "history": {
+   "text": "MegaBall, Ed and Al Mackey's mouse-controlled Breakout/Arkanoid-style Amiga classic &ndash; clear each brick layout with power-ups and multi-ball chaos, steering the paddle with the mouse."
   }
  }
 };

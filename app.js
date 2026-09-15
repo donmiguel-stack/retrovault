@@ -37,7 +37,8 @@
     { key: "rare",     label: "Rare",           color: "#c07de0", match: ["Rare / unreleased", "Utility / unknown"] },
     { key: "homebrew", label: "Homebrew",       color: "#e05a7e", match: ["Homebrew (this project)", "Homebrew (community)"] },
     { key: "c64",      label: "Commodore 64",   color: "#b98a5f", match: ["Commodore 64"] },
-    { key: "pc",       label: "MS-DOS",         color: "#4a7fd6", match: ["MS-DOS"] }
+    { key: "pc",       label: "MS-DOS",         color: "#4a7fd6", match: ["MS-DOS"] },
+    { key: "amiga",    label: "Amiga",          color: "#ff8a3d", match: ["Amiga"] }
   ];
 
   var CATEGORY_LOOKUP = {};
@@ -46,7 +47,7 @@
   });
 
   function platformBadge(p) {
-    return p === "G7400+" ? "badge-g7400" : p === "C64" ? "badge-c64" : p === "PC" ? "badge-pc" : "badge-g7000";
+    return p === "G7400+" ? "badge-g7400" : p === "C64" ? "badge-c64" : p === "PC" ? "badge-pc" : p === "Amiga" ? "badge-amiga" : "badge-g7000";
   }
 
   function groupFor(g) {
@@ -99,7 +100,7 @@
   // afterwards, grouped by where they came from.
   var CATEGORY_RANK = {
     eu: 0, french: 1, pal: 2, us: 3, brazil: 4, jopac: 5,
-    imagic: 6, parker: 7, modified: 8, rare: 9, homebrew: 10, c64: 11, pc: 12
+    imagic: 6, parker: 7, modified: 8, rare: 9, homebrew: 10, c64: 11, pc: 12, amiga: 13
   };
   function shelfKey(g) {
     var n = parseInt(g.vpNumber, 10);
@@ -110,7 +111,7 @@
     // C64 and PC titles have no vpNumber, so number-sorting is meaningless
     // there - those shelves always sort A-Z (the dropdown is hidden too,
     // see syncShelfChips).
-    var az = state.sort === "az" || state.platform === "C64" || state.platform === "PC";
+    var az = state.sort === "az" || state.platform === "C64" || state.platform === "PC" || state.platform === "Amiga";
     if (az) return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
     var ka = shelfKey(a), kb = shelfKey(b);
     for (var i = 0; i < ka.length; i++) {
@@ -184,7 +185,7 @@
     savedConsole = savedShelf;
     savedShelf = "videopac";
   }
-  if (["videopac", "C64", "PC"].indexOf(savedShelf) === -1) savedShelf = "videopac";
+  if (["videopac", "C64", "PC", "Amiga"].indexOf(savedShelf) === -1) savedShelf = "videopac";
   // ?shelf=videopac|c64|pc deep-links a shelf, so retrovault.world can point
   // straight at the shelf a screenshot shows instead of always landing on
   // whichever one the visitor last had open (2026-09-08). Case-insensitive
@@ -193,7 +194,8 @@
   // the saved shelf wins, so a stray parameter can never blank the page.
   try {
     var SHELF_ALIAS = { videopac: "videopac", vp: "videopac", odyssey: "videopac",
-                        c64: "C64", commodore: "C64", pc: "PC", dos: "PC", msdos: "PC" };
+                        c64: "C64", commodore: "C64", pc: "PC", dos: "PC", msdos: "PC",
+                        amiga: "Amiga" };
     var wanted = (new URLSearchParams(window.location.search).get("shelf") || "").toLowerCase();
     if (SHELF_ALIAS[wanted]) savedShelf = SHELF_ALIAS[wanted];
   } catch (e) {}
@@ -234,7 +236,7 @@
   function platformGames() {
     return state.games.filter(function (g) {
       if (state.platform === "all") return true;
-      if (state.platform === "videopac") return g.platform !== "C64" && g.platform !== "PC";
+      if (state.platform === "videopac") return g.platform !== "C64" && g.platform !== "PC" && g.platform !== "Amiga";
       return g.platform === state.platform;
     });
   }
@@ -247,17 +249,19 @@
     // hidden per active shelf: the Videopac one on every shelf except C64/PC,
     // the C64 one only on the C64 shelf, the PC one only on the PC shelf.
     var sc = document.getElementById("showcase");
-    if (sc) sc.hidden = state.platform === "C64" || state.platform === "PC";
+    if (sc) sc.hidden = state.platform === "C64" || state.platform === "PC" || state.platform === "Amiga";
     var c64sc = document.getElementById("c64showcase");
     if (c64sc) c64sc.hidden = state.platform !== "C64";
     var pcsc = document.getElementById("pcshowcase");
     if (pcsc) pcsc.hidden = state.platform !== "PC";
+    var amsc = document.getElementById("amshowcase");
+    if (amsc) amsc.hidden = state.platform !== "Amiga";
     // Sorting by number and the packaging filter only mean something on the
     // Videopac shelf - vpNumbers and boxed boards/overlays/workbooks don't
     // exist for C64 or PC titles - so both controls disappear there. The
     // stored sort choice is left alone (bySort falls back to A-Z on these
     // shelves, see below) so it comes back when you return to Videopac.
-    var nonVp = state.platform === "C64" || state.platform === "PC";
+    var nonVp = state.platform === "C64" || state.platform === "PC" || state.platform === "Amiga";
     if (sortSel) sortSel.hidden = nonVp;
     var packBtn = document.getElementById("packChip");
     if (packBtn) {
@@ -373,7 +377,7 @@
       }
       if (!revealed) return false;
     }
-    if (state.platform === "videopac") { if (g.platform === "C64" || g.platform === "PC") return false; }
+    if (state.platform === "videopac") { if (g.platform === "C64" || g.platform === "PC" || g.platform === "Amiga") return false; }
     else if (state.platform !== "all" && g.platform !== state.platform) return false;
     if (state.genre !== "all" && genreOf(g) !== state.genre) return false;
     if (state.players !== "all" && playersOf(g) !== state.players) return false;
@@ -1157,6 +1161,10 @@
       if (total >= 20) insertAt(pcCommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
       return;
     }
+    // The Amiga shelf has no ad/homebrew/community panels of its own yet -
+    // skip straight out rather than falling through to the Videopac-specific
+    // sponsor/homebrew/Master Strategy/community blocks below.
+    if (state.platform === "Amiga") return;
     if (total < 60) return;                       // too short to bother
     insertAt(sponsorBlock(), Math.min(36, Math.floor(total / 3)));
     insertAt(homebrewBlock(), Math.min(96, Math.floor(total * 2 / 3)));
@@ -1502,6 +1510,7 @@
   var featStop = null;
   var c64FeatStop = null;
   var pcFeatStop = null;
+  var amFeatStop = null;
 
   function buildShowcase() {
     var data = window.FEATURED_DATA || {};
@@ -1516,6 +1525,7 @@
     if (featStop) { featStop(); featStop = null; }
     if (c64FeatStop) { c64FeatStop(); c64FeatStop = null; }
     if (pcFeatStop) { pcFeatStop(); pcFeatStop = null; }
+    if (amFeatStop) { amFeatStop(); amFeatStop = null; }
 
     var picks = (data.featured || []).filter(function (f) {
       return state.games.some(function (g) { return g.id === f.id; });
@@ -1524,7 +1534,7 @@
     var community = data.community || [];
     if (!picks.length && !sponsors.length && !community.length) return;
 
-    host.hidden = state.platform === "C64" || state.platform === "PC";
+    host.hidden = state.platform === "C64" || state.platform === "PC" || state.platform === "Amiga";
 
     // --- featured
     if (picks.length) {
@@ -1559,6 +1569,19 @@
       pchost.hidden = state.platform !== "PC";
       pcFeatStop = c64FeatureRotator(document.getElementById("pcFeatureMain"),
                                      document.getElementById("pcFeatureList"), pcpicks);
+    }
+
+    // --- the Amiga featured panel, its own section, shown only on that
+    // shelf. Same reuse of c64FeatureRotator as the PC panel above - nothing
+    // in it is platform-specific, it just reads platform/id/clip off the pick.
+    var ampicks = (data.amfeatured || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
+    });
+    var amhost = document.getElementById("amshowcase");
+    if (amhost && ampicks.length) {
+      amhost.hidden = state.platform !== "Amiga";
+      amFeatStop = c64FeatureRotator(document.getElementById("amFeatureMain"),
+                                     document.getElementById("amFeatureList"), ampicks);
     }
   }
 

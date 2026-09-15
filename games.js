@@ -1,6 +1,6 @@
 window.GAMES_DATA = {
   "generated": "picopac catalogue",
-  "count": 341,
+  "count": 348,
   "games": [
   {
     "id": "new_amok_alt",
@@ -4266,6 +4266,97 @@ window.GAMES_DATA = {
       "year": 2021,
       "publisher": "drmortalwombat",
       "developer": "drmortalwombat"
-    }
+    },
+  {
+    "id": "am_sqrxz",
+    "filename": "amiga_sqrxz.adf",
+    "title": "Sqrxz",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_sqrxz.adf",
+    "year": 2012,
+    "publisher": "Retroguru",
+    "developer": "Retroguru (Amiga OCS port); original 1996 game by Marcus Vesterlund, John Holmvall"
+  },
+  {
+    "id": "am_sqrxz3",
+    "filename": "amiga_sqrxz3.adf",
+    "title": "Sqrxz 3",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_sqrxz3.adf",
+    "year": 2015,
+    "publisher": "Retroguru",
+    "developer": "Retroguru"
+  },
+  {
+    "id": "am_sqrxz4",
+    "filename": "amiga_sqrxz4.adf",
+    "title": "Sqrxz 4",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_sqrxz4.adf",
+    "year": 2018,
+    "publisher": "Retroguru",
+    "developer": "Retroguru"
+  },
+  {
+    "id": "am_wizzys_quest",
+    "filename": "amiga_wizzys_quest.adf",
+    "title": "Wizzy's Quest",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_wizzys_quest.adf",
+    "year": 1990,
+    "publisher": "G&S Appenzeller",
+    "developer": "Guido Appenzeller, Sören Appenzeller"
+  },
+  {
+    "id": "am_cybernetix",
+    "filename": "amiga_cybernetix.adf",
+    "title": "Cybernetix: The First Battle",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_cybernetix.adf",
+    "year": 1991,
+    "publisher": "Vision Software",
+    "developer": "Paul Andrews, Rodney Smith, Blair Zuppicich"
+  },
+  {
+    "id": "am_deluxe_galaga",
+    "filename": "amiga_deluxe_galaga.adf",
+    "title": "Deluxe Galaga",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_deluxe_galaga.adf",
+    "year": 1994,
+    "publisher": "Edgar Vigdal",
+    "developer": "Edgar Vigdal"
+  },
+  {
+    "id": "am_megaball",
+    "filename": "amiga_megaball.adf",
+    "title": "MegaBall",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_megaball.adf",
+    "year": 1991,
+    "publisher": "Ed Mackey, Al Mackey",
+    "developer": "Ed Mackey, Al Mackey"
+  }
 ]
 };

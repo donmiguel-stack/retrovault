@@ -835,7 +835,8 @@
       "G7000": "Philips Videopac G7000 / Magnavox Odyssey\u00b2",
       "G7400+": "Philips Videopac G7400",
       "C64": "Commodore 64",
-      "PC": "MS-DOS"
+      "PC": "MS-DOS",
+      "Amiga": "Commodore Amiga"
     };
     var platform = PLATFORM[g.platform] || g.platform;
 
@@ -844,7 +845,7 @@
     // around 60 characters.
     var bits = [];
     if (g.vpNumber) bits.push("Videopac " + g.vpNumber);
-    else bits.push(g.platform === "PC" ? "MS-DOS" : (g.platform === "C64" ? "C64" : "Videopac"));
+    else bits.push(g.platform === "PC" ? "MS-DOS" : (g.platform === "C64" ? "C64" : (g.platform === "Amiga" ? "Amiga" : "Videopac")));
     if (g.year) bits.push(g.year);
     document.title = g.title + " \u2014 " + bits.join(", ") + " | Retro Vault";
 
@@ -1111,7 +1112,8 @@
   start.appendChild(el("span","tri"));
   start.appendChild(document.createTextNode("START"));
   // each shelf plays through its own emulator - Videopac/C64 through webretro's
-  // libretro cores, PC through js-dos (see emulator/dos.html)
+  // libretro cores, PC through js-dos (see emulator/dos.html), Amiga through
+  // vAmigaWeb (see emulator/amiga.html)
   var CORES = { "C64": "vice_x64" };
   // The Vault's own file host (hosted.js): the BIOS plus the abandonware
   // part of all three shelves (Videopac since 2026-09-04, C64 and MS-DOS
@@ -1127,7 +1129,7 @@
   }
   function hostedBiosParam() {
     if (!HOSTED || !HOSTED.base || !HOSTED.bios) return "";
-    if (g.platform === "PC" || g.platform === "C64") return "";
+    if (g.platform === "PC" || g.platform === "C64" || g.platform === "Amiga") return "";
     return "&biosbase=" + encodeURIComponent(HOSTED.base + HOSTED.bios);
   }
   // Videopac only: a cartridge can ask for a specific BIOS image (gamepages.js
@@ -1136,7 +1138,7 @@
   // routine that only exists there.
   function gameBiosParam() {
     var b = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id] || {}).bios;
-    if (!b || g.platform === "PC" || g.platform === "C64") return "";
+    if (!b || g.platform === "PC" || g.platform === "C64" || g.platform === "Amiga") return "";
     return "&bios=" + encodeURIComponent(b);
   }
   start.addEventListener("click", function(){
@@ -1148,6 +1150,13 @@
       location.href = "emulator/dos.html?zip=" + encodeURIComponent(g.romFile) +
                       "&title=" + encodeURIComponent(g.title) +
                       "&id=" + encodeURIComponent(g.id) + fb + hz;
+    } else if (g.platform === "Amiga") {
+      // amiga.html keeps the disk's own filename (same reasoning as dos.html
+      // above) and takes the hosted copy as a separate &hosted= fallback.
+      var hz2 = start.dataset.hosted ? "&hosted=" + encodeURIComponent(start.dataset.hosted) : "";
+      location.href = "emulator/amiga.html?disk=" + encodeURIComponent(g.romFile) +
+                      "&title=" + encodeURIComponent(g.title) +
+                      "&id=" + encodeURIComponent(g.id) + fb + hz2;
     } else {
       var rom = start.dataset.hosted ? start.dataset.hosted : g.romFile;
       location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
@@ -1178,7 +1187,7 @@
     actions.insertBefore(start, actions.firstChild);
   }
   function vaultShowMissing() {
-    var key = g.platform === "PC" ? "pc_noRom" : (g.platform === "C64" ? "c64_noRom" : "vp_noRom");
+    var key = g.platform === "PC" ? "pc_noRom" : (g.platform === "C64" ? "c64_noRom" : (g.platform === "Amiga" ? "amiga_noRom" : "vp_noRom"));
     romNote.textContent = window.t(key, { file: g.romFile });
     // Where to get it (romsources.js): for titles the Vault can neither ship
     // nor host, point at a preservation copy and spell out the three steps.
@@ -1638,6 +1647,33 @@
     }
     pcSec.appendChild(pcBox);
     page.appendChild(pcSec);
+  } else if (g.platform === "Amiga") {
+    // The engine (vAmigaWeb, in emulator/amiga.html) has its own on-screen
+    // toolbar - disk swap, virtual keyboard, fullscreen, joystick/mouse
+    // toggle - none of which are the Vault's own RetroArch-style hotkeys
+    // (F2/F3 save states, Right Shift OSK) that the generic cBox above
+    // documents for the webretro-driven shelves. Showing that box here would
+    // describe controls that don't exist on this shelf, so Amiga gets its
+    // own short box instead: the per-game note, then a pointer at the
+    // engine's own toolbar rather than a list of keys that don't apply.
+    var amSec = el("div","section");
+    amSec.appendChild(el("h2",null,window.t("controls")));
+    var amBox = el("div","controls-box");
+    if (data.note) {
+      var amNote = el("p","controls-note own-note");
+      amNote.innerHTML = (jaPage(g.id) || {}).note || data.note;
+      amBox.appendChild(amNote);
+    }
+    var amToolbar = el("p","controls-note");
+    amToolbar.innerHTML = window.t("amiga_toolbarNote");
+    amBox.appendChild(amToolbar);
+    var amSave = el("p","controls-note");
+    amSave.innerHTML = window.t("amiga_saveNote");
+    amBox.appendChild(amSave);
+    var amTipsBox = buildTipsBox(g.id);
+    if (amTipsBox) amBox.appendChild(amTipsBox);
+    amSec.appendChild(amBox);
+    page.appendChild(amSec);
   } else if (g.platform !== "C64") {
     page.appendChild(cSec);
   } else {

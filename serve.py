@@ -45,7 +45,7 @@ ALLOWED_EXT = (".js", ".html", ".css", ".md", ".png", ".jpg", ".jpeg", ".json", 
 # ONLY" above, and only for titles that passed the redistribution-license
 # check in downloads.js. These formats are allowed ONLY inside that one
 # folder; covers/clips/extras/etc still can't receive a .zip or .d64.
-HOMEBREW_EXT = (".d64", ".zip", ".crt", ".prg", ".bin")
+HOMEBREW_EXT = (".d64", ".zip", ".crt", ".prg", ".bin", ".adf")
 ALLOWED_DIRS = ("", "covers", "assets/shots", "assets/cheats", "clips", "extras",
                  "homebrew-downloads")
 

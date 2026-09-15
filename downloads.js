@@ -342,6 +342,48 @@ window.DOWNLOAD_DATA = {
     verdict: "LIKELY-OK",
     source: "https://drmortalwombat.itch.io/plekthora — pay-what-you-want, source code public (published for modding/reverse-engineering), no explicit redistribution statement, no commercial version found. Developer explicitly allowed inclusion on Reset Magazine's coverdisk.",
     checked: "2026-09-09"
+  },
+  "am_sqrxz": {
+    file: "amiga_sqrxz.adf",
+    verdict: "LIKELY-OK",
+    source: "https://www.retroguru.com/sqrxz/ — official free download from the developer's own site (Retroguru), offered gratis with no license restriction stated; same basis as the vault's other Retroguru titles.",
+    checked: "2026-09-15"
+  },
+  "am_sqrxz3": {
+    file: "amiga_sqrxz3.adf",
+    verdict: "LIKELY-OK",
+    source: "https://www.retroguru.com/sqrxz3/ — official free download from the developer's own site (Retroguru), offered gratis with no license restriction stated.",
+    checked: "2026-09-15"
+  },
+  "am_sqrxz4": {
+    file: "amiga_sqrxz4.adf",
+    verdict: "LIKELY-OK",
+    source: "https://www.retroguru.com/sqrxz4/ — official free download from the developer's own site (Retroguru), offered gratis with no license restriction stated.",
+    checked: "2026-09-15"
+  },
+  "am_wizzys_quest": {
+    file: "amiga_wizzys_quest.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) — \"Wizzy's Quest (1990)(G&S Appenzeller)(PD)\" — the developers released it as public domain; sourced from the archive.org TOSEC Amiga public-domain-games collection.",
+    checked: "2026-09-15"
+  },
+  "am_cybernetix": {
+    file: "amiga_cybernetix.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release — sourced from the archive.org TOSEC Amiga public-domain-games collection. Same shareware basis the vault already applies to DOS titles like the Doom/Wolfenstein 3D shareware episodes.",
+    checked: "2026-09-15"
+  },
+  "am_deluxe_galaga": {
+    file: "amiga_deluxe_galaga.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release — sourced from the archive.org TOSEC Amiga public-domain-games collection; Edgar Vigdal distributed Deluxe Galaga as freely-copyable shareware.",
+    checked: "2026-09-15"
+  },
+  "am_megaball": {
+    file: "amiga_megaball.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware release — sourced from the archive.org TOSEC Amiga public-domain-games collection. Ed & Al Mackey distributed MegaBall as shareware; the authors' own site (fur.com/~almackey/megaball) still offers it for free download.",
+    checked: "2026-09-15"
   }
 
 };

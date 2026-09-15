@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function () {
+	var params = new URLSearchParams(window.location.search);
+	if (!params.get("disk")) {
+		window.location.replace("../index.html");
+	}
+})();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#171717">
+<title>Amiga - Retro Vault</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+	html, body { margin: 0; padding: 0; height: 100%; background: #171717; overflow: hidden; }
+	#topbar {
+		position: fixed; top: 0; left: 0; right: 0; height: 40px; z-index: 50;
+		display: flex; align-items: center; gap: 10px; padding: 0 12px;
+		background: #1e1e1e; border-bottom: 1px solid #333;
+		font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		box-sizing: border-box;
+	}
+	#topbar a {
+		color: #d0d0d0; text-decoration: none; padding: 6px 10px; border-radius: 4px;
+	}
+	#topbar a:hover { background: #333; }
+	#topbar .title { color: #888; margin-left: 4px; }
+	#topbar .rom { color: #6a6a6a; margin-left: auto; font-size: 12px; }
+	#amigaWrap { position: absolute; top: 40px; left: 0; right: 0; bottom: 0; }
+	#amigaFrame { width: 100%; height: 100%; border: 0; display: block; }
+	#loadingMsg {
+		position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+		color: #999; font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		text-align: center; line-height: 1.6; max-width: 80%;
+	}
+	#loadingMsg code { color: #c0c0c0; }
+</style>
+</head>
+<body>
+<div id="topbar">
+	<a href="#" id="backLink">&larr; Back</a>
+	<span class="title" id="titleText"></span>
+	<span class="rom" id="romText"></span>
+</div>
+<div id="amigaWrap">
+	<p id="loadingMsg">Loading&hellip;</p>
+</div>
+
+<script>
+(function () {
+	var params = new URLSearchParams(window.location.search);
+	// The disk image itself: .adf (single floppy), .zip (multi-disk set, the
+	// engine shows its own disk-swap list), .hdf / .lha for the hard-drive and
+	// WHDLoad cases. Named "disk" rather than dos.html's "zip" because the
+	// Amiga shelf is not zip-shaped the way the PC shelf is.
+	var disk = params.get("disk");
+	var title = params.get("title") ? decodeURIComponent(params.get("title")) : "Amiga";
+	var gameId = params.get("id") || "";
+	var dlfallback = params.get("dlfallback") || "";
+	// The Vault's own file host (hosted.js, see game.html) - an absolute URL to
+	// this same disk on retrovault.world, only ever sent after game.html's HEAD
+	// check found it there. Anything that isn't absolute is ignored, so a stray
+	// parameter can't point the engine at some arbitrary relative path.
+	var hosted = params.get("hosted") || "";
+	if (!/^(https?:)?\/\//i.test(hosted)) hosted = "";
+
+	document.title = title + " - Retro Vault";
+	document.getElementById("titleText").textContent = title;
+	document.getElementById("romText").textContent = disk;
+	var backHref = gameId
+		? "../game.html?id=" + encodeURIComponent(gameId)
+		: "../index.html";
+	document.getElementById("backLink").href = backHref;
+
+	// ---- what the engine is -------------------------------------------------
+	// amiga/ is vAmigaWeb (GPL-3.0), self-hosted here rather than iframed from
+	// vamigaweb.github.io: the Vault ships as a downloadable app with its own
+	// service worker, and a third-party origin would break that the moment
+	// anyone ran it offline. Three things were stripped from its index.html on
+	// the way in - its analytics tag, its PWA manifest link, and its own
+	// service-worker registration. That last one matters: that worker caches
+	// the whole app under its scope and intercepts fetches, which is both a
+	// stale-file trap (the same class of problem dos.html works around for
+	// js-dos) and a straight conflict with the Vault's own pwa-sw.js.
+	//
+	// No Kickstart ROM ships here and none is needed: AROS=true selects the
+	// AROS m68k Kickstart replacement (bundled under amiga/roms/, APL-licensed
+	// and redistributable, unlike Commodore's own). Bring-your-own Kickstart is
+	// a later job - vAmigaWeb's player API exposes a kickstart_rom_url hook for
+	// exactly that, and it is the only way WHDLoad (.lha) content can ever work,
+	// since AROS cannot stand in for a real Kickstart there.
+	var ENGINE = "amiga/index.html";
+	var CONFIG = "#AROS=true#port2=true";
+
+	// ---- finding the disk ---------------------------------------------------
+	// Same three places, in the same order, as dos.html: emulator/roms/ (your
+	// own dumps, gitignored and empty on a fresh clone), then
+	// homebrew-downloads/ for the handful of titles the Vault ships itself,
+	// then the Vault's file host.
+	//
+	// No ?v= cache-buster here, deliberately, and this is load-bearing: the
+	// engine decides which drive a file belongs in by looking at the extension
+	// on the end of the address it is given. Hang "?v=<etag>" on the end and
+	// "sqrxz.adf" becomes "sqrxz.adf?v=p2026...", the extension no longer
+	// matches, and instead of booting the disk it stops on its own "import as
+	// disk and insert into df0:/df1:" prompt. Verified by testing both ways.
+	// Unlike js-dos - which keeps its own private copy of every bundle in the
+	// origin private file system, and needs the ?v= trick in dos.html to ever
+	// see a changed file - this engine re-fetches the disk on each load, so
+	// only the ordinary HTTP cache is in play. Swapping a file in roms/ then
+	// takes effect on the next revalidation rather than instantly; a hard
+	// refresh forces it.
+	function head(url, mode) {
+		return fetch(url, mode ? { method: "HEAD", mode: mode, cache: "no-store" }
+		                       : { method: "HEAD", cache: "no-store" });
+	}
+	function tryHosted() {
+		if (!hosted) return Promise.resolve(null);
+		return head(hosted, "cors").then(function (r) {
+			return r.ok ? hosted : null;
+		}).catch(function () { return hosted; });
+	}
+	function resolveDiskUrl() {
+		var base = "roms/" + encodeURIComponent(disk);
+		return head(base).then(function (r) {
+			if (r.ok) return base;
+			if (!dlfallback) return tryHosted();
+			var fb = "../homebrew-downloads/" + encodeURIComponent(dlfallback);
+			return head(fb).then(function (r2) {
+				return r2.ok ? fb : tryHosted();
+			}).catch(function () { return tryHosted(); });
+		}).catch(function () { return tryHosted(); });
+	}
+
+	function fail() {
+		document.getElementById("loadingMsg").innerHTML =
+			"Couldn't find <code>" + disk.replace(/[<>&]/g, "") + "</code>.<br>" +
+			"Drop it into <code>emulator/roms/</code> and reload.";
+	}
+
+	resolveDiskUrl().then(function (url) {
+		if (!url) { fail(); return; }
+		// vAmigaWeb reads the disk address from the last "#" segment of its own
+		// URL, so it has to be absolute - a relative path would be resolved
+		// against the engine's own folder, not this page's.
+		var absolute = new URL(url, window.location.href).href;
+		var frame = document.createElement("iframe");
+		frame.id = "amigaFrame";
+		frame.allow = "autoplay; fullscreen; gamepad";
+		frame.src = ENGINE + CONFIG + "#" + absolute;
+		frame.addEventListener("load", function () {
+			var msg = document.getElementById("loadingMsg");
+			if (msg && msg.parentNode) msg.parentNode.removeChild(msg);
+		});
+		document.getElementById("amigaWrap").appendChild(frame);
+	}).catch(function (e) {
+		console.error(e);
+		fail();
+	});
+})();
+</script>
+</body>
+</html>

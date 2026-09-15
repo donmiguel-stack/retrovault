@@ -1469,5 +1469,33 @@ window.GENRE_DATA = {
  "c64_hb_plekthora": {
   "genre": "shooter",
   "players": "p12"
+ },
+ "am_sqrxz": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_sqrxz3": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_sqrxz4": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_wizzys_quest": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_cybernetix": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_deluxe_galaga": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_megaball": {
+  "genre": "action",
+  "players": "p1"
  }
 };

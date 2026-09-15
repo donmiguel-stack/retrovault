@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-14 16:25:07",
- "count": 544,
- "bytes": 187250799,
+ "generated": "2026-09-15 17:22:39",
+ "count": 558,
+ "bytes": 193635781,
  "files": {
   "games.js": {
-   "sha256": "ba7eb616825fa090801f819a1d5b14b546e18f1ac1744316cdec62df913cbc63",
-   "size": 105594
+   "sha256": "81ab654dfd72293d26ec33b1aead16eb6d09fe44b24aa2e764f34fa40d5a1da2",
+   "size": 107899
   },
   "gamepages.js": {
-   "sha256": "3fde08b6e87cb6b7dbeb06da66515831b78799fba3263d7614ddfd32dbcd194e",
-   "size": 241774
+   "sha256": "030b57fd2522a3cea1882793f5032ed13df4d37d6812a8b4686cbca6dc917f53",
+   "size": 243869
   },
   "genres.js": {
-   "sha256": "6e89468a06aec34d86f03af9f4dff193ef20f9b6e8442d8bd085d560da27fe4c",
-   "size": 23299
+   "sha256": "25b0cc2f070290662bd42c704e4ec54e24b2132f061acb280bc6044ff7a6cc9c",
+   "size": 23748
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,8 +32,8 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "66d616d1343f29e40f7e1b629568b5e09669686ec4ed36b4b02d1f78f5e63e5c",
-   "size": 67075
+   "sha256": "a6f4564f5e24cbb43c7a4df7e3aaa907a94de0ea0133337d8f781c22f4a5f5ee",
+   "size": 71071
   },
   "setup-i18n.js": {
    "sha256": "3aa9aa7e6398c7a2955036c0e09040e5e24c25e916a7ae1a3a48ca75791acf1d",
@@ -56,8 +56,8 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "f8c7ade97f8f3e235b38d8821f241cf8b6f0fbb491b7dce4ad75795e9dd6868d",
-   "size": 16265
+   "sha256": "24fed3bbb111730cda52a88bf987c650cf2f7134a1d25abd1ed1c44fe7db793d",
+   "size": 18488
   },
   "romsources.js": {
    "sha256": "1d1a80e689c47174f768e971f3f3d2b81a8459b6968a0c6b7236a6d1b5a8ab81",
@@ -100,28 +100,28 @@
    "size": 7296
   },
   "app.js": {
-   "sha256": "42e92f79d3fe7e70f4b93679663cf0145e34734be42171790b830abf274e5270",
-   "size": 80273
+   "sha256": "7d3f112f1815e59f8c405fc298c0c79b2e845568e47e97f22b668809793a37a0",
+   "size": 81768
   },
   "demo.js": {
    "sha256": "ea1f31b72eb923b63e98d7f24a02e260af471222b8e2c4025d60581e1a1b4d20",
    "size": 4572
   },
   "game.html": {
-   "sha256": "fa9a51a9466a52dec323893072631299f1dce8630e61351173c09d6a763d5a2a",
-   "size": 102842
+   "sha256": "ff785974ca8d154260b2042814d596a7a0688ff7bef1276864e808977e71a255",
+   "size": 104928
   },
   "index.html": {
-   "sha256": "d5e00e83ff3bc2e379019a44599b9865f724de0d1b12eefd7898f66a95ee9a44",
-   "size": 17565
+   "sha256": "f2257acdbc8e9eb879cfea2d06df04cdac9745bc5aaebd7da5c24d4857af8c16",
+   "size": 17961
   },
   "resources.html": {
    "sha256": "71b984ab069086e8ed4c5fcd4757c879f77904c5daf502704f9858068b9f1ff8",
    "size": 12972
   },
   "style.css": {
-   "sha256": "1d6b8ce06821627882b76944ebb380294b1cfc84421757e380e0ae2a332a3150",
-   "size": 52858
+   "sha256": "3caa84edef9d567598d7e9bcb4d6614d67986ae07baa542113b9f158220fe0a5",
+   "size": 53148
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -242,6 +242,34 @@
   "covers/Vp52+_F.png": {
    "sha256": "201e0e420daa66574337440224c38cd9471a7d9105fd8ba49a3bb09fd08b47a5",
    "size": 492150
+  },
+  "covers/am_cybernetix.png": {
+   "sha256": "305b289e1f9b9b49c3a10cd9f0b292508f6dfa6685a791ad7f3fe38b6bbd3529",
+   "size": 3649
+  },
+  "covers/am_deluxe_galaga.png": {
+   "sha256": "ed5c764ca55ce89c8b863fdc0eaec4df37245d517185ab87d70250a6ffc9838c",
+   "size": 6669
+  },
+  "covers/am_megaball.png": {
+   "sha256": "a9dff540b0c6d1dd46fd833f9077faa711e130ab747bb355513cf5bbe4d37d49",
+   "size": 6019
+  },
+  "covers/am_sqrxz.png": {
+   "sha256": "2d42d638e4ae7faa9275de130470fef0528e634cb45c38e11c1a1e9ba3002b61",
+   "size": 6741
+  },
+  "covers/am_sqrxz3.png": {
+   "sha256": "f8f6b6439ede3d64467e4b799c9537cdbd85dd77b2865a362d6c40c28a3f0ffc",
+   "size": 14903
+  },
+  "covers/am_sqrxz4.png": {
+   "sha256": "7ba52d01b17333509d8a31adf5d4493968037ce03678393f2d2b891c50dc79fa",
+   "size": 10797
+  },
+  "covers/am_wizzys_quest.png": {
+   "sha256": "17db38fd5d487c7be65c1bea5b61c0837f7a6b9ff80cded7097e24fcedf0f99f",
+   "size": 13029
   },
   "covers/board_vp_41.jpg": {
    "sha256": "5c6bd986c2c6d6193c0f773f4b1ec60fa78127310ec57e6dbb9d9812ca3051b5",
@@ -2110,6 +2138,34 @@
   "homebrew-downloads/Wolfling.prg": {
    "sha256": "cf0a878235e9b5301ee5f382a2093570db68cd20caae1c575428423b72d53d9b",
    "size": 34756
+  },
+  "homebrew-downloads/amiga_cybernetix.adf": {
+   "sha256": "2a1372fc6c4fe02165c119c009ffbda8226ad4be2ff64194f69bb1ceb41ff826",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_deluxe_galaga.adf": {
+   "sha256": "910aaec1909d0af8362a11e504f462f6b0cfcbd534d7dc0d28b2b7d0abbb8f09",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_megaball.adf": {
+   "sha256": "24bf6e2eef4a2d8ac6ecaa9ffed4324700c92bae3e225061f2fc9204e0c9ed57",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_sqrxz.adf": {
+   "sha256": "ac50dd0f7b9a549835867041852948702523ed11449cd11bf4b49518b38d42ce",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_sqrxz3.adf": {
+   "sha256": "9d74702e69bf60aa67eb95a0420f68e7444e5c22589ec7e99d186179c4f42c93",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_sqrxz4.adf": {
+   "sha256": "5218a1ad66e73a7e571d17e3f77665d48355111511f7285839e9661d8ff413c1",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_wizzys_quest.adf": {
+   "sha256": "0255189c3ebbed32f43834bd4211dfa6848197d4319c86378dcfcded29c462c7",
+   "size": 901120
   },
   "homebrew-downloads/ballnchain.prg": {
    "sha256": "4374367a1f3d8ce6ff694e3b6970c64824ba002e93d98ba4c321c06313afead0",

@@ -56,7 +56,7 @@ FILES = [
 # EXT below has its own homebrew branch for exactly this reason.
 FOLDERS = ["covers", "assets/cheats", "clips", "extras", "homebrew-downloads"]
 EXT = {
-    "homebrew-downloads": (".d64", ".zip", ".crt", ".prg", ".bin"),
+    "homebrew-downloads": (".d64", ".zip", ".crt", ".prg", ".bin", ".adf"),
 }
 DEFAULT_EXT = (".png", ".jpg", ".jpeg", ".gif", ".mp4", ".pdf")
 
