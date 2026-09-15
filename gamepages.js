@@ -5014,7 +5014,7 @@ window.GAMEPAGES_DATA = {
    "title": "RoboCop [Amiga Longplay] (1989) Ocean"
   },
   "history": {
-   "text": "Ocean's conversion of the Robocop arcade/movie license &ndash; five levels of street-cleaning action as Alex Murphy's cybernetic alter ego, armed with the Auto-9 pistol."
+   "text": "Ocean's conversion of the Robocop arcade/movie license – five levels of street-cleaning action as Alex Murphy's cybernetic alter ego, armed with the Auto-9 pistol."
   }
  },
  "am_jimmywhite": {
@@ -5024,7 +5024,7 @@ window.GAMEPAGES_DATA = {
    "title": "JIMMY WHITE'S 'WHIRLWIND' SNOOKER | Commodore Amiga (1991)"
   },
   "history": {
-   "text": "Archer Maclean's snooker simulation, built around the same physics engine that made his earlier International Karate famous &ndash; still considered one of the best snooker games ever made."
+   "text": "Archer Maclean's snooker simulation, built around the same physics engine that made his earlier International Karate famous – still considered one of the best snooker games ever made."
   }
  },
  "am_ohnomorelemmings": {
@@ -5044,7 +5044,7 @@ window.GAMEPAGES_DATA = {
    "title": "BUBBLE BOBBLE - Amiga Longplay (Walkthrough! ALL LEVELS! No umbrella! 2-Players)"
   },
   "history": {
-   "text": "Taito's arcade classic, ported by Software Creations for Firebird &ndash; Bub and Bob blow bubbles to trap enemies across 100 single-screen levels, solo or in two-player co-op."
+   "text": "Taito's arcade classic, ported by Software Creations for Firebird – Bub and Bob blow bubbles to trap enemies across 100 single-screen levels, solo or in two-player co-op."
   }
  },
  "am_turrican": {
@@ -5054,7 +5054,7 @@ window.GAMEPAGES_DATA = {
    "title": "Turrican [Amiga Longplay] (1990) Rainbow Arts"
   },
   "history": {
-   "text": "Manfred Trenz's run-and-gun landmark for Rainbow Arts &ndash; huge scrolling levels, a screen-clearing smart bomb, and the rolling-ball transformation that became the series' signature."
+   "text": "Manfred Trenz's run-and-gun landmark for Rainbow Arts – huge scrolling levels, a screen-clearing smart bomb, and the rolling-ball transformation that became the series' signature."
   }
  },
  "am_stuntcarracer": {
@@ -5064,7 +5064,7 @@ window.GAMEPAGES_DATA = {
    "title": "Amiga Longplay: Stunt Car Racer"
   },
   "history": {
-   "text": "Geoff Crammond's physics-driven stunt racer &ndash; elevated wireframe tracks over a ravine, where falling off costs you the run. Widely regarded as one of the best racing games of the 16-bit era."
+   "text": "Geoff Crammond's physics-driven stunt racer – elevated wireframe tracks over a ravine, where falling off costs you the run. Widely regarded as one of the best racing games of the 16-bit era."
   }
  },
  "am_lotusturbo2": {
@@ -5074,7 +5074,7 @@ window.GAMEPAGES_DATA = {
    "title": "Lotus Turbo Challenge 2 [Amiga Longplay] (1991) Gremlin Graphics"
   },
   "history": {
-   "text": "Magnetic Fields' sequel to Lotus Esprit Turbo Challenge &ndash; three Lotus models, split-screen two-player, and a marble-run of shortcuts, jumps and traffic across the championship circuit."
+   "text": "Magnetic Fields' sequel to Lotus Esprit Turbo Challenge – three Lotus models, split-screen two-player, and a marble-run of shortcuts, jumps and traffic across the championship circuit."
   }
  }
 };

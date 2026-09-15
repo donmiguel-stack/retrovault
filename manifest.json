@@ -1,15 +1,15 @@
 {
- "generated": "2026-09-15 20:44:06",
- "count": 598,
- "bytes": 211850217,
+ "generated": "2026-09-15 22:06:10",
+ "count": 605,
+ "bytes": 211915450,
  "files": {
   "games.js": {
    "sha256": "d33d5e8b00a296ec2ffa10cc7f2d63cf3dd4bf718b5bf730def003969fe388bd",
    "size": 116519
   },
   "gamepages.js": {
-   "sha256": "e61ab28634c6eeb9f622c4ff544639d769fc9d3202b0eda75d9596d288445605",
-   "size": 253184
+   "sha256": "5869ebd08c1fbc0c3e8a380efb641840d3c9324242bbf4b7544ebf9e2f1bdbbc",
+   "size": 253160
   },
   "genres.js": {
    "sha256": "05c1eb818b21f7fa5cd08d5fb6e6084bf112b60cf17a44b2b38b59a747610c21",
@@ -32,12 +32,12 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "a6f4564f5e24cbb43c7a4df7e3aaa907a94de0ea0133337d8f781c22f4a5f5ee",
-   "size": 71071
+   "sha256": "4eecfa5e242fe377eb3b07e26c729635902651c625da1b2a10f73e1eaa046117",
+   "size": 71597
   },
   "setup-i18n.js": {
-   "sha256": "3aa9aa7e6398c7a2955036c0e09040e5e24c25e916a7ae1a3a48ca75791acf1d",
-   "size": 81915
+   "sha256": "efdadf93a2202a3ce2b56bc89935726603cf7f4da0fd8d7ce1bcbb7ceee12bd6",
+   "size": 91342
   },
   "featured.js": {
    "sha256": "42c882e6fd3a4da2fac4a6feff2afcad0a36450efe1da8df5e76b5cd5880d504",
@@ -60,8 +60,8 @@
    "size": 24537
   },
   "romsources.js": {
-   "sha256": "1d1a80e689c47174f768e971f3f3d2b81a8459b6968a0c6b7236a6d1b5a8ab81",
-   "size": 10994
+   "sha256": "5837c2cc587459e0ab7207aac76ed780e4ad02858fc5a1d2adcfdea9f1809e42",
+   "size": 13221
   },
   "walkthroughs.js": {
    "sha256": "a540ed9c261c97b3ce37eaf835f3899edaee3c35131cccc4c7db5cf64a406486",
@@ -100,7 +100,7 @@
    "size": 7296
   },
   "app.js": {
-   "sha256": "7d3f112f1815e59f8c405fc298c0c79b2e845568e47e97f22b668809793a37a0",
+   "sha256": "2f38ea8768fe5e326113423549f0c1baa1aaf44b36af447a6ae331febb78a280",
    "size": 81768
   },
   "demo.js": {
@@ -108,16 +108,16 @@
    "size": 4572
   },
   "game.html": {
-   "sha256": "ff785974ca8d154260b2042814d596a7a0688ff7bef1276864e808977e71a255",
-   "size": 104928
+   "sha256": "dbece289dd5ec48e7c65ca923d8d64bc5a3b575606e7e63aa204dcf5642c2c14",
+   "size": 105354
   },
   "index.html": {
-   "sha256": "f2257acdbc8e9eb879cfea2d06df04cdac9745bc5aaebd7da5c24d4857af8c16",
-   "size": 17961
+   "sha256": "c77811df271a35dc83c49c5abc4978e9a4f674a18ed3d12a9869c2376f2c9512",
+   "size": 17976
   },
   "resources.html": {
-   "sha256": "71b984ab069086e8ed4c5fcd4757c879f77904c5daf502704f9858068b9f1ff8",
-   "size": 12972
+   "sha256": "c8f8c386547a5f645e394f6d8793a2112cd336486bea1219c45c6ddd216a6830",
+   "size": 13063
   },
   "style.css": {
    "sha256": "3caa84edef9d567598d7e9bcb4d6614d67986ae07baa542113b9f158220fe0a5",
@@ -160,8 +160,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "377842141309d2f20c67360fc17d2836a530acffd8953ad1cdb10fb0143c3543",
-   "size": 72689
+   "sha256": "15ec8263e91d24d385f388c89661cb72ebbc3af9e7f118e12005e2529a325175",
+   "size": 74012
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -255,6 +255,10 @@
    "sha256": "8e2d033bd323f46556de03117e03c0ea0fd833f2a73f67146646a7615af0e209",
    "size": 6894
   },
+  "covers/am_bubblebobble.png": {
+   "sha256": "75e3e07aa759cadd94f7f74b32f3a31ec0f9015053cd4b1eb42eba2f8389131b",
+   "size": 6593
+  },
   "covers/am_crazy_sue.png": {
    "sha256": "585072645835cf3da85234b594d5dda17006bbbfaa34e350854db6fc13f20dbc",
    "size": 5462
@@ -295,13 +299,25 @@
    "sha256": "d13ec44b9f1a8fb1a8651a5c7754ed5ac1675a782b2b1081d78e244e5e82ba03",
    "size": 813
   },
+  "covers/am_jimmywhite.png": {
+   "sha256": "1df27836594646428ea9ecfc614bb8ca814c7aa6a3820f009b8d65f109d6301c",
+   "size": 2834
+  },
   "covers/am_llamatron.png": {
    "sha256": "b052cce9990177fcafac49cdd014dfec81f011f5491f22812cbee847a0246f7b",
    "size": 5313
   },
+  "covers/am_lotusturbo2.png": {
+   "sha256": "98f010f53f3560d04609b757a8b3abde0255f51f8e005640b7b6099e4306be3c",
+   "size": 474
+  },
   "covers/am_megaball.png": {
    "sha256": "a9dff540b0c6d1dd46fd833f9077faa711e130ab747bb355513cf5bbe4d37d49",
    "size": 6019
+  },
+  "covers/am_ohnomorelemmings.png": {
+   "sha256": "a2e834851d7820c654e10a3077e78a3d0dc149d825e3b64269990d3b03851e4f",
+   "size": 4619
   },
   "covers/am_pengo2.png": {
    "sha256": "25ef61e647c0ca8e3f4e75197b8a1ca9ba48f5529c282c635eb5fdde99e1c3dd",
@@ -310,6 +326,10 @@
   "covers/am_pollymorf.png": {
    "sha256": "afe536f5eea399126cd8191a32075ad5e80afc54facc542d713a93e5197906d2",
    "size": 22602
+  },
+  "covers/am_robocop.png": {
+   "sha256": "14e289f3da87815dc4bfdb6f6343eb42b87c35e396f932d96f3578cce0ce4000",
+   "size": 14372
   },
   "covers/am_space_taxi.png": {
    "sha256": "778114b230d800699244e8ce9a597804263912a7ebbf06cfd3ee3168d2cb5d51",
@@ -327,6 +347,10 @@
    "sha256": "7ba52d01b17333509d8a31adf5d4493968037ce03678393f2d2b891c50dc79fa",
    "size": 10797
   },
+  "covers/am_stuntcarracer.png": {
+   "sha256": "f47ec7159fd36ee0d59da6ed226c182d1f30d6fc2739d18830b0102ba8c57849",
+   "size": 8097
+  },
   "covers/am_super_obliteration.png": {
    "sha256": "3ae3ccfbf70737612c86c826674e3efd11141cc38568ff11a246623c045e774c",
    "size": 9655
@@ -338,6 +362,10 @@
   "covers/am_trailblazer.png": {
    "sha256": "f5412df56b14fbf8a7cea8c458e98ab4e6f8601789f0cd8b5eddbdfc28a62e37",
    "size": 4320
+  },
+  "covers/am_turrican.png": {
+   "sha256": "8be4537297c354c02071d8a5ef779c32159f049ada1e500e80444448d260d848",
+   "size": 14233
   },
   "covers/am_wibble_world_giddy.png": {
    "sha256": "cec67b52787753eaa65b6bfa6f10871cc3b33b318f86c4e20036c8128188bd67",

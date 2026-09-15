@@ -718,7 +718,7 @@
 </head>
 <body>
 <div class="topbar">
-  <div class="brand"><span class="brand-mark"><img src="assets/kcmunch.png" alt="" width="22" height="22"></span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; PC</span></div>
+  <div class="brand"><span class="brand-mark"><img src="assets/kcmunch.png" alt="" width="22" height="22"></span> Retro Vault <span class="brand-sub">Videopac &middot; Odyssey&sup2; &middot; C64 &middot; Amiga &middot; PC</span></div>
   <div style="flex:1"></div>
   <a id="resourcesLink" class="ghost-btn" href="resources.html" data-i18n="resources" style="display:inline-block;text-decoration:none;">Resources</a>
   <div class="social-links">
@@ -744,8 +744,8 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=122"></script>
-<script src="setup-i18n.js?v=120"></script>
+<script src="i18n.js?v=123"></script>
+<script src="setup-i18n.js?v=121"></script>
 <script src="games.js?v=117"></script>
 <script src="alternates.js?v=4"></script>
 <script src="extras.js?v=109"></script>
@@ -756,7 +756,7 @@
 <script src="shops.js?v=109"></script>
 <script src="support.js?v=110"></script>
 <script src="downloads.js?v=111"></script>
-<script src="romsources.js?v=3"></script>
+<script src="romsources.js?v=4"></script>
 <script src="hosted.js?v=2"></script>
 <script src="products.js?v=1"></script>
 <script src="cheats.js?v=113"></script>
@@ -766,7 +766,7 @@
 <script src="walkthroughs.js?v=1"></script>
 <script src="featured.js?v=114"></script>
 <script src="c64ad.js?v=110"></script>
-<script src="gamepages.js?v=119"></script>
+<script src="gamepages.js?v=120"></script>
 <script src="gamepages-ja.js?v=2"></script>
 <script src="demo.js?v=112"></script>
 <script>
@@ -1202,8 +1202,13 @@
       site: '<a href="' + esc(src.url) + '" target="_blank" rel="noopener nofollow">' + esc(src.site || "archive.org") + "</a>"
     });
     var s2 = document.createElement("li");
-    var bare = /\.(d64|crt|prg|t64|bin)$/i.test(src.file);   // a disk image, not a zip - no "no need to unzip"
-    s2.innerHTML = window.t(bare ? "getRomStep2file" : "getRomStep2", { file: "<code>" + esc(g.romFile) + "</code>" });
+    var bare = /\.(d64|crt|prg|t64|bin|adf|adz|dms)$/i.test(src.file);   // a disk image, not a zip - no "no need to unzip"
+    // Amiga: the preserved copies are .adf disk images shipped inside a zip, and
+    // unlike the PC shelf (where emulator/dos.html takes the zip as-is) the
+    // Amiga player wants the bare .adf - so say "unzip it, rename what's inside".
+    var zippedDisk = /\.zip$/i.test(src.file) && /\.(adf|adz|dms)$/i.test(g.romFile || "");
+    var step2key = zippedDisk ? "getRomStep2zipfile" : bare ? "getRomStep2file" : "getRomStep2";
+    s2.innerHTML = window.t(step2key, { file: "<code>" + esc(g.romFile) + "</code>" });
     var s3 = document.createElement("li");
     s3.innerHTML = window.t("getRomStep3", { folder: "<code>emulator/roms/</code>" });
     ol.appendChild(s1); ol.appendChild(s2); ol.appendChild(s3);

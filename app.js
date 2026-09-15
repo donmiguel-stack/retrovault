@@ -37,8 +37,8 @@
     { key: "rare",     label: "Rare",           color: "#c07de0", match: ["Rare / unreleased", "Utility / unknown"] },
     { key: "homebrew", label: "Homebrew",       color: "#e05a7e", match: ["Homebrew (this project)", "Homebrew (community)"] },
     { key: "c64",      label: "Commodore 64",   color: "#b98a5f", match: ["Commodore 64"] },
-    { key: "pc",       label: "MS-DOS",         color: "#4a7fd6", match: ["MS-DOS"] },
-    { key: "amiga",    label: "Amiga",          color: "#ff8a3d", match: ["Amiga"] }
+    { key: "amiga",    label: "Amiga",          color: "#ff8a3d", match: ["Amiga"] },
+    { key: "pc",       label: "MS-DOS",         color: "#4a7fd6", match: ["MS-DOS"] }
   ];
 
   var CATEGORY_LOOKUP = {};

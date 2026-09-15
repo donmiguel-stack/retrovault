@@ -87,14 +87,106 @@
 	// stale-file trap (the same class of problem dos.html works around for
 	// js-dos) and a straight conflict with the Vault's own pwa-sw.js.
 	//
-	// No Kickstart ROM ships here and none is needed: AROS=true selects the
-	// AROS m68k Kickstart replacement (bundled under amiga/roms/, APL-licensed
-	// and redistributable, unlike Commodore's own). Bring-your-own Kickstart is
-	// a later job - vAmigaWeb's player API exposes a kickstart_rom_url hook for
-	// exactly that, and it is the only way WHDLoad (.lha) content can ever work,
-	// since AROS cannot stand in for a real Kickstart there.
+	// No Kickstart ROM ships here and none is needed for the shelf as published:
+	// AROS=true selects the AROS m68k Kickstart replacement (bundled under
+	// amiga/roms/, APL-licensed and redistributable, unlike Commodore's own).
 	var ENGINE = "amiga/index.html";
 	var CONFIG = "#AROS=true#port2=true";
+
+	// ---- bring-your-own Kickstart ------------------------------------------
+	// AROS is a clean-room Kickstart *replacement*, and for anything that takes
+	// the machine over from its own bootblock rather than going through the OS
+	// - most 1988-1991 demos, and most cracked multi-disk releases - it is not
+	// a stand-in. Those titles either drop straight to the AROS shell (the
+	// bootblock isn't recognised as bootable) or hang on a black screen with
+	// the drive light still ticking. Confirmed against this engine: a vanilla
+	// A500 hardware profile alone does not rescue them, AROS itself is the wall.
+	//
+	// vAmigaWeb's player API takes a real Kickstart over kickstart_rom_url and
+	// injects it into the core (fetch -> wasm_loadfile "kick.rom_file" ->
+	// reset), which is also the only route by which WHDLoad (.lha) content can
+	// ever work. So: drop a Kickstart into emulator/roms/ under one of the
+	// names below and every title on the shelf boots on it instead of AROS.
+	//
+	// Nothing here ships or commits one. emulator/roms/ is gitignored - the
+	// same place the disk images live - so a fresh clone, and the public site,
+	// find no Kickstart and fall back to the AROS path above untouched. That
+	// fallback is why this whole block is additive: with no ROM present the
+	// page builds exactly the URL it always did.
+	//
+	// Probed in order, first hit wins. kick.rom is the catch-all; the
+	// version-specific names are there so several can sit side by side.
+	var KICK_NAMES = ["kick.rom", "kick13.rom", "kick12.rom", "kick20.rom", "kick31.rom"];
+	// Only CDTV/CD32 need an extension ROM; optional, ignored when absent.
+	var KICK_EXT_NAMES = ["kick.ext.rom", "kick31.ext.rom"];
+
+	// ---- hardware profile ---------------------------------------------------
+	// The engine's shipped default is an ECS Agnus with 2MB of fast RAM. That
+	// is wrong for most of this shelf: OCS-era software from 1988-1991 regularly
+	// refuses to run, or corrupts itself, with fast RAM present. A stock A500 -
+	// OCS, 512KB chip + 512KB slow, no fast RAM - is the right default once a
+	// real Kickstart is in play.
+	//
+	// The engine keeps these in localStorage on its own origin, and it is
+	// self-hosted under emulator/amiga/, so that origin is this one and they
+	// can be seeded before the iframe boots. Seeded only on the Kickstart path:
+	// under AROS the defaults are left exactly as they are, so the PD/homebrew
+	// titles already on the shelf keep the behaviour they were verified with.
+	// A sentinel keeps it to a one-time seed, so the engine's own hardware UI
+	// stays in charge afterwards; ?model= forces a named preset for the titles
+	// that need something else (A1200_STOCK for the AGA-only ones).
+	var HW_SENTINEL = "vault_amiga_model";
+	var MODELS = {
+		A500_UNEXPANDED: { agnus: "OCS",     denise: "OCS", chip: "512",  slow: "0",   fast: "0", cpu: "0", clock: "0" },
+		A500_VANILLA:    { agnus: "OCS",     denise: "OCS", chip: "512",  slow: "512", fast: "0", cpu: "0", clock: "0" },
+		A500P_STOCK:     { agnus: "ECS_2MB", denise: "ECS", chip: "1024", slow: "0",   fast: "0", cpu: "0", clock: "0" },
+		A1200_STOCK:     { agnus: "AGA",     denise: "AGA", chip: "2048", slow: "0",   fast: "0", cpu: "2", clock: "2" }
+	};
+	function applyModel(name) {
+		var m = MODELS[name];
+		if (!m) return;
+		try {
+			localStorage.setItem("OPT_AGNUS_REVISION", m.agnus);
+			localStorage.setItem("OPT_DENISE_REVISION", m.denise);
+			localStorage.setItem("OPT_CHIP_RAM", m.chip);
+			localStorage.setItem("OPT_SLOW_RAM", m.slow);
+			localStorage.setItem("OPT_FAST_RAM", m.fast);
+			localStorage.setItem("OPT_CPU_REVISION", m.cpu);
+			localStorage.setItem("OPT_CPU_OVERCLOCKING", m.clock);
+			localStorage.setItem(HW_SENTINEL, name);
+		} catch (e) { /* private mode / storage off - engine defaults stand */ }
+	}
+	function seedHardware() {
+		var want = params.get("model");
+		try {
+			if (want && MODELS[want]) {
+				if (localStorage.getItem(HW_SENTINEL) !== want) applyModel(want);
+			} else if (!localStorage.getItem(HW_SENTINEL)) {
+				applyModel("A500_VANILLA");
+			}
+		} catch (e) { /* ignore */ }
+	}
+
+	// First name in `names` that answers a HEAD, or null. Probed together
+	// rather than in sequence so this costs one round trip, not five.
+	function firstPresent(names) {
+		return Promise.all(names.map(function (n) {
+			return head("roms/" + encodeURIComponent(n))
+				.then(function (r) { return r.ok ? n : null; })
+				.catch(function () { return null; });
+		})).then(function (found) {
+			for (var i = 0; i < found.length; i++) if (found[i]) return found[i];
+			return null;
+		});
+	}
+	function findKickstart() {
+		return firstPresent(KICK_NAMES).then(function (rom) {
+			if (!rom) return null;
+			return firstPresent(KICK_EXT_NAMES).then(function (ext) {
+				return { rom: rom, ext: ext };
+			});
+		}).catch(function () { return null; });
+	}
 
 	// ---- finding the disk ---------------------------------------------------
 	// Same three places, in the same order, as dos.html: emulator/roms/ (your
@@ -142,16 +234,38 @@
 			"Drop it into <code>emulator/roms/</code> and reload.";
 	}
 
-	resolveDiskUrl().then(function (url) {
+	Promise.all([resolveDiskUrl(), findKickstart()]).then(function (r) {
+		var url = r[0], kick = r[1];
 		if (!url) { fail(); return; }
 		// vAmigaWeb reads the disk address from the last "#" segment of its own
 		// URL, so it has to be absolute - a relative path would be resolved
 		// against the engine's own folder, not this page's.
 		var absolute = new URL(url, window.location.href).href;
+		var src;
+		if (kick) {
+			// The JSON form of the player API is the only one that carries
+			// kickstart_rom_url, so on this path the disk moves out of the
+			// trailing "#" segment and into the object's own "url". The engine
+			// decodeURIComponent()s its whole hash before parsing it, so the
+			// object goes out encoded.
+			seedHardware();
+			var cfg = {
+				url: absolute,
+				port2: true,
+				kickstart_rom_url: new URL("roms/" + encodeURIComponent(kick.rom), window.location.href).href
+			};
+			if (kick.ext) {
+				cfg.kickstart_ext_url = new URL("roms/" + encodeURIComponent(kick.ext), window.location.href).href;
+			}
+			src = ENGINE + "#" + encodeURIComponent(JSON.stringify(cfg));
+			document.getElementById("romText").textContent = disk + " — " + kick.rom;
+		} else {
+			src = ENGINE + CONFIG + "#" + absolute;
+		}
 		var frame = document.createElement("iframe");
 		frame.id = "amigaFrame";
 		frame.allow = "autoplay; fullscreen; gamepad";
-		frame.src = ENGINE + CONFIG + "#" + absolute;
+		frame.src = src;
 		frame.addEventListener("load", function () {
 			var msg = document.getElementById("loadingMsg");
 			if (msg && msg.parentNode) msg.parentNode.removeChild(msg);

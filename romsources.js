@@ -180,5 +180,53 @@ window.ROM_SOURCES = {
   },
   "c64_outrun": {
     url: "https://archive.org/details/d64_Out_Run_1988_U.S._Gold", file: "Out_Run_1988_U.S._Gold.d64", site: "Internet Archive"
+  },
+
+  // ---- Amiga ----
+  // Commercial Amiga titles the Vault carries a catalogue entry for but does
+  // not host: the disk images below are the exact releases each entry was
+  // boot-tested against here, so a copy fetched this way behaves the same.
+  // The per-letter "commodore-amiga-games-adf-*" items are bulk TOSEC-style
+  // collections - large pages, use the item's own search box to find the file.
+  "am_robocop": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-r",
+    file: "RoboCop (1989)(Ocean)[cr OCL].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_jimmywhite": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-j",
+    file: "Jimmy White's 'Whirlwind' Snooker (1991-08-18)(Virgin)[cr CSL].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_ohnomorelemmings": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-o",
+    file: "Oh No! More Lemmings (1991)(Psygnosis)[cr FLT].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_bubblebobble": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-b",
+    file: "Bubble Bobble (1988)(Firebird)(PAL).zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside. This is the uncracked PAL original."
+  },
+  "am_turrican": {
+    url: "https://archive.org/details/Turrican_1990_Rainbow_Arts_cr_TRSI",
+    file: "Turrican_1990_Rainbow_Arts_cr_TRSI.adf",
+    site: "Internet Archive"
+  },
+  "am_stuntcarracer": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-s",
+    file: "Stunt Car Racer (1989)(MicroStyle)[cr QTX].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_lotusturbo2": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-l_202202",
+    file: "Lotus Turbo Challenge 2 (1991)(Gremlin)[cr CPY].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
   }
 };
