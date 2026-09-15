@@ -1577,5 +1577,33 @@ window.GENRE_DATA = {
  "am_space_taxi": {
   "genre": "action",
   "players": "p1"
+ },
+ "am_robocop": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_jimmywhite": {
+  "genre": "sports",
+  "players": "p12"
+ },
+ "am_ohnomorelemmings": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "am_bubblebobble": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "am_turrican": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_stuntcarracer": {
+  "genre": "racing",
+  "players": "p1"
+ },
+ "am_lotusturbo2": {
+  "genre": "racing",
+  "players": "p1"
  }
 };

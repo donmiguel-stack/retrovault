@@ -5006,5 +5006,75 @@ window.GAMEPAGES_DATA = {
   "history": {
    "text": "A public-domain update of the C64 classic Space Taxi by Effect &ndash; land precisely on numbered pads to pick up and deliver fares across the galaxy."
   }
+ },
+ "am_robocop": {
+  "input": "joystick",
+  "video": {
+   "id": "WWXne7Z3IYY",
+   "title": "RoboCop [Amiga Longplay] (1989) Ocean"
+  },
+  "history": {
+   "text": "Ocean's conversion of the Robocop arcade/movie license &ndash; five levels of street-cleaning action as Alex Murphy's cybernetic alter ego, armed with the Auto-9 pistol."
+  }
+ },
+ "am_jimmywhite": {
+  "input": "mouse",
+  "video": {
+   "id": "oDibtKZQaiE",
+   "title": "JIMMY WHITE'S 'WHIRLWIND' SNOOKER | Commodore Amiga (1991)"
+  },
+  "history": {
+   "text": "Archer Maclean's snooker simulation, built around the same physics engine that made his earlier International Karate famous &ndash; still considered one of the best snooker games ever made."
+  }
+ },
+ "am_ohnomorelemmings": {
+  "input": "mouse",
+  "video": {
+   "id": "glWTIKqT1CA",
+   "title": "Amiga Longplay Oh No! More Lemmings (part 1 of 2)"
+  },
+  "history": {
+   "text": "Psygnosis' stand-alone follow-up to Lemmings, with 100 new (and considerably harder) levels across five difficulty tiers, using the same eight skills to guide the lemmings to safety."
+  }
+ },
+ "am_bubblebobble": {
+  "input": "joystick",
+  "video": {
+   "id": "ualveckK6is",
+   "title": "BUBBLE BOBBLE - Amiga Longplay (Walkthrough! ALL LEVELS! No umbrella! 2-Players)"
+  },
+  "history": {
+   "text": "Taito's arcade classic, ported by Software Creations for Firebird &ndash; Bub and Bob blow bubbles to trap enemies across 100 single-screen levels, solo or in two-player co-op."
+  }
+ },
+ "am_turrican": {
+  "input": "joystick",
+  "video": {
+   "id": "j58lRNoa2c0",
+   "title": "Turrican [Amiga Longplay] (1990) Rainbow Arts"
+  },
+  "history": {
+   "text": "Manfred Trenz's run-and-gun landmark for Rainbow Arts &ndash; huge scrolling levels, a screen-clearing smart bomb, and the rolling-ball transformation that became the series' signature."
+  }
+ },
+ "am_stuntcarracer": {
+  "input": "joystick",
+  "video": {
+   "id": "q7w_0yP5RwU",
+   "title": "Amiga Longplay: Stunt Car Racer"
+  },
+  "history": {
+   "text": "Geoff Crammond's physics-driven stunt racer &ndash; elevated wireframe tracks over a ravine, where falling off costs you the run. Widely regarded as one of the best racing games of the 16-bit era."
+  }
+ },
+ "am_lotusturbo2": {
+  "input": "joystick",
+  "video": {
+   "id": "P3sE4I30WjU",
+   "title": "Lotus Turbo Challenge 2 [Amiga Longplay] (1991) Gremlin Graphics"
+  },
+  "history": {
+   "text": "Magnetic Fields' sequel to Lotus Esprit Turbo Challenge &ndash; three Lotus models, split-screen two-player, and a marble-run of shortcuts, jumps and traffic across the championship circuit."
+  }
  }
 };

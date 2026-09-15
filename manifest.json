@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-15 18:29:16",
+ "generated": "2026-09-15 20:44:06",
  "count": 598,
- "bytes": 211844880,
+ "bytes": 211850217,
  "files": {
   "games.js": {
-   "sha256": "0909952638ffc548b61037e077f12f825f5e208b4c34d50916944ca8f0387d51",
-   "size": 114247
+   "sha256": "d33d5e8b00a296ec2ffa10cc7f2d63cf3dd4bf718b5bf730def003969fe388bd",
+   "size": 116519
   },
   "gamepages.js": {
-   "sha256": "6ccc9e4423adc02ceb847ecaea7cbcb8b4460c402d30cfe1dad58247dd913c8d",
-   "size": 250573
+   "sha256": "e61ab28634c6eeb9f622c4ff544639d769fc9d3202b0eda75d9596d288445605",
+   "size": 253184
   },
   "genres.js": {
-   "sha256": "b334703654756662ea8c2f3e28d5260dd4392536c78b4ca3795a5b3d1d84770f",
-   "size": 25024
+   "sha256": "05c1eb818b21f7fa5cd08d5fb6e6084bf112b60cf17a44b2b38b59a747610c21",
+   "size": 25478
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",

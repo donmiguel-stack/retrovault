@@ -4617,6 +4617,97 @@ window.GAMES_DATA = {
     "year": 1993,
     "publisher": "Effect",
     "developer": "Effect"
+  },
+  {
+    "id": "am_robocop",
+    "filename": "amiga_robocop.adf",
+    "title": "RoboCop",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_robocop.adf",
+    "year": 1989,
+    "publisher": "Ocean Software",
+    "developer": "Ocean Software"
+  },
+  {
+    "id": "am_jimmywhite",
+    "filename": "amiga_jimmywhite.adf",
+    "title": "Jimmy White's 'Whirlwind' Snooker",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_jimmywhite.adf",
+    "year": 1991,
+    "publisher": "Virgin Games",
+    "developer": "Archer Maclean"
+  },
+  {
+    "id": "am_ohnomorelemmings",
+    "filename": "amiga_ohnomorelemmings.adf",
+    "title": "Oh No! More Lemmings",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_ohnomorelemmings.adf",
+    "year": 1991,
+    "publisher": "Psygnosis",
+    "developer": "DMA Design"
+  },
+  {
+    "id": "am_bubblebobble",
+    "filename": "amiga_bubblebobble.adf",
+    "title": "Bubble Bobble",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_bubblebobble.adf",
+    "year": 1988,
+    "publisher": "Firebird",
+    "developer": "Software Creations"
+  },
+  {
+    "id": "am_turrican",
+    "filename": "amiga_turrican.adf",
+    "title": "Turrican",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_turrican.adf",
+    "year": 1990,
+    "publisher": "Rainbow Arts",
+    "developer": "Manfred Trenz"
+  },
+  {
+    "id": "am_stuntcarracer",
+    "filename": "amiga_stuntcarracer.adf",
+    "title": "Stunt Car Racer",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_stuntcarracer.adf",
+    "year": 1989,
+    "publisher": "MicroStyle",
+    "developer": "Geoff Crammond"
+  },
+  {
+    "id": "am_lotusturbo2",
+    "filename": "amiga_lotusturbo2.adf",
+    "title": "Lotus Turbo Challenge 2",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_lotusturbo2.adf",
+    "year": 1991,
+    "publisher": "Gremlin Graphics",
+    "developer": "Magnetic Fields"
   }
 ]
 };
