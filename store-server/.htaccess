@@ -1,0 +1,5 @@
+# Only api.php is reachable from the web.
+Options -Indexes
+<FilesMatch "^(?!api\.php$).*$">
+    Require all denied
+</FilesMatch>

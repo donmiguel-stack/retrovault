@@ -868,6 +868,22 @@ function readyRomFetch() {
 	 * homebrew-downloads/ has it - so this second attempt only fires for the
 	 * small set of titles the Vault is actually allowed to ship playable out
 	 * of the box, never as a guess. */
+	/* Videopac Vault: a game bought through the Vault's store (store.js).
+	 * game.html only adds &store=<id> when this browser holds a license and
+	 * emulator/roms/ has no copy; the store server sends the ROM stamped for
+	 * that license. romFilename stays the games.js name, so save states are
+	 * the same ones a local copy would use. */
+	if (queries.store && window.VaultStore) {
+		window.VaultStore.fetchRom(queries.store).then(function(data) {
+			log("Succesfully fetched ROM from the Vault store");
+			romFetched(data);
+		}, function(e) {
+			alert("Could not get this game from the Vault store (" + (e && e.message) + "). Go back to its page and check your license.");
+			romMode = "upload";
+			ffd.style.display = "block";
+		});
+		return;
+	}
 	grab(romloc, "arraybuffer", function(data) {
 		log("Succesfully fetched ROM from " + romloc);
 		romFetched(data);

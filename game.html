@@ -140,6 +140,42 @@
     position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
     font-size:12px;color:var(--text-mute);
   }
+  /* Store - homebrew sold through the Vault itself (store.js). Violet, so it
+     reads apart from an outside shop's Buy (green), Support (pink) and the
+     free Download (amber). The unlock form and the "licensed to" line sit
+     in their own panel under the action row. */
+  .store-col{position:relative;margin-top:18px;margin-left:16px;}
+  .store-btn{
+    display:inline-flex;align-items:center;gap:11px;text-decoration:none;cursor:pointer;
+    background:#8b6cf0;color:#140a33;font-weight:700;font-size:15px;border:0;font-family:inherit;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .store-btn:hover{background:#a189f5;}
+  .store-btn[disabled]{opacity:.6;cursor:wait;}
+  .store-price{background:rgba(0,0,0,.18);border-radius:6px;padding:2px 9px;font-size:14px;}
+  .store-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
+  .store-panel{margin:34px 0 0;max-width:560px;font-size:13.5px;color:var(--text-dim);}
+  .store-panel a,.store-link{color:#a189f5;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-decoration:underline;}
+  .store-form{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px;}
+  .store-form input{
+    flex:1 1 260px;min-width:0;padding:10px 12px;border-radius:var(--radius);
+    border:1px solid var(--border,#2a3140);background:var(--surface,#12161d);color:var(--text);
+    font:14px ui-monospace,Menlo,Consolas,monospace;
+  }
+  .store-form button{
+    padding:10px 18px;border-radius:var(--radius);border:0;cursor:pointer;
+    background:#8b6cf0;color:#140a33;font-weight:700;font-family:inherit;
+  }
+  .store-form[hidden]{display:none;}
+  .store-form button[disabled]{opacity:.6;cursor:wait;}
+  .store-msg{margin:6px 0 0;color:#f08a8a;}
+  .store-msg:empty{display:none;}
+  .store-help{margin:4px 0 0;font-size:12.5px;color:var(--text-mute);}
+  .store-licensed{margin:0;}
+  .store-licensed strong{color:var(--text);}
   .alt-name{margin:0 0 6px;font-size:13.5px;color:var(--text-dim);}
   .alt-name strong{color:var(--text);}
   .alt-num{
@@ -746,7 +782,7 @@
 
 <script src="i18n.js?v=124"></script>
 <script src="setup-i18n.js?v=121"></script>
-<script src="games.js?v=118"></script>
+<script src="games.js?v=119"></script>
 <script src="alternates.js?v=4"></script>
 <script src="extras.js?v=109"></script>
 <script src="packaging.js?v=109"></script>
@@ -756,6 +792,7 @@
 <script src="shops.js?v=109"></script>
 <script src="support.js?v=110"></script>
 <script src="downloads.js?v=111"></script>
+<script src="store.js?v=1"></script>
 <script src="romsources.js?v=5"></script>
 <script src="hosted.js?v=2"></script>
 <script src="products.js?v=1"></script>
@@ -1108,6 +1145,10 @@
   // in the "download from the Vault" block below, so the gating logic just
   // past this can offer it as a fallback when emulator/roms/ is empty.
   var dl = (window.DOWNLOAD_DATA || {})[g.id];
+  // On sale through the Vault's own store (store.js) - takes precedence
+  // over downloads.js/hosted.js, which should never list it anyway.
+  var sale = window.VaultStore ? window.VaultStore.game(g.id) : null;
+  if (sale) dl = null;
   var start = el("button","start-btn");
   start.appendChild(el("span","tri"));
   start.appendChild(document.createTextNode("START"));
@@ -1143,6 +1184,9 @@
   }
   start.addEventListener("click", function(){
     var fb = start.dataset.dlfallback ? "&dlfallback=" + encodeURIComponent(start.dataset.dlfallback) : "";
+    // bought through the Vault's store (store.js): the emulator page fetches
+    // the stamped ROM itself, with the license saved in this browser
+    if (start.dataset.store) fb += "&store=" + encodeURIComponent(start.dataset.store);
     if (g.platform === "PC") {
       // dos.html keeps the zip name (js-dos keys its saves off it) and gets
       // the hosted copy as a separate &hosted= URL to fall back to.
@@ -1177,9 +1221,13 @@
   // dos.html's resolveBundleUrl - both only try this path when told to).
   var romNote = el("p","missing-note","");
   info.appendChild(romNote);
-  function vaultShowStart(fromDownloads, hostedUrl) {
+  function vaultShowStart(fromDownloads, hostedUrl, storeId) {
     romNote.remove();
     if (fromDownloads) start.dataset.dlfallback = dl.file;
+    if (storeId) {
+      start.dataset.store = storeId;
+      start.title = window.t("storePlays");
+    }
     if (hostedUrl) {
       start.dataset.hosted = hostedUrl;
       start.title = window.t("playsHosted");
@@ -1221,6 +1269,35 @@
     if (src.note) box.appendChild(el("p", "get-note", src.note));
     romNote.insertAdjacentElement("afterend", box);
   }
+  // A game on sale, not in emulator/roms/: START only with a license saved in
+  // this browser (Amiga excepted - its player needs a real file, so buyers
+  // download their copy instead). Called again after unlock/remove.
+  // The Update button only refreshes top-level files, never emulator/ - so
+  // an install from before the store has a game.html that knows about it
+  // but an emulator page that doesn't. Ask the emulator page itself; if it
+  // can't fetch from the store, the buyer gets the download route instead
+  // (same as Amiga) until they grab a fresh copy of the Vault.
+  var storeEmuOk = null;
+  function storeEmuReady() {
+    if (storeEmuOk) return storeEmuOk;
+    var f = g.platform === "PC" ? "emulator/dos.html" : "emulator/assets/base.js";
+    storeEmuOk = g.platform === "Amiga" ? Promise.resolve(false) :
+      fetch(f, { cache: "no-cache" }).then(function (r) { return r.ok ? r.text() : ""; })
+        .then(function (t) { return t.indexOf("VaultStore") !== -1; }, function () { return false; });
+    return storeEmuOk;
+  }
+  function storeGate() {
+    var lic = window.VaultStore.license(g.id);
+    storeEmuReady().then(function (emuOk) {
+      if (lic && emuOk) {
+        if (!start.parentNode) vaultShowStart(false, null, g.id);
+        return;
+      }
+      if (start.parentNode && start.dataset.store) start.remove();
+      romNote.textContent = window.t(lic ? "storeAmigaNote" : "storeNeedKey");
+      if (!romNote.parentNode) actions.insertAdjacentElement("beforebegin", romNote);
+    });
+  }
   function esc(str) { return String(str).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   // Last resort, after roms/ and homebrew-downloads/: the Vault's own file
   // host (hosted.js). Same HEAD-before-button discipline - the host has to
@@ -1232,12 +1309,16 @@
       .then(function (r) { if (r.ok) vaultShowStart(false, url); else vaultShowMissing(); })
       .catch(vaultShowMissing);
   }
-  fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" })
+  // store preview (tools/store_preview.py): act as if roms/ were empty, so
+  // the page shows what a buyer without the file would see
+  (sale && window.VaultStore.preview ? Promise.reject(0) :
+  fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" }))
     .then(function (r) {
       if (r.ok) { vaultShowStart(false); return; }
       throw 0;
     })
     .catch(function () {
+      if (sale) { storeGate(); return; }
       if (!dl) { vaultTryHosted(); return; }
       fetch("homebrew-downloads/" + encodeURIComponent(dl.file), { method: "HEAD" })
         .then(function (r) { if (r.ok) vaultShowStart(true); else vaultTryHosted(); })
@@ -1370,6 +1451,109 @@
       .then(function (r) { if (r.ok) dcol.style.display = ""; })
       .catch(function () {});
   }
+  // ---- sold through the Vault ----
+  // Homebrew the Vault sells itself (store.js). Not licensed on this device:
+  // Buy (the Lemon Squeezy checkout, in a new tab) plus an "I have a key"
+  // form. Licensed: a Download button for a stamped copy, and who it is
+  // licensed to, with a way to free this device's slot on the key.
+  if (sale) {
+    var scol = el("div","store-col");
+    var spanel = el("div","store-panel");
+    actions.appendChild(scol);
+    actions.insertAdjacentElement("afterend", spanel);
+    var storeErr = function (e) {
+      var r = (e && e.message) || "server";
+      var k = { invalid: "storeErr_invalid", limit: "storeErr_limit", "wrong-product": "storeErr_wrong",
+                revoked: "storeErr_revoked", network: "storeErr_network", "slow-down": "storeErr_busy",
+                "no-license": "storeErr_invalid" }[r] || "storeErr_server";
+      return window.t(k);
+    };
+    var renderStore = function () {
+      scol.innerHTML = ""; spanel.innerHTML = "";
+      if (window.VaultStore.preview) {
+        // storepreview: say so, in plain English - this is a dev view only
+        var pv = el("p","store-help");
+        pv.innerHTML = "<strong>Store preview</strong> — example price, pretend checkout, any key works " +
+          "(WRONG / FULL show the errors). <a href=\"?id=" + encodeURIComponent(g.id) + "&storepreview=0\">Leave preview</a>";
+        spanel.appendChild(pv);
+      }
+      var lic = window.VaultStore.license(g.id);
+      if (!lic) {
+        var buy = document.createElement("a");
+        buy.className = "store-btn";
+        buy.href = sale.checkout; buy.target = "_blank"; buy.rel = "noopener";
+        buy.innerHTML = '<span class="store-label">' + window.t("storeBuy") + '</span>' +
+                        (sale.price ? '<span class="store-price">' + esc(sale.price) + '</span>' : "");
+        scol.appendChild(buy);
+        if (sale.author) scol.appendChild(el("p","store-note", window.t("storeBy", { author: sale.author })));
+        var open = el("button","store-link", window.t("storeHaveKey"));
+        open.type = "button";
+        var form = el("form","store-form");
+        form.hidden = true;
+        var input = document.createElement("input");
+        input.type = "text"; input.autocomplete = "off"; input.spellcheck = false;
+        input.placeholder = window.t("storeKeyPh");
+        var go = el("button", null, window.t("storeUnlock"));
+        go.type = "submit";
+        form.appendChild(input); form.appendChild(go);
+        var msg = el("p","store-msg","");
+        var help = el("p","store-help", window.t("storeKeyHelp"));
+        help.hidden = true;
+        open.addEventListener("click", function () {
+          form.hidden = false; help.hidden = false; open.hidden = true; input.focus();
+        });
+        form.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          msg.textContent = "";
+          go.disabled = true; go.textContent = window.t("storeWorking");
+          window.VaultStore.activate(g.id, input.value).then(function () {
+            renderStore(); storeGate();
+          }, function (e) {
+            go.disabled = false; go.textContent = window.t("storeUnlock");
+            msg.textContent = storeErr(e);
+          });
+        });
+        spanel.appendChild(open); spanel.appendChild(form); spanel.appendChild(msg); spanel.appendChild(help);
+        return;
+      }
+      var dbtn = el("button","store-btn");
+      dbtn.type = "button";
+      dbtn.innerHTML = '<span class="dl-icon">&#8681;</span><span class="store-label">' + window.t("storeDownload") + '</span>';
+      scol.appendChild(dbtn);
+      scol.appendChild(el("p","store-note", window.t("storeDlNote")));
+      var line = el("p","store-licensed");
+      line.innerHTML = "<strong>" + esc(window.t("storeLicensed", { name: lic.name || "\u2014" })) + "</strong>" +
+        (lic.order ? " \u00b7 " + esc(window.t("storeOrder", { order: lic.order })) : "") + " \u00b7 ";
+      var rm = el("button","store-link", window.t("storeRemove"));
+      rm.type = "button";
+      rm.addEventListener("click", function () {
+        if (!rm.dataset.armed) { rm.dataset.armed = "1"; rm.textContent = window.t("storeRemoveAgain"); return; }
+        rm.disabled = true;
+        window.VaultStore.remove(g.id).then(function () { renderStore(); storeGate(); });
+      });
+      line.appendChild(rm);
+      var dmsg = el("p","store-msg","");
+      spanel.appendChild(line); spanel.appendChild(dmsg);
+      dbtn.addEventListener("click", function () {
+        dmsg.textContent = "";
+        dbtn.disabled = true;
+        window.VaultStore.fetchRom(g.id, true).then(function (buf) {
+          dbtn.disabled = false;
+          var url = URL.createObjectURL(new Blob([buf], { type: "application/octet-stream" }));
+          var a = document.createElement("a");
+          a.href = url; a.download = g.romFile;
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(function () { URL.revokeObjectURL(url); }, 30000);
+        }, function (e) {
+          dbtn.disabled = false;
+          dmsg.textContent = storeErr(e);
+          if (!window.VaultStore.license(g.id)) { renderStore(); storeGate(); }
+        });
+      });
+    };
+    renderStore();
+  }
+
   hero.appendChild(info);
   page.appendChild(hero);
 

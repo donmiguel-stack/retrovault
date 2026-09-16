@@ -76,6 +76,10 @@
     // own file host (hosted.js) - those play for real on the demo too, and
     // the homebrew-downloads/ titles do as well once the BIOS is hosted
     // (game.html passes &biosbase= for every Videopac start).
+    // A store purchase (store.js) plays for real too - the license and the
+    // store server are the same whichever host the page is on. (VaultStore
+    // is mentioned here so the patch tool can tell this file is done.)
+    if (btn.dataset.store) return;
     if (btn.dataset.hosted || (btn.dataset.dlfallback && window.HOSTED_FILES && window.HOSTED_FILES.bios)) return;
     e.preventDefault();
     if (e.stopImmediatePropagation) e.stopImmediatePropagation();

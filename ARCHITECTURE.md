@@ -163,6 +163,30 @@ index; the column count changes with the window.
 An advert slot with no image runs the console's attract screen instead: letters
 in the `Press Start 2P` face bouncing off the edges, recolouring on each contact.
 
+## The store (homebrew sold through the Vault)
+
+`store.js` lists games on sale (price, Lemon Squeezy checkout link, author) and
+holds `VaultStore`, the small client that talks to `store-server/api.php` on
+retrovault.world. No accounts: the buyer pastes the license key from their
+receipt email once, and the license (key + device slot) is kept in
+localStorage under `VideopacVault_licenses`.
+
+- `game.html`: a game in `store.js` never falls back to `downloads.js` or
+  `hosted.js`. If `emulator/roms/` has no copy, START appears only with a
+  saved license and gets `&store=<id>`. The violet store block offers
+  Buy + "I have a license key", or, once licensed, a stamped download and
+  "Remove from this device".
+- `emulator/assets/base.js` and `emulator/dos.html` load `../store.js`. With
+  `&store=` they POST for the ROM instead of fetching a file. DOS saves are
+  keyed as `roms/<zip>`, so they match a local copy. The Amiga player
+  needs a real file, so Amiga buyers download instead. The same applies
+  to installs whose `emulator/` predates the store, because the Update
+  button never refreshes `emulator/`. `game.html` checks for this itself.
+- `store-server/` is deployed by hand. It checks the key against Lemon
+  Squeezy (store ID + product ID must match) and stamps every copy with the
+  order. `tools/store_prepare.py` works out the stamp for a new file and
+  traces a copy found in the wild. Full setup: `store-server/README.md`.
+
 ## Working on this from a sandboxed assistant
 
 The mounted folder **allows writes but not unlink or rename.** That breaks

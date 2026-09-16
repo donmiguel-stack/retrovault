@@ -119,3 +119,14 @@ social-clips/
 # Landing-site source zip (retrovault.world) - deployed manually to Hostinger,
 # not part of the vault app itself and doesn't need to ship in this repo.
 retrovault-world-site.zip
+
+# Homebrew store (store-server/, deployed by hand to retrovault.world/store/).
+# config.php holds the stamp secret; private/ holds the paid ROMs; cache/ is
+# the server's own scratch. Only their .htaccess guards are tracked.
+store-server/config.php
+store-server/private/*
+!store-server/private/.htaccess
+store-server/cache/*
+!store-server/cache/.htaccess
+# test copies written by tools/store_prepare.py
+*.stamptest.*

@@ -51,6 +51,7 @@
 
 <script src="dos/js-dos.js"></script>
 <script src="dos-launch.js?v=1"></script>
+<script src="../store.js?v=1"></script>
 <script>
 (function () {
 	var params = new URLSearchParams(window.location.search);
@@ -66,6 +67,9 @@
 	// ignored, so a stray parameter can't point js-dos at a relative path.
 	var hosted = params.get("hosted") || "";
 	if (!/^(https?:)?\/\//i.test(hosted)) hosted = "";
+	// Bought through the Vault's store (store.js, see game.html): only sent
+	// when this browser holds a license and roms/ has no copy of its own.
+	var storeId = params.get("store") || "";
 
 	document.title = title + " - Retro Vault";
 	document.getElementById("titleText").textContent = title;
@@ -155,10 +159,26 @@
 			return r3.ok ? versionedUrl(hosted, r3.headers) : hosted;
 		}).catch(function () { return hosted; });
 	}
+	// The store copy arrives as bytes (a POST with the license), handed to
+	// js-dos as a blob: URL. Its saves are keyed as if it were roms/<name>,
+	// so they're the same saves a local copy of the zip would use.
+	function fromStore(base) {
+		return window.VaultStore.fetchRom(storeId).then(function (buf) {
+			wrappedFrom = base;
+			return URL.createObjectURL(new Blob([buf], { type: "application/zip" }));
+		}, function (e) {
+			document.getElementById("loadingMsg").textContent =
+				"Couldn't get this game from the Vault store (" + (e && e.message) + "). Go back to its page and check your license.";
+			return new Promise(function () {});   // stop here - nothing to hand js-dos
+		});
+	}
 	function resolveBundleUrl(name) {
 		var base = "roms/" + name;
+		// store preview (tools/store_preview.py): always take the store copy
+		if (storeId && window.VaultStore && window.VaultStore.preview) return fromStore(base);
 		return fetch(base, { method: "HEAD", cache: "no-store" }).then(function (r) {
 			if (r.ok) return versionedUrl(base, r.headers);
+			if (storeId && window.VaultStore) return fromStore(base);
 			if (!dlfallback) return tryHosted(base);
 			var fb = "../homebrew-downloads/" + encodeURIComponent(dlfallback);
 			return fetch(fb, { method: "HEAD", cache: "no-store" }).then(function (r2) {
@@ -368,7 +388,7 @@
 			return chain.then(function () {
 				console.log("dos.html: wrapped plain zip " + zip_name + " (" + names.length + " files" +
 					(prefix ? ", stripped " + prefix : "") + "), launch: " + launch.run.join(" / "));
-				wrappedFrom = bundleUrl;
+				if (!/^blob:/i.test(bundleUrl)) wrappedFrom = bundleUrl;   // a store copy already set it
 				return URL.createObjectURL(buildZip(files));
 			});
 		}).catch(function (e) {

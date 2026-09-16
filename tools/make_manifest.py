@@ -30,7 +30,7 @@ FILES = [
     # same ids, translated text only. They ship through the update mechanism
     # like any other catalogue file; game.html reads them only on lang "ja".
     "gamepages-ja.js", "cheats-ja.js", "tips-ja.js",
-    "alternates.js", "hosted.js", "products.js", "support.js",
+    "alternates.js", "hosted.js", "products.js", "support.js", "store.js",
     "app.js", "demo.js", "game.html", "index.html", "resources.html", "style.css", "boot-splash.js",
     "favicon.ico", "icon-16.png", "icon-32.png", "icon-48.png", "apple-touch-icon.png",
     "README.md", "LICENSE.md",
