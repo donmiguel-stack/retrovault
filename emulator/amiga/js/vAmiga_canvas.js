@@ -61,7 +61,17 @@ function js_set_display(_xOff, _yOff, _clipped_width,_clipped_height) {
 
 function scaleVMCanvas() {
     let the_canvas = document.getElementById("canvas");
-    var src_width=clipped_width; //Module._wasm_get_render_width();
+    // Vault-local fix (2026-09-16): clipped_width is in texels - TPP (=2) of
+    // them per real Amiga pixel - while src_height below is in doubled
+    // scanlines. Comparing them raw gave a ratio of ~2.5 instead of the ~1.25
+    // this code's own comment expects, so the wratio test further down chose
+    // the fit-to-width branch on ordinary landscape windows and sized the
+    // canvas taller than the viewport: the bottom of the Amiga screen was cut
+    // off, fullscreen and windowed alike. Dividing by TPP makes src_ratio the
+    // real display ratio; the matching TPP factor is dropped from
+    // reducedHeight below, so the fit-to-width branch still produces exactly
+    // the size it always did. Revisit if the engine is ever updated.
+    var src_width=clipped_width/TPP; //Module._wasm_get_render_width();
     var src_height=clipped_height*2;//Module._wasm_get_render_height()*2; 
     if(use_ntsc_pixel)
     {
@@ -92,7 +102,8 @@ function scaleVMCanvas() {
     var topPos=0;
     if(wratio < src_ratio)
     {
-        var reducedHeight=TPP*avail_width*inv_src_ratio;
+        // no TPP factor: src_width is already in real pixels (see above)
+        var reducedHeight=avail_width*inv_src_ratio;
         //all lower than 1.25
         $("#canvas").css("width", avail_width+'px')
         .css("height", Math.round(reducedHeight)+'px');
