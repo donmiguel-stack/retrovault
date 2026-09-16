@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-15 22:06:10",
- "count": 605,
- "bytes": 211915450,
+ "generated": "2026-09-16 12:45:32",
+ "count": 606,
+ "bytes": 211970516,
  "files": {
   "games.js": {
-   "sha256": "d33d5e8b00a296ec2ffa10cc7f2d63cf3dd4bf718b5bf730def003969fe388bd",
-   "size": 116519
+   "sha256": "f67cec9d42d5b7832be377267f0c774d4e1b4b756216834ca23c4f4312210061",
+   "size": 116832
   },
   "gamepages.js": {
-   "sha256": "5869ebd08c1fbc0c3e8a380efb641840d3c9324242bbf4b7544ebf9e2f1bdbbc",
-   "size": 253160
+   "sha256": "8c540847a862c337d1604623b323bd62fc5f301508a19d4b13b63ce1cb2503cd",
+   "size": 253662
   },
   "genres.js": {
-   "sha256": "05c1eb818b21f7fa5cd08d5fb6e6084bf112b60cf17a44b2b38b59a747610c21",
-   "size": 25478
+   "sha256": "fc83bf61346cb93eb27af491a1ee682a5bd2d7d33df8c2a9cb44b9a8b7e2ef70",
+   "size": 25540
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,8 +32,8 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "4eecfa5e242fe377eb3b07e26c729635902651c625da1b2a10f73e1eaa046117",
-   "size": 71597
+   "sha256": "9b9a5f257091df59036a7e242797fff0e5b2d4787ccd127c5ed34c901abfdc07",
+   "size": 75310
   },
   "setup-i18n.js": {
    "sha256": "efdadf93a2202a3ce2b56bc89935726603cf7f4da0fd8d7ce1bcbb7ceee12bd6",
@@ -60,8 +60,8 @@
    "size": 24537
   },
   "romsources.js": {
-   "sha256": "5837c2cc587459e0ab7207aac76ed780e4ad02858fc5a1d2adcfdea9f1809e42",
-   "size": 13221
+   "sha256": "ae973dd6f7d0aa683492a4be477c69c59c8e89e3902833e791e1057d9ac51e8e",
+   "size": 13560
   },
   "walkthroughs.js": {
    "sha256": "a540ed9c261c97b3ce37eaf835f3899edaee3c35131cccc4c7db5cf64a406486",
@@ -108,15 +108,15 @@
    "size": 4572
   },
   "game.html": {
-   "sha256": "dbece289dd5ec48e7c65ca923d8d64bc5a3b575606e7e63aa204dcf5642c2c14",
-   "size": 105354
+   "sha256": "72d407ec51b90687b59b129e0723aa76e36b9dba83d485458f6068273ce04bff",
+   "size": 105772
   },
   "index.html": {
-   "sha256": "c77811df271a35dc83c49c5abc4978e9a4f674a18ed3d12a9869c2376f2c9512",
+   "sha256": "ef6cdd237403ea3e8bf65844085356d7451fc28bb564786bbed8ee125bb17357",
    "size": 17976
   },
   "resources.html": {
-   "sha256": "c8f8c386547a5f645e394f6d8793a2112cd336486bea1219c45c6ddd216a6830",
+   "sha256": "1dfd3c425efc66ec5de69a5820503138e615f6acfe7e1cea23ad008ead1aac15",
    "size": 13063
   },
   "style.css": {
@@ -160,8 +160,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "15ec8263e91d24d385f388c89661cb72ebbc3af9e7f118e12005e2529a325175",
-   "size": 74012
+   "sha256": "6fc81d93fa82577657574c718398b214189eb5dc0e0f325063be1b61d34ebf21",
+   "size": 74198
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -314,6 +314,10 @@
   "covers/am_megaball.png": {
    "sha256": "a9dff540b0c6d1dd46fd833f9077faa711e130ab747bb355513cf5bbe4d37d49",
    "size": 6019
+  },
+  "covers/am_megamaid.png": {
+   "sha256": "797e1659496d4c5df9fd3eb9a51fa20d81a566918c044714461321e5b15c8471",
+   "size": 49533
   },
   "covers/am_ohnomorelemmings.png": {
    "sha256": "a2e834851d7820c654e10a3077e78a3d0dc149d825e3b64269990d3b03851e4f",

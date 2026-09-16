@@ -744,19 +744,19 @@
   <p class="missing-note" id="loading">Loading&hellip;</p>
 </div>
 
-<script src="i18n.js?v=123"></script>
+<script src="i18n.js?v=124"></script>
 <script src="setup-i18n.js?v=121"></script>
-<script src="games.js?v=117"></script>
+<script src="games.js?v=118"></script>
 <script src="alternates.js?v=4"></script>
 <script src="extras.js?v=109"></script>
 <script src="packaging.js?v=109"></script>
-<script src="genres.js?v=114"></script>
+<script src="genres.js?v=115"></script>
 <script src="brazil.js?v=109"></script>
 <script src="usa.js?v=109"></script>
 <script src="shops.js?v=109"></script>
 <script src="support.js?v=110"></script>
 <script src="downloads.js?v=111"></script>
-<script src="romsources.js?v=4"></script>
+<script src="romsources.js?v=5"></script>
 <script src="hosted.js?v=2"></script>
 <script src="products.js?v=1"></script>
 <script src="cheats.js?v=113"></script>
@@ -766,7 +766,7 @@
 <script src="walkthroughs.js?v=1"></script>
 <script src="featured.js?v=114"></script>
 <script src="c64ad.js?v=110"></script>
-<script src="gamepages.js?v=120"></script>
+<script src="gamepages.js?v=121"></script>
 <script src="gamepages-ja.js?v=2"></script>
 <script src="demo.js?v=112"></script>
 <script>
@@ -1672,6 +1672,13 @@
     var amToolbar = el("p","controls-note");
     amToolbar.innerHTML = window.t("amiga_toolbarNote");
     amBox.appendChild(amToolbar);
+    // Which of the Amiga's two ports the mouse / a gamepad is plugged into is a
+    // choice the player has to make in the emulator's own toolbar - the shelf
+    // launches with keys on port 2 and nothing on port 1, so a mouse game looks
+    // dead until port 1 is switched to "mouse".
+    var amPorts = el("p","controls-note");
+    amPorts.innerHTML = window.t("amiga_portsNote");
+    amBox.appendChild(amPorts);
     var amSave = el("p","controls-note");
     amSave.innerHTML = window.t("amiga_saveNote");
     amBox.appendChild(amSave);

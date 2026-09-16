@@ -4708,6 +4708,19 @@ window.GAMES_DATA = {
     "year": 1991,
     "publisher": "Gremlin Graphics",
     "developer": "Magnetic Fields"
+  },
+  {
+    "id": "am_megamaid",
+    "filename": "amiga_megamaid.adf",
+    "title": "Megamaid",
+    "platform": "Amiga",
+    "category": "Amiga",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_megamaid.adf",
+    "year": 1989,
+    "publisher": "Pixar & The Band",
+    "developer": "Pixar & The Band"
   }
 ]
 };

@@ -1605,5 +1605,9 @@ window.GENRE_DATA = {
  "am_lotusturbo2": {
   "genre": "racing",
   "players": "p1"
+ },
+ "am_megamaid": {
+  "genre": "utility",
+  "players": "p1"
  }
 };

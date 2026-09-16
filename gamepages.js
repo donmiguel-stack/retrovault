@@ -5076,5 +5076,11 @@ window.GAMEPAGES_DATA = {
   "history": {
    "text": "Magnetic Fields' sequel to Lotus Esprit Turbo Challenge – three Lotus models, split-screen two-player, and a marble-run of shortcuts, jumps and traffic across the championship circuit."
   }
+ },
+ "am_megamaid": {
+  "input": "joystick",
+  "history": {
+   "text": "Not a game but a demo – a 1989 production by the Norwegian groups Pixar and The Band, placed fifth in the demo competition at the IMP-666 Megaparty in Arendal. It is one enormous 320×825 HAM photograph, scanned in three and a half parts from a men's magazine (as the scrolltext itself cheerfully admits) and stitched back together, carrying what its authors claimed was the first scrolltext ever run across a HAM picture."
+  }
  }
 };

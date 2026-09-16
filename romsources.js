@@ -228,5 +228,11 @@ window.ROM_SOURCES = {
     file: "Lotus Turbo Challenge 2 (1991)(Gremlin)[cr CPY].zip",
     site: "Internet Archive",
     note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_megamaid": {
+    url: "https://janeway.exotica.org.uk/release.php?id=663",
+    file: "Band&Pixar-Megamaid.adf",
+    site: "Janeway / Exotica",
+    note: "A demoscene production, freely spread since 1989 – the .adf is the second Direct Files link on that page. Contains a scanned magazine photograph and is not safe for work."
   }
 };
