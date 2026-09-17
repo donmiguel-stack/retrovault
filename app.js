@@ -1599,6 +1599,28 @@
     updNote.classList.toggle("ok", !!ok);
   }
 
+  // Everything under emulator/ sits outside the update manifest by design (see
+  // tools/make_manifest.py), so a copy that predates a shelf's emulator can
+  // update its whole catalogue and still not start those games - the Amiga
+  // shelf landed that way in September 2026. Rather than compare versions,
+  // ask the engine's own entry point whether it is there, and only speak up on
+  // a definite miss: a fresh download and the live site both have it and never
+  // see this, and it stops by itself once the release zip is unpacked. A failed
+  // request stays quiet - better silent than crying wolf while offline.
+  var engineNote = document.getElementById("engineNote");
+  var engineChecked = false;
+  function checkAmigaEngine() {
+    if (!engineNote || engineChecked) return;
+    engineChecked = true;
+    fetch("emulator/amiga/index.html", { method: "HEAD", cache: "no-store" })
+      .then(function (r) {
+        if (r.ok) return;
+        engineNote.innerHTML = window.t("updEngineMissing");
+        engineNote.hidden = false;
+      })
+      .catch(function () { /* offline or blocked: say nothing */ });
+  }
+
   // Same check from the top bar: open Setup at that section and run it, so the
   // result and the Download button appear in one place rather than two.
   var updateModal = document.getElementById("updateModal");
@@ -1606,6 +1628,7 @@
   if (updateBtn && updateModal) {
     updateBtn.addEventListener("click", function () {
       updateModal.hidden = false;
+      checkAmigaEngine();
       // check straight away - the panel exists to answer one question
       var c = document.getElementById("checkUpdates");
       if (c) c.click();
