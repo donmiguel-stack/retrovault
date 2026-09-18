@@ -1,0 +1,701 @@
+/* Retro Vault - game page styles.
+   Split out of game.html on 2026-09-18 so that the pre-rendered per-game
+   pages in game/ stay small: 396 copies of a 115 KB file is 45 MB, 396
+   copies of a 6 KB shell is 2.4 MB. Loaded by game.html and by every
+   generated game/<id>.html. Do not inline this back into the page. */
+  .game-page{max-width:1100px;margin:0 auto;padding:24px;}
+  .back-link{color:var(--text-dim);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
+  .back-link:hover{color:var(--text);}
+  .game-hero{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;}
+  .hero-cover{
+    width:220px;flex-shrink:0;aspect-ratio:3/4;border-radius:var(--radius);
+    overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;
+    font-size:42px;font-weight:700;color:#fff;border:1px solid var(--border);
+  }
+  .hero-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+  /* American Football (vp_03) easter egg: the ball the runner is tucking
+     under his arm on the box art launches out of his grip and sails off
+     the screen a beat after the cover loads (and again on click - the
+     cover doubles as a button). Ball starts exactly over its painted spot
+     in covers/vp_03.png (~9.8% across, ~72.6% down, ~16.4% of the cover's
+     width wide) so the hand-off looks continuous. Gated to vp_03 only -
+     see the g.id check near hero.appendChild(cover). */
+  .af-ball{
+    position:fixed;z-index:10000;pointer-events:none;top:0;left:0;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,.45));
+    will-change:transform,opacity;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .af-ball{display:none;}
+  }
+
+  .hero-info{flex:1;min-width:280px;}
+  .hero-info h1{margin:0 0 10px;font-size:26px;line-height:1.25;}
+  .hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  .hero-meta .badge{font-size:12px;padding:4px 10px;}
+  .history-text{color:var(--text-dim);font-size:14.5px;line-height:1.7;margin:0 0 10px;}
+  .history-source{font-size:12px;color:var(--text-mute);}
+  .history-source a{color:var(--accent);text-decoration:none;}
+  .start-btn{
+    display:inline-flex;align-items:center;gap:10px;margin-top:18px;
+    background:var(--accent);color:#fff;border:none;cursor:pointer;
+    font-size:17px;font-weight:700;letter-spacing:.06em;
+    padding:14px 38px;border-radius:var(--radius);
+    box-shadow:0 2px 14px rgba(91,141,239,.4);
+    transition:transform .12s, box-shadow .12s;
+  }
+  .start-btn:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(91,141,239,.55);}
+  .start-btn .tri{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:12px solid #fff;}
+  .hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .fav-toggle{
+    margin-top:18px;background:transparent;border:1px solid var(--border);
+    color:var(--text-dim);padding:13px 20px;border-radius:var(--radius);
+    cursor:pointer;font-size:14px;
+  }
+  .fav-toggle:hover{border-color:#ffc400;color:#ffc400;}
+  .fav-toggle.on{border-color:#ffc400;color:#ffc400;}
+  /* Buy button - an outside shop, so it is styled apart from START rather
+     than dressed up to look like part of the Vault */
+  .buy-col{
+    position:relative;                  /* the shop line hangs off this */
+    margin-top:18px;margin-left:16px;   /* row gap is 14px, so 30px from the star */
+  }
+  .buy-btn{
+    display:inline-flex;align-items:center;gap:11px;text-decoration:none;
+    background:#2fb47c;color:#052a1d;font-weight:700;font-size:15px;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .buy-btn:hover{background:#3ecd90;}
+  .buy-price{
+    background:rgba(0,0,0,.18);border-radius:6px;padding:2px 9px;font-size:14px;
+  }
+  .buy-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
+  /* Support button - a free/pay-what-you-want release, linking straight to
+     the creator's own page rather than anything the Vault runs itself */
+  .support-col{
+    position:relative;
+    margin-top:18px;margin-left:16px;
+  }
+  .support-btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    background:#e0567a;color:#2a0512;font-weight:700;font-size:15px;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .support-btn:hover{background:#ea6f8f;}
+  .support-heart{font-size:15px;}
+  .support-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
+  /* Download button - homebrew/copyright-free game the Vault hosts itself
+     (homebrew-downloads/), not a purchase and not a link to the creator's
+     own page. Amber so it reads as its own third thing next to Buy (green)
+     and Support (pink). */
+  .dl-col{
+    position:relative;
+    margin-top:18px;margin-left:16px;
+  }
+  .dl-btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+    background:#d9a441;color:#2a1c02;font-weight:700;font-size:15px;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .dl-btn:hover{background:#e6b658;}
+  .dl-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
+  /* Store - homebrew sold through the Vault itself (store.js). Violet, so it
+     reads apart from an outside shop's Buy (green), Support (pink) and the
+     free Download (amber). The unlock form and the "licensed to" line sit
+     in their own panel under the action row. */
+  .store-col{position:relative;margin-top:18px;margin-left:16px;}
+  .store-btn{
+    display:inline-flex;align-items:center;gap:11px;text-decoration:none;cursor:pointer;
+    background:#8b6cf0;color:#140a33;font-weight:700;font-size:15px;border:0;font-family:inherit;
+    padding:13px 20px;border-radius:var(--radius);
+  }
+  .store-btn:hover{background:#a189f5;}
+  .store-btn[disabled]{opacity:.6;cursor:wait;}
+  .store-price{background:rgba(0,0,0,.18);border-radius:6px;padding:2px 9px;font-size:14px;}
+  .store-note{
+    position:absolute;top:100%;left:0;margin:6px 0 0;white-space:nowrap;
+    font-size:12px;color:var(--text-mute);
+  }
+  .store-panel{margin:34px 0 0;max-width:560px;font-size:13.5px;color:var(--text-dim);}
+  .store-panel a,.store-link{color:#a189f5;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-decoration:underline;}
+  .store-form{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px;}
+  .store-form input{
+    flex:1 1 260px;min-width:0;padding:10px 12px;border-radius:var(--radius);
+    border:1px solid var(--border,#2a3140);background:var(--surface,#12161d);color:var(--text);
+    font:14px ui-monospace,Menlo,Consolas,monospace;
+  }
+  .store-form button{
+    padding:10px 18px;border-radius:var(--radius);border:0;cursor:pointer;
+    background:#8b6cf0;color:#140a33;font-weight:700;font-family:inherit;
+  }
+  .store-form[hidden]{display:none;}
+  .store-form button[disabled]{opacity:.6;cursor:wait;}
+  .store-msg{margin:6px 0 0;color:#f08a8a;}
+  .store-msg:empty{display:none;}
+  .store-help{margin:4px 0 0;font-size:12.5px;color:var(--text-mute);}
+  .store-licensed{margin:0;}
+  .store-licensed strong{color:var(--text);}
+  .alt-name{margin:0 0 6px;font-size:13.5px;color:var(--text-dim);}
+  .alt-name strong{color:var(--text);}
+  .alt-num{
+    display:inline-block;margin-left:4px;padding:1px 7px;border-radius:999px;
+    background:var(--surface-2);border:1px solid var(--border);
+    font-size:11px;color:var(--text-mute);font-family:ui-monospace,Menlo,monospace;
+  }
+  .pack-line{
+    margin:0 0 4px;font-size:13.5px;line-height:1.6;color:var(--text-dim);
+    display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
+  }
+  .section{margin-top:36px;}
+  .section h2{font-size:16px;margin:0 0 14px;color:var(--text);display:flex;align-items:center;gap:8px;}
+  .section h2 .sec-note{font-size:12px;color:var(--text-mute);font-weight:400;}
+  .video-wrap{position:relative;width:100%;max-width:760px;aspect-ratio:16/9;background:#000;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);}
+  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  /* a local clip fills the same 16:9 box; contain keeps the 4:3 game from being
+     cropped (pillar-boxed on black, exactly like the YouTube embed shows it) */
+  .video-wrap video.video-clip{position:absolute;inset:0;width:100%;height:100%;
+    object-fit:contain;background:#000;display:block;}
+  /* link through to the full video on YouTube, under the clip */
+  .video-link{display:inline-flex;align-items:center;gap:8px;margin-top:10px;
+    font-size:13px;color:var(--text-dim);text-decoration:none;}
+  .video-link:hover{color:var(--text);}
+  .video-link-tri{width:0;height:0;border-top:5px solid transparent;
+    border-bottom:5px solid transparent;border-left:8px solid currentColor;}
+
+  /* Manual reader */
+  .manual-reader{max-width:760px;}
+  .manual-stage{
+    background:#000;border:1px solid var(--border);border-radius:var(--radius);
+    display:flex;align-items:center;justify-content:center;position:relative;
+    min-height:420px;user-select:none;
+  }
+  .manual-stage img{max-width:100%;max-height:76vh;display:block;cursor:zoom-in;}
+  .manual-stage img.zoomed{max-height:none;cursor:zoom-out;}
+  .manual-nav{
+    position:absolute;top:0;bottom:0;width:20%;cursor:pointer;
+    display:flex;align-items:center;opacity:0;transition:opacity .15s;
+    font-size:34px;color:#fff;text-shadow:0 0 8px #000;
+  }
+  .manual-nav:hover{opacity:.9;}
+  .manual-nav.prev{left:0;justify-content:flex-start;padding-left:12px;}
+  .manual-nav.next{right:0;justify-content:flex-end;padding-right:12px;}
+  .manual-bar{display:flex;align-items:center;gap:14px;margin-top:10px;color:var(--text-dim);font-size:13px;}
+  .manual-bar button{
+    background:var(--surface);border:1px solid var(--border);color:var(--text);
+    padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:13px;
+  }
+  .manual-bar button:hover{border-color:var(--accent);}
+  .manual-thumbs{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+  .manual-thumbs img{
+    width:52px;height:70px;object-fit:cover;border-radius:4px;cursor:pointer;
+    border:2px solid transparent;opacity:.65;
+  }
+  .manual-thumbs img:hover{opacity:1;}
+  .manual-thumbs img.active{border-color:var(--accent);opacity:1;}
+  .missing-note{color:var(--text-mute);font-size:14px;}
+  /* "Where to get it" - romsources.js, shown under the missing-file note */
+  .get-box{max-width:760px;margin:10px 0 0;padding:12px 16px;background:var(--surface);
+    border:1px solid var(--border);border-left:3px solid #d9a441;border-radius:8px;font-size:14px;}
+  .get-box h3{margin:0 0 6px;font-size:14px;color:#d9a441;}
+  .get-box ol{margin:0;padding-left:20px;}
+  .get-box li{margin:3px 0;color:var(--text-dim);}
+  .get-box code{background:rgba(255,255,255,.07);padding:1px 5px;border-radius:4px;color:var(--text);word-break:break-all;}
+  .get-box a{color:var(--accent);}
+  .get-box .get-note{margin:8px 0 0;color:var(--text-mute);font-size:13px;}
+
+  /* Controls box */
+  .controls-box{
+    position:relative;
+    max-width:760px;background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:16px 18px;font-size:14px;color:var(--text-dim);
+  }
+
+  /* Pick Axe Pete easter egg: the man himself, chipping away at the corner
+     of his own controls box. Only ever inserted for the vp_43/vp_43pl/mod_43pl
+     game ids - see the g.id check near cSec.appendChild(cBox). */
+  .pete-axe{
+    position:absolute;top:20px;left:-27px;width:38px;height:38px;
+    image-rendering:pixelated;pointer-events:none;z-index:3;
+    transform-origin:30% 55%;
+    animation:pete-swing 1.3s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .pete-axe img{display:block;width:100%;height:100%;}
+  @keyframes pete-swing{
+    0%{transform:rotate(-26deg);}
+    14%{transform:rotate(32deg);}
+    22%{transform:rotate(26deg);}
+    45%{transform:rotate(-26deg);}
+    100%{transform:rotate(-26deg);}
+  }
+  .controls-box.pete-hit{animation:pete-box-shake 1.3s ease-in-out infinite;}
+  @keyframes pete-box-shake{
+    0%,13%{transform:translate(0,0);}
+    16%{transform:translate(-2px,1px);}
+    19%{transform:translate(2px,-1px);}
+    23%,100%{transform:translate(0,0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pete-axe{animation:none;transform:rotate(-10deg);}
+    .controls-box.pete-hit{animation:none;}
+  }
+
+  /* Leisure Suit Larry easter egg: the chalk "Ken sent me" (the secret
+     password at Lefty's back door) leans against the right side of the
+     controls box, slightly tilted. Only for pc_leisure_suit_larry - see the
+     g.id check near pcSec.appendChild(pcBox). Sits in the empty space to the
+     right of the 760px box; below the tips block on narrow screens. */
+  .ken-note{
+    position:absolute;left:100%;top:34px;margin-left:26px;
+    width:min(300px,28vw);pointer-events:none;z-index:3;
+    transform:rotate(-7deg);transform-origin:20% 50%;
+    opacity:.92;filter:drop-shadow(0 2px 3px rgba(0,0,0,.6));
+  }
+  .ken-note img{display:block;width:100%;height:auto;}
+  @media (max-width: 1100px){
+    .ken-note{position:static;display:block;margin:14px auto 0;width:min(240px,60%);transform:rotate(-5deg);}
+  }
+
+  /* The Mousing Cat easter egg: he tilts his head and purrs on the right
+     side of his own controls box. Only inserted for vp_47/Vp47_F - see the
+     g.id check near cSec.appendChild(cBox). */
+  .cat-wrap{
+    position:absolute;top:-24px;right:16px;width:46px;
+    pointer-events:none;z-index:3;
+  }
+  .cat-img{
+    display:block;transform-origin:50% 70%;
+    animation:cat-tilt 3.2s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .cat-img img{display:block;width:100%;height:auto;image-rendering:pixelated;}
+  .purr-text{
+    position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+    font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent);
+    white-space:nowrap;opacity:0;
+    animation:cat-purr-fade 3.2s ease-in-out infinite;
+  }
+  @keyframes cat-tilt{
+    0%,100%{transform:rotate(0deg) translate(0,0);}
+    6%{transform:rotate(-7deg) translate(-1px,0);}
+    12%{transform:rotate(-9deg) translate(1px,-1px);}
+    18%{transform:rotate(-6deg) translate(-1px,1px);}
+    24%{transform:rotate(-8deg) translate(1px,0);}
+    30%{transform:rotate(-7deg) translate(-1px,-1px);}
+    38%{transform:rotate(-6deg) translate(0,0);}
+    48%{transform:rotate(0deg) translate(0,0);}
+  }
+  @keyframes cat-purr-fade{
+    0%{opacity:0;}
+    8%{opacity:1;}
+    38%{opacity:1;}
+    50%{opacity:0;}
+    100%{opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cat-img{animation:none;transform:rotate(-7deg);}
+    .purr-text{animation:none;opacity:1;}
+  }
+
+  /* Morse easter egg: a little indicator lamp on the controls box blinks
+     out "WELCOME VISITOR" in real International Morse timing (1 unit = a
+     dot, 3 units = a dash, 1/3/7 unit gaps between symbols/letters/words),
+     then pauses and repeats. Only inserted for vp_45/Vp45_F - see the g.id
+     check near cSec.appendChild(cBox). Timeline generated from the actual
+     Morse alphabet, not hand-tuned, so it decodes correctly if you time it.
+  */
+  .morse-lamp{
+    position:absolute;top:-6px;left:16px;width:11px;height:11px;border-radius:50%;
+    background:#3a1210;box-shadow:0 0 0 2px var(--surface);
+    z-index:3;pointer-events:none;
+    animation:morse-msg 17.88s steps(1,end) infinite;
+  }
+  @keyframes morse-msg{
+    0%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    0.651%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    0.671%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    1.322%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    1.342%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    3.336%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    3.356%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    4.007%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    4.027%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    6.02%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    6.04%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    8.034%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    8.054%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    8.705%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    8.725%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    10.718%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    10.738%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    11.389%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    11.409%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    12.061%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    12.081%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    14.074%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    14.094%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    14.745%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    14.765%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    15.416%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    15.436%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    16.087%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    16.107%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    16.759%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    16.779%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    18.772%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    18.792%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    20.785%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    20.805%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    21.457%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    21.477%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    22.128%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    22.148%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    22.799%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    22.819%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    24.812%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    24.832%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    25.483%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    25.503%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    26.154%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    26.174%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    28.168%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    28.188%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    30.181%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    30.201%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    30.852%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    30.872%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    32.866%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    32.886%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    33.537%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    33.557%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    35.55%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    35.57%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    37.564%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    37.584%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    39.577%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    39.597%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    40.248%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    40.268%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    42.262%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    42.282%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    44.275%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    44.295%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    44.946%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    44.966%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    49.644%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    49.664%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    50.316%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    50.336%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    50.987%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    51.007%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    51.658%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    51.678%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    52.329%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    52.349%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    53%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    53.02%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    53.671%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    53.691%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    55.685%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    55.705%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    57.698%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    57.718%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    58.369%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    58.389%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    59.04%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    59.06%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    59.712%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    59.732%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    61.725%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    61.745%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    62.396%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    62.416%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    63.067%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    63.087%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    63.738%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    63.758%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    64.41%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    64.43%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    65.081%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    65.101%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    67.094%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    67.114%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    67.765%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    67.785%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    68.436%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    68.456%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    69.108%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    69.128%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    71.121%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    71.141%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    73.134%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    73.154%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    75.148%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    75.168%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    77.161%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    77.181%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    77.832%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    77.852%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    79.846%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    79.866%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    80.517%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    80.537%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    82.53%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    82.55%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    84.544%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    84.564%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    85.215%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    85.235%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    85.886%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    85.906%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    87.899%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    87.919%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    88.571%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    88.591%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    89.242%{background:#ff4433;box-shadow:0 0 8px 3px rgba(255,68,51,.85),0 0 0 2px var(--surface);}
+    89.262%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+    99.98%{background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .morse-lamp{animation:none;background:#3a1210;box-shadow:0 0 0 2px var(--surface);}
+  }
+
+  /* Wall Street ticker: a green stock-ticker strip above the controls box,
+     "BUY BITCOIN [symbol]" scrolling left to right, endlessly. Only inserted
+     for vp_46/br_9434 - see the WALLST_IDS check above cSec's h2. The seamless
+     loop is the classic duplicate-content trick: the track holds two identical
+     copies of the message back to back, and animates from -50% to 0%, so
+     percentages resolve against the track's own (2x) width with no JS needed
+     to measure anything.
+  */
+  .wallst-ticker{
+    max-width:760px;overflow:hidden;
+    background:#0b2e1a;border:1px solid var(--border);border-radius:var(--radius);
+    padding:8px 0;margin:0 0 10px;
+  }
+  .wallst-ticker-track{
+    display:inline-flex;white-space:nowrap;
+    animation:wallst-scroll 20s linear infinite;
+  }
+  .wallst-msg{
+    display:inline-flex;align-items:center;flex-shrink:0;
+    font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;
+    font-size:13px;letter-spacing:2px;text-transform:uppercase;
+    color:#eafff0;text-shadow:0 0 4px rgba(80,255,140,.55);
+    padding-right:48px;
+  }
+  .btc-sym{position:relative;display:inline-block;margin:0 3px;}
+  .btc-sym::before,.btc-sym::after{
+    content:"";position:absolute;width:2px;background:currentColor;
+    top:-.3em;bottom:-.3em;
+  }
+  .btc-sym::before{left:32%;}
+  .btc-sym::after{left:58%;}
+  @keyframes wallst-scroll{
+    from{transform:translateX(-50%);}
+    to{transform:translateX(0%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wallst-ticker-track{animation:none;transform:translateX(0%);}
+  }
+
+  /* The Last Ninja easter egg: a fighter ripped from the game's own .d64
+     sprite bank stands guard on the controls box and strikes with his staff
+     every few seconds. Two pose frames swap via steps() so it snaps like the
+     real 1987 animation would, with a small lunge to the left on the strike.
+     Only inserted for c64_last_ninja - see the g.id check near
+     c64Sec.appendChild(c64Box). */
+  .ninja-wrap{
+    position:absolute;top:-66px;right:26px;width:38px;height:66px;
+    pointer-events:none;z-index:3;
+    animation:ninja-lunge 6s ease-in-out infinite;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.45));
+  }
+  .ninja-pose{
+    position:absolute;inset:0;width:100%;height:100%;
+    image-rendering:pixelated;
+  }
+  .ninja-stance{animation:ninja-show-stance 6s steps(1,end) infinite;}
+  .ninja-strike{opacity:0;animation:ninja-show-strike 6s steps(1,end) infinite;}
+  @keyframes ninja-show-stance{
+    0%{opacity:1;} 78%{opacity:0;} 92%{opacity:1;}
+  }
+  @keyframes ninja-show-strike{
+    0%{opacity:0;} 78%{opacity:1;} 92%{opacity:0;}
+  }
+  @keyframes ninja-lunge{
+    0%,76%{transform:translateX(0);}
+    80%{transform:translateX(-9px);}
+    90%{transform:translateX(-9px);}
+    94%,100%{transform:translateX(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ninja-wrap{animation:none;}
+    .ninja-stance{animation:none;opacity:1;}
+    .ninja-strike{animation:none;opacity:0;}
+  }
+
+  /* Quest for the Rings easter egg: the green dragon perched on the controls
+     box, breathing fire every few seconds. Flame is three plain pixel blocks
+     growing out of the mouth (transform eased, visibility flickered with a
+     separate steps() animation). Only inserted for vp_42/Vp42_F - see the
+     g.id check near cSec.appendChild(cBox). */
+  .qr-wrap{
+    position:absolute;top:-56px;right:22px;width:56px;height:56px;
+    pointer-events:none;z-index:3;
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .qr-dragon{position:absolute;inset:0;}
+  .qr-dragon img{display:block;width:100%;height:100%;image-rendering:pixelated;}
+  .qr-flame{
+    position:absolute;left:-30px;top:9px;width:32px;height:12px;
+    opacity:0;transform-origin:right center;
+    animation:qr-flame-show 7s steps(1,end) infinite,
+              qr-flame-grow 7s ease-out infinite;
+  }
+  .qr-flame i{position:absolute;display:block;}
+  .qr-flame i:nth-child(1){right:0;top:4px;width:8px;height:4px;background:#ffd23f;}
+  .qr-flame i:nth-child(2){right:7px;top:2px;width:10px;height:8px;background:#ff8c1a;}
+  .qr-flame i:nth-child(3){right:16px;top:3px;width:13px;height:6px;background:#e5484d;}
+  @keyframes qr-flame-show{
+    0%,54%{opacity:0;}
+    56%{opacity:1;}
+    62%{opacity:0;}
+    63%{opacity:1;}
+    68%{opacity:0;}
+    69%{opacity:1;}
+    76%,100%{opacity:0;}
+  }
+  @keyframes qr-flame-grow{
+    0%,54%{transform:scaleX(.3);}
+    58%{transform:scaleX(.75);}
+    66%{transform:scaleX(1);}
+    76%,100%{transform:scaleX(1);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .qr-flame{animation:none;opacity:0;}
+  }
+  /* Zak McKracken easter egg: Zak pops his head up from behind the top edge
+     of his own controls box, looks around, ducks back down, then pops up
+     somewhere else along the edge. Sprite is the classic 1988 C64 Zak (yellow
+     hat, glasses, black suit). The wrapper's overflow:hidden is the box edge;
+     the img slides up into it. Only inserted for c64_zak_mckracken - see the
+     g.id check near c64Sec.appendChild(c64Box). */
+  .zak-peek{
+    position:absolute;bottom:100%;left:40%;width:47px;height:62px;
+    overflow:hidden;pointer-events:none;z-index:3;
+  }
+  .zak-peek img{
+    display:block;width:47px;height:152px;image-rendering:pixelated;
+    transform:translateY(100%);
+    transition:transform .45s cubic-bezier(.2,1.4,.4,1);
+    filter:drop-shadow(0 2px 2px rgba(0,0,0,.4));
+  }
+  .zak-peek.up img{transform:translateY(0);animation:zak-look 2.4s ease-in-out .5s infinite;}
+  @keyframes zak-look{
+    0%,100%{transform:translateY(0) rotate(0deg);}
+    30%{transform:translateY(0) rotate(-6deg);}
+    60%{transform:translateY(0) rotate(6deg);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .zak-peek img{transition:none;}
+    .zak-peek.up img{animation:none;transform:translateY(0);}
+  }
+  .controls-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0 0 12px;}
+  .controls-grid .kact{color:var(--text);}
+  .kbd{
+    display:inline-block;background:var(--surface-2);border:1px solid var(--border);
+    border-bottom-width:2px;border-radius:5px;padding:1px 8px;font-size:12.5px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--text);white-space:nowrap;
+  }
+  .controls-note{margin:10px 0 0;line-height:1.6;font-size:13.5px;}
+  .controls-note strong{color:var(--text);}
+  /* a tip about this cartridge specifically - worth more than the generic ones */
+  .own-note{
+    color:var(--text);background:var(--surface-2);border-left:3px solid var(--accent);
+    border-radius:0 6px 6px 0;padding:9px 12px;margin-top:12px;
+  }
+
+  /* Other versions of this game (alternates.js) */
+  .alt-box{
+    max-width:760px;background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:14px 18px;font-size:14px;color:var(--text-dim);
+  }
+  .alt-note{margin:0 0 10px;line-height:1.6;font-size:13.5px;}
+  .alt-backref .alt-note{margin:0;}
+  .alt-list{margin:0;padding-left:20px;line-height:1.9;}
+  .alt-list a{color:var(--accent);text-decoration:none;}
+  .alt-list a:hover{text-decoration:underline;}
+  .alt-meta{color:var(--text-mute);font-size:12.5px;}
+  .alt-box a{color:var(--accent);text-decoration:none;}
+
+  /* Extras (own scans) */
+  .extras-list{display:flex;flex-direction:column;gap:16px;max-width:760px;}
+  .extras-pdf{
+    width:100%;height:70vh;border:1px solid var(--border);border-radius:var(--radius);
+    background:#000;
+  }
+  .extras-img{max-width:100%;border:1px solid var(--border);border-radius:var(--radius);}
+  .extras-dl{font-size:13px;color:var(--text-mute);}
+  .extras-dl a{color:var(--accent);text-decoration:none;}
+
+  /* Cheats - Videopac shelf only. A native <details> block so "hidden but
+     revealed on demand" needs no extra JS state; sits under the controls
+     box it's appended to. */
+  .cheats-box{
+    margin-top:14px;border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;background:var(--surface-2);
+  }
+  .cheats-box summary{
+    cursor:pointer;list-style:none;padding:11px 16px;font-weight:700;font-size:14px;
+    color:var(--text);display:flex;align-items:center;gap:8px;user-select:none;
+  }
+  .cheats-box summary::-webkit-details-marker{display:none;}
+  .cheats-box summary::after{content:"\25BE";margin-left:auto;color:var(--text-mute);transition:transform .15s;}
+  .cheats-box[open] summary::after{transform:rotate(180deg);}
+  .cheats-box summary:hover{color:var(--accent);}
+  .cheats-body{padding:2px 16px 14px;border-top:1px solid var(--border);}
+  .cheats-item{margin:12px 0 0;}
+  .cheats-item h4{margin:0 0 4px;font-size:13.5px;color:var(--accent);}
+  .cheats-item p{margin:0;font-size:13.5px;line-height:1.6;color:var(--text-dim);}
+  /* the source's diagrams/screenshots are tiny native-res console
+     captures (~155px) - shown at a readable size rather than stretched */
+  .cheats-img{
+    display:block;margin-top:10px;width:220px;max-width:100%;image-rendering:pixelated;
+    border:1px solid var(--border);border-radius:6px;background:#000;
+  }
+  .cheats-source{margin:14px 0 0;font-size:12px;color:var(--text-mute);}
+  .cheats-source a{color:var(--accent);text-decoration:none;}
+
+  /* Tips - C64/PC shelves, sourced from StrategyWiki (tips.js). Same
+     "hidden but revealed on demand" <details> pattern as the cheats box
+     above, kept as its own class since the data source (and per-entry
+     source link) is different - not styled differently on purpose, so the
+     two read as the same kind of thing to a visitor. */
+  .tips-box{
+    margin-top:14px;border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;background:var(--surface-2);
+  }
+  .tips-box summary{
+    cursor:pointer;list-style:none;padding:11px 16px;font-weight:700;font-size:14px;
+    color:var(--text);display:flex;align-items:center;gap:8px;user-select:none;
+  }
+  .tips-box summary::-webkit-details-marker{display:none;}
+  .tips-box summary::after{content:"\25BE";margin-left:auto;color:var(--text-mute);transition:transform .15s;}
+  .tips-box[open] summary::after{transform:rotate(180deg);}
+  .tips-box summary:hover{color:var(--accent);}
+  .tips-body{padding:2px 16px 14px;border-top:1px solid var(--border);}
+  .tips-item{margin:12px 0 0;}
+  .tips-item p{margin:0;font-size:13.5px;line-height:1.6;color:var(--text-dim);}
+  .tips-source{margin:14px 0 0;font-size:12px;color:var(--text-mute);}
+  .tips-source a{color:var(--accent);text-decoration:none;}

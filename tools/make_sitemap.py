@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """Generate sitemap.xml for demo.retrovault.world.
 
-Every game in the Vault is the same game.html with a different ?id=, so search
-engines have no way to discover them by following links alone - the shelf grid
-is built by JavaScript after the page loads. This writes them out explicitly.
+The URLs listed here are the pre-rendered pages in game/, written by
+tools/make_gamepages.py - not game.html?id=. Those two are the same page, and
+the generated one is the address worth indexing, because its title, description
+and canonical are in the served HTML rather than written by JavaScript after
+the fact. Listing the ?id= form as well would just ask Google to spend 396
+fetches on URLs that canonicalise away.
 
-Run it from the vault root after adding games:
+Run BOTH, from the vault root, after adding games - the sitemap second, since
+it lists files the other one writes:
 
+    python3 tools/make_gamepages.py
     python3 tools/make_sitemap.py
 
 games.js is a JSON object behind one `window.GAMES_DATA = ` assignment, so it
@@ -19,6 +24,7 @@ import json
 import os
 import re
 from datetime import date
+from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://demo.retrovault.world"
@@ -26,6 +32,7 @@ BASE = "https://demo.retrovault.world"
 # Pages that exist as real files, rather than as a ?id= on game.html.
 STATIC = [
     ("/", "weekly", "1.0"),
+    ("/catalogue.html", "weekly", "0.9"),
     ("/resources.html", "monthly", "0.6"),
 ]
 
@@ -56,11 +63,27 @@ def main():
                 "    <priority>%s</priority>" % pri,
                 "  </url>"]
 
-    rows = games()
-    for g in rows:
-        loc = esc("%s/game.html?id=%s" % (BASE, g["id"]))
+    rows = []
+    skipped = 0
+    for g in games():
+        name = "game/%s.html" % g["id"]
+        path = os.path.join(ROOT, name)
+        if not os.path.exists(path):
+            raise SystemExit(
+                "%s is missing - run tools/make_gamepages.py first" % name)
+        # Only list pages that claim to be their own canonical. An alternate
+        # dump's page points at its primary instead, and a sitemap that lists
+        # a URL which canonicalises elsewhere is asking a crawler to spend a
+        # fetch discovering that it was pointed at the wrong address.
+        html = io.open(path, encoding="utf-8").read()
+        m = re.search(r'<link rel="canonical" href="([^"]+)">', html)
+        self_url = "%s/game/%s.html" % (BASE, quote(g["id"], safe=""))
+        if not m or m.group(1) != self_url:
+            skipped += 1
+            continue
+        rows.append(g)
         out += ["  <url>",
-                "    <loc>%s</loc>" % loc,
+                "    <loc>%s</loc>" % esc(self_url),
                 "    <lastmod>%s</lastmod>" % today,
                 "    <changefreq>yearly</changefreq>",
                 "    <priority>0.8</priority>",
@@ -70,8 +93,9 @@ def main():
     out.append("")
     text = "\n".join(out)
     io.open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(text)
-    print("sitemap.xml: %d URLs (%d games + %d static)"
-          % (len(rows) + len(STATIC), len(rows), len(STATIC)))
+    print("sitemap.xml: %d URLs (%d games + %d static; %d alternates skipped, "
+          "they canonicalise to their primary)"
+          % (len(rows) + len(STATIC), len(rows), len(STATIC), skipped))
 
 
 if __name__ == "__main__":

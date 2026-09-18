@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-17 14:31:44",
- "count": 607,
- "bytes": 212001881,
+ "generated": "2026-09-18 10:37:38",
+ "count": 610,
+ "bytes": 212025128,
  "files": {
   "games.js": {
    "sha256": "b9e9dd65629a2b8aaa21b6890053340c3ce05540a4f61432d36f09b3de0952a4",
@@ -32,8 +32,8 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "e9a9a987cd571a113f7595ea755ca9f1917c2383ba8715d0b93fb88c6a214b3a",
-   "size": 88873
+   "sha256": "25a12acfa0e045a0daa14d93e30c29aac46ae0e5d53ac7288a98e318ee00d6f6",
+   "size": 89038
   },
   "setup-i18n.js": {
    "sha256": "efdadf93a2202a3ce2b56bc89935726603cf7f4da0fd8d7ce1bcbb7ceee12bd6",
@@ -112,16 +112,16 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "7f8c7678d8e8cd249c4f587ece333602dea8e99f7b61a0ee405503f65ae52392",
-   "size": 115360
+   "sha256": "69331c6012b39168fce498413e457f6a732e0243a4e48d4a92b658c63d9156eb",
+   "size": 9679
   },
   "index.html": {
-   "sha256": "52c3ecd5db5c5cbab74ba68012cce68c6a824e3d773b3b6c7ce226e8a3d192dc",
-   "size": 18033
+   "sha256": "4f637632a50b1dda922f9db89ed6cd67812195b2ef0a09fda185fee593d9ff61",
+   "size": 18197
   },
   "resources.html": {
-   "sha256": "a47d628a287b8c1061a0d61c3a9ca4f95a7f677152455550b7b1dcd194084ff4",
-   "size": 13063
+   "sha256": "cb0ab8fa4193cd9ba6d423690c5a3a32ea14c0c0e120fafd96c67d535318a119",
+   "size": 13213
   },
   "style.css": {
    "sha256": "3caa84edef9d567598d7e9bcb4d6614d67986ae07baa542113b9f158220fe0a5",
@@ -130,6 +130,18 @@
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
    "size": 3768
+  },
+  "game.css": {
+   "sha256": "ebc2db24d7fda7e4e1c8ac900d3d0ff809e84dce5c2d1ff165b2734080449b32",
+   "size": 38334
+  },
+  "game-page.js": {
+   "sha256": "95520e74708ff5969a31e779e174806ac150a8f781b1144b70dd09de2e44b1e3",
+   "size": 70074
+  },
+  "catalogue.html": {
+   "sha256": "e3f61673de849977dd2b086db64a3e60aa5781a363fa7eab44bfd6eff34f45d5",
+   "size": 34800
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",
@@ -164,8 +176,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "6fc81d93fa82577657574c718398b214189eb5dc0e0f325063be1b61d34ebf21",
-   "size": 74198
+   "sha256": "5d2325e021c36976b40a2111053684488fc8bdac01b981da4cd86786a3b8f335",
+   "size": 59439
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
