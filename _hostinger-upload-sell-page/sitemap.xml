@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Two pages, two URLs. The language switcher does not create new addresses -
+     it swaps the text in place - so there is nothing per-language to list
+     here. That is also why there are no hreflang alternates: those require a
+     real URL per language. (sell-your-homebrew.html is English only.) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://retrovault.world/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://retrovault.world/sell-your-homebrew.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

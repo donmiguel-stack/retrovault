@@ -39,9 +39,14 @@ the game's own title screen would need the author's help, and it's optional.
    so it handles EU VAT/OSS and invoices.
 2. **Settings → Stores**: note the store's **ID** (a number).
 3. For each game, create a **Product** with **license keys enabled**:
-   * Activation limit: **5** is a good default. A buyer who plays on
-     `demo.retrovault.world` *and* in their own downloaded Vault uses two
-     slots, because each site keeps its own saved license.
+   * Activation limit: **10**. Slots are consumed per browser *and* per
+     origin, not per person: `demo.retrovault.world` and a downloaded Vault
+     are two, a second browser on the same machine is a third, and a buyer
+     who clears site data loses the saved instance and re-activates into a
+     fresh slot. 5 runs out on honest buyers; 10 still stops a key from
+     serving a whole forum, and the per-order stamp is what actually deters
+     sharing. Raising it later does not help keys already issued, so be
+     generous from the start.
    * License length: unlimited.
    * Note the product's **ID**.
 4. Copy the product's **checkout link** (Share → *Checkout URL*).

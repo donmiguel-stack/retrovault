@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell your homebrew through Retro Vault — a store page for new games</title>
+<meta name="description" content="Retro Vault can sell your new homebrew for Videopac/Odyssey², Commodore 64, Amiga or MS-DOS: a Buy button on the game's own page, a license key by email, and it plays straight in the browser. The revenue is the maker's. Get your game listed.">
+<meta property="og:title" content="Sell your homebrew through Retro Vault">
+<meta property="og:description" content="A Buy button on your game's page, a license key by email, instant play in the browser — and the revenue goes to you. Retro Vault is open to new homebrew for Videopac, Odyssey², C64, Amiga and MS-DOS.">
+<meta property="og:image" content="https://retrovault.world/assets/shot_videopac.jpg">
+<meta property="og:url" content="https://retrovault.world/sell-your-homebrew.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Retro Vault">
+<meta property="og:image:width" content="1409">
+<meta property="og:image:height" content="905">
+<meta property="og:image:alt" content="The Retro Vault library, showing the Videopac shelf as a grid of original box art">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sell your homebrew through Retro Vault">
+<meta name="twitter:description" content="A Buy button on your game's page, a license key by email, instant play in the browser — and the revenue goes to you.">
+<meta name="twitter:image" content="https://retrovault.world/assets/shot_videopac.jpg">
+<link rel="canonical" href="https://retrovault.world/sell-your-homebrew.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0f1115">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1115'/%3E%3Crect x='7' y='7' width='8' height='8' fill='%235b8def'/%3E%3Crect x='17' y='7' width='8' height='8' fill='%233ba97a'/%3E%3Crect x='7' y='17' width='8' height='8' fill='%23b98a5f'/%3E%3Crect x='17' y='17' width='8' height='8' fill='%23c07de0'/%3E%3C/svg%3E">
+
+<style>
+@font-face{
+  font-family:"Press Start 2P";
+  font-style:normal; font-weight:400; font-display:swap;
+  src:url(data:font/woff2;base64,d09GMgABAAAAADDgABAAAAAAo5QAADB/AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYcgzwGYACEbAiBYgmaFhEICoKJUIHrZAuDRAABNgIkA4Z0BCAFhEoHhF4MgTEbyJFVB2LEHeDgkiZSjEQIGweAQH3FQFVvB3IcbeUK+A9wihJYG6OnUAshhGYwU8sJisSmGdGEOziHGsMYsqVz0we/TuoFtPqyNKPSs/LvM7A+RxU8I/hz29u6bf1GpfgMuypbQre8/NnueIYU2tGu8t/PwLaRP8nJC8/De9afm7QdQBnYK2GwylrveWn/ASjxj7d7G/DGv8iSwOPpzHIv//91ZvdJXyacUYBky5JBMrHs/PG3HQAyBmEBQ9xUe3rPQp9yi3a7av1PW0owvQNqnua7upM2RBvSkRGkoGRzFcCizKirnjbA5n/TqkoSmFHg2/2YkDYfj+6lQ6YnR/z/X6Pd9/58sTHZv5Y2LxYaPojNOQzifyuRUIiNVPGQKIWMnc2HqKbl9OQNku7+HRIDKi7EDAAwpLbQVvnRG1Km9RPNmZBlUBu6DF1G4sxB6CTBVaJOVAlANO6XalL/2qGBBkDOyK6z0dkk1dSsziok10KhipXPIfpR8AnCaTaJJa369XQGzB8w8v9nqlVaVQAIUOPINS6yfEvt7vkgkT1nMv9yE10G/l9dxa5CN8SGEwCBOgKiHCjKYKQ11OqhuhtUE9I80j+uc1jjOLrzkZYacbzRGWczb7K7LJrJzqXJJUlyOsb0DbRPSUh27Zdfhec7NNGQVhEQW0REQc2k9n+ytWtu+C8tYPf5ySPPistc5oIc2a14jGl1uk42W8spJBZUUMrQFJIvt0cAW75+9YSbKKioCGCtjqUoJXedJiTtjhX9sMcTKb72GtYwmzGgYMQSKxC4zzZggQHKPx2omLBeq+8AGlDt/3KDr0Kt73T37N6Rkmb/zn3IQ6eFxNSY8rMJJt6zkUFqyWGPARAsEfxRcMWaYKANhbnECQTeUkGjNeFafxmRob3p4Qq2mBgxMrH9cAqNSbRBdiKGgruqB5uFymLGoWCPiZmgnkHrMYpfM5qxmGYqhLCmAlIap10RDRoRR2OoeeNKBAH8tlDCVFOBUTszU0NT4Sa38ifSmEF9KrMxgjJVaQFq063STlKOIl5WvrIFN1j8NCrFYQga6lMA9alUFRYBKK/bBFoN/TpXVEQbFP7qptAw4ArYiZdpJLMkpnHbr5xU7ir3VdFcNW/NXwsqszo1rPWBp54T+AYNsxm4t9dIkGVxstGborlonprvrtqtYv4E1He8ew/Gb9/fbr+Nvw2/bsLjefIXZeDjAY8rH9d4bP9o06OMP/1bjQCQAOq4DjKbr5xMJoHk/21A5R8W8B97OM15FrKSVczmIH+xlv9ZzJ8s4hhHOMo8zmHAFjsOOOGOB5544U8AGkGChYoVL0GiJMkyZMqSLddy5rCCGyzhAXnKlKuptgYaaqSxllppra12Ouihl9766Ke/CpWqVBtmKddYxgl28i+72Mdu9nOdi9znErr1nGQdl3nIVY4zlWnc4RQXmMtdpjDSBmYyg1nMxxIjJqxZYMUGe9xwxgVX/PDGB18cCREpTLhoEQ4RJV2KVGlyxOmrSL4CJQoVK1VDfXXUVU8LTTXTXC3tddFRJ910dpiuBhtgoEGG6GmoGN2tYTVb2MpmKv8xvvNdGWg+Oj3V2van6O01OtSnvxn9EQzkSUujRPiFUf4xXcEGccb3ArD0C6ETS3SdeuJZU6tMiMfIZzwlI/32wIP5geyrhCYuEEK6DQgiOkuyqcVjS8nGIfjtOJn5pMkM+0TvoEfXyGvKRth86rVo9fE8eHz93M+DUlhrqhUCCtdEOmQmWWDax0qqxEG+nYJj5I/THvHZ0VAai/IBrEEavwMmIQS1IisEIY77oxAsZRs9kBnpEFTEuqeiO7p0pxI6kCaWzBYtGodFmTkUgDyjkAC1n2zSJijn9NDPjEDW8oqsUho3yMwNH9fV9GTwEnQA+ZYnWWqKFo50OV+x6RbtBpLBiGvUnR67gNBdojQ7Js1JEyo5S7eNMZ/uFwe/GGajI3uFx0BysRvfncdu3H6InmtpGxCvaZOMT1qZLLGvR2ZE9LKecGg2DztMe5KaWnFj3Y6yIak71OX4xYwxNU0RmJAATOyRNn6fPPJa6Tq0tGXQLpI04sL9xSxDNmmCSkAsihnpHNddYBCkJ2mw1TJsg5G5eSv8YphnPc2/WkTkyWhokMjVIvbSti9s0Q1zXweW+ufRqHFowy9tfY+pRIvFh8fsgrDY2SQcFqTpgGHLdc+gZLgSeKDBzUiqDsrGui+zuI8sV/NHbfhyTst3AWUUG5FGJBanBgbEgME4YvosWZiFvN8CxPUuSRD9hoh+fwfE7aFNSKNtz7Du0KNfd/TpZBOHSJr+E40SQhi4PCkxl8UPlkrulmt2QdyyXLcL0URlEtnCZLKVMbKNKWQ7c5EdzE12Mg/ZxbzjWSPm35SuydK2F1SkKxslXaO5Tkk1/mhHK2nGH/+g3m0PrYKWnnQP3U01oEmCSSTJZKIzRlJMIQZzEZO5SZp5SIZ5G7ZBvV5J/vTI6AQd6YNLqLQFle2yb1UwzLeZb9FrigYYBFuzLum2BMbwjEoZgZSsr2uTuiq2ikLrI385TFSXDRSuW6NicAO3XfUvQ6PBaiRrFAHt9wn1bwDA8IHcLpXh9Ul+v9QMagxGvp8Q/JfIsm6qybFs9JkgiYNvb900RYJqoKIKoW+Powv54z4RxxP8vgqw6dd7bRrDtL6Ws2wZQl1F4hgzrtj96vSK9lEuCFDn1ugu2nlUMveRGcBRASfe4z75hv8qaaOa+ksyR7dfcB616RHIOtcVSj+SiX2polfj58dVJBEPhbJIhzzSHUuqqOjRfHkfVRKAzJR+uq10ekSfknFHZctGJBnxnaPsgMX45IqRqEivkJmaaWM0KSNyn9mm8nCw7JjDhllQTLJf6tZIspujh220H2FwsKLrsOCkLEPfHU77CrVotZIa14HKUoy5DHXOwinPFzFwfVsWU+Libu8OVhCFilcB36mLZd7fN+IHY6blPUeEX1cng0cdqlIYXrNcO+/9ppvq+KW5jNCcn/aGYas98KkDw3Y7ayu42Qpzq89pZKJiYZKIHFQXpaZYyem6r8bu3JZ+ytAUDzOWNYX6/Z9i4L6gDfiqj6/ltko4SkEHrGQ0jlbbHPZYTa8FLamlkZw83ZdZ3+hegz09GrdTtdae7D96wBRQd2xVLxMHDZt3cmgrqCNBhX7Wk8G8w2Ytj/FQ77QjpgGGRI8yIse2EehxRuTEIDCiJxmRU9sI9DSj08+YrwA2QM/GiJy7iUDPx4hceBFA9GKMyKWbCPRyjNQV1VSwqxCRa9sIdMKITAeBMZ0xIvNtBLpgpJf46IBdx5jcuIlAb8ZI3yJA6O0YkTs3EejdGJ28Z6CzkPo+OMZ+jT+ge9XD2ceI8slHBrGSxwmKPUkQeVpCVzp9Fu/S7+Jd/T3BG/3BupEfE0R+ShD5uQTnRn+JO/TXuEN/izv0d4uQ5wkiLxJEXpbQI/RVvEdfx3v0TbxH31qEvEsQeZ+gcz7YX71MurRu4dr0LFdyav3zefxzbosIYjbjAMATADkK8hOcKuDyHTABEahzYJ5TVPg/YDlGUaFMc0K05lhDImGLnquSqEpuky1LuBs5s6oyagy8jIokJoIKKAV6f/Vx5bQfe3fRrnUDxx0EIHWXvJJGpqCaUGEqs0F0cGip9cQdvWKqA9RdCYSGa0iDqM+jNth2sGl40HhKpvI9s3rvafbkL8thm2nbycxCzh/cMTk9/+h7m6ZZO/8YEcQQqGfavcz2/unjYAf9k8G2syiLyw8e/DczsH0w2geCGALknv0gA6tKGaDYr+vw7Whp7p7nA2Rj/kD/kKPfMyxsyI2W3pnbYNOTFFDfDjaU8O1NB/LvPW0a8smTbT9NNk19P6U0eKV/MNXTmBOHROTsiYUgM/Swe4tMZJK/ykyWG6amfU9SAGgRIQhFTv734EnGonHkJHm7fhh66xHBAqCC6j3rTZ094JL4cP5kCRECFkyGn+F50/rnZYmCS9DZBYOFQJgzoUWnw1cnjiVvuAZrDNqZqii2Oi5DOQtyTV8G/UgW8BKWvqoqJn38jsH5ibcGqzFlOJ4TPSeu4HwmjXWDDU58OyQdWuOmtZzueF6kSTUPIFGjoIzocsCxwn2gzmucT71M85uG+BVw3AyEuppHVtJqT/yvwbfJDiMKiQbDZw/B8rar2G4lybDuddDA0U7OtwrnO6EmIhrWGlK7+3CWcBNSGr0rayU6NxgxRIXsehw3KNUzIC2DTBIRFrq1QRS9lhGrEToT1YU5VAsLa6/FQuftxLwJK0o/1wVYgAvQovEdaRtE6IvoBOQwOrUkMkDGNEveQVThTJG0s81xU5GgvxQjCSY8pfwGtuj7B5yV5cA5Vz0mxBDmoM3si79gKmXaZwZ6CaTaOlITCgLcyvvoAMNUTqgTfHBKptQrYG6219OCQ9YY2Np9xm/g5FwUS2hWIVI80s4CA9rRNjvEwt5L53pggCd6GRfnrAQ9TcfEDl8Lj+06arGFErZhPWTYvyqhr47FbRIOxt06JEY0RG1hUWWumhX77cEFDUIrG0ru4JnCtcFiTrr2vsDFHcvWPrBPiJKEhqcdCFDFvaMNi6ayUWXAo78nRsulVANJDyfEJIGullDYOjPG3ijsqI5o/rCc4vmC1zWL0b+HHOfmT1r6Vr8zj6oWp9znvqFoBkO0mFyDIemR3AJUwbfgzVmY9JKCZwm1NrLLsADjoFPmJZWoCEHibb8iTkZz4yWDd6bCG8DAM6it/GTVCdoFoAoWaEcsS4GcNMCuWdaeC9HObBLDKupuwiaRnudkM+p1/KhVB6lG1YLzNTehfohjZsC1Pko52yZqf6aHeRNw8S4KSbLGBbeclZhQxFyLSLpCARYExZ25lDU63AFjmn/KWopYMsnTwBy4A/PKlZi7w0owxNjSNslLrb1GWOv2sy1KrsnUHhWvDC9RUO1KRZjIKcd4ZHdvZEh8ZYn4AmGsMpBKEosBsXayurhaTLpSWEYjzYUiFvJhuMqO57EAb6zpqPMm0oZzLeEIqBsGZrW/8ECLTvtAVocDiVgi0z5a8hIsiC+DzmlzKgQkOIQSvMbcdfzGuEd3z3FF5T38ahGAAvM1s/w/Lx9jo6i1TiyK7MPw0sICwKiosWGGa3bnoMjIWnmGQ13O4TZ1ysDyuRQb4ZKBIwLdT1q7d9rBT/Ya7IUZaZsKVVHvIKoVOk6ouT0IodQV1bpiZ4kzHJpWrOjBLdgit3eI0zlE7rB8+ESxyxxTvoycsym4Bbd1357UpCSVSVW5y198yhad+/rFH2NWYPwNGFba7eDVYZ2Be7MyRu0F3FN+S9fQsnOpLPbEbIxv2VciCR7g0g8QDofzSlw9cfTorAuf9cmyHguuA6sKPQYtiaTllpOtAgCXkuQ18ECXzTBwm+hCL4wYDO0XTCct22/k4BXb8EDHHX5aHuOBhzx4H8wCjeatJvICA8oufImp5Qv7nmDgC7Mg87GV+XSA8DeaFv8A5+3A7oJaBgYKxA5Af7yVb2htSItS8biWZE9sxch9mK8yaiF07+IW5bsMjN5T3dgJlwjCjXCIeuudNtQ6aefQFXjkuBgIEsKa2wLH12RdnWspBrgL6DrypG/VoS3ATlca8CwkT/FYQ6/9RYUQ023PefxUnS2uwfXlHwKiFRL+tMsm+jcacqTxmuf8DnPOb/ZFnQYS5wNtcIpTWATNT7ay4fLk1Gsfa2f8+gWcdBGlle5AEhRIbkojSZCkSRAgkuRDs66QHB369a8M4UOC8gn264/6kuh4mF83ulYokuJ8jsQc4JW/bDX478uuw8a+Z1oBNeSH+nCSkoiIKLweD45LzfxpgKZRUt1LcbeIr7C0FKLteodgB486NNDJgtI5PcVTpsq3qyaBlhD79vf5uqtYzF7wEFV/LgKN2eyCgwqtH+QLlkJTMmVcZZ/RYVASesV6RO9dUNlloFfOeXQZSlZK55S595WYfXrYBVgyeSSIWgnxjPdYBEDUl51FUCa27BKkOaEtg5lRBzMTyDuCmetRxtTOWTlup8PInC6Ngp6QIs9EUyNXjidK0aZbXkd/RBS15E70ae6S1s4mmN51jqGUC40U/NmJPGC6uTjEcA+SMbD/YRkpSp01MteqZ/WAYYMhco62LJyqDuDRflmsIgLtjmxXT+REi03WOSkFhdeAs5YtkHR9GQuOFylgKPHiwedqrtBNThiAFwVl264Yq6Hrg24EKpfbw4bZymSDYjqx3/S1ECQWhhwMXUs4yROlWJZ3kRym8LYtbc1TmWDjHI9mea/twl5tajYX7kUCthBXfEEqkQfFfNdARKqGi34IkMcbFvvBcPo4C2MahUR97HIrglhybIR53j6mXLIG4xIkss+uL0m0X0v+K9/pWjUA5l6kVVa9lCqRR+21Plkg9QfBQufoz6kB4vB1V8rWiZdjMfbIx7zC+QrZs29CfBKgwr0qCkF2+DHCiqEm8jWjsQ4h4sWLiO8t35o3euNDw8mHzGMWGIHcEpn91/UY2z/HjKumpkOUF6cJCF4p6jDuwhWV2r9lIU2KQ1Fyh6+S8Ib40IBwPTdnVua/px3EAYbGJp9d+M7Eq1sb+1slyOh+JjGHcC8ug8mJjz1SEwS6ptww60SVZpTVFA5hMRO6slqxxiti96pwPykeEAHNma2/A5XNEEtiv63Em99ZPKYQ0pyjC/hJ9soROx3GA4pgc9kAIFycCtIIenoNGzXasryp8NSNfWltUrzuLnv+yZAzms/HZshG701+gfOF6I9FO+xuphQXrZ5vBOISuBFe0YOgUT5sUTvjInolf0uyobCfZfXWqndEjTyouQYuO8E1aSufPGyqjN+VZZBByeB5nu58UDmHyiURAXSuraNs2OdyDgjEczOS0tpJFoU6KgQbvnKSF40xXVgPTuq+eF+uKUmbuf5st4jxfAgjFyawnrSOkZPQQncfCZHzrJYtwCsfiUhrf6bSDioX2pSt/pF1itrnnqFo1FQhEu4Hll4vrr1uRfEqiPY9J/lWBJepKi5DLEODCGuER5j89YR1EEfbHB14u8euFJfOurqrdO/vPwlDM0OFPLzVOuY1KHwxprHv7RGlGRydVB6e6mm5F01IIFAoocqNfuVaf0GEUG1PgJUg+/qsAZ+zF5jVO4a93qB6KZmT1zS2/f2qE1yZuiL8/t/J27Wxw0qXEvEdQezDlfLV/gWPKWAiK6NPfOVOoiGS8y4YoXKFhJDamzE6O6wbYOPIjf76W2joB+/+EUDX7+hjc5dno1rYwV31mqH30N+qj67yHDeAurLnueH88Hxu2XFbN2JmJDHBrcCjRkjaZvia3EFn+CD48twoHEhCSluPyvtR1+qI9HYfgN5mzAXvaO/QZN8NwMI9u9NlFS1/XLQ2RpR8S3H2eGcZz7KH7c1poisHtG6W/Js7Jgt3jIPPopYY43gzQVOLtflCHF268BiXfyBaC96n6xit1//5pLUoVmSve/Njrk1XgOwqHKRwkNRuPkdHnAmqYWN2BmEqpLXCW0CAyNRopRi9AIoZlXRuCRZHv+plLnmLLpGZeKUzwUWXMcj0Uxov6vqwkVsiMqpkqfTIMT50quW1XANteM1Z5ZCT9U1u8TnFPtjSzyMebCycKODBaPQ3wZX/1JkWuo8Kh9l4/9pJMAx5E8l9HFpdyYadxhB1BvTXDqemXjOZvPT6anlzfo6aPisrzTgXjexDR4EkR5SL8SyLbo9z8cr/pjGCxqmxNECE65/nTuMF1X2l4SpIhJUrknN533dEqCW+83vDIW6JKvi0E1g1scyl8GfCnhf6yksy+/DbdlPPhKga+dZygmKEx1V2G8ElX+KdHD0h26sddscLQjRFNL4eHXzci3tY/JJr7Vn5B/bbHeVRVLbxUKbGWTZ3+QvRwQ1zz/vwg3vP3h/aXr32DaR1J842ayq+Hluoy1pZbZcUvXaTW2Kh+YRxz1Fjl3d98IiR09X0v5/28xui+H9UvpLid83/jr/H/39nS0qQv1uH/s9/Pj+LMhQFdAwKonxoJMtpmMEb5Zc1AVzXWWx2kU+6y9GhoDL/YFgVbjC9n1sF/yDBFFas55taL5935hE7ndSbpUOjp9yHC8KrYEBAKejGNq351nC/rtfFZrwzmC/8pLtHpuc9tQnT+7nb9V9MqOqzdph39Ky78+lcvrz7XTMM6LSCjhsrTituCpKIm/BwIsoSw9F14/qyep3aZrfrWgHKHltcysU+6R6R+5idaJ1w4X4myffJQ+vBS/EM61X2viC9n0lbutpxoevSP2xEaTFudhIibO8AL6tzSZtMZ1yk2nG9l86hxfqEtdIbYJe/cCG3KjCenzNfiP+l8iHU1ZNBIOf78tj98MJBrn6wq1uyP8uE8IHkFgO3ZuvdfEje3buToaWDjgSv1MFx2Eb2lltXlY3JeJFIzdi8APgeGex+0RyNZHq9UJ8A5a0COK7DPcSirXysYy9TO+n0oqvox/PkjG7jdM8fINzRGKTk28Qd/y431tU2Ydf1MVkEuwRwwZPufQQ/FqbrDc7fz8zPL+DHFGeXP/vyswZ9eSc84j75+ONvQyrosCD1g8NCbZjIKfJgIpGUSmuLZLbq0mgI1Qmrxw0kq4nqz2Lab5gPAU7EQ6JIKoNBs+hQjs1CaelsW0c6FiEC1UBFfX7stXz6J340I5kSSxqD0ghRQEqohRzUSnJ9yBl9D9H7JT4QfI7ZbzvS9RHyxf3izoTWMTISlFRSuqoX8qz+DlrQfy6FVWVOXeeLAiLnqff5tXnux/E17kIVP46GJi75UKLJD0AT6TDKSIgxRvZO2u5Du6gWgTplntATcZ2AExM8orxjwzmmaI37GpZyOSbUCUaYJZJIKq4667kwZuM4TPoeQmzUgFRdQif02Eqa0NjPnTJPQcaQrltzm0KUZYCGPe1qW+Ea2cekDy9puOcNDWqiJu9LUfatD64Kk87eRZlwqNsbZJ+QTpAJvuBeNWOypipHf8WVSHhOzo5WbN0ZuJ0sewCtoqu1e1MJE0KvPvcotYPDQicZ0wH0Ehs3Ru9Bvs8GKNkvWWYx6QJ2N5KV2amNFogHsDnIuNC2DDc55IyM6qUQjRcVlFoqn1TD+1LY0jWLkP0wUSgUEgHBMmHy5D461z1ArRf/pJsTqkviCT0lxwScMmmTmIVKrW0qfKqutASLXISIb8hNGSJ7MtRiKPEe4yU3LyxAa0ZEdzAt3KNtupvKLMfQvACAmrC7XJ/46nSNj1yFJ8DCWSwQV1a77BfTfQEMm2m2Hhbzg8MnXcJuRkditpUFAHorAKyMVSirH3c/t12tqVPuE6O3QI9XOIm3gl6oj0WdSauyuBvPpGbUwifzXd9Bg2aPe2kTUNa+W3wJTUVP+DsuvLldRnowyAGD7dfylGPFRkF1PDLXBnHlLlQCqaSSvSHz69UOKFNySqODt5Tn+/CAAgViRgfIQlmLUJs1Ivd+esCQYBkOeOoOEIZYvqbOsV2vJhFXq7y6e5E4nyzs9nXT4uyO+zmo0JtKSIQ5rEW4X6bSV00zmyyVikJK9LgzU+JqbFrOmJG2irALK9a7CFMAtXsETxOg3OZqLmgsvEMJfWxeOE8FSoQgHLhYAy2Sc53F5oDvAcMczjH9m/LTgWXSMB3L2tqtWbXab0bZcSPRcKs3u5oXpzpqu1pkhoW+2mzVB0dRtDCMGmDLXVyxV+rR+kiCWlgHT9w6SrF8LIE74vuU+Qfwyeei+NmnY2pyS/L046knOLnzUaFC6IQxSUm2jF/T8G2gJe/n6LGHibi4J92N5r1L7BNQJojju8YjCuVgf4YcGHCp8aCr4+J2YfETFFZVxeJnNiwgalLIZKL7AlguzDTN/4Z4C3AmHxJqSQe6Dbng7osfMguBAmMlq/LxlNYrsVTYzEHOvO3NMuuU8Rvw9KkofvI8NYfR0TGn+5m/+thMYgqeME8qh1RPH8NjpTngUiy0dlQ6vgc6FjSnT6bhkiashd5gfD+3rMP1OMNaIF9c66xWy28aw1p8QiakhgyLUN9AI7CI4qJEs7XavvlDB3cryZpiAoMMOrxs5Zm4TI0fK1MuvieHgV143KrK3T2t8kwrB5RawIWqwhM/IKAZi0NGw4NS9jS40kRcdfO2Ng4baM9tncmKLr74wqs4DzRwxc5e+aPfR4PEWfq3u7GMKtURtdbKs6D9GHJeyMB0FDQIVTEqzLLFEj4SVjf8qa1aH40RJoS3NFFttEZOAmdBOU5bNh5Ofi43PgQBgaLHOuU84WNA6+LeNFZKq5Ko61ax/w5fWZaRfvsJ0PfYm0UQUDQSahinCT1caZmAwb00zNtQ5TU0RRAnHNkipQnlyrhv1YHVid9+RAKf8PH7GRHIOVos8/52gUVSO0R+pyKQKwT5UCe2uUK6Wrs3YWkCTGuxc2BQLpi22fn5PiRVNB1KWJwnNAvnG5ok0w0UoXKDlAgcXFWjwAEWWpQclzlCdXUy4aMoiAnhefLMDYSw2ImayMRZ51AfZ+KhlsqR2hIQhZ0Mh7uk/1qLSJbCJgJVrQ4OabpqazJFNBEt0x3joe6G43BRaEEk33MVyXfSRw2SJxfFF/D6UnS+xtASDp/V4owxHTApyA+brJr3IDlfTHuR1McktExIp4FtggADw5af1MLw5CVNJJqlNgS0mo5tXZWaNk9pVduCK1J4fo/yYw5hJ0/Oxuzt+SYrLPQNZp2YeCCpEnBr4MEAK/WMQWBN1/5IzUmZB7LEFtaLu2lfEOZPOppVbTctiPW+mU7oHMnxdjdFQTPv0RkLssZWungLw1UKnnITmD6XukcUgx5SU7m8SA9mBF5IhqBClZXD1mxHgxsl4vQOpQ54A0GUy8OtKJROa3e+Hn6YNgPkrcBFwvfbq6vH7TZQlQg2dLwSwkqbwijZgBKLhUgkt3VxBX+Fh+k+HaO8WtRNawR4ZuR3cfqPMEx33H1jt1VYuE0PikV0eb8OFiasgqGHcgNeLIV99sV369uN3q8zr5V2QBdydmCG2xwe0ztnd1t1FBSu7wetLnbuLpyoM2WfaP/tbLA1fl+TE0ySyejbVsX5xzEYT3dHXcwukfDq/anxUwmOElwmFhJqes9os+IML7u4m0S+rTzsceYVC1lrfrf0uxc5LJQEuX4MRomt6NZh6y42WWEh2Z1dKrMjeU/wCldWZkskh1xLyijN/1jifQeEVMWc+A07gMXUZSUQuT14LfKcT1ajzWlXJFtAtr8Two2TEgciYzzskL+oKOMSXYfJSiQVJraPSDUoer2QtwZGUjQJrmpOozW+4E+VzrlSwVH2ONJKM8wcSe2PMBrV2KYQcW9qmcd2YP2bj9xKVoSWRjVvg7dFsew5H1hrDGhxpIJ6tWPnz0ue84HW5Xmf+XyWxQTs6atYB68OJrUnllE8HUAkikFRnEsIQnCitYJrgcWaRzlE6mw0oVeRyoTQ2Fjyxp6/RJq/h17zjWOrYTy2cBOIHr1VCqw0MxmRMSRXIAYhDhHxlQuC5SVSaFDLzlXA5srWeRkygI6JmTeF+5PTIxlQgO4cx2JBnNrOa2KWTBDiuZwlQPu/n9c/nAf/bTQVRfbDqEjlMDvVEqtd1Hl3PB6opLtNoU4eE3pSCyaATXvKlwfg4Vks/fQY3P3vafmzMceAoqCxUge8APpGQIiUtpAB3th1T16/SwpJLAPldDO021c47xspyJgIGJBfQhdfLENADCq4anHU6N6FjWW15nrkOByMLEvDEuSJNi5keB7b5ClBrAdvPP1JTuyDK5Aqhk2/aWZ6QxdizayeMH3E0g26h1jDR2S1KeXboq7pNYwbsSCF334alHU3HG6nv9LsWtZ3ozklpbsq3fGEiMpeAtXax16az2uT9yI2pMmvX7vo4Z9CBgv39rp31+O8WZxR5PExwlQQdZ1WEuA8nR12zu2+jZfkTtpE4meYmOsPH9iJFtgSOg143E0/NKHZfwQXdJiDklJeWUnhnKK9zUeJvAYcs4eDoHcy4Ro+n6XOsVCYSq7TNUkRJhr6I/PzGhbZdiWNwA88qAvZC+q2qfXVcxsvOtybxL14fdjjOb/tv19INwDQRw40+KdFuPUdfP/6HyCEG3SeJBGpOUW7CFzMlvQ2XEoWkw2d68dyXxD1kpdKWNf7Biw4O6tPFLF/yEyW7DfKtIu//ps+9UfK41y70YrpBthfP7lPI1rUwZyM+yu6e3e/xtNQoPpXL+FWWw5C9CNPsIqQgBpRv6wU3KSmO5+vQcciFaj0hjom4LSR7cFJpWQFg0Q0BcapoGkVtieQPL7JxEETVKZ6g9TWcLjYN/BmSCicyqCo4PrO1Tfl/hBGN2Xa47tL9wGSva1oE3CoIU0W78HfXddIlsrRUUhVed+UBFtPnKc/7FZlnAqkstY2ofN2/viKIMzoYAiSGBVLBDe8G2Wq0Rpyh/RXpYY9CbIJ6N75502w9rfYQBH8DWQCU6bYOJOHlSpbGyLt+7FTNWWbCFL7kKie6lA4jVQUsUpYIhsLwI1JZ63oBuGTDUWO6+kFFRaFYlmwxQQZ9MFkb6INV5sy02kRWMgTPkKmfIPwSjNz8boBFmre1pcRzALrt65avNa03n1Hj/Fr54niM7rwDDpQ408IN1iovGGCPXgUFE7qw6r9WCiYD+VQ6bFTnhA+5dM15A6q0rrBflO/PvErGqqc5UGJlI/P5HBpDWq625vpJsH7T4xBNub1D/6aAGGu1R/bnRnz71duEwLsJxruLK9TZsG2NErkkoZD7RZQn5AdpWRWHqJ2pDqIo58LmS3M+2PYNH2Kz/SWixAoWBRZCR8c5Fl/hoK4VHqByiHDoabYVDF30qDtmzZP7twPQ799TOOpv9kqQz88mD2NAS6VinHWtnLZzMzM2x+Yj2a/bCCw/QrOplnQw8amCddb+O0f4ymnCU+o6Us0UqOt6vaeqp7KoSovuMU4bNj/TOPrD4lDvG8sgU5xIQ/3uNPye2+ur2QukhCkmDJMmmAVssN6MtGaXNsfiVhR6GPIg/QYu37Mk3QztUvXXvBqmmWD19K8/pFmae4z68Neq1UrDMPdhNBF4hj3uB6XJiELkY2wJQpM2QGvbMq/h22Ij11+cLg2e+5AAiwF58bDofZv14qF8dbkTjxc9I7z0HeJXRtfJEY5MnqXz5s9+76uQ8CXvC88TFCuu7rVQhWsfRNr0mEG3wGIsJ2MvDdB98FfMZFJWUZUAoLgqjDAHyR2viDfd1oRgje7fGMW9wtDuAHnZslNRhLRYvdky/rZ5WvdTsrQUsMlmffCh+k/HFb+LCoZJiGWiTitLq5piEzRdyplalnObNyFA1hQNPyj/Gn4MIJlzdcm4bEHUwtGHSfMIdFH1qslz4MFgJ1dlfEwPPHQHl4qIGqeChc5SluSRiVQ3ilL6eKMrCQwaUChl0J5AtgzbdElU8VHl4t7Gp482doPJ8k/GhLEVXhMdko1a2WfyxbO7dBYI7mBCMyFvM4Li4/jCcXUD1uWHgEsqXpSk/3X5VWSiAQ0yEBklw6rmZNcVPXUNL9AtEb41YqSqfv+CwS+mwpyplJnLBOcEu/w4aW9QFLRIIcFMiwXTUh+7QWlpDlG1RCc3yflAnsJ/rXAej6XUXRy7YNR+o5SZyTCl6JTPFQiUFnAKBXL7Wwf5OnL6JAkOi7DC8nz9K+ETfrrcCcLez4eFEKUo6BnclEfV3glKkxjEw+da9TfJkDMxkbUPSoNyTyhV1QwYXo/TYgeDyd56aPV5YkrbKwO8tUAldyYV+7kjozlkhgYChGxQuUKpNIwzhN6VCgmzO5Nl7LIg+1MRS7v1g4qufy2chyj2rXK7x02Di/ouyrnHEOWauFcCSoovyWgpgm74sflHTYOJd4PXG6VRZTAglFgDkChRXACyGuWnJa6oDHGS/5WI2L6NQkMknpP5QV151YbLFhz0CX0Ce9yj0BJIL9SjiJ2Z/Um/qK0pg1QXylItO83MIjH4b74yYyslFnyMCsPwsKAS1BpF3JDxIn0NT7RGRK5oYu3kJOSMsMJY2+O+7VLjfprC3t49SO5uK6ewz8I83uBL74Wi776Um8Z+FLqLvqwGb/qxlbKarnFLWfiKGwaKVWuUB8oLcq0me7e78OvFHr/68EnsTevAK8YE61krjZUUE6eB+i0eZ1e1oUIbxvmvGut6jjI3OQKgst9OdKnaCuOdIB001DHzBjtUMqO3relgrOX9N5pivxGWUrGb6hcZMG/S7afqtZHD7sT4r83vLfmY+e6TMPM5enM67L+Gh06pXxhs2v0TuEjna4KfKNrZ0ivyETh7PlwjyQ/IO9kGdXdTIM7mLb2Hqv9hOJfYUJtiOXXxKWvdhxXTtuPuWfTbbWR6i8+bCC4xLmKBm4jX8S80mihIACo9hOsu+YJvazUJsxeMHD4WJt6fuhFaPUQKGJlMESM6mgBXhOnXAAhR6PzQLBuWSf0liomdH6ziLc3At3qBbZvcOQueueNywPJjTTQdnWbGuBP1kcSy84M44EsZuwA9Fq/fFWrVKcK7doLdhox+P8QEuyCqwKHFRAmG+5wecXAEuBN9brhCtLb2q3BzZ+3fdWUCrEnPmOjL62viFfc0XoPgYMZD3R+vD+PY+iVH2flbY9VJEX+Q/ri8fFp38bT02V8VMYRAnA9OJ/pbhrv+Hn55E9/DdDfPzwAv9hIUEn6voovHjSvHhN6krtr8Z2ui3LOAWgzUabzIJKdW6QL4WDBK6wm225h0brcVYf2t/YdonATC7uFuj/wAtEN0Op5h0wQ5XiyTqWLySox+/ReXLa45eDI5TDJ4wO/3O3AjaCO98nWUm0lJwaqWu0JLjHx0XPQDdSOcmWHzL0ouvz88yeGqBSd8BCNW6w5AZwwHm8OnJY4DWenui51gBjg5ivWMFmVNIzUXHn7Adx9HxMWY+uMPuACur9PQoAQRkKejNPw7u5r5Wd1lOZFjB+v89M1JJ2XNO6/+HxPp4fzaYgQ2qCxTTnzp1Ps/OLhwZSLRz4lbWZdCJXxhAto3efl05Bc9I/OJT591d+ZP2Nr6/UlnWI9mXt6/jn3/uquf94sPZzTeBkZwP1I3dR3GR7zPG3wmObXPKf5/llYMrnb/+AgkiWWV9nMmq2cNIK4vDtwN/N/feRgvdST59fuxOnUNxV0ztK+nJwNi9JKupjSWm3Y28kpbaCEiZN79dQBUYzYfA131g/Bs0yc3FgONF/YJRqVL3CZ/XlCYGMB8kQWQxhzY/RrsUyAyMPMYhOzZQWH2GTzWDhhIzKnVCWgMKKyIV+GP6yHSkzEn90/paqkAvUvluSv1fr9tlHPs96N2W94kRhbDZekLx4LYOhoORBLL/JUhPeh5V9XUyk710b617RJSrVl/L87Je9Xkk49oRqZwykyqo8xpePU2ugJuVQS9oYgAATw6G9M8Vo455OlKv4B8D0cn6H08arn/rz5AQ3Y/hoNBioEwEClXQgRMSv2HyujMz5/67vUA1guvqrO8TzfdDTVhNX7P4OuMq5ffHPsrR75Xu+cNa6bvDt+76azJ2B6GLZL63wmSzDey9ZNGRqeJXcSGPJSXd8OHf+z1ELy+4C++I5Of6um0+lklwg8IYMtISxQKNDQNGC33UQQwJJuVMRgBe6KNTQk+PJ6SMGex0MqeZYOGYhRNWTEmzZDJiKk2PZ0DHqoEK8ZIEv86YN1NkhP3a7Ig3EG232eP/v9DdJdvPrK1NHAIF0NNlhjFToapEKSBmI10lV3lfq0NpvpapCsa/XXj0ayOAm1tiKqRVrLd6G1c/9Vk61YS42UysZiguHVtxbrb4ChZqh116Odf4ZKWaOJQbuGlsSZWvvrpavORblQZdQ9zAic5QidtdYuhiowzDi0q53BAFyrQqQYGtV6cnOD6MHGtKtyswuNshhUNOvpqC+2yw/KnaDzoIx5hx5Y+d3xBERBQSXEGU7RyQY628hsQoXpItwzInR1mrOcI1KUaDHOc4GLXCJWnPioBrO78YNf5grdXWMOm9hMslcfv3K9dBmuc4Mebn7Sy8wcL8hVoufHuti9uNnXYkp1bS33nBoGmO/3z0A11VJbHbeoUKVapbrqqR8DDTQ0RCNDDTfCMEvQbaGx1zTRVDNTaK6FkUYzhlEfCfPU2njJXto6zBEWsBAXXHH7EBn+ES//p4tRTGLBfj7yic/YyXeMSfjhwDoMLMOEE0GWYsSaP84UaaeDPAVssGUbW3EUS9awloMc4gTb2cFOdnFcrIznABZibQJ/iw32vGU3GoEC+IOOlostlmIXe4JZmcxEpjGV6YyjvacUxkEcxYkZPOQ2Myl2lwfo/Y8d3VleHjt8+Or92N3bO0w+u392+bK7Qyeuxq/d8rjrXR77+73h6eTVq1dudE6nLzN9/PbVpw+vp+EDiOZO/2+VzD36rxNpTqf5h/c5cj3wVdcZOvQL/570hejrBdJf6rD56wL34Pvd7XpuDDnouo9mns/0ZuzMOS/zNHyZM9eJifZEUt6bf/B/y/Poc/9zF8DgBQkX8K2G5OoyhiU1/P6EJ/9yXiULZp7yx/McxNbKfNt3tcPlET6aSZ4DU+WpHW4WyP2i/9+s2JdNyXPmV2UxgWEXAAA=) format("woff2");
+}
+:root{
+  --bg:#0f1115;
+  --surface:#171a21;
+  --surface-2:#1e2229;
+  --border:#2a2e37;
+  --text:#e9edf2;
+  --text-dim:#9aa3af;
+  --text-mute:#6b7280;
+  --accent:#5b8def;
+  --g7000:#3ba97a;
+  --g7400:#c07de0;
+  --c64:#b98a5f;
+  --pc:#4a7fd6;
+  --amiga:#ff8a3d;
+  --amber:#e0c05a;
+  --hb:#e05a7e;
+  --radius:10px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,sans-serif;
+  background:var(--bg); color:var(--text);
+  line-height:1.6;
+}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+/* ---------- topbar ---------- */
+.topbar{
+  display:flex;align-items:center;gap:16px;
+  padding:14px 24px;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);z-index:50;
+}
+.brand{font-size:17px;font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap;color:var(--text);}
+.brand:hover{text-decoration:none;}
+.brand-mark{color:var(--accent);}
+.brand-mark img{display:block;width:22px;height:22px;image-rendering:pixelated;}
+.brand-sub{font-size:11px;font-weight:400;color:var(--text-mute);letter-spacing:.04em;}
+.nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;}
+.nav a{
+  color:var(--text-dim);font-size:13px;padding:7px 12px;border-radius:999px;
+}
+.nav a:hover{color:var(--text);background:var(--surface);text-decoration:none;}
+.nav a.cta{background:var(--accent);color:#fff;font-weight:600;}
+.nav a.cta:hover{background:#6d9af0;}
+.nav a.cta-ghost{background:transparent;color:var(--accent);font-weight:600;border:1px solid var(--accent);}
+.nav a.cta-ghost:hover{background:var(--accent);color:#fff;}
+/* Language: five flags, no dropdown - mirrors the Vault app's own switcher. */
+.lang-flags{display:flex;gap:2px;flex-shrink:0;}
+.flag-btn{
+  background:transparent;border:1px solid transparent;border-radius:8px;
+  padding:5px 6px;line-height:0;cursor:pointer;
+  opacity:.5;transition:opacity .12s,border-color .12s;
+}
+.flag-btn svg{display:block;border-radius:2px;}
+.flag-btn:hover{opacity:1;border-color:var(--border);}
+.flag-btn.active{opacity:1;border-color:var(--accent);background:var(--surface);}
+@media(max-width:900px){
+  .topbar{flex-wrap:wrap;gap:8px;padding:12px 16px;}
+  .brand-sub{display:none;}
+  .nav{margin-left:0;width:100%;gap:2px;}
+  .nav a{padding:6px 9px;font-size:12px;}
+}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 24px 36px;text-align:center;position:relative;overflow:hidden;}
+.hero h1{
+  font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;
+  font-size:clamp(26px,5.4vw,54px);
+  margin:0 0 22px;letter-spacing:.02em;line-height:1.35;
+}
+.hero h1 .rv-retro{color:var(--text);}
+.hero h1 .rv-vault{color:var(--accent);}
+
+/* Pac-Man chase strip, above the RETRO VAULT title. A single 8s loop:
+   Pac-Man chases a blinking (frightened-blue) ghost left-to-right, then
+   a coloured ghost chases Pac-Man back right-to-left, on repeat. Purely
+   decorative - aria-hidden, no content. */
+.pm-strip{
+  position:relative;width:var(--pm-w,220px);height:32px;margin:0 auto 18px;overflow:hidden;
+}
+.pm-packman, .pm-ghost{position:absolute;top:2px;width:26px;height:26px;}
+.pm-packman{animation:pm-move-pacman 8s linear infinite;}
+.pm-packman .pm-body{
+  position:relative;width:100%;height:100%;background:#ffd93d;
+  animation:pm-chomp .32s ease-in-out infinite alternate;
+}
+.pm-packman .pm-eye-dot{
+  position:absolute;top:21%;left:44%;width:3px;height:3px;border-radius:50%;background:#4a3600;
+}
+.pm-ghost-blue{animation:pm-move-blue 8s linear infinite;}
+.pm-ghost-blue .pm-ghost-body{
+  animation:pm-blink .4s steps(1) infinite, pm-ghost-wiggle .5s ease-in-out infinite;
+}
+.pm-ghost-color{animation:pm-move-color 8s linear infinite;}
+.pm-ghost-color .pm-ghost-body{
+  background:var(--hb, #e05a7e);
+  animation:pm-ghost-wiggle .5s ease-in-out infinite;
+}
+.pm-ghost-body{
+  position:absolute;inset:0;
+  clip-path:polygon(15% 40%,20% 15%,35% 5%,50% 2%,65% 5%,80% 15%,85% 40%,
+                     85% 80%,78% 95%,64% 80%,50% 95%,36% 80%,22% 95%,15% 80%);
+}
+.pm-eyes{position:absolute;top:30%;width:100%;display:flex;justify-content:center;gap:4px;}
+.pm-eye{position:relative;width:7px;height:8px;border-radius:50%;background:#fff;}
+.pm-eye::after{
+  content:"";position:absolute;top:2px;left:2px;width:3px;height:3px;border-radius:50%;background:#0f1115;
+  transition:left .2s;
+}
+.pm-eyes-right .pm-eye::after{left:3px;}
+.pm-eyes-left .pm-eye::after{left:1px;}
+
+@keyframes pm-chomp{
+  0%{clip-path:polygon(50% 50%,99.73% 55.23%,88.3% 82.14%,58.68% 99.24%,25% 93.3%,3.02% 67.1%,
+                        3.02% 32.9%,25% 6.7%,58.68% .76%,88.3% 17.86%,99.73% 44.77%);}
+  100%{clip-path:polygon(50% 50%,92.4% 76.49%,88.3% 82.14%,58.68% 99.24%,25% 93.3%,3.02% 67.1%,
+                          3.02% 32.9%,25% 6.7%,58.68% .76%,88.3% 17.86%,92.4% 23.51%);}
+}
+@keyframes pm-blink{
+  0%,49%{background:#1a3fa8;}
+  50%,100%{background:#bfe3ff;}
+}
+/* Wiggles just the three-legged skirt at the bottom, dome top stays put -
+   a small side-to-side shuffle so the ghosts look like they're scuttling
+   rather than gliding stiffly. */
+@keyframes pm-ghost-wiggle{
+  0%,100%{clip-path:polygon(15% 40%,20% 15%,35% 5%,50% 2%,65% 5%,80% 15%,85% 40%,
+                             85% 80%,78% 95%,64% 80%,50% 95%,36% 80%,22% 95%,15% 80%);}
+  50%{clip-path:polygon(15% 40%,20% 15%,35% 5%,50% 2%,65% 5%,80% 15%,85% 40%,
+                         85% 78%,76% 92%,64% 82%,50% 98%,36% 82%,24% 92%,15% 78%);}
+}
+@keyframes pm-move-pacman{
+  0%{transform:translateX(-32px) scaleX(1);}
+  42%{transform:translateX(calc(var(--pm-w, 220px) + 32px)) scaleX(1);}
+  43%{transform:translateX(calc(var(--pm-w, 220px) + 32px)) scaleX(-1);}
+  50%{transform:translateX(calc(var(--pm-w, 220px) + 32px)) scaleX(-1);}
+  92%{transform:translateX(-32px) scaleX(-1);}
+  93%{transform:translateX(-32px) scaleX(1);}
+  100%{transform:translateX(-32px) scaleX(1);}
+}
+@keyframes pm-move-blue{
+  0%{transform:translateX(4px);opacity:1;}
+  42%{transform:translateX(calc(var(--pm-w, 220px) + 68px));opacity:1;}
+  42.5%{transform:translateX(calc(var(--pm-w, 220px) + 68px));opacity:0;}
+  99.5%{transform:translateX(4px);opacity:0;}
+  100%{transform:translateX(4px);opacity:1;}
+}
+@keyframes pm-move-color{
+  0%{transform:translateX(calc(var(--pm-w, 220px) + 68px));opacity:0;}
+  49.5%{transform:translateX(calc(var(--pm-w, 220px) + 68px));opacity:0;}
+  50%{transform:translateX(calc(var(--pm-w, 220px) + 68px));opacity:1;}
+  92%{transform:translateX(4px);opacity:1;}
+  92.5%{transform:translateX(4px);opacity:0;}
+  100%{transform:translateX(calc(var(--pm-w, 220px) + 68px));opacity:0;}
+}
+@media (prefers-reduced-motion: reduce){
+  .pm-strip{display:none;}
+}
+
+/* ---------- UFO easter egg ----------
+   Same two-layer sprite (coral body + blue lights that blink) reused in
+   three spots: hovering in the empty space beside the Vault intro text,
+   zapping left-to-right through the gap before Homebrew, and bopping up
+   and down next to the License kicker. */
+.ufo{position:relative;display:inline-block;}
+.ufo img{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;}
+.ufo-lights{animation:ufo-blink 1s steps(1) infinite;}
+@keyframes ufo-blink{
+  0%,45%{opacity:1;}
+  50%,95%{opacity:.15;}
+  100%{opacity:1;}
+}
+
+.vault-intro{position:relative;}
+.ufo-zone-vault{
+  position:absolute;top:0;right:0;width:150px;height:100%;
+  overflow:visible;pointer-events:none;
+}
+.ufo-zone-vault .ufo{
+  position:absolute;width:46px;height:42px;
+  animation:ufo-hover 11s ease-in-out infinite;
+}
+@keyframes ufo-hover{
+  0%{top:2%;left:20%;transform:rotate(0deg);}
+  20%{top:20%;left:58%;transform:rotate(-4deg);}
+  40%{top:44%;left:8%;transform:rotate(3deg);}
+  60%{top:66%;left:60%;transform:rotate(-3deg);}
+  80%{top:86%;left:22%;transform:rotate(4deg);}
+  100%{top:2%;left:20%;transform:rotate(0deg);}
+}
+@media(max-width:980px){
+  .ufo-zone-vault{display:none;}
+}
+
+.ufo-zap-zone{position:relative;height:64px;overflow:hidden;}
+.ufo-zap-zone .ufo{
+  position:absolute;top:50%;left:-60px;width:40px;height:37px;margin-top:-19px;
+  animation:ufo-zap 7s linear infinite;
+}
+@keyframes ufo-zap{
+  0%,78%{left:-60px;opacity:0;}
+  80%{opacity:1;}
+  92%{left:calc(100% + 60px);opacity:1;}
+  93%,100%{left:calc(100% + 60px);opacity:0;}
+}
+
+.kicker-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.kicker-row .kicker{margin-bottom:0;}
+.ufo-zone-license .ufo{
+  width:24px;height:22px;
+  animation:ufo-bop 1.4s ease-in-out infinite;
+}
+@keyframes ufo-bop{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-7px);}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ufo-zone-vault .ufo,.ufo-zap-zone .ufo,.ufo-zone-license .ufo{animation:none;}
+  .ufo-lights{animation:none;}
+  .ufo-zap-zone{display:none;}
+}
+
+.hero .tag{font-size:clamp(17px,2.4vw,22px);color:var(--text);max-width:720px;margin:0 auto 10px;font-weight:600;}
+.hero .plats{color:var(--text-dim);font-size:15px;margin:0 auto 30px;}
+.hero .plats b{font-weight:600;}
+.dot-g7000{color:var(--g7000);} .dot-g7400{color:var(--g7400);} .dot-c64{color:var(--c64);} .dot-pc{color:var(--pc);} .dot-amiga{color:var(--amiga);}
+.btnrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;}
+.btn{
+  display:inline-block;padding:13px 26px;border-radius:var(--radius);
+  font-size:15px;font-weight:600;border:1px solid var(--border);
+}
+.btn:hover{text-decoration:none;}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+.btn-primary:hover{background:#6d9af0;}
+.btn-ghost{color:var(--text-dim);background:var(--surface);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--text);}
+.hero .free{color:var(--text-mute);font-size:13px;}
+
+/* cover marquee */
+.marquee{overflow:hidden;margin:44px 0 0;position:relative;}
+.marquee::before,.marquee::after{
+  content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;
+}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent);}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent);}
+.mq-track{display:flex;gap:14px;width:max-content;animation:mq 60s linear infinite;}
+.marquee:hover .mq-track{animation-play-state:paused;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.mq-track img{
+  height:170px;width:auto;border-radius:8px;border:1px solid var(--border);
+  background:var(--surface-2);
+}
+@media(max-width:640px){.mq-track img{height:120px;}}
+
+/* ---------- stats strip ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;padding:34px 0 8px;
+}
+.stat{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 16px;text-align:center;
+}
+.stat .n{font-family:"Press Start 2P",ui-monospace,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;font-size:20px;color:var(--accent);display:block;margin-bottom:8px;}
+.stat .l{font-size:13px;color:var(--text-dim);}
+
+/* ---------- sections ---------- */
+section{padding:64px 0 8px;}
+.sec-head{font-size:26px;font-weight:700;margin:0 0 6px;}
+.sec-sub{color:var(--text-dim);margin:0 0 28px;max-width:760px;}
+.kicker{
+  font-family:"Press Start 2P",ui-monospace,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;font-size:11px;
+  color:var(--accent);letter-spacing:.08em;display:block;margin-bottom:14px;text-transform:uppercase;
+}
+.prose{max-width:760px;color:var(--text-dim);font-size:15.5px;}
+.prose b,.prose strong{color:var(--text);}
+
+/* feature grid */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:30px;}
+.feat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;}
+.feat h3{margin:0 0 8px;font-size:15px;}
+.feat p{margin:0;font-size:13.5px;color:var(--text-dim);}
+.feat .ico{font-size:20px;display:block;margin-bottom:10px;}
+
+/* shelves */
+.shelves{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:30px;}
+.shelf{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;border-top:3px solid var(--border);}
+.shelf.vp{border-top-color:var(--g7000);}
+.shelf.c64{border-top-color:var(--c64);}
+.shelf.pc{border-top-color:var(--pc);}
+.shelf.amiga{border-top-color:var(--amiga);}
+.shelf h3{margin:0 0 4px;font-size:16px;}
+.shelf .count{font-family:"Press Start 2P",ui-monospace,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;font-size:13px;color:var(--text-mute);float:right;margin-top:3px;}
+.shelf p{font-size:13.5px;color:var(--text-dim);margin:8px 0 0;}
+
+/* screenshots */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px;}
+@media(max-width:760px){.gallery{grid-template-columns:1fr;}}
+.shotcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:zoom-in;transition:border-color .15s,transform .15s;}
+.shotcard:hover{border-color:var(--accent);transform:translateY(-2px);}
+.shotcard img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;}
+.shotcard figcaption{padding:12px 14px;font-size:13px;color:var(--text-dim);}
+.shotcard figcaption b{color:var(--text);display:block;margin-bottom:2px;font-size:13.5px;}
+.shot-play{
+  display:block;padding:0 14px 13px;margin-top:-4px;
+  font-size:12.5px;font-weight:600;color:var(--accent);
+}
+.shot-play:hover{text-decoration:underline;}
+
+dialog.lightbox{
+  border:none;background:rgba(10,11,14,.96);max-width:96vw;max-height:96vh;
+  padding:0;border-radius:var(--radius);outline:none;
+}
+dialog.lightbox::backdrop{background:rgba(0,0,0,.7);}
+dialog.lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;}
+dialog.lightbox{cursor:zoom-out;}
+
+/* master strategy */
+.ms{
+  border:1px solid rgba(224,192,90,.4);background:rgba(224,192,90,.05);
+  border-radius:var(--radius);padding:30px;margin-top:6px;
+}
+.ms .kicker{color:var(--amber);}
+.ms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:24px;}
+.ms-card{
+  background:var(--surface);border:1px solid rgba(224,192,90,.35);border-radius:var(--radius);
+  padding:18px;display:flex;flex-direction:column;gap:12px;
+}
+.ms-top{display:flex;gap:14px;align-items:flex-start;}
+.ms-top img{height:96px;width:auto;max-width:150px;border-radius:6px;border:1px solid var(--border);}
+.ms-top h3{margin:0 0 2px;font-size:15.5px;}
+.ms-top .yr{color:var(--text-mute);font-size:13px;}
+.ms-top .award{color:var(--amber);font-size:12.5px;font-weight:600;margin-top:6px;line-height:1.45;}
+.ms-card p{margin:0;font-size:13.5px;color:var(--text-dim);}
+.ms-card .board{border-radius:6px;border:1px solid var(--border);width:100%;object-fit:cover;aspect-ratio:16/9;margin-top:auto;}
+.ms-card .blabel{font-size:10.5px;color:var(--text-mute);letter-spacing:.08em;text-transform:uppercase;text-align:center;margin-top:6px;}
+.ms-note{color:var(--text-dim);font-size:13.5px;margin-top:20px;max-width:820px;}
+
+/* homebrew */
+.hb{
+  border:1px solid rgba(224,90,126,.4);background:rgba(224,90,126,.05);
+  border-radius:var(--radius);padding:30px;margin-top:6px;
+}
+.hb .kicker{color:var(--hb);}
+.hb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:24px;}
+.hb-card{
+  background:var(--surface);border:1px solid rgba(224,90,126,.35);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;color:var(--text);
+  transition:border-color .15s,transform .15s;
+}
+.hb-card:hover{border-color:var(--hb);transform:translateY(-2px);text-decoration:none;}
+.hb-card video,.hb-card .hb-still{width:100%;aspect-ratio:4/3;object-fit:cover;background:#000;display:block;}
+.hb-body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.hb-badge{
+  display:inline-block;align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;color:#2e0713;background:var(--hb);border-radius:4px;padding:2px 8px;margin-bottom:2px;
+}
+.hb-card h3{margin:0;font-size:15px;color:var(--text);}
+.hb-card p{margin:0;font-size:13px;color:var(--text-dim);}
+.hb-note{color:var(--text-dim);font-size:13.5px;margin-top:20px;max-width:820px;}
+
+/* tour */
+.tour-frame{
+  position:relative;aspect-ratio:16/9;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:6px;
+}
+.tour-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.tour-note{color:var(--text-mute);font-size:13px;margin-top:12px;}
+
+/* download */
+.dl{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px;margin-top:6px;
+}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:24px 0;}
+.step{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;}
+.step .num{
+  font-family:"Press Start 2P",ui-monospace,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;font-size:14px;color:var(--accent);
+  display:block;margin-bottom:10px;
+}
+.step h3{margin:0 0 6px;font-size:14.5px;}
+.step p{margin:0;font-size:13px;color:var(--text-dim);}
+.step .step-cta{margin:13px 0 0;}
+.btn-mini{
+  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;
+  padding:8px 13px;border-radius:8px;border:1px solid var(--accent);color:var(--accent);background:transparent;
+}
+.btn-mini:hover{background:var(--accent);color:#fff;text-decoration:none;}
+.step-launch{display:flex;align-items:center;gap:12px;margin:14px 0 0;}
+.step-launch img{
+  width:58px;height:58px;border-radius:13px;flex-shrink:0;
+  image-rendering:pixelated;border:1px solid var(--border);
+}
+.launch-hint{font-size:12.5px;font-weight:600;color:var(--accent);}
+.launch-hint::before{content:"\2190";margin-right:6px;font-weight:400;}
+
+.dl .fine{color:var(--text-mute);font-size:13px;margin-top:16px;}
+code{
+  background:var(--surface-2);border:1px solid var(--border);border-radius:5px;
+  padding:1px 6px;font-size:12.5px;color:var(--text);
+  font-family:ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;
+}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px;margin-top:26px;max-width:780px;}
+.faq details{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:0 18px;
+}
+.faq summary{
+  cursor:pointer;list-style:none;padding:16px 0;font-weight:600;font-size:15px;color:var(--text);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary .q-ico{font-size:18px;flex-shrink:0;color:var(--text-mute);transition:transform .15s;}
+.faq details[open] summary .q-ico{transform:rotate(45deg);}
+.faq details p{margin:0 0 16px;color:var(--text-dim);font-size:14.5px;line-height:1.65;}
+.faq details p+p{margin-top:-8px;}
+.faq details p code{background:var(--surface-2);padding:1px 6px;border-radius:5px;font-size:12.5px;}
+.contact-mail{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--text);white-space:nowrap;}
+
+/* Bat-signal easter egg, tucked into the "how do I get in touch" answer */
+.bat-trigger-wrap{position:relative;display:inline-block;}
+.bat-signal-link{
+  background:none;border:none;padding:0;margin:0;font:inherit;font-weight:600;cursor:pointer;
+  color:var(--accent);text-decoration:underline;text-underline-offset:2px;
+}
+.bat-signal-link:hover{color:var(--text);}
+.bat-beam{
+  position:absolute;bottom:100%;left:50%;width:64px;height:96px;margin-left:-32px;
+  pointer-events:none;opacity:0;transform-origin:bottom center;z-index:5;
+}
+.bat-beam.active{animation:bat-sweep 2.6s ease-in-out;}
+.bat-beam-cone{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(224,236,255,.85), rgba(224,236,255,.35) 55%, rgba(224,236,255,0) 100%);
+  clip-path:polygon(44% 100%, 56% 100%, 100% 0%, 0% 0%);
+  filter:blur(1.5px);
+}
+.bat-disc{
+  position:absolute;top:-2px;left:50%;width:32px;height:32px;margin-left:-16px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(224,236,255,.95) 0%, rgba(224,236,255,.55) 58%, rgba(224,236,255,0) 100%);
+}
+.bat-glyph{
+  position:absolute;top:11px;left:50%;transform:translateX(-50%);
+  width:20px;filter:drop-shadow(0 0 2px rgba(0,0,0,.4));
+}
+.bat-glyph img{display:block;width:100%;height:auto;}
+@keyframes bat-sweep{
+  0%{opacity:0;transform:rotate(0deg) scaleY(.5);}
+  12%{opacity:1;transform:rotate(-7deg) scaleY(1);}
+  32%{transform:rotate(7deg) scaleY(1);}
+  52%{transform:rotate(-5deg) scaleY(1);}
+  74%{transform:rotate(3deg) scaleY(1);}
+  90%{opacity:1;transform:rotate(0deg) scaleY(1);}
+  100%{opacity:0;transform:rotate(0deg) scaleY(1);}
+}
+@media (prefers-reduced-motion: reduce){
+  .bat-beam.active{animation:none;opacity:1;transition:opacity 1.5s ease 1s;}
+}
+
+/* license */
+.lic{max-width:820px;}
+.lic ul{padding-left:20px;color:var(--text-dim);font-size:14.5px;margin:16px 0;}
+.lic li{margin-bottom:8px;}
+.lic li b{color:var(--text);}
+
+/* footer */
+footer{
+  border-top:1px solid var(--border);margin-top:72px;padding:30px 24px 40px;
+  color:var(--text-mute);font-size:13px;text-align:center;
+}
+footer .f-brand{
+  font-family:"Press Start 2P",ui-monospace,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;font-size:11px;color:var(--text-dim);margin-bottom:14px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+footer .f-brand img{display:block;width:18px;height:18px;image-rendering:pixelated;}
+footer p{max-width:760px;margin:8px auto;}
+footer .social-links{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0;}
+footer .social-links a{color:var(--text-mute);display:flex;line-height:0;}
+footer .social-links svg{width:18px;height:18px;fill:currentColor;transition:fill .15s;}
+footer .social-links a:hover{text-decoration:none;}
+footer .social-links a:hover svg{fill:var(--accent);}
+
+/* ---- Japanese (ja) --------------------------------------------------------
+   The ja translation is kanji-free (hiragana + katakana only), aimed at young
+   Japanese readers. All-hiragana text has no kanji to mark word boundaries, so
+   it needs more air than the Latin copy: looser lines, slight letter-spacing,
+   and Japanese character-level wrapping rather than word breaking. i18n-site.js
+   sets documentElement.lang from the flag row, which is the hook below. ------ */
+html[lang="ja"] body{ line-height:1.85; letter-spacing:.02em; word-break:normal; line-break:strict; }
+/* short labels in flex rows must not collapse to one character per line */
+html[lang="ja"] nav a, html[lang="ja"] .cta, html[lang="ja"] .cta-ghost, html[lang="ja"] .btn-ghost, html[lang="ja"] .shelf .count{ white-space:nowrap; }
+html[lang="ja"] p, html[lang="ja"] li{ line-height:1.95; }
+html[lang="ja"] .stat .l{ letter-spacing:0; }
+html[lang="ja"] h1, html[lang="ja"] h2, html[lang="ja"] h3{ line-height:1.5; }
+</style>
+
+<style>
+/* ---- page-specific: sell-your-homebrew ---------------------------------- */
+/* The topbar is sticky, so in-page anchors need to stop below it. */
+html{scroll-padding-top:74px;}
+.page-hero{padding:64px 24px 8px;text-align:center;}
+.page-hero .kicker{color:var(--hb);}
+.page-hero h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;margin:0 0 14px;line-height:1.2;}
+.page-hero .tag{font-size:clamp(16px,2.2vw,20px);color:var(--text);max-width:720px;margin:0 auto 26px;font-weight:600;}
+.page-hero .sub{color:var(--text-dim);font-size:15px;max-width:680px;margin:0 auto 26px;}
+.btn-hb{background:var(--hb);border-color:var(--hb);color:#fff;}
+.btn-hb:hover{background:#e8749a;}
+.money{
+  background:rgba(224,90,126,.05);border:1px solid rgba(224,90,126,.4);
+  border-radius:var(--radius);padding:26px 28px;margin-top:8px;
+}
+.money h3{margin:0 0 10px;font-size:18px;}
+.money p{color:var(--text-dim);font-size:15px;margin:0 0 12px;max-width:820px;}
+.money p:last-child{margin-bottom:0;}
+.money b{color:var(--text);}
+.pointlist{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px;}
+.pointlist li{position:relative;padding-left:26px;color:var(--text-dim);font-size:14.5px;}
+.pointlist li::before{content:"▸";position:absolute;left:4px;color:var(--hb);}
+.pointlist li b{color:var(--text);}
+.cta-block{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px;text-align:center;margin-top:8px;
+}
+.cta-block .kicker{color:var(--hb);}
+.cta-block h3{margin:0 0 10px;font-size:20px;}
+.cta-block p{color:var(--text-dim);font-size:15px;max-width:640px;margin:0 auto 12px;}
+.cta-block .btnrow{margin:22px 0 10px;}
+.mail-plain{font-size:13px;color:var(--text-mute);}
+.fine{color:var(--text-mute);font-size:13px;margin-top:18px;max-width:820px;}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark"><img src="assets/kcmunch.png" alt="" width="22" height="22"></span> Retro Vault</a>
+  <nav class="nav">
+    <a href="index.html#vault">The Vault</a>
+    <a href="index.html#homebrew">Homebrew</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#license">License</a>
+    <a class="cta-ghost" href="https://demo.retrovault.world" target="_blank" rel="noopener">🕹 Live demo</a>
+    <a class="cta" href="index.html#download">Download</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<div class="page-hero">
+  <span class="kicker">For homebrew makers</span>
+  <h1>Sell your game through the Vault</h1>
+  <p class="tag">Your game gets its own store page on the right shelf, a Buy button, and it plays
+  straight in the browser the moment someone buys it.</p>
+  <p class="sub">Retro Vault is a Steam-style library for the Philips Videopac G7000/G7400,
+  Magnavox Odyssey², Commodore 64, Commodore Amiga and MS-DOS. New games for these machines are
+  still being written — this is how we put them in front of the people already browsing the shelf.</p>
+  <div class="btnrow">
+    <a class="btn btn-hb" href="#contact">Get your game listed</a>
+    <a class="btn btn-ghost" href="#how">How it works</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ================= THE MONEY ================= -->
+<section id="revenue">
+  <span class="kicker">The money</span>
+  <h2 class="sec-head">The revenue is yours.</h2>
+  <p class="sec-sub">That is the whole point of this. Retro Vault is a preservation project, not a
+  publisher taking a publisher's cut.</p>
+
+  <div class="money">
+    <h3>What you get</h3>
+    <p><b>You set the price, and the income from your game goes to you.</b> Retro Vault adds a small
+    share on top of its running costs — payment processing, hosting, bandwidth and the licensing
+    server that keeps the whole thing working. We haven't fixed that percentage yet, and whatever it
+    turns out to be, <b>you'll see the exact number in writing and agree to it before your game goes
+    on sale.</b> Nothing gets listed without your say-so.</p>
+    <p>Checkout runs through a payment provider that acts as merchant of record, so VAT, invoices and
+    refunds are handled properly rather than by us improvising. What reaches you is your share of
+    what the buyer paid, settled the way we agree up front.</p>
+  </div>
+
+  <ul class="pointlist">
+    <li><b>Non-exclusive.</b> Keep selling on itch.io, keep pressing cartridges, keep your own shop.
+    Listing here takes nothing away from you.</li>
+    <li><b>You keep the copyright.</b> You give us permission to sell it, nothing more. No transfer
+    of rights, no exclusivity clause, no ownership of your work.</li>
+    <li><b>You can pull it whenever you like.</b> One email and the listing comes down. Buyers who
+    already paid keep their copy.</li>
+    <li><b>Free games stay free.</b> The Vault already hosts dozens of free homebrews and PD
+    releases at no cost to anyone. The store is only for the games you want to charge for.</li>
+  </ul>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how">
+  <span class="kicker">How it works</span>
+  <h2 class="sec-head">From an email to a Buy button.</h2>
+  <p class="sec-sub">Four steps, and only the first one needs anything from you.</p>
+
+  <div class="steps">
+    <div class="step">
+      <span class="num">1</span>
+      <h3>You get in touch</h3>
+      <p>Tell us which game, which machine, and roughly what you think it should cost. A link to
+      your itch.io page or a forum thread is usually enough to start.</p>
+    </div>
+    <div class="step">
+      <span class="num">2</span>
+      <h3>We agree the terms</h3>
+      <p>Price, the Vault's share, and how you want to be paid — written down and confirmed by you
+      before anything is built. If it doesn't suit you, that's where it stops.</p>
+    </div>
+    <div class="step">
+      <span class="num">3</span>
+      <h3>We build the page</h3>
+      <p>Cover art, screenshots, description, your credits and links, the manual if you have one.
+      We can work from whatever you already have. You see it and approve it first.</p>
+    </div>
+    <div class="step">
+      <span class="num">4</span>
+      <h3>It goes on sale</h3>
+      <p>Your game appears on its shelf next to the classics, with a Buy button. From then on it's
+      listed, searchable, and part of the library.</p>
+    </div>
+  </div>
+
+  <p class="fine">We do the technical work — the store setup, the license handling, the per-buyer
+  copy. There is nothing for you to build, install or maintain.</p>
+</section>
+
+<!-- ================= WHAT THE BUYER GETS ================= -->
+<section id="buyer">
+  <span class="kicker">The buyer's side</span>
+  <h2 class="sec-head">Buy it, get a key, play it.</h2>
+  <p class="sec-sub">No accounts, no launcher, no subscription. The friction between "I want this"
+  and "I'm playing this" is about thirty seconds.</p>
+
+  <div class="features">
+    <div class="feat">
+      <span class="ico">🛒</span>
+      <h3>Buy on the game's page</h3>
+      <p>The Buy button sits on your game's own page in the Vault, with the price and your name on
+      it. Checkout is handled by the payment provider — card, VAT, receipt, done.</p>
+    </div>
+    <div class="feat">
+      <span class="ico">🔑</span>
+      <h3>A license key by email</h3>
+      <p>The key arrives by email and unlocks the game on the buyer's own machines — desktop,
+      laptop, a second browser, the offline Vault included. No account to create, no password to
+      forget, no personal data kept by us. Run out of slots after a new laptop or a wiped browser?
+      Freeing one takes a click on the game's page, and we reset keys on request.</p>
+    </div>
+    <div class="feat">
+      <span class="ico">▶</span>
+      <h3>Plays in the browser</h3>
+      <p>Press START and the game runs, emulator and all, in the same page. Nothing to install.
+      That's how every other game in the Vault works too.</p>
+    </div>
+    <div class="feat">
+      <span class="ico">💾</span>
+      <h3>A copy to keep</h3>
+      <p>Buyers can also download their own copy of the file and run it in the offline Vault or in
+      whatever emulator they already use. What they bought is genuinely theirs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROTECTION ================= -->
+<section id="protection">
+  <span class="kicker">Protecting your work</span>
+  <h2 class="sec-head">Honest about what's possible.</h2>
+  <div class="prose">
+    <p>Any file that can run in an emulator can be copied. Anyone who tells you their system makes a
+    ROM uncopyable is selling something. What we can do is make casual sharing traceable and
+    pointless — and that is what the Vault does:</p>
+  </div>
+
+  <ul class="pointlist">
+    <li><b>Every purchase gets its own license key</b>, checked against our server before the game
+    unlocks, and good for a handful of the buyer's own machines — generous enough that nobody
+    honest ever notices it, tight enough that a key posted on a forum burns out fast.</li>
+    <li><b>Every copy is stamped.</b> Each buyer's file carries an invisible code tied to their
+    order, hidden in space the game doesn't use. A copy that turns up on a ROM site can be traced
+    straight back to the order it came from.</li>
+    <li><b>The stamp doesn't touch the game.</b> Same file size, same behaviour, same checksum-clean
+    boot on real hardware. We test each stamped build before a game goes on sale.</li>
+    <li><b>Nothing is hidden from you.</b> If you want to know exactly how the licensing and
+    stamping work before you agree to anything, ask and we'll walk you through it.</li>
+  </ul>
+
+  <p class="fine">Formats we can handle: <code>.bin</code> and <code>.crt</code> for Videopac and
+  Odyssey², <code>.prg</code>, <code>.crt</code> and <code>.d64</code> for the C64, <code>.zip</code>
+  for MS-DOS, and <code>.adf</code> for the Amiga. Amiga titles are sold as a download for now —
+  browser play for that shelf needs a file the emulator can reach directly, which the store copy
+  isn't. Everything else plays in the browser.</p>
+</section>
+
+<!-- ================= WHAT WE NEED ================= -->
+<section id="need">
+  <span class="kicker">What we need from you</span>
+  <h2 class="sec-head">Not much.</h2>
+  <div class="steps">
+    <div class="step">
+      <span class="num">A</span>
+      <h3>The game</h3>
+      <p>The final build, in one of the formats above. If you're still finishing it, talk to us
+      anyway — we can have the page ready for the day you are.</p>
+    </div>
+    <div class="step">
+      <span class="num">B</span>
+      <h3>Confirmation it's yours to sell</h3>
+      <p>That you wrote it, or have the rights to it, and that no music, art or code in it belongs
+      to somebody who'd object. A plain email saying so is enough.</p>
+    </div>
+    <div class="step">
+      <span class="num">C</span>
+      <h3>A price</h3>
+      <p>Yours to pick. If you'd like a steer on what comparable homebrew sells for on these
+      machines, ask — we look at that sort of thing all day.</p>
+    </div>
+    <div class="step">
+      <span class="num">D</span>
+      <h3>Whatever art you have</h3>
+      <p>Cover, screenshots, a manual, a loading screen, a paragraph about how it came about. All
+      optional. We'll make a proper page out of whatever exists.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <span class="kicker">Questions</span>
+  <h2 class="sec-head">The things people ask first.</h2>
+
+  <div class="faq">
+    <details>
+      <summary>Do I lose any rights by listing here?<span class="q-ico">+</span></summary>
+      <p>No. You give Retro Vault permission to sell the game; that's the extent of it. The copyright
+      stays yours, the arrangement is non-exclusive, and you can end it whenever you want.</p>
+    </details>
+    <details>
+      <summary>Can I keep selling it elsewhere?<span class="q-ico">+</span></summary>
+      <p>Yes — itch.io, your own site, a physical cartridge or disk release, a publisher's boxed
+      edition. None of that conflicts with a listing here.</p>
+    </details>
+    <details>
+      <summary>What does it cost me to be listed?<span class="q-ico">+</span></summary>
+      <p>Nothing up front. There's no listing fee, no hosting charge and no minimum. The only money
+      that changes hands is the share of a sale, agreed with you before your game goes live.</p>
+    </details>
+    <details>
+      <summary>Which machines are you taking games for?<span class="q-ico">+</span></summary>
+      <p>Philips Videopac G7000 and G7400, Magnavox Odyssey², Commodore 64, Commodore Amiga and
+      MS-DOS. If you've written something for a machine that isn't on that list, write anyway —
+      the shelf count has gone up before.</p>
+    </details>
+    <details>
+      <summary>My game is free. Can it still be in the Vault?<span class="q-ico">+</span></summary>
+      <p>Yes, and it costs you nothing. The Vault already hosts a shelf of free homebrew and
+      public-domain releases with a download button and a link back to you. Ask and we'll add it —
+      that's a different conversation from this page, and an easier one.</p>
+    </details>
+    <details>
+      <summary>Can I change the price later, or take the game down?<span class="q-ico">+</span></summary>
+      <p>Both, any time, by email. Buyers who already paid keep their copy and their key — pulling a
+      listing stops new sales, it doesn't reach back into anyone's library.</p>
+    </details>
+    <details>
+      <summary>Who actually runs this?<span class="q-ico">+</span></summary>
+      <p>One person and a lot of evenings. Retro Vault is a non-commercial preservation project that
+      grew a store because homebrew authors deserve a shopfront next to the games they grew up on.
+      You'll be dealing with a human, not a submissions portal.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="cta-block">
+    <span class="kicker">Get in touch</span>
+    <h3>Tell us about your game.</h3>
+    <p>Which machine, what it's called, what it should cost, and a link if there is one. We read
+    everything and answer properly — including if the answer is that it isn't a fit.</p>
+    <div class="btnrow">
+      <a class="btn btn-hb" data-mail="Homebrew listing — " href="#">Email us about listing your game</a>
+    </div>
+    <p class="mail-plain"><span class="contact-mail">hq&#8202;[at]&#8202;retrovault.world</span></p>
+  </div>
+  <p class="fine">Not selling anything, but want your free homebrew on the shelf, or spotted
+  something wrong on a page about your game? Same address — that gets answered too.</p>
+</section>
+
+</div><!-- /wrap -->
+</main>
+
+<footer>
+  <div class="f-brand"><img src="assets/kcmunch.png" alt="" width="18" height="18"> RETRO VAULT</div>
+  <div class="social-links">
+    <a href="https://github.com/donmiguel-stack/retrovault" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    <a href="https://x.com/retrovaultworld" target="_blank" rel="noopener" aria-label="X" title="X">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://instagram.com/retrovault_world" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793 0 1.44.645 1.44 1.44z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61593364675822" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+      <svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0 0 3.603 0 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg>
+    </a>
+  </div>
+  <p>© Don Miguel · Retro Vault License v1.0 · <a href="https://github.com/donmiguel-stack/retrovault">GitHub</a></p>
+  <p><a href="https://demo.retrovault.world/catalogue.html">Every game in the Vault, in one list</a></p>
+  <p>retrovault.world · retrovault.fun</p>
+  <p>Questions or takedown requests: <span class="contact-mail">hq&#8202;[at]&#8202;retrovault.world</span></p>
+  <p>Videopac, Odyssey², Commodore 64, Amiga and all game titles, artwork and trademarks are the property
+  of their respective owners. This is a non-commercial preservation project.</p>
+</footer>
+
+<script>
+// The address is assembled here rather than written into the markup, so the
+// page can carry a working mailto without handing a plain address to scrapers.
+// data-mail holds the subject prefix; the game name is left for the sender.
+(function(){
+  var user = 'hq', host = 'retrovault.world';
+  document.querySelectorAll('[data-mail]').forEach(function(a){
+    a.href = 'mailto:' + user + '@' + host +
+             '?subject=' + encodeURIComponent(a.getAttribute('data-mail'));
+  });
+})();
+</script>
+
+</body>
+</html>

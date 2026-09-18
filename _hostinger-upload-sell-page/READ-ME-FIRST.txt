@@ -1,0 +1,42 @@
+retrovault.world — new page: sell-your-homebrew.html   (built 18 Sept 2026)
+
+WHAT THIS IS
+  A one-page pitch to homebrew authors: the Vault can sell their game
+  (Buy button + license key + per-buyer stamped copy), the revenue is
+  theirs, the Vault's share is small, not yet fixed, and agreed in writing
+  before anything goes live. Contact address: hq [at] retrovault.world.
+
+WHAT TO UPLOAD (Hostinger File Browser, same route as 18 Sept)
+  hPanel -> Websites -> retrovault.world -> Tools -> Bestandsbeheer ->
+  "Toegang tot bestanden van retrovault.world"
+
+  1. sell-your-homebrew.html  ->  public_html/
+  2. sitemap.xml              ->  public_html/   (replaces the old one; it
+                                  now lists the new page as well)
+
+  Both are new/changed files only. index.html, .htaccess, robots.txt and
+  assets/ are untouched — do not re-upload those.
+
+AFTER UPLOADING
+  - Clear the CDN cache: hPanel -> Prestaties -> CDN -> "Cache wissen".
+    (sitemap.xml is a static file and will otherwise serve the old copy
+    for up to 7 days. The new .html has no cached predecessor.)
+  - Check https://retrovault.world/sell-your-homebrew.html loads.
+  - Optional, in Search Console: resubmit
+    https://retrovault.world/sitemap.xml so the new page gets crawled.
+
+NOTES
+  - The page is self-contained: it carries its own copy of the site's CSS
+    (same as index.html does) and needs only assets/kcmunch.png, which is
+    already on the server. No new assets.
+  - English only. It does NOT load assets/i18n-site.js, so the flag
+    switcher is absent by design — a half-translated page would look worse
+    than an English one. Translations can be added later.
+  - The email address is assembled in JavaScript (same reason as the
+    footer's "hq [at] ..." spelling): the page has a working mailto link
+    but no plain address in the HTML for scrapers.
+  - Nothing links to the page yet. Adding a link from index.html (the
+    Homebrew section and/or the nav) means re-uploading index.html too.
+
+  The same two files are also inside retrovault-world-site.zip in the
+  Vault folder, which stays the master copy of the site.
