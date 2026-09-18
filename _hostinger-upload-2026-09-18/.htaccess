@@ -1,0 +1,30 @@
+# retrovault.world - Hostinger
+#
+# Added 2026-09-18 after Search Console flagged https://www.retrovault.world/
+# as "Duplicate without user-selected canonical": the www hostname was
+# answering 200 with the same page as the apex, so Google saw one page at two
+# addresses. The page's <link rel="canonical"> already pointed at the apex,
+# which is why this was only ever a warning rather than a ranking problem -
+# but a 301 settles it at the server instead of asking the crawler to work it
+# out, and it means a visitor who types www never sees the duplicate either.
+#
+# http -> https was already handled before this file existed; the rule below
+# is kept anyway so that a www visitor arriving over http lands on the final
+# address in one hop rather than two.
+#
+# If Hostinger's hPanel offers a "force https" or "redirect www" toggle, that
+# does the same job - use one or the other, not both, or a request can bounce
+# between two rules.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www.retrovault.world -> retrovault.world, keeping the path and https.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+  # Anything still arriving over http goes to https.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>

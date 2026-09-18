@@ -1,0 +1,49 @@
+Upload these to retrovault.world on Hostinger — 3 files, nothing else.
+Compared against the live site on 2026-09-18; every other file in the
+landing site is already identical on the server.
+
+Put them in the site root (public_html, or wherever index.html lives now),
+keeping the assets/ subfolder:
+
+  .htaccess              -> site root            (NEW FILE)
+  index.html             -> site root            (replaces the current one)
+  assets/i18n-site.js    -> assets/              (replaces the current one)
+
+1. .htaccess  — NEW
+   301-redirects www.retrovault.world to retrovault.world. This is the fix
+   for the one "Duplicate without user-selected canonical" URL in Search
+   Console. It also sends any http request to https in a single hop.
+
+   It is a hidden file (the leading dot). Hostinger's File Manager needs
+   "Show hidden files" switched on before you can see or upload it; most
+   FTP clients need the same setting.
+
+   If hPanel already has a "redirect www" or "force HTTPS" toggle switched
+   on, use that OR this file, not both — two rules can bounce a request
+   between them.
+
+2. index.html
+   The four homebrew cards now link to the new pre-rendered game pages
+   (demo.retrovault.world/game/<id>.html instead of game.html?id=<id>),
+   and the footer has a new link to the full catalogue page. Real links
+   from retrovault.world into those pages is a large part of why Google
+   will start crawling them.
+
+3. assets/i18n-site.js
+   Two things at once:
+   - the new footer catalogue link, translated into all five packs;
+   - THE AMIGA TRANSLATIONS FROM 17 SEPTEMBER, WHICH ARE NOT LIVE.
+     The English HTML on the server mentions Amiga 33 times, but the live
+     translation file mentions it zero times. Right now a visitor reading
+     the site in Dutch, German, French, Portuguese or Japanese is missing
+     the Amiga shelf text, the free-downloads stat, the fourth homebrew
+     card and the Kickstart FAQ entry. This upload fixes that.
+
+AFTER UPLOADING: clear the Hostinger cache. The last time this was skipped
+the site kept serving the old assets/i18n-site.js and looked broken.
+
+Then check, in this order:
+  - https://www.retrovault.world/  should land on https://retrovault.world/
+  - the footer should show "Every game in the Vault, in one list"
+  - switch the site to Nederlands and look at the shelves/FAQ: the Amiga
+    text should be there
