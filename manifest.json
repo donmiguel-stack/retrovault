@@ -1,15 +1,15 @@
 {
- "generated": "2026-09-19 14:41:58",
- "count": 612,
- "bytes": 212615173,
+ "generated": "2026-09-19 15:49:08",
+ "count": 613,
+ "bytes": 212730997,
  "files": {
   "games.js": {
    "sha256": "c89a65572fd0c301d0de4cc4b0aace48f316ec0eeed23f2737782a07c3db58b0",
    "size": 117516
   },
   "gamepages.js": {
-   "sha256": "7617562e75af01f4e4689831793479c658a30e727a42f79f0cee3309f38479fe",
-   "size": 256312
+   "sha256": "f6f78bb48547de5322a857a294de4b7efe2b144a05e4f13706391172ef54721e",
+   "size": 258264
   },
   "genres.js": {
    "sha256": "98d3aa23c64ec0cb23a43b22bcd35d2b86c444daeb78d459023cb1955456cf3b",
@@ -112,11 +112,11 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "fd05b11471c7a63324e8fab37c66a1c29b1e307ead842e8766ad6c0e3d8e06c4",
+   "sha256": "5833527c2fb3af45156b505e0526250cb7038e37294dcfd13e56acbb8c18e6c6",
    "size": 9679
   },
   "index.html": {
-   "sha256": "924959a354ca52bda615728082d73678454f81b41d46e119804494fdb6d42352",
+   "sha256": "10df9041c6593ae66499488a97cef13af3d6cd0a71ad5f6ce55118d7c3007f94",
    "size": 18197
   },
   "resources.html": {
@@ -132,12 +132,12 @@
    "size": 3768
   },
   "game.css": {
-   "sha256": "ed005a4284004ef081c12ad02b0d1cb9b33de8572a61012761ae7b9463407418",
-   "size": 39323
+   "sha256": "3f5814d3e3482ebfab8eff942f67c762eb5f668f7463883da501e514298f558f",
+   "size": 40460
   },
   "game-page.js": {
-   "sha256": "51cec13fae2be06c4a0f619e316d80493f5312b2697d3c1362182a223bfe48cc",
-   "size": 74042
+   "sha256": "f9ea33c5054dcc5c89810c9326ffc6255b46fe1a16184d763a16c8a7403b6de2",
+   "size": 75021
   },
   "catalogue.html": {
    "sha256": "901b9820a54191fc8e4fab5310a761c26a5e3170a8fd46ecaa62b4a8f2a97d7d",
@@ -1978,6 +1978,10 @@
   "clips/clip_new_amok.mp4": {
    "sha256": "b2b6d6ac8e5ad08f16f80aaa595c3b427609e319c85851a0745879a6fd1ed10f",
    "size": 53465
+  },
+  "clips/clip_new_bird-hunt.mp4": {
+   "sha256": "a38423f247194fcfafda370d10d1204053f69acdde758f98fd4b0b6188517e90",
+   "size": 111756
   },
   "clips/clip_new_ktaa.mp4": {
    "sha256": "8c6ec173c030ba646b4f0b80a8df9d1c78a57da830c14fc9a6932b2829cbc9c2",

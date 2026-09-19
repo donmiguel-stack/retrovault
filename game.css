@@ -17,6 +17,27 @@
   /* Cover art at full size, on click. The hero thumbnail crops to 3/4 at
      220px; box scans and fan-made posters carry detail that survives none of
      that. Above .af-ball's z-index so nothing can sit over it. */
+  /* A manual that is text rather than a scan - a homebrew whose author wrote
+     the instructions instead of printing a booklet. Same box as the controls
+     note so the page reads as one thing. */
+  .manual-text{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 20px;line-height:1.6;color:var(--text);
+  }
+  .manual-text h3{margin:18px 0 8px;font-size:15px;letter-spacing:.01em;}
+  .manual-text h3:first-child{margin-top:0;}
+  .manual-text p{margin:0 0 10px;}
+  .manual-text ul{margin:0 0 12px;padding-left:20px;}
+  .manual-text li{margin:0 0 6px;}
+  .manual-text table{border-collapse:collapse;margin:4px 0 14px;font-size:14px;}
+  .manual-text th,.manual-text td{
+    border:1px solid var(--border);padding:6px 12px;text-align:left;vertical-align:top;
+  }
+  .manual-text th{color:var(--text-dim);font-weight:600;background:rgba(255,255,255,.03);}
+  .manual-text .manual-source{margin:14px 0 0;font-size:13px;color:var(--text-dim);}
+  .manual-text .manual-source a{color:var(--accent);text-decoration:none;}
+  .manual-text .manual-source a:hover{text-decoration:underline;}
+
   .hero-cover.cover-zoomable{cursor:zoom-in;}
   .hero-cover.cover-zoomable:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
   .cover-zoom{

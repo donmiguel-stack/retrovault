@@ -194,7 +194,7 @@
   var COVER_V = 24;
   img.onerror = function(){
     if(this.dataset.stage==="png"){this.dataset.stage="jpg";this.src="covers/"+g.id+".jpg?v="+COVER_V;}
-    else if(data.manual){this.dataset.stage="manual";this.src="manuals/"+data.manual.item+"/p00.jpg";}
+    else if(data.manual && data.manual.item){this.dataset.stage="manual";this.src="manuals/"+data.manual.item+"/p00.jpg";}
     else this.remove();
   };
   img.dataset.stage="png";
@@ -1402,10 +1402,14 @@
   // ---- manual ----
   var mSec = el("div","section");
   var mH = el("h2",null,window.t("manual"));
-  if (data.manual) mH.appendChild(el("span","sec-note","scan: "+data.manual.source+" (archive.org)"));
+  // Two kinds of manual: a scan of the printed booklet (data.manual.item,
+  // page images under manuals/) and, for a game that never had a booklet,
+  // the instructions the author wrote themselves (data.manual.text).
+  if (data.manual && data.manual.item) mH.appendChild(el("span","sec-note","scan: "+data.manual.source+" (archive.org)"));
+  else if (data.manual) mH.appendChild(el("span","sec-note","from "+data.manual.source));
   mSec.appendChild(mH);
 
-  if (data.manual) {
+  if (data.manual && data.manual.item) {
     var m = data.manual, cur = 0;
     var reader = el("div","manual-reader");
     var stage = el("div","manual-stage");
@@ -1453,6 +1457,19 @@
     });
     show(0);
     mSec.appendChild(reader);
+  } else if (data.manual && data.manual.text) {
+    // Written once, in English, like the controls note above it - it describes
+    // this one game rather than the machine, so it does not follow the
+    // language picker the way setup-i18n.js strings do.
+    var mt = el("div","manual-text");
+    mt.innerHTML = data.manual.text;
+    if (data.manual.url) {
+      var msrc = el("p","manual-source");
+      msrc.innerHTML = 'Source: <a href="' + esc(data.manual.url) +
+        '" target="_blank" rel="noopener">' + esc(data.manual.source) + '</a>';
+      mt.appendChild(msrc);
+    }
+    mSec.appendChild(mt);
   } else {
     mSec.appendChild(el("p","missing-note",LT("s_noManual")));
   }
