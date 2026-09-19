@@ -191,7 +191,7 @@
   var img = new Image();
   img.alt = g.title + " box art";
   // ?v= so a newly added cover isn't hidden behind the browser's cached miss
-  var COVER_V = 23;
+  var COVER_V = 24;
   img.onerror = function(){
     if(this.dataset.stage==="png"){this.dataset.stage="jpg";this.src="covers/"+g.id+".jpg?v="+COVER_V;}
     else if(data.manual){this.dataset.stage="manual";this.src="manuals/"+data.manual.item+"/p00.jpg";}
@@ -203,6 +203,56 @@
   if (/Homebrew/.test(g.category)) {
     var rib = el("span","cover-ribbon", window.t("cat_homebrew"));
     cover.appendChild(rib);
+  }
+
+  // Click the cover to see the art full size. The hero thumbnail is 220px wide
+  // and crops to 3/4, which throws away most of what is actually on a box scan
+  // or a fan-made poster - small print, the screenshot panel, the credits.
+  // Wired only once the image has really loaded, so the coloured initials tile
+  // that stands in for a missing cover never behaves like a button. vp_03 is
+  // skipped: its cover is already a button for the football easter egg below.
+  var coverLoaded = false;
+  img.addEventListener("load", function(){ coverLoaded = true; });
+  if (g.id !== "vp_03") {
+    cover.classList.add("cover-zoomable");
+    cover.tabIndex = 0;
+    cover.setAttribute("role", "button");
+    cover.setAttribute("aria-label", g.title + " \u2014 view the cover full size");
+    var openCoverZoom = function(){
+      if (!coverLoaded || document.querySelector(".cover-zoom")) return;
+      var ov = el("div","cover-zoom");
+      var big = new Image();
+      big.src = img.src;
+      big.alt = img.alt;
+      ov.appendChild(big);
+      // Size it here rather than in CSS: fill the window, but never blow a
+      // small scan up more than 1.6x, which is about where these covers stop
+      // looking like art and start looking like pixels. Both dimensions are
+      // set from one scale factor, so nothing can stretch.
+      var fit = function(){
+        var nw = big.naturalWidth, nh = big.naturalHeight;
+        if (!nw || !nh) return;
+        var scale = Math.min((window.innerWidth - 48) / nw, (window.innerHeight - 48) / nh, 1.6);
+        big.style.width = Math.round(nw * scale) + "px";
+        big.style.height = Math.round(nh * scale) + "px";
+      };
+      if (big.complete) fit(); else big.addEventListener("load", fit);
+      window.addEventListener("resize", fit);
+      var onKey = function(e){ if (e.key === "Escape") close(); };
+      function close(){
+        document.removeEventListener("keydown", onKey);
+        window.removeEventListener("resize", fit);
+        ov.remove();
+        cover.focus();
+      }
+      ov.addEventListener("click", close);
+      document.addEventListener("keydown", onKey);
+      document.body.appendChild(ov);
+    };
+    cover.addEventListener("click", openCoverZoom);
+    cover.addEventListener("keydown", function(e){
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openCoverZoom(); }
+    });
   }
   hero.appendChild(cover);
 
@@ -847,9 +897,23 @@
     var a = el("span","kact"); a.innerHTML = action; grid.appendChild(a);
   }
   var grid = el("div","controls-grid");
+  var ARROWS = '<span class="kbd">&#8592;</span> <span class="kbd">&#8593;</span> <span class="kbd">&#8595;</span> <span class="kbd">&#8594;</span>';
+  // A cartridge with a per-game control override (gamepages.js "keys") gets a
+  // table describing what actually works on it, not the machine's general one.
+  // Half of the standard rows are wrong or harmful on such a game: it starts
+  // from fire rather than a SELECT GAME number, it ignores joystick 1, and -
+  // the reason the override exists at all - every key in the A-Z/Space/Enter
+  // row reaches the console keyboard, which this kind of game reacts to.
+  // The three explainer notes below (c_hidden, c_bleed, c_stick2) are skipped
+  // for the same reason; c_saveNote stays, save states work like anywhere else.
+  if (data.keys === "j2arrows") {
+    row(grid, ARROWS + ' + <span class="kbd">&#96;</span>', LT("c_j2"));
+    row(grid, '<span class="kbd">F5</span>', LT("c_reset"));
+    row(grid, '<span class="kbd">F2</span> <span class="kbd">F3</span>', LT("c_state"));
+  } else {
   row(grid, '<span class="kbd">0</span>&ndash;<span class="kbd">9</span>', LT("c_pick"));
   if (style === "joystick" || style === "mixed") {
-    row(grid, '<span class="kbd">&#8592;</span> <span class="kbd">&#8593;</span> <span class="kbd">&#8595;</span> <span class="kbd">&#8594;</span> + <span class="kbd">G</span>', LT("c_j1"));
+    row(grid, ARROWS + ' + <span class="kbd">G</span>', LT("c_j1"));
     row(grid, '<span class="kbd">W</span> <span class="kbd">A</span> <span class="kbd">S</span> <span class="kbd">D</span> + <span class="kbd">Q</span>', LT("c_j2"));
   }
   row(grid, '<span class="kbd">A</span>&ndash;<span class="kbd">Z</span> <span class="kbd">Space</span> <span class="kbd">Enter</span>', LT("c_kbd"));
@@ -860,6 +924,7 @@
   row(grid, '<span class="kbd">Right Shift</span>', LT("c_osk"));
   if (style === "keyboard" || style === "mixed") {
     row(grid, '<span class="kbd">Tab</span>', LT("c_focus"));
+  }
   }
   cBox.appendChild(grid);
 
@@ -881,6 +946,7 @@
     n2.innerHTML = LT("c_mixNote");
     cBox.appendChild(n2);
   }
+  if (!data.keys) {
   var nHidden = el("p","controls-note");
   nHidden.innerHTML = LT("c_hidden");
   cBox.appendChild(nHidden);
@@ -890,6 +956,7 @@
   var nStick2 = el("p","controls-note");
   nStick2.innerHTML = LT("c_stick2");
   cBox.appendChild(nStick2);
+  }
   var nSave = el("p","controls-note");
   nSave.innerHTML = LT("c_saveNote");
   cBox.appendChild(nSave);

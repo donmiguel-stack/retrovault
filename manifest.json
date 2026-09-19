@@ -1,15 +1,15 @@
 {
- "generated": "2026-09-19 13:38:50",
+ "generated": "2026-09-19 14:41:58",
  "count": 612,
- "bytes": 212048988,
+ "bytes": 212615173,
  "files": {
   "games.js": {
    "sha256": "c89a65572fd0c301d0de4cc4b0aace48f316ec0eeed23f2737782a07c3db58b0",
    "size": 117516
   },
   "gamepages.js": {
-   "sha256": "5767078c1842c80bf2e2ae70bb2c6aebbd8d2583cae66b0075387a88fe03522d",
-   "size": 255799
+   "sha256": "7617562e75af01f4e4689831793479c658a30e727a42f79f0cee3309f38479fe",
+   "size": 256312
   },
   "genres.js": {
    "sha256": "98d3aa23c64ec0cb23a43b22bcd35d2b86c444daeb78d459023cb1955456cf3b",
@@ -104,7 +104,7 @@
    "size": 6343
   },
   "app.js": {
-   "sha256": "9b46bb3557d710b48d03f6de7ab3588b858b5297c58f7fd73462a4b9e946ac6a",
+   "sha256": "f3275d761edc7fb0b5aaa5f189ace466b8a0add0379bff96ed6ed5973b80069f",
    "size": 82918
   },
   "demo.js": {
@@ -112,11 +112,11 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "77f7778d7e11ec20408ffeec9545e440f62efa6eec93a0ffbf0f26a3094111c7",
+   "sha256": "fd05b11471c7a63324e8fab37c66a1c29b1e307ead842e8766ad6c0e3d8e06c4",
    "size": 9679
   },
   "index.html": {
-   "sha256": "131da7bf0639bb34cd81cb9329b590d3570d2163d5523f65c0b7616892028088",
+   "sha256": "924959a354ca52bda615728082d73678454f81b41d46e119804494fdb6d42352",
    "size": 18197
   },
   "resources.html": {
@@ -132,12 +132,12 @@
    "size": 3768
   },
   "game.css": {
-   "sha256": "ebc2db24d7fda7e4e1c8ac900d3d0ff809e84dce5c2d1ff165b2734080449b32",
-   "size": 38334
+   "sha256": "ed005a4284004ef081c12ad02b0d1cb9b33de8572a61012761ae7b9463407418",
+   "size": 39323
   },
   "game-page.js": {
-   "sha256": "1eb1ef891e57b67fbcce833b2b7ab889eebf03120a31e42f60915ded0c6a4e9b",
-   "size": 70711
+   "sha256": "51cec13fae2be06c4a0f619e316d80493f5312b2697d3c1362182a223bfe48cc",
+   "size": 74042
   },
   "catalogue.html": {
    "sha256": "901b9820a54191fc8e4fab5310a761c26a5e3170a8fd46ecaa62b4a8f2a97d7d",
@@ -952,8 +952,8 @@
    "size": 575258
   },
   "covers/new_bird-hunt.png": {
-   "sha256": "706410671dac3078a0c6dccd7e11eb0af18e53fe61f4a9b99cffbd9ba80c7885",
-   "size": 11998
+   "sha256": "053bebb22dab7ecf3e73385a6bb1f8956c4ee64aa306e3aae8d25003573cd8b8",
+   "size": 573350
   },
   "covers/new_calculator.png": {
    "sha256": "6349aeaa3f0bbb9e666057537f9ab26015bc9e76325b05828ba059489aeae974",

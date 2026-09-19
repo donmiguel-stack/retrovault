@@ -1054,8 +1054,18 @@ var keybindsObj = Object.assign({}, savedKeybindsObj);
  * (W A S D + Q) are every one of them a real key on that console keyboard, so
  * on such a game each attempt to aim also presses a console key - Bird Hunt
  * pauses on any console key, so the crosshair froze the instant you moved, and
- * fire fought with the pause. The arrow keys and Left Ctrl exist nowhere on the
- * console keyboard, so they reach the joystick and nothing else. Player 1 is
+ * fire fought with the pause. The arrow keys and the backtick key exist nowhere
+ * on the console keyboard, so they reach the joystick and nothing else.
+ * Choosing that fire key took three goes: a key has to be invisible to the
+ * console AND unclaimed by the host OS. Checked against the core, these are
+ * invisible to the console - escape, backspace, tab, f6-f8, comma, semicolon,
+ * quote, both brackets, backquote, backslash, shift, rshift, ctrl, alt, and the
+ * navigation keys - while every letter, Space, period, slash, minus and equals
+ * are real console keys that pause this game. Of the invisible ones, Ctrl+arrow
+ * switches desktops on macOS and Shift+arrow was taken on the tester's machine
+ * too, so modifiers are out; backquote is claimed by nothing on any of the
+ * three platforms and sits under the left hand while the right hand steers.
+ * Player 1 is
  * left alone: these games do not read joystick 1, and sharing the arrows costs
  * nothing.
  * The pre-override values are kept so that pressing Save in the keybinds
@@ -1067,7 +1077,7 @@ if (queries.keys === "j2arrows") {
 		input_player2_down: "down",
 		input_player2_left: "left",
 		input_player2_right: "right",
-		input_player2_b: "ctrl"
+		input_player2_b: "tilde"
 	};
 	perGameBindsPrev = {};
 	Object.keys(j2).forEach(function (k) {
