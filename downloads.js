@@ -30,6 +30,12 @@
 window.DOWNLOAD_DATA = {
 
   // ---- Videopac / G7000+ ----
+  "new_bird-hunt": {
+    file: "Bird Hunt (Ahnl66).bin",
+    verdict: "CLEAR",
+    source: "published on GitHub by the author as source plus the assembled bird-hunt.bin (github.com/Ahnl66/BIRD-HUNT); Mike confirmed on 2026-09-19 that the Vault is free to host it",
+    checked: "2026-09-19"
+  },
   "new_ktaa-demo1": {
     file: "Kill the Attacking Aliens — demo 1.bin",
     verdict: "CLEAR",

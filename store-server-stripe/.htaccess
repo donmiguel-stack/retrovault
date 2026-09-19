@@ -1,0 +1,5 @@
+# Only these four are reachable from the web.
+Options -Indexes
+<FilesMatch "^(?!(api|checkout|webhook|thanks)\.php$).*$">
+    Require all denied
+</FilesMatch>

@@ -12,6 +12,10 @@ window.GENRE_DATA = {
   "genre": "shooter",
   "players": "p1"
  },
+ "new_bird-hunt": {
+  "genre": "shooter",
+  "players": "p1"
+ },
  "new_calculator": {
   "genre": "utility",
   "players": "p1"

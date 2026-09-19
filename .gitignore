@@ -128,5 +128,15 @@ store-server/private/*
 !store-server/private/.htaccess
 store-server/cache/*
 !store-server/cache/.htaccess
+
+# Stripe build of the same store (store-server-stripe/). config.php holds the
+# Stripe restricted key, the webhook signing secret and the stamp secret;
+# private/ holds the paid ROMs and licenses.sqlite - the only record of who
+# bought what, so back it up off the server.
+store-server-stripe/config.php
+store-server-stripe/private/*
+!store-server-stripe/private/.htaccess
+store-server-stripe/cache/*
+!store-server-stripe/cache/.htaccess
 # test copies written by tools/store_prepare.py
 *.stamptest.*

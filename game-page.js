@@ -191,7 +191,7 @@
   var img = new Image();
   img.alt = g.title + " box art";
   // ?v= so a newly added cover isn't hidden behind the browser's cached miss
-  var COVER_V = 22;
+  var COVER_V = 23;
   img.onerror = function(){
     if(this.dataset.stage==="png"){this.dataset.stage="jpg";this.src="covers/"+g.id+".jpg?v="+COVER_V;}
     else if(data.manual){this.dataset.stage="manual";this.src="manuals/"+data.manual.item+"/p00.jpg";}

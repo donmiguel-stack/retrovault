@@ -25,6 +25,18 @@ window.GAMES_DATA = {
     "romFile": "Amok! (John Dondzila) — first famous O2 homebrew.bin"
   },
   {
+    "id": "new_bird-hunt",
+    "filename": "new_bird-hunt.bin",
+    "title": "Bird Hunt (Ahnl66)",
+    "platform": "G7400+",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [
+      "plus-graphics"
+    ],
+    "romFile": "Bird Hunt (Ahnl66).bin"
+  },
+  {
     "id": "new_calculator",
     "filename": "new_calculator.bin",
     "title": "Calculator (René van den Enden)",
