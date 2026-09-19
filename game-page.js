@@ -408,6 +408,16 @@
     if (!b || g.platform === "PC" || g.platform === "C64" || g.platform === "Amiga") return "";
     return "&bios=" + encodeURIComponent(b);
   }
+  // Videopac only: a cartridge can ask for a control override (gamepages.js
+  // "keys"). "j2arrows" moves joystick 2 onto the arrow keys + Left Ctrl, for
+  // a game that reads joystick 2 AND watches the console keyboard - the stock
+  // W/A/S/D + Q binds are all console keyboard keys, so they fight the game.
+  // emulator/assets/base.js has the full reasoning.
+  function gameKeysParam() {
+    var k = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id] || {}).keys;
+    if (!k || g.platform === "PC" || g.platform === "C64" || g.platform === "Amiga") return "";
+    return "&keys=" + encodeURIComponent(k);
+  }
   start.addEventListener("click", function(){
     var fb = start.dataset.dlfallback ? "&dlfallback=" + encodeURIComponent(start.dataset.dlfallback) : "";
     // bought through the Vault's store (store.js): the emulator page fetches
@@ -430,7 +440,7 @@
     } else {
       var rom = start.dataset.hosted ? start.dataset.hosted : g.romFile;
       location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
-                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam() + gameBiosParam();
+                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam() + gameBiosParam() + gameKeysParam();
     }
   });
   info.appendChild(document.createElement("br"));

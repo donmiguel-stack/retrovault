@@ -1048,6 +1048,35 @@ var defaultKeybindsObj = configStrToObj(defaultKeybinds);
 var savedKeybindsObj = localStorage.getItem("RetroArch_settings_keybinds") ? Object.assign(Object.assign({}, defaultKeybindsObj), configStrToObj(localStorage.getItem("RetroArch_settings_keybinds"))) : Object.assign({}, defaultKeybindsObj);
 var keybindsObj = Object.assign({}, savedKeybindsObj);
 
+/* Videopac Vault: per-game control override, applied to THIS page load only.
+ * game.html appends &keys=j2arrows for a cartridge that reads JOYSTICK 2 and
+ * also watches the console's own keyboard. The stock joystick-2 binds
+ * (W A S D + Q) are every one of them a real key on that console keyboard, so
+ * on such a game each attempt to aim also presses a console key - Bird Hunt
+ * pauses on any console key, so the crosshair froze the instant you moved, and
+ * fire fought with the pause. The arrow keys and Left Ctrl exist nowhere on the
+ * console keyboard, so they reach the joystick and nothing else. Player 1 is
+ * left alone: these games do not read joystick 1, and sharing the arrows costs
+ * nothing.
+ * The pre-override values are kept so that pressing Save in the keybinds
+ * editor on such a page cannot leak this mapping into every other game. */
+var perGameBindsPrev = null;
+if (queries.keys === "j2arrows") {
+	var j2 = {
+		input_player2_up: "up",
+		input_player2_down: "down",
+		input_player2_left: "left",
+		input_player2_right: "right",
+		input_player2_b: "ctrl"
+	};
+	perGameBindsPrev = {};
+	Object.keys(j2).forEach(function (k) {
+		perGameBindsPrev[k] = savedKeybindsObj[k];
+		savedKeybindsObj[k] = j2[k];
+		keybindsObj[k] = j2[k];
+	});
+}
+
 var validKeybinds = Object.keys(defaultKeybindsObj);
 
 // update the config list
@@ -1106,7 +1135,10 @@ function tryApplyConfig() {
 // save the keybinds to localStorage, and apply them
 saveKeybinds.onclick = function() {
 	savedKeybindsObj = Object.assign({}, keybindsObj);
-	localStorage.setItem("RetroArch_settings_keybinds", configObjToStr(savedKeybindsObj));
+	/* never persist a per-game override (see &keys= above) */
+	var toStore = Object.assign({}, savedKeybindsObj);
+	if (perGameBindsPrev) Object.assign(toStore, perGameBindsPrev);
+	localStorage.setItem("RetroArch_settings_keybinds", configObjToStr(toStore));
 	tryApplyConfig();
 	alert("Saved!");
 }
