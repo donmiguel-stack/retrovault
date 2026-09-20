@@ -1,0 +1,101 @@
+id,title,file,peak_a500_512k,peak_a500plus_1mb,peak_aros,verdict
+am_sqrxz,Sqrxz,amiga_sqrxz.adf,0.0632,,,sound on the shelf default
+am_sqrxz3,Sqrxz 3,amiga_sqrxz3.adf,0.0631,,,sound on the shelf default
+am_sqrxz4,Sqrxz 4,amiga_sqrxz4.adf,0.063,,,sound on the shelf default
+am_wizzys_quest,Wizzy's Quest,amiga_wizzys_quest.adf,0.048,,,sound on the shelf default
+am_cybernetix,Cybernetix: The First Battle,amiga_cybernetix.adf,0.1092,,,sound on the shelf default
+am_deluxe_galaga,Deluxe Galaga,amiga_deluxe_galaga.adf,0,0.0399,,FIXED: needs 1MB chip RAM
+am_megaball,MegaBall,amiga_megaball.adf,0.1476,,,sound on the shelf default
+am_zerg,Zerg,amiga_zerg.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_doctor_strange_2,Doctor Strange 2: The Return of Doctor Strange,amiga_doctor_strange_2.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_pollymorf,Pollymorf,amiga_pollymorf.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_dogfight,Dogfight,amiga_dogfight.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_drip,Drip,amiga_drip.adf,0.0933,,,sound on the shelf default
+am_bobs_garden,Bob's Garden,amiga_bobs_garden.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_super_obliteration,Super Obliteration,amiga_super_obliteration.adf,0.0862,,,sound on the shelf default
+am_asteroids,Cabaret Asteroids,amiga_asteroids.adf,0.1519,,,sound on the shelf default
+am_alien_fish_finger,Alien Fish Finger,amiga_alien_fish_finger.adf,0.0753,,,sound on the shelf default
+am_wibble_world_giddy,Wibble World Giddy! Wibble Mania,amiga_wibble_world_giddy.adf,0.0739,,,sound on the shelf default
+am_crazy_sue,Crazy Sue,amiga_crazy_sue.adf,0.1235,,,sound on the shelf default
+am_pengo2,Pengo 2,amiga_pengo2.adf,0,0,0.1455,FIXED: needs AROS (Kickstart 2.0+)
+am_toado,Toado,amiga_toado.adf,0.1308,,,sound on the shelf default
+am_deluxe_pacman,Deluxe Pac-Man,amiga_deluxe_pacman.adf,0,0,0.0768,FIXED: needs AROS (Kickstart 2.0+)
+am_llamatron,Llamatron: 2112,amiga_llamatron.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_gorf,Gorf,amiga_gorf.adf,0.1457,,,sound on the shelf default
+am_dropzone,DropZone,amiga_dropzone.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_elevation,Elevation,amiga_elevation.adf,0.0729,,,sound on the shelf default
+am_trailblazer,Trailblazer,amiga_trailblazer.adf,0.1334,,,sound on the shelf default
+am_space_taxi,Space Taxi,amiga_space_taxi.adf,0.1191,,,sound on the shelf default
+am_robocop,RoboCop,amiga_robocop.adf,0.0902,,,sound on the shelf default
+am_jimmywhite,Jimmy White's 'Whirlwind' Snooker,amiga_jimmywhite.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_ohnomorelemmings,Oh No! More Lemmings,amiga_ohnomorelemmings.adf,0.1683,,,sound on the shelf default
+am_bubblebobble,Bubble Bobble,amiga_bubblebobble.adf,0,0.0749,,FIXED: needs 1MB chip RAM
+am_turrican,Turrican,amiga_turrican.adf,0.087,,,sound on the shelf default
+am_stuntcarracer,Stunt Car Racer,amiga_stuntcarracer.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_lotusturbo2,Lotus Turbo Challenge 2,amiga_lotusturbo2.adf,0.0568,,,sound on the shelf default
+am_megamaid,Megamaid,amiga_megamaid.adf,0.0341,,,sound on the shelf default
+am_demo_sota,State of the Art (Spaceballs),amiga_demo_sota.adf,0.1677,,,sound on the shelf default
+am_demo_enigma,Enigma (Phenomena),amiga_demo_enigma.adf,0.122,,,sound on the shelf default
+am_demo_mentalhangover,Mental Hangover (Scoopex),amiga_demo_mentalhangover.adf,0.0969,,,sound on the shelf default
+am_demo_interference,Interference (Sanity),amiga_demo_interference.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_demo_arte,Arte (Sanity),amiga_demo_arte.adf,0.1463,,,sound on the shelf default
+am_demo_globaltrash,Global Trash (The Silents),amiga_demo_globaltrash.adf,0.0945,,,sound on the shelf default
+am_demo_voyage,Voyage (Razor 1911),amiga_demo_voyage.adf,0.1365,,,sound on the shelf default
+am_demo_rinkadink,Rink A Dink: Redux (Lemon.),amiga_demo_rinkadink.adf,0.052,,,sound on the shelf default
+am_act_of_war,Act of War,amiga_act_of_war.adf,0.1008,,,sound on the shelf default
+am_alien_bash,Alien Bash,amiga_alien_bash.adf,0.1443,,,sound on the shelf default
+am_ant_wars,Ant Wars,amiga_ant_wars.adf,0.144,,,sound on the shelf default
+am_atoms,Atoms!,amiga_atoms.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_biplanes,Biplanes,amiga_biplanes.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_black_dawn,Black Dawn,amiga_black_dawn.adf,0.1514,,,sound on the shelf default
+am_colonial_conquest2,Colonial Conquest II,amiga_colonial_conquest2.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_diplomacy,Diplomacy 2.0,amiga_diplomacy.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_donkey_kong,Donkey Kong,amiga_donkey_kong.adf,0.0597,,,sound on the shelf default
+am_doody,Doody,amiga_doody.adf,0.0757,,,sound on the shelf default
+am_elevation2,Elevation II,amiga_elevation2.adf,0.0755,,,sound on the shelf default
+am_hellzone,Hellzone: Carnage Extreme,amiga_hellzone.adf,0.0536,,,sound on the shelf default
+am_knights,Knights,amiga_knights.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_mayhem,Mayhem,amiga_mayhem.adf,0.1347,,,sound on the shelf default
+am_particle_man,Particle Man,amiga_particle_man.adf,0.1515,,,sound on the shelf default
+am_sqrxz2,Sqrxz 2,amiga_sqrxz2.adf,0.0634,,,sound on the shelf default
+am_tanx,Tanx,amiga_tanx.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_top_secret,Top Secret,amiga_top_secret.adf,0.0763,,,sound on the shelf default
+am_transplant,Transplant,amiga_transplant.adf,0.0941,,,sound on the shelf default
+am_trap_runner,Trap Runner,amiga_trap_runner.adf,0.0636,,,sound on the shelf default
+am_turboraketti,TurboRaketti,amiga_turboraketti.adf,0.1201,,,sound on the shelf default
+am_arkanoid2,Arkanoid: Revenge of Doh,amiga_arkanoid2.adf,0.1136,,,sound on the shelf default
+am_battle_squadron,Battle Squadron,amiga_battle_squadron.adf,0.1496,,,sound on the shelf default
+am_blood_money,Blood Money,amiga_blood_money.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_bubble_ghost,Bubble Ghost,amiga_bubble_ghost.adf,0.0516,,,sound on the shelf default
+am_chuck_rock,Chuck Rock,amiga_chuck_rock.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_double_dragon,Double Dragon,amiga_double_dragon.adf,0.0582,,,sound on the shelf default
+am_dynablaster,Dyna Blaster,amiga_dynablaster.adf,0.1406,,,sound on the shelf default
+am_hunter,Hunter,amiga_hunter.adf,0.1095,,,sound on the shelf default
+am_hybris,Hybris,amiga_hybris.adf,0.0535,,,sound on the shelf default
+am_ikplus,IK+,amiga_ikplus.adf,0.0954,,,sound on the shelf default
+am_jetstrike,Jetstrike,amiga_jetstrike.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_katakis,Katakis,amiga_katakis.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_kick_off2,Kick Off 2,amiga_kick_off2.adf,0.031,,,sound on the shelf default
+am_lotus_esprit,Lotus Esprit Turbo Challenge,amiga_lotus_esprit.adf,0.1725,,,sound on the shelf default
+am_magic_pockets,Magic Pockets,amiga_magic_pockets.adf,0.116,,,sound on the shelf default
+am_menace,Menace,amiga_menace.adf,0.0372,,,sound on the shelf default
+am_nebulus,Nebulus,amiga_nebulus.adf,0.1248,,,sound on the shelf default
+am_new_zealand_story,The New Zealand Story,amiga_new_zealand_story.adf,0.0598,,,sound on the shelf default
+am_nitro,Nitro,amiga_nitro.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_north_and_south,North & South,amiga_north_and_south.adf,0.0765,,,sound on the shelf default
+am_pang,Pang,amiga_pang.adf,0.1197,,,sound on the shelf default
+am_parasol_stars,Parasol Stars: Rainbow Islands II,amiga_parasol_stars.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_populous,Populous,amiga_populous.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_rick_dangerous,Rick Dangerous,amiga_rick_dangerous.adf,0.1216,,,sound on the shelf default
+am_rick_dangerous2,Rick Dangerous 2,amiga_rick_dangerous2.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_robocod,James Pond 2: Codename RoboCod,amiga_robocod.adf,0.131,,,sound on the shelf default
+am_rodland,Rod-Land,amiga_rodland.adf,0.054,,,sound on the shelf default
+am_rtype,R-Type,amiga_rtype.adf,0.104,,,sound on the shelf default
+am_skweek,Skweek,amiga_skweek.adf,0.0345,,,sound on the shelf default
+am_speedball2,Speedball 2: Brutal Deluxe,amiga_speedball2.adf,0.0734,,,sound on the shelf default
+am_swiv,SWIV,amiga_swiv.adf,0.0997,,,sound on the shelf default
+am_turrican2,Turrican II: The Final Fight,amiga_turrican2.adf,0.0737,,,sound on the shelf default
+am_wings_of_fury,Wings of Fury,amiga_wings_of_fury.adf,0,0,0,"no sound measured - parked on intro/menu, not proven silent"
+am_xenon2,Xenon 2: Megablast,amiga_xenon2.adf,0.1273,,,sound on the shelf default
+am_xout,X-Out,amiga_xout.adf,0.084,,,sound on the shelf default
+am_zout,Z-Out,amiga_zout.adf,0.0355,,,sound on the shelf default
