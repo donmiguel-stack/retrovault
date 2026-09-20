@@ -769,6 +769,122 @@
     return function () { if (timer) clearInterval(timer); timer = null; };
   }
 
+  // ---- News tape ---------------------------------------------------------
+  // A one-line ticker running along the top of the homebrew panel, announcing
+  // new releases. Deliberately not a popup: window.open() is eaten by every
+  // blocker made this century, and a modal over a game shelf is exactly what
+  // Google counts as an intrusive interstitial on mobile. This sits in the
+  // page flow and costs about thirty pixels.
+  //
+  // Content lives in news.js. Dismissal is remembered per visitor in
+  // localStorage, keyed on WHICH items are showing, so dismissing today's
+  // news does not hide the next release's.
+  // A function, not a var: the first render runs while this file is still
+  // being evaluated, so a top-level var declared this far down is still
+  // undefined when the homebrew panel is built the first time.
+  function newsSeenKey() { return "VideopacVault_newsSeen"; }
+
+  function ntEsc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  // Items still young enough to be news. An item with no date, or an
+  // unparseable one, never ages out - a deliberate escape hatch for a
+  // standing notice.
+  function newsItems() {
+    var d = window.NEWS_DATA || {};
+    var items = (d.items || []).filter(function (it) { return it && it.text; });
+    var maxAge = typeof d.maxAgeDays === "number" ? d.maxAgeDays : 60;
+    if (maxAge > 0) {
+      var cutoff = Date.now() - maxAge * 86400000;
+      items = items.filter(function (it) {
+        var t = it.date ? Date.parse(it.date) : NaN;
+        return isNaN(t) || t >= cutoff;
+      });
+    }
+    return items;
+  }
+
+  // What a dismissal is remembered against: the version string plus the ids
+  // on the tape. Add an item and the signature changes, so the tape comes
+  // back for everyone - which is the whole point of the mechanism.
+  function newsSignature(items) {
+    return ((window.NEWS_DATA || {}).version || "1") + ":" +
+      items.map(function (it) { return it.id || it.date || ""; }).join("|");
+  }
+
+  function newsTape() {
+    var items = newsItems();
+    if (!items.length) return null;
+    var sig = newsSignature(items);
+    try { if (localStorage.getItem(newsSeenKey()) === sig) return null; } catch (e) {}
+
+    var reduce = window.matchMedia &&
+                 window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Each run ends with its own separator, so two runs back to back read as
+    // one continuous tape and the loop point is invisible.
+    var runHtml = items.map(function (it) {
+      var txt = ntEsc(window.tx(it.text));
+      var body = it.href
+        ? '<a class="nt-item" href="' + ntEsc(it.href) + '">' + txt + '</a>'
+        : '<span class="nt-item">' + txt + '</span>';
+      return body + '<span class="nt-sep" aria-hidden="true">◆</span>';
+    }).join("");
+
+    var wrap = document.createElement("div");
+    wrap.className = "news-tape" + (reduce ? " nt-still" : "");
+    wrap.innerHTML =
+      '<span class="nt-label">' + ntEsc(window.t("newsLabel")) + '</span>' +
+      '<div class="nt-window"><div class="nt-track">' +
+        '<div class="nt-run">' + runHtml + '</div>' +
+      '</div></div>' +
+      '<button class="nt-close" type="button" aria-label="' +
+        ntEsc(window.t("newsDismiss")) + '" title="' +
+        ntEsc(window.t("newsDismiss")) + '">×</button>';
+
+    var track = wrap.querySelector(".nt-track");
+    var run = wrap.querySelector(".nt-run");
+
+    // Measured, not guessed: the run is cloned until the strip is at least
+    // twice the window's width (so a single short item still fills it), the
+    // scroll distance is exactly one run, and the duration follows from
+    // news.js's pixels-per-second so long and short tapes read at one speed.
+    var tries = 0;
+    function size() {
+      if (reduce) return;
+      var runW = run.scrollWidth, winW = wrap.clientWidth;
+      if (!runW || !winW) {                       // not laid out yet
+        if (++tries < 12) requestAnimationFrame(size);
+        return;
+      }
+      while (track.children.length > 1) track.removeChild(track.lastChild);
+      var copies = Math.max(2, Math.ceil((winW * 2) / runW));
+      for (var i = 1; i < copies; i++) {
+        var dup = run.cloneNode(true);
+        dup.setAttribute("aria-hidden", "true");
+        track.appendChild(dup);
+      }
+      var speed = (window.NEWS_DATA || {}).speed || 45;
+      track.style.setProperty("--nt-shift", runW + "px");
+      track.style.animationDuration = Math.max(8, Math.round(runW / speed)) + "s";
+      wrap.classList.add("nt-running");
+    }
+    requestAnimationFrame(size);
+    setTimeout(size, 400);                        // again once webfonts settle
+
+    wrap.querySelector(".nt-close").addEventListener("click", function () {
+      try { localStorage.setItem(newsSeenKey(), sig); } catch (e) {}
+      wrap.classList.add("nt-gone");
+      setTimeout(function () {
+        if (wrap.parentNode) wrap.parentNode.removeChild(wrap);
+      }, 300);
+    });
+
+    return wrap;
+  }
+
   // Homebrew gets its own panel partway down the library. The games at the
   // top of the page are the ones Philips sold; these are the ones people
   // wrote afterwards, and they'd disappear among 213 covers otherwise.
@@ -784,6 +900,9 @@
     node.querySelector("[data-i18n=homebrewHead]").textContent = window.t("homebrewHead");
     node.querySelector(".hb-word").textContent = window.t("cat_homebrew");
     node.querySelector(".hb-intro").textContent = window.t("homebrewIntro");
+    // The news tape rides on top of this panel - see newsTape() above.
+    var tape = newsTape();
+    if (tape) node.insertBefore(tape, node.firstChild);
     hbStop = featureRotator(node.querySelector(".feature-main"),
                             node.querySelector(".feature-list"), picks);
     return node;

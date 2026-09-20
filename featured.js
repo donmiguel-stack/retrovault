@@ -417,6 +417,13 @@ window.FEATURED_DATA = {
   // with one addition - "shot" also takes an array, and two screenshots are
   // then stacked in the slot instead of one.
   homebrew: [
+    { id: "new_bird-hunt", shot: "new_bird-hunt.jpg",
+      blurb: { en: "September 2026, and they are still arriving. Ahnl66 wrote this one in 8048 assembly and released the source alongside it — three birds a round, five cartridges, and a score that halves if you miss all three.",
+          nl: "September 2026, en ze blijven komen. Ahnl66 schreef deze in 8048-assembly en gaf de broncode erbij — drie vogels per ronde, vijf patronen, en een score die halveert als je ze alle drie mist.",
+          de: "September 2026, und es kommen immer noch welche dazu. Ahnl66 hat dieses in 8048-Assembler geschrieben und den Quelltext gleich mitveröffentlicht — drei Vögel pro Runde, fünf Patronen, und ein Punktestand, der sich halbiert, wenn du alle drei verfehlst.",
+          fr: "Septembre 2026, et il en arrive encore. Ahnl66 a écrit celui-ci en assembleur 8048 et en a publié les sources — trois oiseaux par manche, cinq cartouches, et un score divisé par deux si vous les manquez tous les trois.",
+          pt: "Setembro de 2026, e eles continuam chegando. Ahnl66 escreveu este em assembly 8048 e publicou o código-fonte junto — três pássaros por rodada, cinco cartuchos, e a pontuação cai pela metade se você errar os três.",
+          ja: "2026ねん 9がつ、いまも あたらしい ソフトが つくられています。Ahnl66 が 8048 の アセンブリで かいて、ソースコードも いっしょに こうかいしました。1ラウンドに とりが 3わ、たまは 5はつ。3わ ぜんぶ はずすと スコアが はんぶんに なります。" } },
     { id: "new_amok", shot: "new_amok.jpg",
       blurb: { en: "The first one. John Dondzila brought Stern's Berzerk to the console in 1998, fifteen years after Philips walked away, and started everything below.",
           nl: "De allereerste. John Dondzila bracht Berzerk van Stern in 1998 naar de console, vijftien jaar nadat Philips ermee was gestopt, en zette alles hieronder in gang.",
@@ -451,14 +458,7 @@ window.FEATURED_DATA = {
           de: "Ted Foolery hat drei verschiedene Spiele in acht Kilobyte gepackt, spielbar für einen, zwei oder gar keinen Spieler — und ein Rätsel darin versteckt, das als Wettbewerb lief.",
           fr: "Ted Foolery a fait tenir trois jeux différents en huit kilo-octets, jouables à un, à deux ou par personne du tout — et y a caché une énigme qui a donné lieu à un concours.",
           pt: "Ted Foolery enfiou três jogos diferentes em oito kilobytes, jogáveis por um, dois ou ninguém — e escondeu ali um enigma que virou uma competição.",
-          ja: "Ted Foolery は 3つの ちがう ゲームを 8キロバイトに つめこみました。1にん、2にん、または だれも プレイしなくても あそべます。そして その なかに、コンテストに なった なぞかけを かくしました。" } },
-    { id: "new_ppp-o2em", shot: ["new_ppp-o2em.png", "new_ppp-o2em-2.png"],
-      blurb: { en: "Tetris, essentially, and a good one: four variations, polyphonic music and enhanced graphics on a G7400. This is the build made to run under emulation — the cartridge version plays its music through The Voice.",
-          nl: "In wezen Tetris, en een goede: vier varianten, polyfone muziek en verbeterde graphics op een G7400. Dit is de build die gemaakt is om onder emulatie te draaien — de cartridgeversie speelt zijn muziek via The Voice.",
-          de: "Im Grunde Tetris, und ein gutes: vier Varianten, mehrstimmige Musik und verbesserte Grafik auf einem G7400. Das hier ist der Build für die Emulation — die Modulversion spielt ihre Musik über The Voice.",
-          fr: "Un Tetris, en somme, et un bon : quatre variantes, une musique polyphonique et des graphismes améliorés sur G7400. Voici la version conçue pour tourner sous émulation — la version cartouche joue sa musique via The Voice.",
-          pt: "Tetris, essencialmente, e um bom: quatro variações, música polifônica e gráficos melhorados num G7400. Esta é a build feita para rodar em emulação — a versão em cartucho toca a música pelo The Voice.",
-          ja: "じっしつてきに Tetris で、しかも できが いいです。4しゅるいの バリエーション、わせいの おんがく、そして G7400 むけに つよく なった グラフィックです。これは エミュレーターで うごかす よう の ビルドです。カートリッジばんは、おんがくを The Voice で ながします。" } }
+          ja: "Ted Foolery は 3つの ちがう ゲームを 8キロバイトに つめこみました。1にん、2にん、または だれも プレイしなくても あそべます。そして その なかに、コンテストに なった なぞかけを かくしました。" } }
   ],
 
   // ---- Homebrew, C64 shelf ------------------------------------------

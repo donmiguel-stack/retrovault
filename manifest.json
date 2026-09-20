@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-20 12:39:18",
- "count": 643,
- "bytes": 222737289,
+ "generated": "2026-09-20 13:25:26",
+ "count": 645,
+ "bytes": 222848061,
  "files": {
   "games.js": {
-   "sha256": "27bb5d907d7dbd7e85488048dd2e8169d4936f43cba868af6e7ea13a53b5e439",
-   "size": 122752
+   "sha256": "9c8390163e4df5611db4dacad7db328ee3859b84950d26fb4193c3dee1ebb219",
+   "size": 140819
   },
   "gamepages.js": {
-   "sha256": "ef36c25ecefa8ebeef1efc338ce469ac3dc414f94aa461580aded49ffabbce86",
-   "size": 270228
+   "sha256": "18384e78fe91a2801cce3163f7a21e5a025ab6e78a3f892c2d6896110e914126",
+   "size": 284042
   },
   "genres.js": {
-   "sha256": "a8375108cbd6ec312f771863880abcf0e5514cf5cb0dbdd9b30ba1895c5402ec",
-   "size": 26391
+   "sha256": "3f6450da25386005ca39bacdf5ddc533f2e10497630838a483f7dc67b619c659",
+   "size": 30046
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,16 +32,20 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "0b0b53250d3f91b546af60df7ff60c3bddaa9fcea165f67f4918598f6533232d",
-   "size": 89359
+   "sha256": "b7983f7073093841a8dc2e6e4895f883d44248829f5ff7a8078f8068176696a3",
+   "size": 89687
   },
   "setup-i18n.js": {
    "sha256": "efdadf93a2202a3ce2b56bc89935726603cf7f4da0fd8d7ce1bcbb7ceee12bd6",
    "size": 91342
   },
   "featured.js": {
-   "sha256": "695d29e0b11592cf5ef608e0d979d5b63ea90fbc6db2f22f73ababd6376e1ff1",
-   "size": 122461
+   "sha256": "9c91771be5258e502846bb8f77a0402d7e48ee6688b7ad854c11e8b83b03ed37",
+   "size": 122434
+  },
+  "news.js": {
+   "sha256": "46b756ccc26c4be9575a590e7a548e62650a29e3a338c1e7ea0e0ba251f122cd",
+   "size": 2687
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -56,20 +60,20 @@
    "size": 4283
   },
   "amigaad.js": {
-   "sha256": "3ace4c5ed9a7018c62b92f18c135d39202bd2e0aab04c840b0c15eaa1a2fc6e4",
-   "size": 4224
+   "sha256": "f0e7f5eab5f0365a58de45d48cfc2dad92ab6c2e6df4ac16b3e5593e486a0011",
+   "size": 6093
   },
   "cheats.js": {
    "sha256": "54279647b7ee56e4c8bc5a1f303473d3effec19ae6ac8f3f1d7cb18a89f6f32d",
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "8f7d8b99df254f51cec4cd8edcf96f0a25267dada530baac4bf688d7b42492a7",
-   "size": 27342
+   "sha256": "a7f314b4e85d7019cb74d40edec3fb4f302ddad22cb1c953af61fb9cb5725185",
+   "size": 35507
   },
   "romsources.js": {
-   "sha256": "ae973dd6f7d0aa683492a4be477c69c59c8e89e3902833e791e1057d9ac51e8e",
-   "size": 13560
+   "sha256": "31b3bde39f8e9308870d709ec517bc7aa23f9fb6cbc7040d2cdf7d2607cfcd4d",
+   "size": 23047
   },
   "walkthroughs.js": {
    "sha256": "a540ed9c261c97b3ce37eaf835f3899edaee3c35131cccc4c7db5cf64a406486",
@@ -112,28 +116,28 @@
    "size": 6343
   },
   "app.js": {
-   "sha256": "bd5ab724d1ecb29f627648eaa3079edf0c1287f13f00a405e9ec284703455d4e",
-   "size": 85498
+   "sha256": "cc7530fd57bf3c91f7dcb3e0064f7cebed1d06cfeb66010e71fd20cc7af6cc93",
+   "size": 90721
   },
   "demo.js": {
    "sha256": "6471f99efb550c6114828ef8e1fd6d0932d14d1b83569076c9e5bbc1450e779d",
    "size": 4831
   },
   "game.html": {
-   "sha256": "508c3d104b28095671ce4f0f4eaf3c7404a018887fc9fd52e6130bca59c78f7a",
+   "sha256": "8797d0f0e464f13c1898200048dbc19a2725525da58ffa74c0ec5265400fe218",
    "size": 9576
   },
   "index.html": {
-   "sha256": "4503ce6bfb4f4893dd8bcd53b2c6cc37a06f11c836e53969416bb5552a9d70a4",
-   "size": 18669
+   "sha256": "47bca09933ceef242a255c24ba413ac81e16ecbab1ec70aaea3ef7059527b5ad",
+   "size": 18705
   },
   "resources.html": {
-   "sha256": "653d901326a39a15ba9929707d147bea5bebe7053effff4ec5ba4338a43e9f6e",
+   "sha256": "3b2f0f1ce88d7a1c85da7138f5fe5e478ac2d6cd6fcabf1a69260d0a89767595",
    "size": 13110
   },
   "style.css": {
-   "sha256": "d084e32fba7a68cf5a5d368572028fbb756e46a766818510a77a940751175cd4",
-   "size": 57714
+   "sha256": "eb3ce423228fd3a9e65202862663d4aaf7eef4ff4fe721e5b742a8fbe5ac448e",
+   "size": 60451
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -148,7 +152,7 @@
    "size": 79469
   },
   "catalogue.html": {
-   "sha256": "ef1b2093d15855f179c8b2ebfa10065c4dc023683ebe97a055fb5526e982ae06",
+   "sha256": "9091d1761e88dcc7e4a5304d1ad0580dab0bcd3b7edd65d22ccf140ee8088295",
    "size": 34769
   },
   "favicon.ico": {
@@ -1586,6 +1590,10 @@
   "covers/shot_new_amok.jpg": {
    "sha256": "9761f26b4f9eb22d0752422c9270e3eb66f0e724eafd05b72c90616bada60166",
    "size": 27885
+  },
+  "covers/shot_new_bird-hunt.jpg": {
+   "sha256": "1bfe6423ff97e6ac1a8268159cb2c26b584b98c14b16a593c27c2c3f96c379b9",
+   "size": 44731
   },
   "covers/shot_new_ktaa.png": {
    "sha256": "e26392a325c52bbfa57e5384351efc1f6bf968de2a57ba7993420c48759ae260",

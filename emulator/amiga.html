@@ -90,8 +90,17 @@
 	// No Kickstart ROM ships here and none is needed for the shelf as published:
 	// AROS=true selects the AROS m68k Kickstart replacement (bundled under
 	// amiga/roms/, APL-licensed and redistributable, unlike Commodore's own).
+	//
+	// port2=true puts a joystick in port 2, where almost every Amiga game looks
+	// for one. mouse=true puts an actual Amiga mouse in port 1: without it the
+	// emulated machine has no mouse at all, and every title that opens on
+	// "press left mouse button" - the PD-library disk intros, the strategy and
+	// board-game conversions, Prince of Persia's own start screen - sits on that
+	// prompt forever with no way past it. The engine handles it by asking the
+	// browser for pointer lock on the first click inside the canvas, which is
+	// how a real Amiga mouse has to behave; Esc gives the cursor back.
 	var ENGINE = "amiga/index.html";
-	var CONFIG = "#AROS=true#port2=true";
+	var CONFIG = "#AROS=true#port2=true#mouse=true";
 
 	// ---- bring-your-own Kickstart ------------------------------------------
 	// AROS is a clean-room Kickstart *replacement*, and for anything that takes
@@ -252,6 +261,7 @@
 			var cfg = {
 				url: absolute,
 				port2: true,
+				mouse: true,
 				kickstart_rom_url: new URL("roms/" + encodeURIComponent(kick.rom), window.location.href).href
 			};
 			if (kick.ext) {

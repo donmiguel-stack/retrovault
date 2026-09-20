@@ -1661,5 +1661,233 @@ window.GENRE_DATA = {
  "am_megamaid": {
   "genre": "utility",
   "players": "p1"
+ },
+ "am_act_of_war": {
+  "genre": "strategy",
+  "players": "p1"
+ },
+ "am_alien_bash": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_ant_wars": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "am_atoms": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "am_biplanes": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "am_black_dawn": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_colonial_conquest2": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "am_diplomacy": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "am_donkey_kong": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_doody": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "am_elevation2": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_hellzone": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_knights": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "am_mayhem": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_particle_man": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_sqrxz2": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_tanx": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "am_top_secret": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_transplant": {
+  "genre": "shooter",
+  "players": "p12"
+ },
+ "am_trap_runner": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_turboraketti": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "am_arkanoid2": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_battle_squadron": {
+  "genre": "shooter",
+  "players": "p12"
+ },
+ "am_blood_money": {
+  "genre": "shooter",
+  "players": "p12"
+ },
+ "am_bubble_ghost": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "am_chuck_rock": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_double_dragon": {
+  "genre": "fighting",
+  "players": "p12"
+ },
+ "am_dynablaster": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "am_hunter": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "am_hybris": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_ikplus": {
+  "genre": "fighting",
+  "players": "p12"
+ },
+ "am_jetstrike": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "am_katakis": {
+  "genre": "shooter",
+  "players": "p12"
+ },
+ "am_kick_off2": {
+  "genre": "sports",
+  "players": "p12"
+ },
+ "am_lotus_esprit": {
+  "genre": "racing",
+  "players": "p12"
+ },
+ "am_magic_pockets": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_menace": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_nebulus": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_new_zealand_story": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_nitro": {
+  "genre": "racing",
+  "players": "p12"
+ },
+ "am_north_and_south": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "am_pang": {
+  "genre": "action",
+  "players": "p12"
+ },
+ "am_parasol_stars": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "am_populous": {
+  "genre": "strategy",
+  "players": "p12"
+ },
+ "am_rick_dangerous": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_rick_dangerous2": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_robocod": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_rodland": {
+  "genre": "platformer",
+  "players": "p12"
+ },
+ "am_rtype": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_skweek": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_speedball2": {
+  "genre": "sports",
+  "players": "p12"
+ },
+ "am_swiv": {
+  "genre": "shooter",
+  "players": "p12"
+ },
+ "am_turrican2": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_wings_of_fury": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_xenon2": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_xout": {
+  "genre": "shooter",
+  "players": "p1"
+ },
+ "am_zout": {
+  "genre": "shooter",
+  "players": "p1"
  }
 };

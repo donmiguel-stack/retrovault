@@ -234,5 +234,221 @@ window.ROM_SOURCES = {
     file: "Band&Pixar-Megamaid.adf",
     site: "Janeway / Exotica",
     note: "A demoscene production, freely spread since 1989 – the .adf is the second Direct Files link on that page. Contains a scanned magazine photograph and is not safe for work."
+  },
+  "am_arkanoid2": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-a",
+    file: "Arkanoid - Revenge of Doh (1988-11-05)(Imagine)[cr QTX].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_battle_squadron": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-b",
+    file: "Battle Squadron - The Destruction of the Barrax Empire! (1989)(Innerprise)[cr CP].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_blood_money": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-b",
+    file: "Blood Money (1989)(Psygnosis)[cr Majestic][t +3 Majestic].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_bubble_ghost": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-b",
+    file: "Bubble Ghost (1988)(Accolade).zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_chuck_rock": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-c",
+    file: "Chuck Rock (1991)(Core)[cr CPY][t +2 PNS].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_double_dragon": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-d",
+    file: "Double Dragon (1989)(Melbourne House)[cr QTX].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_dynablaster": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-d",
+    file: "Dyna Blaster (1992)(Ubi Soft)[cr VF].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_hunter": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-h",
+    file: "Hunter (1991)(Activision)[cr CPY].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_hybris": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-h",
+    file: "Hybris (1988)(Discovery)[cr QTX].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_ikplus": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-i",
+    file: "IK+ (1988-12-20)(System 3)(de-en)[cr].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_jetstrike": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-j",
+    file: "Jetstrike (1993)(Rasputin)[cr OTL].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_katakis": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-k",
+    file: "Katakis (1988)(Rainbow Arts)[cr RSi][t +3 RSi].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_kick_off2": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-k",
+    file: "Kick Off 2 (1990)(Anco)[cr OCL].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_lotus_esprit": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-l_202202",
+    file: "Lotus Esprit Turbo Challenge (1990)(Gremlin)[cr PNA].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_magic_pockets": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-m",
+    file: "Magic Pockets (1991)(Konami)(US)[cr FLT].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_menace": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-m",
+    file: "Menace (1988)(Psyclapse)[cr Melnok].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_nebulus": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-n",
+    file: "Nebulus (1988)(Hewson).zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_new_zealand_story": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-n",
+    file: "New Zealand Story, The (1989)(Ocean)[cr QTX].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_nitro": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-n",
+    file: "Nitro (1990)(Psygnosis)[cr PDX].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_north_and_south": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-n",
+    file: "North & South (1989)(Infogrames)(M5)[cr].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_pang": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-p",
+    file: "Pang (1990)(Ocean)(PAL)[cr HZ].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_parasol_stars": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-p",
+    file: "Parasol Stars - Rainbow Islands 2 (1992)(Ocean)[cr SR][t +1 SR].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_populous": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-p",
+    file: "Populous & Populous - The Promised Lands (1989)(Electronic Arts)[cr QTX][h UTB].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_rick_dangerous": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-r",
+    file: "Rick Dangerous (1989)(Firebird)[cr].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_rick_dangerous2": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-r",
+    file: "Rick Dangerous 2 (1990)(MicroStyle)[cr PDX].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_robocod": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-j",
+    file: "James Pond 2 - Codename RoboCod (1991)(Millennium)[cr SR].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_rodland": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-r",
+    file: "Rod-Land v1.3 (1991)(Storm).zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_rtype": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-r",
+    file: "R-Type (1989)(Electric Dreams).zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_skweek": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-s",
+    file: "Skweek (1989)(Loriciels)(FR)[cr QTX].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_speedball2": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-s",
+    file: "Speedball 2 - Brutal Deluxe v1.00 (1991-01-07)(Image Works)[cr DC].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_swiv": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-s",
+    file: "SWIV v1.0 (1991-02-28)(Storm)[cr SR].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_turrican2": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-r_202301",
+    file: "Turrican II - The Final Fight (1991)(Rainbow Arts)[cr WT].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_wings_of_fury": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-w",
+    file: "Wings of Fury (1990)(Broderbund)[h][Wings of Fury II].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_xenon2": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-x",
+    file: "Xenon 2 - Megablast (1989)(Image Works)[cr BS1][t +3 BS1].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_xout": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-x",
+    file: "X-Out (1991)(Kixx)[budget].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
+  },
+  "am_zout": {
+    url: "https://archive.org/details/commodore-amiga-games-adf-z",
+    file: "Z-Out (1991)(Rainbow Arts)[cr SR].zip",
+    site: "Internet Archive",
+    note: "A zipped .adf - unzip it first, then rename the disk image inside."
   }
 };

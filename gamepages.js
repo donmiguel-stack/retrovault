@@ -5246,5 +5246,347 @@ window.GAMEPAGES_DATA = {
   "history": {
    "text": "Not a game but a demo – a 1989 production by the Norwegian groups Pixar and The Band, placed fifth in the demo competition at the IMP-666 Megaparty in Arendal. It is one enormous 320×825 HAM photograph, scanned in three and a half parts from a men's magazine (as the scrolltext itself cheerfully admits) and stitched back together, carrying what its authors claimed was the first scrolltext ever run across a HAM picture."
   }
+ },
+ "am_act_of_war": {
+  "input": "mouse",
+  "history": {
+   "text": "A public-domain Laser Squad tribute written in AMOS by David Smith &ndash; turn-based squad combat on a grid, with only the opening missions in the free release."
+  }
+ },
+ "am_alien_bash": {
+  "input": "joystick",
+  "history": {
+   "text": "A top-down corridor shooter in the Alien Breed mould, written by Glen Cumming and Stuart Law and given away through the PD libraries; amigapd.com rates the 1995 sequel higher still."
+  }
+ },
+ "am_ant_wars": {
+  "input": "mouse",
+  "history": {
+   "text": "An AMOS strategy game from the Paranoid group, distributed as public domain with its source code included on the disk."
+  }
+ },
+ "am_atoms": {
+  "input": "mouse",
+  "history": {
+   "text": "A track-laying puzzler by Tom Kuhn: roll each ball home by flipping the points before it reaches them."
+  }
+ },
+ "am_biplanes": {
+  "input": "joystick",
+  "history": {
+   "text": "Two-player First World War dogfighting by Peter Mason, inspired by the Intellivision original &ndash; one joystick each, one sky, last plane flying wins."
+  }
+ },
+ "am_black_dawn": {
+  "input": "joystick",
+  "history": {
+   "text": "Andrew Campbell's corridor crawler &mdash; step-by-step first-person dungeon shooting written in AMOS and released as public domain. Campbell also wrote Pollymorf, already on this shelf."
+  }
+ },
+ "am_colonial_conquest2": {
+  "input": "mouse",
+  "history": {
+   "text": "Christian Mumenthaler's AMOS strategy game about planting and defending colonies across the galaxy &ndash; the sequel to his 1993 original, and like it distributed as giftware."
+  }
+ },
+ "am_diplomacy": {
+  "input": "mouse",
+  "history": {
+   "text": "Steve Douthat's Amiga conversion of the Avalon Hill board game &ndash; pre-First-World-War Europe, seven powers, and orders written in secret each turn."
+  }
+ },
+ "am_donkey_kong": {
+  "input": "joystick",
+  "history": {
+   "text": "Bignonia's public-domain conversion of the 1981 Nintendo arcade cabinet, built from the C64 version's layouts &ndash; amigapd.com calls it near arcade-perfect."
+  }
+ },
+ "am_doody": {
+  "input": "joystick",
+  "history": {
+   "text": "A Mario Bros-style single-screen platformer from W.G.S.S., written for Amiga Format &ndash; amigapd.com gives it five stars and calls it one of the best platform games in the Amiga public domain."
+  }
+ },
+ "am_elevation2": {
+  "input": "joystick",
+  "history": {
+   "text": "Lee C. Wilson's AMOS sequel for Delta-9, following Elevation &ndash; already on this shelf. The disk carries no release date; TOSEC records it only as 199x."
+  }
+ },
+ "am_hellzone": {
+  "input": "joystick",
+  "history": {
+   "text": "An Australian shareware shoot-'em-up from Interscan &ndash; the disk's own notice asks A$12 of anyone who keeps playing it. The free release carries the first two levels."
+  }
+ },
+ "am_knights": {
+  "input": "joystick",
+  "history": {
+   "text": "A medieval jousting game in AMOS from the Reaper group, released as freeware in 1994 and revised later the same year."
+  }
+ },
+ "am_mayhem": {
+  "input": "joystick",
+  "history": {
+   "text": "A public-domain release from the Ensignia group. The disk boots to Ensignia's own menu &mdash; the game is the third entry, alongside a greetings screen and a vector demo."
+  }
+ },
+ "am_particle_man": {
+  "input": "joystick",
+  "history": {
+   "text": "Paul Nordovics' AMOS platformer, given away as public domain with its full source code on the disk. TOSEC records no release year beyond 199x."
+  }
+ },
+ "am_sqrxz2": {
+  "input": "joystick",
+  "history": {
+   "text": "The middle chapter of Retroguru's deliberately merciless platform series &ndash; the vault already carries Sqrxz, Sqrxz 3 and Sqrxz 4, and this completes the run."
+  }
+ },
+ "am_tanx": {
+  "input": "joystick",
+  "history": {
+   "text": "Gaz Robertz's take on the artillery duel &ndash; pick an angle and a charge, drop a shell on the other tank, adjust for the wind. Given away on an Amiga Computing coverdisk and through the PD libraries."
+  }
+ },
+ "am_top_secret": {
+  "input": "joystick",
+  "history": {
+   "text": "A public-domain release from the group The Hidden, distributed through the Amiga PD libraries in 1992."
+  }
+ },
+ "am_transplant": {
+  "input": "joystick",
+  "history": {
+   "text": "A split-screen shoot-'em-up from Jumping Jack Flash &ndash; one or two players, level passwords, and a difficulty curve that earned it a place on amigapd.com's PD lists."
+  }
+ },
+ "am_trap_runner": {
+  "input": "joystick",
+  "history": {
+   "text": "A modern Amiga OCS platformer by Night Owl Design, published by Retroguru in 2018 &ndash; bright, fast, and built to run on a stock A500."
+  }
+ },
+ "am_turboraketti": {
+  "input": "joystick",
+  "history": {
+   "text": "A Finnish two-player caveflyer by Heikki Kosola &ndash; Thrust-like ships fighting gravity through tight caverns while shooting at each other. The game is in Finnish throughout."
+  }
+ },
+ "am_arkanoid2": {
+  "input": "mouse",
+  "history": {
+   "text": "Taito's sequel to Arkanoid, converted to the Amiga by Peter Johnson for Imagine &ndash; thirty-three new screens, new capsules, and a choice of route through the level tree."
+  }
+ },
+ "am_battle_squadron": {
+  "input": "joystick",
+  "history": {
+   "text": "Cope-Com's vertical shooter, still one of the Amiga's most admired &ndash; fifty frames a second, a two-player co-op mode, and a soundtrack by Ron Klaren."
+  }
+ },
+ "am_blood_money": {
+  "input": "joystick",
+  "history": {
+   "text": "DMA Design's follow-up to Menace &ndash; four hostile worlds, a shop between stages, and the cash you collect doubling as both score and ammunition budget."
+  }
+ },
+ "am_bubble_ghost": {
+  "input": "joystick",
+  "history": {
+   "text": "Christophe Andreani's puzzler: you are a ghost who cannot touch anything, blowing a fragile soap bubble through sixty rooms of spikes, candles and fans."
+  }
+ },
+ "am_chuck_rock": {
+  "input": "joystick",
+  "history": {
+   "text": "Core Design's prehistoric platformer &ndash; a belly-flopping caveman looking for Ophelia, with some of the best-drawn parallax backdrops on the machine."
+  }
+ },
+ "am_double_dragon": {
+  "input": "joystick",
+  "history": {
+   "text": "The Amiga conversion of Technos' arcade beat-'em-up &ndash; Billy and Jimmy Lee, the Black Warriors, and a baseball bat whenever you can take one off somebody."
+  }
+ },
+ "am_dynablaster": {
+  "input": "joystick",
+  "history": {
+   "text": "The European name for Bomberman &ndash; a maze, a pile of soft blocks, and up to five players racing to blow each other up. The Amiga version is widely held to be the best of its era."
+  }
+ },
+ "am_hunter": {
+  "input": "joystick",
+  "history": {
+   "text": "Paul Holmes' open-world sandbox, years ahead of its time &ndash; a filled-polygon archipelago you can cross on foot, by jeep, boat, tank, helicopter or windsurfer, with missions taken in any order."
+  }
+ },
+ "am_hybris": {
+  "input": "joystick",
+  "history": {
+   "text": "Cope-Com's first Amiga shooter and the machine's early showcase for smooth vertical scrolling &ndash; the game that led directly to Battle Squadron."
+  }
+ },
+ "am_ikplus": {
+  "input": "joystick",
+  "history": {
+   "text": "Archer Maclean's three-way karate tournament &ndash; you, a rival and the computer all fighting at once on the same screen, with the referee's scoreboard the only thing keeping order."
+  }
+ },
+ "am_jetstrike": {
+  "input": "joystick",
+  "history": {
+   "text": "A side-on flight game with a huge hangar of real aircraft, a level editor, and missions that range from bombing runs to towing banners."
+  }
+ },
+ "am_katakis": {
+  "input": "joystick",
+  "history": {
+   "text": "Factor 5's debut &ndash; an R-Type homage so close that Activision had it withdrawn, after which Factor 5 were hired to write the official R-Type conversion instead."
+  }
+ },
+ "am_kick_off2": {
+  "input": "joystick",
+  "history": {
+   "text": "Dino Dini's sequel, and for years the argument-settler of Amiga football &ndash; the ball is never glued to your feet, and everything follows from that."
+  }
+ },
+ "am_lotus_esprit": {
+  "input": "joystick",
+  "history": {
+   "text": "Magnetic Fields' split-screen racer, built around the Esprit Turbo SE &ndash; two players on one machine, thirty-two stages, and a fuel gauge that turns every race into a route plan. The vault already carries its sequel."
+  }
+ },
+ "am_magic_pockets": {
+  "input": "joystick",
+  "history": {
+   "text": "The Bitmap Brothers at their most cheerful &ndash; a boy whose trouser pockets hold everything he needs, four themed worlds, and a Betty Boo title track."
+  }
+ },
+ "am_menace": {
+  "input": "joystick",
+  "history": {
+   "text": "DMA Design's first game, written while Dave Jones was still at college &ndash; six horizontally scrolling planets and the shop system that Blood Money would build on."
+  }
+ },
+ "am_nebulus": {
+  "input": "joystick",
+  "history": {
+   "text": "John Phillips' rotating-tower climber &ndash; the tower turns as you walk, which is both the trick and the whole difficulty. Eight towers, a time limit, and a submarine ride between them."
+  }
+ },
+ "am_new_zealand_story": {
+  "input": "joystick",
+  "history": {
+   "text": "Tiki the kiwi rescuing his friends from a leopard seal, across twenty rounds of arrow-shooting platform mazes &ndash; Ocean's conversion of Taito's arcade original."
+  }
+ },
+ "am_nitro": {
+  "input": "joystick",
+  "history": {
+   "text": "A top-down three-car race with a fuel meter that never stops draining &ndash; finish, or coast to a halt and watch the other two disappear."
+  }
+ },
+ "am_north_and_south": {
+  "input": "joystick",
+  "history": {
+   "text": "The American Civil War played as a board game with arcade battles inside it, drawn in the style of the Belgian comic Les Tuniques Bleues. Five languages on the disk."
+  }
+ },
+ "am_pang": {
+  "input": "joystick",
+  "history": {
+   "text": "Burst the bouncing balloons, and every one you hit splits into two smaller and faster ones. Fifty stages around the world, and a two-player mode that is the whole point."
+  }
+ },
+ "am_parasol_stars": {
+  "input": "joystick",
+  "history": {
+   "text": "The third Bubble Bobble game &ndash; Bub and Bob back on two feet, now with umbrellas they use to scoop up enemies and hurl them along the platforms."
+  }
+ },
+ "am_populous": {
+  "input": "mouse",
+  "history": {
+   "text": "Peter Molyneux's god game, the one that named the genre &ndash; raise and lower land, grow your followers, and eventually drop a volcano on the other deity. This release includes The Promised Lands data disk."
+  }
+ },
+ "am_rick_dangerous": {
+  "input": "joystick",
+  "history": {
+   "text": "Core Design's trap-memorising platformer &ndash; an Indiana Jones pastiche in which almost everything kills you the first time and the fun is knowing what comes next."
+  }
+ },
+ "am_rick_dangerous2": {
+  "input": "joystick",
+  "history": {
+   "text": "The sequel swaps temples for an alien invasion of Hyde Park &ndash; same lethal trap logic, brighter graphics, and five wildly different worlds."
+  }
+ },
+ "am_robocod": {
+  "input": "joystick",
+  "history": {
+   "text": "A fish in a stretchy robot suit, loose in Santa's toy factory &ndash; the suit's extending body is the whole mechanic, and the game is one of the best-loved platformers on the machine."
+  }
+ },
+ "am_rodland": {
+  "input": "joystick",
+  "history": {
+   "text": "Two fairies with magic rods clearing single-screen ladder mazes &ndash; grab an enemy, slam it into the ground, repeat. Jaleco's arcade game, converted by The Sales Curve."
+  }
+ },
+ "am_rtype": {
+  "input": "joystick",
+  "history": {
+   "text": "Irem's horizontal shooter, and the Force pod that made it famous &ndash; an indestructible orb you attach to the front or back of your ship, or send out on its own."
+  }
+ },
+ "am_skweek": {
+  "input": "joystick",
+  "history": {
+   "text": "Paint every blue tile pink before the clock runs out, across ninety-nine increasingly awkward boards. A French puzzle-action favourite that spawned two sequels."
+  }
+ },
+ "am_speedball2": {
+  "input": "joystick",
+  "history": {
+   "text": "The Bitmap Brothers' future contact sport &ndash; a steel ball, no fouls worth the name, and a league to climb by buying better players with the money you win."
+  }
+ },
+ "am_swiv": {
+  "input": "joystick",
+  "history": {
+   "text": "The unofficial Silkworm sequel &ndash; a helicopter and a jeep on one continuously scrolling battlefield, playable alone or two at once with no pause between levels."
+  }
+ },
+ "am_turrican2": {
+  "input": "joystick",
+  "history": {
+   "text": "Manfred Trenz's sequel, and the high-water mark of the series &ndash; enormous open levels, a horizontal shooter stage dropped in the middle, and a Chris Huelsbeck soundtrack people still buy on vinyl. The vault already carries the first game."
+  }
+ },
+ "am_wings_of_fury": {
+  "input": "joystick",
+  "history": {
+   "text": "Fly a Hellcat off a Pacific carrier, pick rockets, bombs or a torpedo for each sortie, and land again to rearm. A side-on arcade game with a real campaign behind it."
+  }
+ },
+ "am_xenon2": {
+  "input": "joystick",
+  "history": {
+   "text": "The Bitmap Brothers' vertical shooter, as famous for Bomb the Bass's Megablast soundtrack as for its shop, its organic levels and its ability to scroll backwards."
+  }
+ },
+ "am_xout": {
+  "input": "joystick",
+  "history": {
+   "text": "An underwater horizontal shooter with a shop screen that is half the game &ndash; you buy your submarines and drones before launching, and a bad purchase can sink the run."
+  }
+ },
+ "am_zout": {
+  "input": "joystick",
+  "history": {
+   "text": "Rainbow Arts' follow-up to X-Out, this time above water and openly in debt to R-Type &ndash; six long levels, heavy parallax, and a drone system of its own."
+  }
  }
 };

@@ -587,6 +587,132 @@ window.DOWNLOAD_DATA = {
     verdict: "CLEAR",
     source: "TOSEC-tagged (PD) public domain release by Effect — an original-game tribute inspired by the C64 Space Taxi, not a port of the commercial original.",
     checked: "2026-09-15"
+  },
+  "am_act_of_war": {
+    file: "amiga_act_of_war.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware; amigapd.com's A-Z write-up notes the free disk carries only the first few missions and that further missions were paid. No competing commercial release found. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Act of War (1992-09-01)(Smith, David)(SW)[AMOS].",
+    checked: "2026-09-20"
+  },
+  "am_alien_bash": {
+    file: "amiga_alien_bash.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) — released outright as public domain. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Alien Bash (1993)(Cumming, Glen - Law, Stuart)(PD).",
+    checked: "2026-09-20"
+  },
+  "am_ant_wars": {
+    file: "amiga_ant_wars.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD). The later Ant Wars II carries an (SW-R) registered tag and was skipped per the standard skip-registered-versions rule. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Ant Wars v1.9 (1994)(Paranoid)(PD)[1Mb chip][AMOS].",
+    checked: "2026-09-20"
+  },
+  "am_atoms": {
+    file: "amiga_atoms.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD). — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Atoms! (1992)(Kuhn, Tom)(PD)[h Ashling Video Mansfield].",
+    checked: "2026-09-20"
+  },
+  "am_biplanes": {
+    file: "amiga_biplanes.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD). — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Biplanes (1990-09)(Mason, Peter)(PD).",
+    checked: "2026-09-20"
+  },
+  "am_black_dawn": {
+    file: "amiga_black_dawn.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD). The Black Dawn II/VI sequels are F1 Licenceware (LW) or (SW-R) and were not considered. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Black Dawn (1994)(Campbell, Andrew)(PD)[h RR][AMOS].",
+    checked: "2026-09-20"
+  },
+  "am_colonial_conquest2": {
+    file: "amiga_colonial_conquest2.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (GW) giftware — free to copy, a gift to the author optional. Same basis the vault already applied to Pengo 2. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Colonial Conquest II (1994-08-22)(Mumenthaler, Christian)(GW)[AMOS].",
+    checked: "2026-09-20"
+  },
+  "am_diplomacy": {
+    file: "amiga_diplomacy.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware; no competing paid Amiga release found. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Diplomacy v2.0 (1991)(Douthat, Steve)(SW).",
+    checked: "2026-09-20"
+  },
+  "am_donkey_kong": {
+    file: "amiga_donkey_kong.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD) as a fan conversion. Same footing as the Deluxe Pac-Man and Gorf tributes already on this shelf: the Amiga code is the author's own, given away, with no paid Amiga release competing with it. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Donkey Kong (1993)(Bignonia)(PD)[C64 conversion].",
+    checked: "2026-09-20"
+  },
+  "am_doody": {
+    file: "amiga_doody.adf",
+    verdict: "CLEAR",
+    source: "Carried in the archive.org TOSEC Amiga public-domain games set with no paid release found anywhere; the disk itself credits Amiga Format. Same basis already applied to Toado. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Doody (1991)(WGSS)[h AGL].",
+    checked: "2026-09-20"
+  },
+  "am_elevation2": {
+    file: "amiga_elevation2.adf",
+    verdict: "CLEAR",
+    source: "Carried in the archive.org TOSEC Amiga public-domain games set, alongside the first Elevation the vault already hosts on the same basis. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Elevation II (199x)(Delta-9)[AMOS].",
+    checked: "2026-09-20"
+  },
+  "am_hellzone": {
+    file: "amiga_hellzone.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (SW) shareware, first two levels. Same shareware basis the vault already applies to Cybernetix and the DOS Doom/Wolfenstein episodes. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Hellzone - Carnage Extreme (1992)(Interscan)(SW)[level 1, 2].",
+    checked: "2026-09-20"
+  },
+  "am_knights": {
+    file: "amiga_knights.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (FW) freeware. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Knights v2.4 (1994-04-24)(Reaper)(FW)[AMOS].",
+    checked: "2026-09-20"
+  },
+  "am_mayhem": {
+    file: "amiga_mayhem.adf",
+    verdict: "CLEAR",
+    source: "Carried in the archive.org TOSEC Amiga public-domain games set; no paid release found. Listed among amigapd.com's top PD games. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Mayhem (1991)(Ensignia).",
+    checked: "2026-09-20"
+  },
+  "am_particle_man": {
+    file: "amiga_particle_man.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD), source code included. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Particle Man (199x)(Nordovics, Paul)(PD)[h RR][inc. source code, AMOS].",
+    checked: "2026-09-20"
+  },
+  "am_sqrxz2": {
+    file: "amiga_sqrxz2.adf",
+    verdict: "LIKELY-OK",
+    source: "TOSEC-tagged (FW) freeware; Retroguru give their whole catalogue away from retroguru.com. Same basis already applied to the vault's other three Sqrxz titles. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Sqrxz 2 v1.0 (2012-12-09)(Retroguru)(FW).",
+    checked: "2026-09-20"
+  },
+  "am_tanx": {
+    file: "amiga_tanx.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD). — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Tanx v1.0 (1991-02)(Robertz, Gaz)(PD).",
+    checked: "2026-09-20"
+  },
+  "am_top_secret": {
+    file: "amiga_top_secret.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD). The release used here is the variant with the loading intro disabled, so it boots straight into the game. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Top Secret (1992)(The Hidden)(PD)[a intro disable].",
+    checked: "2026-09-20"
+  },
+  "am_transplant": {
+    file: "amiga_transplant.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (PD). — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release Transplant (1992)(Jumping Jack Flash)(PD).",
+    checked: "2026-09-20"
+  },
+  "am_trap_runner": {
+    file: "amiga_trap_runner.adf",
+    verdict: "LIKELY-OK",
+    source: "Downloaded directly from Retroguru's own Trap Runner page as a free ADF, no licence restriction stated, no competing paid release found. Same first-party basis as the vault's Sqrxz titles.",
+    checked: "2026-09-20"
+  },
+  "am_turboraketti": {
+    file: "amiga_turboraketti.adf",
+    verdict: "CLEAR",
+    source: "TOSEC-tagged (FW) freeware. The later v2.11 is tagged (SW-R) registered and was skipped per the standard skip-registered-versions rule. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release TurboRaketti v0.99b (1992)(Kosola, Heikki)(fi)(FW)[h ASO].",
+    checked: "2026-09-20"
   }
 
 };
