@@ -1659,7 +1659,7 @@ window.GENRE_DATA = {
   "players": "p1"
  },
  "am_megamaid": {
-  "genre": "utility",
+  "genre": "demo",
   "players": "p1"
  },
  "am_act_of_war": {

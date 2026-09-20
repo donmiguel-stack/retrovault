@@ -468,6 +468,20 @@
     if (!k || g.platform === "PC" || g.platform === "C64" || g.platform === "Amiga") return "";
     return "&keys=" + encodeURIComponent(k);
   }
+  // Amiga only: a title can ask for a specific machine (gamepages.js "model",
+  // one of amiga.html's MODELS). The shelf default is a vanilla A500 - OCS,
+  // 512KB chip + 512KB slow - which is right for the OCS-era software that
+  // makes up most of the shelf. Deluxe Galaga needs more than that: its
+  // samples live in chip RAM, and with only 512KB of it the game silently
+  // drops to its low-memory path (no music, small sound effects). Measured
+  // in a headless vAmigaWeb harness: A500_VANILLA gives a peak output of 0
+  // over 40s on the title screen, A500P_STOCK (ECS, 1MB chip) gives ~0.075.
+  // The author's own longplay was recorded on an A600, which is that machine.
+  function gameModelParam() {
+    var m = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id] || {}).model;
+    if (!m || g.platform !== "Amiga") return "";
+    return "&model=" + encodeURIComponent(m);
+  }
   start.addEventListener("click", function(){
     var fb = start.dataset.dlfallback ? "&dlfallback=" + encodeURIComponent(start.dataset.dlfallback) : "";
     // bought through the Vault's store (store.js): the emulator page fetches
@@ -486,7 +500,7 @@
       var hz2 = start.dataset.hosted ? "&hosted=" + encodeURIComponent(start.dataset.hosted) : "";
       location.href = "emulator/amiga.html?disk=" + encodeURIComponent(g.romFile) +
                       "&title=" + encodeURIComponent(g.title) +
-                      "&id=" + encodeURIComponent(g.id) + fb + hz2;
+                      "&id=" + encodeURIComponent(g.id) + fb + hz2 + gameModelParam();
     } else {
       var rom = start.dataset.hosted ? start.dataset.hosted : g.romFile;
       location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +

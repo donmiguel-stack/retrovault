@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-20 15:15:55",
+ "generated": "2026-09-20 16:35:13",
  "count": 723,
- "bytes": 246700515,
+ "bytes": 246711626,
  "files": {
   "games.js": {
-   "sha256": "9c8390163e4df5611db4dacad7db328ee3859b84950d26fb4193c3dee1ebb219",
-   "size": 140819
+   "sha256": "5036d017095dfc92edb827e9bf14e806ec6977318492c5dd690f6f2addcdd544",
+   "size": 140834
   },
   "gamepages.js": {
-   "sha256": "c2d5f62ffaa238e417565d9b6bfac2722f67a4507a4a45398834af60511a7584",
-   "size": 283866
+   "sha256": "f9e1e4a9e6d40b5b294a08ed6ef9df3a52928a6830f95b21b5cec0c07ae7ec4d",
+   "size": 292457
   },
   "genres.js": {
-   "sha256": "3f6450da25386005ca39bacdf5ddc533f2e10497630838a483f7dc67b619c659",
-   "size": 30046
+   "sha256": "5a50841e68f2ac5c64d27ba750051b0d37436e90a36afe0d0da63fb6a0a47fb3",
+   "size": 30043
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -60,8 +60,8 @@
    "size": 4283
   },
   "amigaad.js": {
-   "sha256": "f0e7f5eab5f0365a58de45d48cfc2dad92ab6c2e6df4ac16b3e5593e486a0011",
-   "size": 6093
+   "sha256": "0c3aec80525e11781cbd2733305ced08bcdb7935930c9afffe38e9fbbcaba51a",
+   "size": 7684
   },
   "cheats.js": {
    "sha256": "54279647b7ee56e4c8bc5a1f303473d3effec19ae6ac8f3f1d7cb18a89f6f32d",
@@ -124,11 +124,11 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "8797d0f0e464f13c1898200048dbc19a2725525da58ffa74c0ec5265400fe218",
-   "size": 9576
+   "sha256": "5ff22c4669579418de33902e36d326e970b5bcfd3b78b88194e6a08888ab4396",
+   "size": 9577
   },
   "index.html": {
-   "sha256": "43cf26ee0b017bf4fc2624e94acc7f9ed03a30f010389cbce1d119e190bae650",
+   "sha256": "e14e4dfb7e6f2e250ada5a315760f3357ad9888c781f27590a211299b41d9cfd",
    "size": 18705
   },
   "resources.html": {
@@ -148,8 +148,8 @@
    "size": 41460
   },
   "game-page.js": {
-   "sha256": "7a9f08d53bf923c99669a3f66adbe2c8da9fb0365ac645b0a21741aeac882955",
-   "size": 79469
+   "sha256": "b86c1cdf6523c3dc3d266c73db95c58cfc97b36b70a0a3df1c7ce72b8b9c44ee",
+   "size": 80385
   },
   "catalogue.html": {
    "sha256": "03b74958e1739f7befa29e6407bc917fe80b3c61a8698d369873560dd1e60401",

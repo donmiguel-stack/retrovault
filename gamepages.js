@@ -520,6 +520,10 @@ window.GAMEPAGES_DATA = {
  },
  "mod_br21_fix": {
   "input": "joystick",
+  "video": {
+   "id": "5KapGxp0hEo",
+   "title": "O Segredo do Faraó - Odyssey (unmodified cartridge)"
+  },
   "history": {
    "text": "Two pyramid builders race each other to get the stones into the right order and solve the pyramid. The winner grows in stature and blows his trumpet about it. This copy is a modified dump of that cartridge. Nobody has written down what was changed in it — playing it and comparing is the only way to find out.",
    "source": "the cartridge manual",
@@ -876,6 +880,10 @@ window.GAMEPAGES_DATA = {
  },
  "o2_48alt": {
   "input": "mixed",
+  "video": {
+   "id": "IVtCcwX0LJw",
+   "title": "Power Lords for the Magnavox Odyssey²"
+  },
   "manual": {
    "item": "Backgammon_1982_Philips_EU",
    "pages": 18,
@@ -3149,6 +3157,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9434": {
   "input": "joystick",
+  "video": {
+   "id": "8iSp7y_FYCw",
+   "title": "Modul 46: The Great Wall Street Fortune Hunt (European Videopac release)"
+  },
   "history": {
    "text": "The sensitivity of different types of investments to this news is graphically demonstrated on an entirely new type of game board. This will give players the necessary information to make buying and selling decisions through the alphanumeric keyboard.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3165,6 +3177,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9461": {
   "input": "joystick",
+  "video": {
+   "id": "lCJkKrzsaIA",
+   "title": "Bombardeio Submarino! + Tiro ao Alvo! - Videogame Odyssey"
+  },
   "history": {
    "text": "Seven submerged submarines must be destroyed with the help of a cannon and a sight. The submarines are destroyed in parts and you have a load of 99 shots. Great skill is needed to not waste your ammunition.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3178,6 +3194,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9462": {
   "input": "joystick",
+  "video": {
+   "id": "VGq72TL8jeQ",
+   "title": "Desafio Chinês - Videogame Odyssey"
+  },
   "history": {
    "text": "A true electronic puzzle, where the player fights against the clock to reorder the numbers with the minimum number of transfers possible. The numbers, which are at point \"A\" in descending order, must be transferred to point \"B\" in ascending order.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3191,6 +3211,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9463": {
   "input": "joystick",
+  "video": {
+   "id": "xsvzIoMlB4s",
+   "title": "O Malabarista / Jogo da Velha - Odyssey"
+  },
   "history": {
    "text": "Here you can't pay too much attention: each ball passes through the maze and falls at any point, and must be caught by the juggler's hat. In 3 minutes, he must collect as many balls as possible!",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3221,6 +3245,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9469": {
   "input": "joystick",
+  "video": {
+   "id": "hykj8xsWtk8",
+   "title": "The Mousing Cat for the Philips Videopac (European release)"
+  },
   "history": {
    "text": "In this exciting chase, the agile Mouse also has his weapons. To defend himself from Mr. Cat's threats, he must eat all the pieces of cheese that appear in his path.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3234,6 +3262,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9472": {
   "input": "joystick",
+  "video": {
+   "id": "eyB9yabbR8k",
+   "title": "Super Bee - Odyssey Philips | Super Bee - Videopac"
+  },
   "history": {
    "text": "Flying through a tangle of plants, the cheerful little bee follows her daily path in search of precious fruits that will feed her. During this super flight, you will have the mission of helping her.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3247,6 +3279,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9473": {
   "input": "joystick",
+  "video": {
+   "id": "lqACc54g6SU",
+   "title": "Buraco Negro - Videogame Odyssey"
+  },
   "history": {
    "text": "The great challenge of this space mission is to unravel the mystery of the Black Hole. Large meteorites appear at every moment and must be destroyed or led into the gravitational field of the Black Hole.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3260,6 +3296,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9474": {
   "input": "joystick",
+  "video": {
+   "id": "N4LtnZ1sdJ8",
+   "title": "Clay Pigeon! for the Magnavox Odyssey² / Philips Videopac"
+  },
   "history": {
    "text": "Grab the gun and take good aim at the plates. Otherwise, they will fall on your head, leaving you stunned. But the worst is yet to come, and it's good to have plenty of ammunition.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3273,6 +3313,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9475": {
   "input": "joystick",
+  "video": {
+   "id": "HP8hLD5YdEA",
+   "title": "Comando Noturno - Videogame Odyssey"
+  },
   "history": {
    "text": "You are commanding your airplane at night and your mission is to destroy enemy bases. A game where the suspense is ever-growing and you need to defend yourself from the terrible obstacles that appear.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3286,6 +3330,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9476": {
   "input": "joystick",
+  "video": {
+   "id": "ccf2PbOQ-4E",
+   "title": "Loony Balloon a.k.a. Balão Travesso - Odyssey 2"
+  },
   "history": {
    "text": "All cheerful, the child enters the amusement park carrying her mischievous balloon. Between playing on the carousel, the slide, or the rocking horse - which score points - she has to take her balloon along.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3299,6 +3347,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9477": {
   "input": "joystick",
+  "video": {
+   "id": "0Sij7J6v3_M",
+   "title": "Modul 58: Air Battle (European Videopac release)"
+  },
   "history": {
    "text": "Your airplane will run along the bumpy runway. You must keep it on track until you reach the ideal speed to take off. In the air, you will face the planes of the fearsome Red Baron squadron.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3312,6 +3364,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9483": {
   "input": "joystick",
+  "video": {
+   "id": "BXL_xYHQ7wc",
+   "title": "Frogger - Videogame Odyssey"
+  },
   "history": {
    "text": "A very fun and exciting game, in which you have to use all your skill and very fast reflexes to bring the little frogs home safely. It's not easy: they have to cross with fast jumps a busy highway.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3342,6 +3398,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9485": {
   "input": "joystick",
+  "video": {
+   "id": "xpwqv0X0pDk",
+   "title": "Q*Bert - Odyssey 2 (VGDB)"
+  },
   "history": {
    "text": "You have 7 Q*Berts to change the colors of the pyramid cubes, from an initial color to a target color. But there are several obstacles along the way - Red Danger, Purple Danger, Slick, Jumper, and more.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -3355,6 +3415,10 @@ window.GAMEPAGES_DATA = {
  },
  "br_9486": {
   "input": "joystick",
+  "video": {
+   "id": "OtVSLf09fyI",
+   "title": "Super Cobra - Videogame Odyssey"
+  },
   "history": {
    "text": "Here you will test your skill as an aviation ace, living an adventure with 13 miles of obstacles in a raid through enemy territory. Steep mountains, tall buildings, and irregular tunnels are barriers.",
    "url": "https://odysseyclube.com/en/colecoes/philips-brasil",
@@ -4397,6 +4461,10 @@ window.GAMEPAGES_DATA = {
  },
  "pc_xcom_ufo_defense": {
   "input": "mouse",
+  "video": {
+   "id": "gMgLQC4wccc",
+   "title": "X-COM: UFO Defence (PC/DOS) Superhuman Difficulty, 1994, MicroProse"
+  },
   "note": "Point-and-click throughout &ndash; watch each soldier's Time Units closely, since actions cost TUs and it's easy to strand someone with none left. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
   "history": {
    "text": "Released in Europe as UFO: Enemy Unknown, X-COM blends strategic geoscape base-and-research management with turn-based squad tactics against a slowly escalating alien invasion. It defined the entire \"X-COM-like\" subgenre and directly inspired Firaxis's 2012 reboot; IGN named it the best PC game of all time in a 2007 readers' poll."
@@ -4613,6 +4681,10 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_traxtor": {
   "input": "keyboard",
+  "video": {
+   "id": "h3IgPyMcMLQ",
+   "title": "IBM PC/XT -=The Return of Traxtor=-"
+  },
   "note": "Catch blocks with your tractor beam, load the bay, and fire them back into the descending wall &ndash; three of a kind clears them before they cross your defense line. Arrows move the ship, <strong>Space</strong> (or <strong>&#8593;</strong>) fires. 25 levels.",
   "history": {
    "source": "Juan J. Martínez (reidrac), usebox.net",
@@ -4622,6 +4694,10 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_queens": {
   "input": "keyboard",
+  "video": {
+   "id": "-xpRxEJPeps",
+   "title": "The Queen's Footsteps walkthrough (68K Mac - Davide Bucci)"
+  },
   "note": "A classic text parser adventure &ndash; type commands, read carefully. Boots straight into the introduction text; type <strong>help</strong> for the full instruction list.",
   "history": {
    "source": "Davide Bucci's itch.io page (darwinne.itch.io/the-queens-footsteps), where the game is also released as open source.",
@@ -4630,6 +4706,10 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_spacecavern": {
   "input": "keyboard",
+  "video": {
+   "id": "ThWeT8z1Jb4",
+   "title": "Space Cavern Blaster - All Levels (Amiga version)"
+  },
   "note": "A cave-flyer shooter/platformer released simultaneously for C64, Amiga, Atari ST, DOS and Sega Genesis &ndash; same design, five 8/16-bit targets. Boots into the credits screen; press <strong>Return</strong> (or Start) to begin.",
   "history": {
    "source": "dotmos's itch.io page (dotmos.itch.io/space-cavern-blaster), originally built for Retro Platform Jam #6."
@@ -4637,6 +4717,10 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_barren": {
   "input": "keyboard",
+  "video": {
+   "id": "rCXYR26CQr8",
+   "title": "Barren Planet Developer Play livestream"
+  },
   "note": "A turn-based sci-fi strategy game, source available on GitHub. Boots straight into the title screen; press <strong>Fire</strong> to begin.",
   "history": {
    "source": "Cyningstan's itch.io page (cyningstan.itch.io/barren-planet) and GitHub repository (github.com/cyningstan/barren)."
@@ -4644,6 +4728,10 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_chambers": {
   "input": "keyboard",
+  "video": {
+   "id": "zA4PRdhEpPM",
+   "title": "The Chambers Beneath Launch Stream"
+  },
   "note": "A dungeon-crawling roguelike from the same developer as Barren Planet. Boots into a short loading screen before the title.",
   "history": {
    "source": "Cyningstan's itch.io page (cyningstan.itch.io/the-chambers-beneath)."
@@ -4651,6 +4739,10 @@ window.GAMEPAGES_DATA = {
  },
  "pc_hb_hibernated1": {
   "input": "keyboard",
+  "video": {
+   "id": "0wZRNXyw6Yo",
+   "title": "Hibernated 1: Director's Cut walkthrough (C64 - Puddle Software)"
+  },
   "note": "An Infocom-style text adventure originally written for the C64, later ported natively to DOS. Pay-what-you-want on itch.io; still needs adding to emulator/roms.",
   "history": {
    "source": "Stefan Vogt's itch.io page (8bitgames.itch.io/hibernated1)."
@@ -4805,6 +4897,16 @@ window.GAMEPAGES_DATA = {
   "input": "keyboard",
   "history": {
    "text": "A 2024 incremental/idle clicker for the C64 by drmortalwombat &ndash; manually detonate fuel pellets in a nuclear reactor, then automate production, aiming for one billion energy units."
+  }
+ },
+ "c64_hb_plekthora": {
+  "input": "joystick",
+  "video": {
+   "id": "4zQDyaXHRKg",
+   "title": "Plekthora (2021 Shmup) - C64 Gameplay"
+  },
+  "history": {
+   "text": "A 2021 homebrew shoot-'em-up for the Commodore 64 by drmortalwombat, released free of charge."
   }
  },
  "c64_hb_terminal_walker": {
@@ -4969,6 +5071,7 @@ window.GAMEPAGES_DATA = {
  },
  "am_deluxe_galaga": {
   "input": "joystick",
+  "model": "A500P_STOCK",
   "video": {
    "id": "MRY22mFcACs",
    "title": "Deluxe Galaga [Amiga 600 Longplay] (1995) Edgar Vigdal"
@@ -4979,6 +5082,10 @@ window.GAMEPAGES_DATA = {
  },
  "am_megaball": {
   "input": "mouse",
+  "video": {
+   "id": "6WLBiZt8RbI",
+   "title": "Gameplay Megaball v4 Commodore Amiga 720p"
+  },
   "history": {
    "text": "MegaBall, Ed and Al Mackey's mouse-controlled Breakout/Arkanoid-style Amiga classic &ndash; clear each brick layout with power-ups and multi-ball chaos, steering the paddle with the mouse."
   }
@@ -5095,6 +5202,10 @@ window.GAMEPAGES_DATA = {
  },
  "am_pengo2": {
   "input": "joystick",
+  "video": {
+   "id": "4Zxi7GXUA54",
+   "title": "pengo 2 for Amiga"
+  },
   "history": {
    "text": "Pengo 2, a 1994 giftware maze game by Reploid &ndash; push and crush the enemies between ice blocks, in the Amiga PD scene's spin on the Sega arcade classic."
   }
@@ -5131,12 +5242,20 @@ window.GAMEPAGES_DATA = {
  },
  "am_gorf": {
   "input": "joystick",
+  "video": {
+   "id": "8aIHVhpH23o",
+   "title": "Commodore Amiga GORF [Remake] Gameplay"
+  },
   "history": {
    "text": "A 1993 shareware tribute to the classic multi-stage arcade shooter Gorf, by Towerbyte &ndash; fly through a gauntlet of distinct space-combat stages back to back."
   }
  },
  "am_dropzone": {
   "input": "joystick",
+  "video": {
+   "id": "HQa8NmWIee8",
+   "title": "Dropzone - Commodore Amiga (No Commentary)"
+  },
   "history": {
    "text": "DropZone, a 1994 shareware Defender-style side-scrolling shooter by Richard Tunstall &ndash; rescue stranded troopers from the surface while fending off waves of alien attackers."
   }
@@ -5243,348 +5362,577 @@ window.GAMEPAGES_DATA = {
  },
  "am_megamaid": {
   "input": "joystick",
+  "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. It displays a scanned magazine photograph and is <strong>not safe for work</strong>.",
   "history": {
    "text": "Not a game but a demo – a 1989 production by the Norwegian groups Pixar and The Band, placed fifth in the demo competition at the IMP-666 Megaparty in Arendal. It is one enormous 320×825 HAM photograph, scanned in three and a half parts from a men's magazine (as the scrolltext itself cheerfully admits) and stitched back together, carrying what its authors claimed was the first scrolltext ever run across a HAM picture."
   }
  },
  "am_act_of_war": {
   "input": "mouse",
+  "video": {
+   "id": "jxqA5lGOVO8",
+   "title": "act of war for Amiga"
+  },
   "history": {
    "text": "A public-domain Laser Squad tribute written in AMOS by David Smith – turn-based squad combat on a grid, with only the opening missions in the free release."
   }
  },
  "am_alien_bash": {
   "input": "joystick",
+  "video": {
+   "id": "4XtiO86QnxQ",
+   "title": "ALIEN BASH (AMIGA - FULL GAME)"
+  },
   "history": {
    "text": "A top-down corridor shooter in the Alien Breed mould, written by Glen Cumming and Stuart Law and given away through the PD libraries; amigapd.com rates the 1995 sequel higher still."
   }
  },
  "am_ant_wars": {
   "input": "mouse",
+  "video": {
+   "id": "dn3Vf6gGdOQ",
+   "title": "1GO Short Play - Ant Wars (Amiga)"
+  },
   "history": {
    "text": "An AMOS strategy game from the Paranoid group, distributed as public domain with its source code included on the disk."
   }
  },
  "am_atoms": {
   "input": "mouse",
+  "video": {
+   "id": "oj8oxjHeoJI",
+   "title": "AMIGA Atoms! by Tom Kuhn"
+  },
   "history": {
    "text": "A track-laying puzzler by Tom Kuhn: roll each ball home by flipping the points before it reaches them."
   }
  },
  "am_biplanes": {
   "input": "joystick",
+  "video": {
+   "id": "AbQqcimGW5o",
+   "title": "1GO Short Play - Biplanes (Amiga)"
+  },
   "history": {
    "text": "Two-player First World War dogfighting by Peter Mason, inspired by the Intellivision original – one joystick each, one sky, last plane flying wins."
   }
  },
  "am_black_dawn": {
   "input": "joystick",
+  "video": {
+   "id": "IvRx6UC5ZsM",
+   "title": "1GO Short Play - Black Dawn (Amiga)"
+  },
   "history": {
    "text": "Andrew Campbell's corridor crawler — step-by-step first-person dungeon shooting written in AMOS and released as public domain. Campbell also wrote Pollymorf, already on this shelf."
   }
  },
  "am_colonial_conquest2": {
   "input": "mouse",
+  "video": {
+   "id": "8ZgrlkMr6FE",
+   "title": "Amiga 500 Longplay [103] Colonial Conquest II (Public Domain)"
+  },
   "history": {
    "text": "Christian Mumenthaler's AMOS strategy game about planting and defending colonies across the galaxy – the sequel to his 1993 original, and like it distributed as giftware."
   }
  },
  "am_diplomacy": {
   "input": "mouse",
+  "video": {
+   "id": "2LkHXjR4zfA",
+   "title": "AMIGA Diplomacy by Steve Douthat"
+  },
   "history": {
    "text": "Steve Douthat's Amiga conversion of the Avalon Hill board game – pre-First-World-War Europe, seven powers, and orders written in secret each turn."
   }
  },
  "am_donkey_kong": {
   "input": "joystick",
+  "video": {
+   "id": "FzhhfViWeWc",
+   "title": "Donkey Kong (Bignonia Conversion) for the Commodore Amiga"
+  },
   "history": {
    "text": "Bignonia's public-domain conversion of the 1981 Nintendo arcade cabinet, built from the C64 version's layouts – amigapd.com calls it near arcade-perfect."
   }
  },
  "am_doody": {
   "input": "joystick",
+  "video": {
+   "id": "10vDkpPvckI",
+   "title": "doody for Amiga"
+  },
   "history": {
    "text": "A Mario Bros-style single-screen platformer from W.G.S.S., written for Amiga Format – amigapd.com gives it five stars and calls it one of the best platform games in the Amiga public domain."
   }
  },
  "am_elevation2": {
   "input": "joystick",
+  "video": {
+   "id": "icEFGDJ3GoU",
+   "title": "Elevation 2 - Commodore Amiga Longplay"
+  },
   "history": {
    "text": "Lee C. Wilson's AMOS sequel for Delta-9, following Elevation – already on this shelf. The disk carries no release date; TOSEC records it only as 199x."
   }
  },
  "am_hellzone": {
   "input": "joystick",
+  "video": {
+   "id": "jH1QfK7_Cw4",
+   "title": "hellzone: carnage extreme for Amiga"
+  },
   "history": {
    "text": "An Australian shareware shoot-'em-up from Interscan – the disk's own notice asks A$12 of anyone who keeps playing it. The free release carries the first two levels."
   }
  },
  "am_knights": {
   "input": "joystick",
+  "video": {
+   "id": "rmNELaGZmrQ",
+   "title": "AMIGA Knights v2.4 by Reaper (1994)"
+  },
   "history": {
    "text": "A medieval jousting game in AMOS from the Reaper group, released as freeware in 1994 and revised later the same year."
   }
  },
  "am_mayhem": {
   "input": "joystick",
+  "video": {
+   "id": "fs30DLGxqhs",
+   "title": "AMIGA Mayhem by Ensignia"
+  },
   "history": {
    "text": "A public-domain release from the Ensignia group. The disk boots to Ensignia's own menu — the game is the third entry, alongside a greetings screen and a vector demo."
   }
  },
  "am_particle_man": {
   "input": "joystick",
+  "video": {
+   "id": "NMu4xZcnNdQ",
+   "title": "Amiga Longplay: Particle Man"
+  },
   "history": {
    "text": "Paul Nordovics' AMOS platformer, given away as public domain with its full source code on the disk. TOSEC records no release year beyond 199x."
   }
  },
  "am_sqrxz2": {
   "input": "joystick",
+  "video": {
+   "id": "vpwD8kWvsGA",
+   "title": "Amiga Longplay: Sqrxz 2"
+  },
   "history": {
    "text": "The middle chapter of Retroguru's deliberately merciless platform series – the vault already carries Sqrxz, Sqrxz 3 and Sqrxz 4, and this completes the run."
   }
  },
  "am_tanx": {
   "input": "joystick",
+  "video": {
+   "id": "IHuz0BqzkPE",
+   "title": "Tanx | Amiga"
+  },
   "history": {
    "text": "Gaz Robertz's take on the artillery duel – pick an angle and a charge, drop a shell on the other tank, adjust for the wind. Given away on an Amiga Computing coverdisk and through the PD libraries."
   }
  },
  "am_top_secret": {
   "input": "joystick",
+  "video": {
+   "id": "AUJe6oPBFRM",
+   "title": "Amiga Longplay - Top Secret"
+  },
   "history": {
    "text": "A public-domain release from the group The Hidden, distributed through the Amiga PD libraries in 1992."
   }
  },
  "am_transplant": {
   "input": "joystick",
+  "video": {
+   "id": "sXQW7q1fOOk",
+   "title": "Transplant (Amiga PD)"
+  },
   "history": {
    "text": "A split-screen shoot-'em-up from Jumping Jack Flash – one or two players, level passwords, and a difficulty curve that earned it a place on amigapd.com's PD lists."
   }
  },
  "am_trap_runner": {
   "input": "joystick",
+  "video": {
+   "id": "FgOfDo3uPS0",
+   "title": "Commodore Amiga -=Trap Runner=-"
+  },
   "history": {
    "text": "A modern Amiga OCS platformer by Night Owl Design, published by Retroguru in 2018 – bright, fast, and built to run on a stock A500."
   }
  },
  "am_turboraketti": {
   "input": "joystick",
+  "video": {
+   "id": "okf-8-PkJIA",
+   "title": "AMIGA TurboRaketti by Heikki Kosola (1992)"
+  },
   "history": {
    "text": "A Finnish two-player caveflyer by Heikki Kosola – Thrust-like ships fighting gravity through tight caverns while shooting at each other. The game is in Finnish throughout."
   }
  },
  "am_arkanoid2": {
   "input": "mouse",
+  "video": {
+   "id": "Aywky7cfb4o",
+   "title": "Amiga 500 Longplay [274] Arkanoid: Revenge of DOH"
+  },
   "history": {
    "text": "Taito's sequel to Arkanoid, converted to the Amiga by Peter Johnson for Imagine – thirty-three new screens, new capsules, and a choice of route through the level tree."
   }
  },
  "am_battle_squadron": {
   "input": "joystick",
+  "video": {
+   "id": "fkXK9lgqDAo",
+   "title": "Amiga 500 Longplay [308] Battle Squadron"
+  },
   "history": {
    "text": "Cope-Com's vertical shooter, still one of the Amiga's most admired – fifty frames a second, a two-player co-op mode, and a soundtrack by Ron Klaren."
   }
  },
  "am_blood_money": {
   "input": "joystick",
+  "video": {
+   "id": "qxciUa4YmeY",
+   "title": "Amiga Longplay Blood Money"
+  },
   "history": {
    "text": "DMA Design's follow-up to Menace – four hostile worlds, a shop between stages, and the cash you collect doubling as both score and ammunition budget."
   }
  },
  "am_bubble_ghost": {
   "input": "joystick",
+  "video": {
+   "id": "yjWmnvCdlzo",
+   "title": "Bubble Ghost - Overview & Gameplay (Commodore Amiga 1988)"
+  },
   "history": {
    "text": "Christophe Andreani's puzzler: you are a ghost who cannot touch anything, blowing a fragile soap bubble through sixty rooms of spikes, candles and fans."
   }
  },
  "am_chuck_rock": {
   "input": "joystick",
+  "video": {
+   "id": "Tojq1k5RXqY",
+   "title": "Chuck Rock Longplay (Amiga) [50 FPS]"
+  },
   "history": {
    "text": "Core Design's prehistoric platformer – a belly-flopping caveman looking for Ophelia, with some of the best-drawn parallax backdrops on the machine."
   }
  },
  "am_double_dragon": {
   "input": "joystick",
+  "video": {
+   "id": "6RDgt26Zcio",
+   "title": "Double Dragon Longplay (Amiga) [50 FPS]"
+  },
   "history": {
    "text": "The Amiga conversion of Technos' arcade beat-'em-up – Billy and Jimmy Lee, the Black Warriors, and a baseball bat whenever you can take one off somebody."
   }
  },
  "am_dynablaster": {
   "input": "joystick",
+  "video": {
+   "id": "plQv_V4d3xY",
+   "title": "Amiga 500 Longplay [151] Dyna Blaster"
+  },
   "history": {
    "text": "The European name for Bomberman – a maze, a pile of soft blocks, and up to five players racing to blow each other up. The Amiga version is widely held to be the best of its era."
   }
  },
  "am_hunter": {
   "input": "joystick",
+  "video": {
+   "id": "q09_wQO5o5I",
+   "title": "Amiga Longplay [095] Hunter"
+  },
   "history": {
    "text": "Paul Holmes' open-world sandbox, years ahead of its time – a filled-polygon archipelago you can cross on foot, by jeep, boat, tank, helicopter or windsurfer, with missions taken in any order."
   }
  },
  "am_hybris": {
   "input": "joystick",
+  "video": {
+   "id": "AU26EKUHEHc",
+   "title": "Hybris Longplay (Amiga) [4K]"
+  },
   "history": {
    "text": "Cope-Com's first Amiga shooter and the machine's early showcase for smooth vertical scrolling – the game that led directly to Battle Squadron."
   }
  },
  "am_ikplus": {
   "input": "joystick",
+  "video": {
+   "id": "OE56KsRz5mo",
+   "title": "International Karate Plus (IK+) [Amiga Longplay] (1988) Archer Maclean"
+  },
   "history": {
    "text": "Archer Maclean's three-way karate tournament – you, a rival and the computer all fighting at once on the same screen, with the referee's scoreboard the only thing keeping order."
   }
  },
  "am_jetstrike": {
   "input": "joystick",
+  "video": {
+   "id": "RrVojI20KQQ",
+   "title": "Jetstrike AGA Amiga 1200 - Shadow Software / Rasputin Software 1994"
+  },
   "history": {
    "text": "A side-on flight game with a huge hangar of real aircraft, a level editor, and missions that range from bombing runs to towing banners."
   }
  },
  "am_katakis": {
   "input": "joystick",
+  "video": {
+   "id": "jtXDAG98LJs",
+   "title": "Amiga 500 Longplay [353] Katakis"
+  },
   "history": {
    "text": "Factor 5's debut – an R-Type homage so close that Activision had it withdrawn, after which Factor 5 were hired to write the official R-Type conversion instead."
   }
  },
  "am_kick_off2": {
   "input": "joystick",
+  "video": {
+   "id": "w-xRYId9_NI",
+   "title": "Amiga 500 Longplay [325] Kick Off 2"
+  },
   "history": {
    "text": "Dino Dini's sequel, and for years the argument-settler of Amiga football – the ball is never glued to your feet, and everything follows from that."
   }
  },
  "am_lotus_esprit": {
   "input": "joystick",
+  "video": {
+   "id": "s-aL07TxxxU",
+   "title": "Lotus Esprit Turbo Challenge [Amiga Longplay] (1990) Gremlin"
+  },
   "history": {
    "text": "Magnetic Fields' split-screen racer, built around the Esprit Turbo SE – two players on one machine, thirty-two stages, and a fuel gauge that turns every race into a route plan. The vault already carries its sequel."
   }
  },
  "am_magic_pockets": {
   "input": "joystick",
+  "video": {
+   "id": "yMEAwTUZprk",
+   "title": "Magic Pockets Amiga Longplay (Real Amiga 500)"
+  },
   "history": {
    "text": "The Bitmap Brothers at their most cheerful – a boy whose trouser pockets hold everything he needs, four themed worlds, and a Betty Boo title track."
   }
  },
  "am_menace": {
   "input": "joystick",
+  "video": {
+   "id": "NN9OzVhkqng",
+   "title": "Menace [Amiga A500 - DMA Design, Psyclapse] (1988) Full Play"
+  },
   "history": {
    "text": "DMA Design's first game, written while Dave Jones was still at college – six horizontally scrolling planets and the shop system that Blood Money would build on."
   }
  },
  "am_nebulus": {
   "input": "joystick",
+  "video": {
+   "id": "l0SIuucCC4Y",
+   "title": "Simply Longplay - Nebulus [Amiga]"
+  },
   "history": {
    "text": "John Phillips' rotating-tower climber – the tower turns as you walk, which is both the trick and the whole difficulty. Eight towers, a time limit, and a submarine ride between them."
   }
  },
  "am_new_zealand_story": {
   "input": "joystick",
+  "video": {
+   "id": "QCgEzhhV6SE",
+   "title": "The New Zealand Story (1989) Amiga 500 Longplay"
+  },
   "history": {
    "text": "Tiki the kiwi rescuing his friends from a leopard seal, across twenty rounds of arrow-shooting platform mazes – Ocean's conversion of Taito's arcade original."
   }
  },
  "am_nitro": {
   "input": "joystick",
+  "video": {
+   "id": "Y8BADR4_iIg",
+   "title": "Nitro Longplay (Amiga) [50 FPS]"
+  },
   "history": {
    "text": "A top-down three-car race with a fuel meter that never stops draining – finish, or coast to a halt and watch the other two disappear."
   }
  },
  "am_north_and_south": {
   "input": "joystick",
+  "video": {
+   "id": "U80-09s6Pu8",
+   "title": "North & South Longplay (Amiga) [QHD]"
+  },
   "history": {
    "text": "The American Civil War played as a board game with arcade battles inside it, drawn in the style of the Belgian comic Les Tuniques Bleues. Five languages on the disk."
   }
  },
  "am_pang": {
   "input": "joystick",
+  "video": {
+   "id": "ZVL2b8j1wAU",
+   "title": "Amiga 500 Longplay [015] Pang"
+  },
   "history": {
    "text": "Burst the bouncing balloons, and every one you hit splits into two smaller and faster ones. Fifty stages around the world, and a two-player mode that is the whole point."
   }
  },
  "am_parasol_stars": {
   "input": "joystick",
+  "video": {
+   "id": "6c7VbmFF9Vo",
+   "title": "Amiga Longplay 179: Parasol Stars - Not commented"
+  },
   "history": {
    "text": "The third Bubble Bobble game – Bub and Bob back on two feet, now with umbrellas they use to scoop up enemies and hurl them along the platforms."
   }
  },
  "am_populous": {
   "input": "mouse",
+  "video": {
+   "id": "7hAsa_uvIaU",
+   "title": "Amiga longplay - Populous"
+  },
   "history": {
    "text": "Peter Molyneux's god game, the one that named the genre – raise and lower land, grow your followers, and eventually drop a volcano on the other deity. This release includes The Promised Lands data disk."
   }
  },
  "am_rick_dangerous": {
   "input": "joystick",
+  "video": {
+   "id": "17Bs9QJ8aYY",
+   "title": "Amiga 500 Longplay [285] Rick Dangerous"
+  },
   "history": {
    "text": "Core Design's trap-memorising platformer – an Indiana Jones pastiche in which almost everything kills you the first time and the fun is knowing what comes next."
   }
  },
  "am_rick_dangerous2": {
   "input": "joystick",
+  "video": {
+   "id": "FVQDELvgv4k",
+   "title": "Amiga 500 Longplay [286] Rick Dangerous II"
+  },
   "history": {
    "text": "The sequel swaps temples for an alien invasion of Hyde Park – same lethal trap logic, brighter graphics, and five wildly different worlds."
   }
  },
  "am_robocod": {
   "input": "joystick",
+  "video": {
+   "id": "zx0KxbL0S2I",
+   "title": "James Pond 2: Codename RoboCod Longplay (Amiga) [50 FPS]"
+  },
   "history": {
    "text": "A fish in a stretchy robot suit, loose in Santa's toy factory – the suit's extending body is the whole mechanic, and the game is one of the best-loved platformers on the machine."
   }
  },
  "am_rodland": {
   "input": "joystick",
+  "video": {
+   "id": "4W2IxoL_GHA",
+   "title": "Rod-Land Longplay (Amiga) [50 FPS]"
+  },
   "history": {
    "text": "Two fairies with magic rods clearing single-screen ladder mazes – grab an enemy, slam it into the ground, repeat. Jaleco's arcade game, converted by The Sales Curve."
   }
  },
  "am_rtype": {
   "input": "joystick",
+  "video": {
+   "id": "hCrN8N-mrP0",
+   "title": "Amiga 500 Longplay [155] R-Type"
+  },
   "history": {
    "text": "Irem's horizontal shooter, and the Force pod that made it famous – an indestructible orb you attach to the front or back of your ship, or send out on its own."
   }
  },
  "am_skweek": {
   "input": "joystick",
+  "video": {
+   "id": "S-S0f2TM-ik",
+   "title": "Amiga 500 Longplay [340] Skweek"
+  },
   "history": {
    "text": "Paint every blue tile pink before the clock runs out, across ninety-nine increasingly awkward boards. A French puzzle-action favourite that spawned two sequels."
   }
  },
  "am_speedball2": {
   "input": "joystick",
+  "video": {
+   "id": "ry_qLPOgIR8",
+   "title": "Speedball 2: Brutal Deluxe Longplay (Amiga) [QHD]"
+  },
   "history": {
    "text": "The Bitmap Brothers' future contact sport – a steel ball, no fouls worth the name, and a league to climb by buying better players with the money you win."
   }
  },
  "am_swiv": {
   "input": "joystick",
+  "video": {
+   "id": "grRWWGKcV2I",
+   "title": "SWIV Longplay (Amiga) [50 FPS]"
+  },
   "history": {
    "text": "The unofficial Silkworm sequel – a helicopter and a jeep on one continuously scrolling battlefield, playable alone or two at once with no pause between levels."
   }
  },
  "am_turrican2": {
   "input": "joystick",
+  "video": {
+   "id": "h7PVf8rY3YE",
+   "title": "Amiga 500 Longplay [592] Turrican II: The Final Fight"
+  },
   "history": {
    "text": "Manfred Trenz's sequel, and the high-water mark of the series – enormous open levels, a horizontal shooter stage dropped in the middle, and a Chris Huelsbeck soundtrack people still buy on vinyl. The vault already carries the first game."
   }
  },
  "am_wings_of_fury": {
   "input": "joystick",
+  "video": {
+   "id": "ZZSwdqg6VE4",
+   "title": "Amiga Longplay Wings of Fury"
+  },
   "history": {
    "text": "Fly a Hellcat off a Pacific carrier, pick rockets, bombs or a torpedo for each sortie, and land again to rearm. A side-on arcade game with a real campaign behind it."
   }
  },
  "am_xenon2": {
   "input": "joystick",
+  "video": {
+   "id": "Bf0QTKsrNYY",
+   "title": "Amiga 500 Longplay [371] Xenon 2: Megablast"
+  },
   "history": {
    "text": "The Bitmap Brothers' vertical shooter, as famous for Bomb the Bass's Megablast soundtrack as for its shop, its organic levels and its ability to scroll backwards."
   }
  },
  "am_xout": {
   "input": "joystick",
+  "video": {
+   "id": "ayxAuoQDmY0",
+   "title": "Amiga 500 Longplay [380] X-Out"
+  },
   "history": {
    "text": "An underwater horizontal shooter with a shop screen that is half the game – you buy your submarines and drones before launching, and a bad purchase can sink the run."
   }
  },
  "am_zout": {
   "input": "joystick",
+  "video": {
+   "id": "vPGHuxe2PuI",
+   "title": "Z-Out [Amiga Longplay] (1990) Rainbow Arts"
+  },
   "history": {
    "text": "Rainbow Arts' follow-up to X-Out, this time above water and openly in debt to R-Type – six long levels, heavy parallax, and a drone system of its own."
   }

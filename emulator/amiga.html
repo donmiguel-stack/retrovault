@@ -145,6 +145,7 @@
 	// stays in charge afterwards; ?model= forces a named preset for the titles
 	// that need something else (A1200_STOCK for the AGA-only ones).
 	var HW_SENTINEL = "vault_amiga_model";
+	var DEFAULT_MODEL = "A500_VANILLA";
 	var MODELS = {
 		A500_UNEXPANDED: { agnus: "OCS",     denise: "OCS", chip: "512",  slow: "0",   fast: "0", cpu: "0", clock: "0" },
 		A500_VANILLA:    { agnus: "OCS",     denise: "OCS", chip: "512",  slow: "512", fast: "0", cpu: "0", clock: "0" },
@@ -168,10 +169,20 @@
 	function seedHardware() {
 		var want = params.get("model");
 		try {
+			var seen = localStorage.getItem(HW_SENTINEL);
 			if (want && MODELS[want]) {
-				if (localStorage.getItem(HW_SENTINEL) !== want) applyModel(want);
-			} else if (!localStorage.getItem(HW_SENTINEL)) {
-				applyModel("A500_VANILLA");
+				if (seen !== want) applyModel(want);
+			} else if (!seen) {
+				applyModel(DEFAULT_MODEL);
+			} else if (seen !== DEFAULT_MODEL && MODELS[seen]) {
+				// A previous title asked for a different machine with ?model=
+				// and the engine keeps that in localStorage on this origin, so
+				// without this it would stay in force for every Amiga title
+				// afterwards. Put the shelf default back. This only ever
+				// undoes a forced model: once the sentinel reads A500_VANILLA
+				// again this branch stops firing, so the engine's own hardware
+				// UI stays in charge exactly as before.
+				applyModel(DEFAULT_MODEL);
 			}
 		} catch (e) { /* ignore */ }
 	}
