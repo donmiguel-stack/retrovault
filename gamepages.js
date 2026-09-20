@@ -5202,6 +5202,8 @@ window.GAMEPAGES_DATA = {
  },
  "am_pengo2": {
   "input": "joystick",
+  "kickstart": "aros",
+  "model": "ENGINE_DEFAULT",
   "video": {
    "id": "4Zxi7GXUA54",
    "title": "pengo 2 for Amiga"
@@ -5222,6 +5224,8 @@ window.GAMEPAGES_DATA = {
  },
  "am_deluxe_pacman": {
   "input": "joystick",
+  "kickstart": "aros",
+  "model": "ENGINE_DEFAULT",
   "video": {
    "id": "EDAPh3Tk7mw",
    "title": "Amiga 1200 Longplay [014] Deluxe Pac-Man (Public Domain)"
@@ -5322,6 +5326,7 @@ window.GAMEPAGES_DATA = {
  },
  "am_bubblebobble": {
   "input": "joystick",
+  "model": "A500P_STOCK",
   "video": {
    "id": "ualveckK6is",
    "title": "BUBBLE BOBBLE - Amiga Longplay (Walkthrough! ALL LEVELS! No umbrella! 2-Players)"

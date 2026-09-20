@@ -482,6 +482,17 @@
     if (!m || g.platform !== "Amiga") return "";
     return "&model=" + encodeURIComponent(m);
   }
+  // Amiga only: a title can refuse the Kickstart and ask for the bundled AROS
+  // replacement instead (gamepages.js "kickstart": "aros"). Needed by software
+  // that wants AmigaOS 2.0 or later - AROS is a 3.x-level replacement and runs
+  // it, the 1.3 ROM in emulator/roms/ does not. Measured: Pengo 2 and Deluxe
+  // Pac-Man boot and play their music under AROS and are mute under 1.3, on
+  // the shelf profile and on the engine's own defaults alike.
+  function gameKickParam() {
+    var k = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id] || {}).kickstart;
+    if (!k || g.platform !== "Amiga") return "";
+    return "&kick=" + encodeURIComponent(k);
+  }
   start.addEventListener("click", function(){
     var fb = start.dataset.dlfallback ? "&dlfallback=" + encodeURIComponent(start.dataset.dlfallback) : "";
     // bought through the Vault's store (store.js): the emulator page fetches
@@ -500,7 +511,7 @@
       var hz2 = start.dataset.hosted ? "&hosted=" + encodeURIComponent(start.dataset.hosted) : "";
       location.href = "emulator/amiga.html?disk=" + encodeURIComponent(g.romFile) +
                       "&title=" + encodeURIComponent(g.title) +
-                      "&id=" + encodeURIComponent(g.id) + fb + hz2 + gameModelParam();
+                      "&id=" + encodeURIComponent(g.id) + fb + hz2 + gameModelParam() + gameKickParam();
     } else {
       var rom = start.dataset.hosted ? start.dataset.hosted : g.romFile;
       location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
