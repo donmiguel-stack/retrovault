@@ -272,6 +272,9 @@
         updateListChips();
       }
     }
+
+    // and the news tape follows whichever showcase is now visible
+    mountNewsTape();
   }
 
   function fillSelect(sel, allLabel, entries, current) {
@@ -871,6 +874,7 @@
       track.style.animationDuration = Math.max(8, Math.round(runW / speed)) + "s";
       wrap.classList.add("nt-running");
     }
+    wrap.ntSize = size;              // so mountNewsTape() can re-fit after a move
     requestAnimationFrame(size);
     setTimeout(size, 400);                        // again once webfonts settle
 
@@ -883,6 +887,26 @@
     });
 
     return wrap;
+  }
+
+  // The tape lives in the head of whichever "Featured and recommended" panel
+  // is on screen, beside the heading - one node, moved between the four
+  // showcases as the shelf changes rather than one tape per shelf. No cached
+  // reference on purpose: the first render runs while this file is still
+  // being evaluated, so any top-level var up here would still be undefined
+  // (and its initialiser would later wipe what was stored in it). The DOM is
+  // the state. Once dismissed, newsTape() returns null and nothing remounts.
+  function mountNewsTape() {
+    var sc = document.querySelector("section.showcase:not([hidden])");
+    if (!sc) return;
+    var head = sc.querySelector(".showcase-head");
+    if (!head) return;
+    var tape = document.querySelector(".news-tape") || newsTape();
+    if (!tape) return;
+    if (tape.parentNode !== head) {
+      head.appendChild(tape);
+      if (tape.ntSize) requestAnimationFrame(tape.ntSize);   // re-fit to this head
+    }
   }
 
   // Homebrew gets its own panel partway down the library. The games at the
@@ -900,9 +924,6 @@
     node.querySelector("[data-i18n=homebrewHead]").textContent = window.t("homebrewHead");
     node.querySelector(".hb-word").textContent = window.t("cat_homebrew");
     node.querySelector(".hb-intro").textContent = window.t("homebrewIntro");
-    // The news tape rides on top of this panel - see newsTape() above.
-    var tape = newsTape();
-    if (tape) node.insertBefore(tape, node.firstChild);
     hbStop = featureRotator(node.querySelector(".feature-main"),
                             node.querySelector(".feature-list"), picks);
     return node;

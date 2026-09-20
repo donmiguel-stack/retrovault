@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-20 14:23:19",
- "count": 666,
- "bytes": 241791218,
+ "generated": "2026-09-20 15:15:55",
+ "count": 723,
+ "bytes": 246700515,
  "files": {
   "games.js": {
    "sha256": "9c8390163e4df5611db4dacad7db328ee3859b84950d26fb4193c3dee1ebb219",
@@ -116,8 +116,8 @@
    "size": 6343
   },
   "app.js": {
-   "sha256": "cc7530fd57bf3c91f7dcb3e0064f7cebed1d06cfeb66010e71fd20cc7af6cc93",
-   "size": 90721
+   "sha256": "cc5a947ea05074d666b8bd29c427c8745ae0dc7bdc1e6660f1ac880a2ba8e6dc",
+   "size": 91719
   },
   "demo.js": {
    "sha256": "6471f99efb550c6114828ef8e1fd6d0932d14d1b83569076c9e5bbc1450e779d",
@@ -128,7 +128,7 @@
    "size": 9576
   },
   "index.html": {
-   "sha256": "47bca09933ceef242a255c24ba413ac81e16ecbab1ec70aaea3ef7059527b5ad",
+   "sha256": "43cf26ee0b017bf4fc2624e94acc7f9ed03a30f010389cbce1d119e190bae650",
    "size": 18705
   },
   "resources.html": {
@@ -136,8 +136,8 @@
    "size": 13110
   },
   "style.css": {
-   "sha256": "eb3ce423228fd3a9e65202862663d4aaf7eef4ff4fe721e5b742a8fbe5ac448e",
-   "size": 60451
+   "sha256": "eec2b583a177541bcacb057ee861e9e0f66ce5c75ad429dc7d5a96a528314722",
+   "size": 60893
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -271,21 +271,69 @@
    "sha256": "201e0e420daa66574337440224c38cd9471a7d9105fd8ba49a3bb09fd08b47a5",
    "size": 492150
   },
+  "covers/am_act_of_war.png": {
+   "sha256": "5db4e3e3731c4e228bd57e93fea954e0ccb85b980780d9fd26d857e00a39c028",
+   "size": 13943
+  },
+  "covers/am_alien_bash.png": {
+   "sha256": "03a94dcd8a549f946dfae1d07c23d4f14e1c380bbc5706b6dcf77a2179c0adcf",
+   "size": 71891
+  },
   "covers/am_alien_fish_finger.png": {
    "sha256": "18544af75ae4d2cb3d51bc47a53d0de4e02b05530ac20d39998aec4a3b7a7f48",
    "size": 3757
+  },
+  "covers/am_ant_wars.png": {
+   "sha256": "a861822bd369be42f8afb8dd7af4ec3e97877731c8b78e022d1ebbc00f673783",
+   "size": 46019
+  },
+  "covers/am_arkanoid2.png": {
+   "sha256": "02f3708fe2c1accc40edaa0d691fca1ae473fc9d42d8f6b31cbcbb46869714d3",
+   "size": 83952
   },
   "covers/am_asteroids.png": {
    "sha256": "b4ad9071013994ebe6b57fa08e4787b89bd7683228862cfbccbf43a0f30af142",
    "size": 1684
   },
+  "covers/am_atoms.png": {
+   "sha256": "a57f1bb21614e8129f1ffa62f1be2388ee55831808b7ec13f97733e9e7a6200b",
+   "size": 33826
+  },
+  "covers/am_battle_squadron.png": {
+   "sha256": "a230dc6dc340cce4864b14dd06c586a5201501175b971b3cd902ed0bd672542e",
+   "size": 178931
+  },
+  "covers/am_biplanes.png": {
+   "sha256": "4e076c68852c9bedb42ac31f210975b042c6e57cd4751a62907a7a5cc2799681",
+   "size": 48064
+  },
+  "covers/am_black_dawn.png": {
+   "sha256": "a8c5f9a28e50a9ba89b0ebc12c8717b953ee96727e1269c03ba44d574cd66c84",
+   "size": 30369
+  },
+  "covers/am_blood_money.png": {
+   "sha256": "64fbea1290e5b357cbc6574eb4aad4e203988aa9fa7a01150e8a44f4442e82c1",
+   "size": 142831
+  },
   "covers/am_bobs_garden.png": {
    "sha256": "8e2d033bd323f46556de03117e03c0ea0fd833f2a73f67146646a7615af0e209",
    "size": 6894
   },
+  "covers/am_bubble_ghost.png": {
+   "sha256": "2935dee44b781557c2886431eeeb4a6893be088149093c71ed757ad9d6d47a1f",
+   "size": 150833
+  },
   "covers/am_bubblebobble.png": {
    "sha256": "75e3e07aa759cadd94f7f74b32f3a31ec0f9015053cd4b1eb42eba2f8389131b",
    "size": 6593
+  },
+  "covers/am_chuck_rock.png": {
+   "sha256": "9e92997b33130fc9e6212caf883ab4643dd005ca6c37c3e3f2f7b2c53451d815",
+   "size": 65567
+  },
+  "covers/am_colonial_conquest2.png": {
+   "sha256": "6198a44351cc40b85a4dc114dd4f0cb24c2f342390e1626ab5203c56cd9b0f5c",
+   "size": 62151
   },
   "covers/am_crazy_sue.png": {
    "sha256": "585072645835cf3da85234b594d5dda17006bbbfaa34e350854db6fc13f20dbc",
@@ -335,6 +383,10 @@
    "sha256": "90ed65421d8b789729de96091de359759361dea2e2630b41f65fcc515d737735",
    "size": 61173
   },
+  "covers/am_diplomacy.png": {
+   "sha256": "fe0f6f1bd9ae9306516e64b1b7e164a5b1b4d3d7556b15d891800c13394eb3d0",
+   "size": 199825
+  },
   "covers/am_doctor_strange_2.png": {
    "sha256": "28b38d6ad9a46e782353523b064552f976f6802cf0983acf030b054cc87e59e7",
    "size": 3943
@@ -342,6 +394,18 @@
   "covers/am_dogfight.png": {
    "sha256": "996fcbba8f8cc859a3fc293626144fe8617b82baafef36da6bd313f0eadf53aa",
    "size": 17023
+  },
+  "covers/am_donkey_kong.png": {
+   "sha256": "51e8d03830f646bbceb5dd83edac6a0c30b78e84d4a4979753610babc4f11246",
+   "size": 87148
+  },
+  "covers/am_doody.png": {
+   "sha256": "bfe51ca8125c27fdcb41213405ffc1c146064893950713606f15b3475924492c",
+   "size": 30599
+  },
+  "covers/am_double_dragon.png": {
+   "sha256": "4cfad2cf63ea1ca4ff807ba0654587aae286ec763b5beee2641c8c2aab495a03",
+   "size": 98234
   },
   "covers/am_drip.png": {
    "sha256": "1b970ede77ead39ac8fab4ac5b1a9cc4473000d9244e58cc17f1d07d3460af95",
@@ -351,25 +415,77 @@
    "sha256": "30526d79029a757fd2a189aac547bb1ca18841f9e9f47d74626f8f5ebf3a88ca",
    "size": 12049
   },
+  "covers/am_dynablaster.png": {
+   "sha256": "a146ddb10ec9d5a96cb62c95636393382930f73072c8055c626d061bade8d004",
+   "size": 29154
+  },
   "covers/am_elevation.png": {
    "sha256": "e160854a13c8cf725524d4f2ad186f27bb2ea8f13d5445dc755adfd7c7ab0e2a",
    "size": 7468
+  },
+  "covers/am_elevation2.png": {
+   "sha256": "2ed375dbdd18c066395cf4327712e0eb96c3d1515f89f9b64bc179f48ec26df1",
+   "size": 29581
   },
   "covers/am_gorf.png": {
    "sha256": "d13ec44b9f1a8fb1a8651a5c7754ed5ac1675a782b2b1081d78e244e5e82ba03",
    "size": 813
   },
+  "covers/am_hellzone.png": {
+   "sha256": "ac2598ad9510825dd8fb6aeab7efa15e9cb70a90cbbd65a4bf0d6f4157c8ead6",
+   "size": 19276
+  },
+  "covers/am_hunter.png": {
+   "sha256": "2abd46c60d59e4f1055c1390fd4ee6db88b68bcddd330ed3cc6d119e950c4d59",
+   "size": 67135
+  },
+  "covers/am_hybris.png": {
+   "sha256": "3094104f9233335917abb389eb200269750d7bde668f8f1ab9af1c9b3b73a436",
+   "size": 165453
+  },
+  "covers/am_ikplus.png": {
+   "sha256": "53c92e8ee45d2a7946dd3386c3c08158f4b15705df83d7336760e594bd7a0db2",
+   "size": 40913
+  },
+  "covers/am_jetstrike.png": {
+   "sha256": "6420e12420f943614dbf9bd107766eb7ad91ddb2a42b505ff02b3b663c6e1372",
+   "size": 95944
+  },
   "covers/am_jimmywhite.png": {
    "sha256": "1df27836594646428ea9ecfc614bb8ca814c7aa6a3820f009b8d65f109d6301c",
    "size": 2834
+  },
+  "covers/am_katakis.png": {
+   "sha256": "995b581effb98a8c78c841ca9e8a14b8d046d94387d478a9287716c2d2379832",
+   "size": 99820
+  },
+  "covers/am_kick_off2.png": {
+   "sha256": "5fe9646d12babc7e9006fe3256d80724f13b294d55dad444a2586d573a9d6418",
+   "size": 173547
+  },
+  "covers/am_knights.png": {
+   "sha256": "7b8e57ebf87534bd2342d142a16112c039284dd1217ca4e7cd0e8419b9a20120",
+   "size": 23268
   },
   "covers/am_llamatron.png": {
    "sha256": "b052cce9990177fcafac49cdd014dfec81f011f5491f22812cbee847a0246f7b",
    "size": 5313
   },
+  "covers/am_lotus_esprit.png": {
+   "sha256": "b8fd4672c77559589e8b21308c1d99fb765673ba299683d07e07647e8c825cba",
+   "size": 70628
+  },
   "covers/am_lotusturbo2.png": {
    "sha256": "98f010f53f3560d04609b757a8b3abde0255f51f8e005640b7b6099e4306be3c",
    "size": 474
+  },
+  "covers/am_magic_pockets.png": {
+   "sha256": "dcb5cb92e26f55c0dbdeae628a4936dba39883ab1fd281acdcd5de3457da8427",
+   "size": 12235
+  },
+  "covers/am_mayhem.png": {
+   "sha256": "369b9650e18aa7b4107e5e3931828c404e942c9a1b1b266619d9c1068708cbf8",
+   "size": 83102
   },
   "covers/am_megaball.png": {
    "sha256": "a9dff540b0c6d1dd46fd833f9077faa711e130ab747bb355513cf5bbe4d37d49",
@@ -379,9 +495,41 @@
    "sha256": "797e1659496d4c5df9fd3eb9a51fa20d81a566918c044714461321e5b15c8471",
    "size": 49533
   },
+  "covers/am_menace.png": {
+   "sha256": "2592d8c264fd32b4be9081a13391888fde535571b8a5b84a85d80e9760544849",
+   "size": 100478
+  },
+  "covers/am_nebulus.png": {
+   "sha256": "f265643fbc61d701adece1120c9d2fef9f1aa3b94972b00c1886d0f75554d62b",
+   "size": 181872
+  },
+  "covers/am_new_zealand_story.png": {
+   "sha256": "5f2c364b6dc8a266d122e68b75e7d9db8b930a8dc416fe4577cfc3253e20a018",
+   "size": 137866
+  },
+  "covers/am_nitro.png": {
+   "sha256": "d57d4bd054a3aee71c75a6ab8a48043e2c9f5da30b4818f22f19aa0543b62f83",
+   "size": 64606
+  },
+  "covers/am_north_and_south.png": {
+   "sha256": "8ef93fcdb2679ac4b83a4e16aa916a1497724978c1e547d1ab41e1947145417d",
+   "size": 66554
+  },
   "covers/am_ohnomorelemmings.png": {
    "sha256": "a2e834851d7820c654e10a3077e78a3d0dc149d825e3b64269990d3b03851e4f",
    "size": 4619
+  },
+  "covers/am_pang.png": {
+   "sha256": "a386750462156a4fd89f4a0c12ce9798655bb9f9d34a94bac9b1ece45e6c03f2",
+   "size": 100483
+  },
+  "covers/am_parasol_stars.png": {
+   "sha256": "07f05cb776821e67f7cc53ae15dc0e32671f16d76e6e51e09ba7f2a7a200282f",
+   "size": 45654
+  },
+  "covers/am_particle_man.png": {
+   "sha256": "6f52f8d01c42a4a69b5f9ea818d6006d867ce412de3d549ad042b60934541c64",
+   "size": 28331
   },
   "covers/am_pengo2.png": {
    "sha256": "25ef61e647c0ca8e3f4e75197b8a1ca9ba48f5529c282c635eb5fdde99e1c3dd",
@@ -391,17 +539,53 @@
    "sha256": "afe536f5eea399126cd8191a32075ad5e80afc54facc542d713a93e5197906d2",
    "size": 22602
   },
+  "covers/am_populous.png": {
+   "sha256": "b3e9afe1977dd75eac4d08fe23eccadedf3f86794cb7b9f8b5f6b97ea86bf88f",
+   "size": 92110
+  },
+  "covers/am_rick_dangerous.png": {
+   "sha256": "ca98936bde3326678080940a83d7173d4809994a7c2cac3412709cbbf744b50b",
+   "size": 74318
+  },
+  "covers/am_rick_dangerous2.png": {
+   "sha256": "5eb04d63167dab103bf4c99b0815b42fcd278c8e426ee117c959006310a42c1a",
+   "size": 117563
+  },
+  "covers/am_robocod.png": {
+   "sha256": "b30895f352cee36cdd785f8a32a1fa7a06de8c4aff418a62ccc19d1cd44bf1c5",
+   "size": 46498
+  },
   "covers/am_robocop.png": {
    "sha256": "14e289f3da87815dc4bfdb6f6343eb42b87c35e396f932d96f3578cce0ce4000",
    "size": 14372
+  },
+  "covers/am_rodland.png": {
+   "sha256": "2a474a5f79189659c4ab28bf6e4f5af0e9b2c4be4a3bef73e9e7cefa91c979a1",
+   "size": 140094
+  },
+  "covers/am_rtype.png": {
+   "sha256": "91cd21b7a4ddddba60e0eeafd2b56b53ecdb4352373670a56967ab01992aba25",
+   "size": 151028
+  },
+  "covers/am_skweek.png": {
+   "sha256": "2e614a35019936a862aae3fbaeb0c5b32c6a7308b1cf892a8608f403fd7e16bc",
+   "size": 94872
   },
   "covers/am_space_taxi.png": {
    "sha256": "778114b230d800699244e8ce9a597804263912a7ebbf06cfd3ee3168d2cb5d51",
    "size": 1655
   },
+  "covers/am_speedball2.png": {
+   "sha256": "e69fa46fe9358ed36daf4febb4cba259580ae724171ce4c5162f415c283263db",
+   "size": 119777
+  },
   "covers/am_sqrxz.png": {
    "sha256": "2d42d638e4ae7faa9275de130470fef0528e634cb45c38e11c1a1e9ba3002b61",
    "size": 6741
+  },
+  "covers/am_sqrxz2.png": {
+   "sha256": "37bdc1ea6e48661cea0816c6a37382ddddeb6de039f931cfd82666810744d842",
+   "size": 150688
   },
   "covers/am_sqrxz3.png": {
    "sha256": "f8f6b6439ede3d64467e4b799c9537cdbd85dd77b2865a362d6c40c28a3f0ffc",
@@ -419,29 +603,73 @@
    "sha256": "3ae3ccfbf70737612c86c826674e3efd11141cc38568ff11a246623c045e774c",
    "size": 9655
   },
+  "covers/am_swiv.png": {
+   "sha256": "68ecccecea166505fc720239786b26642cad75ce2559b95fc31e01c642e4d417",
+   "size": 163336
+  },
+  "covers/am_tanx.png": {
+   "sha256": "f2044977d3f0e9673260d95a5cd644452b316523ae4260650587230ba9c05f64",
+   "size": 166233
+  },
   "covers/am_toado.png": {
    "sha256": "9d044d65a4cf27b247f8beeeebbe3bf1f7d924c7f31f99c3bc4034fd5ae7f86b",
    "size": 20866
+  },
+  "covers/am_top_secret.png": {
+   "sha256": "054383aab66acc0fd775cfe2d61afbc095e30695dbb8da0283e03c41dbf8382c",
+   "size": 103991
   },
   "covers/am_trailblazer.png": {
    "sha256": "f5412df56b14fbf8a7cea8c458e98ab4e6f8601789f0cd8b5eddbdfc28a62e37",
    "size": 4320
   },
+  "covers/am_transplant.png": {
+   "sha256": "fb1bb720bbe296c40540641acecdb09e78f1e5a02f17205765083cfdb2e25823",
+   "size": 93602
+  },
+  "covers/am_trap_runner.png": {
+   "sha256": "198aa5b4fbe896d3f4569e2fcc316fa6d488c3eab122ba8930faf06070878a69",
+   "size": 61696
+  },
+  "covers/am_turboraketti.png": {
+   "sha256": "e255093da10fe171ccfdacd83356618ec1058b8757196acb53e50b9b89f536db",
+   "size": 30342
+  },
   "covers/am_turrican.png": {
    "sha256": "8be4537297c354c02071d8a5ef779c32159f049ada1e500e80444448d260d848",
    "size": 14233
+  },
+  "covers/am_turrican2.png": {
+   "sha256": "f6cb1b87ec71133fdd0849ef57f2fcff986fab8917a33dc8088fdd09c7f29919",
+   "size": 48517
   },
   "covers/am_wibble_world_giddy.png": {
    "sha256": "cec67b52787753eaa65b6bfa6f10871cc3b33b318f86c4e20036c8128188bd67",
    "size": 3558
   },
+  "covers/am_wings_of_fury.png": {
+   "sha256": "8273c0a8675b2660b1bdea588025a54678f9147f817623f19ca13bd85d6e3110",
+   "size": 62746
+  },
   "covers/am_wizzys_quest.png": {
    "sha256": "17db38fd5d487c7be65c1bea5b61c0837f7a6b9ff80cded7097e24fcedf0f99f",
    "size": 13029
   },
+  "covers/am_xenon2.png": {
+   "sha256": "583a4fc8d4a2e9ff5c5f8e55a710e98dd6b5cf8ac2b4ec22a46cf5bb5b4e5c10",
+   "size": 84972
+  },
+  "covers/am_xout.png": {
+   "sha256": "6429c64a77459d43569b0cb0871a99c862ef3ed2788f34363574188819c49f5d",
+   "size": 83316
+  },
   "covers/am_zerg.png": {
    "sha256": "42c998a8d352ce268b97e79a2f7577be54341c8f8522b081f8fc35f3215ebd1e",
    "size": 1043
+  },
+  "covers/am_zout.png": {
+   "sha256": "e674303e7e9e35edac36eb7cedac5b5930edc13bc5c32d78b80ec16444214a85",
+   "size": 42075
   },
   "covers/board_vp_41.jpg": {
    "sha256": "5c6bd986c2c6d6193c0f773f4b1ec60fa78127310ec57e6dbb9d9812ca3051b5",

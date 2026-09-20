@@ -333,8 +333,13 @@ body{
 /* ---- Showcase: featured games, sponsors, community ---------------------- */
 .showcase{padding:18px 24px 4px; border-bottom:1px solid var(--border);}
 .showcase[hidden]{display:none;}
-.showcase-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
-.showcase-head h2{margin:0; font-size:16px; font-weight:600;}
+.showcase-head{display:flex; align-items:center; justify-content:space-between;
+  gap:18px; flex-wrap:wrap; margin-bottom:12px;}
+/* The news tape sits in this head, to the right of the heading, and takes
+   whatever width is left. Below 700px it drops onto its own line rather
+   than squeezing the heading - see the media query further down. */
+.showcase-head .news-tape{flex:1 1 320px; min-width:0; margin:0; max-width:780px;}
+.showcase-head h2{margin:0; font-size:16px; font-weight:600; flex:0 0 auto;}
 
 .feature-row{display:flex; gap:14px; align-items:stretch; min-height:300px;}
 .feature-main{
@@ -465,6 +470,9 @@ a.nt-item:hover,a.nt-item:focus-visible{color:#f5a8bf; text-decoration:underline
 .news-tape.nt-still .nt-window{overflow-x:auto; scrollbar-width:none;}
 .news-tape.nt-still .nt-window::-webkit-scrollbar{display:none;}
 .news-tape.nt-still .nt-track{animation:none;}
+@media (max-width:700px){
+  .showcase-head .news-tape{flex-basis:100%; max-width:none; order:2;}
+}
 @media (max-width:600px){
   .news-tape{font-size:12px;}
   .nt-sep{padding:0 12px;}
