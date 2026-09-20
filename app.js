@@ -490,6 +490,23 @@
     return strip;
   }
 
+  // The Amiga-style advert banner lives in amigaad.js:
+  // window.buildAmigaAd(sponsor) returns the animated banner element. Same
+  // shape as the two above; the sponsor object is shared across all shelves,
+  // so one entry in FEATURED_DATA.sponsors feeds every banner.
+  function amAdBlock() {
+    var sp = ((window.FEATURED_DATA || {}).sponsors || [])[0] || null;
+    if (!window.buildAmigaAd) return null;
+    var strip = document.createElement("div"); strip.className = "sponsor-strip amiga-ad-strip";
+    var a = document.createElement("a"); a.className = "amigaad-link";
+    a.href = (sp && sp.url) || "#"; a.target = "_blank"; a.rel = "noopener sponsored";
+    a.appendChild(window.buildAmigaAd(sp));
+    var tag = document.createElement("span"); tag.className = "sponsor-tag"; tag.textContent = window.t("sponsored");
+    a.appendChild(tag);
+    strip.appendChild(a);
+    return strip;
+  }
+
   function sponsorBlock() {
     var list = (window.FEATURED_DATA || {}).sponsors || [];
     var tpl = document.getElementById("sponsorTpl");
@@ -1121,6 +1138,28 @@
     return node;
   }
 
+  // The Amiga shelf's own "keeping this console alive" panel - same carousel
+  // as the three above, separate data (amcommunity in featured.js) and
+  // template so an Amiga site never shows on another shelf or vice versa.
+  function amCommunityBlock() {
+    var list = (window.FEATURED_DATA || {}).amcommunity || [];
+    var tpl = document.getElementById("amcommunityTpl");
+    if (!list.length || !tpl) return null;
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector("[data-i18n=communityHead]").textContent = window.t("communityHead");
+    node.querySelector(".community-intro").textContent = window.t("communityIntro");
+    var track = node.querySelector(".community-track");
+    track.innerHTML = list.map(function (c) {
+      return '<a class="community-item" href="' + c.url + '" target="_blank" rel="noopener" ' +
+        'style="--tint:' + (c.tint || "#8a8f98") + '">' +
+        '<span class="cname">' + c.name +
+        (c.lang ? '<span class="clang">' + c.lang + '</span>' : '') + '</span>' +
+        '<p class="cwhat">' + communityWhat(c) + '</p></a>';
+    }).join("");
+    wireCommunityCarousel(node, track);
+    return node;
+  }
+
   // The advert and community panels span the full grid width, so dropping one
   // mid-row leaves the rest of that row empty. Work out how many columns the
   // grid actually has and land them on a row boundary instead. The count
@@ -1131,7 +1170,7 @@
   }
 
   function placeBlocks(total) {
-    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .ms-strip, .community, .c64-ad-strip, .pc-ad-strip")
+    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .ms-strip, .community, .c64-ad-strip, .pc-ad-strip, .amiga-ad-strip")
         .forEach(function (n) { n.remove(); });
     var cols = gridColumns();
     var cards = grid.querySelectorAll(".card");
@@ -1161,10 +1200,17 @@
       if (total >= 20) insertAt(pcCommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
       return;
     }
-    // The Amiga shelf has no ad/homebrew/community panels of its own yet -
-    // skip straight out rather than falling through to the Videopac-specific
-    // sponsor/homebrew/Master Strategy/community blocks below.
-    if (state.platform === "Amiga") return;
+    // The Amiga shelf gets its own Amiga-style advert and its own "keeping
+    // this console alive" panel, and none of the Videopac homebrew/community
+    // panels (those are Videopac content) - same reasoning as the two
+    // branches above. No homebrew panel: this shelf is mostly PD/freeware
+    // already, so a separate homebrew strip would be a panel about the same
+    // games the grid is showing.
+    if (state.platform === "Amiga") {
+      if (total >= 6) insertAt(amAdBlock(), Math.min(12, Math.floor(total / 2)));
+      if (total >= 20) insertAt(amCommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
+      return;
+    }
     if (total < 60) return;                       // too short to bother
     insertAt(sponsorBlock(), Math.min(36, Math.floor(total / 3)));
     insertAt(homebrewBlock(), Math.min(96, Math.floor(total * 2 / 3)));

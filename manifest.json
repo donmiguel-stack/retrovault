@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-19 17:12:39",
- "count": 613,
- "bytes": 212736445,
+ "generated": "2026-09-20 12:06:22",
+ "count": 615,
+ "bytes": 212775500,
  "files": {
   "games.js": {
    "sha256": "c89a65572fd0c301d0de4cc4b0aace48f316ec0eeed23f2737782a07c3db58b0",
@@ -40,8 +40,8 @@
    "size": 91342
   },
   "featured.js": {
-   "sha256": "42c882e6fd3a4da2fac4a6feff2afcad0a36450efe1da8df5e76b5cd5880d504",
-   "size": 99837
+   "sha256": "695d29e0b11592cf5ef608e0d979d5b63ea90fbc6db2f22f73ababd6376e1ff1",
+   "size": 122461
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -50,6 +50,14 @@
   "c64ad.js": {
    "sha256": "a220703ce9363bcab58666f6e801b997aace32325b017ececfda35c8c705f3ee",
    "size": 5902
+  },
+  "pcad.js": {
+   "sha256": "7579336f63d29a1ccc7c9a57fc56b8d6237e4ec2ffdad14f0afaef2f41109ad9",
+   "size": 4283
+  },
+  "amigaad.js": {
+   "sha256": "8125aa274ece65b99142d2423f6732c692b45a7481dd729f0cc742361b9aef4a",
+   "size": 6573
   },
   "cheats.js": {
    "sha256": "54279647b7ee56e4c8bc5a1f303473d3effec19ae6ac8f3f1d7cb18a89f6f32d",
@@ -104,28 +112,28 @@
    "size": 6343
   },
   "app.js": {
-   "sha256": "f3275d761edc7fb0b5aaa5f189ace466b8a0add0379bff96ed6ed5973b80069f",
-   "size": 82918
+   "sha256": "4c7b3f90e2ef79fc7d36c9fe8237c42b4e774ea1b27a0916f9616239a09760e6",
+   "size": 85401
   },
   "demo.js": {
    "sha256": "6471f99efb550c6114828ef8e1fd6d0932d14d1b83569076c9e5bbc1450e779d",
    "size": 4831
   },
   "game.html": {
-   "sha256": "c4caa950817441f70b02cb54fed4b54b3017cfa4076dc1f9c53ecc52be86053d",
-   "size": 9679
+   "sha256": "7636d89beec4c33cb67072f856fefdb4239c8a80fa761b8851eed084eeecb242",
+   "size": 9576
   },
   "index.html": {
-   "sha256": "10df9041c6593ae66499488a97cef13af3d6cd0a71ad5f6ce55118d7c3007f94",
-   "size": 18197
+   "sha256": "40896c3e5c3c07b33d75a07883c21a13098669950c2a2fb4f5c1e1fb10594165",
+   "size": 18669
   },
   "resources.html": {
-   "sha256": "cb0ab8fa4193cd9ba6d423690c5a3a32ea14c0c0e120fafd96c67d535318a119",
-   "size": 13213
+   "sha256": "ad6366e3dddb98aaba68a491dca36319f88863d00c6db06ef810c81f57bb2801",
+   "size": 13110
   },
   "style.css": {
-   "sha256": "3caa84edef9d567598d7e9bcb4d6614d67986ae07baa542113b9f158220fe0a5",
-   "size": 53148
+   "sha256": "798c24509d27ce3232a609cb9ffe7d5e75e5807672951d74878fead296e18943",
+   "size": 56077
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -140,8 +148,8 @@
    "size": 79469
   },
   "catalogue.html": {
-   "sha256": "901b9820a54191fc8e4fab5310a761c26a5e3170a8fd46ecaa62b4a8f2a97d7d",
-   "size": 34872
+   "sha256": "a77a2659d81e29da099d16b6beb93a298d831b62463358f3504ca717eb9df83d",
+   "size": 34769
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",

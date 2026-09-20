@@ -349,6 +349,68 @@ window.FEATURED_DATA = {
           ja: "Roger Wilco は じぶんの つづきへんの こうこくの なかに とばされます。Sierra の シリーズの なかで いちばん じかくてきな さくひんで、Star Trek や Terminator、じぶんたちの かこさくまで いっしょに パロディに します。" } }
   ],
 
+  // ---- Featured and recommended, Amiga shelf -----------------------------
+  // Same shape and the same reused rotator as c64featured / pcfeatured above
+  // - a plain, non-link "main" box, so c64FeatureRotator() drives this panel
+  // too (see the app.js call site). "id" matches an id in games.js; the cover
+  // comes from there and the blurb lives here.
+  //
+  // Which six: straight down Lemon Amiga's public Top 100 (votes_list.php,
+  // "Any Amiga", all genres, checked 2026-09-20), taking the first six
+  // entries that are also on this shelf - Lotus Turbo Challenge 2 (8.67),
+  // Stunt Car Racer (8.53), Turrican (8.49), Bubble Bobble (8.47), Deluxe
+  // Galaga (8.39) and Oh No! More Lemmings (8.36). Jimmy White's Whirlwind
+  // Snooker is seventh at 8.34 and just misses; RoboCop isn't in the top 100
+  // at all. Re-checking that list is the only thing needed to refresh this
+  // panel.
+  //
+  // No clips exist for any Amiga title, so every slot falls through to the
+  // game's YouTube longplay from gamepages.js - all six have one, checked.
+  amfeatured: [
+    { id: "am_lotusturbo2",
+      blurb: { en: "The highest-rated game on this shelf. Gremlin threw out lap circuits entirely: point-to-point stages through fog, night, sand and snow, a split screen for two, and Barry Leitch's soundtrack pushing you at the next checkpoint.",
+          nl: "Het hoogst gewaardeerde spel van deze plank. Gremlin schrapte de rondencircuits volledig: etappes van punt naar punt door mist, nacht, zand en sneeuw, een gedeeld scherm voor twee, en de soundtrack van Barry Leitch die je naar het volgende checkpoint jaagt.",
+          de: "Das am besten bewertete Spiel dieses Regals. Gremlin strich die Rundkurse komplett: Etappen von Punkt zu Punkt durch Nebel, Nacht, Sand und Schnee, ein geteilter Bildschirm für zwei und Barry Leitchs Soundtrack, der dich zum nächsten Checkpoint treibt.",
+          fr: "Le jeu le mieux noté de ce rayon. Gremlin a supprimé les circuits à tours : des étapes d'un point à un autre à travers le brouillard, la nuit, le sable et la neige, un écran partagé à deux, et la bande-son de Barry Leitch qui vous pousse vers le prochain point de contrôle.",
+          pt: "O jogo mais bem avaliado desta prateleira. A Gremlin abandonou de vez os circuitos por voltas: etapas de ponto a ponto atravessando neblina, noite, areia e neve, tela dividida para dois e a trilha de Barry Leitch empurrando você para o próximo ponto de controle.",
+          ja: "この たなで いちばん ひょうかの たかい ゲームです。Gremlin は しゅうかいコースを やめて、きり、よる、すな、ゆきの なかを すすむ ポイント かん レースに しました。2にん プレイは がめん ぶんかつ、Barry Leitch の おんがくが つぎの チェックポイントへ せなかを おします。" } },
+    { id: "am_stuntcarracer",
+      blurb: { en: "Geoff Crammond bolted a rollercoaster to scaffolding twelve metres up and let you race a rival along it. Filled-polygon 3D in 1989, a chassis that cracks a little further with every bad landing, and nothing under the track but air.",
+          nl: "Geoff Crammond schroefde een achtbaan op een stellage van twaalf meter hoog en liet je er een rivaal op bevechten. Gevulde-polygonen-3D in 1989, een chassis dat bij elke slechte landing verder scheurt, en onder de baan alleen lucht.",
+          de: "Geoff Crammond schraubte eine Achterbahn auf ein zwölf Meter hohes Gerüst und ließ dich dort oben gegen einen Rivalen fahren. Gefüllte 3D-Polygone im Jahr 1989, ein Chassis, das bei jeder schlechten Landung weiter reißt, und unter der Strecke nichts als Luft.",
+          fr: "Geoff Crammond a boulonné des montagnes russes sur un échafaudage à douze mètres de haut et vous y fait courir contre un rival. De la 3D en polygones pleins en 1989, un châssis qui se fissure un peu plus à chaque mauvaise réception, et rien sous la piste que du vide.",
+          pt: "Geoff Crammond parafusou uma montanha-russa num andaime a doze metros do chão e botou você para correr contra um rival lá em cima. 3D de polígonos preenchidos em 1989, um chassi que racha mais um pouco a cada aterrissagem ruim e nada embaixo da pista além de ar.",
+          ja: "Geoff Crammond は、たかさ 12メートルの あしばの うえに ジェットコースターを とりつけ、そこで ライバルと きょうそうさせました。1989ねんに ぬりつぶし ポリゴンの 3D、ちゃくちに しっぱいする たびに ひびが ふえていく しゃたい、そして コースの したには くうき しか ありません。" } },
+    { id: "am_turrican",
+      blurb: { en: "Manfred Trenz's run-and-gun, brought to the Amiga by Factor 5 with Chris Huelsbeck's score intact. Levels the size of maps rather than corridors, a beam whip you steer by hand, and a rolling mode for the bits that look impassable.",
+          nl: "De run-and-gun van Manfred Trenz, door Factor 5 naar de Amiga gebracht met de soundtrack van Chris Huelsbeck intact. Levels zo groot als landkaarten in plaats van gangen, een straalzweep die je met de hand richt, en een rolvorm voor de stukken die onbegaanbaar lijken.",
+          de: "Manfred Trenz' Run-and-Gun, von Factor 5 auf den Amiga gebracht, mit Chris Huelsbecks Soundtrack unangetastet. Level so groß wie Landkarten statt Korridore, eine Strahlenpeitsche, die du von Hand führst, und ein Rollmodus für die Stellen, die unpassierbar aussehen.",
+          fr: "Le run-and-gun de Manfred Trenz, porté sur Amiga par Factor 5 avec la bande-son de Chris Huelsbeck intacte. Des niveaux grands comme des cartes plutôt que des couloirs, un fouet de lumière que l'on dirige à la main, et un mode roulant pour les passages qui semblent infranchissables.",
+          pt: "O run-and-gun de Manfred Trenz, levado ao Amiga pela Factor 5 com a trilha de Chris Huelsbeck intacta. Fases do tamanho de mapas em vez de corredores, um chicote de raio que você mira na mão e um modo rolante para os trechos que parecem intransponíveis.",
+          ja: "Manfred Trenz の ランアンドガンを、Factor 5 が Chris Huelsbeck の おんがくを そのままに Amiga へ いしょくしました。つうろでは なく ちずのように ひろい ステージ、てで むきを かえる ビームの ムチ、そして とおれそうに ない ばしょの ための ころがりモードが あります。" } },
+    { id: "am_bubblebobble",
+      blurb: { en: "Taito's arcade classic on a home machine that could finally keep up: a hundred single-screen rooms, two dragons blowing bubbles at everything that moves, and a real ending that only shows itself if two people finish it together.",
+          nl: "De arcadeklassieker van Taito op een thuismachine die het eindelijk kon bijbenen: honderd kamers van één scherm, twee draken die bellen blazen naar alles wat beweegt, en een echt einde dat zich alleen laat zien als twee spelers het samen uitspelen.",
+          de: "Taitos Arcade-Klassiker auf einem Heimrechner, der endlich mithalten konnte: hundert Einzelbildschirm-Räume, zwei Drachen, die alles anblasen, was sich bewegt, und ein echtes Ende, das sich nur zeigt, wenn zwei Leute es gemeinsam durchspielen.",
+          fr: "Le classique d'arcade de Taito sur une machine familiale enfin capable de suivre : cent salles d'un seul écran, deux dragons qui soufflent des bulles sur tout ce qui bouge, et une vraie fin qui ne se révèle que si l'on termine à deux.",
+          pt: "O clássico de arcade da Taito numa máquina doméstica que finalmente dava conta: cem salas de tela única, dois dragões soprando bolhas em tudo que se mexe e um final de verdade que só aparece se duas pessoas terminarem juntas.",
+          ja: "Taito の アーケードの めいさくを、ついに ついていける かていようマシンで。1がめんの へやが 100、うごく ものすべてに あわを ふきかける 2ひきの ドラゴン、そして 2にんで クリアした ときだけ みられる ほんとうの エンディングが あります。" } },
+    { id: "am_deluxe_galaga",
+      blurb: { en: "The one shareware game everybody's Amiga had. Edgar Vigdal rebuilt Galaga from the ground up and then kept going — power-ups, bonus rounds, a shop between waves — until it had outgrown the arcade machine it started from.",
+          nl: "Het ene sharewarespel dat op ieders Amiga stond. Edgar Vigdal bouwde Galaga van de grond af opnieuw en bleef daarna doorgaan — power-ups, bonusrondes, een winkel tussen de golven — tot het de arcadekast waar het mee begon was ontgroeid.",
+          de: "Das eine Shareware-Spiel, das auf jedem Amiga lag. Edgar Vigdal baute Galaga von Grund auf neu und machte dann weiter — Power-ups, Bonusrunden, ein Shop zwischen den Wellen — bis es dem Automaten entwachsen war, von dem es ausging.",
+          fr: "Le jeu shareware qui traînait sur tous les Amiga. Edgar Vigdal a reconstruit Galaga de zéro puis a continué — bonus, vagues spéciales, une boutique entre deux vagues — jusqu'à dépasser la borne d'arcade dont il était parti.",
+          pt: "O jogo shareware que estava no Amiga de todo mundo. Edgar Vigdal reconstruiu o Galaga do zero e continuou — power-ups, fases bônus, uma lojinha entre as ondas — até o jogo passar do fliperama de onde tinha saído.",
+          ja: "だれの Amiga にも はいっていた シェアウェアの ゲームです。Edgar Vigdal は Galaga を いちから つくりなおし、さらに パワーアップ、ボーナスステージ、ウェーブの あいだの ショップを くわえつづけ、もとに した アーケードきを こえて しまいました。" } },
+    { id: "am_ohnomorelemmings",
+      blurb: { en: "A hundred more levels and no mercy: Psygnosis skipped the gentle introduction and opened at roughly the difficulty the first game ended on, through Tame, Crazy, Wild, Wicked and Havoc. Same lemmings, same cliff, far less patience.",
+          nl: "Honderd levels erbij en geen genade: Psygnosis sloeg de rustige introductie over en begon ongeveer op de moeilijkheid waar het eerste spel eindigde, via Tame, Crazy, Wild, Wicked en Havoc. Dezelfde lemmingen, dezelfde klif, veel minder geduld.",
+          de: "Hundert Level mehr und kein Erbarmen: Psygnosis ließ die sanfte Einführung weg und stieg ungefähr bei dem Schwierigkeitsgrad ein, mit dem das erste Spiel aufhörte — durch Tame, Crazy, Wild, Wicked und Havoc. Dieselben Lemminge, dieselbe Klippe, deutlich weniger Geduld.",
+          fr: "Cent niveaux de plus et aucune pitié : Psygnosis a sauté l'introduction en douceur pour démarrer à peu près au niveau de difficulté où s'achevait le premier jeu, à travers Tame, Crazy, Wild, Wicked et Havoc. Mêmes lemmings, même falaise, beaucoup moins de patience.",
+          pt: "Mais cem fases e nenhuma piedade: a Psygnosis pulou a introdução tranquila e começou mais ou menos na dificuldade em que o primeiro jogo terminava, passando por Tame, Crazy, Wild, Wicked e Havoc. Os mesmos lemmings, o mesmo penhasco, bem menos paciência.",
+          ja: "レベルが 100 ふえて、ようしゃは ありません。Psygnosis は やさしい にゅうもんぶを とばして、まえさくが おわった あたりの むずかしさから はじめます。Tame、Crazy、Wild、Wicked、Havoc と つづきます。おなじ レミング、おなじ がけ、しんぼうづよさは ずっと すくなめです。" } }
+  ],
+
   // ---- Homebrew ---------------------------------------------------------
   // The other half of the story: games written for this console after it was
   // discontinued, by people who simply wanted to. Same shape as "featured",
@@ -637,6 +699,112 @@ window.FEATURED_DATA = {
         fr: "Le cœur d'émulation open source sur lequel tourne réellement, sous le capot, le lecteur navigateur de cette étagère.",
         pt: "O núcleo de emulação de código aberto sobre o qual o player do navegador desta prateleira realmente roda por baixo dos panos.",
         ja: "この たなの ブラウザプレイヤーが じっさいに うごいている、オープンソースの エミュレーターコアです。"
+      } }
+  ],
+
+  // ---- Keeping this console alive, Amiga shelf ---------------------------
+  // Same shape as "c64community" above, but for the Amiga shelf - the sites
+  // and projects that document, archive and still actively support this
+  // machine. Shown only on the Amiga shelf (placeBlocks() in app.js gates it
+  // on state.platform === "Amiga"). "what" is an { en, nl, de, fr, pt, ja }
+  // object resolved by communityWhat() / window.tx(); a plain string still
+  // works, same as everywhere else.
+  amcommunity: [
+    { name: "Lemon Amiga",
+      tint: "#f2c53d",
+      url: "https://www.lemonamiga.com/",
+      lang: "International",
+      what: {
+        en: "The English-language Amiga community's main site: reviews, screenshots, music and a public vote on every game. Its top-100 list is where this shelf's six featured picks came from.",
+        nl: "De belangrijkste Engelstalige Amiga-site: reviews, schermafbeeldingen, muziek en een publieke stemming over elk spel. De zes uitgelichte titels op deze plank komen uit die top 100.",
+        de: "Die wichtigste englischsprachige Amiga-Seite: Reviews, Screenshots, Musik und eine öffentliche Abstimmung zu jedem Spiel. Aus ihrer Top-100-Liste stammen die sechs hier hervorgehobenen Titel.",
+        fr: "Le site principal de la communauté Amiga anglophone : critiques, captures d'écran, musique et un vote public sur chaque jeu. Les six titres mis en avant sur ce rayon viennent de son top 100.",
+        pt: "O principal site da comunidade Amiga em inglês: análises, capturas de tela, música e uma votação pública para cada jogo. Os seis destaques desta prateleira saíram da lista top 100 dele.",
+        ja: "えいごけんの Amiga コミュニティの ちゅうしんサイトです。レビュー、スクリーンショット、おんがく、そして ゲームごとの こうかい とうひょうが あります。この たなの 6つの おすすめは、その トップ100 から えらびました。"
+      } },
+    { name: "Hall of Light",
+      tint: "#6fa8ff",
+      url: "https://amiga.abime.net/",
+      lang: "International",
+      what: {
+        en: "The exhaustive Amiga games database: every release variant, box scan, credit and manual, catalogued by volunteers since the late 1990s.",
+        nl: "De uitputtende Amiga-gamesdatabase: elke releasevariant, boxscan, credit en handleiding, sinds eind jaren negentig door vrijwilligers gecatalogiseerd.",
+        de: "Die umfassende Amiga-Spieledatenbank: jede Release-Variante, jeder Box-Scan, alle Credits und Handbücher, seit Ende der Neunziger von Freiwilligen katalogisiert.",
+        fr: "La base de données exhaustive des jeux Amiga : chaque variante de sortie, scan de boîte, crédit et manuel, catalogués par des bénévoles depuis la fin des années 1990.",
+        pt: "O banco de dados exaustivo de jogos de Amiga: cada variante de lançamento, digitalização de caixa, crédito e manual, catalogados por voluntários desde o fim dos anos 1990.",
+        ja: "Amiga ゲームの てっていてきな データベースです。はつばいの バリエーション、パッケージの スキャン、スタッフ、せつめいしょを、1990ねんだい こうはんから ボランティアが せいりして います。"
+      } },
+    { name: "Aminet",
+      tint: "#2fb47c",
+      url: "https://aminet.net/",
+      lang: "International",
+      what: {
+        en: "The largest free Amiga software archive on the internet, running since 1992 and still taking uploads — tools, music, demos and games, filed the way they were in the FTP days.",
+        nl: "Het grootste gratis Amiga-softwarearchief op internet, draait sinds 1992 en neemt nog steeds uploads aan — tools, muziek, demo's en spellen, geordend zoals in de FTP-tijd.",
+        de: "Das größte freie Amiga-Softwarearchiv im Netz, läuft seit 1992 und nimmt weiterhin Uploads an — Tools, Musik, Demos und Spiele, einsortiert wie zu FTP-Zeiten.",
+        fr: "La plus grande archive libre de logiciels Amiga sur internet, en service depuis 1992 et toujours ouverte aux envois — outils, musique, démos et jeux, rangés comme à l'époque du FTP.",
+        pt: "O maior arquivo livre de software para Amiga da internet, no ar desde 1992 e ainda aceitando envios — ferramentas, música, demos e jogos, organizados como na época do FTP.",
+        ja: "インターネットで いちばん おおきい むりょうの Amiga ソフトアーカイブです。1992ねんから うごいていて、いまも アップロードを うけつけて います。ツール、おんがく、デモ、ゲームが、FTP じだいの ままの ならべかたで おいて あります。"
+      } },
+    { name: "English Amiga Board",
+      tint: "#e0662f",
+      url: "https://eab.abime.net/",
+      lang: "International",
+      what: {
+        en: "Where the machine is still actually discussed: WHDLoad installs, recapped motherboards, new accelerator hardware, and the very long threads that go with all three.",
+        nl: "Waar de machine nog echt besproken wordt: WHDLoad-installs, gerecapte moederborden, nieuwe accelerator-hardware, en de zeer lange topics die daarbij horen.",
+        de: "Wo über die Maschine wirklich noch geredet wird: WHDLoad-Installs, neu gelötete Mainboards, neue Turbokarten und die sehr langen Threads, die zu allen dreien gehören.",
+        fr: "L'endroit où l'on parle encore vraiment de la machine : installations WHDLoad, cartes mères recapées, nouvelles cartes accélératrices et les très longs fils qui vont avec.",
+        pt: "Onde a máquina ainda é discutida de verdade: instalações WHDLoad, placas-mãe recapacitadas, aceleradoras novas e os tópicos bem longos que vêm com tudo isso.",
+        ja: "この マシンが いまも ほんきで はなされて いる ばしょです。WHDLoad の インストール、コンデンサを こうかんした マザーボード、あたらしい アクセラレーター、そして それらに つきものの とても ながい スレッドが あります。"
+      } },
+    { name: "vAmigaWeb",
+      tint: "#b06fe0",
+      url: "https://vamigaweb.github.io/",
+      lang: "International",
+      what: {
+        en: "The browser build of vAmiga, the open-source emulator this shelf actually runs on — the same core, self-hosted here so nothing leaves the page.",
+        nl: "De browserbuild van vAmiga, de opensource-emulator waar deze plank echt op draait — dezelfde kern, hier zelf gehost zodat er niets de pagina verlaat.",
+        de: "Der Browser-Build von vAmiga, dem Open-Source-Emulator, auf dem dieses Regal tatsächlich läuft — derselbe Kern, hier selbst gehostet, damit nichts die Seite verlässt.",
+        fr: "La version navigateur de vAmiga, l'émulateur open source sur lequel ce rayon tourne réellement — le même cœur, hébergé ici même pour que rien ne quitte la page.",
+        pt: "A versão para navegador do vAmiga, o emulador de código aberto em que esta prateleira realmente roda — o mesmo núcleo, hospedado aqui para que nada saia da página.",
+        ja: "この たなが じっさいに うごかして いる オープンソース エミュレーター vAmiga の ブラウザばんです。おなじ コアを ここで じかに ホストして いるので、データは ページの そとに でません。"
+      } },
+    { name: "AROS",
+      tint: "#4fbfd0",
+      url: "https://aros.sourceforge.io/",
+      lang: "International",
+      what: {
+        en: "The free, open-source AmigaOS-compatible system whose Kickstart replacement is what lets this shelf boot at all without a Commodore ROM.",
+        nl: "Het vrije, opensource AmigaOS-compatibele systeem; dankzij zijn Kickstart-vervanger start deze plank überhaupt op zonder een Commodore-ROM.",
+        de: "Das freie, quelloffene AmigaOS-kompatible System, dessen Kickstart-Ersatz dieses Regal überhaupt erst ohne Commodore-ROM starten lässt.",
+        fr: "Le système libre et open source compatible AmigaOS dont le remplaçant de Kickstart permet à ce rayon de démarrer sans la moindre ROM Commodore.",
+        pt: "O sistema livre e de código aberto compatível com o AmigaOS, cujo substituto do Kickstart é o que permite esta prateleira dar boot sem uma ROM da Commodore.",
+        ja: "むりょうで オープンソースの、AmigaOS ごかんの システムです。その Kickstart の かわりが あるからこそ、この たなは Commodore の ROM なしでも きどうできます。"
+      } },
+    { name: "Retroguru",
+      tint: "#e05a7e",
+      url: "https://www.retroguru.com/",
+      lang: "International",
+      what: {
+        en: "A team still writing genuinely new Amiga games and giving them away — the three Sqrxz platformers on this shelf are theirs.",
+        nl: "Een team dat nog steeds echt nieuwe Amiga-spellen schrijft en ze weggeeft — de drie Sqrxz-platformers op deze plank zijn van hen.",
+        de: "Ein Team, das noch immer wirklich neue Amiga-Spiele schreibt und verschenkt — die drei Sqrxz-Plattformer in diesem Regal stammen von ihnen.",
+        fr: "Une équipe qui écrit encore de vrais nouveaux jeux Amiga et les distribue gratuitement — les trois Sqrxz de ce rayon sont d'eux.",
+        pt: "Um time que ainda escreve jogos de Amiga realmente novos e os distribui de graça — os três Sqrxz desta prateleira são deles.",
+        ja: "いまも ほんとうに あたらしい Amiga ゲームを つくって、むりょうで こうかいして いる チームです。この たなに ある 3つの Sqrxz は かれらの さくひんです。"
+      } },
+    { name: "Exotica",
+      tint: "#d0a14f",
+      url: "https://www.exotica.org.uk/",
+      lang: "International",
+      what: {
+        en: "Decades of Amiga music and demoscene preservation: UnExoticA's soundtrack rips and the Janeway release database, which is where this shelf's Megamaid came from.",
+        nl: "Decennia aan behoud van Amiga-muziek en demoscene: de soundtrackrips van UnExoticA en de Janeway-releasedatabase, waar de Megamaid op deze plank vandaan komt.",
+        de: "Jahrzehnte Bewahrung von Amiga-Musik und Demoszene: die Soundtrack-Rips von UnExoticA und die Janeway-Release-Datenbank, aus der die Megamaid in diesem Regal stammt.",
+        fr: "Des décennies de préservation de la musique Amiga et de la demoscene : les rips de bandes-son d'UnExoticA et la base de sorties Janeway, d'où vient le Megamaid de ce rayon.",
+        pt: "Décadas preservando música de Amiga e a demoscene: os rips de trilhas do UnExoticA e o banco de lançamentos Janeway, de onde veio o Megamaid desta prateleira.",
+        ja: "なんじゅうねんにも わたる Amiga おんがくと デモシーンの ほぞんです。UnExoticA の サウンドトラックの リップと、この たなの Megamaid の でどころ である Janeway の リリース データベースが あります。"
       } }
   ],
 

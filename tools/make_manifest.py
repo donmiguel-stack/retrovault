@@ -25,7 +25,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FILES = [
     "games.js", "gamepages.js", "genres.js", "brazil.js", "usa.js",
     "packaging.js", "extras.js", "i18n.js", "setup-i18n.js", "featured.js",
-    "shops.js", "c64ad.js", "cheats.js", "downloads.js", "romsources.js", "walkthroughs.js", "tips.js",
+    "shops.js", "c64ad.js", "pcad.js", "amigaad.js", "cheats.js", "downloads.js", "romsources.js", "walkthroughs.js", "tips.js",
     # the Japanese (hiragana) sidecars for the three prose data files above -
     # same ids, translated text only. They ship through the update mechanism
     # like any other catalogue file; game.html reads them only on lang "ja".

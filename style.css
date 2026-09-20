@@ -645,6 +645,46 @@ body{
 }
 @media (prefers-reduced-motion: reduce){ .pcad-cur{animation:none;} }
 
+/* ---- Amiga-style "advertise here" banner (Amiga shelf ad slot) ----
+   Workbench-grey case, black screen, copper bars and a starfield behind a
+   scroller whose letters wear the vertical rainbow of a classic Amiga logo
+   font. Sibling to .c64ad and .pcad above; same 0.8px/frame scroll speed,
+   same sponsor object, different hardware trick. */
+.amiga-ad-strip{grid-column:1/-1;}
+.amigaad-link{display:block;text-decoration:none;position:relative;}
+.amigaad{background:#959595;padding:16px;border-radius:var(--radius);font-family:ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
+.amigaad-screen{position:relative;background:#000;height:300px;overflow:hidden;display:flex;flex-direction:column;box-shadow:inset 0 0 40px rgba(0,0,0,.8);}
+.amigaad-copper{position:absolute;inset:0;opacity:.62;pointer-events:none;}
+.amigaad-copper i{position:absolute;left:0;right:0;}
+.amigaad-stars{position:absolute;inset:0;pointer-events:none;}
+.amigaad-stars i{position:absolute;background:#fff;border-radius:50%;}
+.amigaad-band{position:relative;flex:1;display:flex;align-items:center;overflow:hidden;}
+.amigaad-scroller{position:absolute;white-space:nowrap;will-change:transform;}
+/* One vertical rainbow per letter - white, yellow, orange, red, magenta,
+   blue - which is what makes an Amiga logo font read as an Amiga logo font.
+   Set here rather than per-frame in amigaad.js because it never changes. */
+.amigaad-scroller b{
+  display:inline-block;font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;
+  font-size:46px;line-height:1;letter-spacing:4px;text-transform:uppercase;
+  color:transparent;
+  /* Stops are squeezed into 14%-78% of the line box rather than spread over
+     0%-100%: Press Start 2P's caps only occupy that band, so an even spread
+     puts the white and the blue outside the glyph and the letters come out
+     orange-to-magenta with both ends of the rainbow missing. */
+  background:linear-gradient(180deg,#ffffff 0%,#ffffff 14%,#fff3a8 23%,#ffd23d 32%,#ff8c1a 42%,#f0322c 52%,#c3229b 63%,#5b3fd6 72%,#2340c8 78%,#2340c8 100%);
+  -webkit-background-clip:text;background-clip:text;
+  filter:drop-shadow(4px 4px 0 rgba(0,0,0,.75));
+}
+/* Fallback for the rare renderer that ignores background-clip:text entirely
+   (very old WebKit) - a plain bright colour instead of invisible text. Same
+   guard pcad.js's scroller carries. */
+@supports not (background-clip:text){
+  .amigaad-scroller b{color:#ffd23d;background:none;}
+}
+/* The Japanese scroller runs in a CJK face at a size that still fits the
+   band - same adjustment .c64ad-scroller b gets below. */
+html[lang="ja"] .amigaad-scroller b{font-size:34px;letter-spacing:2px;}
+
 /* Bundled retro pixel font (Press Start 2P, SIL OFL), embedded so it works
    offline. Drives the C64 ad scroller and the Videopac attract slot, both of
    which already asked for this family by name. */
