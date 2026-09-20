@@ -1,21 +1,30 @@
 // The Amiga-style "advertise here" banner, built to sit on the Amiga shelf
 // next to c64ad.js (C64 shelf) and pcad.js (PC shelf). window.buildAmigaAd(sponsor)
-// returns a DOM node: a Workbench-grey case around a black screen with a
-// drifting three-depth starfield and, centred on it, one static line of
-// chunky pixel letters wearing the vertical rainbow of a classic Amiga logo
-// font - white at the top through yellow, orange and red into magenta and
-// blue - with that rainbow cycling slowly downward the way a Copper list
-// re-colours text on the real machine.
+// returns a DOM node: a Workbench-grey case around a black screen with a 3D
+// perspective starfield flying past the viewer and, centred on it, one static
+// line of chunky pixel letters wearing the vertical rainbow of a classic
+// Amiga logo font - white at the top through yellow, orange and red into
+// magenta and blue - with that rainbow cycling slowly downward the way a
+// Copper list re-colours text on the real machine.
 //
 // Deliberately NOT a scroller and NOT a raster/copper bar: those are the
 // C64 and DOS banners' tricks (c64ad.js, pcad.js). This one is the Amiga
 // logo screen - the whole message sits still and readable, both words on
-// one line, and the colour does the moving.
+// one line, and the colour and the stars do the moving.
 //
 // The sponsor object is the same shape as FEATURED_DATA.sponsors[] -
 // { name, url, text, attract } - and every field is optional.
 (function () {
-  var STARS = 54;
+  // ---- 3D starfield constants -------------------------------------------
+  // The demo-scene standard, and the reason every star travels its own
+  // direction: stars are points in a box ahead of the viewer, projected with
+  // sx = cx + (x / z) * cx. Nothing has a "direction" of its own - each one
+  // simply gets nearer, and perspective pushes it away from the vanishing
+  // point at the centre, slowly near the middle and faster towards the edge.
+  var STARS = 110;
+  var Z_NEAR = 0.05;   // respawn once a star is this close (it is off-screen by then)
+  var Z_FAR  = 1;      // spawn depth
+  var SPEED  = 0.006;  // z travelled per frame - ~2.6s from spawn to respawn at 60fps
 
   window.buildAmigaAd = function (sp) {
     var text = (sp && window.tx && window.tx(sp.attract)) || "ADVERTISE HERE";
@@ -24,24 +33,56 @@
     var screen = document.createElement("div"); screen.className = "amigaad-screen"; wrap.appendChild(screen);
 
     // ---- starfield -------------------------------------------------------
-    // Three depths, drifting right to left at three speeds. Positions are
-    // seeded once and then only moved, so nothing reflows.
     var field = document.createElement("div"); field.className = "amigaad-stars";
     screen.appendChild(field);
+
     var stars = [];
-    for (var s = 0; s < STARS; s++) {
-      var depth = (s % 3) + 1;                       // 1 = far/slow, 3 = near/fast
+    function seed(st, z) {
+      // Rejection-sample away from dead centre: a star spawned exactly on the
+      // vanishing point crawls for its whole life and reads as a stuck pixel.
+      do { st.x = Math.random() * 2 - 1; st.y = Math.random() * 2 - 1; }
+      while (st.x * st.x + st.y * st.y < 0.02);
+      st.z = z;
+    }
+    for (var i = 0; i < STARS; i++) {
       var dot = document.createElement("i");
-      dot.style.width = dot.style.height = depth + "px";
-      dot.style.opacity = 0.28 + depth * 0.2;
-      dot.style.top = ((s * 37) % 100) + "%";
       field.appendChild(dot);
-      stars.push({ el: dot, x: (s * 53) % 100, v: 0.035 * depth });
+      var st = { el: dot };
+      // Spread the initial depths across the whole range rather than starting
+      // them all at Z_FAR, or the first pass arrives as one visible wave.
+      seed(st, Z_NEAR + (i / STARS) * (Z_FAR - Z_NEAR));
+      stars.push(st);
     }
-    function placeStars() {
-      for (var n = 0; n < stars.length; n++) stars[n].el.style.left = stars[n].x + "%";
+
+    // Cached because reading clientWidth/clientHeight inside the frame loop
+    // forces a layout every frame for every star.
+    var w = 0, h = 0, cx = 0, cy = 0;
+    function measure() {
+      w = screen.clientWidth || 600; h = screen.clientHeight || 300;
+      cx = w / 2; cy = h / 2;
     }
-    placeStars();
+    measure();
+    if (window.ResizeObserver) new ResizeObserver(measure).observe(screen);
+    else window.addEventListener("resize", measure);
+
+    function draw() {
+      for (var n = 0; n < stars.length; n++) {
+        var s = stars[n];
+        var sx = cx + (s.x / s.z) * cx;
+        var sy = cy + (s.y / s.z) * cy;
+        // Off the edge, or past the viewer: send it back to the far plane.
+        if (s.z <= Z_NEAR || sx < -8 || sx > w + 8 || sy < -8 || sy > h + 8) {
+          seed(s, Z_FAR);
+          sx = cx + (s.x / s.z) * cx;
+          sy = cy + (s.y / s.z) * cy;
+        }
+        var near = 1 - s.z;                       // 0 far, ~1 close
+        s.el.style.transform = "translate3d(" + sx.toFixed(1) + "px," + sy.toFixed(1) + "px,0) " +
+                               "scale(" + (0.5 + near * 2).toFixed(2) + ")";
+        s.el.style.opacity = (0.22 + near * 0.85).toFixed(2);
+      }
+    }
+    draw();
 
     // ---- the logo line ---------------------------------------------------
     // One element, not one per letter: the rainbow runs down the whole line
@@ -66,11 +107,8 @@
 
     var raf = null;
     function step() {
-      for (var n = 0; n < stars.length; n++) {
-        stars[n].x -= stars[n].v;
-        if (stars[n].x < -2) stars[n].x = 102;
-      }
-      placeStars();
+      for (var n = 0; n < stars.length; n++) stars[n].z -= SPEED;
+      draw();
       raf = requestAnimationFrame(step);
     }
     raf = requestAnimationFrame(step);
@@ -79,7 +117,7 @@
     if (window.IntersectionObserver) {
       new IntersectionObserver(function (es) {
         es.forEach(function (e) {
-          if (e.isIntersecting && !raf) raf = requestAnimationFrame(step);
+          if (e.isIntersecting && !raf) { measure(); raf = requestAnimationFrame(step); }
           else if (!e.isIntersecting && raf) { cancelAnimationFrame(raf); raf = null; }
         });
       }).observe(wrap);
