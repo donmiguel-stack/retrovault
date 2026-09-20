@@ -1,7 +1,8 @@
 // The Amiga-style "advertise here" banner, built to sit on the Amiga shelf
 // next to c64ad.js (C64 shelf) and pcad.js (PC shelf). window.buildAmigaAd(sponsor)
 // returns a DOM node: a Workbench-grey case around a black screen with a 3D
-// perspective starfield flying past the viewer and, centred on it, one static
+// perspective starfield the camera flies through while also sliding left,
+// right, up and down, and, centred on it, one static
 // line of chunky pixel letters wearing the vertical rainbow of a classic
 // Amiga logo font - white at the top through yellow, orange and red into
 // magenta and blue - with that rainbow cycling slowly downward the way a
@@ -16,15 +17,29 @@
 // { name, url, text, attract } - and every field is optional.
 (function () {
   // ---- 3D starfield constants -------------------------------------------
-  // The demo-scene standard, and the reason every star travels its own
-  // direction: stars are points in a box ahead of the viewer, projected with
-  // sx = cx + (x / z) * cx. Nothing has a "direction" of its own - each one
-  // simply gets nearer, and perspective pushes it away from the vanishing
-  // point at the centre, slowly near the middle and faster towards the edge.
+  // The demo-scene standard: stars are points in a box ahead of the viewer,
+  // projected with sx = cx + (x / z) * cx. Each one simply gets nearer, and
+  // perspective pushes it away from the vanishing point - slowly near the
+  // middle, faster towards the edge.
+  //
+  // On top of that the camera also SLIDES left/right and up/down, so the
+  // field is never just "straight ahead". The slide is applied in world
+  // space (every star's x and y shift by the same amount each frame), NOT by
+  // moving the vanishing point on screen: dividing by z afterwards is what
+  // makes near stars sweep across fast while distant ones barely stir, which
+  // is the parallax that sells it. Two out-of-step sine pairs per axis keep
+  // the drift from settling into a visible loop.
   var STARS = 110;
   var Z_NEAR = 0.05;   // respawn once a star is this close (it is off-screen by then)
   var Z_FAR  = 1;      // spawn depth
   var SPEED  = 0.006;  // z travelled per frame - ~2.6s from spawn to respawn at 60fps
+  // DRIFT_Y is bigger than DRIFT_X on purpose. The screen is roughly 4.5x
+  // wider than it is tall, and the projection multiplies y by cy - so an
+  // equal world-space slide shows up 4.5x smaller vertically. Measured: at
+  // 0.0013 the up/down movement was ~7% of the sideways movement on screen
+  // and effectively invisible. Pushed much past this and stars leave through
+  // the top and bottom of the 300px band fast enough to visibly churn.
+  var DRIFT_X = 0.0018, DRIFT_Y = 0.0030;   // peak sideways / vertical camera slide, world units per frame
 
   window.buildAmigaAd = function (sp) {
     var text = (sp && window.tx && window.tx(sp.attract)) || "ADVERTISE HERE";
@@ -105,9 +120,20 @@
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return wrap;
 
-    var raf = null;
+    var raf = null, t = 0;
     function step() {
-      for (var n = 0; n < stars.length; n++) stars[n].z -= SPEED;
+      t += 1 / 60;                                  // nominal seconds; the sines below only need to be slow
+      // Camera slide. Periods of roughly 10s/27s horizontally and 15s/37s
+      // vertically - deliberately not simple multiples of each other, so the
+      // combined path wanders instead of tracing the same ellipse.
+      var dx = DRIFT_X * (Math.sin(t * 0.62) * 0.7 + Math.sin(t * 0.23 + 2.1) * 0.5);
+      var dy = DRIFT_Y * (Math.sin(t * 0.41 + 1.3) * 0.8 + Math.sin(t * 0.17) * 0.4);
+      for (var n = 0; n < stars.length; n++) {
+        var s = stars[n];
+        s.z -= SPEED;
+        s.x += dx;
+        s.y += dy;
+      }
       draw();
       raf = requestAnimationFrame(step);
     }
