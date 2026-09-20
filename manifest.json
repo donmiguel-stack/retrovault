@@ -1,15 +1,15 @@
 {
- "generated": "2026-09-20 13:25:26",
- "count": 645,
- "bytes": 222848061,
+ "generated": "2026-09-20 14:23:19",
+ "count": 666,
+ "bytes": 241791218,
  "files": {
   "games.js": {
    "sha256": "9c8390163e4df5611db4dacad7db328ee3859b84950d26fb4193c3dee1ebb219",
    "size": 140819
   },
   "gamepages.js": {
-   "sha256": "18384e78fe91a2801cce3163f7a21e5a025ab6e78a3f892c2d6896110e914126",
-   "size": 284042
+   "sha256": "c2d5f62ffaa238e417565d9b6bfac2722f67a4507a4a45398834af60511a7584",
+   "size": 283866
   },
   "genres.js": {
    "sha256": "3f6450da25386005ca39bacdf5ddc533f2e10497630838a483f7dc67b619c659",
@@ -152,8 +152,8 @@
    "size": 79469
   },
   "catalogue.html": {
-   "sha256": "9091d1761e88dcc7e4a5304d1ad0580dab0bcd3b7edd65d22ccf140ee8088295",
-   "size": 34769
+   "sha256": "03b74958e1739f7befa29e6407bc917fe80b3c61a8698d369873560dd1e60401",
+   "size": 41814
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",
@@ -188,8 +188,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "40a14a5169342b743634a4e67249e9ee350531bd14562f30b72a16108312d87d",
-   "size": 59624
+   "sha256": "7c8eb864a20a9b66f248ae87948539b38e66aac0bcaa17fc77d867f0d6eb3a63",
+   "size": 72392
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -2343,16 +2343,44 @@
    "sha256": "cf0a878235e9b5301ee5f382a2093570db68cd20caae1c575428423b72d53d9b",
    "size": 34756
   },
+  "homebrew-downloads/amiga_act_of_war.adf": {
+   "sha256": "1a491b7d37b30e6b595530e60e9ba0b95dde2ce6c84b53bb89b1e9c752b04ad2",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_alien_bash.adf": {
+   "sha256": "2a6892069a682d7d41e82c1b66b4ddc607e1ac749b359992bb5a2ce0f75270a9",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_alien_fish_finger.adf": {
    "sha256": "6cb565b46bffe9d01ffbc296782b6d5256f2641d890646390ec56f2408d72286",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_ant_wars.adf": {
+   "sha256": "75361c8b9e5d7a30a70c9393c59c53f5a9bd3c07863fb59a38b5f720a7ee0864",
    "size": 901120
   },
   "homebrew-downloads/amiga_asteroids.adf": {
    "sha256": "3a218c2522fc331b779b78d8c182d7d57fd766b4cef1660c4ca42bc49dd87769",
    "size": 901120
   },
+  "homebrew-downloads/amiga_atoms.adf": {
+   "sha256": "9d579b3002a2182fe3e30dc33c16aa5c704f6c713696a22c886824bdaec11e45",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_biplanes.adf": {
+   "sha256": "88a31e1fe12423e64a6ea47d22a87bd7cb42a26e6bc4d7f65334ccc5d66e84b1",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_black_dawn.adf": {
+   "sha256": "1cbee10433bd5048411d5e2a64192f7f9ff8e34baed2324b80cdac8a97ccde7f",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_bobs_garden.adf": {
    "sha256": "9a4d6ed5b51de7679ea82b76eb554ffa28dff1ddcc78de73667b24628005f379",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_colonial_conquest2.adf": {
+   "sha256": "91326b6b75c0a77805dfb733e60b2007dd9358dbe6712f004a6e31ed2d87e277",
    "size": 901120
   },
   "homebrew-downloads/amiga_crazy_sue.adf": {
@@ -2403,12 +2431,24 @@
    "sha256": "4fafba1b091c7cc05e9be3b66e8dafbb4826c88ba754d87ae0ac3c01d6d48c3d",
    "size": 901120
   },
+  "homebrew-downloads/amiga_diplomacy.adf": {
+   "sha256": "d9cc47f60762837d7182610a4611dc9729e0bec391de15d875cd7d36ee428edc",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_doctor_strange_2.adf": {
    "sha256": "e34a449fcc4f433332ed342111cce593df63b1ec9864b5775fd7d0393bf19c26",
    "size": 901120
   },
   "homebrew-downloads/amiga_dogfight.adf": {
    "sha256": "974b617e2af6daefaec7badf18fac1cc3b0df60fda746ca54ab1c227087cebc2",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_donkey_kong.adf": {
+   "sha256": "62e826168607ee1bd72f40d6f670d478d4ea4bda5dcc0615c69137856b4ed3f6",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_doody.adf": {
+   "sha256": "de791b59e1fe04a8ecb1dbe2af8555df334173c9f55713bfe202e953fb4f4415",
    "size": 901120
   },
   "homebrew-downloads/amiga_drip.adf": {
@@ -2423,16 +2463,36 @@
    "sha256": "623a4fad3508892ede5c8ba8d89df7eeacd1f31ed285dee1c3ada791eea75404",
    "size": 901120
   },
+  "homebrew-downloads/amiga_elevation2.adf": {
+   "sha256": "9a2b14c2c18a5dcd4fb55fbf1b2f3161625af3ebf0568032164014d34c3a61c1",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_gorf.adf": {
    "sha256": "95af1fecd2fd88189d2a0d73f19e5b55baf09918d3488c32bc33dcf2e2c50f6e",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_hellzone.adf": {
+   "sha256": "ecdb96ad21943a765b287ee9b4c8dbf27e06cee545e918424762a36fbc6c25ff",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_knights.adf": {
+   "sha256": "f45b8c3a7152e8a5c42aaf5761a10f4a8fd25e09c729a700d98ef12947dfe238",
    "size": 901120
   },
   "homebrew-downloads/amiga_llamatron.adf": {
    "sha256": "5879efd7276a19d2c7b304ecca7e2fc81a67372cef8b71399212d95c3ac6d5a3",
    "size": 901120
   },
+  "homebrew-downloads/amiga_mayhem.adf": {
+   "sha256": "192c6fd8e4f11e2ac71318c45223374fbe64296e575b02fbc3ddbdc6ac1ed6c3",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_megaball.adf": {
    "sha256": "24bf6e2eef4a2d8ac6ecaa9ffed4324700c92bae3e225061f2fc9204e0c9ed57",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_particle_man.adf": {
+   "sha256": "5e7c2d2d646ef7d82865c0595576ecee377962da80297acd5e6bf57a43a2e415",
    "size": 901120
   },
   "homebrew-downloads/amiga_pengo2.adf": {
@@ -2451,6 +2511,10 @@
    "sha256": "ac50dd0f7b9a549835867041852948702523ed11449cd11bf4b49518b38d42ce",
    "size": 901120
   },
+  "homebrew-downloads/amiga_sqrxz2.adf": {
+   "sha256": "f854f0570935091b092be87438d4bd5be73ab855a7dd6f68ee826469664620ec",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_sqrxz3.adf": {
    "sha256": "9d74702e69bf60aa67eb95a0420f68e7444e5c22589ec7e99d186179c4f42c93",
    "size": 901120
@@ -2463,12 +2527,32 @@
    "sha256": "e4f37d461c9e9720511f00c93fdd573143eb8ebe7e28be9cb484f5913c6bafd7",
    "size": 901120
   },
+  "homebrew-downloads/amiga_tanx.adf": {
+   "sha256": "7a292a08955c39f8fcb7d7117fba3a0044c2868f82cc6e3287defb0707f04fd6",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_toado.adf": {
    "sha256": "d7cc25ac38e879192e74ad2872cad4c8367f602bf98e9ae55f76226bb7ec27fb",
    "size": 901120
   },
+  "homebrew-downloads/amiga_top_secret.adf": {
+   "sha256": "0858bd11ddc11f7b9a108cad8f85157c7f12928a87e730818fec9271301c48cf",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_trailblazer.adf": {
    "sha256": "4e073c0bc39bdb1d3a2a3bb2e5e351d3c1ea12b347673a49a6ec5319a5de696a",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_transplant.adf": {
+   "sha256": "b1f5914a2e73fd83723c05d65da9928cc52c6e75d69edf1e235fcede864d19a9",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_trap_runner.adf": {
+   "sha256": "9fb4f4e78e44377ea340583f97feb986d87de751e015acf94b7edbd0e96aec91",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_turboraketti.adf": {
+   "sha256": "29b44ce53f7152e9eb923169668883f998eeafa7d0718947432eb03c549ee8bc",
    "size": 901120
   },
   "homebrew-downloads/amiga_wibble_world_giddy.adf": {
