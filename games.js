@@ -1,6 +1,6 @@
 window.GAMES_DATA = {
   "generated": "picopac catalogue",
-  "count": 348,
+  "count": 360,
   "games": [
   {
     "id": "new_amok_alt",
@@ -4733,6 +4733,186 @@ window.GAMES_DATA = {
     "year": 1989,
     "publisher": "Pixar & The Band",
     "developer": "Pixar & The Band"
+  },
+  {
+    "id": "am_demo_sota",
+    "filename": "amiga_demo_sota.adf",
+    "title": "State of the Art (Spaceballs)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_sota.adf",
+    "year": 1992,
+    "publisher": "Spaceballs",
+    "developer": "Code: Lone Starr, Major Asshole · Graphics: TMB Designs · Music: Travolta"
+  },
+  {
+    "id": "am_demo_enigma",
+    "filename": "amiga_demo_enigma.adf",
+    "title": "Enigma (Phenomena)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_enigma.adf",
+    "year": 1991,
+    "publisher": "Phenomena",
+    "developer": "Code: Azatoth, Judas · Graphics: Azatoth, Uno, Imbecille, Terminator · Music: Firefox, Tip"
+  },
+  {
+    "id": "am_demo_mentalhangover",
+    "filename": "amiga_demo_mentalhangover.adf",
+    "title": "Mental Hangover (Scoopex)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_mentalhangover.adf",
+    "year": 1990,
+    "publisher": "Scoopex",
+    "developer": "Code: Slayer · Graphics: Reward · Music: Uncle Tom"
+  },
+  {
+    "id": "am_demo_interference",
+    "filename": "amiga_demo_interference.adf",
+    "title": "Interference (Sanity)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_interference.adf",
+    "year": 1993,
+    "publisher": "Sanity",
+    "developer": "Code: Cosmos, Microforce · Graphics: Cougar, Havok · Music: Virgill"
+  },
+  {
+    "id": "am_demo_arte",
+    "filename": "amiga_demo_arte.adf",
+    "title": "Arte (Sanity)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_arte.adf",
+    "year": 1993,
+    "publisher": "Sanity",
+    "developer": "Code: Chaos, McDeal, Mr. Pet · Graphics: Ra · Music: Moby"
+  },
+  {
+    "id": "am_demo_globaltrash",
+    "filename": "amiga_demo_globaltrash.adf",
+    "title": "Global Trash (The Silents)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_globaltrash.adf",
+    "year": 1991,
+    "publisher": "The Silents",
+    "developer": "Code: Sunjohn · Graphics: Mikael Balle, Sionic · Music: Jesper Kyd"
+  },
+  {
+    "id": "am_demo_voyage",
+    "filename": "amiga_demo_voyage.adf",
+    "title": "Voyage (Razor 1911)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_voyage.adf",
+    "year": 1991,
+    "publisher": "Razor 1911",
+    "developer": "Code: Sim · Graphics: Drake, Murdock · Music: Codex, Mantronix, Tip"
+  },
+  {
+    "id": "am_demo_rinkadink",
+    "filename": "amiga_demo_rinkadink.adf",
+    "title": "Rink A Dink: Redux (Lemon.)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_rinkadink.adf",
+    "year": 2013,
+    "publisher": "Lemon.",
+    "developer": "Code: Paradroid · Graphics: Paradroid, Facet, Prowler · Music: Magnar, from an original by Nuke"
+  },
+  {
+    "id": "c64_demo_dutchbreeze",
+    "filename": "c64_demo_dutchbreeze.d64",
+    "title": "Dutch Breeze (Black Mail)",
+    "platform": "C64",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "c64_demo_dutchbreeze.d64",
+    "year": 1991,
+    "publisher": "Black Mail",
+    "developer": "Code: Alf, Gaap, Hitchhiker, Skyline, Thunder · Graphics: Hein, Orc a.o. · Music: Jeroen Tel, Reyn Ouwehand, Falco Paul"
+  },
+  {
+    "id": "c64_demo_deusexmachina",
+    "filename": "c64_demo_deusexmachina.d64",
+    "title": "Deus Ex Machina (Crest & Oxyron)",
+    "platform": "C64",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "c64_demo_deusexmachina.d64",
+    "year": 2000,
+    "publisher": "Crest, Oxyron",
+    "developer": "Code: Crossbow, Graham · Graphics: Crossbow, DeeKay, Cyclone, Mermaid · Music: Drax, Jeff, MSK"
+  },
+  {
+    "id": "c64_demo_royalarte",
+    "filename": "c64_demo_royalarte.d64",
+    "title": "Royal Arte (Booze Design)",
+    "platform": "C64",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "c64_demo_royalarte.d64",
+    "year": 2001,
+    "publisher": "Booze Design",
+    "developer": "Code: HCL · Graphics: HCL, DeeKay, Valsary, Forbidden Cult · Music: Dane, Vip, Goto80, Agemixer, Mindflow, 6R6"
+  },
+  {
+    "id": "c64_demo_wonderland12",
+    "filename": "c64_demo_wonderland12.d64",
+    "title": "Wonderland XII (Censor Design)",
+    "platform": "C64",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "c64_demo_wonderland12.d64",
+    "year": 2013,
+    "publisher": "Censor Design",
+    "developer": "Code: Axis, Bob, CRT, Lavazza, Mirage, Swallow · Graphics: CG, Creeper, Dragon, Mirage, Taito, Yazoo · Music: Magnar"
   }
 ]
 };

@@ -4,6 +4,54 @@
 // "unsure": true marks a best guess - mostly prototypes and homebrew that
 // are barely documented. Correct them here and the filters follow.
 window.GENRE_DATA = {
+ "am_demo_sota": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "am_demo_enigma": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "am_demo_mentalhangover": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "am_demo_interference": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "am_demo_arte": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "am_demo_globaltrash": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "am_demo_voyage": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "am_demo_rinkadink": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "c64_demo_dutchbreeze": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "c64_demo_deusexmachina": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "c64_demo_royalarte": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "c64_demo_wonderland12": {
+  "genre": "demo",
+  "players": "p1"
+ },
  "new_amok_alt": {
   "genre": "shooter",
   "players": "p1"

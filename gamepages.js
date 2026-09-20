@@ -1,6 +1,151 @@
 // Generated: manual scans (archive.org odysseymanuals), history (Wikipedia),
 // gameplay videos (YouTube), and per-game input style for the controls box.
 window.GAMEPAGES_DATA = {
+ "am_demo_sota": {
+   "input": "joystick",
+   "video": {
+     "id": "D0scuIFp9nQ",
+     "title": "State of the Art by Spaceballs - Amiga Demo"
+   },
+   "history": {
+     "text": "Spaceballs' trackmo, first in the Amiga demo competition at The Party 1992. It is built around vector-drawn silhouettes of dancing figures — produced by rotoscoping filmed footage frame by frame — cut to a eurotechno track by Travolta, rather than around a sequence of coder effects. It is routinely credited with moving Amiga demos toward design and presentation aimed at a general audience, and was divisive on release for exactly that reason.",
+     "source": "https://demozoo.org/productions/2/"
+   },
+   "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "am_demo_enigma": {
+   "input": "joystick",
+   "video": {
+     "id": "iGpU3DicbLQ",
+     "title": "Phenomena - Enigma - Amiga Demo (HD 50fps)"
+   },
+   "history": {
+     "text": "Phenomena's 1991 demo, first in the Amiga demo competition at the Anarchy Easter Conference. It is known for raytraced and 3D sequences running on a stock 512 KB A500 — a precalculated fractal animation, a vector-world flyby and the much-remembered “TV box” effect — at a point when such imagery on a 7 MHz 68000 was unusual. The Firefox and Tip soundtrack is one of the most frequently cited Amiga module scores and is often listened to on its own.",
+     "source": "https://demozoo.org/productions/143/"
+   },
+   "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "am_demo_mentalhangover": {
+   "input": "joystick",
+   "video": {
+     "id": "4Pm7H-NKZb4",
+     "title": "SCOOPEX 1990 MENTAL HANGOVER (A500/GBA1000)"
+   },
+   "history": {
+     "text": "Scoopex's 1990 production, first in the Amiga demo competition at the Swedish Elite Easter Conference. It loads from disk as one continuous scripted piece rather than as a menu of separate megademo parts, and is widely credited in the scene as the release that established the trackmo format. It is remembered technically for its vector work, and for Uncle Tom's module “Madness Took Me”.",
+     "source": "https://demozoo.org/productions/22186/"
+   },
+   "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "am_demo_interference": {
+   "input": "joystick",
+   "video": {
+     "id": "2-JCap86Zn4",
+     "title": "Interference (Sanity, 1993, Amiga ECS) HQ"
+   },
+   "history": {
+     "text": "A 1993 Sanity one-file demo that packs a full effect set into a single loadable file: a music-synchronised dot tunnel, rotating raster bars and Wolfenstein-style texture-mapped walls, an early instance of that technique on OCS/ECS. Virgill's module is regularly named among the best Amiga soundtracks. Unlike most of this shelf it was not a party release.",
+     "source": "https://demozoo.org/productions/8991/"
+   },
+   "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "am_demo_arte": {
+   "input": "joystick",
+   "video": {
+     "id": "p9qPBYdXJKs",
+     "title": "Arte by Sanity - Amiga Demo HD"
+   },
+   "history": {
+     "text": "Sanity's single-disk trackmo, third in the Amiga demo competition at The Party 1993. Its best-known effect is a texture-mapped rotating sphere, alongside other 3D work considered advanced for stock OCS/ECS hardware at the time. Ra's stylised graphics and Moby's syncopated soundtrack are the elements most often singled out, and the demo has held a higher long-term standing than its competition placing.",
+     "source": "https://demozoo.org/productions/5784/"
+   },
+   "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "am_demo_globaltrash": {
+   "input": "joystick",
+   "video": {
+     "id": "o96I_UfSdIU",
+     "title": "The Silents - Global Trash - Amiga Demo (HD 50fps)"
+   },
+   "history": {
+     "text": "The Silents' 1991 demo, first in the Amiga demo competition at the Amiga Summit Convention — a design-led production that won over technically stronger entries. It is notable for a one-pixel plasma routine and early light-sourced “rubber” vectors, and for a soundtrack by Jesper Kyd, who later scored Hitman and Assassin's Creed. It opens with a looped-sample bootloader trick that plays audio before the demo proper starts.",
+     "source": "https://demozoo.org/productions/710/"
+   },
+   "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "am_demo_voyage": {
+   "input": "joystick",
+   "video": {
+     "id": "YMFBAOjuMWw",
+     "title": "Razor 1911 - Voyage - Amiga Demo (HD 50fps)"
+   },
+   "history": {
+     "text": "Razor 1911's trackmo, third in the Amiga demo competition at The Party 1991 behind Alcatraz's Odyssey and Hardwired. It is known for texture mapping and 3D routines on a stock A500, including a much-remembered running figure inside a wireframe cube, and for two well-travelled modules — “Undersea” by Codex and “Overload” by Tip and Mantronix. It also carries a good deal of BBS advertising, a trace of Razor 1911's warez-scene origins.",
+     "source": "https://demozoo.org/productions/1914/"
+   },
+   "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "am_demo_rinkadink": {
+   "input": "joystick",
+   "video": {
+     "id": "CpR4TgCbkcU",
+     "title": "LEMON. 2013 RINK A DINK REDUX (FINAL) (A500/A600)"
+   },
+   "history": {
+     "text": "Lemon.'s complete recode and expansion of their own 1993 demo Rink a Dink, first in the oldskool demo competition at Revision 2013. It runs on an unexpanded 512 KB A500 with plain OCS/ECS and adds seven effects the original did not have — glenz vectors, light-sourced bars, “no AGA” bars, circles, dots, spacecut vectors and RGB balls — at roughly twice the length. Proof that the 1980s machine is still being written for.",
+     "source": "https://demozoo.org/productions/59657/"
+   },
+   "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "c64_demo_dutchbreeze": {
+   "input": "keyboard",
+   "video": {
+     "id": "PUbbYDUIFbc",
+     "title": "Commodore 64 demo: Black Mail - Dutch Breeze (1991)"
+   },
+   "history": {
+     "text": "Black Mail's 1991 demo, first in the C64 demo competition at the Silicon Limited Winter Party. It is usually described as a turning point in C64 demo design, moving the emphasis from raw effects toward art direction. Its reputation rests on Hein's pixel graphics and on a soundtrack from three of the best-known Dutch SID composers — Jeroen Tel, Reyn Ouwehand and Falco Paul.",
+     "source": "https://csdb.dk/release/?id=11584"
+   },
+   "note": "This is a demo, not a game: it loads and then plays by itself, with nothing to control. It runs from side&nbsp;1 of the original multi-side release and will ask for the next side when it reaches that point &mdash; the Download button gives the complete set. Loading is slower here than for the games on this shelf, on purpose: demos use their own custom disk loaders, so the Vault switches true 1541 drive emulation on for them instead of the fast virtual-device load."
+ },
+ "c64_demo_deusexmachina": {
+   "input": "keyboard",
+   "video": {
+     "id": "tWtOS5CN4fI",
+     "title": "C64 - Demo - Deus Ex Machina by Crest, Oxyron (2000) With Original Sid 6581R4AR"
+   },
+   "history": {
+     "text": "A joint Crest and Oxyron production, first in the C64 demo competition at Mekka & Symposium 2000. It is regarded as a landmark for C64 art direction, where the visual design and pacing matter as much as the individual effects, and its soundtrack — split across Drax, Jeff and MSK — is routinely named among the best on the platform. It is commonly cited as the template for the design-driven C64 demos that followed.",
+     "source": "https://csdb.dk/release/?id=11585"
+   },
+   "note": "This is a demo, not a game: it loads and then plays by itself, with nothing to control. It runs from side&nbsp;1 of the original multi-side release and will ask for the next side when it reaches that point &mdash; the Download button gives the complete set. Loading is slower here than for the games on this shelf, on purpose: demos use their own custom disk loaders, so the Vault switches true 1541 drive emulation on for them instead of the fast virtual-device load."
+ },
+ "c64_demo_royalarte": {
+   "input": "keyboard",
+   "video": {
+     "id": "oYPxSPpWUdk",
+     "title": "C64 Demo - Royal Arte [2001] by Booze Design"
+   },
+   "history": {
+     "text": "Booze Design's 2001 demo, first in the C64 demo competition at Mekka & Symposium 2001. It is known for its extra-large IFLI pictures and a “wobbling picture” distortion effect that commenters still describe as unbeaten on the platform, across a long sequence of parts with a soundtrack from six composers. The disk here is the later “Royal Arte 100%” release from November 2001, which fixed loading problems the original had on some drives.",
+     "source": "https://csdb.dk/release/?id=11619"
+   },
+   "note": "This is a demo, not a game: it loads and then plays by itself, with nothing to control. It runs from side&nbsp;1 of the original multi-side release and will ask for the next side when it reaches that point &mdash; the Download button gives the complete set. Loading is slower here than for the games on this shelf, on purpose: demos use their own custom disk loaders, so the Vault switches true 1541 drive emulation on for them instead of the fast virtual-device load."
+ },
+ "c64_demo_wonderland12": {
+   "input": "keyboard",
+   "video": {
+     "id": "jX0UgvgBuQc",
+     "title": "Censor Design - Wonderland XII - Real C64, 8580 SID"
+   },
+   "history": {
+     "text": "Censor Design's three-disk, roughly twenty-minute production, first in the C64 demo competition at Baroque Floppy People 2013. It is built around the group's colour-attribute cycling technique, with a fractal zoomer, vector cubes, metaballs and a rotating scroller among its parts. Its finale plays 16 kHz digitised audio while simultaneously running a full-screen upscroller, an unusually demanding combination on C64 hardware.",
+     "source": "https://csdb.dk/release/?id=120907"
+   },
+   "note": "This is a demo, not a game: it loads and then plays by itself, with nothing to control. It runs from side&nbsp;1 of the original multi-side release and will ask for the next side when it reaches that point &mdash; the Download button gives the complete set. Loading is slower here than for the games on this shelf, on purpose: demos use their own custom disk loaders, so the Vault switches true 1541 drive emulation on for them instead of the fast virtual-device load."
+ },
+
  "new_amok_alt": {
   "input": "joystick",
   "history": {

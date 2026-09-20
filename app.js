@@ -8,7 +8,7 @@
   // far more often than this should.
   var VAULT_VERSION = "1.0.0";
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 41;
+  var COVER_V = 42;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
   var CLIP_V = 7;
 
@@ -38,6 +38,7 @@
     { key: "homebrew", label: "Homebrew",       color: "#e05a7e", match: ["Homebrew (this project)", "Homebrew (community)"] },
     { key: "c64",      label: "Commodore 64",   color: "#b98a5f", match: ["Commodore 64"] },
     { key: "amiga",    label: "Amiga",          color: "#ff8a3d", match: ["Amiga"] },
+    { key: "demoscene",label: "Demoscene",      color: "#9b6bd6", match: ["Demoscene"] },
     { key: "pc",       label: "MS-DOS",         color: "#4a7fd6", match: ["MS-DOS"] }
   ];
 
@@ -77,7 +78,7 @@
   // What a game actually is, from genres.js - filters that combine with the
   // origin filters above, so "G7400 + shooter + two players" is one query.
   var GENRE_ORDER = ["action","platformer","shooter","fighting","maze","sports",
-                     "racing","strategy","puzzle","adventure","education","gambling","utility"];
+                     "racing","strategy","puzzle","adventure","education","gambling","utility","demo"];
   var PLAYER_ORDER = ["p1","p12","p2"];
   function genreOf(g) { return ((window.GENRE_DATA || {})[g.id] || {}).genre || null; }
   function playersOf(g) { return ((window.GENRE_DATA || {})[g.id] || {}).players || null; }

@@ -28,6 +28,83 @@
 // claude/vault-c64-homebrew-licensing-review.md docs.
 
 window.DOWNLOAD_DATA = {
+  "am_demo_sota": {
+    file: "amiga_demo_sota.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/2/",
+    checked: "2026-09-20"
+  },
+  "am_demo_enigma": {
+    file: "amiga_demo_enigma.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/143/",
+    checked: "2026-09-20"
+  },
+  "am_demo_mentalhangover": {
+    file: "amiga_demo_mentalhangover.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/22186/",
+    checked: "2026-09-20"
+  },
+  "am_demo_interference": {
+    file: "amiga_demo_interference.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/8991/",
+    checked: "2026-09-20"
+  },
+  "am_demo_arte": {
+    file: "amiga_demo_arte.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/5784/",
+    checked: "2026-09-20"
+  },
+  "am_demo_globaltrash": {
+    file: "amiga_demo_globaltrash.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/710/",
+    checked: "2026-09-20"
+  },
+  "am_demo_voyage": {
+    file: "amiga_demo_voyage.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/1914/",
+    checked: "2026-09-20"
+  },
+  "am_demo_rinkadink": {
+    file: "amiga_demo_rinkadink.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/59657/",
+    checked: "2026-09-20"
+  },
+  "c64_demo_dutchbreeze": {
+    file: "c64_demo_dutchbreeze_full.zip",
+    verdict: "LIKELY-OK",
+    source: "https://csdb.dk/release/?id=11584",
+    checked: "2026-09-20",
+    note: "Complete multi-side release, as archived by CSDb. The Vault plays side&nbsp;1 in the browser."
+  },
+  "c64_demo_deusexmachina": {
+    file: "c64_demo_deusexmachina_full.zip",
+    verdict: "LIKELY-OK",
+    source: "https://csdb.dk/release/?id=11585",
+    checked: "2026-09-20",
+    note: "Complete multi-side release, as archived by CSDb. The Vault plays side&nbsp;1 in the browser."
+  },
+  "c64_demo_royalarte": {
+    file: "c64_demo_royalarte_full.zip",
+    verdict: "LIKELY-OK",
+    source: "https://csdb.dk/release/?id=11619",
+    checked: "2026-09-20",
+    note: "Complete multi-side release, as archived by CSDb. The Vault plays side&nbsp;1 in the browser."
+  },
+  "c64_demo_wonderland12": {
+    file: "c64_demo_wonderland12_full.zip",
+    verdict: "LIKELY-OK",
+    source: "https://csdb.dk/release/?id=120907",
+    checked: "2026-09-20",
+    note: "Complete multi-side release, as archived by CSDb. The Vault plays side&nbsp;1 in the browser."
+  },
+
 
   // ---- Videopac / G7000+ ----
   "new_bird-hunt": {

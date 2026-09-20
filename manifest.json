@@ -1,19 +1,19 @@
 {
- "generated": "2026-09-20 12:06:22",
- "count": 615,
- "bytes": 212775500,
+ "generated": "2026-09-20 12:39:18",
+ "count": 643,
+ "bytes": 222737289,
  "files": {
   "games.js": {
-   "sha256": "c89a65572fd0c301d0de4cc4b0aace48f316ec0eeed23f2737782a07c3db58b0",
-   "size": 117516
+   "sha256": "27bb5d907d7dbd7e85488048dd2e8169d4936f43cba868af6e7ea13a53b5e439",
+   "size": 122752
   },
   "gamepages.js": {
-   "sha256": "f6f78bb48547de5322a857a294de4b7efe2b144a05e4f13706391172ef54721e",
-   "size": 258264
+   "sha256": "ef36c25ecefa8ebeef1efc338ce469ac3dc414f94aa461580aded49ffabbce86",
+   "size": 270228
   },
   "genres.js": {
-   "sha256": "98d3aa23c64ec0cb23a43b22bcd35d2b86c444daeb78d459023cb1955456cf3b",
-   "size": 25604
+   "sha256": "a8375108cbd6ec312f771863880abcf0e5514cf5cb0dbdd9b30ba1895c5402ec",
+   "size": 26391
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,8 +32,8 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "25a12acfa0e045a0daa14d93e30c29aac46ae0e5d53ac7288a98e318ee00d6f6",
-   "size": 89038
+   "sha256": "0b0b53250d3f91b546af60df7ff60c3bddaa9fcea165f67f4918598f6533232d",
+   "size": 89359
   },
   "setup-i18n.js": {
    "sha256": "efdadf93a2202a3ce2b56bc89935726603cf7f4da0fd8d7ce1bcbb7ceee12bd6",
@@ -56,16 +56,16 @@
    "size": 4283
   },
   "amigaad.js": {
-   "sha256": "8125aa274ece65b99142d2423f6732c692b45a7481dd729f0cc742361b9aef4a",
-   "size": 6573
+   "sha256": "3ace4c5ed9a7018c62b92f18c135d39202bd2e0aab04c840b0c15eaa1a2fc6e4",
+   "size": 4224
   },
   "cheats.js": {
    "sha256": "54279647b7ee56e4c8bc5a1f303473d3effec19ae6ac8f3f1d7cb18a89f6f32d",
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "7210503c027e8796318bf609196c36d2af5f3729cec3a5f0db66e78b0fb2d10f",
-   "size": 24833
+   "sha256": "8f7d8b99df254f51cec4cd8edcf96f0a25267dada530baac4bf688d7b42492a7",
+   "size": 27342
   },
   "romsources.js": {
    "sha256": "ae973dd6f7d0aa683492a4be477c69c59c8e89e3902833e791e1057d9ac51e8e",
@@ -112,28 +112,28 @@
    "size": 6343
   },
   "app.js": {
-   "sha256": "4c7b3f90e2ef79fc7d36c9fe8237c42b4e774ea1b27a0916f9616239a09760e6",
-   "size": 85401
+   "sha256": "bd5ab724d1ecb29f627648eaa3079edf0c1287f13f00a405e9ec284703455d4e",
+   "size": 85498
   },
   "demo.js": {
    "sha256": "6471f99efb550c6114828ef8e1fd6d0932d14d1b83569076c9e5bbc1450e779d",
    "size": 4831
   },
   "game.html": {
-   "sha256": "7636d89beec4c33cb67072f856fefdb4239c8a80fa761b8851eed084eeecb242",
+   "sha256": "508c3d104b28095671ce4f0f4eaf3c7404a018887fc9fd52e6130bca59c78f7a",
    "size": 9576
   },
   "index.html": {
-   "sha256": "40896c3e5c3c07b33d75a07883c21a13098669950c2a2fb4f5c1e1fb10594165",
+   "sha256": "4503ce6bfb4f4893dd8bcd53b2c6cc37a06f11c836e53969416bb5552a9d70a4",
    "size": 18669
   },
   "resources.html": {
-   "sha256": "ad6366e3dddb98aaba68a491dca36319f88863d00c6db06ef810c81f57bb2801",
+   "sha256": "653d901326a39a15ba9929707d147bea5bebe7053effff4ec5ba4338a43e9f6e",
    "size": 13110
   },
   "style.css": {
-   "sha256": "798c24509d27ce3232a609cb9ffe7d5e75e5807672951d74878fead296e18943",
-   "size": 56077
+   "sha256": "d084e32fba7a68cf5a5d368572028fbb756e46a766818510a77a940751175cd4",
+   "size": 57714
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -148,7 +148,7 @@
    "size": 79469
   },
   "catalogue.html": {
-   "sha256": "a77a2659d81e29da099d16b6beb93a298d831b62463358f3504ca717eb9df83d",
+   "sha256": "ef1b2093d15855f179c8b2ebfa10065c4dc023683ebe97a055fb5526e982ae06",
    "size": 34769
   },
   "favicon.ico": {
@@ -298,6 +298,38 @@
   "covers/am_deluxe_pacman.png": {
    "sha256": "ae61463217e99a2c76979ea0ad636941848158928672e469745178cb7ca261e0",
    "size": 6071
+  },
+  "covers/am_demo_arte.png": {
+   "sha256": "46b5f5fd307b7d374530bc360c4b0089ef24ec3f84a37e4435971d7deb34ddf0",
+   "size": 89827
+  },
+  "covers/am_demo_enigma.png": {
+   "sha256": "5506518699c4e0b525271dedfbce212f5e33f76c3d7cc1fde445a8162988936c",
+   "size": 13793
+  },
+  "covers/am_demo_globaltrash.png": {
+   "sha256": "0d9bc53e3b9652f52565a5c47b67936768046bcb2564369a74684736f7270ece",
+   "size": 55414
+  },
+  "covers/am_demo_interference.png": {
+   "sha256": "a901ba0a0cedfb5641cda8a19a764df84e6484fcf1fb31a879abf0eedbc1d7f1",
+   "size": 75787
+  },
+  "covers/am_demo_mentalhangover.png": {
+   "sha256": "0ff2b9e26a2db74ac4d25ce6d00dbcbc8a156117420aff59c5b244ea572f86ea",
+   "size": 43142
+  },
+  "covers/am_demo_rinkadink.png": {
+   "sha256": "fb18f017d1369f65f48a3aee10b80acc13062372f3634c428123d4adec8ba234",
+   "size": 20784
+  },
+  "covers/am_demo_sota.png": {
+   "sha256": "bad34e7b1c46722c9e74130452719a30f7231eef78e9ac5821d5ec87d27ed083",
+   "size": 181426
+  },
+  "covers/am_demo_voyage.png": {
+   "sha256": "90ed65421d8b789729de96091de359759361dea2e2630b41f65fcc515d737735",
+   "size": 61173
   },
   "covers/am_doctor_strange_2.png": {
    "sha256": "28b38d6ad9a46e782353523b064552f976f6802cf0983acf030b054cc87e59e7",
@@ -530,6 +562,22 @@
   "covers/c64_defender_crown.png": {
    "sha256": "40148137b5214c36a031e1c20862d33c59fc68c6a4f51509e776e06b3d8ac973",
    "size": 30863
+  },
+  "covers/c64_demo_deusexmachina.png": {
+   "sha256": "7d21b73c9cad60f863e274d50242dfb2b3f4ad42da642846c96c54ebadf40703",
+   "size": 110928
+  },
+  "covers/c64_demo_dutchbreeze.png": {
+   "sha256": "51517e46171e1810a8d4b2a43ee629c00108cf1f21337f26ff01554872d48817",
+   "size": 71793
+  },
+  "covers/c64_demo_royalarte.png": {
+   "sha256": "b98af9e0e7d955f5423aaad286e020cd6da8967f37f7d686c930e674d1b4d5f9",
+   "size": 106854
+  },
+  "covers/c64_demo_wonderland12.png": {
+   "sha256": "ed8c0c12c28ef61c0c08013fef73a9c96f51ba68e61c67cf39036a00c1a225a7",
+   "size": 60256
   },
   "covers/c64_double_dragon.png": {
    "sha256": "241871f2189d3f5c0639875761bcb7c5dba659906e8029b88610177f2dc499a3",
@@ -2315,6 +2363,38 @@
    "sha256": "e929243b490e08e8c93ab9809147f82c2ebd1c63539858b65c139741747b82aa",
    "size": 901120
   },
+  "homebrew-downloads/amiga_demo_arte.adf": {
+   "sha256": "eb7521fc1de886c69706ab0e21898a89199fb12256db40743f3ed190957e896a",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_demo_enigma.adf": {
+   "sha256": "e10c5032909cb1eb471ecff409e4d1ae0dfcb85b83e763ffd6f7021774df2f33",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_demo_globaltrash.adf": {
+   "sha256": "6f471d757147f7926208c15bf2105c95f4e53af64c99e9e81e542c091c485533",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_demo_interference.adf": {
+   "sha256": "4f4d36ca0f363aa5decd6c3dd52dc70bfed102462cd73155ed24e05ca30fea3e",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_demo_mentalhangover.adf": {
+   "sha256": "8a0a45f518bf96233e43259a1498d9c318a2cb7c43cd3cdbb54ea625b12b4b36",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_demo_rinkadink.adf": {
+   "sha256": "69c79ef668b037f494c1b010f47416d6dd59129758b35d25845776f5ef026932",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_demo_sota.adf": {
+   "sha256": "470e74457065b38db660c1f6286e5600c6433b42f63f99f832f7d9a07c6a8a64",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_demo_voyage.adf": {
+   "sha256": "4fafba1b091c7cc05e9be3b66e8dafbb4826c88ba754d87ae0ac3c01d6d48c3d",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_doctor_strange_2.adf": {
    "sha256": "e34a449fcc4f433332ed342111cce593df63b1ec9864b5775fd7d0393bf19c26",
    "size": 901120
@@ -2406,6 +2486,38 @@
   "homebrew-downloads/brokenaltars.prg": {
    "sha256": "2eaaa4bb0613773fecaeca718fde8ee0dbc58c27c343a468746c60ccf96ba2bd",
    "size": 49997
+  },
+  "homebrew-downloads/c64_demo_deusexmachina.d64": {
+   "sha256": "4062a7cfccf087dfea3afca915626a6322a6d5a7ae5af3330b2e772ee228552b",
+   "size": 174848
+  },
+  "homebrew-downloads/c64_demo_deusexmachina_full.zip": {
+   "sha256": "4673d5231fd60f3ea14fa9e17e64638c585b92474029d6bb10ea9f40d67aebed",
+   "size": 242219
+  },
+  "homebrew-downloads/c64_demo_dutchbreeze.d64": {
+   "sha256": "6bf19b21bee41b1466e94700b890f8efc4d591c0524b84ed424b8f0c094d4703",
+   "size": 174848
+  },
+  "homebrew-downloads/c64_demo_dutchbreeze_full.zip": {
+   "sha256": "dcaf1a5a72ee9e460d3392c6f554340bbc22c85ae117f8135ffc052a3f8b8717",
+   "size": 231230
+  },
+  "homebrew-downloads/c64_demo_royalarte.d64": {
+   "sha256": "795e9032abf63431998d1d145375314b175104edf920f6df7c146a0aa08d2fe0",
+   "size": 174848
+  },
+  "homebrew-downloads/c64_demo_royalarte_full.zip": {
+   "sha256": "35efe1632fabb9b3cb7bc1b94ef40520f8dd8fe87d77e6de805b99eadab8b20c",
+   "size": 274447
+  },
+  "homebrew-downloads/c64_demo_wonderland12.d64": {
+   "sha256": "5b6cfadf715941ea13f387289f078b2e7f4167c26049063a6ddc34eff54ac7b6",
+   "size": 174848
+  },
+  "homebrew-downloads/c64_demo_wonderland12_full.zip": {
+   "sha256": "afd7ebcbecd12e3d14021bb9f4dc5a841700401eb79d600e6832fbafeea3b6b5",
+   "size": 394162
   },
   "homebrew-downloads/comchinko.prg": {
    "sha256": "e9393c9ed33208c84c31a0d774c68a7e1a7d04e265fb9ba09fdf8d0d546f501c",

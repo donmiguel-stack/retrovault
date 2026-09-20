@@ -646,44 +646,70 @@ body{
 @media (prefers-reduced-motion: reduce){ .pcad-cur{animation:none;} }
 
 /* ---- Amiga-style "advertise here" banner (Amiga shelf ad slot) ----
-   Workbench-grey case, black screen, copper bars and a starfield behind a
-   scroller whose letters wear the vertical rainbow of a classic Amiga logo
-   font. Sibling to .c64ad and .pcad above; same 0.8px/frame scroll speed,
-   same sponsor object, different hardware trick. */
+   Workbench-grey case, black screen, a drifting starfield and one static
+   line of pixel letters carrying a vertical rainbow that cycles downward -
+   the Amiga logo screen. Sibling to .c64ad and .pcad above; no scroller and
+   no raster bar, because those are the other two shelves' tricks. */
 .amiga-ad-strip{grid-column:1/-1;}
 .amigaad-link{display:block;text-decoration:none;position:relative;}
 .amigaad{background:#959595;padding:16px;border-radius:var(--radius);font-family:ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;user-select:none;box-shadow:0 6px 22px rgba(0,0,0,.4);}
 .amigaad-screen{position:relative;background:#000;height:300px;overflow:hidden;display:flex;flex-direction:column;box-shadow:inset 0 0 40px rgba(0,0,0,.8);}
-.amigaad-copper{position:absolute;inset:0;opacity:.62;pointer-events:none;}
-.amigaad-copper i{position:absolute;left:0;right:0;}
 .amigaad-stars{position:absolute;inset:0;pointer-events:none;}
 .amigaad-stars i{position:absolute;background:#fff;border-radius:50%;}
-.amigaad-band{position:relative;flex:1;display:flex;align-items:center;overflow:hidden;}
-.amigaad-scroller{position:absolute;white-space:nowrap;will-change:transform;}
-/* One vertical rainbow per letter - white, yellow, orange, red, magenta,
-   blue - which is what makes an Amiga logo font read as an Amiga logo font.
-   Set here rather than per-frame in amigaad.js because it never changes. */
-.amigaad-scroller b{
-  display:inline-block;font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;
-  font-size:46px;line-height:1;letter-spacing:4px;text-transform:uppercase;
+.amigaad-band{position:relative;flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 12px;}
+
+/* The logo line. font-size scales with the viewport so both words stay on
+   one line on a phone as well as on a desktop - the whole point of this
+   banner is that "ADVERTISE" and "HERE" sit side by side. */
+.amigaad-word{
+  position:relative;white-space:nowrap;
+  font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;
+  font-size:clamp(14px,4.9vw,66px);line-height:1;letter-spacing:.06em;text-transform:uppercase;
   color:transparent;
-  /* Stops are squeezed into 14%-78% of the line box rather than spread over
-     0%-100%: Press Start 2P's caps only occupy that band, so an even spread
-     puts the white and the blue outside the glyph and the letters come out
-     orange-to-magenta with both ends of the rainbow missing. */
-  background:linear-gradient(180deg,#ffffff 0%,#ffffff 14%,#fff3a8 23%,#ffd23d 32%,#ff8c1a 42%,#f0322c 52%,#c3229b 63%,#5b3fd6 72%,#2340c8 78%,#2340c8 100%);
+  /* A REPEATING gradient one line-box tall, so animating it downward loops
+     seamlessly - a plain linear-gradient would jump when it wrapped. The
+     stops are squeezed into 14%-78% of each repeat because Press Start 2P's
+     caps only occupy that band; spread evenly, the white and the blue land
+     outside the glyph and the letters come out orange-to-magenta with both
+     ends of the rainbow missing. */
+  background:repeating-linear-gradient(180deg,
+    #ffffff 0%, #ffffff 14%, #fff3a8 23%, #ffd23d 32%, #ff8c1a 42%,
+    #f0322c 52%, #c3229b 63%, #5b3fd6 72%, #2340c8 78%, #2340c8 100%);
+  background-size:100% 1em;
   -webkit-background-clip:text;background-clip:text;
-  filter:drop-shadow(4px 4px 0 rgba(0,0,0,.75));
+  filter:drop-shadow(5px 5px 0 rgba(0,0,0,.8));
+  animation:amigacycle 2.2s linear infinite;
 }
+/* The pixel drips hanging off the bottom of the glyphs: the same text again,
+   nudged down, then masked twice - into narrow vertical stripes (the drips)
+   and into the bottom slice of the line box only (so the mask cannot eat
+   into the letters themselves). */
+.amigaad-drip{
+  position:absolute;left:0;top:.085em;z-index:-1;
+  background:inherit;background-size:100% 1em;background-position:0 -.085em;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-mask-image:repeating-linear-gradient(90deg,#000 0 3px,transparent 3px 11px),linear-gradient(180deg,transparent 0 76%,#000 76% 92%,transparent 92%);
+  mask-image:repeating-linear-gradient(90deg,#000 0 3px,transparent 3px 11px),linear-gradient(180deg,transparent 0 76%,#000 76% 92%,transparent 92%);
+  -webkit-mask-composite:source-in;mask-composite:intersect;
+  /* Its own keyframe rather than the parent's: the drip sits .085em lower,
+     so its gradient has to start .085em higher to carry on exactly where
+     the glyph above it left off, and it has to travel the same 1em per
+     cycle or the two would drift apart colour-wise. */
+  animation:amigacycledrip 2.2s linear infinite;
+}
+@keyframes amigacycle{ from{ background-position:0 0; } to{ background-position:0 1em; } }
+@keyframes amigacycledrip{ from{ background-position:0 -.085em; } to{ background-position:0 .915em; } }
 /* Fallback for the rare renderer that ignores background-clip:text entirely
-   (very old WebKit) - a plain bright colour instead of invisible text. Same
-   guard pcad.js's scroller carries. */
+   (very old WebKit) - a plain bright colour instead of invisible text, and
+   no drips at all. Same guard pcad.js's scroller carries. */
 @supports not (background-clip:text){
-  .amigaad-scroller b{color:#ffd23d;background:none;}
+  .amigaad-word{color:#ffd23d;background:none;animation:none;}
+  .amigaad-drip{display:none;}
 }
-/* The Japanese scroller runs in a CJK face at a size that still fits the
-   band - same adjustment .c64ad-scroller b gets below. */
-html[lang="ja"] .amigaad-scroller b{font-size:34px;letter-spacing:2px;}
+@media (prefers-reduced-motion: reduce){ .amigaad-word,.amigaad-drip{animation:none;} }
+/* The Japanese line runs in a CJK face, which is wider per character, so it
+   needs a smaller cap to keep both halves of the message on one line. */
+html[lang="ja"] .amigaad-word{font-size:clamp(11px,3.6vw,46px);letter-spacing:.03em;}
 
 /* Bundled retro pixel font (Press Start 2P, SIL OFL), embedded so it works
    offline. Drives the C64 ad scroller and the Videopac attract slot, both of
