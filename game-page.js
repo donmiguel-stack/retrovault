@@ -1536,4 +1536,112 @@
     adSec.appendChild(adLink);
     page.appendChild(adSec);
   }
+
+  // ---- Bird Hunt (new_bird-hunt) easter egg ----------------------------
+  // A bird crosses the page every so often with the game's crosshair chasing
+  // it, hunting for focus and never quite getting there: the crosshair lags,
+  // the bird bobs, and the one shot it takes at the end goes wide - the same
+  // white miss flash the cartridge draws. Both sprites are the cartridge's
+  // own 8x8 bitmaps, read straight out of the VDC while the game ran:
+  // slot 1 for the two wing positions, the cursor bitmap for the crosshair
+  // (the same bytes check_rom.py asserts on). Skips itself entirely under
+  // prefers-reduced-motion, sits below the cover lightbox, and never takes
+  // a pointer event.
+  if (g.id === "new_bird-hunt" &&
+      !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    var BH_BIRD = [[0,0,24,60,90,153,0,0], [129,66,36,24,60,24,0,0]];
+    var BH_CROSS = [24,24,0,195,195,0,24,24];
+    var BH_PX = 4;
+
+    function bhSprite(rows, colour) {
+      var s = '<svg width="' + (8*BH_PX) + '" height="' + (8*BH_PX) + '" viewBox="0 0 8 8" ' +
+              'shape-rendering="crispEdges" aria-hidden="true">';
+      for (var y = 0; y < 8; y++)
+        for (var x = 0; x < 8; x++)
+          if ((rows[y] >> (7-x)) & 1)
+            s += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + colour + '"/>';
+      return s + "</svg>";
+    }
+
+    var bhWings = [bhSprite(BH_BIRD[0], "#ffffff"), bhSprite(BH_BIRD[1], "#ffffff")];
+    var bhFlying = false;
+
+    function bhFly() {
+      if (bhFlying || document.hidden) return;
+      bhFlying = true;
+
+      var bird = el("div", "bh-bird");
+      var cross = el("div", "bh-cross");
+      cross.innerHTML = bhSprite(BH_CROSS, "#ffd200");
+      document.body.appendChild(bird);
+      document.body.appendChild(cross);
+
+      var w = window.innerWidth, h = window.innerHeight;
+      var leftToRight = Math.random() < 0.5;
+      var span = w + 160;
+      var y0 = 90 + Math.random() * Math.max(80, h * 0.45);
+      var bob = 26 + Math.random() * 22;
+      var period = 1.6 + Math.random() * 0.8;
+      var flight = 9000 + Math.random() * 2500;
+
+      // The crosshair starts somewhere else entirely and only ever eases
+      // towards where the bird was - lag plus bob is what keeps it behind.
+      var cx = leftToRight ? w * 0.75 : w * 0.25, cy = y0 + 160;
+      var start = null, fired = false;
+
+      function frame(now) {
+        if (start === null) start = now;
+        var t = (now - start) / flight;
+        if (t >= 1) { done(); return; }
+
+        var bx = leftToRight ? -80 + span * t : w + 80 - span * t;
+        var by = y0 + Math.sin(t * Math.PI * 2 * period) * bob;
+
+        bird.innerHTML = bhWings[Math.floor((now - start) / 110) % 2];
+        bird.style.transform = "translate(" + bx + "px," + by + "px)" +
+                               (leftToRight ? " scaleX(-1)" : "");
+
+        cx += (bx - cx) * 0.055;
+        cy += (by - cy) * 0.055;
+        // hunting for focus: it never settles, it breathes around the target
+        var hunt = 1 + Math.sin((now - start) / 260) * 0.14;
+        cross.style.transform = "translate(" + cx + "px," + cy + "px) scale(" + hunt + ")";
+
+        if (!fired && t > 0.82) { fired = true; bhMiss(cx, cy); }
+        requestAnimationFrame(frame);
+      }
+
+      function bhMiss(x, y) {
+        // the cartridge's own answer to a miss: a short white flash, nothing hit
+        var flash = el("div", "bh-flash");
+        flash.style.transform = "translate(" + (x + 14) + "px," + (y + 14) + "px)";
+        document.body.appendChild(flash);
+        setTimeout(function(){ flash.remove(); }, 130);
+        cross.classList.add("bh-recoil");
+        setTimeout(function(){ cross.classList.remove("bh-recoil"); }, 200);
+      }
+
+      function done() {
+        bird.classList.add("bh-out");
+        cross.classList.add("bh-out");
+        setTimeout(function(){ bird.remove(); cross.remove(); bhFlying = false; }, 700);
+      }
+
+      requestAnimationFrame(frame);
+    }
+
+    function bhSchedule() {
+      setTimeout(function(){ bhFly(); bhSchedule(); }, 45000 + Math.random() * 30000);
+    }
+    setTimeout(bhFly, 3500);
+    bhSchedule();
+    // and for anyone who wants it again without waiting
+    var bhTitle = document.querySelector("h1");
+    if (bhTitle) {
+      bhTitle.style.cursor = "crosshair";
+      bhTitle.title = "Pull!";
+      bhTitle.addEventListener("click", bhFly);
+    }
+  }
+
 })();
