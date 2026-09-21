@@ -1,0 +1,80 @@
+Lemon Squeezy review — what to do, 21 September 2026
+===================================================
+
+Two files here:
+  store-demo.html            the sample product page (upload it)
+  lemonsqueezy-reply-draft.md  the reply to Ram (read, adjust, send)
+
+
+1. BEFORE UPLOADING: wire the Buy button
+----------------------------------------
+The page has a Buy button that currently points at the store's front page. To
+make it real, recreate a product in Lemon Squeezy (the test one was deleted):
+
+  Products -> New Product
+    Name             Cosmic Courier (sample listing)
+    Price            4.99
+    Tax category     Video Game
+    Licence keys     ON, activation limit 10, "Set length to unlimited"
+    Publish
+
+  Then: the product -> Share -> copy the Checkout Link
+
+In store-demo.html, find this line (search for "buyBtn"):
+
+  <a class="buy" id="buyBtn" href="https://retrovault.lemonsqueezy.com/">Buy — €4.99</a>
+
+and replace the href with that checkout link. One edit, nothing else changes.
+
+(If you would rather not have a live checkout on it, leave it as it is — the page
+already explains that the listing is a sample. The reviewer mostly needs to see
+the presentation and the delivery flow.)
+
+
+2. UPLOAD
+---------
+hPanel -> Websites -> retrovault.world -> Tools -> Bestandsbeheer ->
+"Toegang tot bestanden van retrovault.world", then drop store-demo.html into
+public_html/ (same route as the last two uploads).
+
+It lands at https://retrovault.world/store-demo.html
+The page carries its own CSS and needs no new assets. It is marked noindex, so
+Google will not list it. It is deliberately NOT in sitemap.xml.
+
+
+3. THE DEMO VIDEO (question 3) — shot list, about 90 seconds
+------------------------------------------------------------
+Record with QuickTime (File -> New Screen Recording) or Cmd+Shift+5. No
+narration needed; if you want it, say the line in brackets. Keep the mouse slow.
+
+  0:00  demo.retrovault.world — the shelves. Scroll the Videopac shelf a little.
+        ["This is Retro Vault. Around 400 catalogued releases, free to browse."]
+  0:12  Click any out-of-print game -> its page -> press START -> let it play
+        five seconds.
+        ["Out-of-print titles play in the browser. This part is free."]
+  0:30  retrovault.world/sell-your-homebrew.html — scroll past "The revenue is
+        yours" and "How it works".
+        ["New games are different. This is what we offer their authors."]
+  0:45  retrovault.world/store-demo.html — the sample listing. Pause on the
+        price and the "What you receive" table.
+        ["A paid listing looks like this. One-time purchase."]
+  0:55  Click Buy -> the Lemon Squeezy checkout opens. Pay with the test card
+        4242 4242 4242 4242.
+  1:10  The licence-key email arriving in your inbox. Show the key.
+  1:20  Back in the Vault: "I have a licence key" -> paste -> the game unlocks
+        and starts. Show the Download button too.
+        ["The key unlocks it in the browser, and the buyer can keep the file."]
+
+Trim the dead time, export at 1080p, and either attach it (if under ~20 MB) or
+put it on YouTube as *unlisted* and paste the link. Unlisted is fine — reviewers
+open links all day.
+
+If the checkout in step 0:55 is still in test mode, say so in the email; that is
+normal for a store awaiting approval and they will expect it.
+
+
+4. THEN SEND THE REPLY
+----------------------
+lemonsqueezy-reply-draft.md — reply in the same email thread so it stays with
+your application. Replace the line in question 3 with the video link, and check
+the numbers in the pricing table match what you actually intend to charge.
