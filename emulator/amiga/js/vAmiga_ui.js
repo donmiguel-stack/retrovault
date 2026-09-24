@@ -289,7 +289,7 @@ function get_parameter_link()
                 {
                     parameter_link+="#"+token;
                 }
-                else if(token.startsWith("http"))
+                else if(token.startsWith("http") || token.startsWith("blob:")) // Retro Vault: blob: = your own copy (localroms.js)
                 {
                     parameter_link=token;
                 }
@@ -392,6 +392,15 @@ async function load_parameter_link()
         //get_data_collector("csdb").run_link("call_parameter", 0,parameter_link);            
         $('#alert_wait').show().find("span:first").text(`looking for '${parameter_link}'`);
         let response = await fetch(parameter_link);
+        // Retro Vault: a blob: URL (your own copy, see ../../localroms.js) has no
+        // file name of its own, so amiga.html hangs the real one on the end as
+        // "#<name>" - use that, or the extension checks below never match.
+        if(/^blob:/i.test(parameter_link) && parameter_link.indexOf("#")>0)
+        {
+            file_slot_file_name = parameter_link.substring(parameter_link.lastIndexOf("#")+1);
+            try { file_slot_file_name = decodeURIComponent(file_slot_file_name); } catch(e) {}
+        }
+        else
         file_slot_file_name = decodeURIComponent(response.url.match(".*/(.*)$")[1]);
         $('#alert_wait').find("span:first").text(`downloading '${file_slot_file_name}'`);
         file_slot_file = new Uint8Array( await response.arrayBuffer());

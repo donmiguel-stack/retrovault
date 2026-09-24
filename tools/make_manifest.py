@@ -33,7 +33,7 @@ FILES = [
     # same ids, translated text only. They ship through the update mechanism
     # like any other catalogue file; game.html reads them only on lang "ja".
     "gamepages-ja.js", "cheats-ja.js", "tips-ja.js",
-    "alternates.js", "hosted.js", "products.js", "support.js", "store.js",
+    "alternates.js", "hosted.js", "products.js", "support.js", "store.js", "localroms.js", "pad.js",
     "app.js", "demo.js", "game.html", "index.html", "resources.html", "style.css", "boot-splash.js",
     # game.css and game-page.js were split out of game.html on 2026-09-18 so
     # the pre-rendered per-game pages could share one copy instead of carrying

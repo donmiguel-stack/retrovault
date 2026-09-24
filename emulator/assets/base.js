@@ -875,6 +875,24 @@ function readyRomFetch() {
 	 * emulator/roms/ has no copy; the store server sends the ROM stamped for
 	 * that license. romFilename stays the games.js name, so save states are
 	 * the same ones a local copy would use. */
+	/* Videopac Vault: your own copy, dropped on the game page and kept in this
+	 * browser's IndexedDB (localroms.js). game.html only adds &local=<id> when
+	 * that store holds a file for the game; rom= still carries the games.js
+	 * name (extension matched to the dropped file), so save states are the
+	 * same ones a copy in roms/ would use. */
+	if (queries.local && window.VaultLocal) {
+		window.VaultLocal.get(queries.local).then(function(rec) {
+			if (!rec || !rec.data) {
+				alert("Your own copy of this game is no longer stored in this browser. Go back to its page and drop the file again.");
+				romMode = "upload";
+				ffd.style.display = "block";
+				return;
+			}
+			log("Succesfully read ROM from this browser's own storage (" + rec.name + ")");
+			romFetched(rec.data);
+		});
+		return;
+	}
 	if (queries.store && window.VaultStore) {
 		window.VaultStore.fetchRom(queries.store).then(function(data) {
 			log("Succesfully fetched ROM from the Vault store");

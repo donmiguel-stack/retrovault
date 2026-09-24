@@ -1,15 +1,15 @@
 {
- "generated": "2026-09-20 19:05:53",
- "count": 723,
- "bytes": 246712442,
+ "generated": "2026-09-24 19:52:33",
+ "count": 725,
+ "bytes": 246750002,
  "files": {
   "games.js": {
    "sha256": "5036d017095dfc92edb827e9bf14e806ec6977318492c5dd690f6f2addcdd544",
    "size": 140834
   },
   "gamepages.js": {
-   "sha256": "b7546d708863995fdf12c42c25edc6733defb663b07f4b07c9d82cb6a64375b1",
-   "size": 292587
+   "sha256": "b1dc7a304c70ee9d2b8422ea5e31777f793f1b42130a4678ad66dd770163ffbf",
+   "size": 293077
   },
   "genres.js": {
    "sha256": "5a50841e68f2ac5c64d27ba750051b0d37436e90a36afe0d0da63fb6a0a47fb3",
@@ -32,8 +32,8 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "b7983f7073093841a8dc2e6e4895f883d44248829f5ff7a8078f8068176696a3",
-   "size": 89687
+   "sha256": "cd0709418ac435d8f69b14efbe4488dc5b42ac8b362d9b1b3b46972fb9a25359",
+   "size": 102615
   },
   "setup-i18n.js": {
    "sha256": "efdadf93a2202a3ce2b56bc89935726603cf7f4da0fd8d7ce1bcbb7ceee12bd6",
@@ -115,21 +115,29 @@
    "sha256": "25500093771f09d843fc511300a67f9de79f32f2708f2a1f38b666229547b4e1",
    "size": 6343
   },
+  "localroms.js": {
+   "sha256": "7c242ddae53f2d79f5df87af0e422d6740033b496e3f8b2cd548f5c69c4efa85",
+   "size": 3360
+  },
+  "pad.js": {
+   "sha256": "417a97ad84f1c8e80fe2d8b0f4cb4c445594d41dddb94753f37223787f242593",
+   "size": 4844
+  },
   "app.js": {
-   "sha256": "cc5a947ea05074d666b8bd29c427c8745ae0dc7bdc1e6660f1ac880a2ba8e6dc",
-   "size": 91719
+   "sha256": "e99eb1f0936387b5fb4cdde28929cc2590a07cfe8f285eb0cd725dda4603cce3",
+   "size": 93946
   },
   "demo.js": {
    "sha256": "6471f99efb550c6114828ef8e1fd6d0932d14d1b83569076c9e5bbc1450e779d",
    "size": 4831
   },
   "game.html": {
-   "sha256": "7be32ba94c6649a55293df7d3622adecdc56b208be45ec9baad215c1f95421e8",
-   "size": 9577
+   "sha256": "a976460184c5a8c5c762459226883c3b94a4f0885dc5dfa8a4cfce8e6bacf647",
+   "size": 9653
   },
   "index.html": {
-   "sha256": "30286e790b26e79357f015258044b8d49c9dcf3746ff6dfb355aa4dbbefc4c69",
-   "size": 18705
+   "sha256": "bc85e5205dff18144167496861c690516afa8fc53e420a7ddc7e5068e1c74d8a",
+   "size": 19039
   },
   "resources.html": {
    "sha256": "3b2f0f1ce88d7a1c85da7138f5fe5e478ac2d6cd6fcabf1a69260d0a89767595",
@@ -144,12 +152,12 @@
    "size": 3768
   },
   "game.css": {
-   "sha256": "b9e014a3f1cf3896c10cf857b45bd8f85698f1d3151f52bc1b79719ca9bfc88c",
-   "size": 41460
+   "sha256": "97898d218e0077a1e633f830f96dd2b4e2bd75e4d5b1566a0b9a6b5eef7a9b4e",
+   "size": 43805
   },
   "game-page.js": {
-   "sha256": "bcd1144766dd6aa248aea6fbe0aa99dfdb7887bfccc5a688ba5dace113cb53bd",
-   "size": 81071
+   "sha256": "8db47d06ea6ef8b369607fa771e09399d31a2c74be9f24290dbdd2e8a4af16a5",
+   "size": 92027
   },
   "catalogue.html": {
    "sha256": "03b74958e1739f7befa29e6407bc917fe80b3c61a8698d369873560dd1e60401",
@@ -2452,7 +2460,7 @@
    "size": 174848
   },
   "homebrew-downloads/Bird Hunt (Ahnl66).bin": {
-   "sha256": "2c0e060640d8ec3f5abd3fff4d6680e176b3c8d10739b9d3e6316a87f83fd97a",
+   "sha256": "ddab090389f9c8e97bb77143fd6e9fdfdd6abf35d78b357de8fb04907af8aca9",
    "size": 8192
   },
   "homebrew-downloads/Bomberland.d64": {

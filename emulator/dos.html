@@ -52,6 +52,9 @@
 <script src="dos/js-dos.js"></script>
 <script src="dos-launch.js?v=1"></script>
 <script src="../store.js?v=1"></script>
+<script src="../localroms.js?v=1"></script>
+<script src="../pad.js?v=1"></script>
+<script src="dos-pad.js?v=1"></script>
 <script>
 (function () {
 	var params = new URLSearchParams(window.location.search);
@@ -70,6 +73,9 @@
 	// Bought through the Vault's store (store.js, see game.html): only sent
 	// when this browser holds a license and roms/ has no copy of its own.
 	var storeId = params.get("store") || "";
+	// Your own copy, dropped on the game page and kept in this browser
+	// (localroms.js): only sent when that store holds a file for this game.
+	var localId = params.get("local") || "";
 
 	document.title = title + " - Retro Vault";
 	document.getElementById("titleText").textContent = title;
@@ -172,8 +178,22 @@
 			return new Promise(function () {});   // stop here - nothing to hand js-dos
 		});
 	}
+	// Same shape as fromStore: bytes -> blob: URL, saves keyed as roms/<name>.
+	function fromLocal(base) {
+		return window.VaultLocal.get(localId).then(function (rec) {
+			if (!rec || !rec.data) {
+				document.getElementById("loadingMsg").textContent =
+					"Your own copy of this game is no longer stored in this browser. Go back to its page and drop the file again.";
+				return new Promise(function () {});
+			}
+			wrappedFrom = base;
+			return URL.createObjectURL(new Blob([rec.data], { type: "application/zip" }));
+		});
+	}
 	function resolveBundleUrl(name) {
 		var base = "roms/" + name;
+		// your own copy: the page only sends &local= after checking roms/ had none
+		if (localId && window.VaultLocal) return fromLocal(base);
 		// store preview (tools/store_preview.py): always take the store copy
 		if (storeId && window.VaultStore && window.VaultStore.preview) return fromStore(base);
 		return fetch(base, { method: "HEAD", cache: "no-store" }).then(function (r) {
@@ -420,6 +440,11 @@
 				// notices (leaving fullscreen, releasing the pointer); the Save
 				// link above and the Back link below cover the rest.
 				autoSave: true,
+				// Game controllers (dos-pad.js): js-dos hands over its command
+				// interface when DOSBox is up; the pad's key events go through it.
+				onEvent: function (event, arg) {
+					if (event === "ci-ready" && window.VaultDosPad) window.VaultDosPad.attach(arg);
+				},
 				// The key js-dos files changes under is derived from the bundle URL,
 				// and resolveBundleUrl hangs a ?v= cache tag on that URL. Left alone,
 				// every ROM update would strand the saves made against the previous

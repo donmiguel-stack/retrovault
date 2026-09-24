@@ -50,6 +50,7 @@
 	<p id="loadingMsg">Loading&hellip;</p>
 </div>
 
+<script src="../localroms.js?v=1"></script>
 <script>
 (function () {
 	var params = new URLSearchParams(window.location.search);
@@ -61,6 +62,9 @@
 	var title = params.get("title") ? decodeURIComponent(params.get("title")) : "Amiga";
 	var gameId = params.get("id") || "";
 	var dlfallback = params.get("dlfallback") || "";
+	// Your own copy, dropped on the game page and kept in this browser
+	// (localroms.js): only sent when that store holds a file for this game.
+	var localId = params.get("local") || "";
 	// The Vault's own file host (hosted.js, see game.html) - an absolute URL to
 	// this same disk on retrovault.world, only ever sent after game.html's HEAD
 	// check found it there. Anything that isn't absolute is ignored, so a stray
@@ -256,6 +260,15 @@
 	}
 	function resolveDiskUrl() {
 		var base = "roms/" + encodeURIComponent(disk);
+		// your own copy: bytes from IndexedDB as a blob: URL, with the disk's
+		// name hung on as "#<name>" - the engine picks the drive by extension and
+		// a blob: URL has none (see the Retro Vault note in amiga/js/vAmiga_ui.js)
+		if (localId && window.VaultLocal) {
+			return window.VaultLocal.get(localId).then(function (rec) {
+				if (!rec || !rec.data) return null;
+				return URL.createObjectURL(new Blob([rec.data])) + "#" + encodeURIComponent(localName());
+			});
+		}
 		return head(base).then(function (r) {
 			if (r.ok) return base;
 			if (!dlfallback) return tryHosted();
@@ -266,6 +279,12 @@
 		}).catch(function () { return tryHosted(); });
 	}
 
+	// the games.js name, with the dropped file's own extension (an .adz or a
+	// .zip set dropped for a title listed as .adf)
+	function localName() {
+		var ext = (params.get("ext") || "").replace(/[^a-z0-9]/gi, "");
+		return ext ? disk.replace(/\.[^.]*$/, "") + "." + ext : disk;
+	}
 	function fail() {
 		document.getElementById("loadingMsg").innerHTML =
 			"Couldn't find <code>" + disk.replace(/[<>&]/g, "") + "</code>.<br>" +

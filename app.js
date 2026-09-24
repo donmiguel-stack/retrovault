@@ -169,6 +169,24 @@
     updateListChips();
   }
 
+  // ---- Recently played (2026-09-24) -----------------------------------
+  // game-page.js writes the id to the front of this list every time START is
+  // pressed (newest first, capped at 30). Same localStorage caveats as the
+  // favorites above. The chip only appears once something on the current
+  // shelf has been played, and that view sorts by when, not by number.
+  var RECENT_KEY = "VideopacVault_recent";
+  var recentIdx = Object.create(null);
+  function loadRecent() {
+    recentIdx = Object.create(null);
+    var a = [];
+    try { a = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); } catch (e) { a = []; }
+    if (!Array.isArray(a)) a = [];
+    a.forEach(function (id, i) { if (!(id in recentIdx)) recentIdx[id] = i; });
+  }
+  loadRecent();
+  function isRecent(id) { return id in recentIdx; }
+  function byRecent(a, b) { return recentIdx[a.id] - recentIdx[b.id]; }
+
   function hasPackaging(id) {
     return !!(window.PACKAGING_DATA && window.PACKAGING_DATA[id]);
   }
@@ -345,12 +363,13 @@
 
   function matches(g) {
     if (state.list === "fav" && !isFav(g.id)) return false;
+    if (state.list === "recent" && !isRecent(g.id)) return false;
     if (state.list === "pack" && !hasPackaging(g.id)) return false;
     // One card per game: alternate dumps (French, mods, alt/hack revisions,
     // the non-chosen G7000/G7400+ variant) are listed on their primary's
     // game page instead of the shelf - see alternates.js. Favorites still
     // surface an alternate you starred before this change.
-    if (window.VAULT_ALT && window.VAULT_ALT.isAlternate(g.id) && state.list !== "fav") {
+    if (window.VAULT_ALT && window.VAULT_ALT.isAlternate(g.id) && state.list !== "fav" && state.list !== "recent") {
       // Picking a category in the dropdown means "show me those dumps", so an
       // alternate comes back when its own category is the one selected AND
       // differs from its primary's (French dumps, PAL conversions, mods,
@@ -1373,7 +1392,7 @@
   });
 
   function render() {
-    var filtered = state.games.filter(matches).sort(bySort);
+    var filtered = state.games.filter(matches).sort(state.list === "recent" ? byRecent : bySort);
     if (typeof updateListChips === "function" && clearBtn) {
       var anyOn = state.category !== "all" || state.genre !== "all" || state.players !== "all" ||
                   state.platform !== "videopac" || state.list !== "all" || !!state.query;
@@ -1524,7 +1543,18 @@
     document.getElementById("favCount").textContent = favCount();
     document.getElementById("packCount").textContent =
       state.games.filter(function (g) { return hasPackaging(g.id); }).length;
-    document.querySelectorAll("#favChip, #packChip").forEach(function (b) {
+    var recentChip = document.getElementById("recentChip");
+    if (recentChip) {
+      var rc = platformGames().filter(function (g) { return isRecent(g.id); }).length;
+      document.getElementById("recentCount").textContent = rc;
+      recentChip.title = window.t("recent");
+      // nothing played on this shelf yet: no chip (and drop out of the view)
+      if (!rc && state.list === "recent") state.list = "all";
+      recentChip.hidden = !rc;
+    }
+    var recentIo = document.getElementById("recentIo");
+    if (recentIo) recentIo.hidden = state.list !== "recent";
+    document.querySelectorAll("#favChip, #packChip, #recentChip").forEach(function (b) {
       b.classList.toggle("active", b.dataset.list === state.list);
     });
     // export/import belong next to the star, not buried in Setup - but only
@@ -1537,7 +1567,24 @@
     clearBtn.hidden = !on;
   }
 
-  document.querySelectorAll("#favChip, #packChip").forEach(function (btn) {
+  var clearRecentBtn = document.getElementById("clearRecent");
+  if (clearRecentBtn) clearRecentBtn.addEventListener("click", function () {
+    try { localStorage.removeItem(RECENT_KEY); } catch (e) {}
+    loadRecent();
+    state.list = "all";
+    updateListChips();
+    render();
+  });
+  // coming back from a game page (browser Back can restore this page from
+  // the back/forward cache without re-running anything) - pick up the play
+  window.addEventListener("pageshow", function (e) {
+    if (!e.persisted) return;
+    loadRecent();
+    updateListChips();
+    if (state.list === "recent") render();
+  });
+
+  document.querySelectorAll("#favChip, #packChip, #recentChip").forEach(function (btn) {
     btn.addEventListener("click", function () {
       // clicking the active one turns it back off
       state.list = (state.list === this.dataset.list) ? "all" : this.dataset.list;

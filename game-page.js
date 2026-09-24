@@ -494,6 +494,11 @@
     return "&kick=" + encodeURIComponent(k);
   }
   start.addEventListener("click", function(){
+    recordRecent();
+    // your own copy (localroms.js): the emulator page reads it from this
+    // browser's IndexedDB by game id; nothing else about the launch changes
+    var own = start.dataset.localOn ? "&local=" + encodeURIComponent(g.id) : "";
+    var ownExt = start.dataset.local || "";
     var fb = start.dataset.dlfallback ? "&dlfallback=" + encodeURIComponent(start.dataset.dlfallback) : "";
     // bought through the Vault's store (store.js): the emulator page fetches
     // the stamped ROM itself, with the license saved in this browser
@@ -504,18 +509,22 @@
       var hz = start.dataset.hosted ? "&hosted=" + encodeURIComponent(start.dataset.hosted) : "";
       location.href = "emulator/dos.html?zip=" + encodeURIComponent(g.romFile) +
                       "&title=" + encodeURIComponent(g.title) +
-                      "&id=" + encodeURIComponent(g.id) + fb + hz;
+                      "&id=" + encodeURIComponent(g.id) + fb + hz + own;
     } else if (g.platform === "Amiga") {
       // amiga.html keeps the disk's own filename (same reasoning as dos.html
       // above) and takes the hosted copy as a separate &hosted= fallback.
       var hz2 = start.dataset.hosted ? "&hosted=" + encodeURIComponent(start.dataset.hosted) : "";
       location.href = "emulator/amiga.html?disk=" + encodeURIComponent(g.romFile) +
                       "&title=" + encodeURIComponent(g.title) +
-                      "&id=" + encodeURIComponent(g.id) + fb + hz2 + gameModelParam() + gameKickParam();
+                      "&id=" + encodeURIComponent(g.id) + fb + hz2 + gameModelParam() + gameKickParam() +
+                      own + (own && ownExt ? "&ext=" + encodeURIComponent(ownExt) : "");
     } else {
       var rom = start.dataset.hosted ? start.dataset.hosted : g.romFile;
+      // the core picks the loader by extension - a .prg dropped for a title
+      // listed as .d64 has to arrive named .prg
+      if (own && ownExt) rom = g.romFile.replace(/\.[^.\/]*$/, "") + "." + ownExt;
       location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
-                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam() + gameBiosParam() + gameKeysParam();
+                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam() + gameBiosParam() + gameKeysParam() + own;
     }
   });
   info.appendChild(document.createElement("br"));
@@ -548,6 +557,7 @@
   function vaultShowMissing() {
     var key = g.platform === "PC" ? "pc_noRom" : (g.platform === "C64" ? "c64_noRom" : (g.platform === "Amiga" ? "amiga_noRom" : "vp_noRom"));
     romNote.textContent = window.t(key, { file: g.romFile });
+    showDropZone();
     // Where to get it (romsources.js): for titles the Vault can neither ship
     // nor host, point at a preservation copy and spell out the three steps.
     var src = (window.ROM_SOURCES || {})[g.id];
@@ -579,6 +589,7 @@
     }
     if (src.note) box.appendChild(el("p", "get-note", src.note));
     romNote.insertAdjacentElement("afterend", box);
+    getBox = box;
   }
   // A game on sale, not in emulator/roms/: START only with a license saved in
   // this browser (Amiga excepted - its player needs a real file, so buyers
@@ -609,6 +620,124 @@
       if (!romNote.parentNode) actions.insertAdjacentElement("beforebegin", romNote);
     });
   }
+  // ---- your own copy (localroms.js, 2026-09-24) ----
+  // Nobody on the public site has an emulator/roms/ folder, and on a phone
+  // nobody has a folder at all. So when the page can't find a copy anywhere,
+  // it offers to take one: drop the file (or pick it), it goes into this
+  // browser's IndexedDB under the game's id, and START plays it from there -
+  // on this device only, nothing uploaded. Next visit START is simply there.
+  // Only offered when this install's emulator page knows how to read it back
+  // (same check as storeEmuReady: the Update button never refreshes
+  // emulator/, so an older install gets no drop zone rather than a dead one).
+  var getBox = null, dropBox = null, ownNote = null, ownEmuOk = null;
+  function ownExts() {
+    if (g.platform === "PC") return ["zip"];
+    if (g.platform === "C64") return ["d64", "crt", "prg", "t64", "g64", "tap"];
+    if (g.platform === "Amiga") return ["adf", "adz", "dms", "zip", "hdf"];
+    return ["bin", "rom"];
+  }
+  function ownEmuReady() {
+    if (ownEmuOk) return ownEmuOk;
+    if (!window.VaultLocal || !window.indexedDB) return (ownEmuOk = Promise.resolve(false));
+    var f = g.platform === "PC" ? "emulator/dos.html" :
+            g.platform === "Amiga" ? "emulator/amiga.html" : "emulator/assets/base.js";
+    ownEmuOk = fetch(f, { cache: "no-cache" }).then(function (r) { return r.ok ? r.text() : ""; })
+      .then(function (t) { return t.indexOf("VaultLocal") !== -1; }, function () { return false; });
+    return ownEmuOk;
+  }
+  function ownCheck() {
+    // IndexedDB first - the emulator-page check is a fetch, only worth making
+    // when there actually is a stored copy
+    if (!window.VaultLocal) return Promise.resolve(null);
+    return window.VaultLocal.info(g.id).then(function (info) {
+      if (!info) return null;
+      return ownEmuReady().then(function (ok) { return ok ? info : null; });
+    }, function () { return null; });
+  }
+  function fileExt(n) { var m = /\.([^.\/]+)$/.exec(n || ""); return m ? m[1].toLowerCase() : ""; }
+  function fmtSize(b) { return b >= 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(b / 1024)) + " KB"; }
+  function showOwnNote(info) {
+    if (ownNote) ownNote.remove();
+    ownNote = el("p", "owncopy-note", "");
+    ownNote.appendChild(document.createTextNode(window.t("ownPlaying", { name: info.name + " · " + fmtSize(info.size) }) + " "));
+    var forget = el("button", "owncopy-forget", window.t("ownForget"));
+    forget.type = "button";
+    forget.addEventListener("click", function () {
+      window.VaultLocal.remove(g.id).then(function () { location.reload(); });
+    });
+    ownNote.appendChild(forget);
+    actions.insertAdjacentElement("afterend", ownNote);
+  }
+  function vaultShowLocal(info) {
+    start.dataset.localOn = "1";
+    start.dataset.local = fileExt(info.name);
+    delete start.dataset.dlfallback; delete start.dataset.hosted; delete start.dataset.store;
+    start.title = window.t("ownPlayingShort");
+    vaultShowStart(false);
+    showOwnNote(info);
+  }
+  function showDropZone() {
+    ownEmuReady().then(function (ok) {
+      if (!ok || start.parentNode || dropBox) return;
+      var exts = ownExts();
+      var list = exts.map(function (e) { return "." + e; }).join(" / ");
+      dropBox = el("div", "owncopy-drop");
+      dropBox.appendChild(el("h3", null, window.t("ownDropHead")));
+      dropBox.appendChild(el("p", "owncopy-drop-main", window.t("ownDropBody", { ext: list })));
+      var btn = el("button", "ghost-btn small", window.t("ownDropBtn"));
+      btn.type = "button";
+      var input = document.createElement("input");
+      input.type = "file"; input.hidden = true;
+      input.accept = exts.map(function (e) { return "." + e; }).join(",");
+      var msg = el("p", "owncopy-drop-note", window.t("ownDropHint"));
+      dropBox.appendChild(btn); dropBox.appendChild(input); dropBox.appendChild(msg);
+      function take(file) {
+        if (!file) return;
+        var x = fileExt(file.name);
+        if (exts.indexOf(x) === -1) {
+          msg.textContent = window.t("ownBadExt", { got: x ? "." + x : file.name, ext: list });
+          msg.classList.add("bad");
+          return;
+        }
+        msg.classList.remove("bad");
+        msg.textContent = window.t("ownSaving");
+        window.VaultLocal.put(g.id, file).then(function (info) {
+          dropBox.remove();
+          if (getBox) getBox.remove();
+          vaultShowLocal(info);
+        }, function () {
+          msg.textContent = window.t("ownFailed");
+          msg.classList.add("bad");
+        });
+      }
+      btn.addEventListener("click", function (e) { e.stopPropagation(); input.click(); });
+      dropBox.addEventListener("click", function (e) { if (e.target === input) return; input.click(); });
+      input.addEventListener("click", function (e) { e.stopPropagation(); });
+      input.addEventListener("change", function () { take(input.files[0]); input.value = ""; });
+      ["dragenter", "dragover"].forEach(function (ev) {
+        dropBox.addEventListener(ev, function (e) { e.preventDefault(); dropBox.classList.add("over"); });
+      });
+      dropBox.addEventListener("dragleave", function () { dropBox.classList.remove("over"); });
+      dropBox.addEventListener("drop", function (e) {
+        e.preventDefault(); dropBox.classList.remove("over");
+        take(e.dataTransfer && e.dataTransfer.files[0]);
+      });
+      var after = (getBox && getBox.parentNode) ? getBox : (romNote.parentNode ? romNote : null);
+      if (after) after.insertAdjacentElement("afterend", dropBox);
+      else actions.insertAdjacentElement("beforebegin", dropBox);
+    });
+  }
+  // Recently played (the library's clock chip, app.js): newest first, capped.
+  function recordRecent() {
+    try {
+      var K = "VideopacVault_recent";
+      var a = JSON.parse(localStorage.getItem(K) || "[]");
+      if (!Array.isArray(a)) a = [];
+      a = a.filter(function (x) { return x !== g.id; });
+      a.unshift(g.id);
+      localStorage.setItem(K, JSON.stringify(a.slice(0, 30)));
+    } catch (e) {}
+  }
   function esc(str) { return String(str).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   // Last resort, after roms/ and homebrew-downloads/: the Vault's own file
   // host (hosted.js). Same HEAD-before-button discipline - the host has to
@@ -629,12 +758,18 @@
       throw 0;
     })
     .catch(function () {
+      ownCheck().then(function (info) {
+        if (info) { vaultShowLocal(info); return; }
+        vaultNoLocalCopy();
+      });
+    });
+  function vaultNoLocalCopy() {
       if (sale) { storeGate(); return; }
       if (!dl) { vaultTryHosted(); return; }
       fetch("homebrew-downloads/" + encodeURIComponent(dl.file), { method: "HEAD" })
         .then(function (r) { if (r.ok) vaultShowStart(true); else vaultTryHosted(); })
         .catch(vaultTryHosted);
-    });
+  }
   actions.appendChild(favBtn);
   info.appendChild(actions);
 
@@ -1341,6 +1476,97 @@
 
     c64Sec.appendChild(c64Box);
     page.appendChild(c64Sec);
+  }
+
+  // ---- Controller (2026-09-24) ----
+  // Right under Controls: is a pad connected, and what does each button do on
+  // this shelf. Directions are always D-pad + left stick; the other ten
+  // buttons can be set per shelf (pad.js keeps the layout, the players read
+  // it - emulator/gamepad-bridge.js, emulator/dos-pad.js). Buttons light up
+  // as they are pressed, so you can see which one is which on your pad.
+  // The Amiga player reads pads itself, so there it is status + a pointer to
+  // its port dropdown only.
+  if (window.VaultPad) page.appendChild(buildPadPanel());
+  function buildPadPanel() {
+    var P = window.VaultPad;
+    var shelf = P.shelfOf(g.platform);
+    var sec = el("div", "section pad-section");
+    sec.appendChild(el("h2", null, window.t("padHead")));
+    var box = el("div", "controls-box pad-box");
+    var status = el("p", "pad-status");
+    var dot = el("span", "pad-dot");
+    var stText = el("span", null, "");
+    status.appendChild(dot); status.appendChild(stText);
+    box.appendChild(status);
+    var adapterNote = el("p", "controls-note pad-note", window.t("padAdapter"));
+    adapterNote.hidden = true;
+    var rows = {};
+    var dirRow = null;
+    if (shelf === "amiga") {
+      box.appendChild(el("p", "controls-note pad-note", window.t("padAmiga")));
+    } else {
+      var tbl = el("div", "pad-grid");
+      dirRow = el("div", "pad-row pad-fixed");
+      dirRow.appendChild(el("span", "pad-btn", window.t("padDirs")));
+      dirRow.appendChild(el("span", "pad-act", window.t(shelf === "pc" ? "padDirsPc" : (data.keys === "j2arrows" ? "padDirsJ2" : "padDirsJoy"))));
+      tbl.appendChild(dirRow);
+      P.BUTTONS.forEach(function (b) {
+        var r = el("label", "pad-row");
+        r.appendChild(el("span", "pad-btn", b.label));
+        var sel = document.createElement("select");
+        sel.className = "pad-sel";
+        P.ACTIONS[shelf].forEach(function (a) {
+          var o = document.createElement("option");
+          o.value = a;
+          o.textContent = padActionLabel(a, shelf);
+          sel.appendChild(o);
+        });
+        sel.addEventListener("change", function () { P.set(shelf, b.i, sel.value); });
+        r.appendChild(sel);
+        rows[b.i] = { row: r, sel: sel };
+        tbl.appendChild(r);
+      });
+      box.appendChild(tbl);
+      var foot = el("div", "pad-foot");
+      foot.appendChild(el("span", "pad-saved", window.t("padSaved", { shelf: g.platform === "C64" ? "C64" : g.platform === "PC" ? "MS-DOS" : "Videopac" })));
+      var rst = el("button", "ghost-btn small", window.t("padReset"));
+      rst.type = "button";
+      rst.addEventListener("click", function () { P.reset(shelf); fill(); });
+      foot.appendChild(rst);
+      box.appendChild(foot);
+      if (shelf === "pc") box.appendChild(el("p", "controls-note pad-note", window.t("padPcNote")));
+      box.appendChild(adapterNote);
+    }
+    function fill() {
+      var map = P.layout(shelf);
+      Object.keys(rows).forEach(function (i) { rows[i].sel.value = map[i]; });
+    }
+    fill();
+    sec.appendChild(box);
+
+    // live: connection state, and which button is being pressed
+    var lastId;
+    function tick() {
+      if (!sec.isConnected) { requestAnimationFrame(tick); return; }
+      var pad = P.firstPad();
+      var id = pad ? pad.id : null;
+      if (id !== lastId) {
+        lastId = id;
+        status.classList.toggle("on", !!pad);
+        stText.textContent = pad ? window.t("padConnected", { name: pad.id.replace(/\s*\(.*?Vendor.*?\)\s*/i, " ").trim() }) : window.t("padNone");
+        adapterNote.hidden = !P.isAdapter(pad);
+      }
+      var s = P.read(pad);
+      Object.keys(rows).forEach(function (i) { rows[i].row.classList.toggle("hot", !!s.buttons[i]); });
+      if (dirRow) dirRow.classList.toggle("hot", s.up || s.down || s.left || s.right);
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    return sec;
+  }
+  function padActionLabel(a, shelf) {
+    if (/^key\d$/.test(a)) return window.t(shelf === "vp" ? "pad_keyVp" : "pad_key", { n: a.slice(3) });
+    return window.t("pad_" + a);
   }
 
   // ---- other versions of this game (see alternates.js) ----
