@@ -1,0 +1,6 @@
+# Only nos.php is reachable from the web; the cache/ folder never is.
+Options -Indexes
+<FilesMatch "^(?!nos\.php$).*$">
+    Require all denied
+</FilesMatch>
+RedirectMatch 403 ^/teletext/cache/

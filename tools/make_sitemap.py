@@ -34,6 +34,7 @@ STATIC = [
     ("/", "weekly", "1.0"),
     ("/catalogue.html", "weekly", "0.9"),
     ("/resources.html", "monthly", "0.6"),
+    ("/teletext.html", "monthly", "0.6"),
 ]
 
 

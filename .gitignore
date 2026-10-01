@@ -140,3 +140,7 @@ store-server-stripe/cache/*
 !store-server-stripe/cache/.htaccess
 # test copies written by tools/store_prepare.py
 *.stamptest.*
+
+# Page cache + rate-limit files the NOS teletext relay writes on the server
+# (teletext-server/nos.php). Only exists after a local php -S test.
+teletext-server/cache/
