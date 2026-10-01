@@ -338,7 +338,7 @@ body{
 /* The news tape sits in this head, to the right of the heading, and takes
    whatever width is left. Below 700px it drops onto its own line rather
    than squeezing the heading - see the media query further down. */
-.showcase-head .news-tape{flex:1 1 320px; min-width:0; margin:0; max-width:780px;}
+.showcase-head .news-tape{flex:1 1 320px; min-width:0; margin:0; max-width:none;}
 .showcase-head h2{margin:0; font-size:16px; font-weight:600; flex:0 0 auto;}
 
 .feature-row{display:flex; gap:14px; align-items:stretch; min-height:300px;}

@@ -33,6 +33,16 @@ window.NEWS_DATA = {
   speed: 45,
 
   items: [
+    { id: "teletext-2026-10",
+      date: "2026-10-01",
+      href: "game.html?id=new_teletext",
+      text: {
+        en: "New: G7400 Teletext — live NOS Teletekst drawn the way the Videopac G7400 would draw it, plus the plan to build the real WiFi cartridge",
+        nl: "Nieuw: G7400 Teletekst — live NOS Teletekst, getekend zoals de Videopac G7400 het zou doen, plus het bouwplan voor de echte WiFi-cartridge",
+        de: "Neu: G7400-Videotext — Live-Videotext der NOS, gezeichnet wie ihn ein Videopac G7400 zeichnen würde, plus der Bauplan für das echte WLAN-Modul",
+        fr: "Nouveau : télétexte G7400 — le télétexte de la NOS en direct, dessiné comme le ferait un Videopac G7400, avec le plan de la vraie cartouche WiFi",
+        pt: "Novo: teletexto do G7400 — o teletexto da NOS ao vivo, desenhado como um Videopac G7400 faria, e o plano para montar o cartucho WiFi de verdade",
+        ja: "あたらしく: G7400 テレテキスト — NOS の テレテキストを ライブで、 Videopac G7400 ふうに ひょうじ。 ほんものの WiFi カートリッジの つくりかたも あります" } },
     { id: "bird-hunt-2026-09",
       date: "2026-09-19",
       href: "game.html?id=new_bird-hunt",

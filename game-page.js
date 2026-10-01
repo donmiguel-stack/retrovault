@@ -191,14 +191,16 @@
   var img = new Image();
   img.alt = g.title + " box art";
   // ?v= so a newly added cover isn't hidden behind the browser's cached miss
-  var COVER_V = 24;
+  var COVER_V = 25;
+  // per-language box art (games.js "coverByLang"), else the game's own id
+  var CID = (g.coverByLang && g.coverByLang[window.currentLang()]) || g.id;
   img.onerror = function(){
-    if(this.dataset.stage==="png"){this.dataset.stage="jpg";this.src="covers/"+g.id+".jpg?v="+COVER_V;}
+    if(this.dataset.stage==="png"){this.dataset.stage="jpg";this.src="covers/"+CID+".jpg?v="+COVER_V;}
     else if(data.manual && data.manual.item){this.dataset.stage="manual";this.src="manuals/"+data.manual.item+"/p00.jpg";}
     else this.remove();
   };
   img.dataset.stage="png";
-  img.src="covers/"+g.id+".png?v="+COVER_V;
+  img.src="covers/"+CID+".png?v="+COVER_V;
   cover.appendChild(img);
   if (/Homebrew/.test(g.category)) {
     var rib = el("span","cover-ribbon", window.t("cat_homebrew"));
@@ -493,8 +495,21 @@
     if (!k || g.platform !== "Amiga") return "";
     return "&kick=" + encodeURIComponent(k);
   }
+  // The Vault's own G7400 Teletext cartridge (gamepages.js "vaultCart"): a
+  // real 2 KB cartridge that ships in homebrew-downloads/, so START is always
+  // there. It boots to SELECT GAME like any cart; &teletext=1 tells the
+  // emulator page (emulator/teletext-cart.js) to bring up the teletext screen
+  // when 1 is pressed.
+  var launchUrl = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id] || {}).vaultCart;
+  if (launchUrl && !/^[\w.\-]+\.bin$/.test(launchUrl)) launchUrl = null;
   start.addEventListener("click", function(){
     recordRecent();
+    if (launchUrl) {
+      location.href = "emulator/index.html?core=o2em&rom=" + encodeURIComponent(launchUrl) +
+                      "&dlfallback=" + encodeURIComponent(launchUrl) +
+                      hostedBiosParam() + gameBiosParam() + "&teletext=1";
+      return;
+    }
     // your own copy (localroms.js): the emulator page reads it from this
     // browser's IndexedDB by game id; nothing else about the launch changes
     var own = start.dataset.localOn ? "&local=" + encodeURIComponent(g.id) : "";
@@ -751,7 +766,8 @@
   }
   // store preview (tools/store_preview.py): act as if roms/ were empty, so
   // the page shows what a buyer without the file would see
-  (sale && window.VaultStore.preview ? Promise.reject(0) :
+  (launchUrl ? Promise.resolve({ ok: true }) :
+  sale && window.VaultStore.preview ? Promise.reject(0) :
   fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" }))
     .then(function (r) {
       if (r.ok) { vaultShowStart(false); return; }
@@ -1066,7 +1082,22 @@
   // row reaches the console keyboard, which this kind of game reacts to.
   // The three explainer notes below (c_hidden, c_bleed, c_stick2) are skipped
   // for the same reason; c_saveNote stays, save states work like anywhere else.
-  if (data.keys === "j2arrows") {
+  if (launchUrl) {
+    // the Vault's teletext cartridge: SELECT GAME, then the teletext keys
+    row(grid, '<span class="kbd">1</span>', "On SELECT GAME: start Teletext");
+    row(grid, '<span class="kbd">0</span>&ndash;<span class="kbd">9</span>', "Type a page number");
+    row(grid, '<span class="kbd">&#8592;</span> <span class="kbd">&#8594;</span>', "Previous / next page");
+    row(grid, '<span class="kbd">&#8593;</span> <span class="kbd">&#8595;</span>', "Previous / next subpage");
+    row(grid, '<span class="kbd">R</span> <span class="kbd">G</span> <span class="kbd">Y</span> <span class="kbd">B</span>', "The coloured Fastext keys");
+    row(grid, '<span class="kbd">I</span> <span class="kbd">V</span>', "Jump to the index (100) / the Retro Vault pages (400)");
+    row(grid, '<span class="kbd">F5</span>', "Console RESET: back to SELECT GAME");
+    row(grid, '<span class="kbd">100</span>', "NOS index");
+    row(grid, '<span class="kbd">101</span> <span class="kbd">102</span>', "News: headlines / domestic");
+    row(grid, '<span class="kbd">500</span>', "Finance");
+    row(grid, '<span class="kbd">601</span> <span class="kbd">801</span>', "Sport / football");
+    row(grid, '<span class="kbd">702</span> <span class="kbd">730</span>', "Weather / traffic");
+    row(grid, '<span class="kbd">400</span>', "Retro Vault index: 401 What if Philips had done this? · 402 the G7400's teletext-style chip · 403 the P2000T WiFi cartridge · 404 could a real cartridge do it? · 405 how to use");
+  } else if (data.keys === "j2arrows") {
     row(grid, ARROWS + ' + <span class="kbd">&#96;</span>', LT("c_j2"));
     row(grid, '<span class="kbd">F5</span>', LT("c_reset"));
     row(grid, '<span class="kbd">F2</span> <span class="kbd">F3</span>', LT("c_state"));
@@ -1097,7 +1128,9 @@
     cBox.appendChild(nOwn);
   }
 
-  if (style === "keyboard") {
+  if (launchUrl) {
+    // none of the emulator notes below apply to a page
+  } else if (style === "keyboard") {
     var n1 = el("p","controls-note");
     n1.innerHTML = LT("c_kbdNote");
     cBox.appendChild(n1);
@@ -1106,7 +1139,7 @@
     n2.innerHTML = LT("c_mixNote");
     cBox.appendChild(n2);
   }
-  if (!data.keys) {
+  if (!data.keys && !launchUrl) {
   var nHidden = el("p","controls-note");
   nHidden.innerHTML = LT("c_hidden");
   cBox.appendChild(nHidden);
@@ -1117,9 +1150,11 @@
   nStick2.innerHTML = LT("c_stick2");
   cBox.appendChild(nStick2);
   }
+  if (!launchUrl) {
   var nSave = el("p","controls-note");
   nSave.innerHTML = LT("c_saveNote");
   cBox.appendChild(nSave);
+  }
 
   // ---- cheats (Videopac shelf) ----
   // cBox is built for every platform but only ever appended to the page via
@@ -1713,7 +1748,8 @@
     // this one game rather than the machine, so it does not follow the
     // language picker the way setup-i18n.js strings do.
     var mt = el("div","manual-text");
-    mt.innerHTML = data.manual.text;
+    // a Dutch version where one exists (manual.text_nl), English otherwise
+    mt.innerHTML = (window.currentLang() === "nl" && data.manual.text_nl) || data.manual.text;
     if (data.manual.url) {
       var msrc = el("p","manual-source");
       msrc.innerHTML = 'Source: <a href="' + esc(data.manual.url) +

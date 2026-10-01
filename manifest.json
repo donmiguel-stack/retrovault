@@ -1,19 +1,19 @@
 {
- "generated": "2026-10-01 17:15:05",
- "count": 727,
- "bytes": 246818797,
+ "generated": "2026-10-01 20:24:37",
+ "count": 730,
+ "bytes": 247827350,
  "files": {
   "games.js": {
-   "sha256": "5036d017095dfc92edb827e9bf14e806ec6977318492c5dd690f6f2addcdd544",
-   "size": 140834
+   "sha256": "5f363f59ae86fce23c8f0066d11ebb5da88430aa1fc6256107937ad4b50b0eea",
+   "size": 141181
   },
   "gamepages.js": {
-   "sha256": "b1dc7a304c70ee9d2b8422ea5e31777f793f1b42130a4678ad66dd770163ffbf",
-   "size": 293077
+   "sha256": "5d96f697e4a767f72a5be8cedb39c0925f0c2caf9c56d3d3a097d7507dd00d88",
+   "size": 313713
   },
   "genres.js": {
-   "sha256": "5a50841e68f2ac5c64d27ba750051b0d37436e90a36afe0d0da63fb6a0a47fb3",
-   "size": 30043
+   "sha256": "f24a5d353a76d95d5a22dd7f7f921221abb54bf7c045933462c6d058b84f6636",
+   "size": 30106
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -44,8 +44,8 @@
    "size": 122434
   },
   "news.js": {
-   "sha256": "46b756ccc26c4be9575a590e7a548e62650a29e3a338c1e7ea0e0ba251f122cd",
-   "size": 2687
+   "sha256": "83f102c7415c44386be1dab35b074a7b62d70147ae10404a387c097e9bcd650c",
+   "size": 3824
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -124,36 +124,36 @@
    "size": 4844
   },
   "teletext.html": {
-   "sha256": "ab19de26b7ee5888dfe52d34d83b3a1bf49aa916f76d9273b052d7c34b8fa339",
-   "size": 29301
+   "sha256": "92b50a8083e9e55f3f8718f424026d806c0482efc608127f4718c6d8470e7a27",
+   "size": 30843
   },
   "teletext.js": {
-   "sha256": "ee40a23cf7934cbf2252b035564d4d22a43b00f152e107f65353a26206f3ba01",
-   "size": 38988
+   "sha256": "dc059dbba354cb6700bfa2c0585f8906b9f6a8170da021f01c5901231aa4acec",
+   "size": 39637
   },
   "app.js": {
-   "sha256": "e99eb1f0936387b5fb4cdde28929cc2590a07cfe8f285eb0cd725dda4603cce3",
-   "size": 93946
+   "sha256": "e5c47f07448e7826bef1d46d68ef55fb30320a35ca56f439e12bcb917d9dd1b9",
+   "size": 94342
   },
   "demo.js": {
    "sha256": "6471f99efb550c6114828ef8e1fd6d0932d14d1b83569076c9e5bbc1450e779d",
    "size": 4831
   },
   "game.html": {
-   "sha256": "a976460184c5a8c5c762459226883c3b94a4f0885dc5dfa8a4cfce8e6bacf647",
+   "sha256": "7cfbf70156d6b61fefdf3f86e152885a6cc8a1c635809cef6ffc4287bb941d71",
    "size": 9653
   },
   "index.html": {
-   "sha256": "25591895a5fca3a444d96d02d3c0496cf9a3987b131503e567706bcafa128a87",
-   "size": 19191
+   "sha256": "6f55f2c92ac73030f4c02f7df65283010b3aaa63fc75ee35119d9a92cd0fe8e1",
+   "size": 19039
   },
   "resources.html": {
    "sha256": "3b2f0f1ce88d7a1c85da7138f5fe5e478ac2d6cd6fcabf1a69260d0a89767595",
    "size": 13110
   },
   "style.css": {
-   "sha256": "eec2b583a177541bcacb057ee861e9e0f66ce5c75ad429dc7d5a96a528314722",
-   "size": 60893
+   "sha256": "74a274faf79e99f0665664d51bf1eed6b223b764a71e2685711cb67cc0dd7719",
+   "size": 60892
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -164,12 +164,12 @@
    "size": 43805
   },
   "game-page.js": {
-   "sha256": "8db47d06ea6ef8b369607fa771e09399d31a2c74be9f24290dbdd2e8a4af16a5",
-   "size": 92027
+   "sha256": "1c40b31097378466c69204f6e7fe506a7bfab94d1abb93ca1b9f1f9e8637050f",
+   "size": 94765
   },
   "catalogue.html": {
-   "sha256": "03b74958e1739f7befa29e6407bc917fe80b3c61a8698d369873560dd1e60401",
-   "size": 41814
+   "sha256": "0159cdf0375d3d34e049c0e9f0f8a8482f8fa12e2cf1c68ccd0405ad61ff86d7",
+   "size": 41897
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",
@@ -204,8 +204,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "45e9c6a61c0a085da9c08ac1f34cae7b93eab29dff9ae9dbb641a034a63ebaac",
-   "size": 72568
+   "sha256": "da9503c7b21c7e157a4ba1edc72d116f939f03d0a3ee08241b844f948913981b",
+   "size": 72752
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -1318,6 +1318,14 @@
   "covers/new_route66.png": {
    "sha256": "ba9be9f87899df7194a120b04df3d730eee95d326b7dc55f08cfe99fb9b0c4a0",
    "size": 289519
+  },
+  "covers/new_teletext.png": {
+   "sha256": "c542d2f5b826dface4c0bf85e59fd773374e81a0ac984ea8dc3232a8454712a7",
+   "size": 489624
+  },
+  "covers/new_teletext_nl.png": {
+   "sha256": "c8e9337a5a4f851e56aa4916ab97d69403de384bd875269f569154bf12766298",
+   "size": 489259
   },
   "covers/o2_06.png": {
    "sha256": "cbbfdfe45ef8d0c4130100e28ec759ac982bfd093ade113ff36d1082268991be",
@@ -2902,6 +2910,10 @@
   "homebrew-downloads/soiledquest.prg": {
    "sha256": "3106cee5e54871c916a0aba35f82aff3b1c190bc49ea24627cc6441c4390e3c1",
    "size": 51033
+  },
+  "homebrew-downloads/teletext-vault.bin": {
+   "sha256": "2c880d94d8b45f6eb33a938cd1d67c85b744e0dfe174d968d7cf90fc747845d1",
+   "size": 2048
   },
   "homebrew-downloads/trenchangle.prg": {
    "sha256": "782aac64100c64936aa51a0becb995ae16692ee96036ce4fa449eab94ab44b44",

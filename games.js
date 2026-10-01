@@ -193,6 +193,21 @@ window.GAMES_DATA = {
     "romFile": "Route 66 (Rafael Cardoso).bin"
   },
   {
+    "id": "new_teletext",
+    "filename": "new_teletext.html",
+    "title": "Teletext (Retro Vault concept)",
+    "platform": "G7400+",
+    "category": "Homebrew (this project)",
+    "vpNumber": null,
+    "tags": [
+      "plus-graphics"
+    ],
+    "romFile": "teletext-vault.bin",
+    "coverByLang": {
+      "nl": "new_teletext_nl"
+    }
+  },
+  {
     "id": "im_atlantis",
     "filename": "im_atlantis.bin",
     "title": "Atlantis",

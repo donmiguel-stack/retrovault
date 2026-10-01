@@ -8,7 +8,7 @@
   // far more often than this should.
   var VAULT_VERSION = "1.0.0";
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 42;
+  var COVER_V = 43;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
   var CLIP_V = 7;
 
@@ -1438,13 +1438,13 @@
     img.onerror = function () {
       if (this.dataset.stage === "png") {
         this.dataset.stage = "jpg";
-        this.src = "covers/" + g.id + ".jpg?v=" + COVER_V;
+        this.src = "covers/" + coverId(g) + ".jpg?v=" + COVER_V;
       } else {
         this.remove();
       }
     };
     img.dataset.stage = "png";
-    img.src = "covers/" + g.id + ".png?v=" + COVER_V;
+    img.src = "covers/" + coverId(g) + ".png?v=" + COVER_V;
     cover.appendChild(img);
 
     // Homebrew games are easy to mistake for official releases in the grid,
@@ -1965,6 +1965,15 @@
         applyBtn.hidden = true;
       }).catch(function () { say(window.t("updFail")); });
     });
+  }
+
+  // A cover can have a per-language version (games.js "coverByLang", e.g.
+  // { nl: "new_teletext_nl" } for the Dutch "Teletekst" box). Falls back to
+  // the game's own id. A function, not a top-level var - see newsSeenKey().
+  function coverId(g) {
+    var m = g && g.coverByLang;
+    var L = window.currentLang ? window.currentLang() : "en";
+    return (m && m[L]) || g.id;
   }
 
   function applyLang() {

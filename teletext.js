@@ -239,20 +239,21 @@
         20: '{c} chip. See {y}402{c} and {y}404{c}.' },
         fast: [['Index', '400'], ['The chip', '402'], ['Cart', '404'], ['News', '101']] },
       404: { title: 'COULD A REAL G7400 CART DO IT?', rows: {
-        3: ' Yes, in principle. A modern cartridge',
-        4: ' would carry two small chips:',
-        6: '{y} ESP32  {w}WiFi, fetches the page and',
+        3: ' Yes, in principle. One small board,',
+        4: ' a Raspberry Pi Pico 2 W, does it all:',
+        6: '{y} Core 1 {w}WiFi, fetches the page and',
         7: '        {w}converts it to EF9340 codes',
-        8: '{y} RP2040 {w}answers the 8048 CPU fast',
-        9: '        {w}enough on the cartridge bus',
+        8: '{y} Core 0 {w}pretends to be a ROM and',
+        9: '        {w}answers the 8048 on the bus',
         11: ' A short 8048 program copies the 960',
         12: ' cells into the EF9340\'s video RAM. The',
         13: ' G7400 keyboard picks the page number.',
-        15: '{c} Hard part: {w}bus timing. The 8048 bus',
-        16: ' is multiplexed and tight - exactly the',
-        17: ' kind of job the RP2040\'s PIO is for.',
-        19: '{g} Precedent: the C7010 Chess Module has',
-        20: '{g} its own CPU on the cartridge port.' },
+        15: '{c} Hard part: {w}bus timing. The loop on',
+        16: ' core 0 must answer every read without',
+        17: ' ever stalling, so WiFi stays on core 1.',
+        19: '{g} Precedent: PicoPAC already runs games',
+        20: '{g} from a Pico on G7000 and G7400.',
+        22: '{y} Build plan: in the cart\'s manual.' },
         fast: [['Index', '400'], ['The chip', '402'], ['P2000T', '403'], ['News', '101']] },
       405: { title: 'HOW TO USE THIS PAGE', rows: {
         3: '{y} 0-9    {w}type a page number',
@@ -339,20 +340,21 @@
         20: '{c} achtige chip. Zie {y}402{c} en {y}404{c}.' },
         fast: [['Index', '400'], ['De chip', '402'], ['Cartridge', '404'], ['Nieuws', '101']] },
       404: { title: 'KAN EEN ECHTE G7400-CART DIT?', rows: {
-        3: ' In principe wel. Een moderne cartridge',
-        4: ' krijgt twee kleine chips:',
-        6: '{y} ESP32  {w}WiFi, haalt de pagina op en',
+        3: ' In principe wel. Een klein bordje,',
+        4: ' een Raspberry Pi Pico 2 W, doet alles:',
+        6: '{y} Core 1 {w}WiFi, haalt de pagina op en',
         7: '        {w}zet die om naar EF9340-codes',
-        8: '{y} RP2040 {w}antwoordt de 8048-CPU snel',
-        9: '        {w}genoeg op de cartridgebus',
+        8: '{y} Core 0 {w}doet zich voor als ROM en',
+        9: '        {w}antwoordt de 8048 op de bus',
         11: ' Een kort 8048-programma kopieert de',
         12: ' 960 vakjes naar het video-RAM. Het',
         13: ' G7400-toetsenbord kiest de pagina.',
-        15: '{c} Lastig: {w}de bustiming. De 8048-bus is',
-        16: ' gemultiplext en krap - precies waar de',
-        17: ' PIO van de RP2040 voor gemaakt is.',
-        19: '{g} Voorbeeld: de C7010 Chess Module heeft',
-        20: '{g} een eigen CPU op de cartridgepoort.' },
+        15: '{c} Lastig: {w}de bustiming. De lus op core',
+        16: ' 0 moet elke leesactie beantwoorden en',
+        17: ' mag nooit haperen: WiFi zit op core 1.',
+        19: '{g} Voorbeeld: PicoPAC draait al spellen',
+        20: '{g} vanaf een Pico op G7000 en G7400.',
+        22: '{y} Bouwplan: in de handleiding.' },
         fast: [['Index', '400'], ['De chip', '402'], ['P2000T', '403'], ['Nieuws', '101']] },
       405: { title: 'ZO WERKT DEZE PAGINA', rows: {
         3: '{y} 0-9    {w}typ een paginanummer',
@@ -408,6 +410,11 @@
   }
 
   // ---------------------------------------------------------------- drawing
+  // Embedded in the emulator page (emulator/teletext-cart.js) the page around
+  // us is RetroArch's: look up our own controls inside #ttRoot only, and keep
+  // keys away from the emulated console while the teletext screen is up.
+  var ROOT = document.getElementById('ttRoot') || document;
+  var EMBED = !!window.VAULT_TT_EMBED;
   var canvas = document.getElementById('ttScreen');
   var ctx = canvas.getContext('2d');
   canvas.width = W; canvas.height = H;
@@ -513,7 +520,7 @@
     statusEl.textContent = txt;
     statusEl.className = 'tt-status ' + cls;
     if (subEl) subEl.textContent = (s && (s.nextSub || s.prevSub)) ? ui('sub') : '';
-    var fb = document.querySelectorAll('[data-fast]');
+    var fb = ROOT.querySelectorAll('[data-fast]');
     for (var i = 0; i < fb.length; i++) {
       var t = s && s.fast ? s.fast[+fb[i].dataset.fast] : '';
       fb[i].title = t ? (ui('p') + ' ' + t) : '';
@@ -633,8 +640,14 @@
   }
   function fast(i) { var s = state.shown; if (s && s.fast && s.fast[i]) go(s.fast[i]); }
 
-  document.addEventListener('keydown', function (e) {
+  if (EMBED) {
+    window.addEventListener('keyup', function (e) {
+      if (!/^F\d+$/.test(e.key)) e.stopPropagation();
+    }, true);
+  }
+  window.addEventListener('keydown', function (e) {
     if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (EMBED && !/^F\d+$/.test(e.key)) e.stopPropagation();
     var tag = (e.target && e.target.tagName) || '';
     if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
     var k = e.key;
@@ -646,9 +659,9 @@
       Escape: function () { state.typed = ''; render(); }, Backspace: function () { state.typed = state.typed.slice(0, -1); render(); } };
     var f = map[k] || map[k.toLowerCase && k.toLowerCase()];
     if (f) { f(); e.preventDefault(); }
-  });
+  }, true);
 
-  document.querySelectorAll('[data-key]').forEach(function (b) {
+  ROOT.querySelectorAll('[data-key]').forEach(function (b) {
     b.addEventListener('click', function () {
       var k = b.dataset.key;
       if (/^\d$/.test(k)) digit(k);
@@ -656,7 +669,7 @@
       else go(k);
     });
   });
-  document.querySelectorAll('[data-fast]').forEach(function (b) {
+  ROOT.querySelectorAll('[data-fast]').forEach(function (b) {
     b.addEventListener('click', function () { fast(+b.dataset.fast); });
   });
 
@@ -692,7 +705,7 @@
     }
     requestAnimationFrame(pollPad);
   }
-  window.addEventListener('gamepadconnected', function once() {
+  if (!EMBED) window.addEventListener('gamepadconnected', function once() {
     window.removeEventListener('gamepadconnected', once); requestAnimationFrame(pollPad);
   });
 

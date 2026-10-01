@@ -87,6 +87,22 @@
   .tt-about b{color:var(--text);}
   .tt-credit{font-size:13px;border-top:1px solid var(--border);padding-top:14px;margin-top:22px !important;}
 
+  .tt-build{max-width:860px;margin-top:44px;padding-top:30px;border-top:1px solid var(--border);font-size:15px;line-height:1.7;}
+  .tt-build h2{font-size:21px;margin:0 0 8px;}
+  .tt-build h3{font-size:16px;margin:28px 0 8px;}
+  .tt-build p,.tt-build li{color:var(--text-dim);}
+  .tt-build b,.tt-build th{color:var(--text);}
+  .tt-build a,.tt-about a{color:var(--accent);}
+  .tt-build code{font-size:13px;background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:1px 5px;color:var(--text);}
+  .tt-build ul,.tt-build ol{padding-left:22px;}
+  .tt-build li{margin:0 0 8px;}
+  .tt-build-lede{font-size:15.5px;}
+  .tt-table{width:100%;border-collapse:collapse;margin:6px 0 10px;font-size:14px;}
+  .tt-table th,.tt-table td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text-dim);}
+  .tt-table th{font-weight:600;background:var(--surface);}
+  .tt-table td:first-child{color:var(--text);white-space:nowrap;}
+  .tt-pins td:nth-child(3){color:var(--text);}
+  @media (max-width:640px){ .tt-table{font-size:13px;} .tt-table td:first-child{white-space:normal;} }
   @media (max-width:640px){
     .topbar{flex-wrap:wrap;row-gap:8px;}
     .topbar .social-links{display:none;}
@@ -198,6 +214,7 @@
     <p data-tt="keys"></p>
     <p class="tt-credit" data-tt="credit"></p>
   </section>
+
 </div>
 
 <script src="i18n.js?v=133"></script>
@@ -211,7 +228,7 @@ window.TT_TEXT = {
     scan: "Scanlines", idx: "Index", vlt: "Vault",
     aboutH: "What if Philips had done this?",
     about1: "The Videopac G7400 (1983) has a second video chip pair, the Thomson EF9340 and EF9341. Together they put a 40×24 grid of 8×10-dot character cells on screen under a one-row service line: 320×250 pixels, eight colours and 2×3 block mosaics. That is the same grid teletext uses, and Dutch television had launched teletext in 1980. Philips made the TV sets, the teletext chips and the G7400, but never put the two together.",
-    about2: "The idea comes from Dutch enthusiasts who built a WiFi cartridge that shows live teletext on a Philips P2000T (1981), whose SAA5050 character generator is the very chip teletext TVs used. A real G7400 cartridge could do the same – page 404 explains how.",
+    about2: "The idea comes from Dutch enthusiasts who built a WiFi cartridge that shows live teletext on a Philips P2000T (1981), whose SAA5050 character generator is the very chip teletext TVs used. A real G7400 cartridge could do the same – see page 404, and the build plan in <a href=\"game/new_teletext.html\">the cartridge's manual</a>.",
     howH: "How it works",
     how: "Your browser asks a small relay on retrovault.world for a page. The relay fetches it from NOS at most once a minute, shares that copy with every visitor and passes it on unchanged. This page turns it into the 40×25 grid and draws every character and mosaic block itself, pixel by pixel. Pages refresh every minute. Pages 400–405 are the Vault’s own and keep working when NOS can’t be reached.",
     keysH: "Keys",
@@ -224,7 +241,7 @@ window.TT_TEXT = {
     scan: "Beeldlijnen", idx: "Index", vlt: "Vault",
     aboutH: "Wat als Philips dit had gedaan?",
     about1: "De Videopac G7400 (1983) heeft een tweede videochip-paar, de Thomson EF9340 en EF9341. Samen zetten ze een raster van 40×24 tekenvakjes van 8×10 puntjes op het scherm, onder een servicerij: 320×250 pixels, acht kleuren en 2×3 mozaiekblokjes. Dat is precies het raster van teletekst, dat in 1980 in Nederland begon. Philips maakte de tv’s, de teletekstchips én de G7400, maar bracht die twee nooit samen.",
-    about2: "Het idee komt van Nederlandse liefhebbers die een WiFi-cartridge bouwden die live teletekst toont op een Philips P2000T (1981). Diens tekengenerator, de SAA5050, is dezelfde chip als in teletekst-tv’s. Een echte G7400-cartridge zou hetzelfde kunnen – pagina 404 legt uit hoe.",
+    about2: "Het idee komt van Nederlandse liefhebbers die een WiFi-cartridge bouwden die live teletekst toont op een Philips P2000T (1981). Diens tekengenerator, de SAA5050, is dezelfde chip als in teletekst-tv’s. Een echte G7400-cartridge zou hetzelfde kunnen – zie pagina 404, en het bouwplan in <a href=\"game/new_teletext.html\">de handleiding van de cartridge</a>.",
     howH: "Hoe het werkt",
     how: "Je browser vraagt een pagina op bij een kleine doorgeefserver op retrovault.world. Die haalt de pagina hooguit één keer per minuut bij de NOS op, deelt die kopie met alle bezoekers en geeft hem ongewijzigd door. Deze pagina zet hem om naar het raster van 40×25 en tekent elk teken en mozaiekblokje zelf, pixel voor pixel. Pagina’s verversen elke minuut. Pagina 400–405 zijn van de Vault zelf en werken ook als de NOS onbereikbaar is.",
     keysH: "Toetsen",
@@ -295,6 +312,9 @@ window.TT_TEXT = {
     });
     document.documentElement.lang = L;
     document.title = pack.h1 + " — Retro Vault";
+    // The cartridge build plan exists in English and Dutch; other languages get English.
+    var blk = L === "nl" ? "nl" : "en";
+    document.querySelectorAll("[data-langblock]").forEach(function (el) { el.hidden = el.dataset.langblock !== blk; });
     if (window.VaultTeletext) window.VaultTeletext.relang();
   }
   // Same flag row as the other pages; shares the VideopacVault_lang key.
@@ -324,6 +344,6 @@ window.TT_TEXT = {
   applyLang();
 })();
 </script>
-<script src="teletext.js?v=1"></script>
+<script src="teletext.js?v=3"></script>
 </body>
 </html>

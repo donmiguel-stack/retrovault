@@ -92,6 +92,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://demo.retrovault.world/game/new_teletext.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://demo.retrovault.world/game/im_atlantis.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>

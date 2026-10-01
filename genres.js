@@ -128,6 +128,10 @@ window.GENRE_DATA = {
   "players": "p1",
   "unsure": true
  },
+ "new_teletext": {
+  "genre": "utility",
+  "players": "p1"
+ },
  "im_atlantis": {
   "genre": "shooter",
   "players": "p12"
