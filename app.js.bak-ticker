@@ -908,8 +908,8 @@
     return wrap;
   }
 
-  // The tape runs full width directly under whichever "Featured and
-  // recommended" panel is on screen - one node, moved between the four
+  // The tape lives in the head of whichever "Featured and recommended" panel
+  // is on screen, beside the heading - one node, moved between the four
   // showcases as the shelf changes rather than one tape per shelf. No cached
   // reference on purpose: the first render runs while this file is still
   // being evaluated, so any top-level var up here would still be undefined
@@ -917,14 +917,14 @@
   // the state. Once dismissed, newsTape() returns null and nothing remounts.
   function mountNewsTape() {
     var sc = document.querySelector("section.showcase:not([hidden])");
-    var tape = document.querySelector(".news-tape");
-    if (!sc) { if (tape) tape.hidden = true; return; }
-    tape = tape || newsTape();
+    if (!sc) return;
+    var head = sc.querySelector(".showcase-head");
+    if (!head) return;
+    var tape = document.querySelector(".news-tape") || newsTape();
     if (!tape) return;
-    tape.hidden = false;
-    if (tape.previousElementSibling !== sc) {
-      sc.parentNode.insertBefore(tape, sc.nextSibling);
-      if (tape.ntSize) requestAnimationFrame(tape.ntSize);   // re-fit to the new spot
+    if (tape.parentNode !== head) {
+      head.appendChild(tape);
+      if (tape.ntSize) requestAnimationFrame(tape.ntSize);   // re-fit to this head
     }
   }
 

@@ -335,6 +335,10 @@ body{
 .showcase[hidden]{display:none;}
 .showcase-head{display:flex; align-items:center; justify-content:space-between;
   gap:18px; flex-wrap:wrap; margin-bottom:12px;}
+/* The news tape sits in this head, to the right of the heading, and takes
+   whatever width is left. Below 700px it drops onto its own line rather
+   than squeezing the heading - see the media query further down. */
+.showcase-head .news-tape{flex:1 1 320px; min-width:0; margin:0; max-width:none;}
 .showcase-head h2{margin:0; font-size:16px; font-weight:600; flex:0 0 auto;}
 
 .feature-row{display:flex; gap:14px; align-items:stretch; min-height:300px;}
@@ -422,17 +426,16 @@ body{
    news.js, the markup from newsTape() in app.js. */
 .news-tape{
   display:flex; align-items:stretch; overflow:hidden;
-  width:100%; margin:0; border-radius:0;
-  background:#ffd400;
-  border:0; border-bottom:1px solid #c9a700;
+  margin:0 0 14px; border-radius:8px;
+  background:linear-gradient(#14171f,#101319);
+  border:1px solid color-mix(in srgb, #e05a7e 45%, transparent);
   font-size:12.5px; line-height:1;
   transition:opacity .28s ease, transform .28s ease;
 }
-.news-tape[hidden]{display:none;}
 .news-tape.nt-gone{opacity:0; transform:translateY(-6px);}
 .nt-label{
   flex-shrink:0; display:flex; align-items:center;
-  background:#d71920; color:#fff;
+  background:#e05a7e; color:#2e0713;
   font-size:10px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
   padding:0 10px;
 }
@@ -454,19 +457,22 @@ body{
   to{transform:translateX(calc(var(--nt-shift,0px) * -1));}
 }
 .nt-run{display:flex; align-items:center; white-space:nowrap;}
-.nt-item{color:#000; text-decoration:none;}
-a.nt-item:hover,a.nt-item:focus-visible{color:#d71920; text-decoration:underline;}
-.nt-sep{color:#d71920; font-size:8px; padding:0 16px; opacity:.85;}
+.nt-item{color:var(--text); text-decoration:none;}
+a.nt-item:hover,a.nt-item:focus-visible{color:#f5a8bf; text-decoration:underline;}
+.nt-sep{color:#e05a7e; font-size:8px; padding:0 16px; opacity:.85;}
 .nt-close{
-  flex-shrink:0; background:none; border:0; border-left:1px solid rgba(0,0,0,.2);
-  color:rgba(0,0,0,.6); font-size:17px; line-height:1; cursor:pointer; padding:0 11px;
+  flex-shrink:0; background:none; border:0; border-left:1px solid var(--border);
+  color:var(--text-mute); font-size:17px; line-height:1; cursor:pointer; padding:0 11px;
 }
-.nt-close:hover{color:#000; background:rgba(0,0,0,.08);}
+.nt-close:hover{color:var(--text); background:var(--surface-2);}
 /* Anyone who has asked for less motion gets the same line, standing still and
    swipeable, rather than no news at all. */
 .news-tape.nt-still .nt-window{overflow-x:auto; scrollbar-width:none;}
 .news-tape.nt-still .nt-window::-webkit-scrollbar{display:none;}
 .news-tape.nt-still .nt-track{animation:none;}
+@media (max-width:700px){
+  .showcase-head .news-tape{flex-basis:100%; max-width:none; order:2;}
+}
 @media (max-width:600px){
   .news-tape{font-size:12px;}
   .nt-sep{padding:0 12px;}
