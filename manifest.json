@@ -1,15 +1,15 @@
 {
- "generated": "2026-10-02 09:42:41",
+ "generated": "2026-10-02 11:21:37",
  "count": 750,
- "bytes": 248081899,
+ "bytes": 248087632,
  "files": {
   "games.js": {
    "sha256": "73815b6a1290e0b0bf1df0aa5e69db286b4e0ce501480100452e7eb1c5f731f9",
    "size": 141159
   },
   "gamepages.js": {
-   "sha256": "9e7fa5660d945861040643623a2cab448707b97f899b87393dae4b98c023b8e5",
-   "size": 314015
+   "sha256": "69d83212c843293aa60ac089c3e8fc97ee2d9418fe34738ce0b07e6a30af19ff",
+   "size": 317085
   },
   "genres.js": {
    "sha256": "f24a5d353a76d95d5a22dd7f7f921221abb54bf7c045933462c6d058b84f6636",
@@ -124,12 +124,12 @@
    "size": 4844
   },
   "teletext.html": {
-   "sha256": "93624466cefc0e42f4eabafa215938130df073be33c779e54fe0ec38cc941ee2",
+   "sha256": "f27f03f9b853aa013d14931452ed1b36b5af03ae5c58f4fa3c5c0af89306aecc",
    "size": 30843
   },
   "teletext.js": {
-   "sha256": "4379c2aa4133ebe243d4819413ffba111a92e6b0a9238960ab5e2d33128ccb3f",
-   "size": 53409
+   "sha256": "e387fceefc1a7582be0f92befc0e5af92069028b478118124776cc36db061b8c",
+   "size": 53833
   },
   "app.js": {
    "sha256": "e5c47f07448e7826bef1d46d68ef55fb30320a35ca56f439e12bcb917d9dd1b9",
@@ -140,11 +140,11 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "2a268dae29feffad2acc86b291f3cbb448d3489573a33c47e0ec8403b07bf930",
+   "sha256": "f3f3fddeca4c43c7a8e23535e7dcbaf8b41c3483e7780b465a0dc0096474afe5",
    "size": 9653
   },
   "index.html": {
-   "sha256": "d2298a58dfce06d96a1c430e5408ce1f8ff82b7dcc60d5d0a801110a06dca31c",
+   "sha256": "7a08d4a8df3fb942b1ff3f3c0b0f61d6c109098a752dd9a4151469a538abac15",
    "size": 19039
   },
   "resources.html": {
@@ -164,7 +164,7 @@
    "size": 44652
   },
   "game-page.js": {
-   "sha256": "7a097ed0e1984342ccf6b48fa94d8c79ac0232da8dd798c4690d22d12c7f6796",
+   "sha256": "6a2c2dfda2775f2b55de86ecfdd022a0e6a41d5d774af37303b443285945b562",
    "size": 96278
   },
   "catalogue.html": {
@@ -1896,8 +1896,8 @@
    "size": 11659
   },
   "covers/shot_new_teletext_en_411.png": {
-   "sha256": "0d51eafd6a52ca969d7e2f2703a4560bc07ddbef304cec045b370e95aa4f0e69",
-   "size": 12005
+   "sha256": "9d3a8d511a973f989d08bf5c2fffd11d273dff00ff335dbcd9e855391e8ba847",
+   "size": 13102
   },
   "covers/shot_new_teletext_en_412.png": {
    "sha256": "64400f793c326807a2c6786501a78a5307c856ad4d976375327dcee7df149453",
@@ -1936,8 +1936,8 @@
    "size": 11843
   },
   "covers/shot_new_teletext_nl_411.png": {
-   "sha256": "7f4872ce946b4b7bb77525cd9bceda064df81bcd8e5129ac612dfa060deafcd3",
-   "size": 12273
+   "sha256": "9ca1eafdc53ef060b26887017b72ca202548354301670fd245f368d52c2f6d9a",
+   "size": 13415
   },
   "covers/shot_new_teletext_nl_412.png": {
    "sha256": "12e37bdf068543b65cb0dedf7cb2ed8b18cd3fee3ca73beea17ae05958a9f446",
