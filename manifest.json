@@ -1,15 +1,15 @@
 {
- "generated": "2026-10-01 20:24:37",
- "count": 730,
- "bytes": 247827350,
+ "generated": "2026-10-02 09:42:41",
+ "count": 750,
+ "bytes": 248081899,
  "files": {
   "games.js": {
-   "sha256": "5f363f59ae86fce23c8f0066d11ebb5da88430aa1fc6256107937ad4b50b0eea",
-   "size": 141181
+   "sha256": "73815b6a1290e0b0bf1df0aa5e69db286b4e0ce501480100452e7eb1c5f731f9",
+   "size": 141159
   },
   "gamepages.js": {
-   "sha256": "5d96f697e4a767f72a5be8cedb39c0925f0c2caf9c56d3d3a097d7507dd00d88",
-   "size": 313713
+   "sha256": "9e7fa5660d945861040643623a2cab448707b97f899b87393dae4b98c023b8e5",
+   "size": 314015
   },
   "genres.js": {
    "sha256": "f24a5d353a76d95d5a22dd7f7f921221abb54bf7c045933462c6d058b84f6636",
@@ -124,12 +124,12 @@
    "size": 4844
   },
   "teletext.html": {
-   "sha256": "92b50a8083e9e55f3f8718f424026d806c0482efc608127f4718c6d8470e7a27",
+   "sha256": "93624466cefc0e42f4eabafa215938130df073be33c779e54fe0ec38cc941ee2",
    "size": 30843
   },
   "teletext.js": {
-   "sha256": "dc059dbba354cb6700bfa2c0585f8906b9f6a8170da021f01c5901231aa4acec",
-   "size": 39637
+   "sha256": "4379c2aa4133ebe243d4819413ffba111a92e6b0a9238960ab5e2d33128ccb3f",
+   "size": 53409
   },
   "app.js": {
    "sha256": "e5c47f07448e7826bef1d46d68ef55fb30320a35ca56f439e12bcb917d9dd1b9",
@@ -140,11 +140,11 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "7cfbf70156d6b61fefdf3f86e152885a6cc8a1c635809cef6ffc4287bb941d71",
+   "sha256": "2a268dae29feffad2acc86b291f3cbb448d3489573a33c47e0ec8403b07bf930",
    "size": 9653
   },
   "index.html": {
-   "sha256": "6f55f2c92ac73030f4c02f7df65283010b3aaa63fc75ee35119d9a92cd0fe8e1",
+   "sha256": "d2298a58dfce06d96a1c430e5408ce1f8ff82b7dcc60d5d0a801110a06dca31c",
    "size": 19039
   },
   "resources.html": {
@@ -160,16 +160,16 @@
    "size": 3768
   },
   "game.css": {
-   "sha256": "97898d218e0077a1e633f830f96dd2b4e2bd75e4d5b1566a0b9a6b5eef7a9b4e",
-   "size": 43805
+   "sha256": "e1783504ebbe28e1316a15d2f47a6df60f90b7a0835492a634eaf2f01cc6b670",
+   "size": 44652
   },
   "game-page.js": {
-   "sha256": "1c40b31097378466c69204f6e7fe506a7bfab94d1abb93ca1b9f1f9e8637050f",
-   "size": 94765
+   "sha256": "7a097ed0e1984342ccf6b48fa94d8c79ac0232da8dd798c4690d22d12c7f6796",
+   "size": 96278
   },
   "catalogue.html": {
-   "sha256": "0159cdf0375d3d34e049c0e9f0f8a8482f8fa12e2cf1c68ccd0405ad61ff86d7",
-   "size": 41897
+   "sha256": "02aa03055f2d44977fba62d3fa9467c84257f4eadbe376d4d715f263da0073fc",
+   "size": 41875
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",
@@ -204,7 +204,7 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "da9503c7b21c7e157a4ba1edc72d116f939f03d0a3ee08241b844f948913981b",
+   "sha256": "924661f7b46f7fc2804e4fe3057a2ee119cdab3cfcdc15c111c4b65444ed8926",
    "size": 72752
   },
   "covers/Vp01_F.png": {
@@ -1870,6 +1870,86 @@
   "covers/shot_new_route66.png": {
    "sha256": "02a237fc2169a41d70a510fe6e8af878589afbda0a3ad107ff44dc75b838672f",
    "size": 5559
+  },
+  "covers/shot_new_teletext_en_400.png": {
+   "sha256": "9767fd9cc19a40078be5bfc89a1c564a90f05f50735ce4357ff7d2edb9c09b6f",
+   "size": 12096
+  },
+  "covers/shot_new_teletext_en_406.png": {
+   "sha256": "476c87b7fb57d8b6b7c79cb3526b33d83266cd7bca80bccdb2824f997f498dc6",
+   "size": 12148
+  },
+  "covers/shot_new_teletext_en_407.png": {
+   "sha256": "2cf0b117b342311b6e71f8f5810dfa7d01693110dbcbcb8490c54a727a5d7ab2",
+   "size": 11608
+  },
+  "covers/shot_new_teletext_en_408.png": {
+   "sha256": "fbfc8a89fa6d90e5f4769d692f2bc4ff3e554f436ab32eb35e58679ca4e2bd21",
+   "size": 10764
+  },
+  "covers/shot_new_teletext_en_409.png": {
+   "sha256": "e7ad771e407f91533f9176d4e52dca305237faaaf82c86d7780880be3c03a298",
+   "size": 12046
+  },
+  "covers/shot_new_teletext_en_410.png": {
+   "sha256": "b424fb3505e2a49cb538c5ff127d25923fd9b1eb5b89213f8e8bdf2cb02a4961",
+   "size": 11659
+  },
+  "covers/shot_new_teletext_en_411.png": {
+   "sha256": "0d51eafd6a52ca969d7e2f2703a4560bc07ddbef304cec045b370e95aa4f0e69",
+   "size": 12005
+  },
+  "covers/shot_new_teletext_en_412.png": {
+   "sha256": "64400f793c326807a2c6786501a78a5307c856ad4d976375327dcee7df149453",
+   "size": 12364
+  },
+  "covers/shot_new_teletext_en_413.png": {
+   "sha256": "de626ee874638b63871b78a34f735f4cd5f49cb7196abff3262ab9332e6e5382",
+   "size": 11661
+  },
+  "covers/shot_new_teletext_en_414.png": {
+   "sha256": "3d4fd6d8e785621ee72b248dbdc360af1dcbc28674f1f7249c814fee392e9a99",
+   "size": 11806
+  },
+  "covers/shot_new_teletext_nl_400.png": {
+   "sha256": "6d725a348d7d72e01b2186d400d6e08c91e296bb17dc526d77c384a346736666",
+   "size": 12099
+  },
+  "covers/shot_new_teletext_nl_406.png": {
+   "sha256": "b0cd9933ee14375d7f7ec7df38a305a0d5356a1d370dd3d4f61eaaaa18d6e6cc",
+   "size": 12256
+  },
+  "covers/shot_new_teletext_nl_407.png": {
+   "sha256": "5e919a368d6998c48391cf036a5d00474d81da565d194ec129b7e6d6b71dbf11",
+   "size": 11729
+  },
+  "covers/shot_new_teletext_nl_408.png": {
+   "sha256": "ad931bea0bced3270fe8c105feffbdb0d6117b790b7ad27ad962472ba29b5d98",
+   "size": 10922
+  },
+  "covers/shot_new_teletext_nl_409.png": {
+   "sha256": "5850eeccde0e2a1a1f12b8332ac7ea4c6b5e292f2f55ec1fa5dba00711aef7c2",
+   "size": 12256
+  },
+  "covers/shot_new_teletext_nl_410.png": {
+   "sha256": "7a5f184426c60fc053d610a069185dfdc978cfc6e7facfdf13c856a17be047d9",
+   "size": 11843
+  },
+  "covers/shot_new_teletext_nl_411.png": {
+   "sha256": "7f4872ce946b4b7bb77525cd9bceda064df81bcd8e5129ac612dfa060deafcd3",
+   "size": 12273
+  },
+  "covers/shot_new_teletext_nl_412.png": {
+   "sha256": "12e37bdf068543b65cb0dedf7cb2ed8b18cd3fee3ca73beea17ae05958a9f446",
+   "size": 12627
+  },
+  "covers/shot_new_teletext_nl_413.png": {
+   "sha256": "333956d1d664cfec85c3413564e20173ed2e29bd4f5afe941189e0ece2f8744e",
+   "size": 12021
+  },
+  "covers/shot_new_teletext_nl_414.png": {
+   "sha256": "d21e77de747a7a01687a60c42510a929449ba7dcf95dc1b1fbbecd67601d91c7",
+   "size": 11976
   },
   "covers/shot_vp_01.jpg": {
    "sha256": "50ea179c7884a4ce9b2ffe0298298cbfae776ad4c7858e7aa78c7a4fd024d338",

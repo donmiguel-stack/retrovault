@@ -195,7 +195,7 @@ window.GAMES_DATA = {
   {
     "id": "new_teletext",
     "filename": "new_teletext.html",
-    "title": "Teletext (Retro Vault concept)",
+    "title": "Teletext",
     "platform": "G7400+",
     "category": "Homebrew (this project)",
     "vpNumber": null,

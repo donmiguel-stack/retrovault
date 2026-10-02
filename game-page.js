@@ -1805,6 +1805,32 @@
       showClip();
     }
     vSec.appendChild(wrap);
+  } else if (data.shots && data.shots.pages && data.shots.pages.length) {
+    // Screenshots instead of a video (gamepages.js "shots"): one big image,
+    // a row of thumbnails underneath, click a thumbnail to show it big.
+    // file is a pattern with {lang} and {page}; Dutch visitors get the nl set.
+    var sh = data.shots;
+    var sl = (sh.langs || []).indexOf(window.currentLang()) !== -1 ? window.currentLang() : (sh.langs || ["en"])[0];
+    function shotSrc(pg) { return "covers/" + sh.file.replace("{lang}", sl).replace("{page}", pg) + "?v=" + COVER_V; }
+    if (sh.title) vH.appendChild(el("span","sec-note",sh.title));
+    var gal = el("div","shot-gallery");
+    var big = new Image(); big.className = "shot-main"; big.alt = g.title + " - page " + sh.pages[0];
+    big.src = shotSrc(sh.pages[0]);
+    gal.appendChild(big);
+    var strip = el("div","shot-strip");
+    sh.pages.forEach(function (pg, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "shot-thumb" + (i === 0 ? " on" : "");
+      var t = new Image(); t.src = shotSrc(pg); t.alt = ""; t.loading = "lazy";
+      b.appendChild(t); b.appendChild(el("span", null, "P" + pg));
+      b.addEventListener("click", function () {
+        big.src = shotSrc(pg); big.alt = g.title + " - page " + pg;
+        strip.querySelectorAll(".shot-thumb").forEach(function (x) { x.classList.toggle("on", x === b); });
+      });
+      strip.appendChild(b);
+    });
+    gal.appendChild(strip);
+    vSec.appendChild(gal);
   } else {
     vSec.appendChild(el("p","missing-note",LT("s_noVideo")));
   }

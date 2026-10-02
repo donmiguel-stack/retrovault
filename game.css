@@ -793,3 +793,14 @@
   .pad-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;}
   .pad-saved{font-size:12px;color:var(--text-mute);}
   .pad-note[hidden]{display:none;}
+
+/* Screenshot gallery in the Gameplay section (gamepages.js "shots") */
+.shot-gallery{display:flex;flex-direction:column;gap:12px;}
+.shot-main{display:block;width:100%;max-width:880px;aspect-ratio:4/3;object-fit:fill;image-rendering:pixelated;
+  border-radius:10px;border:1px solid var(--border);background:#000;}
+.shot-strip{display:flex;gap:6px;flex-wrap:wrap;max-width:880px;}
+.shot-thumb{display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px;border-radius:8px;cursor:pointer;
+  background:var(--surface);border:1px solid var(--border);color:var(--text-dim);font:12px/1 ui-monospace,monospace;}
+.shot-thumb img{display:block;width:72px;aspect-ratio:4/3;object-fit:fill;image-rendering:pixelated;border-radius:4px;}
+.shot-thumb:hover{border-color:var(--accent);}
+.shot-thumb.on{border-color:var(--g7400);color:var(--text);}

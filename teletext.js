@@ -8,7 +8,7 @@
  *
  * Data: NOS JSON via retrovault.world/teletext/nos.php (teletext-server/),
  * which only adds the CORS header NOS itself doesn't send, plus a 60 s shared
- * cache. Pages 400-405 are the Vault's own and never touch the network; they
+ * cache. Pages 400-414 are the Vault's own and never touch the network; they
  * are also what you get when the relay can't be reached.
  *
  * The font is an original 5 x 7 (+2 descender) drawing in the period style,
@@ -39,12 +39,12 @@
     try { return (window.currentLang && window.currentLang()) || 'en'; } catch (e) { return 'en'; }
   }
   var UI = {
-    en: { live: 'Live: NOS Teletekst', stale: 'NOS feed slow - showing the last copy', offline: 'NOS not reachable - Vault pages 400-405 still work', loading: 'Searching for page', vault: 'Retro Vault page', sub: 'subpages: ▲ ▼', scan: 'Scanlines', p: 'Page', idx: 'Index', vlt: 'Vault' },
-    nl: { live: 'Live: NOS Teletekst', stale: 'NOS reageert traag - laatste kopie', offline: 'NOS niet bereikbaar - Vault-pagina’s 400-405 werken wel', loading: 'Pagina zoeken', vault: 'Retro Vault-pagina', sub: 'subpagina’s: ▲ ▼', scan: 'Beeldlijnen', p: 'Pagina', idx: 'Index', vlt: 'Vault' },
-    de: { live: 'Live: NOS Teletekst', stale: 'NOS antwortet langsam - letzte Kopie', offline: 'NOS nicht erreichbar - Vault-Seiten 400-405 gehen trotzdem', loading: 'Suche Seite', vault: 'Retro-Vault-Seite', sub: 'Unterseiten: ▲ ▼', scan: 'Scanlines', p: 'Seite', idx: 'Index', vlt: 'Vault' },
-    fr: { live: 'En direct : NOS Teletekst', stale: 'NOS lent - dernière copie affichée', offline: 'NOS injoignable - les pages Vault 400-405 restent disponibles', loading: 'Recherche de la page', vault: 'Page Retro Vault', sub: 'sous-pages : ▲ ▼', scan: 'Lignes de balayage', p: 'Page', idx: 'Index', vlt: 'Vault' },
-    pt: { live: 'Ao vivo: NOS Teletekst', stale: 'NOS lento - mostrando a última cópia', offline: 'NOS fora do ar - as páginas Vault 400-405 continuam funcionando', loading: 'Procurando a página', vault: 'Página do Retro Vault', sub: 'subpáginas: ▲ ▼', scan: 'Linhas de varredura', p: 'Página', idx: 'Índice', vlt: 'Vault' },
-    ja: { live: 'ライブ: NOS テレテキスト', stale: 'NOS が おそい - まえの ページを ひょうじ', offline: 'NOS に つながらない - 400-405 は つかえます', loading: 'ページを さがしています', vault: 'Retro Vault の ページ', sub: 'サブページ: ▲ ▼', scan: 'スキャンライン', p: 'ページ', idx: 'もくじ', vlt: 'Vault' }
+    en: { live: 'Live: NOS Teletekst', stale: 'NOS feed slow - showing the last copy', offline: 'NOS not reachable - Vault pages 400-414 still work', loading: 'Searching for page', vault: 'Retro Vault page', sub: 'subpages: ▲ ▼', scan: 'Scanlines', p: 'Page', idx: 'Index', vlt: 'Vault' },
+    nl: { live: 'Live: NOS Teletekst', stale: 'NOS reageert traag - laatste kopie', offline: 'NOS niet bereikbaar - Vault-pagina’s 400-414 werken wel', loading: 'Pagina zoeken', vault: 'Retro Vault-pagina', sub: 'subpagina’s: ▲ ▼', scan: 'Beeldlijnen', p: 'Pagina', idx: 'Index', vlt: 'Vault' },
+    de: { live: 'Live: NOS Teletekst', stale: 'NOS antwortet langsam - letzte Kopie', offline: 'NOS nicht erreichbar - Vault-Seiten 400-414 gehen trotzdem', loading: 'Suche Seite', vault: 'Retro-Vault-Seite', sub: 'Unterseiten: ▲ ▼', scan: 'Scanlines', p: 'Seite', idx: 'Index', vlt: 'Vault' },
+    fr: { live: 'En direct : NOS Teletekst', stale: 'NOS lent - dernière copie affichée', offline: 'NOS injoignable - les pages Vault 400-414 restent disponibles', loading: 'Recherche de la page', vault: 'Page Retro Vault', sub: 'sous-pages : ▲ ▼', scan: 'Lignes de balayage', p: 'Page', idx: 'Index', vlt: 'Vault' },
+    pt: { live: 'Ao vivo: NOS Teletekst', stale: 'NOS lento - mostrando a última cópia', offline: 'NOS fora do ar - as páginas Vault 400-414 continuam funcionando', loading: 'Procurando a página', vault: 'Página do Retro Vault', sub: 'subpáginas: ▲ ▼', scan: 'Linhas de varredura', p: 'Página', idx: 'Índice', vlt: 'Vault' },
+    ja: { live: 'ライブ: NOS テレテキスト', stale: 'NOS が おそい - まえの ページを ひょうじ', offline: 'NOS に つながらない - 400-414 は つかえます', loading: 'ページを さがしています', vault: 'Retro Vault の ページ', sub: 'サブページ: ▲ ▼', scan: 'スキャンライン', p: 'ページ', idx: 'もくじ', vlt: 'Vault' }
   };
   function ui(k) { var L = UI[lang()] || UI.en; return L[k] || UI.en[k]; }
 
@@ -180,13 +180,14 @@
         8: '{y} 403 {w}The P2000T WiFi cartridge',
         9: '{y} 404 {w}Could a real cartridge do it?',
         10: '{y} 405 {w}How to use this page',
-        11: '~b',
-        12: '{g} NOS TELETEKST, LIVE',
-        13: '{y} 100 {w}Index       {y}601 {w}Sport',
-        14: '{y} 101 {w}News        {y}702 {w}Weather',
-        15: '{y} 102 {w}Domestic    {y}730 {w}Traffic',
-        16: '{y} 500 {w}Finance     {y}801 {w}Football',
-        17: '~b',
+        11: '{y} 406 {w}Build manual, 9 pages: 406-414',
+        12: '~b',
+        13: '{g} NOS TELETEKST, LIVE',
+        14: '{y} 100 {w}Index       {y}601 {w}Sport',
+        15: '{y} 101 {w}News        {y}702 {w}Weather',
+        16: '{y} 102 {w}Domestic    {y}730 {w}Traffic',
+        17: '{y} 500 {w}Finance     {y}801 {w}Football',
+        18: '~b',
         21: '{c} Type a page number, or click one.' },
         fast: [['News', '101'], ['Sport', '601'], ['Weather', '702'], ['Index', '100']] },
       401: { title: 'WHAT IF PHILIPS HAD DONE THIS?', rows: {
@@ -253,7 +254,7 @@
         17: ' ever stalling, so WiFi stays on core 1.',
         19: '{g} Precedent: PicoPAC already runs games',
         20: '{g} from a Pico on G7000 and G7400.',
-        22: '{y} Build plan: in the cart\'s manual.' },
+        22: '{y} Build manual: pages 406-414.' },
         fast: [['Index', '400'], ['The chip', '402'], ['P2000T', '403'], ['News', '101']] },
       405: { title: 'HOW TO USE THIS PAGE', rows: {
         3: '{y} 0-9    {w}type a page number',
@@ -268,7 +269,7 @@
         14: ' A gamepad works too: D-pad changes',
         15: ' page, the face buttons are Fastext.',
         18: '{c} Pages 100-899 come live from NOS.',
-        19: '{c} Pages 400-405 belong to the Vault.' },
+        19: '{c} Pages 400-414 belong to the Vault.' },
         fast: [['Index', '400'], ['News', '101'], ['Sport', '601'], ['Weather', '702']] }
     },
     nl: {
@@ -280,13 +281,14 @@
         8: '{y} 403 {w}De P2000T WiFi-cartridge',
         9: '{y} 404 {w}Kan een echte cartridge dit?',
         10: '{y} 405 {w}Zo werkt deze pagina',
-        11: '~b',
-        12: '{g} NOS TELETEKST, LIVE',
-        13: '{y} 100 {w}Index       {y}601 {w}Sport',
-        14: '{y} 101 {w}Nieuws      {y}702 {w}Weer',
-        15: '{y} 102 {w}Binnenland  {y}730 {w}Verkeer',
-        16: '{y} 500 {w}Financieel  {y}801 {w}Voetbal',
-        17: '~b',
+        11: '{y} 406 {w}Bouwhandleiding, 9 pagina\'s',
+        12: '~b',
+        13: '{g} NOS TELETEKST, LIVE',
+        14: '{y} 100 {w}Index       {y}601 {w}Sport',
+        15: '{y} 101 {w}Nieuws      {y}702 {w}Weer',
+        16: '{y} 102 {w}Binnenland  {y}730 {w}Verkeer',
+        17: '{y} 500 {w}Financieel  {y}801 {w}Voetbal',
+        18: '~b',
         21: '{c} Typ een paginanummer of klik erop.' },
         fast: [['Nieuws', '101'], ['Sport', '601'], ['Weer', '702'], ['Index', '100']] },
       401: { title: 'WAT ALS PHILIPS DIT HAD GEDAAN?', rows: {
@@ -354,7 +356,7 @@
         17: ' mag nooit haperen: WiFi zit op core 1.',
         19: '{g} Voorbeeld: PicoPAC draait al spellen',
         20: '{g} vanaf een Pico op G7000 en G7400.',
-        22: '{y} Bouwplan: in de handleiding.' },
+        22: '{y} Bouwhandleiding: pagina 406-414.' },
         fast: [['Index', '400'], ['De chip', '402'], ['P2000T', '403'], ['Nieuws', '101']] },
       405: { title: 'ZO WERKT DEZE PAGINA', rows: {
         3: '{y} 0-9    {w}typ een paginanummer',
@@ -369,10 +371,279 @@
         14: ' Een gamepad werkt ook: de D-pad bladert',
         15: ' de knoppen zijn de Fastext-toetsen.',
         18: '{c} 100-899 komt live van de NOS.',
-        19: '{c} 400-405 zijn van de Vault.' },
+        19: '{c} 400-414 zijn van de Vault.' },
         fast: [['Index', '400'], ['Nieuws', '101'], ['Sport', '601'], ['Weer', '702']] }
     }
   };
+  // Build manual, one teletext page per step (406-414). The same plan, at
+  // full length, is the cartridge's manual on its game page.
+  var MANUAL = {
+    en: {
+      406: { title: 'MANUAL 1/9  HOW IT FITS TOGETHER', rows: {
+        3: ' A Raspberry Pi Pico 2 W on the cart:',
+        5: '{y} 1 {w}WiFi: the Pico fetches a page from',
+        6: '   the Vault\'s relay on retrovault.world',
+        7: '   and converts it to EF9340 codes.',
+        9: '{y} 2 {w}The same Pico pretends to be a 2 KB',
+        10: '   cartridge ROM holding a small',
+        11: '   teletext client for the 8048 CPU.',
+        13: '{y} 3 {w}The client asks for a page, reads',
+        14: '   it back through the ROM and copies',
+        15: '   it into the EF9340/EF9341.',
+        17: '{y} 4 {w}The TV shows 40 x 24 cells plus a',
+        18: '   header row - this very grid.',
+        20: '{c} Nobody has built it yet. Next: {y}407' } },
+      407: { title: 'MANUAL 2/9  PARTS', rows: {
+        3: '{y} Pico 2 W    {w}RP2350 + WiFi, 5V-safe',
+        4: '{y} PCB         {w}30-contact Videopac edge',
+        5: '              from PicoPAC\'s KiCad files',
+        6: '{y} Diode       {w}1N5817 or BAT54:',
+        7: '              +5V to VSYS, no backfeed',
+        8: '{y} 2x 100nF    {w}decoupling',
+        9: '{y} Push button {w}reset / BOOTSEL',
+        10: '{y} Shell       {w}3D print, PicoPAC STL',
+        12: ' Parts: about € 15-25, plus the PCB.',
+        14: '{c} PicoPAC (github.com/aotta/PicoPAC)',
+        15: '{c} already runs games from a Pico on',
+        16: '{c} the G7000 and G7400. CC BY-SA.' } },
+      408: { title: 'MANUAL 3/9  THE CARTRIDGE PORT', rows: {
+        3: ' 30 contacts, two rows of 15:',
+        5: '{y} 1   {w}T0          {y}A    {w}/WR',
+        6: '{y} 2-9 {w}B0-B7 data  {y}B,C  {w}GND',
+        7: '{y} 10  {w}A10         {y}D    {w}+5V',
+        8: '{y} 11  {w}CS (P14)    {y}E    {w}/CS',
+        9: '{y} 12  {w}P11         {y}F    {w}/PSEN',
+        10: '{y} 13  {w}P10         {y}G-M  {w}A0-A5',
+        11: '{y} 14  {w}A11         {y}N,P  {w}A7, A6',
+        12: '{y} 15  {w}A9          {y}R    {w}A8',
+        14: '{r} Check every contact with a',
+        15: '{r} multimeter against a real cartridge',
+        16: '{r} before you solder.' } },
+      409: { title: 'MANUAL 4/9  WIRING THE PICO 2 W', rows: {
+        3: ' GP23-25 run WiFi, GP26-28 are not 5V',
+        4: ' tolerant - so the bus uses GP0-GP22:',
+        6: '{y} GP0-GP10  {w}A0-A10 (2 KB image)',
+        7: '{y} GP11-GP18 {w}B0-B7 data bus',
+        8: '{y} GP19      {w}/PSEN  program read',
+        9: '{y} GP20      {w}/WR    MOVX write',
+        10: '{y} GP21      {w}CS     P14',
+        11: '{y} GP22      {w}P10    (optional)',
+        12: '{y} VSYS      {w}+5V via the diode',
+        13: '{y} GND       {w}pins B and C',
+        15: ' Drive B0-B7 only while /PSEN is low;',
+        16: ' float them the rest of the time.',
+        18: '{c} Older Pico W (RP2040)? Not 5V safe:',
+        19: '{c} put 74LVC245 buffers in between.' } },
+      410: { title: 'MANUAL 5/9  FIRMWARE ON THE PICO', rows: {
+        3: '{y} Core 0 - the bus',
+        4: ' Tight loop from RAM, ~250 MHz, no',
+        5: ' interrupts. /PSEN low: put the ROM',
+        6: ' byte on B0-B7. CS + /WR low: store',
+        7: ' the byte as a command. Never stall.',
+        9: '{y} Core 1 - the network',
+        10: ' WiFi + lwIP + mbedTLS. HTTPS to',
+        11: ' retrovault.world/teletext/nos.php,',
+        12: ' every 60 s and on request. Two',
+        13: ' buffers, swapped between reads.',
+        15: '{y} Settings',
+        16: ' WiFi name + password in wifi.txt on',
+        17: ' the Pico\'s USB drive.' } },
+      411: { title: 'MANUAL 6/9  CONSOLE <-> CARTRIDGE', rows: {
+        3: '{y} Console -> cartridge',
+        4: ' The 8048 sets P14 low and does MOVX',
+        5: ' writes; the cart sees CS + /WR low.',
+        6: '{c} F0-F2 {w}page digits  {c}F3 {w}subpage',
+        7: '{c} FF    {w}1 fetch 2 next 3 prev 4 again',
+        9: '{y} Cartridge -> console',
+        10: ' MOVX reads would clash with the',
+        11: ' console\'s RAM, so data comes back',
+        12: ' through the ROM: address 7FF is a',
+        13: ' streaming port - each read gives the',
+        14: ' next byte of the page.',
+        15: '{c} 7FE {w}status: 0 busy 1 ready',
+        16: '        {w}2 no such page 3 no WiFi',
+        17: ' Read both with MOVP A,@A.' } },
+      412: { title: 'MANUAL 7/9  THE G7400 PROGRAM', rows: {
+        3: ' 2 KB of 8048 code:',
+        5: '{y} - {w}EF9340 routines from THE CORE,',
+        6: '   the Vault\'s own G7400 engine',
+        7: '{y} - {w}BIOS key routine at 00B0h: digits',
+        8: '   build the page number',
+        9: '{y} - {w}joystick: left/right page, up/',
+        10: '   down subpage, fire = 100',
+        11: '{y} - {w}request, poll 7FE, then stream',
+        12: '   24 x 40 x 2 bytes into the EF9340',
+        13: '{y} - {w}about 2,000 bytes: 30-60 ms',
+        15: ' NOS colours are per character, like',
+        16: ' the EF9340\'s attribute per cell, so',
+        17: ' there are no control codes to decode.',
+        19: '{c} On a G7000 (no EF9340): show',
+        20: '{c} "needs a G7400" instead of crashing.' } },
+      413: { title: 'MANUAL 8/9  BUILD AND TEST ORDER', rows: {
+        3: '{y} 1 {w}Build the board, flash PicoPAC with',
+        4: '   the new pin numbers. Games run?',
+        5: '   Then the wiring is right.',
+        7: '{y} 2 {w}Serve one fixed page from flash,',
+        8: '   no WiFi. Write the client in o2em',
+        9: '   first, with a fake cartridge.',
+        11: '{y} 3 {w}WiFi on core 1. Games must still',
+        12: '   run while it is busy.',
+        14: '{y} 4 {w}Add fmt=ef9340 to the relay, then',
+        15: '   the request channel.',
+        17: '{y} 5 {w}Case it. Test on a G7400, then on',
+        18: '   a G7000 for the fallback message.' } },
+      414: { title: 'MANUAL 9/9  WATCH OUT FOR', rows: {
+        3: '{r} Power{w}: WiFi peaks at a few hundred',
+        4: ' mA; the console\'s 5V was made for a',
+        5: ' ROM chip. Measure. If tight, power',
+        6: ' the Pico from USB, share only GND.',
+        8: '{r} Hot plugging{w}: never insert or',
+        9: ' remove the cart with the console on.',
+        11: '{r} Licence{w}: PicoPAC hardware is',
+        12: ' CC BY-SA. Keep it, credit it.',
+        14: '{r} NOS{w}: go through the relay. Its',
+        15: ' 60 s cache keeps the load on NOS the',
+        16: ' same, however many cartridges exist.',
+        19: '{c} Back to the start: {y}400{c} or {y}406' } }
+    },
+    nl: {
+      406: { title: 'HANDLEIDING 1/9  HOE HET IN ELKAAR PAST', rows: {
+        3: ' Een Raspberry Pi Pico 2 W op de cart:',
+        5: '{y} 1 {w}WiFi: de Pico haalt een pagina op',
+        6: '   bij de doorgeefserver van de Vault',
+        7: '   en zet die om naar EF9340-codes.',
+        9: '{y} 2 {w}Dezelfde Pico doet zich voor als',
+        10: '   een cartridge-ROM van 2 KB met een',
+        11: '   kleine teletekst-client voor de 8048.',
+        13: '{y} 3 {w}De client vraagt een pagina, leest',
+        14: '   die terug via de ROM en kopieert',
+        15: '   hem naar de EF9340/EF9341.',
+        17: '{y} 4 {w}De tv toont 40 x 24 vakjes plus',
+        18: '   een kopregel - dit raster.',
+        20: '{c} Nog door niemand gebouwd. Verder: {y}407' } },
+      407: { title: 'HANDLEIDING 2/9  ONDERDELEN', rows: {
+        3: '{y} Pico 2 W    {w}RP2350 + WiFi, 5V-vast',
+        4: '{y} Printplaat  {w}Videopac-rand, 30 cont.',
+        5: '              uit de PicoPAC-KiCad',
+        6: '{y} Diode       {w}1N5817 of BAT54:',
+        7: '              +5V naar VSYS',
+        8: '{y} 2x 100nF    {w}ontkoppeling',
+        9: '{y} Drukknop    {w}reset / BOOTSEL',
+        10: '{y} Behuizing   {w}3D-print, PicoPAC-STL',
+        12: ' Onderdelen: ca. € 15-25 + printplaat.',
+        14: '{c} PicoPAC (github.com/aotta/PicoPAC)',
+        15: '{c} draait al spellen vanaf een Pico op',
+        16: '{c} de G7000 en G7400. CC BY-SA.' } },
+      408: { title: 'HANDLEIDING 3/9  DE CARTRIDGEPOORT', rows: {
+        3: ' 30 contacten, twee rijen van 15:',
+        5: '{y} 1   {w}T0          {y}A    {w}/WR',
+        6: '{y} 2-9 {w}B0-B7 data  {y}B,C  {w}GND',
+        7: '{y} 10  {w}A10         {y}D    {w}+5V',
+        8: '{y} 11  {w}CS (P14)    {y}E    {w}/CS',
+        9: '{y} 12  {w}P11         {y}F    {w}/PSEN',
+        10: '{y} 13  {w}P10         {y}G-M  {w}A0-A5',
+        11: '{y} 14  {w}A11         {y}N,P  {w}A7, A6',
+        12: '{y} 15  {w}A9          {y}R    {w}A8',
+        14: '{r} Meet elk contact met een multimeter',
+        15: '{r} na tegen een echte cartridge voordat',
+        16: '{r} je soldeert.' } },
+      409: { title: 'HANDLEIDING 4/9  DE PICO 2 W AANSLUITEN', rows: {
+        3: ' GP23-25 sturen WiFi, GP26-28 kunnen',
+        4: ' niet tegen 5V - de bus zit op GP0-22:',
+        6: '{y} GP0-GP10  {w}A0-A10 (2 KB)',
+        7: '{y} GP11-GP18 {w}B0-B7 databus',
+        8: '{y} GP19      {w}/PSEN  programma lezen',
+        9: '{y} GP20      {w}/WR    MOVX schrijven',
+        10: '{y} GP21      {w}CS     P14',
+        11: '{y} GP22      {w}P10    (optioneel)',
+        12: '{y} VSYS      {w}+5V via de diode',
+        13: '{y} GND       {w}pinnen B en C',
+        15: ' Stuur B0-B7 alleen aan als /PSEN laag',
+        16: ' is; laat ze de rest van de tijd los.',
+        18: '{c} Oudere Pico W (RP2040)? Niet 5V-vast:',
+        19: '{c} zet er 74LVC245-buffers tussen.' } },
+      410: { title: 'HANDLEIDING 5/9  FIRMWARE OP DE PICO', rows: {
+        3: '{y} Core 0 - de bus',
+        4: ' Strakke lus vanuit RAM, ~250 MHz,',
+        5: ' geen interrupts. /PSEN laag: zet de',
+        6: ' ROM-byte op B0-B7. CS + /WR laag:',
+        7: ' bewaar de byte als commando.',
+        9: '{y} Core 1 - het netwerk',
+        10: ' WiFi + lwIP + mbedTLS. HTTPS naar',
+        11: ' retrovault.world/teletext/nos.php,',
+        12: ' elke 60 s en op verzoek. Twee',
+        13: ' buffers, gewisseld tussen het lezen.',
+        15: '{y} Instellingen',
+        16: ' WiFi-naam + wachtwoord in wifi.txt',
+        17: ' op het USB-station van de Pico.' } },
+      411: { title: 'HANDLEIDING 6/9  CONSOLE <-> CARTRIDGE', rows: {
+        3: '{y} Console -> cartridge',
+        4: ' De 8048 zet P14 laag en doet MOVX-',
+        5: ' schrijfacties; de cart ziet CS + /WR.',
+        6: '{c} F0-F2 {w}paginacijfers {c}F3 {w}subpagina',
+        7: '{c} FF    {w}1 halen 2 volg 3 vorig 4 opnieuw',
+        9: '{y} Cartridge -> console',
+        10: ' MOVX-lezen botst met het RAM van de',
+        11: ' console, dus de data komt terug via',
+        12: ' de ROM: adres 7FF is een doorstroom-',
+        13: ' poort - elke leesactie geeft de',
+        14: ' volgende byte van de pagina.',
+        15: '{c} 7FE {w}status: 0 bezig 1 klaar',
+        16: '        {w}2 bestaat niet 3 geen WiFi',
+        17: ' Lees beide met MOVP A,@A.' } },
+      412: { title: 'HANDLEIDING 7/9  HET G7400-PROGRAMMA', rows: {
+        3: ' 2 KB aan 8048-code:',
+        5: '{y} - {w}EF9340-routines uit THE CORE,',
+        6: '   de eigen G7400-engine van de Vault',
+        7: '{y} - {w}BIOS-toetsroutine op 00B0h:',
+        8: '   cijfers vormen het paginanummer',
+        9: '{y} - {w}joystick: links/rechts pagina,',
+        10: '   omhoog/omlaag subpagina, vuur = 100',
+        11: '{y} - {w}verzoek, wacht op 7FE, stroom dan',
+        12: '   24 x 40 x 2 bytes de EF9340 in',
+        13: '{y} - {w}zo\'n 2.000 bytes: 30-60 ms',
+        15: ' NOS-kleuren zijn per teken, net als',
+        16: ' het attribuut per vakje van de EF9340,',
+        17: ' dus geen stuurcodes te ontleden.',
+        19: '{c} Op een G7000 (geen EF9340): toon',
+        20: '{c} "heeft een G7400 nodig".' } },
+      413: { title: 'HANDLEIDING 8/9  BOUWEN EN TESTEN', rows: {
+        3: '{y} 1 {w}Bouw het bordje, flash PicoPAC met',
+        4: '   de nieuwe pinnummers. Draaien',
+        5: '   spellen? Dan klopt de bedrading.',
+        7: '{y} 2 {w}Serveer één vaste pagina uit flash,',
+        8: '   zonder WiFi. Schrijf de client',
+        9: '   eerst in o2em, met een nepcartridge.',
+        11: '{y} 3 {w}WiFi op core 1. Spellen moeten',
+        12: '   blijven draaien terwijl hij bezig is.',
+        14: '{y} 4 {w}Voeg fmt=ef9340 toe aan de server,',
+        15: '   daarna het verzoekkanaal.',
+        17: '{y} 5 {w}Behuizing erom. Test op een G7400,',
+        18: '   daarna op een G7000 (foutmelding).' } },
+      414: { title: 'HANDLEIDING 9/9  LET OP', rows: {
+        3: '{r} Stroom{w}: WiFi piekt op een paar',
+        4: ' honderd mA; de 5V van de console was',
+        5: ' bedoeld voor een ROM-chip. Meet het.',
+        6: ' Krap? Voed de Pico via USB, deel GND.',
+        8: '{r} Inpluggen{w}: steek de cart er nooit in',
+        9: ' of uit terwijl de console aan staat.',
+        11: '{r} Licentie{w}: PicoPAC-hardware is',
+        12: ' CC BY-SA. Houden en vermelden.',
+        14: '{r} NOS{w}: ga via de doorgeefserver. De',
+        15: ' cache van 60 s houdt de NOS-belasting',
+        16: ' gelijk, hoeveel cartridges er ook zijn.',
+        19: '{c} Terug naar het begin: {y}400{c} of {y}406' } }
+    }
+  };
+  ['en', 'nl'].forEach(function (L) {
+    var lab = L === 'nl' ? ['Index', 'Vorige', 'Volgende', 'NOS'] : ['Index', 'Previous', 'Next', 'NOS'];
+    for (var n = 406; n <= 414; n++) {
+      var d = MANUAL[L][n];
+      d.fast = [[lab[0], '400'], [lab[1], String(n === 406 ? 400 : n - 1)],
+                [lab[2], String(n === 414 ? 400 : n + 1)], [lab[3], '100']];
+      VAULT[L][n] = d;
+    }
+  });
   function vaultPage(num, notice) {
     var set = VAULT[lang()] || VAULT.en, def = set[num] || VAULT.en[num];
     var g = blankGrid();
@@ -384,7 +655,7 @@
     });
     if (notice) putText(g, 22, notice);
     fastRow(g, def.fast);
-    return { grid: g, prev: String(num > 400 ? num - 1 : 405), next: String(num < 405 ? num + 1 : 400),
+    return { grid: g, prev: String(num > 400 ? num - 1 : 414), next: String(num < 414 ? num + 1 : 400),
              prevSub: '', nextSub: '', fast: def.fast.map(function (f) { return f[1]; }), vault: true };
   }
   function messagePage(lines, fast) {
@@ -529,7 +800,7 @@
   }
 
   // ---------------------------------------------------------------- loading
-  function isVault(p) { return /^40[0-5]$/.test(p); }
+  function isVault(p) { return /^4(0\d|1[0-4])$/.test(p); }
 
   function show(p, page) {
     state.page = p; state.shown = page; state.loading = false; state.typed = '';
