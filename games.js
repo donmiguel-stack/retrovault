@@ -37,6 +37,16 @@ window.GAMES_DATA = {
     "romFile": "Bird Hunt (Ahnl66).bin"
   },
   {
+    "id": "new_le-sprint",
+    "filename": "new_le-sprint.bin",
+    "title": "Le Sprint (kuoris-dev)",
+    "platform": "G7000",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "Le Sprint (kuoris-dev).bin"
+  },
+  {
     "id": "new_calculator",
     "filename": "new_calculator.bin",
     "title": "Calculator (René van den Enden)",

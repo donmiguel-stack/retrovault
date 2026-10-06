@@ -469,8 +469,8 @@
         22: '{y} see the manual on the game page.' } },
       412: { title: 'MANUAL 7/9  THE G7400 PROGRAM', rows: {
         3: ' 2 KB of 8048 code:',
-        5: '{y} - {w}EF9340 routines from THE CORE,',
-        6: '   the Vault\'s own G7400 engine',
+        5: '{y} - {w}EF9340 routines from the',
+        6: '   Vault\'s own G7400 engine',
         7: '{y} - {w}BIOS key routine at 00B0h: digits',
         8: '   build the page number',
         9: '{y} - {w}joystick: left/right page, up/',
@@ -601,8 +601,8 @@
         22: '{y} zie de handleiding op de spelpagina.' } },
       412: { title: 'HANDLEIDING 7/9  HET G7400-PROGRAMMA', rows: {
         3: ' 2 KB aan 8048-code:',
-        5: '{y} - {w}EF9340-routines uit THE CORE,',
-        6: '   de eigen G7400-engine van de Vault',
+        5: '{y} - {w}EF9340-routines uit de eigen',
+        6: '   G7400-engine van de Vault',
         7: '{y} - {w}BIOS-toetsroutine op 00B0h:',
         8: '   cijfers vormen het paginanummer',
         9: '{y} - {w}joystick: links/rechts pagina,',

@@ -64,6 +64,10 @@ window.GENRE_DATA = {
   "genre": "shooter",
   "players": "p1"
  },
+ "new_le-sprint": {
+  "genre": "sports",
+  "players": "p2"
+ },
  "new_calculator": {
   "genre": "utility",
   "players": "p1"

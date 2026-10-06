@@ -113,6 +113,13 @@ window.DOWNLOAD_DATA = {
     source: "published on GitHub by the author as source plus the assembled bird-hunt.bin (github.com/Ahnl66/BIRD-HUNT); Mike confirmed on 2026-09-19 that the Vault is free to host it",
     checked: "2026-09-19"
   },
+  "new_le-sprint": {
+    file: "Le Sprint (kuoris-dev).bin",
+    verdict: "CLEAR",
+    source: "published by the author on GitHub under the MIT licence, source plus the assembled 2 KB lesprint.bin (github.com/kuoris-dev/Le-Sprint); the licence text ships beside the ROM as 'Le Sprint (kuoris-dev) - LICENSE.txt', as MIT asks. No physical or paid release found (Packrat, videopac.fr) as of 2026-10-06",
+    note: "Free under the MIT licence (the licence text sits next to the ROM in homebrew-downloads)",
+    checked: "2026-10-06"
+  },
   "new_ktaa-demo1": {
     file: "Kill the Attacking Aliens — demo 1.bin",
     verdict: "CLEAR",

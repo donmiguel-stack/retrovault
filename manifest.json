@@ -1,19 +1,19 @@
 {
- "generated": "2026-10-02 11:21:37",
- "count": 750,
- "bytes": 248087632,
+ "generated": "2026-10-06 18:44:34",
+ "count": 753,
+ "bytes": 248616224,
  "files": {
   "games.js": {
-   "sha256": "73815b6a1290e0b0bf1df0aa5e69db286b4e0ce501480100452e7eb1c5f731f9",
-   "size": 141159
+   "sha256": "250a3f5805346d7cd3d2ccab541eeb96f57dbf65a1796e5eb7442d40746bccff",
+   "size": 141418
   },
   "gamepages.js": {
-   "sha256": "69d83212c843293aa60ac089c3e8fc97ee2d9418fe34738ce0b07e6a30af19ff",
-   "size": 317085
+   "sha256": "bf59124b0e059764c836e01eb0dc4a54faa83b14c5be3b962eb759953e7cdace",
+   "size": 319916
   },
   "genres.js": {
-   "sha256": "f24a5d353a76d95d5a22dd7f7f921221abb54bf7c045933462c6d058b84f6636",
-   "size": 30106
+   "sha256": "cc6170877373fc26a64255fae60c2e022809329b430012c66b11995afa60131e",
+   "size": 30169
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -44,8 +44,8 @@
    "size": 122434
   },
   "news.js": {
-   "sha256": "83f102c7415c44386be1dab35b074a7b62d70147ae10404a387c097e9bcd650c",
-   "size": 3824
+   "sha256": "fe11e920edf1bfdd33f84e6b2b0a444c25df89c87434d43d1047bd630446439a",
+   "size": 4062
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -68,8 +68,8 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "a7f314b4e85d7019cb74d40edec3fb4f302ddad22cb1c953af61fb9cb5725185",
-   "size": 35507
+   "sha256": "2b1ee68aa492997b0af0f62f12f7f361b139e1c487d07cace085019f66e9d34a",
+   "size": 36042
   },
   "romsources.js": {
    "sha256": "31b3bde39f8e9308870d709ec517bc7aa23f9fb6cbc7040d2cdf7d2607cfcd4d",
@@ -124,27 +124,27 @@
    "size": 4844
   },
   "teletext.html": {
-   "sha256": "f27f03f9b853aa013d14931452ed1b36b5af03ae5c58f4fa3c5c0af89306aecc",
+   "sha256": "5fb9a4ef9a497b100ab9408521bb25a33fe63fcc9f7facccad2cb4a748aff185",
    "size": 30843
   },
   "teletext.js": {
-   "sha256": "e387fceefc1a7582be0f92befc0e5af92069028b478118124776cc36db061b8c",
-   "size": 53833
+   "sha256": "90ab34de27d8f080f7ad61476d154d628bb4da01662e8f333f0bc524f904dd04",
+   "size": 53813
   },
   "app.js": {
-   "sha256": "e5c47f07448e7826bef1d46d68ef55fb30320a35ca56f439e12bcb917d9dd1b9",
-   "size": 94342
+   "sha256": "fc9f73c83f9616ae0d0b7c7cb2814620b58f87460e998ca4041a25151151dba0",
+   "size": 94373
   },
   "demo.js": {
    "sha256": "6471f99efb550c6114828ef8e1fd6d0932d14d1b83569076c9e5bbc1450e779d",
    "size": 4831
   },
   "game.html": {
-   "sha256": "f3f3fddeca4c43c7a8e23535e7dcbaf8b41c3483e7780b465a0dc0096474afe5",
+   "sha256": "5497e77ea695df0cd328445b76e7c05ad1322a5cee62ec9c4af1a7443add277c",
    "size": 9653
   },
   "index.html": {
-   "sha256": "7a08d4a8df3fb942b1ff3f3c0b0f61d6c109098a752dd9a4151469a538abac15",
+   "sha256": "7a79adfaea8708a981d7d6e3b65f0be1658c996b075af1ec738ebd53703bc9fc",
    "size": 19039
   },
   "resources.html": {
@@ -152,8 +152,8 @@
    "size": 13110
   },
   "style.css": {
-   "sha256": "74a274faf79e99f0665664d51bf1eed6b223b764a71e2685711cb67cc0dd7719",
-   "size": 60892
+   "sha256": "c76c768d53936f7e27aca0eeb7f70face4146201d7b659fbb606eb6bc8ec2666",
+   "size": 60467
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -168,8 +168,8 @@
    "size": 96278
   },
   "catalogue.html": {
-   "sha256": "02aa03055f2d44977fba62d3fa9467c84257f4eadbe376d4d715f263da0073fc",
-   "size": 41875
+   "sha256": "79a7d10efea57b0484724fd8719d1be13efaf26c9b40a3daefe2297640ae5b46",
+   "size": 41951
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",
@@ -204,8 +204,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "924661f7b46f7fc2804e4fe3057a2ee119cdab3cfcdc15c111c4b65444ed8926",
-   "size": 72752
+   "sha256": "5d1be7863034f5c236af8eb9658e38f2e0770e29c6137854b3de4d0963112fee",
+   "size": 72937
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -1290,6 +1290,10 @@
   "covers/new_ktaa.png": {
    "sha256": "9faacdefa70ac8b6dfc8bc63f0131368fd74cdbea53af2c47f802c4283fc8d92",
    "size": 422685
+  },
+  "covers/new_le-sprint.png": {
+   "sha256": "d0b194f25a023832d9c55c3fa7f5e8802c99d4eb420ebf3ef3fe915a87bf77cf",
+   "size": 476220
   },
   "covers/new_mrroboto.png": {
    "sha256": "01987efa27067919356f0796e914ab063b91f12d3f425eccbce328a121c18966",
@@ -2383,6 +2387,10 @@
    "sha256": "8c6ec173c030ba646b4f0b80a8df9d1c78a57da830c14fc9a6932b2829cbc9c2",
    "size": 62504
   },
+  "clips/clip_new_le-sprint.mp4": {
+   "sha256": "90d3be9cddd9358b40eeb129543bcd89d040046dcd8ef790427cc7079888811c",
+   "size": 46551
+  },
   "clips/clip_new_mrroboto.mp4": {
    "sha256": "435d1e4b9552ac0b8bfccdfb70a24f443ca0edae55d07ade9aa127102ad224fc",
    "size": 79480
@@ -2614,6 +2622,10 @@
   "homebrew-downloads/LAKEADVENTURE.zip": {
    "sha256": "a2c8cbc0a010f776164c979bbc62c9b2a17ceb5d8f7de6c1dfa301f451ca15df",
    "size": 1083014
+  },
+  "homebrew-downloads/Le Sprint (kuoris-dev).bin": {
+   "sha256": "87ba8512f773ffb62f80b9dc840d117b3402ec491c4e072777b562deaa52d4b2",
+   "size": 2048
   },
   "homebrew-downloads/Micro Hexagon.d64": {
    "sha256": "1da9c6def65f00364af04f7695824052e34fcbe9f1df1ad80883772d2ef7a025",

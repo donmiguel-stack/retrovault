@@ -33,25 +33,35 @@ window.NEWS_DATA = {
   speed: 45,
 
   items: [
+    { id: "le-sprint-2026-10",
+      date: "2026-10-06",
+      href: "game.html?id=new_le-sprint",
+      text: {
+        en: "New on the shelf: Le Sprint — a two-player Videopac race from Skrolli Party 2026. Waggle the joystick, beat your friend",
+        nl: "Nieuw in de kast: Le Sprint — een race voor twee spelers op de Videopac, van Skrolli Party 2026. Wrik aan je joystick en klop je vriend",
+        de: "Neu im Regal: Le Sprint — ein Rennen für zwei Spieler auf dem Videopac, von der Skrolli Party 2026. Joystick rütteln, Freund schlagen",
+        fr: "Nouveau sur l'étagère : Le Sprint — une course à deux joueurs sur Videopac, sortie à la Skrolli Party 2026. Secouez le joystick, battez votre ami",
+        pt: "Novo na prateleira: Le Sprint — uma corrida para dois jogadores no Videopac, da Skrolli Party 2026. Sacuda o joystick e vença seu amigo",
+        ja: "あたらしく くわわりました: Le Sprint — Skrolli Party 2026 で でた ふたりよう の かけっこゲーム。ジョイスティックを さゆうに ゆらして、ともだちに かとう" } },
     { id: "teletext-2026-10",
       date: "2026-10-01",
       href: "game.html?id=new_teletext",
       text: {
-        en: "New: G7400 Teletext — live NOS Teletekst drawn the way the Videopac G7400 would draw it, plus the plan to build the real WiFi cartridge",
-        nl: "Nieuw: G7400 Teletekst — live NOS Teletekst, getekend zoals de Videopac G7400 het zou doen, plus het bouwplan voor de echte WiFi-cartridge",
-        de: "Neu: G7400-Videotext — Live-Videotext der NOS, gezeichnet wie ihn ein Videopac G7400 zeichnen würde, plus der Bauplan für das echte WLAN-Modul",
-        fr: "Nouveau : télétexte G7400 — le télétexte de la NOS en direct, dessiné comme le ferait un Videopac G7400, avec le plan de la vraie cartouche WiFi",
-        pt: "Novo: teletexto do G7400 — o teletexto da NOS ao vivo, desenhado como um Videopac G7400 faria, e o plano para montar o cartucho WiFi de verdade",
-        ja: "あたらしく: G7400 テレテキスト — NOS の テレテキストを ライブで、 Videopac G7400 ふうに ひょうじ。 ほんものの WiFi カートリッジの つくりかたも あります" } },
+        en: "G7400 Teletext — live NOS Teletekst, drawn Videopac-style",
+        nl: "G7400 Teletekst — live NOS Teletekst in Videopac-stijl",
+        de: "G7400-Videotext — Live-Videotext der NOS im Videopac-Stil",
+        fr: "Télétexte G7400 — le télétexte de la NOS en direct, façon Videopac",
+        pt: "Teletexto do G7400 — o teletexto da NOS ao vivo, no estilo Videopac",
+        ja: "G7400 テレテキスト — NOS の テレテキストを ライブで、 Videopac ふうに" } },
     { id: "bird-hunt-2026-09",
       date: "2026-09-19",
       href: "game.html?id=new_bird-hunt",
       text: {
-        en: "New on the shelf: Bird Hunt — a brand-new Videopac homebrew by Ahnl66, free to play and free to download",
-        nl: "Nieuw in de kast: Bird Hunt — een gloednieuwe Videopac-homebrew van Ahnl66, gratis te spelen en gratis te downloaden",
-        de: "Neu im Regal: Bird Hunt — ein brandneues Videopac-Homebrew von Ahnl66, kostenlos spielbar und kostenlos zum Download",
-        fr: "Nouveau sur l'étagère : Bird Hunt — un homebrew Videopac tout neuf signé Ahnl66, jouable et téléchargeable gratuitement",
-        pt: "Novo na prateleira: Bird Hunt — um homebrew de Videopac recém-saído do forno, por Ahnl66, grátis para jogar e baixar",
-        ja: "あたらしく くわわりました: Bird Hunt — Ahnl66 が つくった できたての Videopac ホームブリューです。むりょうで あそべて、ダウンロードも できます" } }
+        en: "Bird Hunt — a new Videopac homebrew by Ahnl66, free to play",
+        nl: "Bird Hunt — een nieuwe Videopac-homebrew van Ahnl66, gratis te spelen",
+        de: "Bird Hunt — ein neues Videopac-Homebrew von Ahnl66, kostenlos spielbar",
+        fr: "Bird Hunt — un nouveau homebrew Videopac signé Ahnl66, gratuit",
+        pt: "Bird Hunt — um novo homebrew de Videopac por Ahnl66, grátis",
+        ja: "Bird Hunt — Ahnl66 の あたらしい Videopac ホームブリュー。むりょうで あそべます" } }
   ]
 };
