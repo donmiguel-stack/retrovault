@@ -776,6 +776,26 @@
     .bh-bird,.bh-cross,.bh-flash{display:none;}
   }
 
+  /* Le Sprint easter egg: the two runners play tag along the top edge of the
+     Controls box, feet on its border (see game-page.js). */
+  .ls-runner{
+    position:absolute;left:0;top:-29px;width:20px;height:28px;z-index:2;
+    pointer-events:none;will-change:transform;
+    filter:drop-shadow(0 1px 0 rgba(0,0,0,.6));
+  }
+  .ls-runner svg{display:block;}
+  .ls-tag{
+    position:absolute;left:0;top:-48px;z-index:2;pointer-events:none;opacity:0;
+    font:700 11px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em;
+    color:#f5d742;text-shadow:0 1px 0 rgba(0,0,0,.7);
+  }
+  .ls-pop{animation:lsPop .9s ease-out;}
+  @keyframes lsPop{
+    0%{opacity:0;margin-top:6px;} 15%{opacity:1;margin-top:0;}
+    70%{opacity:1;} 100%{opacity:0;margin-top:-8px;}
+  }
+  @media (prefers-reduced-motion: reduce){ .ls-runner,.ls-tag{display:none;} }
+
   /* Controller panel (pad.js) - under Controls on every game page */
   .pad-status{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:var(--text-dim);font-size:14px;}
   .pad-dot{width:10px;height:10px;border-radius:50%;background:#555b66;flex:0 0 auto;}

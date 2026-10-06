@@ -1957,4 +1957,103 @@
     }
   }
 
+
+  // ---- Le Sprint (new_le-sprint) easter egg -----------------------------
+  // The red and green runners play tag on top of the Controls box. One flees,
+  // the other chases a little faster; the one being chased runs out of box,
+  // gets cornered and tagged, and the roles swap - the new runner gets a short
+  // head start the other way. Both sprites are the cartridge's own character
+  // bitmaps (running and standing pose), read out of the frame buffer with the
+  // VDC's 2x2 doubling undone. Runs only while the box is on screen, skips
+  // itself under prefers-reduced-motion, never takes a pointer event.
+  if (g.id === "new_le-sprint" &&
+      !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    (function () {
+      var box = document.querySelector(".controls-box");
+      if (!box) return;
+      var LS_RUN   = [".###.", ".###.", ".##..", ".####", ".##..", "##.#.", "#..##"];
+      var LS_STAND = [".###.", ".###.", ".##..", ".####", ".##..", ".##..", ".###."];
+      var PX = 4, SW = 5 * PX, SH = 7 * PX;
+      function sprite(rows, colour) {
+        var s = '<svg width="' + SW + '" height="' + SH + '" viewBox="0 0 5 7" ' +
+                'shape-rendering="crispEdges" aria-hidden="true">';
+        for (var y = 0; y < 7; y++)
+          for (var x = 0; x < 5; x++)
+            if (rows[y].charAt(x) === "#")
+              s += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + colour + '"/>';
+        return s + "</svg>";
+      }
+      function runner(colour) {
+        var d = el("div", "ls-runner");
+        d.innerHTML = sprite(LS_STAND, colour);
+        box.appendChild(d);
+        return { el: d, poses: [sprite(LS_RUN, colour), sprite(LS_STAND, colour)],
+                 x: 0, dir: 1, pose: -1 };
+      }
+      var red = runner("#f0463c"), green = runner("#50dc5a");
+      var tag = el("div", "ls-tag"); tag.textContent = "TAG!";
+      box.appendChild(tag);
+
+      var W = function () { return box.clientWidth - SW - 24; };
+      red.x = W() * 0.62; green.x = W() * 0.18;
+      var chaser = green, flee = red, wait = 1.2, last = null, visible = false, t = 0;
+      flee.dir = 1; chaser.dir = 1;
+
+      function draw(r, moving) {
+        var p = moving ? (Math.floor(t * 9) % 2 ? 0 : 1) : 1;
+        if (p !== r.pose) { r.el.innerHTML = r.poses[p]; r.pose = p; }
+        r.el.style.transform = "translate(" + (12 + r.x) + "px,0)" + (r.dir < 0 ? " scaleX(-1)" : "");
+      }
+
+      function step(now) {
+        if (!visible) { last = null; return; }
+        if (last === null) last = now;
+        var dt = Math.min(0.05, (now - last) / 1000); last = now; t += dt;
+        var w = W();
+        // a bit of waggle in both paces, like two people on two joysticks
+        var vf = 78 + Math.sin(t * 2.3) * 14;
+        var vc = 92 + Math.sin(t * 1.7 + 1) * 16;
+
+        if (wait > 0) {
+          wait -= dt;
+          flee.x += flee.dir * vf * dt;
+          draw(flee, true); draw(chaser, false);
+        } else {
+          flee.x += flee.dir * vf * dt;
+          chaser.dir = flee.x > chaser.x ? 1 : -1;
+          chaser.x += chaser.dir * vc * dt;
+          draw(flee, true); draw(chaser, true);
+        }
+        // cornered at the end of the box: stop and wait to be caught
+        if (flee.x < 0) { flee.x = 0; draw(flee, false); }
+        if (flee.x > w) { flee.x = w; draw(flee, false); }
+
+        if (wait <= 0 && Math.abs(flee.x - chaser.x) < SW * 0.8) {
+          tag.style.transform = "translate(" + (12 + (flee.x + chaser.x) / 2 - 10) + "px,0)";
+          tag.classList.remove("ls-pop"); void tag.offsetWidth; tag.classList.add("ls-pop");
+          var was = chaser; chaser = flee; flee = was;
+          // the newly tagged one counts to three; the other runs for the far side
+          flee.dir = flee.x < w / 2 ? 1 : -1;
+          chaser.dir = flee.dir;
+          wait = 0.9;
+        }
+        requestAnimationFrame(step);
+      }
+
+      draw(red, false); draw(green, false);
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (es) {
+          var v = es[0].isIntersecting && !document.hidden;
+          if (v && !visible) { visible = true; requestAnimationFrame(step); }
+          visible = v;
+        }).observe(box);
+      } else { visible = true; requestAnimationFrame(step); }
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) visible = false;
+        else { var r = box.getBoundingClientRect();
+               if (r.bottom > 0 && r.top < window.innerHeight && !visible) { visible = true; requestAnimationFrame(step); } }
+      });
+    })();
+  }
+
 })();
