@@ -151,3 +151,7 @@ teletext-server/cache/
 # files from there by accident. (Files already tracked in that folder stay
 # tracked - this only stops new ones showing up in GitHub Desktop.)
 Claude outputs/*
+
+# Hostinger upload staging folders (landing-site files, pitch pages) - kept
+# locally for manual upload, never part of the repo.
+_hostinger-upload-*/
