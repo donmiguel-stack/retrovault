@@ -1,8 +1,9 @@
-# ROMs, the BIOS and manual scans are not ours to distribute. Keep your own
-# dumps in these folders; git will not pick them up.
+# ROMs and the BIOS are not ours to distribute. Keep your own dumps in these
+# folders; git will not pick them up.
+# manuals/ is tracked since 2026-10-07 so the live demo's manual viewer works
+# (the scans come from the archive.org Videopac collection).
 emulator/roms/
 emulator/bios/
-manuals/
 # extras/ is ignored file-by-file (not as a whole directory) so the specific
 # exceptions below can still be un-ignored. See those for why.
 extras/*

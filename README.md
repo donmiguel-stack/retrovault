@@ -19,9 +19,8 @@ Subtitled in English, Portuguese, Dutch, German and French.
 
 This repository carries the Vault itself — the catalogue, the box art, the
 translations — but **no ROMs and no BIOS**. Those aren't ours to distribute;
-you supply your own. The same goes for the per-title manual scans in
-`manuals/` (a handful of extras ship in `extras/` — see *Use it responsibly*).
-They belong in three folders that arrive empty:
+you supply your own. The per-title manual scans in `manuals/` do ship (see
+*Use it responsibly*). The ROMs and BIOS belong in folders that arrive empty:
 
 ```
 emulator/bios/      the console BIOS (g7400.bin)
@@ -253,13 +252,12 @@ browser keeps showing the blank it cached before the file existed.
 This is a personal archive for cartridges you own. **No ROMs and no BIOS
 images are distributed with the project** — you supply your own dumps.
 
-A small number of scanned manuals, maps and keyboard overlays for
-long-out-of-print Videopac titles do ship in `extras/`, on the same
-abandonware footing this project applies to the C64 and PC shelves. The
-per-title `manuals/` collection is *not* distributed — you add those scans
-yourself, as with the ROMs. If you hold rights to anything in
-`extras/` and would rather it were not here, open an issue on the official
-repository and it will be taken down.
+Scanned manuals for long-out-of-print Videopac titles ship in `manuals/`
+(page scans from the archive.org Videopac collection), and a small number of
+further manuals, maps and keyboard overlays ship in `extras/`, on the same
+abandonware footing this project applies to the C64 and PC shelves. If you
+hold rights to anything in `manuals/` or `extras/` and would rather it were
+not here, open an issue on the official repository and it will be taken down.
 
 Emulation is the open-source [O2EM](https://o2em.sourceforge.net/) and
 [VICE](https://vice-emu.sourceforge.io/) libretro cores running in
