@@ -36,7 +36,7 @@ FILES = [
     "alternates.js", "hosted.js", "products.js", "support.js", "store.js", "localroms.js", "pad.js",
     # teletext.html (G7400 Teletext, 2026-10-01) and its renderer travel together.
     "teletext.html", "teletext.js",
-    "app.js", "demo.js", "game.html", "index.html", "resources.html", "style.css", "boot-splash.js",
+    "app.js", "animcovers.js", "demo.js", "game.html", "index.html", "resources.html", "style.css", "boot-splash.js",
     # game.css and game-page.js were split out of game.html on 2026-09-18 so
     # the pre-rendered per-game pages could share one copy instead of carrying
     # 100 KB of style and script each. game.html does not work without them,
@@ -72,7 +72,7 @@ FILES = [
 # titles that passed the redistribution-license check in downloads.js live
 # here (see that file's own comment for the CLEAR/LIKELY-OK criteria).
 # EXT below has its own homebrew branch for exactly this reason.
-FOLDERS = ["covers", "assets/cheats", "clips", "extras", "homebrew-downloads"]
+FOLDERS = ["covers", "covers/anim", "assets/cheats", "clips", "extras", "homebrew-downloads"]
 EXT = {
     "homebrew-downloads": (".d64", ".zip", ".crt", ".prg", ".bin", ".adf"),
 }
