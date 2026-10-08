@@ -409,9 +409,9 @@ def write_catalogue(games, head, rest_unused, primaries=None):
         + "<style>%s</style>\n" % CATALOGUE_CSS
         + "</head>\n<body>\n"
         + '<div class="topbar">\n'
-          '  <div class="brand"><span class="brand-mark">'
+          '  <a class="brand" href="https://retrovault.world/" title="Retro Vault home" style="color:inherit;text-decoration:none;"><span class="brand-mark">'
           '<img src="assets/kcmunch.png" alt="" width="22" height="22"></span> '
-          'Retro Vault</div>\n'
+          'Retro Vault</a>\n'
           '  <div style="flex:1"></div>\n'
           '  <a class="ghost-btn" href="index.html" '
           'style="display:inline-block;text-decoration:none;">Library</a>\n'
