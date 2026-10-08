@@ -265,6 +265,25 @@
   .owncopy-note{margin:8px 0 0;color:var(--text-mute);font-size:13px;}
   .owncopy-forget{background:none;border:0;padding:0;color:var(--accent);font:inherit;cursor:pointer;text-decoration:underline;}
 
+  /* Record card next to the controls box (games with gamepages.js "record") */
+  .controls-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;max-width:1016px;}
+  .controls-row .controls-box{flex:1 1 440px;max-width:760px;}
+  .record-card{flex:0 0 220px;background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:16px 18px;text-align:center;color:var(--text-dim);font-size:13px;
+    border-top:3px solid #f5d742;}
+  .record-card .rc-label{font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;font-size:10px;
+    letter-spacing:.06em;color:var(--text-mute);text-transform:uppercase;}
+  .record-card .rc-time{font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;font-size:34px;
+    line-height:1.2;color:#f5d742;margin:12px 0 10px;text-shadow:0 2px 0 rgba(0,0,0,.45);}
+  .record-card .rc-meta{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:0 0 12px;text-align:left;}
+  .record-card .rc-meta dt{color:var(--text-mute);}
+  .record-card .rc-meta dd{margin:0;color:var(--text);}
+  .record-card .rc-ask{margin:0 0 8px;color:var(--text-dim);}
+  .record-card .rc-send{display:inline-block;padding:7px 14px;border-radius:999px;border:1px solid var(--accent);
+    color:var(--accent);text-decoration:none;font-weight:600;}
+  .record-card .rc-send:hover{background:rgba(91,141,239,.12);}
+  @media (max-width:720px){.record-card{flex:1 1 100%;}}
+
   /* Controls box */
   .controls-box{
     position:relative;

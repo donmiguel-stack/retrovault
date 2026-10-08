@@ -1,15 +1,15 @@
 {
- "generated": "2026-10-06 18:54:23",
+ "generated": "2026-10-08 08:36:58",
  "count": 753,
- "bytes": 248621697,
+ "bytes": 248624456,
  "files": {
   "games.js": {
    "sha256": "250a3f5805346d7cd3d2ccab541eeb96f57dbf65a1796e5eb7442d40746bccff",
    "size": 141418
   },
   "gamepages.js": {
-   "sha256": "bf59124b0e059764c836e01eb0dc4a54faa83b14c5be3b962eb759953e7cdace",
-   "size": 319916
+   "sha256": "a3d4bd797f0bd298469b4cb5cf1eec91813476de619a1ad4f5f8842ec659db53",
+   "size": 320236
   },
   "genres.js": {
    "sha256": "cc6170877373fc26a64255fae60c2e022809329b430012c66b11995afa60131e",
@@ -140,11 +140,11 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "067da6c9adf46f0ddfcc8c13b2dee710f95013b9488f25c7c30339c5ff122394",
-   "size": 9653
+   "sha256": "23cecebdbabe334a544b766004a7f6eaf87efa58f2263c68f6dcc9379fc6684d",
+   "size": 9654
   },
   "index.html": {
-   "sha256": "7a79adfaea8708a981d7d6e3b65f0be1658c996b075af1ec738ebd53703bc9fc",
+   "sha256": "e6b67baaf77129710a4db38ccd5ee3666fcc5c0215b0b551238dce1bab296572",
    "size": 19039
   },
   "resources.html": {
@@ -160,12 +160,12 @@
    "size": 3768
   },
   "game.css": {
-   "sha256": "f1ada18489e6208556a4161511736169372b637075abb7e36d7755af2010bce4",
-   "size": 45500
+   "sha256": "5a784cf77d0f60221176690100383bccbc5393fe9654a6c7c8891b8d353b63ac",
+   "size": 46932
   },
   "game-page.js": {
-   "sha256": "197a1154cc58c51bf6c69973d7ee75341beec27c41b4ca8434006c4d96ad5f59",
-   "size": 100903
+   "sha256": "f8eb6785729b5db4175d3c04c2bf86b12acdd806c2c30158446ede5d11de833f",
+   "size": 101958
   },
   "catalogue.html": {
    "sha256": "79a7d10efea57b0484724fd8719d1be13efaf26c9b40a3daefe2297640ae5b46",
@@ -192,8 +192,8 @@
    "size": 8953
   },
   "README.md": {
-   "sha256": "822ad3747d553ef03a4ca3c70d939aa9e5856b5e1fd8dae4a79229f40a0a5787",
-   "size": 15032
+   "sha256": "beefafe9817d91d61c8a769078f502703d7b0577cd9bb0e0a386cdfdb490a2aa",
+   "size": 14983
   },
   "LICENSE.md": {
    "sha256": "f9facf4ae69f17530f6eac066d5f4bc71d0240f17e9c39350fa06d7c90a9bfa9",

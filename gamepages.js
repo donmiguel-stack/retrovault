@@ -205,6 +205,13 @@ window.GAMEPAGES_DATA = {
   "video": {
    "id": "f8jVVMJzwZY",
    "title": "Le Sprint — a brand new two-player Videopac homebrew (Skrolli Party 2026)"
+  },
+  "record": {
+   "label": "100 m record",
+   "time": "6.28",
+   "holder": "Skrolli Party",
+   "hardware": "€3 AliExpress joystick",
+   "send": "mailto:hq@retrovault.world?subject=Le%20Sprint%20record&body=My%20time%3A%20%0AName%3A%20%0AVideo%20link%3A%20%0A%0A(please%20show%20your%20hands%20and%20the%20screen)"
   }
  },
  "new_calculator": {

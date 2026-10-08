@@ -1293,7 +1293,29 @@
     cBox.appendChild(morseLamp);
   }
 
-  cSec.appendChild(cBox);
+  // Record card beside the controls box (gamepages.js "record"): the best
+  // time we know of, kept by hand - beat it, send a video, we update it.
+  if (data.record && data.record.time) {
+    var R = data.record;
+    var cRow = el("div", "controls-row");
+    var rc = el("aside", "record-card");
+    var rl = el("div", "rc-label"); rl.textContent = R.label || "Record"; rc.appendChild(rl);
+    var rt = el("div", "rc-time"); rt.textContent = R.time; rc.appendChild(rt);
+    var rd = el("dl", "rc-meta");
+    if (R.holder) { rd.appendChild(el("dt", null, "Set by")); rd.appendChild(el("dd", null, R.holder)); }
+    if (R.hardware) { rd.appendChild(el("dt", null, "Hardware")); rd.appendChild(el("dd", null, R.hardware)); }
+    rc.appendChild(rd);
+    if (R.send) {
+      var rq = el("p", "rc-ask"); rq.textContent = "Beat it?"; rc.appendChild(rq);
+      var ra = el("a", "rc-send", "Send us your video");
+      ra.href = R.send; rc.appendChild(ra);
+    }
+    cRow.appendChild(cBox);
+    cRow.appendChild(rc);
+    cSec.appendChild(cRow);
+  } else {
+    cSec.appendChild(cBox);
+  }
   if (g.platform === "PC") {
     // DOS games ran on a real PC keyboard (and sometimes a mouse), not a
     // joystick, and js-dos reads keys straight off the browser once the page
