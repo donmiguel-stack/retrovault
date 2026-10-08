@@ -416,36 +416,48 @@ body{
 }
 .hb-intro{margin:0 0 12px; font-size:13px; color:var(--text-mute);}
 
-/* News tape - the one-line ticker along the top of the homebrew panel.
-   A scrolling strip inside the page instead of a popup: nothing for a
-   blocker to eat, nothing covering the shelf on a phone. Content comes from
-   news.js, the markup from newsTape() in app.js. */
+/* News tape - the one-line ticker under "Featured and recommended".
+   Styled after Videopac cart A, Keyboard Creations / Newscaster: the message
+   line of the 8244 in its own character set, white on the console's blue,
+   with the clock box's light blue and red for the label. The glyphs are 1-bit
+   masks built by vpText() in app.js and painted with background-color, so
+   all colours live here. A scrolling strip in the page rather than a popup:
+   nothing for a blocker to eat. Content: news.js. Markup: newsTape(). */
 .news-tape{
+  --vp-blue:#0e3dd4; --vp-light:#6aa1ff; --vp-red:#ff4255;
+  --vp-white:#ffffff; --vp-hover:#31ffff;
+  position:relative;
   display:flex; align-items:stretch; overflow:hidden;
   width:100%; margin:0; border-radius:0;
-  background:#ffd400;
-  border:0; border-bottom:1px solid #c9a700;
-  font-size:12.5px; line-height:1;
+  background:var(--vp-blue);
+  border:0; border-top:2px solid #000; border-bottom:2px solid #000;
+  color:var(--vp-white);
+  font-size:12px; line-height:1;
   transition:opacity .28s ease, transform .28s ease;
+}
+/* a whisper of CRT: every other line a shade darker */
+.news-tape::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:repeating-linear-gradient(180deg, rgba(0,0,0,0) 0 2px, rgba(0,0,0,.07) 2px 3px);
 }
 .news-tape[hidden]{display:none;}
 .news-tape.nt-gone{opacity:0; transform:translateY(-6px);}
 .nt-label{
   flex-shrink:0; display:flex; align-items:center;
-  background:#d71920; color:#fff;
-  font-size:10px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
-  padding:0 10px;
+  background:var(--vp-light); color:var(--vp-red);
+  padding:0 12px; margin:5px 6px 5px 8px;
 }
 /* The runs are wider than this box on purpose; the mask fades both ends so
    text slides in and out rather than being chopped at a hard edge. */
 .nt-window{
   flex:1; min-width:0; overflow:hidden; padding:8px 0;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);
-          mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent 100%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24px,#000 calc(100% - 24px),transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 24px,#000 calc(100% - 24px),transparent 100%);
 }
 .nt-track{display:flex; width:max-content;}
 /* --nt-shift is exactly one run's width, set by app.js after measuring, so
-   the loop lands on the next identical copy and never visibly jumps. */
+   the loop lands on the next identical copy and never visibly jumps. The
+   timing function (steps) is set there too. */
 .news-tape.nt-running .nt-track{animation:nt-scroll linear infinite;}
 .news-tape:hover .nt-track,
 .news-tape:focus-within .nt-track{animation-play-state:paused;}
@@ -454,22 +466,35 @@ body{
   to{transform:translateX(calc(var(--nt-shift,0px) * -1));}
 }
 .nt-run{display:flex; align-items:center; white-space:nowrap;}
-.nt-item{color:#000; text-decoration:none;}
-a.nt-item:hover,a.nt-item:focus-visible{color:#d71920; text-decoration:underline;}
-.nt-sep{color:#d71920; font-size:8px; padding:0 16px; opacity:.85;}
-.nt-close{
-  flex-shrink:0; background:none; border:0; border-left:1px solid rgba(0,0,0,.2);
-  color:rgba(0,0,0,.6); font-size:17px; line-height:1; cursor:pointer; padding:0 11px;
+.nt-item{display:flex; align-items:center; color:var(--vp-white); text-decoration:none;}
+a.nt-item:hover,a.nt-item:focus-visible{color:var(--vp-hover); outline:none;}
+a.nt-item:focus-visible{box-shadow:0 2px 0 var(--vp-hover);}
+/* an 8244 glyph run: a mask over a block of the current colour */
+.nt-vp{
+  display:inline-block; flex-shrink:0; background-color:currentColor;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-size:100% 100%; mask-size:100% 100%;
 }
-.nt-close:hover{color:#000; background:rgba(0,0,0,.08);}
+/* text the 8244 cannot show (kana) - the site's pixel font instead */
+.nt-txt{font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Noto Sans JP","Noto Sans CJK JP",Meiryo,monospace;
+  font-size:12px; letter-spacing:.12em;}
+.nt-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.nt-sep{display:flex; align-items:center; color:var(--vp-white); padding:0 22px;}
+.nt-close{
+  position:relative; z-index:1;
+  flex-shrink:0; display:flex; align-items:center;
+  background:none; border:0; border-left:2px solid #000;
+  color:var(--vp-light); cursor:pointer; padding:0 12px;
+}
+.nt-close:hover,.nt-close:focus-visible{color:var(--vp-white); background:rgba(0,0,0,.25);}
 /* Anyone who has asked for less motion gets the same line, standing still and
    swipeable, rather than no news at all. */
 .news-tape.nt-still .nt-window{overflow-x:auto; scrollbar-width:none;}
 .news-tape.nt-still .nt-window::-webkit-scrollbar{display:none;}
 .news-tape.nt-still .nt-track{animation:none;}
 @media (max-width:600px){
-  .news-tape{font-size:12px;}
-  .nt-sep{padding:0 12px;}
+  .nt-sep{padding:0 16px;}
+  .nt-label{padding:0 8px; margin-left:6px;}
 }
 /* the featured cover needs the ribbon too, or a borrowed official box reads
    as an official release - which is the whole reason the ribbon exists */

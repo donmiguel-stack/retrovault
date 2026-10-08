@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-08 08:36:58",
+ "generated": "2026-10-08 08:42:39",
  "count": 753,
- "bytes": 248624456,
+ "bytes": 248630806,
  "files": {
   "games.js": {
    "sha256": "250a3f5805346d7cd3d2ccab541eeb96f57dbf65a1796e5eb7442d40746bccff",
@@ -44,8 +44,8 @@
    "size": 122434
   },
   "news.js": {
-   "sha256": "fe11e920edf1bfdd33f84e6b2b0a444c25df89c87434d43d1047bd630446439a",
-   "size": 4062
+   "sha256": "bf1f5ede9ef39871a57d61a77073b4f9d360e8b04366e532f77f79c7a1f09327",
+   "size": 4184
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -132,8 +132,8 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "fc9f73c83f9616ae0d0b7c7cb2814620b58f87460e998ca4041a25151151dba0",
-   "size": 94373
+   "sha256": "aaba0475517c7da80b433b8094110598de61eed5940684fc7d369f949cfb309b",
+   "size": 99075
   },
   "demo.js": {
    "sha256": "6471f99efb550c6114828ef8e1fd6d0932d14d1b83569076c9e5bbc1450e779d",
@@ -144,7 +144,7 @@
    "size": 9654
   },
   "index.html": {
-   "sha256": "e6b67baaf77129710a4db38ccd5ee3666fcc5c0215b0b551238dce1bab296572",
+   "sha256": "77d2097d1978284cb09441e47c7a533bb3a93d8cb124712f7492d26ca6e67c71",
    "size": 19039
   },
   "resources.html": {
@@ -152,8 +152,8 @@
    "size": 13110
   },
   "style.css": {
-   "sha256": "c76c768d53936f7e27aca0eeb7f70face4146201d7b659fbb606eb6bc8ec2666",
-   "size": 60467
+   "sha256": "69087637df5c656d10261f499b447ddcfd7ed30f4c8ae1815f50f83996164b1c",
+   "size": 61993
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",

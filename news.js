@@ -29,8 +29,10 @@ window.NEWS_DATA = {
   // How long an item stays news, in days.
   maxAgeDays: 60,
 
-  // How fast the tape runs, in pixels per second. 45 is a comfortable read.
-  speed: 45,
+  // How fast the tape runs, in pixels per second. The tape is drawn in the
+  // Videopac's own wide-set characters (20 px a letter), so 90 reads at
+  // about the pace the old small type did at 45.
+  speed: 90,
 
   items: [
     { id: "le-sprint-2026-10",

@@ -811,6 +811,79 @@
                     .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  // ---- Videopac character set ------------------------------------------
+  // The news tape is drawn the way cart A, Keyboard Creations / Newscaster,
+  // draws its message line: the Intel 8244's own built-in characters, white
+  // on Videopac blue, upper case only, widely spaced, stepping along a
+  // Videopac pixel at a time. The bitmaps are the 8244's character ROM (the
+  // same table O2EM draws from), codes 00-2F; the ROM order is the console
+  // keyboard's, not ASCII. Functions rather than top-level vars - see
+  // newsSeenKey() below for why.
+  function vpCset() {
+    if (vpCset.d) return vpCset.d;
+    var hex = "7CC6C6C6C6C67C001838181818183C003C660C1830607E007CC6063C06C67C00CCCCCCFE0C0C0C00FEC0C07C06C67C007CC6C0FCC6C67C00FE060C183060C0007CC6C67CC6C67C007CC6C67E06C67C000018180018180000187E587E1A7E180000000000000000003C660C1818001800C0C0C0C0C0C0FE00FCC6C6FCC0C0C0000018187E18180000C6C6C6D6FEEEC600FEC0C0F8C0C0FE00FCC6C6FCD8CCC6007E18181818181800C6C6C6C6C6C67C003C18181818183C007CC6C6C6C6C67C007CC6C6C6DECC76007CC6C07C06C67C00FCC6C6C6C6C6FC00FEC0C0F8C0C0C0007CC6C0C0CEC67E00C6C6C6FEC6C6C6000606060606C67C00C6CCD8F0D8CCC600386CC6C6FEC6C6007E060C1830607E00C6C66C386CC6C6007CC6C0C0C0C67C00C6C6C6C6C66C3800FCC6C6FCC6C6FC00C6EEFED6C6C6C60000000000003838000000007E0000000000663C183C6600000018007E0018000000007C007C0000006666663C18181800C6E6F6FEDECEC60003060C183060C000FFFFFFFFFFFFFF00", order = "0123456789:$ ?LP+WERTUIOQSDFGHJKAZXCVBM.-×÷=YN/█";
+    var d = { rows: {}, ok: {} };
+    for (var i = 0; i < order.length; i++) {
+      var r = [];
+      for (var y = 0; y < 7; y++) r.push(parseInt(hex.substr(i * 16 + y * 2, 2), 16));
+      d.rows[order.charAt(i)] = r;
+    }
+    return (vpCset.d = d);
+  }
+
+  // Fold text onto what the 8244 can show: no lower case, no accents, and a
+  // handful of punctuation marks swapped for the nearest thing it has.
+  // Returns null when something can't be folded (kana), so the caller can
+  // fall back to an ordinary font for that item.
+  function vpFold(s) {
+    var rows = vpCset().rows;
+    s = String(s).normalize ? String(s).normalize("NFD").replace(/[̀-ͯ]/g, "") : String(s);
+    s = s.replace(/ß/g, "ss").toUpperCase()
+         .replace(/[–—‒]/g, "-").replace(/[,!]/g, ".").replace(/;/g, ":")
+         .replace(/&/g, "+").replace(/[…]/g, "...")
+         .replace(/['’‘"“”()\[\]]/g, " ")
+         .replace(/\s+/g, " ").trim();
+    for (var i = 0; i < s.length; i++) if (!rows[s.charAt(i)]) return null;
+    return s;
+  }
+
+  // Draw folded text as a crisp 1-bit mask, one 8244 dot = VP_DOT css px,
+  // rendered at the device's pixel ratio so it stays sharp on a Retina
+  // screen. The mask is painted with background-color, so CSS keeps control
+  // of the colour (hover, the red label) - no canvas redraws for a hover.
+  function vpMask(s, pitch) {
+    var VP_DOT = 2, rows = vpCset().rows;
+    pitch = pitch || 10;                       // dots per character: 8 + gap
+    var dpr = Math.min(3, Math.max(1, Math.ceil(window.devicePixelRatio || 1)));
+    var wDots = Math.max(1, s.length * pitch - (pitch - 8)), hDots = 7;
+    var c = document.createElement("canvas");
+    var k = VP_DOT * dpr;
+    c.width = wDots * k; c.height = hDots * k;
+    var g = c.getContext("2d");
+    g.fillStyle = "#000";
+    for (var i = 0; i < s.length; i++) {
+      var r = rows[s.charAt(i)];
+      for (var y = 0; y < 7; y++)
+        for (var x = 0; x < 8; x++)
+          if ((r[y] >> (7 - x)) & 1) g.fillRect((i * pitch + x) * k, y * k, k, k);
+    }
+    return { url: c.toDataURL("image/png"), w: wDots * VP_DOT, h: hDots * VP_DOT };
+  }
+
+  // Markup for one bit of tape text: the 8244 rendering when the text folds,
+  // with the real text alongside for screen readers and search engines;
+  // the pixel-font stack otherwise.
+  function vpText(s, cls, pitch) {
+    var f = vpFold(s);
+    if (f === null || !document.createElement("canvas").getContext)
+      return '<span class="' + cls + ' nt-txt">' + ntEsc(s) + '</span>';
+    var m = vpMask(f, pitch);
+    var mask = "url(" + m.url + ")";
+    return '<span class="' + cls + ' nt-vp" aria-hidden="true" style="width:' + m.w +
+      'px;height:' + m.h + 'px;-webkit-mask-image:' + mask + ';mask-image:' + mask +
+      '"></span><span class="nt-sr">' + ntEsc(s) + '</span>';
+  }
+
   // Items still young enough to be news. An item with no date, or an
   // unparseable one, never ages out - a deliberate escape hatch for a
   // standing notice.
@@ -848,23 +921,24 @@
     // Each run ends with its own separator, so two runs back to back read as
     // one continuous tape and the loop point is invisible.
     var runHtml = items.map(function (it) {
-      var txt = ntEsc(window.tx(it.text));
+      var txt = vpText(window.tx(it.text), "nt-ink");
       var body = it.href
         ? '<a class="nt-item" href="' + ntEsc(it.href) + '">' + txt + '</a>'
         : '<span class="nt-item">' + txt + '</span>';
-      return body + '<span class="nt-sep" aria-hidden="true">◆</span>';
+      // the separator is the 8244's solid block - Newscaster's cursor
+      return body + '<span class="nt-sep" aria-hidden="true">' + vpText("\u2588", "nt-ink") + '</span>';
     }).join("");
 
     var wrap = document.createElement("div");
     wrap.className = "news-tape" + (reduce ? " nt-still" : "");
     wrap.innerHTML =
-      '<span class="nt-label">' + ntEsc(window.t("newsLabel")) + '</span>' +
+      '<span class="nt-label">' + vpText(window.t("newsLabel"), "nt-ink", 9) + '</span>' +
       '<div class="nt-window"><div class="nt-track">' +
         '<div class="nt-run">' + runHtml + '</div>' +
       '</div></div>' +
       '<button class="nt-close" type="button" aria-label="' +
         ntEsc(window.t("newsDismiss")) + '" title="' +
-        ntEsc(window.t("newsDismiss")) + '">×</button>';
+        ntEsc(window.t("newsDismiss")) + '">' + vpText("\u00d7", "nt-ink") + '</button>';
 
     var track = wrap.querySelector(".nt-track");
     var run = wrap.querySelector(".nt-run");
@@ -891,6 +965,9 @@
       var speed = (window.NEWS_DATA || {}).speed || 45;
       track.style.setProperty("--nt-shift", runW + "px");
       track.style.animationDuration = Math.max(8, Math.round(runW / speed)) + "s";
+      // move in whole Videopac dots (2 css px), never in between - the
+      // slightly jerky crawl of a scroll the CPU does one step at a time
+      track.style.animationTimingFunction = "steps(" + Math.max(1, Math.round(runW / 4)) + ")";
       wrap.classList.add("nt-running");
     }
     wrap.ntSize = size;              // so mountNewsTape() can re-fit after a move
