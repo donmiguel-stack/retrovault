@@ -4858,6 +4858,20 @@ window.GAMEPAGES_DATA = {
    "text": "Sega's 1986 arcade smash, brought to the C64 for Mindscape's US release (credited to Martin Webb, Dennis Webb, Chris Oberth and Lou Haehn) with US Gold handling the European release. Squeezes Yu Suzuki's branching, checkpoint-based route selection and pick-your-track soundtrack (Passing Breeze, Splash Wave, Magical Sound Shower) onto 8-bit hardware &ndash; no small feat for a game built around a scaling, forking road."
   }
  },
+ "c64_samantha_fox_strip_poker": {
+  "input": "joystick",
+  "video": {
+   "id": "A6Fw91h7ez0",
+   "title": "Samantha Fox Strip Poker (Martech, 1986) – Commodore 64 – completed (aca0808)"
+  },
+  "manual": {
+   "source": "Retro Vault",
+   "text": "<p><strong>How to play.</strong> The C64 version is <strong>five-card draw</strong>, one-on-one against Sam. You both start with 100 credits and ante 5. Look at your five cards, then <strong>BET</strong> (05, 10, 15 or 20), <strong>STAND</strong> (check) or <strong>FOLD</strong>; when Sam bets back you get <strong>CALL / RAISE / FOLD</strong>. In the draw, pick the cards to throw away on the <strong>-1- to -5-</strong> bar and confirm with the arrow to get new ones. After a second round of betting the best hand wins the pot. As you take Sam's credits she sheds a layer; if she wins them back, she can put it back on.</p><p><strong>Controls:</strong> joystick left/right (arrow keys) to highlight, fire (<strong>G</strong>) to choose; <strong>Space</strong> at the title screen starts the deal.</p><p><strong>Best hands, high to low:</strong> straight flush, four of a kind, full house, flush, straight, three of a kind, two pair, one pair.</p><p>New to poker? Our two-page guide covers hand rankings, ties, betting and what to keep in the draw: <a href=\"extras/c64_samantha_fox_strip_poker-how-to-play-poker.pdf\" target=\"_blank\" rel=\"noopener\">How to play poker (PDF)</a>. For the full rules of every variant, see <a href=\"https://www.pokerstars.be/en/poker/games/rules/\" target=\"_blank\" rel=\"noopener\">PokerStars' poker rules</a>.</p>"
+  },
+  "history": {
+   "text": "Martech's 1986 cash-in on the era's biggest pin-up: 5-card stud against a digitised Samantha Fox, who sheds a layer every time you clean her out. Critics were lukewarm (Commodore Format later crowned it the most unerotic strip poker game ever), but the outrageous concept made it a cult classic. The cheesy covers of The Entertainer and The Stripper are credited to “John York” – years later Rob Hubbard admitted the alias was his."
+  }
+ },
  "pc_outrun": {
   "input": "keyboard",
   "note": "Arrow keys drive: <strong>Up</strong> accelerates, <strong>Down</strong> brakes, <strong>Left</strong>/<strong>Right</strong> steer. <strong>Space</strong> shifts gears. <strong>Ctrl+P</strong> pauses, <strong>Ctrl+Q</strong> toggles sound, <strong>Ctrl+J</strong>/<strong>Ctrl+K</strong> swap between joystick and keyboard control. On first launch you'll be asked to pick a graphics mode &ndash; press <strong>3</strong> for EGA/VGA.",

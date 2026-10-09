@@ -27,6 +27,7 @@
   .manual-text h3{margin:18px 0 8px;font-size:15px;letter-spacing:.01em;}
   .manual-text h3:first-child{margin-top:0;}
   .manual-text p{margin:0 0 10px;}
+  .manual-text a{color:var(--accent);}
   .manual-text ul{margin:0 0 12px;padding-left:20px;}
   .manual-text li{margin:0 0 6px;}
   .manual-text table{border-collapse:collapse;margin:4px 0 14px;font-size:14px;}

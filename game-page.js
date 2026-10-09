@@ -191,7 +191,7 @@
   var img = new Image();
   img.alt = g.title + " box art";
   // ?v= so a newly added cover isn't hidden behind the browser's cached miss
-  var COVER_V = 26;
+  var COVER_V = 27;
   // per-language box art (games.js "coverByLang"), else the game's own id
   var CID = (g.coverByLang && g.coverByLang[window.currentLang()]) || g.id;
   img.onerror = function(){
@@ -326,9 +326,9 @@
   meta.appendChild(el("span","badge badge-cat", catKey ? window.t(catKey) : g.category));
   if (g.vpNumber) meta.appendChild(el("span","badge badge-cat","VP #"+g.vpNumber));
   // which surviving dump this entry is - see VARIANT_LABELS in app.js
-  var VARIANT_LABELS = {"banked-rom":["var_banked","varx_banked"],"alt-dump":["var_alt","varx_alt"]};
+  var VARIANT_LABELS = {"adult":["var_adult","varx_adult"],"banked-rom":["var_banked","varx_banked"],"alt-dump":["var_alt","varx_alt"]};
   var variantKeys = (g.tags||[]).map(function(t){return VARIANT_LABELS[t];}).filter(Boolean)[0];
-  if (variantKeys) meta.appendChild(el("span","badge badge-variant", window.t(variantKeys[0])));
+  if (variantKeys) meta.appendChild(el("span","badge badge-variant" + (variantKeys[0] === "var_adult" ? " badge-adult" : ""), window.t(variantKeys[0])));
   // what kind of game it is, from genres.js
   var gen = (window.GENRE_DATA || {})[g.id];
   if (gen) {
@@ -502,7 +502,31 @@
   // when 1 is pressed.
   var launchUrl = (window.GAMEPAGES_DATA && window.GAMEPAGES_DATA[g.id] || {}).vaultCart;
   if (launchUrl && !/^[\w.\-]+\.bin$/.test(launchUrl)) launchUrl = null;
+  // Adult-tagged games (tag "adult", see app.js) ask once per browser for an
+  // 18+ confirmation before START launches; the answer is remembered in
+  // localStorage, so it is a speed bump, not access control.
+  var isAdult = (g.tags || []).indexOf("adult") !== -1;
+  function adultOk() { try { return localStorage.getItem("rv-adult-ok") === "1"; } catch (e) { return false; } }
+  var adultBox = null;
+  start.addEventListener("click", function(ev){
+    if (isAdult && !adultOk()) {
+      ev.stopImmediatePropagation();
+      if (adultBox) return;
+      adultBox = el("div","adult-gate");
+      adultBox.appendChild(el("p","", window.t("adult_q")));
+      var yes = el("button","adult-yes", window.t("adult_yes"));
+      var no = el("button","adult-no", window.t("adult_no"));
+      yes.addEventListener("click", function(){
+        try { localStorage.setItem("rv-adult-ok","1"); } catch (e) {}
+        adultBox.remove(); adultBox = null; start.click();
+      });
+      no.addEventListener("click", function(){ adultBox.remove(); adultBox = null; });
+      adultBox.appendChild(yes); adultBox.appendChild(no);
+      start.parentNode.insertBefore(adultBox, start.nextSibling);
+    }
+  });
   start.addEventListener("click", function(){
+    if (isAdult && !adultOk()) return;
     recordRecent();
     if (launchUrl) {
       location.href = "emulator/index.html?core=o2em&rom=" + encodeURIComponent(launchUrl) +

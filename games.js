@@ -2976,6 +2976,21 @@ window.GAMES_DATA = {
     "developer": "Martin Webb, Dennis Webb, Chris Oberth, Lou Haehn (arcade: Sega)"
   },
   {
+    "id": "c64_samantha_fox_strip_poker",
+    "filename": "c64_samantha_fox_strip_poker.d64",
+    "title": "Samantha Fox Strip Poker",
+    "platform": "C64",
+    "category": "Commodore 64",
+    "vpNumber": null,
+    "tags": [
+      "adult"
+    ],
+    "romFile": "Samantha Fox Strip Poker.d64",
+    "year": 1986,
+    "publisher": "Martech",
+    "developer": "Software Communications"
+  },
+  {
     "id": "pc_doom",
     "filename": "pc_doom.zip",
     "title": "Doom",
@@ -4753,7 +4768,7 @@ window.GAMES_DATA = {
     "platform": "Amiga",
     "category": "Demoscene",
     "vpNumber": null,
-    "tags": ["demoscene"],
+    "tags": ["demoscene", "adult"],
     "romFile": "amiga_megamaid.adf",
     "year": 1989,
     "publisher": "Pixar & The Band",

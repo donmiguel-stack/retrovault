@@ -12,7 +12,7 @@
 window.HOSTED_FILES = {
   "base": "https://retrovault.world/files/",
   "bios": "bios/",
-  "generated": "2026-09-07",
+  "generated": "2026-10-09",
   "roms": [
     "anwol.zip",
     "Archon.d64",
@@ -72,6 +72,11 @@ window.HOSTED_FILES = {
     "Laser Squad.d64",
     "Le Trésor Englouti (Plus) (G7400+).bin",
     "lem2.zip",
+    "LSL1VGA.zip",
+    "LSL2.zip",
+    "LSL3.zip",
+    "LSL5.zip",
+    "LSL6.zip",
     "Maniac Mansion.d64",
     "Martian Threat (alt) (Alt).bin",
     "Martian Threat (GST Video).bin",
@@ -99,6 +104,7 @@ window.HOSTED_FILES = {
     "Red Baron (alt) (Alt).bin",
     "Red Baron.bin",
     "Robot City.bin",
+    "Samantha Fox Strip Poker.d64",
     "Shadow of the Beast.d64",
     "Shark Hunter.bin",
     "Showdown in 2100 A.D. (US).bin",

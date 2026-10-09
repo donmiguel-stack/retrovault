@@ -8,7 +8,7 @@
   // far more often than this should.
   var VAULT_VERSION = "1.0.0";
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 43;
+  var COVER_V = 44;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
   var CLIP_V = 7;
 
@@ -67,7 +67,7 @@
   // has a plain 8K image, a full 12K bank-switched image, and a corrected
   // version of that 12K image. The rows were indistinguishable in the grid,
   // so surface the dump type from the tags.
-  var VARIANT_LABELS = { "banked-rom": "var_banked", "alt-dump": "var_alt" };
+  var VARIANT_LABELS = { "adult": "var_adult", "banked-rom": "var_banked", "alt-dump": "var_alt" };
   function variantFor(g) {
     for (var i = 0; i < g.tags.length; i++) {
       if (VARIANT_LABELS[g.tags[i]]) return window.t(VARIANT_LABELS[g.tags[i]]);
@@ -358,6 +358,14 @@
       if (g.tags && g.tags.indexOf("banked-rom") !== -1) bankedCount++;
     });
     if (bankedCount) entries.push({ key: "banked-rom", label: window.t("cat_banked"), count: bankedCount });
+    // "Adult (18+)" - same idea as Banked ROM: a tag cutting across shelves,
+    // for games built around nudity (Samantha Fox Strip Poker). START on
+    // those asks for an 18+ confirmation first, see game-page.js.
+    var adultCount = 0;
+    games.forEach(function (g) {
+      if (g.tags && g.tags.indexOf("adult") !== -1) adultCount++;
+    });
+    if (adultCount) entries.push({ key: "adult", label: window.t("cat_adult"), count: adultCount });
     fillSelect(categorySel, window.t("allCats") + " (" + visibleTotal + ")", entries, state.category);
   }
 
@@ -388,7 +396,7 @@
       var revealed = !!state.query ||
         (state.category === "banked-rom" && g.tags && g.tags.indexOf("banked-rom") !== -1);
       if (!revealed && state.category !== "all" && state.category !== "G7000" && state.category !== "G7400+" &&
-          state.category !== "banked-rom") {
+          state.category !== "banked-rom" && state.category !== "adult") {
         if (groupFor(g).key === state.category) {
           var altPrimary = null, altPid = window.VAULT_ALT.primaryOf(g.id);
           var allGames = (window.GAMES_DATA && window.GAMES_DATA.games) || [];
@@ -409,6 +417,8 @@
         if (g.platform !== state.category) return false;
       } else if (state.category === "banked-rom") {
         if (!g.tags || g.tags.indexOf("banked-rom") === -1) return false;
+      } else if (state.category === "adult") {
+        if (!g.tags || g.tags.indexOf("adult") === -1) return false;
       } else if (groupFor(g).key !== state.category) return false;
     }
     if (state.query) {
@@ -1558,7 +1568,7 @@
     var variant = variantFor(g);
     if (variant) {
       var vbadge = document.createElement("span");
-      vbadge.className = "badge badge-variant";
+      vbadge.className = "badge badge-variant" + (g.tags && g.tags.indexOf("adult") !== -1 ? " badge-adult" : "");
       vbadge.textContent = variant;
       meta.appendChild(vbadge);
     }

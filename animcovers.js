@@ -13,8 +13,8 @@
  *        -profile:v main -pix_fmt yuv420p -crf 27 -preset slow \
  *        -c:a aac -b:a 96k -movflags +faststart <file>.mp4
  *      (for _sm: -an, scale=240, fps=20, crf 28)
- *   2. Add an entry below. "credit" goes in the game-page cover's hover
- *      tooltip - only add someone else's animation with their permission
+ *   2. Add an entry below. "credit" is shown on the game page as an
+ *      "Animated cover: <credit>" line under the Source line - only add someone else's animation with their permission
  *      on file.
  *   3. Bump this file's ?v= in index.html and game.html, then re-run
  *      tools/make_gamepages.py.
@@ -31,26 +31,113 @@
 
   var ANIM_COVERS = {
     // Die Suche nach den Ringen (German box), animated by Mike, 2026-10-08.
-    vp_42: { file: "vp_42", credit: "Retro Vault", v: 2 }
+    vp_42: { file: "vp_42", credit: "Retro Vault", v: 2 },
+    vp_51pl: { file: "vp_51pl", credit: "Retro Vault", v: 1 },  // Terrahawks, made by Mike, with sound
+    vp_60_16: { file: "vp_60_16", credit: "Retro Vault", v: 1 }, // Trans American Rally, made by Mike, with sound
+    vp_19: { file: "vp_19", credit: "Retro Vault", v: 1 },       // Catch the Ball / Noughts and Crosses, made by Mike, with sound
+    mod_19_g7400: { file: "vp_19", credit: "Retro Vault", v: 1 },
+    c64_hb_bruce_lee_return_of_fury: { file: "c64_hb_bruce_lee_return_of_fury", credit: "Retro Vault", v: 1 }, // C64 shelf, made by Mike, with sound
+
+    // Thomas Vivet's animated box art (lerandori.free.fr/Videos/Video_pac),
+    // used with his permission, 2026-10-08. Artwork only - no Philips header -
+    // and silent. Keyed by cover id, so every variant sharing that box art
+    // gets it; one tv_<name> file per artwork.
+    "vp_11pl": { file: "tv_vp_11", credit: "Thomas Vivet", v: 1 },
+    "vp_11alt": { file: "tv_vp_11", credit: "Thomas Vivet", v: 1 },
+    "vp_11": { file: "tv_vp_11", credit: "Thomas Vivet", v: 1 },
+    "mod_11pl": { file: "tv_vp_11", credit: "Thomas Vivet", v: 1 },
+    "Vp11_F": { file: "tv_vp_11", credit: "Thomas Vivet", v: 1 },
+    "Vp11+_F": { file: "tv_vp_11", credit: "Thomas Vivet", v: 1 },
+    "vp_22hack": { file: "tv_vp_22", credit: "Thomas Vivet", v: 1 },
+    "vp_22": { file: "tv_vp_22", credit: "Thomas Vivet", v: 1 },
+    "vp_01hack": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
+    "vp_01": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
+    "Vp01_F": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
+    "vp_04": { file: "tv_vp_04", credit: "Thomas Vivet", v: 1 },
+    "vp_09": { file: "tv_vp_09", credit: "Thomas Vivet", v: 1 },
+    "mod_vp9_examples": { file: "tv_vp_09", credit: "Thomas Vivet", v: 1 },
+    "vp_25": { file: "tv_vp_25", credit: "Thomas Vivet", v: 1 },
+    "Vp25_F": { file: "tv_vp_25", credit: "Thomas Vivet", v: 1 },
+    "vp_29": { file: "tv_vp_29", credit: "Thomas Vivet", v: 1 },
+    "Vp29_F": { file: "tv_vp_29", credit: "Thomas Vivet", v: 1 },
+    "vp_32": { file: "tv_vp_32", credit: "Thomas Vivet", v: 1 },
+    "vp_34": { file: "tv_vp_34", credit: "Thomas Vivet", v: 1 },
+    "vp_34pl": { file: "tv_vp_34", credit: "Thomas Vivet", v: 1 },
+    "vp_37": { file: "tv_vp_37", credit: "Thomas Vivet", v: 1 },
+    "vp_39pl": { file: "tv_vp_39", credit: "Thomas Vivet", v: 1 },
+    "vp_39": { file: "tv_vp_39", credit: "Thomas Vivet", v: 1 },
+    "vp_35pl": { file: "tv_vp_35", credit: "Thomas Vivet", v: 1 },
+    "vp_35": { file: "tv_vp_35", credit: "Thomas Vivet", v: 1 },
+    "mod_35pl_fix": { file: "tv_vp_35", credit: "Thomas Vivet", v: 1 },
+    "Vp35_F": { file: "tv_vp_35", credit: "Thomas Vivet", v: 1 },
+    "vp_33alt": { file: "tv_vp_33", credit: "Thomas Vivet", v: 1 },
+    "vp_33": { file: "tv_vp_33", credit: "Thomas Vivet", v: 1 },
+    "pal_acrobats": { file: "tv_vp_33", credit: "Thomas Vivet", v: 1 },
+    "jo_billard_pl": { file: "tv_jo_billard", credit: "Thomas Vivet", v: 1 },
+    "jo_basket-bowling_pl": { file: "tv_jo_basket-bowling", credit: "Thomas Vivet", v: 1 },
+    "jo_chez-maxime": { file: "tv_jo_chez-maxime", credit: "Thomas Vivet", v: 1 },
+    "jo_demon-attack_pl": { file: "tv_jo_demon-attack", credit: "Thomas Vivet", v: 1 },
+    "jo_exojet_pl": { file: "tv_jo_exojet", credit: "Thomas Vivet", v: 1 },
+    "jo_flipper_pl": { file: "tv_jo_flipper", credit: "Thomas Vivet", v: 1 },
+    "jo_le-tresor-englouti_pl": { file: "tv_jo_le-tresor-englouti", credit: "Thomas Vivet", v: 1 },
+    "vp_07": { file: "tv_vp_07", credit: "Thomas Vivet", v: 1 },
+    "Vp07_F": { file: "tv_vp_07", credit: "Thomas Vivet", v: 1 },
+    "vp_15": { file: "tv_vp_15", credit: "Thomas Vivet", v: 1 },
+    "vp_44": { file: "tv_vp_44", credit: "Thomas Vivet", v: 1 },
   };
   window.ANIM_COVERS = ANIM_COVERS;
+
+  // Animated versions of images in a game page's "Extras" section (box scans,
+  // maps...), keyed by the extras file name. The video replaces the image in
+  // place; the "Open ... in a new tab" link below it still opens the scan.
+  var ANIM_EXTRAS = {
+    // Quest for the Rings - the full wraparound box art, animated by Thomas
+    // Vivet (artwork only, no text). The front cover above stays Mike's.
+    "quest-for-the-rings-box.jpg": { file: "tv_vp_42_box", credit: "Thomas Vivet", v: 1 }
+  };
+  window.ANIM_EXTRAS = ANIM_EXTRAS;
 
   var mm = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   if (mm("(prefers-reduced-motion: reduce)")) return;
   var NO_HOVER = mm("(hover: none)");
-  var RE = /covers\/([A-Za-z0-9_\-]+)\.(?:png|jpg)(?:\?|$)/;
+  // Cover ids may contain "+" (Vp11+_F), raw or %2B-encoded.
+  var RE = /covers\/([^\/?#]+?)\.(?:png|jpg)(?:\?|$)/;
 
   var CREDIT = {
     en: "Animated cover", nl: "Geanimeerde hoes", de: "Animiertes Cover",
     fr: "Jaquette animée", pt: "Capa animada", ja: "うごく パッケージ"
   };
+  var BOX_CREDIT = {
+    en: "Animation", nl: "Animatie", de: "Animation",
+    fr: "Animation", pt: "Animação", ja: "アニメーション"
+  };
   function lang() {
     try { return (window.currentLang && window.currentLang()) || "en"; } catch (e) { return "en"; }
   }
 
+  // Game page: "Animated cover: <credit>" as its own line right under the
+  // history's "Source: ..." line (or under the history text if there is no
+  // source). The info column may render a moment after the cover, so retry
+  // briefly until it exists.
+  function addCreditLine(credit) {
+    var tries = 0;
+    (function place() {
+      if (document.querySelector(".anim-cover-credit")) return;
+      var after = document.querySelector(".history-source") || document.querySelector(".history-text");
+      if (!after) { if (++tries < 40) setTimeout(place, 100); return; }
+      var p = document.createElement("p");
+      p.className = "history-source anim-credit-line anim-cover-credit";
+      p.textContent = (CREDIT[lang()] || CREDIT.en) + ": " + credit;
+      after.parentNode.insertBefore(p, after.nextSibling);
+    })();
+  }
+
   function entryFor(img) {
     var m = RE.exec(img.getAttribute("src") || "");
-    return m && ANIM_COVERS[m[1]] ? ANIM_COVERS[m[1]] : null;
+    if (!m) return null;
+    var id = m[1];
+    try { id = decodeURIComponent(id); } catch (e) {}
+    return ANIM_COVERS[id] || null;
   }
 
   function makeVideo(e, big) {
@@ -84,7 +171,7 @@
     box.insertBefore(v, img.nextSibling);
 
     if (hero) {
-      if (e.credit) box.title = (CREDIT[lang()] || CREDIT.en) + " · " + e.credit;
+      if (e.credit) addCreditLine(e.credit);
       if (io) io.observe(v); else play(v);
       return;
     }
@@ -118,12 +205,38 @@
     if (p && p.catch) p.catch(function () { v.muted = true; v.loop = true; play(v); });
   }
 
+  function enhanceExtra(img) {
+    var m = /(?:^|\/)extras\/([^\/?#]+)$/.exec(img.getAttribute("src") || "");
+    var e = m && ANIM_EXTRAS[m[1]];
+    if (!e) return;
+    img.dataset.anim = "1";
+    var v = document.createElement("video");
+    v.className = img.className;
+    v.muted = true; v.defaultMuted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
+    v.setAttribute("muted", ""); v.setAttribute("playsinline", "");
+    v.setAttribute("aria-label", img.alt);
+    v.poster = img.getAttribute("src");
+    v.preload = "metadata";
+    v.style.display = "block";
+    v.src = "covers/anim/" + e.file + ".mp4?v=" + (e.v || 1);
+    v.addEventListener("error", function () { if (v.parentNode) v.parentNode.replaceChild(img, v); });
+    img.parentNode.replaceChild(v, img);
+    if (io) io.observe(v); else play(v);
+    if (e.credit) {
+      var c = document.createElement("p");
+      c.className = "extras-dl anim-credit-line";
+      c.textContent = (BOX_CREDIT[lang()] || BOX_CREDIT.en) + ": " + e.credit;
+      v.parentNode.insertBefore(c, v.nextSibling);
+    }
+  }
+
   function scan(root) {
     if (!root.querySelectorAll) return;
     var imgs = root.tagName === "IMG" ? [root] : root.querySelectorAll("img");
     for (var i = 0; i < imgs.length; i++) {
       var img = imgs[i];
       if (img.dataset.anim) continue;
+      if (img.classList.contains("extras-img")) { enhanceExtra(img); continue; }
       var e = entryFor(img);
       if (!e || !img.parentElement) continue;
       var p = img.parentElement;

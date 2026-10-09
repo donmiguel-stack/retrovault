@@ -1446,6 +1446,10 @@ window.GENRE_DATA = {
   "genre": "racing",
   "players": "p1"
  },
+ "c64_samantha_fox_strip_poker": {
+  "genre": "gambling",
+  "players": "p1"
+ },
  "pc_outrun": {
   "genre": "racing",
   "players": "p1"
