@@ -1378,6 +1378,20 @@
       ken.appendChild(kenImg);
       pcBox.appendChild(ken);
     }
+    // King's Quest III easter egg: the mounted moose head that Larry later
+    // finds in Lefty's bar ("an antique, left over from King's Quest III") and
+    // that ends up again in the Quest for Glory I Adventurers' Guild, whose
+    // plaque reads "Courtesy of Sierra Online Prop Dept." Hung on the wall to
+    // the right of the controls box - see .kq3-moose in game.css.
+    if (g.id === "pc_kq3") {
+      var moose = el("span", "kq3-moose");
+      var mooseImg = new Image();
+      mooseImg.src = "assets/kq3-moose.png";
+      mooseImg.alt = "Mounted moose head";
+      mooseImg.title = "Courtesy of Sierra Online Prop Dept.";
+      moose.appendChild(mooseImg);
+      pcBox.appendChild(moose);
+    }
     pcSec.appendChild(pcBox);
     page.appendChild(pcSec);
   } else if (g.platform === "Amiga") {

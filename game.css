@@ -338,6 +338,20 @@
     .ken-note{position:static;display:block;margin:14px auto 0;width:min(240px,60%);transform:rotate(-5deg);}
   }
 
+  /* King's Quest III easter egg: the pixel moose head, mounted on the wall
+     to the right of the controls box. The same trophy turns up in Leisure Suit
+     Larry and Quest for Glory I. Only for pc_kq3 - see the g.id check near
+     pcSec.appendChild(pcBox). Below the tips block on narrow screens. */
+  .kq3-moose{
+    position:absolute;left:100%;top:24px;margin-left:30px;
+    width:min(240px,22vw);pointer-events:auto;z-index:3;
+    filter:drop-shadow(0 3px 3px rgba(0,0,0,.55));
+  }
+  .kq3-moose img{display:block;width:100%;height:auto;image-rendering:pixelated;}
+  @media (max-width: 1100px){
+    .kq3-moose{position:static;display:block;margin:16px auto 0;width:min(200px,55%);}
+  }
+
   /* The Mousing Cat easter egg: he tilts his head and purrs on the right
      side of his own controls box. Only inserted for vp_47/Vp47_F - see the
      g.id check near cSec.appendChild(cBox). */
