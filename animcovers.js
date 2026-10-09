@@ -37,6 +37,8 @@
     vp_19: { file: "vp_19", credit: "Retro Vault", v: 1 },       // Catch the Ball / Noughts and Crosses, made by Mike, with sound
     mod_19_g7400: { file: "vp_19", credit: "Retro Vault", v: 1 },
     c64_hb_bruce_lee_return_of_fury: { file: "c64_hb_bruce_lee_return_of_fury", credit: "Retro Vault", v: 1 }, // C64 shelf, made by Mike, with sound
+    am_act_of_war: { file: "am_act_of_war", credit: "Retro Vault", v: 1 }, // Amiga shelf, made by Mike, 2026-10-09, silent
+    am_demo_arte: { file: "am_demo_arte", credit: "Retro Vault", v: 1 }, // Amiga demoscene shelf, Sanity's Arte, clip by Mike, 2026-10-09, sound removed
 
     // Thomas Vivet's animated box art (lerandori.free.fr/Videos/Video_pac),
     // used with his permission, 2026-10-08. Artwork only - no Philips header -

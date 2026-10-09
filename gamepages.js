@@ -5356,6 +5356,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_robocop": {
+  "manual": {
+   "item": "am_robocop",
+   "pages": 2,
+   "source": "RoboCop (Ocean, 1988) - the 8-bit tape edition's inlay, as no Amiga manual scan is online; the story and gameplay match, but loading and controls are for the C64, Spectrum and Amstrad. Scan via archive.org (RoboCop_1988_Ocean_Software_Ltd_2252_Instructions)"
+  },
   "input": "joystick",
   "video": {
    "id": "WWXne7Z3IYY",
@@ -5397,6 +5402,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_turrican": {
+  "manual": {
+   "item": "am_turrican",
+   "pages": 9,
+   "source": "Turrican (Rainbow Arts, 1990) - the multi-format instructions covering the Amiga as well as the 8-bit versions. Scan via archive.org (Turrican_1990_Rainbow_Arts_4499_Instructions)"
+  },
   "input": "joystick",
   "video": {
    "id": "j58lRNoa2c0",
@@ -5407,6 +5417,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_stuntcarracer": {
+  "manual": {
+   "item": "am_stuntcarracer",
+   "pages": 2,
+   "source": "Stunt Car Racer (Kixx budget re-release) - the multi-format instructions, Amiga included. Scan via archive.org (Stunt_Car_Racer_19xx_Kixx_1411_Instructions)"
+  },
   "input": "joystick",
   "video": {
    "id": "q7w_0yP5RwU",
@@ -5645,6 +5660,11 @@ window.GAMEPAGES_DATA = {
  },
  "am_arkanoid2": {
   "input": "mouse",
+  "manual": {
+   "item": "am_arkanoid2",
+   "pages": 4,
+   "source": "Arkanoid: Revenge of Doh (Imagine, 1988) - the C64 edition's inlay, as no Amiga manual scan is online; the story, controls, scoring and capsule list match the Amiga game, but the loading instructions are for the C64. In English, French and German. Scan via archive.org (Arkanoid_2_Revenge_of_Doh_1988_Imagine_Software)"
+  },
   "video": {
    "id": "Aywky7cfb4o",
    "title": "Amiga 500 Longplay [274] Arkanoid: Revenge of DOH"
@@ -5774,6 +5794,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_lotus_esprit": {
+  "manual": {
+   "item": "am_lotus_esprit",
+   "pages": 25,
+   "source": "Lotus Esprit Turbo Challenge (Gremlin, 1990) - the multi-format instruction booklet, Amiga included. Scan via archive.org (Lotus_Esprit_Turbo_Challenge_1990_Gremlin_Graphics_9873_Instructions)"
+  },
   "input": "joystick",
   "video": {
    "id": "s-aL07TxxxU",
@@ -5874,6 +5899,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_rick_dangerous": {
+  "manual": {
+   "item": "am_rick_dangerous",
+   "pages": 2,
+   "source": "Rick Dangerous (Firebird, 1989) - the multi-format instructions sheet for Amiga, Atari ST, C64 and PC, in English, German and Italian. Scan via archive.org (rick-dangerous-en-de-it)"
+  },
   "input": "joystick",
   "video": {
    "id": "17Bs9QJ8aYY",
@@ -5884,6 +5914,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_rick_dangerous2": {
+  "manual": {
+   "item": "am_rick_dangerous2",
+   "pages": 7,
+   "source": "Rick Dangerous 2 (MicroStyle, 1990) - the multi-format instructions, Amiga included. Scan via archive.org (Rick_Dangerous_2_1990_MicroStyle_7572_Instructions)"
+  },
   "input": "joystick",
   "video": {
    "id": "FVQDELvgv4k",
@@ -5904,6 +5939,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_rodland": {
+  "manual": {
+   "item": "am_rodland",
+   "pages": 19,
+   "source": "Rod-Land (Storm, 1991) - the multi-format manual for Amiga, Atari ST, C64, CPC and Spectrum, in English, French, German and Italian. Scan via archive.org (rodland-computer)"
+  },
   "input": "joystick",
   "video": {
    "id": "4W2IxoL_GHA",
@@ -5944,6 +5984,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_swiv": {
+  "manual": {
+   "item": "am_swiv",
+   "pages": 5,
+   "source": "SWIV (Storm, 1991) - filed on archive.org as the C64 manual, but the instructions cover the Amiga and Atari ST versions too, in English and German. Scan via archive.org (SWIV_1991_Storm)"
+  },
   "input": "joystick",
   "video": {
    "id": "grRWWGKcV2I",
@@ -5954,6 +5999,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_turrican2": {
+  "manual": {
+   "item": "am_turrican2",
+   "pages": 30,
+   "source": "Turrican II: The Final Fight (Rainbow Arts, 1991) - the multi-format manual covering the Amiga, Atari ST, C64, CPC and Spectrum versions, in several languages. Scan via archive.org (turrican-ii)"
+  },
   "input": "joystick",
   "video": {
    "id": "h7PVf8rY3YE",
@@ -5964,6 +6014,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_wings_of_fury": {
+  "manual": {
+   "item": "am_wings_of_fury",
+   "pages": 12,
+   "source": "Wings of Fury (Broderbund) - the French manual ('Manuel d'utilisation') for the Amiga, CPC and PC versions; no English Amiga manual is online. Scan via archive.org (wings-of-fury-francais)"
+  },
   "input": "joystick",
   "video": {
    "id": "ZZSwdqg6VE4",
@@ -5984,6 +6039,11 @@ window.GAMEPAGES_DATA = {
   }
  },
  "am_xout": {
+  "manual": {
+   "item": "am_xout",
+   "pages": 6,
+   "source": "X-Out (Rainbow Arts, 1990) - the German C64 release from the Top Shots compilation, as no Amiga manual scan is online; the story and gameplay match, but loading and controls are for the C64. Scan via archive.org (X-Out_1990_Rainbow_Arts)"
+  },
   "input": "joystick",
   "video": {
    "id": "ayxAuoQDmY0",

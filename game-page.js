@@ -191,7 +191,7 @@
   var img = new Image();
   img.alt = g.title + " box art";
   // ?v= so a newly added cover isn't hidden behind the browser's cached miss
-  var COVER_V = 27;
+  var COVER_V = 28;
   // per-language box art (games.js "coverByLang"), else the game's own id
   var CID = (g.coverByLang && g.coverByLang[window.currentLang()]) || g.id;
   img.onerror = function(){
