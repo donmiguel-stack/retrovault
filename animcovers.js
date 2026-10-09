@@ -53,6 +53,11 @@
     "vp_01hack": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
     "vp_01": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
     "Vp01_F": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
+    // The shelf shows the G7400+ dump (vp_01pl, Videopac+ "RACE" box) - same
+    // painting as the G7000 box, so it gets the same animation.
+    "vp_01pl": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
+    "vp01+_F": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
+    "mod_01pl": { file: "tv_vp_01", credit: "Thomas Vivet", v: 1 },
     "vp_04": { file: "tv_vp_04", credit: "Thomas Vivet", v: 1 },
     "vp_09": { file: "tv_vp_09", credit: "Thomas Vivet", v: 1 },
     "mod_vp9_examples": { file: "tv_vp_09", credit: "Thomas Vivet", v: 1 },
