@@ -100,6 +100,13 @@ the archive.org identifier recorded in `gamepages.js`. Gitignored.
 carries `?v=NN`. Bump it on every change or returning users get a mix of old and
 new files. Both pages should always carry the same number.
 
+**Game page versions live in `versions.js`** (since 2026-10-10). `game.html` and the
+~470 pre-built `game/<id>.html` pages no longer carry `?v=` numbers: they load
+`versions.js` fresh on every visit (`?t=<time>`) and it writes the stylesheets and
+scripts with their numbers. So for the game page, bump the number in `versions.js`
+only; a bump no longer touches every game page. `index.html` still carries its own
+numbers. `versions.js` is in the update manifest: `game.html` is blank without it.
+
 **After changing data or art, re-run `python3 tools/make_manifest.py`.** The
 update mechanism compares against `manifest.json`; if you forget, other people's
 copies never learn about the change.

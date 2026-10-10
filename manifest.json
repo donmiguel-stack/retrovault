@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-10 08:27:22",
- "count": 818,
- "bytes": 315304707,
+ "generated": "2026-10-10 08:31:15",
+ "count": 819,
+ "bytes": 315305770,
  "files": {
   "games.js": {
    "sha256": "a40b2f68a0ebcebe3b70f7590baa9e5765c0c75ac07833cfe71ebd3a6e5d2160",
@@ -144,8 +144,8 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "7dff76f445b766b6f73c01501cef81001ebb8f14248c8ba76eacf13037208fbe",
-   "size": 9795
+   "sha256": "24ead21e1cdbf070734089242b10f3fe77426bd7085928922d1946995bda8959",
+   "size": 8795
   },
   "index.html": {
    "sha256": "3708e388ded0fbc0555da46451213b93e0792e6ef0441ef68f69bf7a09a815aa",
@@ -172,8 +172,12 @@
    "size": 103989
   },
   "catalogue.html": {
-   "sha256": "472c00819ca9b866f535225a32043690a441334eefc8569a4a956a74f15ddee9",
-   "size": 42177
+   "sha256": "3dddda1fb7f2df7661ad3b1d3567ae6ba4a6f7e42c530bf223f3f08c579c2334",
+   "size": 42402
+  },
+  "versions.js": {
+   "sha256": "275124c26ecf1880643e310ba498da3ae7a9ff30ca458299500a376faa78887f",
+   "size": 1838
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",

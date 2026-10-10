@@ -24,8 +24,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css?v=107">
-
+<!-- Stylesheets and scripts come with their cache-bust numbers from versions.js,
+     fetched fresh each visit: bump numbers there, not here. -->
+<script>document.write('<script src="versions.js?t=' + Date.now() + '"><\/script>');</script>
+<script>RV_LOAD.css();</script>
 <!-- Retro Vault — anonymous usage counting (Cloudflare Web Analytics).
      Cookieless. No personal data, no cross-site tracking, no fingerprinting.
      Does not run from an offline (file://) copy.
