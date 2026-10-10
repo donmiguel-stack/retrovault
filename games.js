@@ -40,10 +40,12 @@ window.GAMES_DATA = {
     "id": "new_le-sprint",
     "filename": "new_le-sprint.bin",
     "title": "Le Sprint (kuoris-dev)",
-    "platform": "G7000",
+    "platform": "G7400+",
     "category": "Homebrew (community)",
     "vpNumber": null,
-    "tags": [],
+    "tags": [
+      "plus-graphics"
+    ],
     "romFile": "Le Sprint (kuoris-dev).bin"
   },
   {
