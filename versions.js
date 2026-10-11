@@ -11,22 +11,22 @@
 // Order matters: later scripts use what earlier ones define.
 (function () {
   var CSS = [
-    ["style.css", 114],
+    ["style.css", 116],
     ["game.css", 12]
   ];
   var JS = [
-    ["i18n.js", 134],
+    ["i18n.js", 136],
     ["setup-i18n.js", 122],
-    ["games.js", 128],
+    ["games.js", 130],
     ["alternates.js", 4],
     ["extras.js", 109],
     ["packaging.js", 109],
-    ["genres.js", 121],
+    ["genres.js", 123],
     ["brazil.js", 109],
     ["usa.js", 109],
     ["shops.js", 109],
-    ["support.js", 110],
-    ["downloads.js", 114],
+    ["support.js", 111],
+    ["downloads.js", 116],
     ["store.js", 1],
     ["localroms.js", 1],
     ["pad.js", 1],
@@ -38,12 +38,12 @@
     ["tips.js", 111],
     ["tips-ja.js", 1],
     ["walkthroughs.js", 1],
-    ["featured.js", 115],
+    ["featured.js", 119],
     ["c64ad.js", 110],
-    ["gamepages.js", 146],
+    ["gamepages.js", 148],
     ["gamepages-ja.js", 2],
     ["demo.js", 112],
-    ["game-page.js", 24],
+    ["game-page.js", 25],
     ["animcovers.js", 12]
   ];
   function write(list, tag) {

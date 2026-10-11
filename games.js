@@ -1,6 +1,6 @@
 window.GAMES_DATA = {
   "generated": "picopac catalogue",
-  "count": 360,
+  "count": 362,
   "games": [
   {
     "id": "new_amok_alt",
@@ -4897,6 +4897,36 @@ window.GAMES_DATA = {
     "developer": "Code: Paradroid · Graphics: Paradroid, Facet, Prowler · Music: Magnar, from an original by Nuke"
   },
   {
+    "id": "am_demo_mobile",
+    "filename": "amiga_demo_mobile.adf",
+    "title": "Mobile: Destination Unknown (Spaceballs)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_mobile.adf",
+    "year": 1993,
+    "publisher": "Spaceballs",
+    "developer": "Code: Lone Starr · Graphics: TMB Designs · Music: Audiomonster"
+  },
+  {
+    "id": "am_demo_qed",
+    "filename": "amiga_demo_qed.adf",
+    "title": "Q.E.D. (Talent)",
+    "platform": "Amiga",
+    "category": "Demoscene",
+    "vpNumber": null,
+    "tags": [
+      "demoscene"
+    ],
+    "romFile": "amiga_demo_qed.adf",
+    "year": 1993,
+    "publisher": "Talent",
+    "developer": "Code: Stripe the Gremlin · Graphics: Jackass, Kekken, Viper · Music: Jukebox, Djengis Khan, Ogier Le Petit"
+  },
+  {
     "id": "c64_demo_dutchbreeze",
     "filename": "c64_demo_dutchbreeze.d64",
     "title": "Dutch Breeze (Black Mail)",
@@ -5228,6 +5258,84 @@ window.GAMES_DATA = {
     "year": 1992,
     "publisher": "Heikki Kosola",
     "developer": "Heikki Kosola"
+  },
+  {
+    "id": "am_tiny_pixel_adventure",
+    "filename": "amiga_tiny_pixel_adventure.adf",
+    "title": "Tiny Pixel Adventure",
+    "platform": "Amiga",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_tiny_pixel_adventure.adf",
+    "year": 2024,
+    "publisher": "HooGames2017",
+    "developer": "HooGames2017"
+  },
+  {
+    "id": "am_tenebra2",
+    "filename": "amiga_tenebra2.adf",
+    "title": "Tenebra 2",
+    "platform": "Amiga",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_tenebra2.adf",
+    "year": 2023,
+    "publisher": "Haplo",
+    "developer": "Haplo"
+  },
+  {
+    "id": "am_ooze",
+    "filename": "amiga_ooze.adf",
+    "title": "Ooze: The Escape",
+    "platform": "Amiga",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_ooze.adf",
+    "year": 2023,
+    "publisher": "Haplo",
+    "developer": "Haplo & Andy Johns"
+  },
+  {
+    "id": "am_yoomp",
+    "filename": "amiga_yoomp.adf",
+    "title": "Amiga Yoomp!",
+    "platform": "Amiga",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_yoomp.adf",
+    "year": 2024,
+    "publisher": "zr-games",
+    "developer": "zr-games"
+  },
+  {
+    "id": "am_shift",
+    "filename": "amiga_shift.adf",
+    "title": "Shift",
+    "platform": "Amiga",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_shift.adf",
+    "year": 2024,
+    "publisher": "Haplo",
+    "developer": "Haplo"
+  },
+  {
+    "id": "am_yeet",
+    "filename": "amiga_yeet.adf",
+    "title": "YEET",
+    "platform": "Amiga",
+    "category": "Homebrew (community)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "amiga_yeet.adf",
+    "year": 2025,
+    "publisher": "zooperdan",
+    "developer": "zooperdan"
   },
   {
     "id": "am_arkanoid2",

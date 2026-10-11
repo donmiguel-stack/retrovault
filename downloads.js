@@ -76,6 +76,18 @@ window.DOWNLOAD_DATA = {
     source: "https://demozoo.org/productions/59657/",
     checked: "2026-09-20"
   },
+  "am_demo_mobile": {
+    file: "amiga_demo_mobile.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/4220/",
+    checked: "2026-10-11"
+  },
+  "am_demo_qed": {
+    file: "amiga_demo_qed.adf",
+    verdict: "LIKELY-OK",
+    source: "https://demozoo.org/productions/4221/",
+    checked: "2026-10-11"
+  },
   "c64_demo_dutchbreeze": {
     file: "c64_demo_dutchbreeze_full.zip",
     verdict: "LIKELY-OK",
@@ -720,6 +732,24 @@ window.DOWNLOAD_DATA = {
     verdict: "CLEAR",
     source: "TOSEC-tagged (FW) freeware. The later v2.11 is tagged (SW-R) registered and was skipped per the standard skip-registered-versions rule. — sourced from the archive.org TOSEC Amiga public-domain games set (commodore-amiga-games-public-domain-adf), release TurboRaketti v0.99b (1992)(Kosola, Heikki)(fi)(FW)[h ASO].",
     checked: "2026-09-20"
+  },
+  "am_tiny_pixel_adventure": {
+    file: "amiga_tiny_pixel_adventure.adf",
+    verdict: "LIKELY-OK",
+    source: "https://hoogames2017.itch.io/tiny-pixel-adventure — free/name-your-own-price ADF straight from the developer, no redistribution statement, no paid or boxed edition of this game found. (HooGames2017 do sell a boxed edition of a different game, Dr. Dangerous.)",
+    checked: "2026-10-11"
+  },
+  "am_shift": {
+    file: "amiga_shift.adf",
+    verdict: "LIKELY-OK",
+    source: "https://h4plo.itch.io/shift — free/name-your-own-price ADF from the developer, no paid or boxed edition found. Haplo gave a third party permission in the page comments (Sept 2026) to bundle the ADF in a free AROS distribution.",
+    checked: "2026-10-11"
+  },
+  "am_yeet": {
+    file: "amiga_yeet.adf",
+    verdict: "LIKELY-OK",
+    source: "https://zooperdan.itch.io/yeet — free/name-your-own-price ADF from the developer, no redistribution statement, no paid or boxed edition found.",
+    checked: "2026-10-11"
   }
 
 };

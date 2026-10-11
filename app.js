@@ -8,7 +8,7 @@
   // far more often than this should.
   var VAULT_VERSION = "1.0.0";
   // Bump when you add or replace anything in covers/ (see renderCard).
-  var COVER_V = 45;
+  var COVER_V = 46;
   // Bump when you add or re-record anything in clips/ (featured gameplay clips).
   var CLIP_V = 7;
 
@@ -1233,6 +1233,81 @@
     return node;
   }
 
+  // The Amiga shelf's demoscene banner (2026-10-11), data in
+  // FEATURED_DATA.amdemoscene. Reworked the same day at Mike's request:
+  // party footage (Vimeo) in the centre, the six demo covers three a side,
+  // and a row of links to articles and Amiga-demo sites underneath. The
+  // facts row above it stays. Each side tile is a plain link to the demo's
+  // game page; the one-line blurb rides along as its tooltip. The cover
+  // frame is 2:3 portrait - the shape Mike's own Amiga cover art uses - so
+  // today's landscape screenshot covers crop to centre until he swaps them.
+  function amDemoPick(pick) {
+    var g = gameById(pick.id);
+    if (!g) return "";
+    var href = "game.html?id=" + encodeURIComponent(g.id);
+    var name = g.title.replace(/\s*\([^)]*\)\s*$/, "");   // "Arte (Sanity)" -> "Arte"; the group has its own line
+    var tip = String(window.tx(pick.blurb) || "").replace(/"/g, "&quot;");
+    return (
+      '<a class="demo-pick" href="' + href + '" title="' + tip + '">' +
+        '<span class="demo-pick-thumb">' +
+          '<img src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" loading="lazy"' +
+          (pick.pos ? ' style="object-position:' + pick.pos + '"' : '') +
+          ' onerror="this.onerror=null;this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
+        '</span>' +
+        '<span class="demo-pick-text">' +
+          '<span class="demo-pick-year">' + (g.year || "") + '</span>' +
+          '<b>' + name + '</b>' +
+          '<span class="demo-pick-group">' + (g.publisher || "") + '</span>' +
+          (pick.fact ? '<span class="demo-pick-fact">' + window.tx(pick.fact) + '</span>' : '') +
+        '</span>' +
+      '</a>'
+    );
+  }
+
+  function amDemoLinks(data, group) {
+    return (data.links || []).filter(function (l) { return l.group === group; }).map(function (l) {
+      return '<a class="demo-link" href="' + l.url + '" target="_blank" rel="noopener">' +
+        '<span class="demo-link-name">' + l.name + '<span class="demo-link-src">' + l.src + '</span></span>' +
+        '<span class="demo-link-what">' + window.tx(l.what) + '</span></a>';
+    }).join("");
+  }
+
+  function amDemosceneBlock() {
+    var data = (window.FEATURED_DATA || {}).amdemoscene;
+    var tpl = document.getElementById("amdemoTpl");
+    if (!data || !tpl) return null;
+    var picks = (data.picks || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
+    });
+    if (!picks.length) return null;
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector(".demo-kicker").textContent = window.tx(data.kicker);
+    node.querySelector(".demo-head h3").textContent = window.tx(data.head);
+    node.querySelector(".demo-intro").textContent = window.tx(data.intro);
+    node.querySelector(".demo-facts").innerHTML = (data.facts || []).map(function (f) {
+      return '<div class="demo-factbox"><b>' + window.tx(f.big) + '</b><span>' + window.tx(f.text) + '</span></div>';
+    }).join("");
+    var half = Math.ceil(picks.length / 2);
+    node.querySelector(".demo-side-l").innerHTML = picks.slice(0, half).map(amDemoPick).join("");
+    node.querySelector(".demo-side-r").innerHTML = picks.slice(half).map(amDemoPick).join("");
+    var v = data.video || {};
+    if (v.vimeo) {
+      node.querySelector(".demo-video-frame").innerHTML =
+        '<iframe src="https://player.vimeo.com/video/' + v.vimeo + (v.h ? "?h=" + v.h + "&" : "?") +
+        'title=0&byline=0&portrait=0&dnt=1" loading="lazy" title="" frameborder="0" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+      node.querySelector(".demo-video-cap").textContent = window.tx(v.caption);
+    } else {
+      node.querySelector(".demo-video").remove();
+    }
+    var heads = data.linkHeads || {};
+    node.querySelector(".demo-links-read h4").textContent = window.tx(heads.read);
+    node.querySelector(".demo-links-sites h4").textContent = window.tx(heads.sites);
+    node.querySelector(".demo-links-read .demo-link-list").innerHTML = amDemoLinks(data, "read");
+    node.querySelector(".demo-links-sites .demo-link-list").innerHTML = amDemoLinks(data, "sites");
+    return node;
+  }
+
   var c64HbStop = null;
   function c64HomebrewBlock() {
     var picks = ((window.FEATURED_DATA || {}).c64homebrew || []).filter(function (f) {
@@ -1276,6 +1351,28 @@
     node.querySelector(".hb-word").textContent = window.t("cat_homebrew");
     node.querySelector(".hb-intro").textContent = window.t("homebrewIntro");
     pcHbStop = c64HomebrewFeatureRotator(node.querySelector(".feature-main"),
+                                         node.querySelector(".feature-list"), picks);
+    return node;
+  }
+
+  // The Amiga shelf's own homebrew panel - same idea as the three above,
+  // separate data (amhomebrew in featured.js) and template (amhomebrewTpl).
+  // Reuses c64HomebrewFeatureRotator() like the PC one: clip -> YouTube ->
+  // cover. Its own intro line (amHomebrewIntro) because the shared one
+  // talks about "the console" and 1998, which is the Videopac's story.
+  var amHbStop = null;
+  function amHomebrewBlock() {
+    var picks = ((window.FEATURED_DATA || {}).amhomebrew || []).filter(function (f) {
+      return state.games.some(function (g) { return g.id === f.id; });
+    });
+    var tpl = document.getElementById("amhomebrewTpl");
+    if (!picks.length || !tpl) return null;
+    if (amHbStop) amHbStop();
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.querySelector("[data-i18n=homebrewHead]").textContent = window.t("homebrewHead");
+    node.querySelector(".hb-word").textContent = window.t("cat_homebrew");
+    node.querySelector(".hb-intro").textContent = window.t("amHomebrewIntro");
+    amHbStop = c64HomebrewFeatureRotator(node.querySelector(".feature-main"),
                                          node.querySelector(".feature-list"), picks);
     return node;
   }
@@ -1417,7 +1514,7 @@
   }
 
   function placeBlocks(total) {
-    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .ms-strip, .community, .c64-ad-strip, .pc-ad-strip, .amiga-ad-strip")
+    grid.querySelectorAll(".sponsor-strip, .homebrew-strip, .ms-strip, .community, .c64-ad-strip, .pc-ad-strip, .amiga-ad-strip, .demo-strip")
         .forEach(function (n) { n.remove(); });
     var cols = gridColumns();
     var cards = grid.querySelectorAll(".card");
@@ -1447,15 +1544,21 @@
       if (total >= 20) insertAt(pcCommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
       return;
     }
-    // The Amiga shelf gets its own Amiga-style advert and its own "keeping
-    // this console alive" panel, and none of the Videopac homebrew/community
-    // panels (those are Videopac content) - same reasoning as the two
-    // branches above. No homebrew panel: this shelf is mostly PD/freeware
-    // already, so a separate homebrew strip would be a panel about the same
-    // games the grid is showing.
+    // The Amiga shelf gets its own Amiga-style advert, its own "still being
+    // written" homebrew panel and its own "keeping this console alive" panel,
+    // and none of the Videopac ones - same reasoning as the two branches
+    // above. The homebrew panel is modern releases only (2023 on): the
+    // 1990s PD disks are already the bulk of the grid, so a panel of those
+    // would just repeat it.
     if (state.platform === "Amiga") {
       if (total >= 6) insertAt(amAdBlock(), Math.min(12, Math.floor(total / 2)));
+      // The demoscene banner sits between the advert and the community
+      // panel, with a couple of rows of ordinary cards either side of it.
+      if (total >= 30) insertAt(amDemosceneBlock(), Math.min(30, Math.floor(total / 2)));
       if (total >= 20) insertAt(amCommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
+      // Homebrew comes last, past the community panel, so the four banners
+      // land roughly 20 cards apart (12 / 30 / 50 / 72 on today's shelf).
+      if (total >= 40) insertAt(amHomebrewBlock(), Math.min(72, Math.floor(total * 2 / 3)));
       return;
     }
     if (total < 60) return;                       // too short to bother

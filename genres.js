@@ -36,6 +36,14 @@ window.GENRE_DATA = {
   "genre": "demo",
   "players": "p1"
  },
+ "am_demo_mobile": {
+  "genre": "demo",
+  "players": "p1"
+ },
+ "am_demo_qed": {
+  "genre": "demo",
+  "players": "p1"
+ },
  "c64_demo_dutchbreeze": {
   "genre": "demo",
   "players": "p1"
@@ -1900,6 +1908,30 @@ window.GENRE_DATA = {
  },
  "am_zout": {
   "genre": "shooter",
+  "players": "p1"
+ },
+ "am_tiny_pixel_adventure": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_tenebra2": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "am_ooze": {
+  "genre": "platformer",
+  "players": "p1"
+ },
+ "am_yoomp": {
+  "genre": "action",
+  "players": "p1"
+ },
+ "am_shift": {
+  "genre": "puzzle",
+  "players": "p1"
+ },
+ "am_yeet": {
+  "genre": "puzzle",
   "players": "p1"
  }
 };

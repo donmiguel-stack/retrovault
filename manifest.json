@@ -1,19 +1,19 @@
 {
- "generated": "2026-10-10 08:31:15",
- "count": 819,
- "bytes": 315305770,
+ "generated": "2026-10-11 12:20:16",
+ "count": 838,
+ "bytes": 324052235,
  "files": {
   "games.js": {
-   "sha256": "a40b2f68a0ebcebe3b70f7590baa9e5765c0c75ac07833cfe71ebd3a6e5d2160",
-   "size": 141847
+   "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
+   "size": 144588
   },
   "gamepages.js": {
-   "sha256": "3b9165ae2c63000ee7920815f78f146779b3685414e0c77c3bc9282739862379",
-   "size": 326112
+   "sha256": "e430f3a0317071b96119bd44a7d2745bb4a3637af8ce0af110f5fabcd4c0f66f",
+   "size": 330496
   },
   "genres.js": {
-   "sha256": "86aa9b786784a172d413a92a6688f3064ecd93c6f4b6b16d5f581c16627c4861",
-   "size": 30249
+   "sha256": "3fc8b6020a7e6cd6560c3e8078cc0381b31dc49f279b308f66032af58ae3647e",
+   "size": 30742
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,16 +32,16 @@
    "size": 7561
   },
   "i18n.js": {
-   "sha256": "ecd38ffb36f082061af9cb334efb70cd8ed13ba0fc378fbb1ae1468de0559aa6",
-   "size": 104868
+   "sha256": "ea985e6a7ff38bab71cefc23f784b0a1203a61e6e2e7c2d19517f18e6ac51b10",
+   "size": 106334
   },
   "setup-i18n.js": {
    "sha256": "efdadf93a2202a3ce2b56bc89935726603cf7f4da0fd8d7ce1bcbb7ceee12bd6",
    "size": 91342
   },
   "featured.js": {
-   "sha256": "9c91771be5258e502846bb8f77a0402d7e48ee6688b7ad854c11e8b83b03ed37",
-   "size": 122434
+   "sha256": "508c46fc927ef4e98c924e3834bbf1c1f2f60095f02b3c938a516d3cce8f4254",
+   "size": 160322
   },
   "news.js": {
    "sha256": "a9b9b58260185dac210c198324561ee557c5873e01d6c296232dc637c845957c",
@@ -68,8 +68,8 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "2b1ee68aa492997b0af0f62f12f7f361b139e1c487d07cace085019f66e9d34a",
-   "size": 36042
+   "sha256": "f3257ddddd6cb0f55cd219eb68089f0710a5def85a44d4bba9c690bea118ab76",
+   "size": 37384
   },
   "romsources.js": {
    "sha256": "31b3bde39f8e9308870d709ec517bc7aa23f9fb6cbc7040d2cdf7d2607cfcd4d",
@@ -108,8 +108,8 @@
    "size": 5879
   },
   "support.js": {
-   "sha256": "7ff838291d57742e833482d9190ec0df70a68c00d125c37987fffd011e3778e6",
-   "size": 7296
+   "sha256": "c2fc4212625f24580c8158d57ad586199fee6e7897736d505d8bf9811fca5906",
+   "size": 8426
   },
   "store.js": {
    "sha256": "25500093771f09d843fc511300a67f9de79f32f2708f2a1f38b666229547b4e1",
@@ -124,16 +124,16 @@
    "size": 4844
   },
   "teletext.html": {
-   "sha256": "235fd29f50a7bbc0364ec468b2b4080e9d68bcbb2d86fe878aeee117e7942c19",
-   "size": 30941
+   "sha256": "a107c9614ad5ba793f605c849ef33a7508d08b6bd078dd33fec9377e3a9de15e",
+   "size": 31085
   },
   "teletext.js": {
    "sha256": "90ab34de27d8f080f7ad61476d154d628bb4da01662e8f333f0bc524f904dd04",
    "size": 53813
   },
   "app.js": {
-   "sha256": "3fed403bd5d9be81e9a983cb45098b7784d55414aeee0342e323355f65c4f9ed",
-   "size": 99761
+   "sha256": "d9a6ec0b3575bb5f48db4e9b118b484c457d1edfa8a0b9a3adb3c22cbd44dcae",
+   "size": 105708
   },
   "animcovers.js": {
    "sha256": "1a5f73229f91bd065c61ad69525ffc9a1aa05c456d9580618d0d1a0b0c68608c",
@@ -144,20 +144,20 @@
    "size": 4831
   },
   "game.html": {
-   "sha256": "24ead21e1cdbf070734089242b10f3fe77426bd7085928922d1946995bda8959",
-   "size": 8795
+   "sha256": "1e2aa4040ff16a502082f44f5e4063729687b46bd897f5e63be09577148a6272",
+   "size": 8939
   },
   "index.html": {
-   "sha256": "3708e388ded0fbc0555da46451213b93e0792e6ef0441ef68f69bf7a09a815aa",
-   "size": 19180
+   "sha256": "e79c5871337b321f40fe801f15bd19ce68ddfaa819f5b7959cae29dbba188e28",
+   "size": 20544
   },
   "resources.html": {
-   "sha256": "afe9ea832e2308d8d2c8d284bee0b14e0934b1280221a36a8596b97807edf2d0",
-   "size": 13208
+   "sha256": "2ec9e687dc0f34a0a8b45199b24b30fc3d82ee8c895cf6434684e41604431b7e",
+   "size": 13352
   },
   "style.css": {
-   "sha256": "0540510391a35008debd81be81d889060b5f86237239c2e90513b1601a8c5763",
-   "size": 62508
+   "sha256": "59d3a24ea14a51832e3188f70251bde78a841b711ea652467855a5fcb4371d52",
+   "size": 76155
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -168,15 +168,15 @@
    "size": 47666
   },
   "game-page.js": {
-   "sha256": "97fae5742acbc867800342d0d9095730cc7c2e16bd97649dbe1bf7645f9aabbc",
+   "sha256": "b846fd15bee0e66379b60f0ccac94e6e487aa3ce74b463f851cb5bd2c38fb86c",
    "size": 103989
   },
   "catalogue.html": {
-   "sha256": "3dddda1fb7f2df7661ad3b1d3567ae6ba4a6f7e42c530bf223f3f08c579c2334",
-   "size": 42402
+   "sha256": "ec24cb55f3d497d69b1601a698e33b6683ce9c6ef1881e5afae044b6ba3f217d",
+   "size": 43364
   },
   "versions.js": {
-   "sha256": "275124c26ecf1880643e310ba498da3ae7a9ff30ca458299500a376faa78887f",
+   "sha256": "0efdacfc6277737baa5218a383f69e35a9b8633e5fc29fdad191f0b2e773b5bf",
    "size": 1838
   },
   "favicon.ico": {
@@ -212,8 +212,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "476fb00a8d1582b609517ea2d184aa2b609ff8c7d8f6baf37393014b705619f9",
-   "size": 73137
+   "sha256": "890537352cb1ab99844ae3f764dea316c81daf0f385c19cec19168d4ae2f7824",
+   "size": 74602
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -395,6 +395,14 @@
    "sha256": "0ff2b9e26a2db74ac4d25ce6d00dbcbc8a156117420aff59c5b244ea572f86ea",
    "size": 43142
   },
+  "covers/am_demo_mobile.png": {
+   "sha256": "1c4b216f67dc0cf8d4018565e70f0b70918ca8736d54a0d3d9c2ebf83cab897c",
+   "size": 30505
+  },
+  "covers/am_demo_qed.png": {
+   "sha256": "a5a06fde1ba92b47bdac7aa25869ccf228e949d7050dd3200d84d8c1f82b3d55",
+   "size": 69467
+  },
   "covers/am_demo_rinkadink.png": {
    "sha256": "fb18f017d1369f65f48a3aee10b80acc13062372f3634c428123d4adec8ba234",
    "size": 20784
@@ -543,6 +551,10 @@
    "sha256": "82e24ce53e9ffa778432c49253b3dc6f4e0be462f1b36e2ad832cd3554d55761",
    "size": 803421
   },
+  "covers/am_ooze.png": {
+   "sha256": "f449dcd21756c6a0ea78cd55146afbbf5ad820e471ec5e9ed9e9efe12c9577ef",
+   "size": 76378
+  },
   "covers/am_pang.png": {
    "sha256": "6479d9744534a2bb6993fb806fafebbfbc36c5f62defa261a70d91be00f67922",
    "size": 705194
@@ -591,6 +603,10 @@
    "sha256": "3a0844bd0edb5f25a5971acfc2b91dc71e59992edbaa2df371741aceea544cd3",
    "size": 444769
   },
+  "covers/am_shift.png": {
+   "sha256": "6129c7d8578d4e46c2b304055a9a7edba06264988fbd187a35b1b6f8176c3385",
+   "size": 22785
+  },
   "covers/am_skweek.png": {
    "sha256": "33458b6265c703d1935666d7bf4e75af1c45f21418236a6e6bb9b07328781400",
    "size": 750678
@@ -634,6 +650,14 @@
   "covers/am_tanx.png": {
    "sha256": "f2044977d3f0e9673260d95a5cd644452b316523ae4260650587230ba9c05f64",
    "size": 166233
+  },
+  "covers/am_tenebra2.png": {
+   "sha256": "f35ee0a2c4c52feb0983bfeffb83c8cc0f641485c27d2aff3c0f22b852b6fd0d",
+   "size": 14716
+  },
+  "covers/am_tiny_pixel_adventure.png": {
+   "sha256": "cf2dbdcb02c4c92f3cb6bf2d44a28967c963eaa38ba80e1b5d30e5df6f14c10a",
+   "size": 327296
   },
   "covers/am_toado.png": {
    "sha256": "9d044d65a4cf27b247f8beeeebbe3bf1f7d924c7f31f99c3bc4034fd5ae7f86b",
@@ -686,6 +710,14 @@
   "covers/am_xout.png": {
    "sha256": "b8250e04dddaaf34a2e3d3158bf21af6d4225ee203d92b094223e9b2282b74ca",
    "size": 786510
+  },
+  "covers/am_yeet.png": {
+   "sha256": "261a711aa86fa937dc8a3efe384a473fa78828811ca5dca0489c05f1f495ba60",
+   "size": 170455
+  },
+  "covers/am_yoomp.png": {
+   "sha256": "e35ae87834a46a26dd9ceea789d8f8bb78e5e757fdbdb0e31cc2f0ad9be60985",
+   "size": 548164
   },
   "covers/am_zerg.png": {
    "sha256": "42c998a8d352ce268b97e79a2f7577be54341c8f8522b081f8fc35f3215ebd1e",
@@ -2579,6 +2611,30 @@
    "sha256": "c4b698ca4e7f3f2a9a9bc91c9acb7374542bbb569981a1a203bd0b87e1391029",
    "size": 4565
   },
+  "clips/clip_am_bubblebobble.mp4": {
+   "sha256": "1f7b20c7abb1ef6e52d8e68c128bf1106a449f663e7dc2ae2e2c2fc1a9d6c0a7",
+   "size": 216761
+  },
+  "clips/clip_am_deluxe_galaga.mp4": {
+   "sha256": "2b535fdcc5bd5673a44c4fa193ddb915892c973e2be47137b2bc86470e7b5826",
+   "size": 364400
+  },
+  "clips/clip_am_lotusturbo2.mp4": {
+   "sha256": "4b9e31b7994626fea6357b79f4f2b683b382da625b77a063ce16220d7d6c3575",
+   "size": 678277
+  },
+  "clips/clip_am_ohnomorelemmings.mp4": {
+   "sha256": "8b8290df2379a23e9501636a4a1d19838b9366651fa2965af406c8de1bec5439",
+   "size": 180786
+  },
+  "clips/clip_am_stuntcarracer.mp4": {
+   "sha256": "5a7f89fc88ffc926b755269eb73a692a0f9e9d1798dd0fa0673ac6c4d67d86b7",
+   "size": 169890
+  },
+  "clips/clip_am_turrican.mp4": {
+   "sha256": "12e988b79b443b66a9dbad215785059d7d0067d720838b38c51eac57526c8177",
+   "size": 1297724
+  },
   "clips/clip_c64_hb_bagman_strikes_back.mp4": {
    "sha256": "211200dc8a774bb8dbb2c765a4e60ebf68fbf79644bae3f0cf9485f6323132f1",
    "size": 197722
@@ -3027,6 +3083,14 @@
    "sha256": "8a0a45f518bf96233e43259a1498d9c318a2cb7c43cd3cdbb54ea625b12b4b36",
    "size": 901120
   },
+  "homebrew-downloads/amiga_demo_mobile.adf": {
+   "sha256": "8456fb695f1ab9ff30e5e937e13f4981d4c5d87b6b775a74a0492b158ecb4497",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_demo_qed.adf": {
+   "sha256": "88c53a91147482f8307c7418b19cc826d46b60c6b5e8be7d869e9b0433e6de09",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_demo_rinkadink.adf": {
    "sha256": "69c79ef668b037f494c1b010f47416d6dd59129758b35d25845776f5ef026932",
    "size": 901120
@@ -3111,6 +3175,10 @@
    "sha256": "afa0a531f23bd5fb4104f2ee32a2bc9684b3fb3a5dfce1054e3173bda119c221",
    "size": 901120
   },
+  "homebrew-downloads/amiga_shift.adf": {
+   "sha256": "ffd10152f96650b8464c73f7d1ea28df86b5adcb330f1b366ae291e5e522851a",
+   "size": 901120
+  },
   "homebrew-downloads/amiga_space_taxi.adf": {
    "sha256": "bb84f572512dd96b3597c0b072fe9ec0f1bd5ae5763a3aafe87ef760eba6c644",
    "size": 901120
@@ -3137,6 +3205,10 @@
   },
   "homebrew-downloads/amiga_tanx.adf": {
    "sha256": "7a292a08955c39f8fcb7d7117fba3a0044c2868f82cc6e3287defb0707f04fd6",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_tiny_pixel_adventure.adf": {
+   "sha256": "ad0ebb925e845c5b984064e410398992a2fec45ab48e1ff0252df5bd02f9dc5d",
    "size": 901120
   },
   "homebrew-downloads/amiga_toado.adf": {
@@ -3169,6 +3241,10 @@
   },
   "homebrew-downloads/amiga_wizzys_quest.adf": {
    "sha256": "0255189c3ebbed32f43834bd4211dfa6848197d4319c86378dcfcded29c462c7",
+   "size": 901120
+  },
+  "homebrew-downloads/amiga_yeet.adf": {
+   "sha256": "fe52fc8bac2d0d24620bd425023bfc839160a5b5bbd423a9891508098653d2a8",
    "size": 901120
   },
   "homebrew-downloads/amiga_zerg.adf": {

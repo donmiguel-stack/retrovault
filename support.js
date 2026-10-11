@@ -97,6 +97,48 @@ window.SUPPORT_DATA = {
       checked: "2026-08-07" }
   ],
 
+  "am_tiny_pixel_adventure": [
+    { creator: "HooGames2017",
+      url:     "https://hoogames2017.itch.io/tiny-pixel-adventure",
+      note:    "Click download - pay what you want",
+      checked: "2026-10-11" }
+  ],
+
+  "am_tenebra2": [
+    { creator: "Haplo",
+      url:     "https://h4plo.itch.io/tenebra-2",
+      note:    "Click download - pay what you want",
+      checked: "2026-10-11" }
+  ],
+
+  "am_ooze": [
+    { creator: "Haplo & Andy Johns",
+      url:     "https://h4plo.itch.io/ooze",
+      note:    "Click download - pay what you want",
+      checked: "2026-10-11" }
+  ],
+
+  "am_yoomp": [
+    { creator: "zr-games",
+      url:     "https://zr-games.itch.io/amiga-yoomp",
+      note:    "Click download - pay what you want",
+      checked: "2026-10-11" }
+  ],
+
+  "am_shift": [
+    { creator: "Haplo",
+      url:     "https://h4plo.itch.io/shift",
+      note:    "Click download - pay what you want",
+      checked: "2026-10-11" }
+  ],
+
+  "am_yeet": [
+    { creator: "zooperdan",
+      url:     "https://zooperdan.itch.io/yeet",
+      note:    "Click download - pay what you want",
+      checked: "2026-10-11" }
+  ],
+
   "pc_hb_gates": [
     { creator: "Tarjan",
       url:     "https://tarjan.itch.io/gates-of-integrity",

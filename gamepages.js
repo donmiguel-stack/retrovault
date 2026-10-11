@@ -97,6 +97,30 @@ window.GAMEPAGES_DATA = {
    },
    "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
  },
+ "am_demo_mobile": {
+  "input": "joystick",
+  "video": {
+   "id": "oxUMX03gnPA",
+   "title": "Spaceballs - Mobile : Destination Unknown  -= Amiga 50fps =-"
+  },
+  "history": {
+   "text": "Spaceballs' entry at The Gathering 1993 in Lillestrøm, Norway, third in the Amiga demo competition — released four months after the same group's State of the Art had won The Party 1992. Code by Lone Starr, graphics by TMB Designs and a soundtrack, “Canal Green”, by Audiomonster. It moves through filled-vector 3D scenes — rows of solid blocks and corridors flown through at speed — with the credits running along the bottom of the screen.",
+   "source": "https://demozoo.org/productions/4220/"
+  },
+  "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
+ "am_demo_qed": {
+  "input": "joystick",
+  "video": {
+   "id": "Ubd1kz3KUlg",
+   "title": "Talent - Q.E.D - Amiga Demo (50 FPS)"
+  },
+  "history": {
+   "text": "Talent's demo for The Gathering 1993, fourth in the Amiga demo competition. Code by Stripe the Gremlin, music by Jukebox, Djengis Khan and Ogier Le Petit, and guest graphics by Kekken of Stone Arts. It runs from spinning filled-vector shapes and credit screens into a checkerboard-floor greetings part that promises “the fastest greetings list ever”. Talent came back to The Gathering a year later with the AGA sequel Q.E.D. II.",
+   "source": "https://demozoo.org/productions/4221/"
+  },
+  "note": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over."
+ },
  "c64_demo_dutchbreeze": {
    "input": "keyboard",
    "video": {
@@ -6061,6 +6085,63 @@ window.GAMEPAGES_DATA = {
   },
   "history": {
    "text": "Rainbow Arts' follow-up to X-Out, this time above water and openly in debt to R-Type – six long levels, heavy parallax, and a drone system of its own."
+  }
+ },
+ "am_tiny_pixel_adventure": {
+  "input": "joystick",
+  "video": {
+   "id": "EtLn0JJQ6zo",
+   "title": "Commodore Amiga -=Tiny Pixel Adventure=- full version update 06.10.2026"
+  },
+  "history": {
+   "text": "A modern OCS platformer by HooGames2017, first released in 2024 and still being updated – the build here is the 6 October 2026 update. Stomp what can be stomped, shoot the rest with a limited quiver of arrows, and run errands for a key to the next area."
+  }
+ },
+ "am_tenebra2": {
+  "input": "joystick",
+  "history": {
+   "text": "Haplo's sequel to Tenebra, released on the Amiga in 2023 after the 8-bit versions – 35 levels of guiding a man who will not step into the dark, now with a portal gun. The disk asks first: press Y for the classic non-interlaced look (recommended on an A500), N for the enhanced interlaced one."
+  }
+ },
+ "am_ooze": {
+  "input": "joystick",
+  "video": {
+   "id": "-oLd2ipXqa0",
+   "title": "Longplay OOZE: The Escape - AMIGA - 720"
+  },
+  "history": {
+   "text": "Code by Haplo, concept and graphics by Andy Johns – a ZX Spectrum game that went to the C64 and then to the Amiga in 2023, with a map almost twice the size. Ooze flips gravity to get past the robot guards. Press S to switch between music and sound effects."
+  }
+ },
+ "am_yoomp": {
+  "input": "joystick",
+  "model": "A500P_STOCK",
+  "video": {
+   "id": "ERRZsqJN1y0",
+   "title": "Amiga Yoomp!"
+  },
+  "history": {
+   "text": "zr-games' Amiga version of the C64 and Atari 8-bit Yoomp!: a ball bouncing through textured 3D tubes, 27 levels, two soundtracks by MCH. PAL only and wants a real Kickstart: on the shelf's default A500 profile it stops at \"NTSC not supported!\", and under AROS it never gets past its loader, so it runs on Kickstart 1.3 with the A500+ (ECS, 1MB chip) profile."
+  }
+ },
+ "am_shift": {
+  "input": "joystick",
+  "video": {
+   "id": "GT0xH4ZsOQw",
+   "title": "Commodore Amiga -=Shift=-"
+  },
+  "history": {
+   "text": "Haplo's 2024 conversion of Antony Lavelle's Armor Games puzzle-platformer, made with Andy Johns and MarukPa: black and white trade places at the push of a button. 45 levels on the Amiga, one of them secret. R restarts a level, M toggles music."
+  }
+ },
+ "am_yeet": {
+  "input": "joystick",
+  "video": {
+   "id": "TwIkLO8WODY",
+   "title": "Commodore Amiga -=YEET=-"
+  },
+  "history": {
+   "text": "A 2025 rune puzzle by zooperdan, music by mA2E: push runes off the edge of the board until exactly one is left. 50 puzzles, written to run on a stock A500 with 512K and Kickstart 1.3."
   }
  }
 };

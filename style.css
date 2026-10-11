@@ -906,3 +906,109 @@ html[lang="ja"] .c64ad-scroller b{font-size:32px;letter-spacing:2px;}
 .adult-gate p{margin:0 0 8px;}
 .adult-gate button{margin-right:8px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);cursor:pointer;font:inherit;}
 .adult-gate .adult-yes{background:#b3261e;color:#fff;border-color:#b3261e;}
+
+/* Amiga shelf demoscene banner (2026-10-11) - amDemosceneBlock() in app.js,
+   data in FEATURED_DATA.amdemoscene. Amiga orange like the shelf chip, with
+   a strip of copper bars across the top: the raster-colour trick nearly
+   every Amiga demo opened with, slowly scrolling the way a Copper list
+   re-colours lines on the real machine. Layout: header, three fact boxes,
+   then a stage - party video in the centre, three demo covers each side -
+   and a two-column link list underneath. Side tiles are stretched to the
+   video's height (grid rows of 1fr), and each cover is a 2:3 portrait
+   frame whose width follows from that height. */
+.demo-strip{
+  grid-column:1/-1; margin:16px 0 10px; padding:0 20px 20px; position:relative;
+  background:var(--surface); border-radius:12px; overflow:hidden;
+  background-image:linear-gradient(180deg, color-mix(in srgb, var(--amiga) 7%, transparent), transparent 220px);
+  border:2px solid color-mix(in srgb, var(--amiga) 60%, transparent);
+}
+.demo-copper{
+  height:8px; margin:0 -20px 16px;
+  background:linear-gradient(90deg,#1a0b4d,#5b1fa6,#c2266b,#ff6a2b,#ffd23d,#fff6c8,#ffd23d,#ff6a2b,#c2266b,#5b1fa6,#1a0b4d);
+  background-size:200% 100%; animation:demoCopper 6s linear infinite;
+}
+@keyframes demoCopper{from{background-position:0 0;}to{background-position:-200% 0;}}
+.demo-head{margin-bottom:14px;}
+.demo-kicker{
+  margin:0 0 4px; font-size:11px; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--amiga);
+}
+.demo-head h3{margin:0 0 6px; font-size:19px; font-weight:600;}
+.demo-intro{margin:0; font-size:13px; line-height:1.6; color:var(--text-dim); max-width:980px;}
+.demo-facts{display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin:0 0 18px;}
+.demo-factbox{
+  display:flex; flex-direction:column; gap:3px; padding:10px 14px;
+  background:var(--surface-2); border-radius:10px;
+  border-left:3px solid var(--amiga);
+}
+.demo-factbox b{
+  font-family:ui-monospace,Menlo,Consolas,monospace; font-size:22px; font-weight:700;
+  color:var(--amiga); line-height:1.15;
+}
+.demo-factbox span{font-size:12.5px; line-height:1.5; color:var(--text-dim);}
+
+/* the stage: covers | video | covers */
+.demo-stage{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2.1fr) minmax(0,1fr);
+  gap:14px; margin:0 0 20px; align-items:stretch;
+}
+.demo-side{display:grid; grid-template-rows:repeat(3, minmax(0,1fr)); gap:10px; min-height:0;}
+.demo-pick{
+  display:flex; gap:12px; min-height:0; overflow:hidden;
+  background:var(--surface-2); border:1px solid var(--border); border-radius:10px;
+  color:inherit; text-decoration:none; transition:border-color .15s, background .15s;
+}
+.demo-pick:hover{border-color:color-mix(in srgb, var(--amiga) 75%, transparent); background:color-mix(in srgb, var(--amiga) 6%, var(--surface-2));}
+.demo-pick-thumb{position:relative; height:100%; aspect-ratio:2/3; flex:none; background:#000; overflow:hidden;}
+.demo-pick-thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s;}
+.demo-pick:hover .demo-pick-thumb img{transform:scale(1.05);}
+.demo-pick-text{display:flex; flex-direction:column; justify-content:center; gap:2px; min-width:0; padding:8px 10px 8px 0;}
+.demo-pick-year{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12px; font-weight:700; color:var(--amiga);}
+.demo-pick-text b{font-size:14.5px; font-weight:600; line-height:1.25;}
+.demo-pick-group{font-size:12px; color:var(--text-mute);}
+.demo-pick-fact{font-size:11px; line-height:1.35; color:var(--text-dim); margin-top:2px;}
+.demo-video{margin:0; display:flex; flex-direction:column; gap:7px; min-width:0;}
+.demo-video-frame{
+  position:relative; width:100%; aspect-ratio:16/9; background:#000;
+  border-radius:10px; overflow:hidden; box-shadow:0 8px 28px rgba(0,0,0,.45);
+}
+.demo-video-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
+.demo-video-cap{font-size:12px; line-height:1.5; color:var(--text-mute); text-align:center;}
+
+/* links under the stage */
+.demo-links{display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:20px;}
+.demo-links h4{
+  margin:0 0 8px; font-size:11px; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--amiga);
+}
+.demo-links-read .demo-link-list{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:8px;}
+.demo-links-sites .demo-link-list{display:grid; gap:8px;}
+.demo-link{
+  display:flex; flex-direction:column; gap:3px; padding:9px 12px;
+  background:var(--surface-2); border-radius:8px; border-left:3px solid var(--border);
+  text-decoration:none; color:inherit; transition:border-color .15s;
+}
+.demo-link:hover{border-left-color:var(--amiga);}
+.demo-link-name{font-size:13px; font-weight:600; color:var(--text);}
+.demo-link-src{margin-left:8px; font-size:11px; font-weight:500; color:var(--text-mute);}
+.demo-link-what{font-size:12px; line-height:1.45; color:var(--text-dim);}
+
+@media (max-width:1150px){
+  .demo-stage{grid-template-columns:1fr;}
+  .demo-video{order:-1;}
+  .demo-side{grid-template-rows:none; grid-template-columns:repeat(3, minmax(0,1fr));}
+  .demo-pick{height:120px;}
+  .demo-links{grid-template-columns:1fr;}
+}
+@media (max-width:900px){ .demo-facts{grid-template-columns:1fr;} }
+@media (max-width:700px){
+  .demo-strip{padding:0 14px 16px;}
+  .demo-copper{margin:0 -14px 14px;}
+  .demo-side{grid-template-columns:1fr;}
+  .demo-pick{height:104px;}
+  .demo-links-read .demo-link-list{grid-template-columns:1fr;}
+}
+@media (prefers-reduced-motion: reduce){
+  .demo-copper{animation:none;}
+  .demo-pick:hover .demo-pick-thumb img{transform:none;}
+}

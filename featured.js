@@ -511,6 +511,68 @@ window.FEATURED_DATA = {
           ja: "Excess が 2020ねんに Picross を C64 に もってきました。もともとの Videopac や C64 の たなには なかった ジャンルです。のちに ほんものの はこいり カートリッジとして はつばいされました。" } }
   ],
 
+  // ---- Homebrew, Amiga shelf ---------------------------------------
+  // Same shape as "pchomebrew" below, shown only on the Amiga shelf
+  // (placeBlocks() in app.js gates it on state.platform === "Amiga").
+  // This is the "still being written" half of the shelf: the 1990s PD and
+  // shareware disks already fill the grid, so these six are modern releases
+  // only (2023-2026). Which six: itch.io's own popular sort for free Amiga
+  // games (itch.io/games/free/tag-amiga, checked 2026-10-11), first six that
+  // are original games - not ports of commercial arcade/console titles -
+  // single-disk, and run on the shelf's stock A500 under AROS. Skipped on
+  // the way down: Bruce Lee, Castlevania AGA, Turrican II AGA, OutRun,
+  // Wonderboy (ports); Nelumbo (Windows only); The Lost Pixel (AGA);
+  // Tiger Claw (no Amiga build on its itch page); Dr. Dangerous and Space
+  // Cavern Blaster (boot on Kickstart 1.3 only - crash/blank under AROS, so
+  // public visitors couldn't play them). Haplo is on it three times because
+  // that is what the list says. Tenebra 2, Ooze and Yoomp! have paid
+  // physical editions, so they play locally but aren't hosted - see
+  // downloads.js.
+  amhomebrew: [
+    { id: "am_tiny_pixel_adventure",
+      blurb: { en: "Released in 2024 and still being updated - the build on this shelf is from this month. HooGames2017's bright OCS platformer: stomp what you can, shoot the rest with a quiver that never quite holds enough, and fetch seven jars of honey for a key.",
+          nl: "Uitgebracht in 2024 en nog altijd in ontwikkeling - de versie op deze plank is van deze maand. Een kleurrijke OCS-platformer van HooGames2017: spring op wat kan, schiet de rest neer met een pijlkoker die nooit helemaal vol genoeg is, en haal zeven potten honing op voor een sleutel.",
+          de: "2024 erschienen und immer noch in Arbeit - die Fassung in diesem Regal ist von diesem Monat. HooGames2017s bunter OCS-Plattformer: spring auf, was sich zertreten lässt, schieß den Rest mit einem Köcher ab, der nie ganz reicht, und hol sieben Gläser Honig für einen Schlüssel.",
+          fr: "Sorti en 2024 et toujours mis à jour - la version de ce rayon date de ce mois-ci. Le jeu de plates-formes OCS tout en couleurs de HooGames2017 : écrasez ce qui peut l'être, tirez sur le reste avec un carquois jamais assez rempli, et rapportez sept pots de miel contre une clé.",
+          pt: "Lançado em 2024 e ainda recebendo atualizações - a versão desta prateleira é deste mês. O jogo de plataforma OCS colorido da HooGames2017: pule em cima do que der, acerte o resto com uma aljava que nunca tem flechas suficientes e busque sete potes de mel em troca de uma chave.",
+          ja: "2024ねんに でて、いまも アップデートが つづいています。この たなの バージョンは こんげつの ものです。HooGames2017 の カラフルな OCS アクションです。ふめる てきは ふんで、のこりは かずの すくない やで うち、ハチミツを 7つ あつめて カギを もらいます。" } },
+    { id: "am_tenebra2",
+      blurb: { en: "Haplo's dark puzzle sequel, on the Amiga since 2023. A man who refuses to set foot in the dark, thirty-five chapters to lead him through, and now a portal gun. Press Y at the first prompt for the classic look.",
+          nl: "Haplo's duistere puzzelvervolg, sinds 2023 op de Amiga. Een man die weigert een voet in het donker te zetten, vijfendertig hoofdstukken om hem doorheen te loodsen, en nu ook een portaalpistool. Druk bij de eerste vraag op Y voor de klassieke look.",
+          de: "Haplos düstere Rätsel-Fortsetzung, seit 2023 auf dem Amiga. Ein Mann, der keinen Fuß ins Dunkle setzt, fünfunddreißig Kapitel, durch die du ihn lotsen musst, und jetzt auch eine Portalkanone. Drück bei der ersten Frage Y für den klassischen Look.",
+          fr: "La suite sombre du jeu de réflexion de Haplo, sur Amiga depuis 2023. Un homme qui refuse de poser le pied dans le noir, trente-cinq chapitres pour l'en sortir, et désormais un pistolet à portails. Appuyez sur Y à la première question pour l'aspect classique.",
+          pt: "A sombria continuação de quebra-cabeça de Haplo, no Amiga desde 2023. Um homem que se recusa a pisar no escuro, trinta e cinco capítulos para guiá-lo e, agora, uma arma de portais. Aperte Y na primeira pergunta para o visual clássico.",
+          ja: "Haplo の くらい パズルの つづきで、2023ねんから Amiga で あそべます。くらやみに あしを ふみいれない おとこを、35の しょうで みちびきます。こんかいは ポータルガンも あります。さいしょの しつもんで Y を おすと クラシックな みためで あそべます。" } },
+    { id: "am_ooze",
+      blurb: { en: "A Spectrum game that kept growing: Haplo and Andy Johns took it to the C64, then gave the 2023 Amiga version a map almost twice the size. You are a green blob that can flip gravity, and the guards are robots.",
+          nl: "Een Spectrum-spel dat bleef groeien: Haplo en Andy Johns brachten het naar de C64 en gaven de Amiga-versie uit 2023 daarna een kaart die bijna twee keer zo groot is. Jij bent een groene klodder die de zwaartekracht kan omdraaien, en de bewakers zijn robots.",
+          de: "Ein Spectrum-Spiel, das immer weiter wuchs: Haplo und Andy Johns brachten es auf den C64 und gaben der Amiga-Fassung von 2023 dann eine fast doppelt so große Karte. Du bist ein grüner Klecks, der die Schwerkraft umdrehen kann, und die Wachen sind Roboter.",
+          fr: "Un jeu Spectrum qui n'a pas cessé de grandir : Haplo et Andy Johns l'ont porté sur C64, puis ont donné à la version Amiga de 2023 une carte presque deux fois plus grande. Vous êtes une goutte verte capable d'inverser la gravité, et les gardes sont des robots.",
+          pt: "Um jogo de Spectrum que não parou de crescer: Haplo e Andy Johns o levaram ao C64 e depois deram à versão de Amiga de 2023 um mapa quase duas vezes maior. Você é uma gosma verde que inverte a gravidade, e os guardas são robôs.",
+          ja: "ZX Spectrum から はじまり、どんどん おおきく なった ゲームです。Haplo と Andy Johns が C64 に いしょくし、2023ねんの Amiga ばんでは マップを ほぼ 2ばいに しました。あなたは じゅうりょくを ひっくりかえせる みどりの スライムで、みはりは ロボットです。" } },
+    { id: "am_yoomp",
+      blurb: { en: "A beach ball bouncing down a textured 3D tube, twenty-seven levels long. zr-games rebuilt the C64 and Atari 8-bit Yoomp! for the 16-bit machine, and were still adding music to it in 2025.",
+          nl: "Een strandbal die door een getextureerde 3D-buis stuitert, zevenentwintig levels lang. zr-games bouwde de C64- en Atari 8-bit-Yoomp! opnieuw op voor de 16-bitmachine, en voegde er in 2025 nog muziek aan toe.",
+          de: "Ein Wasserball, der durch eine texturierte 3D-Röhre hüpft, siebenundzwanzig Level lang. zr-games hat das Yoomp! von C64 und Atari 8-Bit für die 16-Bit-Maschine neu gebaut und 2025 noch Musik nachgeliefert.",
+          fr: "Un ballon de plage qui rebondit dans un tube 3D texturé, sur vingt-sept niveaux. zr-games a reconstruit le Yoomp! du C64 et de l'Atari 8 bits pour la machine 16 bits, et y ajoutait encore de la musique en 2025.",
+          pt: "Uma bola de praia quicando por um tubo 3D texturizado, ao longo de vinte e sete fases. A zr-games reconstruiu o Yoomp! do C64 e do Atari 8 bits para a máquina de 16 bits, e ainda estava acrescentando músicas em 2025.",
+          ja: "ビーチボールが もようの ついた 3D の チューブを はずみながら すすむ、27ステージの ゲームです。zr-games が C64 と Atari 8ビットの Yoomp! を 16ビットの マシンむけに つくりなおし、2025ねんにも おんがくを ついか していました。" } },
+    { id: "am_shift",
+      blurb: { en: "A Flash puzzler rebuilt for machines from the eighties. Press a button and black and white trade places, so the floor you stand on becomes the wall you fall past. Haplo's 2024 Amiga version has forty-five levels, one of them secret.",
+          nl: "Een Flash-puzzelspel, opnieuw gebouwd voor machines uit de jaren tachtig. Eén druk op de knop en zwart en wit wisselen van plaats: de vloer waar je op staat wordt de muur waar je langs valt. Haplo's Amiga-versie uit 2024 heeft vijfenveertig levels, waarvan één geheim.",
+          de: "Ein Flash-Rätselspiel, neu gebaut für Rechner aus den Achtzigern. Ein Knopfdruck, und Schwarz und Weiß tauschen die Plätze - der Boden, auf dem du stehst, wird zur Wand, an der du vorbeifällst. Haplos Amiga-Fassung von 2024 hat fünfundvierzig Level, eines davon geheim.",
+          fr: "Un jeu de réflexion Flash reconstruit pour des machines des années quatre-vingt. Une pression sur un bouton et le noir et le blanc échangent leur place : le sol sur lequel vous êtes devient le mur le long duquel vous tombez. La version Amiga de Haplo, en 2024, compte quarante-cinq niveaux, dont un secret.",
+          pt: "Um quebra-cabeça de Flash reconstruído para máquinas dos anos oitenta. Aperte um botão e o preto e o branco trocam de lugar: o chão em que você pisa vira a parede por onde você cai. A versão de Amiga de Haplo, de 2024, tem quarenta e cinco fases, uma delas secreta.",
+          ja: "Flash の パズルゲームを、80ねんだいの マシンむけに つくりなおしました。ボタンを おすと くろと しろが いれかわり、たっていた ゆかが、おちていく さきの かべに なります。Haplo の 2024ねんの Amiga ばんは 45ステージで、その うち 1つは ひみつの ステージです。" } },
+    { id: "am_yeet",
+      blurb: { en: "Zooperdan's 2025 rune puzzle: push runes off the edge of the board until exactly one is left. Fifty puzzles, a stock A500 with half a megabyte, and one wrong push is all it takes to trap yourself.",
+          nl: "Het runenpuzzelspel van zooperdan uit 2025: duw runen van de rand van het bord tot er precies één over is. Vijftig puzzels, een standaard A500 met een halve megabyte, en één verkeerde duw is genoeg om jezelf vast te zetten.",
+          de: "Zooperdans Runen-Rätsel von 2025: Schieb Runen über den Rand des Bretts, bis genau eine übrig ist. Fünfzig Rätsel, ein serienmäßiger A500 mit einem halben Megabyte, und ein falscher Schubs reicht, um dich festzusetzen.",
+          fr: "Le casse-tête de runes de zooperdan, sorti en 2025 : poussez les runes hors du plateau jusqu'à ce qu'il n'en reste qu'une. Cinquante énigmes, un A500 de série avec un demi-mégaoctet, et une seule mauvaise poussée suffit à vous coincer.",
+          pt: "O quebra-cabeça de runas de zooperdan, de 2025: empurre runas para fora do tabuleiro até sobrar exatamente uma. Cinquenta desafios, um A500 de fábrica com meio megabyte, e um único empurrão errado basta para você ficar sem saída.",
+          ja: "zooperdan の 2025ねんの ルーン パズルです。ばんの はしから ルーンを おしだして、さいごに 1つだけ のこします。パズルは 50もん、ふつうの A500 と 0.5メガバイトで うごきます。1かい おしまちがえる だけで、てづまりに なります。" } }
+  ],
+
   // ---- Homebrew, PC shelf ------------------------------------------
   // Same shape as "c64homebrew" above (id + blurb, no "shot" - the right-hand
   // slot is clip -> cover, there's no curated screenshot for these), shown
@@ -807,6 +869,214 @@ window.FEATURED_DATA = {
         ja: "なんじゅうねんにも わたる Amiga おんがくと デモシーンの ほぞんです。UnExoticA の サウンドトラックの リップと、この たなの Megamaid の でどころ である Janeway の リリース データベースが あります。"
       } }
   ],
+
+  // ---- Demoscene, Amiga shelf --------------------------------------------
+  // Layout (reworked same day): party video in the centre, three demo
+  // covers either side, links to articles and Amiga demo sites below.
+  // The Amiga shelf's own demoscene banner (2026-10-11): six landmark demos
+  // in date order, from the first trackmo (1990) to a 2013 compo winner
+  // still written for the same unexpanded A500 - the point being how big
+  // and how long-lived demo-making on this machine was. Megamaid is left
+  // out on purpose (it carries the 18+ label). Shown only on the Amiga
+  // shelf - amDemosceneBlock() / placeBlocks() in app.js.
+  //
+  // "id" must match an id in games.js. The still is covers/<id>.png (the
+  // same frame the shelf card uses); "pos" is an optional object-position
+  // for a cover that isn't landscape (Arte's is Ra's portrait, 3:4).
+  // Each tile links to the demo's game page; the blurb is its tooltip.
+  // "fact" is the party
+  // placing, sourced to Demozoo (see the game pages' history paragraphs).
+  // The panel's own text lives here too, not in i18n.js, so the whole
+  // banner is editable in one place.
+  amdemoscene: {
+    kicker: { en: "Made on the Amiga", nl: "Gemaakt op de Amiga", de: "Gemacht auf dem Amiga",
+              fr: "Né sur Amiga", pt: "Feito no Amiga", ja: "Amiga で うまれた" },
+    head: { en: "The demoscene: the Amiga's own art form",
+            nl: "De demoscene: de eigen kunstvorm van de Amiga",
+            de: "Die Demoszene: die Kunstform des Amiga",
+            fr: "La demoscene : l'art propre à l'Amiga",
+            pt: "A demoscene: a forma de arte do Amiga",
+            ja: "デモシーン ― Amiga の アート" },
+    intro: { en: "Demos began as the signature screens crackers put in front of copied games, and on the Amiga they became the main event. Groups of mostly teenage coders, artists and musicians made shows that ran in real time on a stock A500, swapped their disks by post and took them to parties where thousands watched the competitions on a big screen. Six milestones, from the first trackmo to a 2013 winner still written for the same machine - every one of them runs right here in your browser.",
+             nl: "Demo's begonnen als de signatuurschermpjes die crackers voor gekopieerde spellen zetten, en op de Amiga werden ze de hoofdzaak. Groepen van vooral tieners - programmeurs, tekenaars en muzikanten - maakten shows die realtime draaiden op een standaard A500, ruilden hun diskettes per post en namen ze mee naar party's waar duizenden de wedstrijden op een groot scherm volgden. Zes mijlpalen, van de eerste trackmo tot een winnaar uit 2013 die nog altijd voor dezelfde machine is geschreven - ze draaien allemaal hier in je browser.",
+             de: "Demos begannen als die Signaturbildschirme, die Cracker vor kopierte Spiele setzten, und auf dem Amiga wurden sie zur Hauptsache. Gruppen von meist jugendlichen Codern, Grafikern und Musikern bauten Shows, die in Echtzeit auf einem Serien-A500 liefen, tauschten ihre Disketten per Post und brachten sie zu Partys, auf denen Tausende die Wettbewerbe auf der Großleinwand verfolgten. Sechs Meilensteine, vom ersten Trackmo bis zu einem Sieger von 2013, der immer noch für dieselbe Maschine geschrieben wurde - alle laufen direkt hier im Browser.",
+             fr: "Les démos sont nées des écrans de signature que les crackers plaçaient devant les jeux copiés, et sur Amiga elles sont devenues l'événement principal. Des groupes de codeurs, graphistes et musiciens, souvent adolescents, créaient des spectacles qui tournaient en temps réel sur un A500 de série, s'échangeaient leurs disquettes par la poste et les emportaient dans des parties où des milliers de personnes suivaient les compétitions sur grand écran. Six jalons, du premier trackmo à un vainqueur de 2013 toujours écrit pour la même machine - tous se lancent ici même, dans votre navigateur.",
+             pt: "As demos nasceram das telas de assinatura que os crackers colocavam na frente dos jogos copiados, e no Amiga viraram a atração principal. Grupos de programadores, artistas e músicos, quase todos adolescentes, criavam shows que rodavam em tempo real num A500 padrão, trocavam disquetes pelo correio e os levavam a parties onde milhares assistiam às competições num telão. Seis marcos, do primeiro trackmo a um vencedor de 2013 ainda escrito para a mesma máquina - todos rodam aqui mesmo no seu navegador.",
+             ja: "デモは、クラッカーが コピーした ゲームの まえに つけた サインの がめんから はじまりました。Amiga では それが しゅやくに なりました。おもに 10だいの プログラマーや えかき、おんがくかの グループが、ふつうの A500 で リアルタイムに うごく ショーを つくり、ディスクを ゆうびんで こうかんして、パーティーに もっていきました。そこでは なんぜんにんもの ひとが おおきな スクリーンで コンテストを みました。さいしょの トラックモから、いまも おなじ マシンの ために つくられた 2013ねんの ゆうしょうさくまで、6つの だいじな さくひんです。どれも この ブラウザで うごきます。" },
+    // Three headline numbers under the intro. Sources: The Party 1992
+    // attendance - exotica.org.uk/wiki/The_Party_'92; the heritage lists -
+    // en.wikipedia.org/wiki/Demoscene (Finland 2020, Germany & Poland 2021,
+    // Netherlands 2023, Sweden & France 2025).
+    facts: [
+      { big: { en: "2,500", nl: "2.500", de: "2.500", fr: "2 500", pt: "2.500", ja: "2500にん" },
+        text: { en: "visitors at The Party 1992 in Aars, Denmark - the party State of the Art won",
+                nl: "bezoekers op The Party 1992 in Aars, Denemarken - de party die State of the Art won",
+                de: "Besucher auf The Party 1992 in Aars, Dänemark - der Party, die State of the Art gewann",
+                fr: "visiteurs à The Party 1992 à Aars, au Danemark - la party remportée par State of the Art",
+                pt: "visitantes na The Party 1992 em Aars, Dinamarca - a party que State of the Art venceu",
+                ja: "1992ねん、デンマークの Aars で ひらかれた The Party に きた ひと。State of the Art が ゆうしょうした パーティーです。" } },
+      { big: { en: "UNESCO", nl: "UNESCO", de: "UNESCO", fr: "UNESCO", pt: "UNESCO", ja: "UNESCO" },
+        text: { en: "the demoscene is listed as intangible cultural heritage in Finland, Germany, Poland, the Netherlands, Sweden and France",
+                nl: "de demoscene staat als immaterieel erfgoed op de lijsten van Finland, Duitsland, Polen, Nederland, Zweden en Frankrijk",
+                de: "die Demoszene steht als immaterielles Kulturerbe auf den Listen von Finnland, Deutschland, Polen, den Niederlanden, Schweden und Frankreich",
+                fr: "la demoscene figure au patrimoine culturel immatériel de la Finlande, de l'Allemagne, de la Pologne, des Pays-Bas, de la Suède et de la France",
+                pt: "a demoscene é patrimônio cultural imaterial na Finlândia, Alemanha, Polônia, Holanda, Suécia e França",
+                ja: "デモシーンは フィンランド、ドイツ、ポーランド、オランダ、スウェーデン、フランスで むけいぶんかいさんに なっています。" } },
+      { big: { en: "7 MHz", nl: "7 MHz", de: "7 MHz", fr: "7 MHz", pt: "7 MHz", ja: "7MHz" },
+        text: { en: "is the whole processor budget: every one of these demos runs on a stock A500's 68000, straight from a floppy",
+                nl: "is het hele processorbudget: elk van deze demo's draait op de 68000 van een standaard A500, rechtstreeks vanaf diskette",
+                de: "ist das gesamte Prozessorbudget: Jede dieser Demos läuft auf dem 68000 eines Serien-A500, direkt von Diskette",
+                fr: "c'est tout le budget processeur : chacune de ces démos tourne sur le 68000 d'un A500 de série, directement depuis une disquette",
+                pt: "é todo o orçamento de processador: cada uma destas demos roda no 68000 de um A500 padrão, direto do disquete",
+                ja: "これが CPU の すべてです。この デモは どれも、ふつうの A500 の 68000 で、ディスクから そのまま うごきます。" } }
+    ],
+    // The centre of the banner (2026-10-11, Mike's pick): party footage on
+    // Vimeo, uploaded by Teodor Bjerrang (vimeo.com/teodorb), who also wrote
+    // the teodor.no article linked below. The uploader's own title is "The
+    // Gathering 93?" - question mark included - so the caption says
+    // "believed to be" rather than stating it. Unlisted video: "h" is the
+    // privacy hash from the share link, and the player needs it.
+    video: { vimeo: "198047567", h: "29fd85005b",
+      caption: { en: "Party footage shared by Teodor Bjerrang, believed to be The Gathering 1993 in Lillestrøm, Norway.",
+                 nl: "Partybeelden gedeeld door Teodor Bjerrang, vermoedelijk van The Gathering 1993 in Lillestrøm, Noorwegen.",
+                 de: "Partyaufnahmen von Teodor Bjerrang, vermutlich von The Gathering 1993 in Lillestrøm, Norwegen.",
+                 fr: "Images de party partagées par Teodor Bjerrang, sans doute The Gathering 1993 à Lillestrøm, en Norvège.",
+                 pt: "Imagens de party compartilhadas por Teodor Bjerrang, provavelmente da The Gathering 1993 em Lillestrøm, Noruega.",
+                 ja: "Teodor Bjerrang が こうかいした パーティーの えいぞうです。1993ねんに ノルウェーの Lillestrøm で ひらかれた The Gathering と おもわれます。" } },
+    // Links beside the demos: articles first, then the Amiga-demo databases.
+    // Exotica (Janeway's home) is already in the shelf's community carousel,
+    // so the Janeway entry here links straight to the database itself.
+    linkHeads: {
+      read:  { en: "Read more", nl: "Meer lezen", de: "Weiterlesen", fr: "En savoir plus", pt: "Leia mais", ja: "もっと よむ" },
+      sites: { en: "Amiga demo sites", nl: "Amiga-demosites", de: "Amiga-Demo-Seiten", fr: "Sites de démos Amiga", pt: "Sites de demos de Amiga", ja: "Amiga デモの サイト" }
+    },
+    links: [
+      { group: "read", name: "A history of the Amiga, part 9: The demo scene", src: "Ars Technica",
+        url: "https://arstechnica.com/gadgets/2013/04/a-history-of-the-amiga-part-9-the-demo-scene/",
+        what: { en: "How the scene grew from crack intros into an art form, from Jeremy Reimer's Amiga history series (2013).",
+                nl: "Hoe de scene uitgroeide van crack-intro's tot een kunstvorm, uit de Amiga-geschiedenisreeks van Jeremy Reimer (2013).",
+                de: "Wie die Szene aus Crack-Intros zur Kunstform wurde - aus Jeremy Reimers Amiga-Geschichtsreihe (2013).",
+                fr: "Comment la scène est passée des cracktros à une forme d'art, dans la série de Jeremy Reimer sur l'histoire de l'Amiga (2013).",
+                pt: "Como a cena passou de crack intros a forma de arte, na série de Jeremy Reimer sobre a história do Amiga (2013).",
+                ja: "クラックイントロから アートに なるまでの シーンの れきし。Jeremy Reimer の Amiga れきし シリーズ(2013ねん)です。" } },
+      { group: "read", name: "The Demo Scene", src: "teodor.no",
+        url: "https://www.teodor.no/commodore/the-demo-scene",
+        what: { en: "A first-hand memoir by the man behind the video: Alcatraz and other groups, Amega 1991 and The Gathering 1993-94.",
+                nl: "Een herinnering uit de eerste hand van de maker van de video: Alcatraz en andere groepen, Amega 1991 en The Gathering 1993-94.",
+                de: "Erinnerungen aus erster Hand vom Mann hinter dem Video: Alcatraz und andere Gruppen, Amega 1991 und The Gathering 1993-94.",
+                fr: "Les souvenirs de première main de l'auteur de la vidéo : Alcatraz et d'autres groupes, Amega 1991 et The Gathering 1993-94.",
+                pt: "Memórias em primeira mão de quem compartilhou o vídeo: Alcatraz e outros grupos, Amega 1991 e The Gathering 1993-94.",
+                ja: "この えいぞうの もちぬしが じぶんで かいた おもいで。Alcatraz などの グループ、Amega 1991、The Gathering 1993-94。" } },
+      { group: "read", name: "Amiga demos", src: "Wikipedia",
+        url: "https://en.wikipedia.org/wiki/Amiga_demos",
+        what: { en: "The overview: where Amiga demos came from, the groups, the parties and the tricks.",
+                nl: "Het overzicht: waar Amiga-demo's vandaan kwamen, de groepen, de party's en de trucs.",
+                de: "Der Überblick: woher Amiga-Demos kamen, die Gruppen, die Partys und die Tricks.",
+                fr: "La vue d'ensemble : d'où viennent les démos Amiga, les groupes, les parties et les astuces.",
+                pt: "O panorama: de onde vieram as demos de Amiga, os grupos, as parties e os truques.",
+                ja: "Amiga デモの まとめ。どこから うまれたか、グループ、パーティー、わざ。" } },
+      { group: "read", name: "Amiga34 demoscene talk", src: "SlideShare",
+        url: "https://www.slideshare.net/slideshow/amiga-34-demoscene-talk-by-noname-and-dascon/183594684",
+        what: { en: "Slides from the demoscene talk sceners Noname and Dascon gave at Amiga34.",
+                nl: "Slides van de demoscene-lezing die sceners Noname en Dascon gaven op Amiga34.",
+                de: "Folien des Demoszene-Vortrags, den die Szener Noname und Dascon auf der Amiga34 hielten.",
+                fr: "Les diapositives de la conférence sur la demoscene donnée par Noname et Dascon à Amiga34.",
+                pt: "Slides da palestra sobre a demoscene que Noname e Dascon deram na Amiga34.",
+                ja: "Noname と Dascon が Amiga34 で はなした デモシーンの こうえんの スライドです。" } },
+      { group: "read", name: "The Gathering 1993 - results", src: "Demozoo",
+        url: "https://demozoo.org/parties/39/",
+        what: { en: "Every competition from the party in the video - Kefrens' Desert Dream won the Amiga demo compo, Lemon. the 40K intro.",
+                nl: "Alle wedstrijden van de party uit de video - Desert Dream van Kefrens won de Amiga-democompo, Lemon. de 40K-intro.",
+                de: "Alle Wettbewerbe der Party aus dem Video - Desert Dream von Kefrens gewann den Amiga-Demowettbewerb, Lemon. das 40K-Intro.",
+                fr: "Toutes les compétitions de la party de la vidéo - Desert Dream de Kefrens a gagné la compo démo Amiga, Lemon. celle des intros 40K.",
+                pt: "Todas as competições da party do vídeo - Desert Dream, da Kefrens, venceu a de demos de Amiga, e a Lemon. a de intros 40K.",
+                ja: "えいぞうの パーティーの ぜんぶの コンテスト。Amiga デモは Kefrens の Desert Dream、40K イントロは Lemon. が ゆうしょうしました。" } },
+      { group: "sites", name: "ADA - Amiga Demoscene Archive", src: "ada.untergrund.net",
+        url: "https://ada.untergrund.net/",
+        what: { en: "The hand-picked best Amiga demos and intros, with downloads, video captures and comments.",
+                nl: "De zorgvuldig gekozen beste Amiga-demo's en intro's, met downloads, video-opnames en reacties.",
+                de: "Die handverlesen besten Amiga-Demos und -Intros, mit Downloads, Videomitschnitten und Kommentaren.",
+                fr: "Les meilleures démos et intros Amiga, triées sur le volet, avec téléchargements, captures vidéo et commentaires.",
+                pt: "As melhores demos e intros de Amiga, escolhidas a dedo, com downloads, vídeos e comentários.",
+                ja: "えらびぬかれた Amiga の デモと イントロ。ダウンロード、どうが、コメントつきです。" } },
+      { group: "sites", name: "Janeway", src: "Kestra BitWorld",
+        url: "https://janeway.exotica.org.uk/",
+        what: { en: "The big Amiga scene database: tens of thousands of demos and intros, and the groups and people behind them.",
+                nl: "De grote Amiga-scenedatabase: tienduizenden demo's en intro's, en de groepen en mensen erachter.",
+                de: "Die große Amiga-Szene-Datenbank: Zehntausende Demos und Intros und die Gruppen und Leute dahinter.",
+                fr: "La grande base de données de la scène Amiga : des dizaines de milliers de démos et d'intros, et les groupes et gens derrière.",
+                pt: "O grande banco de dados da cena do Amiga: dezenas de milhares de demos e intros, e os grupos e pessoas por trás delas.",
+                ja: "Amiga シーンの おおきな データベース。なんまんもの デモと イントロ、それを つくった グループと ひとびと。" } },
+      { group: "sites", name: "Demozoo - Amiga OCS/ECS", src: "demozoo.org",
+        url: "https://demozoo.org/platforms/5/",
+        what: { en: "Every A500-era production the scene has filed, with party results and full credits.",
+                nl: "Elke productie uit het A500-tijdperk die de scene heeft vastgelegd, met partyuitslagen en volledige credits.",
+                de: "Jede Produktion aus der A500-Ära, die die Szene erfasst hat, mit Party-Ergebnissen und vollständigen Credits.",
+                fr: "Toutes les productions de l'ère A500 recensées par la scène, avec résultats de parties et crédits complets.",
+                pt: "Toda produção da era do A500 registrada pela cena, com resultados de parties e créditos completos.",
+                ja: "シーンが きろくした A500 じだいの さくひん すべて。パーティーの けっかと クレジットつきです。" } }
+    ],
+    picks: [
+      { id: "am_demo_mentalhangover",
+        fact: { en: "1st, Swedish Elite Easter Conference 1990", nl: "1e, Swedish Elite Easter Conference 1990",
+                de: "1. Platz, Swedish Elite Easter Conference 1990", fr: "1er, Swedish Elite Easter Conference 1990",
+                pt: "1º lugar, Swedish Elite Easter Conference 1990", ja: "1い、Swedish Elite Easter Conference 1990" },
+        blurb: { en: "The demo credited with starting the trackmo: one continuous scripted show streaming off the disk, instead of a menu of separate parts.",
+                 nl: "De demo die de trackmo op de kaart zette: één doorlopende, gescripte show die van de diskette laadt, in plaats van een menu met losse delen.",
+                 de: "Die Demo, die das Trackmo etablierte: eine durchgehende, geskriptete Show, die von der Diskette nachlädt, statt eines Menüs aus einzelnen Teilen.",
+                 fr: "La démo qui a imposé le trackmo : un seul spectacle scénarisé, chargé en continu depuis la disquette, au lieu d'un menu de parties séparées.",
+                 pt: "A demo que consagrou o trackmo: um único show roteirizado, carregado do disquete sem parar, em vez de um menu de partes separadas.",
+                 ja: "トラックモという かたちを ひろめた デモです。べつべつの パートを メニューから えらぶのでは なく、ディスクから よみこみながら 1つの ショーとして ずっと つづきます。" } },
+      { id: "am_demo_enigma",
+        fact: { en: "1st, Anarchy Easter Conference 1991", nl: "1e, Anarchy Easter Conference 1991",
+                de: "1. Platz, Anarchy Easter Conference 1991", fr: "1er, Anarchy Easter Conference 1991",
+                pt: "1º lugar, Anarchy Easter Conference 1991", ja: "1い、Anarchy Easter Conference 1991" },
+        blurb: { en: "Raytraced and 3D sequences on a 512 KB A500 in 1991, and a Firefox & Tip soundtrack people still listen to on its own.",
+                 nl: "Geraytracede en 3D-scènes op een A500 met 512 KB in 1991, en een soundtrack van Firefox & Tip die mensen nog steeds los beluisteren.",
+                 de: "Raytracing- und 3D-Sequenzen auf einem A500 mit 512 KB im Jahr 1991 - und ein Soundtrack von Firefox & Tip, den man bis heute für sich allein hört.",
+                 fr: "Des séquences en raytracing et en 3D sur un A500 de 512 Ko en 1991, et une bande-son de Firefox & Tip que l'on écoute encore pour elle-même.",
+                 pt: "Sequências em raytracing e 3D num A500 de 512 KB em 1991, e uma trilha de Firefox & Tip que o pessoal ainda ouve sozinha.",
+                 ja: "1991ねんに 512KB の A500 で レイトレーシングと 3D の シーンを みせました。Firefox と Tip の おんがくは、いまでも それだけで きかれています。" } },
+      { id: "am_demo_globaltrash",
+        fact: { en: "1st, Amiga Summit Convention 1991", nl: "1e, Amiga Summit Convention 1991",
+                de: "1. Platz, Amiga Summit Convention 1991", fr: "1er, Amiga Summit Convention 1991",
+                pt: "1º lugar, Amiga Summit Convention 1991", ja: "1い、Amiga Summit Convention 1991" },
+        blurb: { en: "Design beat raw technique: a one-pixel plasma, early light-sourced vectors, and music by Jesper Kyd - later the composer of Hitman and Assassin's Creed.",
+                 nl: "Design won het van pure techniek: een plasma op pixelniveau, vroege belichte vectors en muziek van Jesper Kyd - later de componist van Hitman en Assassin's Creed.",
+                 de: "Design schlug pure Technik: ein Ein-Pixel-Plasma, frühe lichtschattierte Vektoren und Musik von Jesper Kyd - später Komponist von Hitman und Assassin's Creed.",
+                 fr: "Le design l'a emporté sur la technique pure : un plasma au pixel près, des vecteurs éclairés précoces et une musique de Jesper Kyd - futur compositeur de Hitman et d'Assassin's Creed.",
+                 pt: "O design venceu a técnica pura: um plasma de um pixel, vetores iluminados pioneiros e música de Jesper Kyd - depois compositor de Hitman e Assassin's Creed.",
+                 ja: "わざより デザインが かちました。1ピクセルの プラズマ、はやい じきの ひかりの あたる ベクター、そして のちに Hitman や Assassin's Creed の おんがくを つくる Jesper Kyd の きょくです。" } },
+      { id: "am_demo_sota",
+        fact: { en: "1st, The Party 1992", nl: "1e, The Party 1992", de: "1. Platz, The Party 1992",
+                fr: "1er, The Party 1992", pt: "1º lugar, The Party 1992", ja: "1い、The Party 1992" },
+        blurb: { en: "Rotoscoped dancers cut to eurotechno won the biggest party of the year - and split the scene over whether a demo should be art or code.",
+                 nl: "Gerotoscopeerde dansers op eurotechno wonnen de grootste party van het jaar - en verdeelden de scene over de vraag of een demo kunst of code moet zijn.",
+                 de: "Rotoskopierte Tänzer zu Eurotechno gewannen die größte Party des Jahres - und spalteten die Szene in der Frage, ob eine Demo Kunst oder Code sein soll.",
+                 fr: "Des danseurs rotoscopés sur de l'eurotechno ont remporté la plus grande party de l'année - et divisé la scène : une démo, c'est de l'art ou du code ?",
+                 pt: "Dançarinos rotoscopados ao som de eurotechno venceram a maior party do ano - e dividiram a cena: demo é arte ou código?",
+                 ja: "ロトスコープで かいた ダンサーと ユーロテクノで、その としで いちばん おおきな パーティーに ゆうしょうしました。デモは アートか コードか で、シーンを ふたつに わけました。" } },
+      { id: "am_demo_arte", pos: "50% 38%",
+        fact: { en: "3rd, The Party 1993", nl: "3e, The Party 1993", de: "3. Platz, The Party 1993",
+                fr: "3e, The Party 1993", pt: "3º lugar, The Party 1993", ja: "3い、The Party 1993" },
+        blurb: { en: "A texture-mapped sphere on stock OCS and Ra's portrait of Einstein - third in 1993, and held in far higher regard ever since.",
+                 nl: "Een getextureerde bol op standaard OCS en Ra's portret van Einstein - derde in 1993, maar sindsdien veel hoger aangeschreven.",
+                 de: "Eine texturierte Kugel auf Standard-OCS und Ras Einstein-Porträt - 1993 Dritter, seitdem aber weit höher angesehen.",
+                 fr: "Une sphère texturée sur un OCS de série et le portrait d'Einstein par Ra - troisième en 1993, et bien mieux considéré depuis.",
+                 pt: "Uma esfera texturizada em OCS padrão e o retrato de Einstein feito por Ra - terceiro em 1993, e muito mais prestigiado desde então.",
+                 ja: "ふつうの OCS で テクスチャを はった きゅうたいと、Ra が かいた アインシュタインの え。1993ねんは 3いでしたが、そのあと ずっと たかく ひょうかされています。" } },
+      { id: "am_demo_rinkadink",
+        fact: { en: "1st, oldskool demo, Revision 2013", nl: "1e, oldskool-demo, Revision 2013",
+                de: "1. Platz, Oldskool-Demo, Revision 2013", fr: "1er, démo oldskool, Revision 2013",
+                pt: "1º lugar, demo oldskool, Revision 2013", ja: "1い、オールドスクール デモ、Revision 2013" },
+        blurb: { en: "Twenty years after the original, Lemon. recoded it from scratch for the same 512 KB A500 and took first place at Revision - the Amiga scene never stopped.",
+                 nl: "Twintig jaar na het origineel herschreef Lemon. het volledig voor dezelfde A500 met 512 KB en won daarmee op Revision - de Amiga-scene is nooit gestopt.",
+                 de: "Zwanzig Jahre nach dem Original schrieb Lemon. es für denselben A500 mit 512 KB komplett neu und gewann damit die Revision - die Amiga-Szene hat nie aufgehört.",
+                 fr: "Vingt ans après l'original, Lemon. l'a entièrement recodé pour le même A500 de 512 Ko et a gagné à Revision - la scène Amiga ne s'est jamais arrêtée.",
+                 pt: "Vinte anos depois do original, a Lemon. reescreveu tudo para o mesmo A500 de 512 KB e venceu na Revision - a cena do Amiga nunca parou.",
+                 ja: "オリジナルから 20ねんご、Lemon. は おなじ 512KB の A500 の ために ぜんぶ かきなおし、Revision で ゆうしょうしました。Amiga の シーンは いちども とまっていません。" } }
+    ]
+  },
 
   // ---- Keeping this console alive, PC shelf ------------------------------
   // Same shape as "c64community" above, but for the MS-DOS shelf - the
