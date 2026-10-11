@@ -998,6 +998,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://demo.retrovault.world/game/c64_decathlon.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://demo.retrovault.world/game/c64_pitstop2.html</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>yearly</changefreq>
@@ -1209,6 +1215,12 @@
   </url>
   <url>
     <loc>https://demo.retrovault.world/game/pc_lsl6.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://demo.retrovault.world/game/pc_freddy_pharkas.html</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>

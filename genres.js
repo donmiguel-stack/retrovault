@@ -1034,6 +1034,10 @@ window.GENRE_DATA = {
   "genre": "sports",
   "players": "p12"
  },
+ "c64_decathlon": {
+  "genre": "sports",
+  "players": "p12"
+ },
  "c64_pitstop2": {
   "genre": "racing",
   "players": "p12"
@@ -1167,6 +1171,10 @@ window.GENRE_DATA = {
   "players": "p1"
  },
  "pc_lsl6": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_freddy_pharkas": {
   "genre": "adventure",
   "players": "p1"
  },

@@ -2678,6 +2678,19 @@ window.GAMES_DATA = {
     "developer": "Epyx"
   },
   {
+    "id": "c64_decathlon",
+    "filename": "c64_decathlon.d64",
+    "title": "The Activision Decathlon",
+    "platform": "C64",
+    "category": "Commodore 64",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "Decathlon.d64",
+    "year": 1984,
+    "publisher": "Activision",
+    "developer": "David Crane"
+  },
+  {
     "id": "c64_pitstop2",
     "filename": "c64_pitstop2.d64",
     "title": "Pitstop II",
@@ -3147,6 +3160,19 @@ window.GAMES_DATA = {
     "year": 1993,
     "publisher": "Sierra On-Line",
     "developer": "Al Lowe"
+  },
+  {
+    "id": "pc_freddy_pharkas",
+    "filename": "pc_freddy_pharkas.zip",
+    "title": "Freddy Pharkas: Frontier Pharmacist",
+    "platform": "PC",
+    "category": "MS-DOS",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "FREDDY.zip",
+    "year": 1993,
+    "publisher": "Sierra On-Line",
+    "developer": "Al Lowe & Josh Mandel"
   },
   {
     "id": "c64_hb_c64anabalt",

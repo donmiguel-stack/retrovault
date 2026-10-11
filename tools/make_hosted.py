@@ -120,6 +120,7 @@ EXCLUDE_IDS = {
     "c64_winter_games", "c64_pitstop2", "c64_sword_of_fargoal",   # THEC64 / Evercade
     "c64_last_ninja", "c64_ik_plus",                     # Steam, System 3
     "c64_outrun",                                        # SEGA AGES + Mike's call
+    "c64_decathlon",                                     # Activision - live brand, same call as Imagic on Videopac (2026-10-11)
     # ---- MS-DOS: still sold / Mike's own GOG purchases ----
     "pc_wolfenstein3d", "pc_spear_of_destiny",           # GOG (WOLF3D.zip is the full .WL6 set now)
     "pc_duke_nukem", "pc_duke_nukem_2", "pc_duke_nukem_3d",
@@ -128,6 +129,7 @@ EXCLUDE_IDS = {
     "pc_doom2", "pc_final_doom_tnt", "pc_final_doom_plutonia", "pc_xcom_ufo_defense",
     "pc_keen2", "pc_keen3", "pc_keen4", "pc_keen5", "pc_keen6",
     "pc_leisure_suit_larry",                             # GOG bundle ships the 1987 AGI original
+    "pc_freddy_pharkas",                                 # GOG
     "pc_gta1",                                           # Take-Two
     "pc_outrun",                                         # SEGA AGES + Mike's call
 }

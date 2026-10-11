@@ -3718,6 +3718,17 @@ window.GAMEPAGES_DATA = {
    "text": "Epyx traded Olympic solemnity for halfpipes, footbags and rolling BMX wipeouts, all set to a SID rendition of Louie Louie. The most laid-back entry in the Games series — and the best-selling one."
   }
  },
+ "c64_decathlon": {
+  "input": "joystick",
+  "note": "The menus are on the keyboard, and in the Vault several letters double as joystick keys &ndash; so press <strong>Tab</strong> (Game Focus) once the stadium appears. Then <strong>1</strong>&ndash;<strong>4</strong> for the number of players and <strong>A</strong> for the full decathlon (or <strong>S</strong> for a single event, then that event&rsquo;s number). Press <strong>Tab</strong> again to leave Game Focus and use the joystick: <strong>G</strong> (fire) starts each event, then waggle <span class='kbd'>&larr;</span> <span class='kbd'>&rarr;</span> as fast and as steadily as you can to run, and press fire to jump, vault or throw &ndash; without crossing the scratch line. Solo, you race against the computer (lane C). In a two-player game, player&nbsp;2 waggles with <strong>A</strong>/<strong>D</strong> and fires with <strong>Q</strong>.",
+  "video": {
+   "id": "apIr8WZe8sw",
+   "title": "C64 Longplay - Decathlon (2-Player)"
+  },
+  "history": {
+   "text": "David Crane&rsquo;s Atari 2600 hit of 1983 brought all ten events of a real decathlon into the living room &ndash; from the 100 metres to the 1500 metres, with the long jump, shot put, high jump, hurdles, discus, pole vault and javelin in between. Every event runs on the same idea: waggle the joystick left and right as fast as your arm allows, then hit fire at the right moment. Plenty of joysticks did not survive it. The Commodore 64 conversion followed in 1984, on cartridge and disk."
+  }
+ },
  "c64_winter_games": {
   "input": "joystick",
   "video": {
@@ -4112,6 +4123,17 @@ window.GAMEPAGES_DATA = {
   },
   "history": {
    "text": "Shape Up or Slip Out! (1993) puts Larry in a health spa full of women he'll never get, with a bigger budget, hand-painted backgrounds and, on the CD-ROM release, voices for everyone including Jan Rabson as Larry. It was Sierra's last DOS Larry before Love for Sail, and one of the first of its adventures built with a talkie release in mind rather than patched with one later. Still sold in Sierra's bundle; the Vault shows you where a preserved copy lives."
+  }
+ },
+ "pc_freddy_pharkas": {
+  "input": "mouse",
+  "note": "Point-and-click with Sierra's icon bar. Mixing prescriptions in the pharmacy is the copy protection: the recipes are in the manual (<em>The Modern Day Book of Health and Hygiene</em>, scan linked below). A wrong mix only annoys the customer, it doesn't end the game. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "xcUZh0BZQSQ",
+   "title": "Freddy Pharkas: Frontier Pharmacist (1993) PC Playthrough - NintendoComplete"
+  },
+  "history": {
+   "text": "Al Lowe's Western comedy, co-designed with Josh Mandel: a gunslinger who lost an ear in a shoot-out hangs up his guns to run the pharmacy in Coarsegold, California, until someone starts poisoning the town. Lowe and Mandel also wrote the songs, including the opening ballad. Computer Gaming World called it the \"Blazing Saddles of computer games\"; the 1994 CD-ROM release added voices (Cam Clarke as Freddy) but cut about 15% of the text. Still sold on GOG; the Vault shows you where a preserved copy lives."
   }
  },
  "c64_hb_c64anabalt": {

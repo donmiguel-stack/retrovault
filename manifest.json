@@ -1,19 +1,19 @@
 {
- "generated": "2026-10-11 12:20:16",
- "count": 838,
- "bytes": 326728559,
+ "generated": "2026-10-11 21:30:58",
+ "count": 846,
+ "bytes": 328277610,
  "files": {
   "games.js": {
-   "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
-   "size": 144588
+   "sha256": "7add2ebe81522c7afd12bd9d1470ac323ae0feded4f5f5a1bb37d27951fae21c",
+   "size": 145249
   },
   "gamepages.js": {
-   "sha256": "e430f3a0317071b96119bd44a7d2745bb4a3637af8ce0af110f5fabcd4c0f66f",
-   "size": 330496
+   "sha256": "30ac14a5decef1bd8d887c0bbcf0929dee50d2358c6b3b342b70052aca4d2dd4",
+   "size": 333085
   },
   "genres.js": {
-   "sha256": "3fc8b6020a7e6cd6560c3e8078cc0381b31dc49f279b308f66032af58ae3647e",
-   "size": 30742
+   "sha256": "9da45f2434ae1f255ec69536ea6ae50472036e75b61f00a9b45c99a69515e5a6",
+   "size": 30876
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -28,12 +28,12 @@
    "size": 2591
   },
   "extras.js": {
-   "sha256": "9991c21badad9dedc93246c4c518c5d0b9bbe33002992a91d5bccb5535fdf3bc",
-   "size": 7561
+   "sha256": "419a8501856aa01592e4f2e57e6e529b5b3d137976051dc0b616d30e54ac505b",
+   "size": 7622
   },
   "i18n.js": {
-   "sha256": "ea985e6a7ff38bab71cefc23f784b0a1203a61e6e2e7c2d19517f18e6ac51b10",
-   "size": 106334
+   "sha256": "158f9b2516869ec06e06842a60383a1841f596b39d440c9d03c2dbdb9ea9d15d",
+   "size": 106740
   },
   "setup-i18n.js": {
    "sha256": "a057ba706131c676ae6be26084f77fbbb015afda3aea26134467d2e9a459c4bb",
@@ -72,20 +72,20 @@
    "size": 37384
   },
   "romsources.js": {
-   "sha256": "31b3bde39f8e9308870d709ec517bc7aa23f9fb6cbc7040d2cdf7d2607cfcd4d",
-   "size": 23047
+   "sha256": "83a8a53c3e4599dd9962c6dae072bdc21dbd7177b0cfac9546042e515707de6e",
+   "size": 23852
   },
   "walkthroughs.js": {
-   "sha256": "a540ed9c261c97b3ce37eaf835f3899edaee3c35131cccc4c7db5cf64a406486",
-   "size": 1982
+   "sha256": "c1d390a821b6a474949ea17816520eddf0c122e288b0efe4de2da925556c78fb",
+   "size": 2050
   },
   "tips.js": {
    "sha256": "9eabdba1dceb0fc6ac9db066e9e41c948b6cd5ab0f9fc58ea99d303e805d2ef6",
    "size": 12321
   },
   "gamepages-ja.js": {
-   "sha256": "f4e81aeba6ebf42399e8f146853cc7e0891fec7ce3300303cb61ca6d07a88ae9",
-   "size": 231875
+   "sha256": "c34c46dea170e7b98ecde1ff5e36e318f2dc6b1f221956ef65f4489ab4b8a555",
+   "size": 235372
   },
   "cheats-ja.js": {
    "sha256": "ed49c7466a24426bd9337e3e8ec77d86877a310a291c34b911e8a6224af19ed0",
@@ -132,7 +132,7 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "b12236eb08c273b6882c87e0d4ea133ab96a0c269a2519a33fa88238bfb1ef85",
+   "sha256": "281b62fc2d208659148a44e3740333a5fcd1ee64d569fd2240fd8046a740847c",
    "size": 106197
   },
   "animcovers.js": {
@@ -148,7 +148,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "2ddd65e5e1b721224a75db13cebd4ee6dc2cfc4b934dc5b680e01f5b3c2f4a98",
+   "sha256": "cc92489b7de85b0a66ef6649bfc453e7f498b1103103ed2e03cd3e0145da1107",
    "size": 20544
   },
   "resources.html": {
@@ -164,19 +164,19 @@
    "size": 3768
   },
   "game.css": {
-   "sha256": "2f20bdc890125c644c43c6ff6ddb795893ba5220e0f78de1fab3d1b23182620e",
-   "size": 47666
+   "sha256": "3a0a8275a74ac420f834d4386e39b25cce619d487b998053cd391ba01ed2c743",
+   "size": 48872
   },
   "game-page.js": {
-   "sha256": "b3ffa899e6be89f4dc31bc5f9df007d980834c1405c56f424ffa109637921fe4",
+   "sha256": "902bae85fbdb3e132ef7b6697f8c46bd8bcbacb1f39139e05499c4ec07103ffb",
    "size": 111840
   },
   "catalogue.html": {
-   "sha256": "ec24cb55f3d497d69b1601a698e33b6683ce9c6ef1881e5afae044b6ba3f217d",
-   "size": 43364
+   "sha256": "8917e99153be3952c6527c5809ee7090744031bccc6b713f0bc7a2e04e7d4fbb",
+   "size": 43605
   },
   "versions.js": {
-   "sha256": "93b87727c1cc38dbfabda6600e09edda34580ac032193cbcfa6ad48e68e6d71f",
+   "sha256": "0bbceab523029d1c71c926d22828edf188f20959accd43c6247424c6e6083c0e",
    "size": 1864
   },
   "favicon.ico": {
@@ -212,8 +212,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "890537352cb1ab99844ae3f764dea316c81daf0f385c19cec19168d4ae2f7824",
-   "size": 74602
+   "sha256": "7dd2cfa4a0b0864aba46b2680aeca1d8a2f7c3c263b87896d06dd98e2d89b8a6",
+   "size": 74976
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -396,12 +396,12 @@
    "size": 165748
   },
   "covers/am_demo_mobile.png": {
-   "sha256": "1c4b216f67dc0cf8d4018565e70f0b70918ca8736d54a0d3d9c2ebf83cab897c",
-   "size": 30505
+   "sha256": "91f5b450e7b85c4ec20e39112b409cf7d957f705532528baaa3c848af465599f",
+   "size": 180890
   },
   "covers/am_demo_qed.png": {
-   "sha256": "a5a06fde1ba92b47bdac7aa25869ccf228e949d7050dd3200d84d8c1f82b3d55",
-   "size": 69467
+   "sha256": "1e2c1c5c33f89b667a7fda9c454b85f5913235a2f3d3c61c3ee4b82725b4df7e",
+   "size": 83968
   },
   "covers/am_demo_rinkadink.png": {
    "sha256": "e7f49db339125487b5617c4fc558ca3635fc81231547ab5781132d5229a6fdba",
@@ -412,8 +412,8 @@
    "size": 181426
   },
   "covers/am_demo_voyage.png": {
-   "sha256": "90ed65421d8b789729de96091de359759361dea2e2630b41f65fcc515d737735",
-   "size": 61173
+   "sha256": "cb60462bb32fb5656fcca36c9607d9a8a64fa3fd730b7759853ef544ce3c2583",
+   "size": 152067
   },
   "covers/am_diplomacy.png": {
    "sha256": "fe0f6f1bd9ae9306516e64b1b7e164a5b1b4d3d7556b15d891800c13394eb3d0",
@@ -846,6 +846,10 @@
   "covers/c64_creatures.png": {
    "sha256": "9d20cc04e590d4c10a255e23048a5481c38101536dda9ed1feaf531cebc63a5b",
    "size": 34086
+  },
+  "covers/c64_decathlon.jpg": {
+   "sha256": "0018392b5304531f9cd05f0ae8fd32bed8b4f2e1a31473d9034423d7d319075f",
+   "size": 31646
   },
   "covers/c64_defender_crown.png": {
    "sha256": "40148137b5214c36a031e1c20862d33c59fc68c6a4f51509e776e06b3d8ac973",
@@ -1538,6 +1542,10 @@
   "covers/pc_final_doom_tnt.jpg": {
    "sha256": "99be9bbb9d25eead7a2045efd09c91e7ea691005bf5773b68f3be268d679180b",
    "size": 208238
+  },
+  "covers/pc_freddy_pharkas.jpg": {
+   "sha256": "ca2bc3e538f8b92d660f46c862dad8cbd809e3bceba3aaccdb05e3360854385e",
+   "size": 39701
   },
   "covers/pc_gta1.jpg": {
    "sha256": "e7382ad360f71a1d0c94241da9f61103d0eb0c219acbd73b24dd6257881321c0",
@@ -2627,13 +2635,37 @@
    "sha256": "8b8290df2379a23e9501636a4a1d19838b9366651fa2965af406c8de1bec5439",
    "size": 180786
   },
+  "clips/clip_am_ooze.mp4": {
+   "sha256": "b5630438c5aca578807acef1465637cd92c149afde5dd2fe0c1d1f68ba3adc30",
+   "size": 130408
+  },
+  "clips/clip_am_shift.mp4": {
+   "sha256": "490520fe2c96923a33e7e558fc2e64d710793f41f03949106c7175f0bc61a5fa",
+   "size": 39182
+  },
   "clips/clip_am_stuntcarracer.mp4": {
    "sha256": "5a7f89fc88ffc926b755269eb73a692a0f9e9d1798dd0fa0673ac6c4d67d86b7",
    "size": 169890
   },
+  "clips/clip_am_tenebra2.mp4": {
+   "sha256": "a57a0476fdd9bea337f946926d364c6b5da0d9f077bd6713f524561ef05841f3",
+   "size": 63585
+  },
+  "clips/clip_am_tiny_pixel_adventure.mp4": {
+   "sha256": "e8813c40e566ab0a65a60439711972d693e68c14d6a76fba48669314bc8bb945",
+   "size": 228056
+  },
   "clips/clip_am_turrican.mp4": {
    "sha256": "12e988b79b443b66a9dbad215785059d7d0067d720838b38c51eac57526c8177",
    "size": 1297724
+  },
+  "clips/clip_am_yeet.mp4": {
+   "sha256": "2f32badefc56d538a6d596b70be3db066973ecddbbc595826f8a78b2a63757ea",
+   "size": 72830
+  },
+  "clips/clip_am_yoomp.mp4": {
+   "sha256": "1df396917693491fb9ccf17612c7acaf2f8b8d33c73ac244360a8ecfb54dce7e",
+   "size": 677821
   },
   "clips/clip_c64_hb_bagman_strikes_back.mp4": {
    "sha256": "211200dc8a774bb8dbb2c765a4e60ebf68fbf79644bae3f0cf9485f6323132f1",
@@ -2931,11 +2963,11 @@
    "sha256": "457a2e394522dea5ff98342f5031bf90484e75a95960f1d0d8b215ef100fd64e",
    "size": 174848
   },
-  "homebrew-downloads/Kill the Attacking Aliens — demo 1.bin": {
+  "homebrew-downloads/Kill the Attacking Aliens \u2014 demo 1.bin": {
    "sha256": "538a9277fb21c8651e647665fa8665b1ef3b508bfc0ea7f84b26339592539113",
    "size": 8192
   },
-  "homebrew-downloads/Kill the Attacking Aliens — demo 2.bin": {
+  "homebrew-downloads/Kill the Attacking Aliens \u2014 demo 2.bin": {
    "sha256": "edff7d1a5ed2c4f6aaa0453114f5db87359423fc4d071e9678f3001b5a117f6b",
    "size": 8192
   },

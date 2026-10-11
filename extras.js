@@ -115,6 +115,7 @@ window.EXTRAS_DATA = {
   "c64_bruce_lee": { "manual": "c64_bruce_lee-manual.pdf" },
   "c64_california_games": { "manual": "c64_california_games-manual.pdf" },
   "c64_winter_games": { "manual": "c64_winter_games-manual.pdf" },
+  "c64_decathlon": { "manual": "c64_decathlon-manual.pdf" },
   "c64_defender_crown": { "manual": "c64_defender_crown-manual.pdf" },
   "c64_boulder_dash": { "manual": "c64_boulder_dash-manual.pdf" },
   "c64_impossible_mission": { "manual": "c64_impossible_mission-manual.pdf" },

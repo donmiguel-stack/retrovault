@@ -62,6 +62,13 @@ window.ROM_SOURCES = {
     note: "This is the CD-ROM version with full speech: 469 MB, which the browser has to unpack in memory every time you start it. Slow to load, and a floppy-version zip (a few MB, text only) works far better if you have one.",
     manual: "https://archive.org/details/Leisure_Suit_Larry_6_-_Manual"
   },
+  "pc_freddy_pharkas": {
+    url: "https://archive.org/details/msdos_Freddy_Pharkas_Frontier_Pharmacist_1993",
+    file: "Freddy_Pharkas_Frontier_Pharmacist_1993.zip",
+    site: "Internet Archive",
+    note: "The 1993 floppy version (9 MB, text only - the full script, before the CD release trimmed it). The pharmacy prescriptions need the recipes from the manual - scan linked below.",
+    manual: "https://archive.org/details/Freddy_Pharkas_Frontier_Pharmacist_-_Manual"
+  },
   // ---- MS-DOS titles still sold (GOG/Steam) - Mike's own copies stay local ----
   "pc_wolfenstein3d": {
     url: "https://archive.org/details/WOLF3D-MS-DOS", file: "WOLF3D.zip", site: "Internet Archive",
@@ -171,6 +178,10 @@ window.ROM_SOURCES = {
     url: "https://archive.org/details/California_Games_1987_Epyx_Side_A_cr_REM_Docs_125",
     file: "California_Games_1987_Epyx_Side_A_cr_REM_Docs_125.d64", site: "Internet Archive",
     note: "A two-sided disk; this is side A. Side B is a separate item on archive.org (…_Side_B_…), and the Vault's player has no disk-swap, so the events on side B stay out of reach."
+  },
+  "c64_decathlon": {
+    url: "https://archive.org/details/Decathlon_1983_Activision_cr_Bytebreaker", file: "Decathlon_1983_Activision_cr_Bytebreaker.d64", site: "Internet Archive",
+    note: "Boots straight into the stadium, no crack intro. Several other dumps on archive.org open with a cracker&rsquo;s scroller first."
   },
   "c64_winter_games": {
     url: "https://archive.org/details/Winter_Games_1985_Epyx_cr_Paradroid", file: "Winter_Games_1985_Epyx_cr_Paradroid.d64", site: "Internet Archive"

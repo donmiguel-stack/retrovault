@@ -24,6 +24,8 @@ window.WALKTHROUGH_DATA = (function () {
   set("pc_lsl3", "leisuresuitlarry3");
   set("pc_lsl5", "leisuresuitlarry5");
   set("pc_lsl6", "leisuresuitlarry6");
+  // Al Lowe's Western
+  set("pc_freddy_pharkas", "freddypharkas");
   // Space Quest
   set("pc_sq1", "spacequest");
   set("pc_sq2", "spacequest2");
