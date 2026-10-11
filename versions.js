@@ -43,7 +43,7 @@
     ["gamepages.js", 148],
     ["gamepages-ja.js", 2],
     ["demo.js", 112],
-    ["game-page.js", 32],
+    ["game-page.js", 33],
     ["animcovers.js", 12]
   ];
   function write(list, tag) {
