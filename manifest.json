@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-11 12:20:16",
  "count": 838,
- "bytes": 324855110,
+ "bytes": 324987956,
  "files": {
   "games.js": {
    "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
@@ -132,8 +132,8 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "9e659ca1f0644f59e55dfaaa861391c531fc832d89838abed11f8ea24ae2ada9",
-   "size": 105708
+   "sha256": "061f062ef45e6039fba7c52d14839dbe7a602fc310d9d18be87fe12c0a323a26",
+   "size": 106197
   },
   "animcovers.js": {
    "sha256": "1a5f73229f91bd065c61ad69525ffc9a1aa05c456d9580618d0d1a0b0c68608c",
@@ -148,7 +148,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "e937bba9a275e129e993315549fea082ce3568d9c8a2eac086487fc95f15181d",
+   "sha256": "3097723c2d98a97cb0bd6a20ea5c883d1be973c2e5cfb8c281bc0c2cc12f26f9",
    "size": 20544
   },
   "resources.html": {
@@ -168,16 +168,16 @@
    "size": 47666
   },
   "game-page.js": {
-   "sha256": "b846fd15bee0e66379b60f0ccac94e6e487aa3ce74b463f851cb5bd2c38fb86c",
-   "size": 103989
+   "sha256": "f3d33e0a02decd4bf3fe6c3af0ad2e1c12dc1824baaf4b852049ddf6c1d5405c",
+   "size": 111840
   },
   "catalogue.html": {
    "sha256": "ec24cb55f3d497d69b1601a698e33b6683ce9c6ef1881e5afae044b6ba3f217d",
    "size": 43364
   },
   "versions.js": {
-   "sha256": "0efdacfc6277737baa5218a383f69e35a9b8633e5fc29fdad191f0b2e773b5bf",
-   "size": 1838
+   "sha256": "965c3fb64df3532e8150a7a8e0fc6d81a49ab5f299ce67e5ce40587ede4652da",
+   "size": 1864
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",
@@ -372,8 +372,8 @@
    "size": 56016
   },
   "covers/am_deluxe_pacman.png": {
-   "sha256": "ae61463217e99a2c76979ea0ad636941848158928672e469745178cb7ca261e0",
-   "size": 6071
+   "sha256": "c9ddb2334a24213457a0aa12a99da4d58c179bdd8185cee8fdd74289b9cd598e",
+   "size": 130551
   },
   "covers/am_demo_arte.png": {
    "sha256": "8805fc8f497d9f94908358f9d21a4ab115f8e5eac95fd515d11394fc72d0e079",
