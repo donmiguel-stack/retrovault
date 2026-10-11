@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-11 12:20:16",
  "count": 838,
- "bytes": 325097305,
+ "bytes": 325806627,
  "files": {
   "games.js": {
    "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
@@ -132,7 +132,7 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "686fe7e3fecf8f6db01330cd609532006f4679bcdae9ca0d5e1804bcc18ac0a6",
+   "sha256": "aa044c4801e90d2e33c038c0612968afe4b48ed084065dd4410250ce0d7b3e75",
    "size": 106197
   },
   "animcovers.js": {
@@ -148,7 +148,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "5c383e6e89573b551a056286c8c51b09554e2ead48edc1d79078968e6837e90b",
+   "sha256": "00534effdbe3067f8cfe4fccd28fd9663012cfcdb577ebb7edf5d8914f550778",
    "size": 20544
   },
   "resources.html": {
@@ -168,7 +168,7 @@
    "size": 47666
   },
   "game-page.js": {
-   "sha256": "ca28c5521cf92ec2d7567e073223dc758281f0811999d6d1e297948288995123",
+   "sha256": "f8a0840f1b8b6a6f25f0fecb59cd39e7f002f7feaf5798a8e0a9d5ec09109220",
    "size": 111840
   },
   "catalogue.html": {
@@ -176,7 +176,7 @@
    "size": 43364
   },
   "versions.js": {
-   "sha256": "17cc5c08c13022864ffa681e89b9f76dc198a989a8e6be5b6f0eba144f59a6f7",
+   "sha256": "8e0574f30c7a619ec16c9680c601a334336b7e68ba7046eee954f799827e64ee",
    "size": 1864
   },
   "favicon.ico": {
@@ -328,8 +328,8 @@
    "size": 679904
   },
   "covers/am_biplanes.png": {
-   "sha256": "4e076c68852c9bedb42ac31f210975b042c6e57cd4751a62907a7a5cc2799681",
-   "size": 48064
+   "sha256": "2ad355781857103d50fdf33280d5adfa60bde31854d4e855cf00b019ceb69dcd",
+   "size": 757386
   },
   "covers/am_black_dawn.png": {
    "sha256": "a8c5f9a28e50a9ba89b0ebc12c8717b953ee96727e1269c03ba44d574cd66c84",
