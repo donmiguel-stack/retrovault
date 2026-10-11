@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-11 12:20:16",
  "count": 838,
- "bytes": 326240420,
+ "bytes": 326728559,
  "files": {
   "games.js": {
    "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
@@ -132,7 +132,7 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "0505297832d1024972d1278fb3eb36361d112b6c70e1765f391e7c3c28ed6150",
+   "sha256": "b12236eb08c273b6882c87e0d4ea133ab96a0c269a2519a33fa88238bfb1ef85",
    "size": 106197
   },
   "animcovers.js": {
@@ -148,7 +148,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "e849d7056b127551f51c1b78a1aa0fcf1f1d6aa72b0dfbf014ca9f4b748ebb10",
+   "sha256": "2ddd65e5e1b721224a75db13cebd4ee6dc2cfc4b934dc5b680e01f5b3c2f4a98",
    "size": 20544
   },
   "resources.html": {
@@ -168,7 +168,7 @@
    "size": 47666
   },
   "game-page.js": {
-   "sha256": "a9dfa5478a1716d80d9927e2280ee0fc7c88c90375c0ed540291898cf5d77ab1",
+   "sha256": "b3ffa899e6be89f4dc31bc5f9df007d980834c1405c56f424ffa109637921fe4",
    "size": 111840
   },
   "catalogue.html": {
@@ -176,7 +176,7 @@
    "size": 43364
   },
   "versions.js": {
-   "sha256": "a0c8aca379829bd2ffb1b1d467999e87fdc92d2fe3b28f7b6e80e084708b9ffa",
+   "sha256": "93b87727c1cc38dbfabda6600e09edda34580ac032193cbcfa6ad48e68e6d71f",
    "size": 1864
   },
   "favicon.ico": {
@@ -340,8 +340,8 @@
    "size": 645767
   },
   "covers/am_bobs_garden.png": {
-   "sha256": "8e2d033bd323f46556de03117e03c0ea0fd833f2a73f67146646a7615af0e209",
-   "size": 6894
+   "sha256": "d163a33db60b33ac18e8952f9a03258e833a08660c8fca668155bec7d7eab7ff",
+   "size": 495033
   },
   "covers/am_bubble_ghost.png": {
    "sha256": "e852858c9c8fb084986d7fb6303fc910516650534ce559e80b381de2c5682fd1",
