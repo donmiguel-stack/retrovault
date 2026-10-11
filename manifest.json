@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-11 12:20:16",
  "count": 838,
- "bytes": 324987956,
+ "bytes": 325097305,
  "files": {
   "games.js": {
    "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
@@ -132,7 +132,7 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "061f062ef45e6039fba7c52d14839dbe7a602fc310d9d18be87fe12c0a323a26",
+   "sha256": "686fe7e3fecf8f6db01330cd609532006f4679bcdae9ca0d5e1804bcc18ac0a6",
    "size": 106197
   },
   "animcovers.js": {
@@ -148,7 +148,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "3097723c2d98a97cb0bd6a20ea5c883d1be973c2e5cfb8c281bc0c2cc12f26f9",
+   "sha256": "5c383e6e89573b551a056286c8c51b09554e2ead48edc1d79078968e6837e90b",
    "size": 20544
   },
   "resources.html": {
@@ -168,7 +168,7 @@
    "size": 47666
   },
   "game-page.js": {
-   "sha256": "f3d33e0a02decd4bf3fe6c3af0ad2e1c12dc1824baaf4b852049ddf6c1d5405c",
+   "sha256": "ca28c5521cf92ec2d7567e073223dc758281f0811999d6d1e297948288995123",
    "size": 111840
   },
   "catalogue.html": {
@@ -176,7 +176,7 @@
    "size": 43364
   },
   "versions.js": {
-   "sha256": "965c3fb64df3532e8150a7a8e0fc6d81a49ab5f299ce67e5ce40587ede4652da",
+   "sha256": "17cc5c08c13022864ffa681e89b9f76dc198a989a8e6be5b6f0eba144f59a6f7",
    "size": 1864
   },
   "favicon.ico": {
@@ -364,8 +364,8 @@
    "size": 5462
   },
   "covers/am_cybernetix.png": {
-   "sha256": "305b289e1f9b9b49c3a10cd9f0b292508f6dfa6685a791ad7f3fe38b6bbd3529",
-   "size": 3649
+   "sha256": "270778a60196e9d6e004aebc4efb2190896c930602e03b162b0b58103d7cbf96",
+   "size": 112998
   },
   "covers/am_deluxe_galaga.png": {
    "sha256": "b12b2d05e2e6bfeb438951b53925d2742abcca13aca8b925130d3535c0f87d3d",
