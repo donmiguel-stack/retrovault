@@ -1352,13 +1352,16 @@
     var dgSec = el("div","section");
     dgSec.appendChild(el("h2",null,window.t(dgSlugs.length > 1 ? "aboutGroups" : "aboutGroup")));
     var dgBox = el("div","controls-box group-box");
+    var dgLang = window.currentLang();
     dgSlugs.forEach(function (k) {
       var gr = window.DEMO_GROUPS[k];
+      // the visitor's language where demogroups.js has it, English otherwise
+      var tr = dgLang !== "en" && gr.i18n && gr.i18n[dgLang] || {};
       var item = el("div","group-item");
       item.appendChild(el("h3","group-name",gr.name));
-      var meta = [gr.country, gr.founded ? String(gr.founded) : ""].filter(Boolean).join(" \u00b7 ");
+      var meta = [tr.country || gr.country, gr.founded ? String(gr.founded) : ""].filter(Boolean).join(" \u00b7 ");
       if (meta) item.appendChild(el("p","group-meta",meta));
-      item.appendChild(el("p","group-text",gr.text));
+      item.appendChild(el("p","group-text",tr.text || gr.text));
       if (gr.links && gr.links.length) {
         var lk = el("p","group-links");
         gr.links.forEach(function (l) {
@@ -1371,9 +1374,10 @@
       }
       dgBox.appendChild(item);
     });
+    var dgNoteSet = (window.DEMO_NOTES || {})[(window.DEMO_NOTE_OF || {})[g.id]] || {};
     if (data.note) {
       var dgNote = el("p","controls-note own-note group-note");
-      dgNote.innerHTML = (jaPage(g.id) || {}).note || data.note;
+      dgNote.innerHTML = (dgLang !== "en" && dgNoteSet[dgLang]) || (jaPage(g.id) || {}).note || data.note;
       dgBox.appendChild(dgNote);
     }
     // Enigma easter egg - Phenomena's famous green ball worm (Enigma, 1991)
