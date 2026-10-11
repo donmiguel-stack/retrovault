@@ -30,6 +30,50 @@ body{
 .brand{font-size:17px;font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap;}
 .brand-mark{color:var(--accent);}
 .brand-mark img{display:block;width:22px;height:22px;image-rendering:pixelated;}
+/* Logo: "RETRO VAULT" in the Videopac attract-screen style (the ADVERTISE HERE
+   slot): Press Start 2P, one palette colour per letter with a glow. Frozen at
+   rest; on hover the colours run left to right and back (ping-pong), one
+   letter every 0.3s. Generated block - rv-pp1..10 are per-letter keyframes. */
+.brand-word{
+  font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;
+  font-size:15px; font-weight:400; letter-spacing:.06em; line-height:1;
+  text-transform:uppercase; white-space:nowrap; display:inline-flex; align-items:center;
+  padding-top:2px;
+}
+.brand-word b{font-weight:400; text-shadow:0 0 6px currentColor;}
+.brand-word i{display:inline-block; width:.7em;}
+.brand-word b:nth-of-type(1){color:#4ade80;}
+.brand:hover .brand-word b:nth-of-type(1),.brand:focus-visible .brand-word b:nth-of-type(1){animation:rv-pp1 5.4s linear infinite;}
+.brand-word b:nth-of-type(2){color:#ff6fc9;}
+.brand:hover .brand-word b:nth-of-type(2),.brand:focus-visible .brand-word b:nth-of-type(2){animation:rv-pp2 5.4s linear infinite;}
+.brand-word b:nth-of-type(3){color:#b39bff;}
+.brand:hover .brand-word b:nth-of-type(3),.brand:focus-visible .brand-word b:nth-of-type(3){animation:rv-pp3 5.4s linear infinite;}
+.brand-word b:nth-of-type(4){color:#3bffe9;}
+.brand:hover .brand-word b:nth-of-type(4),.brand:focus-visible .brand-word b:nth-of-type(4){animation:rv-pp4 5.4s linear infinite;}
+.brand-word b:nth-of-type(5){color:#ffffff;}
+.brand:hover .brand-word b:nth-of-type(5),.brand:focus-visible .brand-word b:nth-of-type(5){animation:rv-pp5 5.4s linear infinite;}
+.brand-word b:nth-of-type(6){color:#ffd23b;}
+.brand:hover .brand-word b:nth-of-type(6),.brand:focus-visible .brand-word b:nth-of-type(6){animation:rv-pp6 5.4s linear infinite;}
+.brand-word b:nth-of-type(7){color:#ff4d4d;}
+.brand:hover .brand-word b:nth-of-type(7),.brand:focus-visible .brand-word b:nth-of-type(7){animation:rv-pp7 5.4s linear infinite;}
+.brand-word b:nth-of-type(8){color:#ff9d3b;}
+.brand:hover .brand-word b:nth-of-type(8),.brand:focus-visible .brand-word b:nth-of-type(8){animation:rv-pp8 5.4s linear infinite;}
+.brand-word b:nth-of-type(9){color:#a6e13c;}
+.brand:hover .brand-word b:nth-of-type(9),.brand:focus-visible .brand-word b:nth-of-type(9){animation:rv-pp9 5.4s linear infinite;}
+.brand-word b:nth-of-type(10){color:#5c8dff;}
+.brand:hover .brand-word b:nth-of-type(10),.brand:focus-visible .brand-word b:nth-of-type(10){animation:rv-pp10 5.4s linear infinite;}
+@keyframes rv-pp1{0.00%,5.55%{color:#4ade80} 5.56%,11.10%{color:#5c8dff} 11.11%,16.66%{color:#a6e13c} 16.67%,22.21%{color:#ff9d3b} 22.22%,27.77%{color:#ff4d4d} 27.78%,33.32%{color:#ffd23b} 33.33%,38.88%{color:#ffffff} 38.89%,44.43%{color:#3bffe9} 44.44%,49.99%{color:#b39bff} 50.00%,55.55%{color:#ff6fc9} 55.56%,61.10%{color:#b39bff} 61.11%,66.66%{color:#3bffe9} 66.67%,72.21%{color:#ffffff} 72.22%,77.77%{color:#ffd23b} 77.78%,83.32%{color:#ff4d4d} 83.33%,88.88%{color:#ff9d3b} 88.89%,94.43%{color:#a6e13c} 94.44%,99.99%{color:#5c8dff}}
+@keyframes rv-pp2{0.00%,5.55%{color:#ff6fc9} 5.56%,11.10%{color:#4ade80} 11.11%,16.66%{color:#5c8dff} 16.67%,22.21%{color:#a6e13c} 22.22%,27.77%{color:#ff9d3b} 27.78%,33.32%{color:#ff4d4d} 33.33%,38.88%{color:#ffd23b} 38.89%,44.43%{color:#ffffff} 44.44%,49.99%{color:#3bffe9} 50.00%,55.55%{color:#b39bff} 55.56%,61.10%{color:#3bffe9} 61.11%,66.66%{color:#ffffff} 66.67%,72.21%{color:#ffd23b} 72.22%,77.77%{color:#ff4d4d} 77.78%,83.32%{color:#ff9d3b} 83.33%,88.88%{color:#a6e13c} 88.89%,94.43%{color:#5c8dff} 94.44%,99.99%{color:#4ade80}}
+@keyframes rv-pp3{0.00%,5.55%{color:#b39bff} 5.56%,11.10%{color:#ff6fc9} 11.11%,16.66%{color:#4ade80} 16.67%,22.21%{color:#5c8dff} 22.22%,27.77%{color:#a6e13c} 27.78%,33.32%{color:#ff9d3b} 33.33%,38.88%{color:#ff4d4d} 38.89%,44.43%{color:#ffd23b} 44.44%,49.99%{color:#ffffff} 50.00%,55.55%{color:#3bffe9} 55.56%,61.10%{color:#ffffff} 61.11%,66.66%{color:#ffd23b} 66.67%,72.21%{color:#ff4d4d} 72.22%,77.77%{color:#ff9d3b} 77.78%,83.32%{color:#a6e13c} 83.33%,88.88%{color:#5c8dff} 88.89%,94.43%{color:#4ade80} 94.44%,99.99%{color:#ff6fc9}}
+@keyframes rv-pp4{0.00%,5.55%{color:#3bffe9} 5.56%,11.10%{color:#b39bff} 11.11%,16.66%{color:#ff6fc9} 16.67%,22.21%{color:#4ade80} 22.22%,27.77%{color:#5c8dff} 27.78%,33.32%{color:#a6e13c} 33.33%,38.88%{color:#ff9d3b} 38.89%,44.43%{color:#ff4d4d} 44.44%,49.99%{color:#ffd23b} 50.00%,55.55%{color:#ffffff} 55.56%,61.10%{color:#ffd23b} 61.11%,66.66%{color:#ff4d4d} 66.67%,72.21%{color:#ff9d3b} 72.22%,77.77%{color:#a6e13c} 77.78%,83.32%{color:#5c8dff} 83.33%,88.88%{color:#4ade80} 88.89%,94.43%{color:#ff6fc9} 94.44%,99.99%{color:#b39bff}}
+@keyframes rv-pp5{0.00%,5.55%{color:#ffffff} 5.56%,11.10%{color:#3bffe9} 11.11%,16.66%{color:#b39bff} 16.67%,22.21%{color:#ff6fc9} 22.22%,27.77%{color:#4ade80} 27.78%,33.32%{color:#5c8dff} 33.33%,38.88%{color:#a6e13c} 38.89%,44.43%{color:#ff9d3b} 44.44%,49.99%{color:#ff4d4d} 50.00%,55.55%{color:#ffd23b} 55.56%,61.10%{color:#ff4d4d} 61.11%,66.66%{color:#ff9d3b} 66.67%,72.21%{color:#a6e13c} 72.22%,77.77%{color:#5c8dff} 77.78%,83.32%{color:#4ade80} 83.33%,88.88%{color:#ff6fc9} 88.89%,94.43%{color:#b39bff} 94.44%,99.99%{color:#3bffe9}}
+@keyframes rv-pp6{0.00%,5.55%{color:#ffd23b} 5.56%,11.10%{color:#ffffff} 11.11%,16.66%{color:#3bffe9} 16.67%,22.21%{color:#b39bff} 22.22%,27.77%{color:#ff6fc9} 27.78%,33.32%{color:#4ade80} 33.33%,38.88%{color:#5c8dff} 38.89%,44.43%{color:#a6e13c} 44.44%,49.99%{color:#ff9d3b} 50.00%,55.55%{color:#ff4d4d} 55.56%,61.10%{color:#ff9d3b} 61.11%,66.66%{color:#a6e13c} 66.67%,72.21%{color:#5c8dff} 72.22%,77.77%{color:#4ade80} 77.78%,83.32%{color:#ff6fc9} 83.33%,88.88%{color:#b39bff} 88.89%,94.43%{color:#3bffe9} 94.44%,99.99%{color:#ffffff}}
+@keyframes rv-pp7{0.00%,5.55%{color:#ff4d4d} 5.56%,11.10%{color:#ffd23b} 11.11%,16.66%{color:#ffffff} 16.67%,22.21%{color:#3bffe9} 22.22%,27.77%{color:#b39bff} 27.78%,33.32%{color:#ff6fc9} 33.33%,38.88%{color:#4ade80} 38.89%,44.43%{color:#5c8dff} 44.44%,49.99%{color:#a6e13c} 50.00%,55.55%{color:#ff9d3b} 55.56%,61.10%{color:#a6e13c} 61.11%,66.66%{color:#5c8dff} 66.67%,72.21%{color:#4ade80} 72.22%,77.77%{color:#ff6fc9} 77.78%,83.32%{color:#b39bff} 83.33%,88.88%{color:#3bffe9} 88.89%,94.43%{color:#ffffff} 94.44%,99.99%{color:#ffd23b}}
+@keyframes rv-pp8{0.00%,5.55%{color:#ff9d3b} 5.56%,11.10%{color:#ff4d4d} 11.11%,16.66%{color:#ffd23b} 16.67%,22.21%{color:#ffffff} 22.22%,27.77%{color:#3bffe9} 27.78%,33.32%{color:#b39bff} 33.33%,38.88%{color:#ff6fc9} 38.89%,44.43%{color:#4ade80} 44.44%,49.99%{color:#5c8dff} 50.00%,55.55%{color:#a6e13c} 55.56%,61.10%{color:#5c8dff} 61.11%,66.66%{color:#4ade80} 66.67%,72.21%{color:#ff6fc9} 72.22%,77.77%{color:#b39bff} 77.78%,83.32%{color:#3bffe9} 83.33%,88.88%{color:#ffffff} 88.89%,94.43%{color:#ffd23b} 94.44%,99.99%{color:#ff4d4d}}
+@keyframes rv-pp9{0.00%,5.55%{color:#a6e13c} 5.56%,11.10%{color:#ff9d3b} 11.11%,16.66%{color:#ff4d4d} 16.67%,22.21%{color:#ffd23b} 22.22%,27.77%{color:#ffffff} 27.78%,33.32%{color:#3bffe9} 33.33%,38.88%{color:#b39bff} 38.89%,44.43%{color:#ff6fc9} 44.44%,49.99%{color:#4ade80} 50.00%,55.55%{color:#5c8dff} 55.56%,61.10%{color:#4ade80} 61.11%,66.66%{color:#ff6fc9} 66.67%,72.21%{color:#b39bff} 72.22%,77.77%{color:#3bffe9} 77.78%,83.32%{color:#ffffff} 83.33%,88.88%{color:#ffd23b} 88.89%,94.43%{color:#ff4d4d} 94.44%,99.99%{color:#ff9d3b}}
+@keyframes rv-pp10{0.00%,5.55%{color:#5c8dff} 5.56%,11.10%{color:#a6e13c} 11.11%,16.66%{color:#ff9d3b} 16.67%,22.21%{color:#ff4d4d} 22.22%,27.77%{color:#ffd23b} 27.78%,33.32%{color:#ffffff} 33.33%,38.88%{color:#3bffe9} 38.89%,44.43%{color:#b39bff} 44.44%,49.99%{color:#ff6fc9} 50.00%,55.55%{color:#4ade80} 55.56%,61.10%{color:#ff6fc9} 61.11%,66.66%{color:#b39bff} 66.67%,72.21%{color:#3bffe9} 72.22%,77.77%{color:#ffffff} 77.78%,83.32%{color:#ffd23b} 83.33%,88.88%{color:#ff4d4d} 88.89%,94.43%{color:#ff9d3b} 94.44%,99.99%{color:#a6e13c}}
+@media (prefers-reduced-motion: reduce){ .brand-word b{animation:none !important;} }
+@media (max-width:640px){ .brand-word{font-size:10px;} }
 .brand-sub{font-size:11px;font-weight:400;color:var(--text-mute);letter-spacing:.04em;margin-left:2px;align-self:center;white-space:nowrap;}
 #search{
   flex:1;max-width:420px;

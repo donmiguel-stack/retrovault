@@ -411,7 +411,7 @@ def write_catalogue(games, head, rest_unused, primaries=None):
         + '<div class="topbar">\n'
           '  <a class="brand" href="https://retrovault.world/" title="Retro Vault home" style="color:inherit;text-decoration:none;"><span class="brand-mark">'
           '<img src="assets/kcmunch.png" alt="" width="22" height="22"></span> '
-          'Retro Vault</a>\n'
+          '<span class="brand-word" role="img" aria-label="Retro Vault"><b>R</b><b>E</b><b>T</b><b>R</b><b>O</b><i></i><b>V</b><b>A</b><b>U</b><b>L</b><b>T</b></span></a>\n'
           '  <div style="flex:1"></div>\n'
           '  <a class="ghost-btn" href="index.html" '
           'style="display:inline-block;text-decoration:none;">Library</a>\n'
