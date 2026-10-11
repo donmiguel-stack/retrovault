@@ -1,0 +1,62 @@
+{
+ "am_megamaid": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. It displays a scanned magazine photograph and is <strong>not safe for work</strong>.",
+  "ja": null
+ },
+ "am_demo_sota": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_mobile": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_enigma": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_mentalhangover": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_interference": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_arte": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_globaltrash": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_voyage": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_rinkadink": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "am_demo_qed": {
+  "en": "This is a demo, not a game: it boots from the disk and plays by itself, with nothing to control. Give it a moment &mdash; demos load their first part from disk before anything appears. <span class='kbd'>F5</span> starts it over.",
+  "ja": null
+ },
+ "c64_demo_dutchbreeze": {
+  "en": "This is a demo, not a game: it loads and then plays by itself, with nothing to control. It runs from side&nbsp;1 of the original multi-side release and will ask for the next side when it reaches that point &mdash; the Download button gives the complete set. Loading is slower here than for the games on this shelf, on purpose: demos use their own custom disk loaders, so the Vault switches true 1541 drive emulation on for them instead of the fast virtual-device load.",
+  "ja": null
+ },
+ "c64_demo_deusexmachina": {
+  "en": "This is a demo, not a game: it loads and then plays by itself, with nothing to control. It runs from side&nbsp;1 of the original multi-side release and will ask for the next side when it reaches that point &mdash; the Download button gives the complete set. Loading is slower here than for the games on this shelf, on purpose: demos use their own custom disk loaders, so the Vault switches true 1541 drive emulation on for them instead of the fast virtual-device load.",
+  "ja": null
+ },
+ "c64_demo_royalarte": {
+  "en": "This is a demo, not a game: it loads and then plays by itself, with nothing to control. It runs from side&nbsp;1 of the original multi-side release and will ask for the next side when it reaches that point &mdash; the Download button gives the complete set. Loading is slower here than for the games on this shelf, on purpose: demos use their own custom disk loaders, so the Vault switches true 1541 drive emulation on for them instead of the fast virtual-device load.",
+  "ja": null
+ },
+ "c64_demo_wonderland12": {
+  "en": "This is a demo, not a game: it loads and then plays by itself, with nothing to control. It runs from side&nbsp;1 of the original multi-side release and will ask for the next side when it reaches that point &mdash; the Download button gives the complete set. Loading is slower here than for the games on this shelf, on purpose: demos use their own custom disk loaders, so the Vault switches true 1541 drive emulation on for them instead of the fast virtual-device load.",
+  "ja": null
+ }
+}
