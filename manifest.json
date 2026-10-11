@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-11 12:20:16",
  "count": 838,
- "bytes": 325806627,
+ "bytes": 325806255,
  "files": {
   "games.js": {
    "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
@@ -36,8 +36,8 @@
    "size": 106334
   },
   "setup-i18n.js": {
-   "sha256": "efdadf93a2202a3ce2b56bc89935726603cf7f4da0fd8d7ce1bcbb7ceee12bd6",
-   "size": 91342
+   "sha256": "a057ba706131c676ae6be26084f77fbbb015afda3aea26134467d2e9a459c4bb",
+   "size": 90970
   },
   "featured.js": {
    "sha256": "508c46fc927ef4e98c924e3834bbf1c1f2f60095f02b3c938a516d3cce8f4254",
@@ -148,7 +148,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "00534effdbe3067f8cfe4fccd28fd9663012cfcdb577ebb7edf5d8914f550778",
+   "sha256": "2ff12a20fe7ac50d65174b2c7a4e7a6b35c7d36a577b08cd235aea0abac7dd02",
    "size": 20544
   },
   "resources.html": {
@@ -176,7 +176,7 @@
    "size": 43364
   },
   "versions.js": {
-   "sha256": "8e0574f30c7a619ec16c9680c601a334336b7e68ba7046eee954f799827e64ee",
+   "sha256": "47f476663bef2b457d5efa4672a33b827ec6726b4c591ca2b1d526e5ef027e6c",
    "size": 1864
   },
   "favicon.ico": {

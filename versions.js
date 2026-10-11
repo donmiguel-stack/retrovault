@@ -16,7 +16,7 @@
   ];
   var JS = [
     ["i18n.js", 137],
-    ["setup-i18n.js", 122],
+    ["setup-i18n.js", 123],
     ["games.js", 130],
     ["alternates.js", 4],
     ["extras.js", 109],
