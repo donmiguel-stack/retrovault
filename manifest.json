@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-11 12:20:16",
  "count": 838,
- "bytes": 324052235,
+ "bytes": 324855110,
  "files": {
   "games.js": {
    "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
@@ -132,7 +132,7 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "d9a6ec0b3575bb5f48db4e9b118b484c457d1edfa8a0b9a3adb3c22cbd44dcae",
+   "sha256": "9e659ca1f0644f59e55dfaaa861391c531fc832d89838abed11f8ea24ae2ada9",
    "size": 105708
   },
   "animcovers.js": {
@@ -148,7 +148,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "e79c5871337b321f40fe801f15bd19ce68ddfaa819f5b7959cae29dbba188e28",
+   "sha256": "e937bba9a275e129e993315549fea082ce3568d9c8a2eac086487fc95f15181d",
    "size": 20544
   },
   "resources.html": {
@@ -368,8 +368,8 @@
    "size": 3649
   },
   "covers/am_deluxe_galaga.png": {
-   "sha256": "ed5c764ca55ce89c8b863fdc0eaec4df37245d517185ab87d70250a6ffc9838c",
-   "size": 6669
+   "sha256": "b12b2d05e2e6bfeb438951b53925d2742abcca13aca8b925130d3535c0f87d3d",
+   "size": 56016
   },
   "covers/am_deluxe_pacman.png": {
    "sha256": "ae61463217e99a2c76979ea0ad636941848158928672e469745178cb7ca261e0",
@@ -380,20 +380,20 @@
    "size": 285608
   },
   "covers/am_demo_enigma.png": {
-   "sha256": "5506518699c4e0b525271dedfbce212f5e33f76c3d7cc1fde445a8162988936c",
-   "size": 13793
+   "sha256": "c9c799e0e59100c856f55c65366d3353d34929afe96676cf460102df38c87504",
+   "size": 96201
   },
   "covers/am_demo_globaltrash.png": {
-   "sha256": "0d9bc53e3b9652f52565a5c47b67936768046bcb2564369a74684736f7270ece",
-   "size": 55414
+   "sha256": "65b31c5fdaa77f71daa929bb530420861d8eca2e94b626427d1e12d4a90866a1",
+   "size": 207432
   },
   "covers/am_demo_interference.png": {
-   "sha256": "a901ba0a0cedfb5641cda8a19a764df84e6484fcf1fb31a879abf0eedbc1d7f1",
-   "size": 75787
+   "sha256": "55f671108284925509987d8da7c8bbe748dd6b15f3cc7d08b9b7bf5015002d2e",
+   "size": 234078
   },
   "covers/am_demo_mentalhangover.png": {
-   "sha256": "0ff2b9e26a2db74ac4d25ce6d00dbcbc8a156117420aff59c5b244ea572f86ea",
-   "size": 43142
+   "sha256": "e33182a49a10b52347786c61936fda406bf115965380ee65932e072b4dc97f98",
+   "size": 165748
   },
   "covers/am_demo_mobile.png": {
    "sha256": "1c4b216f67dc0cf8d4018565e70f0b70918ca8736d54a0d3d9c2ebf83cab897c",
@@ -404,8 +404,8 @@
    "size": 69467
   },
   "covers/am_demo_rinkadink.png": {
-   "sha256": "fb18f017d1369f65f48a3aee10b80acc13062372f3634c428123d4adec8ba234",
-   "size": 20784
+   "sha256": "e7f49db339125487b5617c4fc558ca3635fc81231547ab5781132d5229a6fdba",
+   "size": 258989
   },
   "covers/am_demo_sota.png": {
    "sha256": "bad34e7b1c46722c9e74130452719a30f7231eef78e9ac5821d5ec87d27ed083",
@@ -2931,11 +2931,11 @@
    "sha256": "457a2e394522dea5ff98342f5031bf90484e75a95960f1d0d8b215ef100fd64e",
    "size": 174848
   },
-  "homebrew-downloads/Kill the Attacking Aliens \u2014 demo 1.bin": {
+  "homebrew-downloads/Kill the Attacking Aliens — demo 1.bin": {
    "sha256": "538a9277fb21c8651e647665fa8665b1ef3b508bfc0ea7f84b26339592539113",
    "size": 8192
   },
-  "homebrew-downloads/Kill the Attacking Aliens \u2014 demo 2.bin": {
+  "homebrew-downloads/Kill the Attacking Aliens — demo 2.bin": {
    "sha256": "edff7d1a5ed2c4f6aaa0453114f5db87359423fc4d071e9678f3001b5a117f6b",
    "size": 8192
   },
