@@ -1551,6 +1551,15 @@
     // 1990s PD disks are already the bulk of the grid, so a panel of those
     // would just repeat it.
     if (state.platform === "Amiga") {
+      // Demoscene category picked: that list is only a dozen demos, and the
+      // demoscene banner is the one panel about exactly that - so it alone
+      // shows, at the top as a header for the list. The advert, community
+      // and homebrew panels are shelf-wide promotion and would be noise here.
+      if (state.category === "demoscene") {
+        var dsNode = amDemosceneBlock();
+        if (dsNode && cards.length) grid.insertBefore(dsNode, cards[0]);
+        return;
+      }
       if (total >= 6) insertAt(amAdBlock(), Math.min(12, Math.floor(total / 2)));
       // The demoscene banner sits between the advert and the community
       // panel, with a couple of rows of ordinary cards either side of it.
