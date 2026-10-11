@@ -1,7 +1,7 @@
 {
  "generated": "2026-10-11 12:20:16",
  "count": 838,
- "bytes": 325806255,
+ "bytes": 326240420,
  "files": {
   "games.js": {
    "sha256": "7720ed84df8b890783ba2de83ce79e3b56d19b9ef5635e7acafb6e7e15abd10b",
@@ -132,7 +132,7 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "aa044c4801e90d2e33c038c0612968afe4b48ed084065dd4410250ce0d7b3e75",
+   "sha256": "0505297832d1024972d1278fb3eb36361d112b6c70e1765f391e7c3c28ed6150",
    "size": 106197
   },
   "animcovers.js": {
@@ -148,7 +148,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "2ff12a20fe7ac50d65174b2c7a4e7a6b35c7d36a577b08cd235aea0abac7dd02",
+   "sha256": "e849d7056b127551f51c1b78a1aa0fcf1f1d6aa72b0dfbf014ca9f4b748ebb10",
    "size": 20544
   },
   "resources.html": {
@@ -168,7 +168,7 @@
    "size": 47666
   },
   "game-page.js": {
-   "sha256": "f8a0840f1b8b6a6f25f0fecb59cd39e7f002f7feaf5798a8e0a9d5ec09109220",
+   "sha256": "a9dfa5478a1716d80d9927e2280ee0fc7c88c90375c0ed540291898cf5d77ab1",
    "size": 111840
   },
   "catalogue.html": {
@@ -176,7 +176,7 @@
    "size": 43364
   },
   "versions.js": {
-   "sha256": "47f476663bef2b457d5efa4672a33b827ec6726b4c591ca2b1d526e5ef027e6c",
+   "sha256": "a0c8aca379829bd2ffb1b1d467999e87fdc92d2fe3b28f7b6e80e084708b9ffa",
    "size": 1864
   },
   "favicon.ico": {
@@ -332,8 +332,8 @@
    "size": 757386
   },
   "covers/am_black_dawn.png": {
-   "sha256": "a8c5f9a28e50a9ba89b0ebc12c8717b953ee96727e1269c03ba44d574cd66c84",
-   "size": 30369
+   "sha256": "d67ef2d90b89fd328e698b60f4d3fb3832ec69a8df625118253d812b123b0c05",
+   "size": 464534
   },
   "covers/am_blood_money.png": {
    "sha256": "f203867580751146996084ebb4b9cc17f68ea5088789ee3454445e5cca68a8a0",
