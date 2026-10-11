@@ -191,7 +191,7 @@
   var img = new Image();
   img.alt = g.title + " box art";
   // ?v= so a newly added cover isn't hidden behind the browser's cached miss
-  var COVER_V = 29;
+  var COVER_V = 35;
   // per-language box art (games.js "coverByLang"), else the game's own id
   var CID = (g.coverByLang && g.coverByLang[window.currentLang()]) || g.id;
   img.onerror = function(){
@@ -1426,6 +1426,12 @@
     amBox.appendChild(amSave);
     var amTipsBox = buildTipsBox(g.id);
     if (amTipsBox) amBox.appendChild(amTipsBox);
+    // Enigma easter egg - Phenomena's famous green ball worm (Enigma, 1991)
+    // rises out of the top edge of the controls box, arcs over and dives back
+    // in, then surfaces somewhere else. The canvas sits on top of the box with
+    // its bottom on the box's top border, so anything below that edge is
+    // simply cut off - that is the "surface". See .enigma-worm.
+    if (g.id === "am_demo_enigma") enigmaWorm(amBox);
     amSec.appendChild(amBox);
     page.appendChild(amSec);
   } else if (g.platform !== "C64") {
@@ -1571,6 +1577,135 @@
 
     c64Sec.appendChild(c64Box);
     page.appendChild(c64Sec);
+  }
+
+  // ---- Enigma (am_demo_enigma) easter egg: the ball worm ----------------
+  function enigmaWorm(box) {
+    var cv = document.createElement("canvas");
+    cv.className = "enigma-worm";
+    cv.setAttribute("aria-hidden", "true");
+    box.appendChild(cv);
+    var ctx = cv.getContext("2d");
+    if (!ctx) return;
+    var H = 160, W = 0, dpr = 1;
+    var BALLS = 12, R0 = 19, SPEED = 130, GAP = 1.4; // px per second along the path
+    var path = null, head = 0, pause = 0, last = 0, running = false, visible = true;
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function size() {
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      W = box.clientWidth || 600;
+      cv.width = Math.round(W * dpr);
+      cv.height = Math.round(H * dpr);
+      cv.style.width = W + "px";
+      cv.style.height = H + "px";
+    }
+    // One dive: an arch y = edge - h*sin(pi*u). For u outside 0..1 sin goes
+    // negative and the curve carries on under the edge, so the worm keeps
+    // travelling while hidden. Sampled and measured by arc length so the
+    // balls stay evenly spaced over the top of the arch.
+    function newPath() {
+      var span = Math.min(W - 80, 200 + Math.random() * 160);
+      var x0 = 40 + Math.random() * Math.max(1, W - 80 - span);
+      var h = 92 + Math.random() * 40;
+      var dir = Math.random() < 0.5 ? 1 : -1;
+      var pts = [], len = 0, px, py;
+      for (var i = 0; i <= 500; i++) {
+        var u = -0.4 + 1.8 * i / 500;
+        var x = dir > 0 ? x0 + span * u : x0 + span * (1 - u);
+        var y = H - h * Math.sin(Math.PI * u);
+        if (i) len += Math.hypot(x - px, y - py);
+        pts.push({ x: x, y: y, u: u, d: len });
+        px = x; py = y;
+      }
+      path = { pts: pts, len: len };
+      head = 0;
+    }
+    function at(d) {
+      var p = path.pts, lo = 0, hi = p.length - 1;
+      if (d <= 0) return p[0];
+      if (d >= path.len) return p[hi];
+      while (hi - lo > 1) { var m = (lo + hi) >> 1; if (p[m].d < d) lo = m; else hi = m; }
+      var a = p[lo], b = p[hi], t = (d - a.d) / ((b.d - a.d) || 1);
+      return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, u: a.u + (b.u - a.u) * t };
+    }
+    function ball(x, y, r) {
+      var gr = ctx.createRadialGradient(x - r * 0.38, y - r * 0.42, r * 0.06, x, y, r);
+      gr.addColorStop(0, "#f6ffec");
+      gr.addColorStop(0.14, "#a6f46e");
+      gr.addColorStop(0.48, "#3cba22");
+      gr.addColorStop(0.86, "#146a0b");
+      gr.addColorStop(1, "#0a3a05");
+      ctx.fillStyle = gr;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    function draw() {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      if (!path) return;
+      var list = [];
+      for (var i = 0; i < BALLS; i++) {
+        var d = head - i * R0 * GAP;
+        if (d < 0) break;
+        var p = at(d);
+        // A touch of perspective: the near end of the arch is fatter, and the
+        // tail tapers a little, like the original.
+        var r = R0 * (1.18 - 0.36 * Math.max(0, Math.min(1, p.u))) * (1 - i * 0.02);
+        if (p.y - r > H) continue;
+        list.push({ x: p.x, y: p.y, r: r, i: i });
+      }
+      // Far (small) balls first so the near ones overlap them.
+      list.sort(function (a, b) { return a.r - b.r; });
+      list.forEach(function (b) { ball(b.x, b.y, b.r); });
+    }
+    function frame(t) {
+      if (!running) return;
+      var dt = last ? Math.min(0.05, (t - last) / 1000) : 0;
+      last = t;
+      if (pause > 0) {
+        pause -= dt;
+        if (pause <= 0) newPath();
+      } else {
+        head += SPEED * dt;
+        if (head - BALLS * R0 * GAP > path.len) { pause = 1.2 + Math.random() * 2.5; path = null; }
+      }
+      draw();
+      requestAnimationFrame(frame);
+    }
+    function start() {
+      if (running || reduced || !visible || document.hidden) return;
+      running = true; last = 0;
+      requestAnimationFrame(frame);
+    }
+    function stop() { running = false; }
+
+    size();
+    newPath();
+    if (reduced) {
+      // Still picture: the worm caught mid-dive.
+      head = path.len * 0.62;
+      draw();
+    } else {
+      pause = 0.8; path = path || null;
+      head = 0;
+      start();
+    }
+    window.addEventListener("resize", function () {
+      var keep = path;
+      size();
+      if (reduced) { newPath(); head = path.len * 0.62; }
+      else if (keep) { newPath(); pause = 0.6; path = null; }
+      draw();
+    });
+    document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        visible = es[0].isIntersecting;
+        visible ? start() : stop();
+      }).observe(box);
+    }
   }
 
   // ---- Controller (2026-09-24) ----
