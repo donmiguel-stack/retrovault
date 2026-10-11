@@ -1340,7 +1340,51 @@
   } else {
     cSec.appendChild(cBox);
   }
-  if (g.platform === "PC") {
+  // Demos (genre "demo" in genres.js) have nothing to control and no manual,
+  // so instead of Controls / Controller / Manual they get one box about the
+  // group(s) behind them - texts in demogroups.js. The per-game note (it
+  // plays by itself, F5 starts it over) stays as a single line at the bottom.
+  var isDemo = ((window.GENRE_DATA || {})[g.id] || {}).genre === "demo";
+  if (isDemo) {
+    var dgSlugs = ((window.DEMO_GROUP_OF || {})[g.id] || []).filter(function (k) {
+      return (window.DEMO_GROUPS || {})[k];
+    });
+    var dgSec = el("div","section");
+    dgSec.appendChild(el("h2",null,window.t(dgSlugs.length > 1 ? "aboutGroups" : "aboutGroup")));
+    var dgBox = el("div","controls-box group-box");
+    dgSlugs.forEach(function (k) {
+      var gr = window.DEMO_GROUPS[k];
+      var item = el("div","group-item");
+      item.appendChild(el("h3","group-name",gr.name));
+      var meta = [gr.country, gr.founded ? String(gr.founded) : ""].filter(Boolean).join(" \u00b7 ");
+      if (meta) item.appendChild(el("p","group-meta",meta));
+      item.appendChild(el("p","group-text",gr.text));
+      if (gr.links && gr.links.length) {
+        var lk = el("p","group-links");
+        gr.links.forEach(function (l) {
+          var a = document.createElement("a");
+          a.href = l.url; a.target = "_blank"; a.rel = "noopener";
+          a.textContent = l.label;
+          lk.appendChild(a);
+        });
+        item.appendChild(lk);
+      }
+      dgBox.appendChild(item);
+    });
+    if (data.note) {
+      var dgNote = el("p","controls-note own-note group-note");
+      dgNote.innerHTML = (jaPage(g.id) || {}).note || data.note;
+      dgBox.appendChild(dgNote);
+    }
+    // Enigma easter egg - Phenomena's famous green ball worm (Enigma, 1991)
+    // rises out of the top edge of this box, arcs over and dives back in,
+    // then surfaces somewhere else. The canvas sits on top of the box with
+    // its bottom on the box's top border, so anything below that edge is
+    // simply cut off - that is the "surface". See .enigma-worm.
+    if (g.id === "am_demo_enigma") enigmaWorm(dgBox);
+    dgSec.appendChild(dgBox);
+    page.appendChild(dgSec);
+  } else if (g.platform === "PC") {
     // DOS games ran on a real PC keyboard (and sometimes a mouse), not a
     // joystick, and js-dos reads keys straight off the browser once the page
     // has focus - there's no RetroArch-style hotkey layer fighting it for
@@ -1426,12 +1470,6 @@
     amBox.appendChild(amSave);
     var amTipsBox = buildTipsBox(g.id);
     if (amTipsBox) amBox.appendChild(amTipsBox);
-    // Enigma easter egg - Phenomena's famous green ball worm (Enigma, 1991)
-    // rises out of the top edge of the controls box, arcs over and dives back
-    // in, then surfaces somewhere else. The canvas sits on top of the box with
-    // its bottom on the box's top border, so anything below that edge is
-    // simply cut off - that is the "surface". See .enigma-worm.
-    if (g.id === "am_demo_enigma") enigmaWorm(amBox);
     amSec.appendChild(amBox);
     page.appendChild(amSec);
   } else if (g.platform !== "C64") {
@@ -1681,31 +1719,40 @@
     }
     function stop() { running = false; }
 
-    size();
-    newPath();
-    if (reduced) {
-      // Still picture: the worm caught mid-dive.
-      head = path.len * 0.62;
-      draw();
-    } else {
-      pause = 0.8; path = path || null;
-      head = 0;
-      start();
-    }
-    window.addEventListener("resize", function () {
-      var keep = path;
+    // The box is built before it is attached to the page, so wait for it to
+    // be in the document before measuring it and watching its visibility -
+    // measured detached it reads 0 wide, and the visibility observer never
+    // reports it as on screen.
+    function boot() {
+      if (!box.isConnected || !box.clientWidth) { requestAnimationFrame(boot); return; }
       size();
-      if (reduced) { newPath(); head = path.len * 0.62; }
-      else if (keep) { newPath(); pause = 0.6; path = null; }
-      draw();
-    });
-    document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (es) {
-        visible = es[0].isIntersecting;
-        visible ? start() : stop();
-      }).observe(box);
+      newPath();
+      if (reduced) {
+        // Still picture: the worm caught mid-dive.
+        head = path.len * 0.62;
+        draw();
+      } else {
+        pause = 0.8; head = 0;
+        start();
+      }
+      var lastW = W;
+      window.addEventListener("resize", function () {
+        size();
+        if (W === lastW) return;
+        lastW = W;
+        if (reduced) { newPath(); head = path.len * 0.62; }
+        else { pause = 0.6; path = null; }
+        draw();
+      });
+      document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (es) {
+          visible = es[es.length - 1].isIntersecting;
+          visible ? start() : stop();
+        }).observe(box);
+      }
     }
+    requestAnimationFrame(boot);
   }
 
   // ---- Controller (2026-09-24) ----
@@ -1716,7 +1763,7 @@
   // as they are pressed, so you can see which one is which on your pad.
   // The Amiga player reads pads itself, so there it is status + a pointer to
   // its port dropdown only.
-  if (window.VaultPad) page.appendChild(buildPadPanel());
+  if (window.VaultPad && !isDemo) page.appendChild(buildPadPanel());
   function buildPadPanel() {
     var P = window.VaultPad;
     var shelf = P.shelfOf(g.platform);
@@ -1955,7 +2002,8 @@
   } else {
     mSec.appendChild(el("p","missing-note",LT("s_noManual")));
   }
-  page.appendChild(mSec);
+  // no Manual section on demos - see isDemo above
+  if (!isDemo) page.appendChild(mSec);
 
   // ---- video ----
   var vSec = el("div","section");

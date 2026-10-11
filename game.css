@@ -706,6 +706,17 @@
     margin-bottom:-1px;pointer-events:none;z-index:3;
     filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));
   }
+  /* "About the group" box on demo pages (game-page.js isDemo). Same frame as
+     the controls box it replaces, so the Enigma worm still dives through its
+     top edge. */
+  .group-item + .group-item{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+  .group-name{margin:0;font-size:16px;color:var(--text);}
+  .group-meta{margin:2px 0 8px;font-size:12.5px;color:var(--text-dim);letter-spacing:.02em;}
+  .group-text{margin:0;line-height:1.6;}
+  .group-links{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;}
+  .group-links a{color:var(--accent,#5b8def);text-decoration:none;}
+  .group-links a:hover{text-decoration:underline;}
+  .group-note{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);}
   .controls-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0 0 12px;}
   .controls-grid .kact{color:var(--text);}
   .kbd{

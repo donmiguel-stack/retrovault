@@ -12,10 +12,10 @@
 (function () {
   var CSS = [
     ["style.css", 116],
-    ["game.css", 13]
+    ["game.css", 14]
   ];
   var JS = [
-    ["i18n.js", 136],
+    ["i18n.js", 137],
     ["setup-i18n.js", 122],
     ["games.js", 130],
     ["alternates.js", 4],
@@ -43,7 +43,8 @@
     ["gamepages.js", 148],
     ["gamepages-ja.js", 2],
     ["demo.js", 112],
-    ["game-page.js", 33],
+    ["demogroups.js", 1],
+    ["game-page.js", 34],
     ["animcovers.js", 12]
   ];
   function write(list, tag) {
