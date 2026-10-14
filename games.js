@@ -39,7 +39,7 @@ window.GAMES_DATA = {
   {
     "id": "new_le-sprint",
     "filename": "new_le-sprint.bin",
-    "title": "Le Sprint (kuoris-dev)",
+    "title": "Le Sprint",
     "platform": "G7400+",
     "category": "Homebrew (community)",
     "vpNumber": null,

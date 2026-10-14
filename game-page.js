@@ -1937,7 +1937,18 @@
   // Two kinds of manual: a scan of the printed booklet (data.manual.item,
   // page images under manuals/) and, for a game that never had a booklet,
   // the instructions the author wrote themselves (data.manual.text).
-  if (data.manual && data.manual.item) mH.appendChild(el("span","sec-note","scan: "+data.manual.source+" (archive.org)"));
+  // A manual made for the game (data.manual.credit) says so instead of
+  // naming an archive.org scan; data.manual.pdf adds a download link.
+  if (data.manual && data.manual.item && data.manual.credit) {
+    var mNote = el("span","sec-note",data.manual.credit);
+    if (data.manual.pdf) {
+      var mPdf = el("a",null,"PDF");
+      mPdf.href = data.manual.pdf; mPdf.setAttribute("download","");
+      mNote.appendChild(document.createTextNode(" · ")); mNote.appendChild(mPdf);
+    }
+    mH.appendChild(mNote);
+  }
+  else if (data.manual && data.manual.item) mH.appendChild(el("span","sec-note","scan: "+data.manual.source+" (archive.org)"));
   else if (data.manual) mH.appendChild(el("span","sec-note","from "+data.manual.source));
   mSec.appendChild(mH);
 

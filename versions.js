@@ -17,7 +17,7 @@
   var JS = [
     ["i18n.js", 137],
     ["setup-i18n.js", 123],
-    ["games.js", 131],
+    ["games.js", 132],
     ["alternates.js", 4],
     ["extras.js", 111],
     ["packaging.js", 109],
@@ -40,11 +40,11 @@
     ["walkthroughs.js", 2],
     ["featured.js", 119],
     ["c64ad.js", 110],
-    ["gamepages.js", 149],
+    ["gamepages.js", 151],
     ["gamepages-ja.js", 3],
     ["demo.js", 112],
     ["demogroups.js", 2],
-    ["game-page.js", 42],
+    ["game-page.js", 43],
     ["animcovers.js", 12]
   ];
   function write(list, tag) {
