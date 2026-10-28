@@ -12,10 +12,10 @@
 (function () {
   var CSS = [
     ["style.css", 116],
-    ["game.css", 14]
+    ["game.css", 17]
   ];
   var JS = [
-    ["i18n.js", 137],
+    ["i18n.js", 138],
     ["setup-i18n.js", 123],
     ["games.js", 132],
     ["alternates.js", 4],
@@ -30,7 +30,8 @@
     ["store.js", 1],
     ["localroms.js", 1],
     ["pad.js", 1],
-    ["romsources.js", 6],
+    ["romsources.js", 7],
+    ["gog.js", 1],
     ["hosted.js", 2],
     ["products.js", 1],
     ["cheats.js", 113],
@@ -44,7 +45,7 @@
     ["gamepages-ja.js", 3],
     ["demo.js", 112],
     ["demogroups.js", 2],
-    ["game-page.js", 43],
+    ["game-page.js", 47],
     ["animcovers.js", 12]
   ];
   function write(list, tag) {

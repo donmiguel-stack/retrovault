@@ -256,7 +256,88 @@
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openCoverZoom(); }
     });
   }
-  hero.appendChild(cover);
+  if (g.id === "pc_leisure_suit_larry") hero.appendChild(larryParser(cover));
+  else hero.appendChild(cover);
+
+  // Leisure Suit Larry easter egg: a Sierra text parser under the cover.
+  // In the game, LOOK AT THE MOOSE in Lefty's bar gets "It's an antique, left
+  // over from King's Quest III." - typing "look moose" here gets the same
+  // line in a Sierra message box, with the moose (assets/kq3-moose.png)
+  // linking to the Paint by Nrs Moose PDF, same as on the KQ3 page.
+  // The prompt is "]" with a blinking "_", as Mike wants it.
+  // A real <input> sits invisibly over the line so focus, phones and
+  // screen readers work; what's typed is mirrored next to a blinking "_".
+  // Keys typed into it stop here, so the page's own shortcuts don't fire.
+  function larryParser(coverEl) {
+    var wrap = el("div", "lsl-coverwrap");
+    wrap.appendChild(coverEl);
+    var box = el("div", "lsl-parser");
+    var say = el("p", "lsl-say", "What are you looking for?");
+    say.setAttribute("aria-live", "polite");
+    var line = el("label", "lsl-line");
+    line.appendChild(el("span", "lsl-prompt", "]"));
+    var typed = el("span", "lsl-typed", "");
+    line.appendChild(typed);
+    line.appendChild(el("span", "lsl-cursor", "_"));
+    var inp = document.createElement("input");
+    inp.type = "text"; inp.maxLength = 24; inp.autocomplete = "off";
+    inp.spellcheck = false; inp.setAttribute("autocapitalize", "off");
+    inp.setAttribute("aria-label", "What are you looking for?");
+    line.appendChild(inp);
+    box.appendChild(say); box.appendChild(line);
+    wrap.appendChild(box);
+    inp.addEventListener("input", function () { typed.textContent = inp.value; });
+    inp.addEventListener("keydown", function (e) {
+      e.stopPropagation();
+      if (e.key !== "Enter") return;
+      e.preventDefault();
+      var raw = inp.value.trim();
+      inp.value = ""; typed.textContent = "";
+      if (!raw) return;
+      var words = raw.toLowerCase().replace(/[^a-z0-9' ]/g, " ").split(/\s+/)
+        .filter(function (w) { return w && ["at", "the", "a", "an"].indexOf(w) === -1; });
+      var verb = words[0], noun = words.slice(1).join(" ");
+      var looking = ["look", "l", "examine", "x", "inspect"].indexOf(verb) !== -1;
+      if (looking && /^(moose|moose head|head|trophy|antique)$/.test(noun)) {
+        say.textContent = "What are you looking for?";
+        mooseBox();
+      } else if (looking && !noun) {
+        say.textContent = "A game page. Somewhere, an old trophy is gathering dust.";
+      } else if (raw.toLowerCase().replace(/[^a-z ]/g, "") === "ken sent me") {
+        say.textContent = "Wrong door, buddy. Try the controls box.";
+      } else if (looking) {
+        say.textContent = "You don't see that here.";
+      } else {
+        say.textContent = 'I don\'t understand "' + raw.slice(0, 24) + '".';
+      }
+    });
+    box.addEventListener("click", function () { inp.focus(); });
+    return wrap;
+  }
+  function mooseBox() {
+    var ov = el("div", "sierra-ov");
+    var msg = el("div", "sierra-msg");
+    msg.setAttribute("role", "dialog");
+    msg.setAttribute("aria-label", "Message");
+    msg.appendChild(el("p", null, "It's an antique, left over from \u201cKing's Quest III.\u201d"));
+    var a = el("a", "sierra-moose");
+    a.href = "assets/paint-by-nrs-moose.pdf"; a.target = "_blank"; a.rel = "noopener";
+    a.title = "Courtesy of Sierra Online Prop Dept. - paint your own (PDF)";
+    var m = new Image(); m.src = "assets/kq3-moose.png"; m.alt = "Mounted moose head";
+    a.appendChild(m);
+    a.appendChild(el("span", null, "Paint your own moose (PDF)"));
+    msg.appendChild(a);
+    ov.appendChild(msg);
+    function close() { document.removeEventListener("keydown", onKey, true); ov.remove(); }
+    function onKey(e) {
+      if (e.key === "Enter" && document.activeElement === a) return;   // Enter on the link opens the PDF
+      if (e.key === "Escape" || e.key === "Enter") { e.preventDefault(); e.stopPropagation(); close(); }
+    }
+    ov.addEventListener("click", function (e) { if (!a.contains(e.target)) close(); });
+    document.addEventListener("keydown", onKey, true);
+    document.body.appendChild(ov);
+    a.focus();
+  }
 
   // American Football (vp_03) easter egg - the ball the runner is
   // cradling launches out of his grip and sails off screen, a beat after
@@ -580,6 +661,47 @@
   // dos.html's resolveBundleUrl - both only try this path when told to).
   var romNote = el("p","missing-note","");
   info.appendChild(romNote);
+  // ---- Buy it on GOG (gog.js, 2026-10-10) ----
+  // missing=true: a box above "Where to get it" with the GOG product and the
+  // three import steps (tools/import_gog.py turns the GOG Windows installer
+  // into the file this page wants). missing=false: the game already plays, so
+  // just one line under the buttons. Entries flagged "other" are the PC
+  // release of a C64/Amiga game, "remaster" a game GOG only sells inside a
+  // modern re-release (Final Doom): link only, no import steps.
+  var gogEl = null;
+  function showGog(missing) {
+    var s = (window.GOG_STORE || {})[g.id];
+    if (!s) return;
+    if (gogEl) { gogEl.remove(); gogEl = null; }
+    var link = '<a href="https://www.gog.com/en/game/' + encodeURIComponent(s.slug) +
+      '" target="_blank" rel="noopener">' + esc(s.product) + "</a>";
+    if (!missing) {
+      gogEl = el("p", "gog-line");
+      gogEl.innerHTML = window.t(s.other ? "gogAlsoOther" : (s.remaster ? "gogAlsoRemaster" : "gogAlso"), { product: link });
+      actions.insertAdjacentElement("afterend", gogEl);
+      return;
+    }
+    gogEl = el("div", "get-box gog-box");
+    gogEl.appendChild(el("h3", null, window.t("gogHead")));
+    var body = el("p", "gog-body");
+    body.innerHTML = window.t(s.other ? "gogBodyOther" : (s.remaster ? "gogBodyRemaster" : "gogBody"), { product: link, platform: esc(g.platform) });
+    gogEl.appendChild(body);
+    if (!s.other && !s.remaster) {
+      var ol = document.createElement("ol");
+      ["gogStep1", "gogStep2", "gogStep3"].forEach(function (k) {
+        var li = document.createElement("li");
+        li.innerHTML = window.t(k, {
+          file: "<code>" + esc(g.romFile) + "</code>",
+          folder: "<code>emulator/roms/</code>",
+          inbox: "<code>gog/</code>",
+          tool: "<code>python3 tools/import_gog.py</code>"
+        });
+        ol.appendChild(li);
+      });
+      gogEl.appendChild(ol);
+    }
+    romNote.insertAdjacentElement("afterend", gogEl);
+  }
   function vaultShowStart(fromDownloads, hostedUrl, storeId) {
     romNote.remove();
     if (fromDownloads) start.dataset.dlfallback = dl.file;
@@ -592,10 +714,12 @@
       start.title = window.t("playsHosted");
     }
     actions.insertBefore(start, actions.firstChild);
+    showGog(false);
   }
   function vaultShowMissing() {
     var key = g.platform === "PC" ? "pc_noRom" : (g.platform === "C64" ? "c64_noRom" : (g.platform === "Amiga" ? "amiga_noRom" : "vp_noRom"));
     romNote.textContent = window.t(key, { file: g.romFile });
+    showGog(true);
     showDropZone();
     // Where to get it (romsources.js): for titles the Vault can neither ship
     // nor host, point at a preservation copy and spell out the three steps.
@@ -627,7 +751,7 @@
       box.appendChild(mn);
     }
     if (src.note) box.appendChild(el("p", "get-note", src.note));
-    romNote.insertAdjacentElement("afterend", box);
+    ((gogEl && gogEl.parentNode) ? gogEl : romNote).insertAdjacentElement("afterend", box);
     getBox = box;
   }
   // A game on sale, not in emulator/roms/: START only with a license saved in
@@ -761,7 +885,9 @@
         e.preventDefault(); dropBox.classList.remove("over");
         take(e.dataTransfer && e.dataTransfer.files[0]);
       });
-      var after = (getBox && getBox.parentNode) ? getBox : (romNote.parentNode ? romNote : null);
+      var after = (getBox && getBox.parentNode) ? getBox :
+                  (gogEl && gogEl.parentNode && gogEl.tagName === "DIV") ? gogEl :
+                  (romNote.parentNode ? romNote : null);
       if (after) after.insertAdjacentElement("afterend", dropBox);
       else actions.insertAdjacentElement("beforebegin", dropBox);
     });
@@ -1430,13 +1556,19 @@
     // finds in Lefty's bar ("an antique, left over from King's Quest III") and
     // that ends up again in the Quest for Glory I Adventurers' Guild, whose
     // plaque reads "Courtesy of Sierra Online Prop Dept." Hung on the wall to
-    // the right of the controls box - see .kq3-moose in game.css.
+    // the right of the controls box - see .kq3-moose in game.css. Clicking it
+    // opens the "Paint by Nrs Moose" sheet (assets/paint-by-nrs-moose.pdf:
+    // the original sprite, a numbered sheet to paint, and a block-by-block
+    // grid chart for copying it onto a canvas) in a new tab.
     if (g.id === "pc_kq3") {
-      var moose = el("span", "kq3-moose");
+      var moose = el("a", "kq3-moose");
+      moose.href = "assets/paint-by-nrs-moose.pdf";
+      moose.target = "_blank";
+      moose.rel = "noopener";
+      moose.title = "Courtesy of Sierra Online Prop Dept. - paint your own (PDF)";
       var mooseImg = new Image();
       mooseImg.src = "assets/kq3-moose.png";
-      mooseImg.alt = "Mounted moose head";
-      mooseImg.title = "Courtesy of Sierra Online Prop Dept.";
+      mooseImg.alt = "Mounted moose head - paint-by-numbers sheet (PDF)";
       moose.appendChild(mooseImg);
       pcBox.appendChild(moose);
     }

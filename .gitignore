@@ -157,3 +157,6 @@ Claude outputs/*
 # Hostinger upload staging folders (landing-site files, pitch pages) - kept
 # locally for manual upload, never part of the repo.
 _hostinger-upload-*/
+
+# GOG Windows installers dropped in for tools/import_gog.py - never in git.
+gog/

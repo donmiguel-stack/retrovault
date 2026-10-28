@@ -252,6 +252,11 @@
   .get-box li{margin:3px 0;color:var(--text-dim);}
   .get-box code{background:rgba(255,255,255,.07);padding:1px 5px;border-radius:4px;color:var(--text);word-break:break-all;}
   .get-box a{color:var(--accent);}
+  /* Buy it on GOG (gog.js): same box as "Where to get it", GOG purple title */
+  .gog-box h3{color:#b18cff;}
+  .gog-box .gog-body{margin:0 0 6px;color:var(--text-dim);}
+  .gog-line{margin:8px 0 0;font-size:13px;color:var(--text-mute);}
+  .gog-line a{color:#b18cff;}
   .get-box .get-note{margin:8px 0 0;color:var(--text-mute);font-size:13px;}
   /* "Play your own copy" - localroms.js, the drop zone under the missing-file
      note, and the line under START once a copy is stored in this browser */
@@ -347,7 +352,12 @@
     width:min(240px,22vw);pointer-events:auto;z-index:3;
     filter:drop-shadow(0 3px 3px rgba(0,0,0,.55));
   }
-  .kq3-moose img{display:block;width:100%;height:auto;image-rendering:pixelated;}
+  .kq3-moose img{display:block;width:100%;height:auto;image-rendering:pixelated;
+    transition:transform .2s ease;}
+  /* it's a link to the paint-by-numbers PDF: a small wobble says "click me" */
+  a.kq3-moose{cursor:pointer;}
+  a.kq3-moose:hover img, a.kq3-moose:focus-visible img{transform:rotate(-4deg) scale(1.05);}
+  a.kq3-moose:focus-visible{outline:2px solid var(--accent);outline-offset:4px;}
   @media (max-width: 1100px){
     .kq3-moose{position:static;display:block;margin:16px auto 0;width:min(200px,55%);}
   }
@@ -878,3 +888,33 @@
 .shot-thumb img{display:block;width:72px;aspect-ratio:4/3;object-fit:fill;image-rendering:pixelated;border-radius:4px;}
 .shot-thumb:hover{border-color:var(--accent);}
 .shot-thumb.on{border-color:var(--g7400);color:var(--text);}
+
+  /* Leisure Suit Larry easter egg (pc_leisure_suit_larry only - see
+     larryParser() in game-page.js): a Sierra text parser under the cover;
+     "look moose" opens a Sierra message box with the KQ3 moose. */
+  .lsl-coverwrap{display:flex;flex-direction:column;gap:10px;width:220px;flex-shrink:0;}
+  .lsl-parser{background:#000;border:1px solid var(--border);border-radius:var(--radius);
+    padding:10px 10px 12px;cursor:text;font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;
+    font-size:8px;line-height:1.9;color:#fff;}
+  .lsl-say{margin:0 0 8px;color:#ddd;min-height:1.9em;}
+  .lsl-line{display:flex;align-items:baseline;position:relative;white-space:pre;overflow:hidden;cursor:text;}
+  .lsl-prompt{margin-right:4px;}
+  .lsl-cursor{animation:lsl-blink 1s steps(1) infinite;}
+  .lsl-line input{position:absolute;inset:0;width:100%;opacity:0;border:0;padding:0;font:inherit;
+    background:transparent;color:transparent;caret-color:transparent;}
+  .lsl-parser:focus-within{border-color:var(--accent);}
+  @keyframes lsl-blink{50%{opacity:0;}}
+  @media (prefers-reduced-motion: reduce){ .lsl-cursor{animation:none;} }
+  /* Sierra-style message box (white, black text, red double frame) */
+  .sierra-ov{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.45);
+    display:flex;align-items:center;justify-content:center;padding:16px;}
+  .sierra-msg{background:#fff;color:#000;max-width:520px;width:100%;padding:18px 22px;
+    border:6px double #a8201a;box-shadow:0 0 0 3px #fff,0 10px 40px rgba(0,0,0,.6);
+    font-family:"Press Start 2P",ui-monospace,Menlo,Consolas,monospace;font-size:12px;line-height:1.9;text-align:center;}
+  .sierra-msg p{margin:0 0 14px;}
+  .sierra-moose{display:inline-flex;flex-direction:column;align-items:center;gap:8px;color:#a8201a;
+    text-decoration:none;font-size:9px;}
+  .sierra-moose img{width:150px;height:auto;image-rendering:pixelated;transition:transform .2s ease;}
+  .sierra-moose:hover img,.sierra-moose:focus-visible img{transform:rotate(-4deg) scale(1.05);}
+  .sierra-moose:hover span,.sierra-moose:focus-visible span{text-decoration:underline;}
+  @media (max-width: 600px){ .lsl-coverwrap{width:100%;max-width:220px;} }
