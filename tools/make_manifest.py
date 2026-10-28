@@ -28,7 +28,7 @@ FILES = [
     # news.js feeds the ticker tape on top of the homebrew panel; index.html
     # references it, so the two have to travel together through an update.
     "news.js",
-    "shops.js", "c64ad.js", "pcad.js", "amigaad.js", "cheats.js", "downloads.js", "romsources.js", "walkthroughs.js", "tips.js",
+    "shops.js", "c64ad.js", "pcad.js", "amigaad.js", "cheats.js", "downloads.js", "romsources.js", "gog.js", "walkthroughs.js", "tips.js",
     # the Japanese (hiragana) sidecars for the three prose data files above -
     # same ids, translated text only. They ship through the update mechanism
     # like any other catalogue file; game.html reads them only on lang "ja".
