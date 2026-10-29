@@ -401,6 +401,15 @@ window.GAMEPAGES_DATA = {
    "title": "Route 66 Europe  Magnavox Odyssey 2 HYPERSPIN NOT MINE VIDEOSProto VIDEOPAC PHILIPS VIDEOPAC"
   }
  },
+ "new_demo-tribute": {
+  "input": "keyboard",
+  "note": "A 12 KB demo cartridge for the <strong>Videopac+ G7400</strong>, made by Retro Vault in October 2026. It boots to <strong>SELECT GAME</strong> like any cartridge: press <span class='kbd'>1</span> and sit back - it runs for about eighty seconds and hands the console back to the select screen when it is done. Matrix rain eats the select screen, a voice announces the show, a sine scroller, raster bars, a plasma with a dancer in it, a rotating cube that flies through the camera, the production card, and the credits. Sound on: the voice and the tune come out of the console's own one-channel sound chip. It needs the G7400 (or a Videopac+ / Odyssey&sup3;): on a G7000 there is no Plus video chip to draw on.",
+  "history": {
+   "text": "Retro Vault's own demo for the Philips Videopac+ G7400, written in Intel 8048 assembly in October 2026 and built in public, build by build, in the Vault. The title is honest about what it is: a tribute to the demoscene from a machine the demoscene never had.  Most of what looks like effects here is tables and timing, because the G7400 gives you almost nothing to work with. The 8048 has no multiply, a stack eight calls deep and 64 bytes of RAM, and runs at well under a million instructions a second. So the Plus text layer is rewritten faster than it was designed for, the rain's glyphs are uploaded to the video chip live, the 3D cube is a wireframe precomputed so the processor only has to draw lines, the fly-in is a camera dolly stored as clipped line segments, eight sprites are multiplexed from the four the VDC has, the voice is a 4-bit sample pushed through the volume register, and the program itself is four 3 KB banks swapped through a port because 12 KB is what the cartridge scheme allows. The music is the honest exception: one voice, a 24-bit shift register, two clock rates and no envelope. The scale it plays - root, fifth, octave and one major third - is every pitch class the chip can make. It will always sound like a Videopac.  The whole thing was built and verified on an emulator; the Plus write speed, the mid-frame sprite rewrite and the sample timing are exactly the things emulators forgive, so the real test is a real G7400. The box is a fan-made concept cover.",
+   "source": "Retro Vault",
+   "url": "https://github.com/donmiguel-stack/retrovault"
+  }
+ },
  "new_teletext": {
   "vaultCart": "teletext-vault.bin",
   "shots": {

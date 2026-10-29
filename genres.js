@@ -144,6 +144,10 @@ window.GENRE_DATA = {
   "genre": "utility",
   "players": "p1"
  },
+ "new_demo-tribute": {
+  "genre": "demo",
+  "players": "p1"
+ },
  "im_atlantis": {
   "genre": "shooter",
   "players": "p12"

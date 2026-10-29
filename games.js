@@ -220,6 +220,18 @@ window.GAMES_DATA = {
     }
   },
   {
+    "id": "new_demo-tribute",
+    "filename": "new_demo-tribute.bin",
+    "title": "Demo Tribute: The Bootleg Sessions",
+    "platform": "G7400+",
+    "category": "Homebrew (this project)",
+    "vpNumber": null,
+    "tags": [
+      "plus-graphics"
+    ],
+    "romFile": "Demo Tribute (Retro Vault).bin"
+  },
+  {
     "id": "im_atlantis",
     "filename": "im_atlantis.bin",
     "title": "Atlantis",
