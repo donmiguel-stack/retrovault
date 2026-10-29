@@ -1,15 +1,15 @@
 {
- "generated": "2026-10-29 16:22:23",
- "count": 847,
- "bytes": 328294992,
+ "generated": "2026-10-29 16:33:40",
+ "count": 850,
+ "bytes": 328927921,
  "files": {
   "games.js": {
    "sha256": "49187b734c8d0895890a2817efd9533d518a8c3a2f16e9078fe447e90363eb57",
    "size": 145548
   },
   "gamepages.js": {
-   "sha256": "d380f3e0f002d99140a0e10fd7cc1e88f3ed71fa490f9ae216c2b5cb19251cb1",
-   "size": 334239
+   "sha256": "9118c10fca5bfb2facb000cccedbab1ac78b694999d399ebd88f6d13bf99d11e",
+   "size": 334339
   },
   "genres.js": {
    "sha256": "65ff09e5637e495e29df56ba94f8a54304abd70adad2985cd4cd6b798cff904f",
@@ -68,8 +68,8 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "c4c116a899ad16c556911e77369c1b6b3a6817ebe965d54a5f0c3aa64e5d1539",
-   "size": 37763
+   "sha256": "541e4789a1250f914c601f5c0d76ff93dc34b9e2a01081c235284390e9a6d736",
+   "size": 37936
   },
   "romsources.js": {
    "sha256": "1d9a69d29b77b6600e6663ccfe3582d4a481d4ddaf8ce0a8f8ceae6c0121166e",
@@ -152,7 +152,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "6e6acaa7b00e944cf7da89c5c898d145f02a6dd61018cd2677a3e99abb7dc7ce",
+   "sha256": "ba55140e7c3783dc2299f583e8f4436b3b738ab4c3b6e84ade103b1b2a6e2ba9",
    "size": 20544
   },
   "resources.html": {
@@ -180,7 +180,7 @@
    "size": 43683
   },
   "versions.js": {
-   "sha256": "45ff62f08fe74026645e171f46c876a2106a4e1771d1ebb33825014c3d873397",
+   "sha256": "fc9ecb1d2ed6a7c387af01c826e6e063245e3a245a41c87aea457eb151e86963",
    "size": 1883
   },
   "favicon.ico": {
@@ -1314,6 +1314,10 @@
   "covers/new_calculator.png": {
    "sha256": "6349aeaa3f0bbb9e666057537f9ab26015bc9e76325b05828ba059489aeae974",
    "size": 756812
+  },
+  "covers/new_demo-tribute.png": {
+   "sha256": "d1b5d1118e83f5b0d5115f0f72886655e921d4e7cf8bdb0f5b4f2647b38e034d",
+   "size": 560206
   },
   "covers/new_helicopter_buzzword.png": {
    "sha256": "c5fac80f9430736b044d34d27ff1cbf6f0b39fab7795d4b24f97ed5183c89a21",
@@ -2946,6 +2950,14 @@
   "homebrew-downloads/DISKSWEEPER.zip": {
    "sha256": "57c0b6c3e48815e83cb4634b41bec0d530ded47bf0d660d3bca22183e95a57de",
    "size": 1194660
+  },
+  "homebrew-downloads/Demo Tribute (Retro Vault) - source.zip": {
+   "sha256": "137b91964c20934ade5a21ef3472094b2543020409e6a9e8a8ee9b09bb43353d",
+   "size": 60162
+  },
+  "homebrew-downloads/Demo Tribute (Retro Vault).bin": {
+   "sha256": "d459932e3baee8fdaea9922663f7ff4116d318b4201ccdc3b297496098667bee",
+   "size": 12288
   },
   "homebrew-downloads/Doc Cosmos.d64": {
    "sha256": "3eec196089257e33653acccb037ab4a96fa56ed1456d9748cdd75767f4bb4214",

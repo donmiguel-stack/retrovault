@@ -128,8 +128,8 @@ window.DOWNLOAD_DATA = {
   "new_demo-tribute": {
     file: "Demo Tribute (Retro Vault).bin",
     verdict: "CLEAR",
-    source: "Retro Vault's own production (October 2026), written for the Vault; the sources are in the repository under Claude outputs/videopac-demo",
-    note: "Free: a 12 KB bank-switched cartridge image (four 3 KB banks on P10/P11), for the G7400 only",
+    source: "Retro Vault's own production (October 2026), released under the MIT licence; the 8048 sources ship beside the ROM as 'Demo Tribute (Retro Vault) - source.zip' and the licence text as 'Demo Tribute (Retro Vault) - LICENSE.txt'",
+    note: "Free under the MIT licence (the licence text sits next to the ROM in homebrew-downloads). A 12 KB bank-switched cartridge image (four 3 KB banks on P10/P11), for the G7400 only",
     checked: "2026-10-29"
   },
   "new_le-sprint": {
