@@ -160,3 +160,7 @@ _hostinger-upload-*/
 
 # GOG Windows installers dropped in for tools/import_gog.py - never in git.
 gog/
+
+# The demo's own repository (github.com/donmiguel-stack/demo-tribute) lives here
+# as a nested checkout - tracked there, not here.
+demo-tribute/

@@ -128,7 +128,7 @@ window.DOWNLOAD_DATA = {
   "new_demo-tribute": {
     file: "Demo Tribute (Retro Vault).bin",
     verdict: "CLEAR",
-    source: "Retro Vault's own production (October 2026), released under the MIT licence; the 8048 sources ship beside the ROM as 'Demo Tribute (Retro Vault) - source.zip' and the licence text as 'Demo Tribute (Retro Vault) - LICENSE.txt'",
+    source: "Retro Vault's own production (October 2026), released under the MIT licence; sources, build script and test harness at github.com/donmiguel-stack/demo-tribute, a copy of the sources ships beside the ROM as 'Demo Tribute (Retro Vault) - source.zip' and the licence text as 'Demo Tribute (Retro Vault) - LICENSE.txt'",
     note: "Free under the MIT licence (the licence text sits next to the ROM in homebrew-downloads)",
     checked: "2026-10-29"
   },
