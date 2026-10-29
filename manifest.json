@@ -1,15 +1,15 @@
 {
- "generated": "2026-10-29 16:33:40",
+ "generated": "2026-10-29 16:38:12",
  "count": 850,
- "bytes": 328927921,
+ "bytes": 328927965,
  "files": {
   "games.js": {
    "sha256": "49187b734c8d0895890a2817efd9533d518a8c3a2f16e9078fe447e90363eb57",
    "size": 145548
   },
   "gamepages.js": {
-   "sha256": "9118c10fca5bfb2facb000cccedbab1ac78b694999d399ebd88f6d13bf99d11e",
-   "size": 334339
+   "sha256": "65b2a343d766313c30ac61851a1f415c9d2b7dcf72f72e5e7ec11abcd4634f8d",
+   "size": 334471
   },
   "genres.js": {
    "sha256": "65ff09e5637e495e29df56ba94f8a54304abd70adad2985cd4cd6b798cff904f",
@@ -68,8 +68,8 @@
    "size": 32177
   },
   "downloads.js": {
-   "sha256": "541e4789a1250f914c601f5c0d76ff93dc34b9e2a01081c235284390e9a6d736",
-   "size": 37936
+   "sha256": "bbba38fb00dc0502d77352db5c1e279fda61bc43dea5afd5925d427704c9b774",
+   "size": 37848
   },
   "romsources.js": {
    "sha256": "1d9a69d29b77b6600e6663ccfe3582d4a481d4ddaf8ce0a8f8ceae6c0121166e",
@@ -152,7 +152,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "ba55140e7c3783dc2299f583e8f4436b3b738ab4c3b6e84ade103b1b2a6e2ba9",
+   "sha256": "52b7f45b4aa863d09f288ff9123ccf4db9ff65c5a841823dd4843a1962237902",
    "size": 20544
   },
   "resources.html": {
@@ -180,7 +180,7 @@
    "size": 43683
   },
   "versions.js": {
-   "sha256": "fc9ecb1d2ed6a7c387af01c826e6e063245e3a245a41c87aea457eb151e86963",
+   "sha256": "875bfcd109b75bff9cf02cac5acfbbf2f5f3eee0bd91e1c366eccd6545b211f5",
    "size": 1883
   },
   "favicon.ico": {
