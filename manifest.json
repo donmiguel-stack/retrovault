@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-29 20:07:12",
+ "generated": "2026-10-30 11:20:43",
  "count": 850,
- "bytes": 328928072,
+ "bytes": 328705425,
  "files": {
   "games.js": {
    "sha256": "49187b734c8d0895890a2817efd9533d518a8c3a2f16e9078fe447e90363eb57",
@@ -1316,8 +1316,8 @@
    "size": 756812
   },
   "covers/new_demo-tribute.png": {
-   "sha256": "d1b5d1118e83f5b0d5115f0f72886655e921d4e7cf8bdb0f5b4f2647b38e034d",
-   "size": 560206
+   "sha256": "3a9bebf6c376e9891b233c28c7794f45a64bbeb3b06f240fb18596b3f1776f52",
+   "size": 337559
   },
   "covers/new_helicopter_buzzword.png": {
    "sha256": "c5fac80f9430736b044d34d27ff1cbf6f0b39fab7795d4b24f97ed5183c89a21",
