@@ -41,7 +41,7 @@
     ["walkthroughs.js", 2],
     ["featured.js", 119],
     ["c64ad.js", 110],
-    ["gamepages.js", 155],
+    ["gamepages.js", 156],
     ["gamepages-ja.js", 3],
     ["demo.js", 112],
     ["demogroups.js", 2],
