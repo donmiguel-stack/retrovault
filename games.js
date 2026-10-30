@@ -222,7 +222,7 @@ window.GAMES_DATA = {
   {
     "id": "new_demo-tribute",
     "filename": "new_demo-tribute.bin",
-    "title": "Demo Tribute: The Bootleg Sessions",
+    "title": "The Bootleg Sessions: A Demo Tribute",
     "platform": "G7400+",
     "category": "Homebrew (this project)",
     "vpNumber": null,

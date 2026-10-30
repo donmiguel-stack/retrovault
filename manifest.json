@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-30 11:27:17",
+ "generated": "2026-10-30 11:33:02",
  "count": 850,
- "bytes": 328705503,
+ "bytes": 328705507,
  "files": {
   "games.js": {
-   "sha256": "49187b734c8d0895890a2817efd9533d518a8c3a2f16e9078fe447e90363eb57",
-   "size": 145548
+   "sha256": "ab4174732e3075316bb9a5be76b1b153f7fc693df8f37c3ce6a5e3714261516e",
+   "size": 145550
   },
   "gamepages.js": {
    "sha256": "36755d6b25a69536900ec68a90ecc0d631935da5adff87b55c56cf8655298c95",
@@ -152,7 +152,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "00a9a0b8f30d38fb8d84a5c5125efdf1869bd5fd56b7faf5eceada4a2886156e",
+   "sha256": "874db2845fa1cf20beb6b39591518cb3e1bcc44a8851274f683c930a8cd20370",
    "size": 20544
   },
   "resources.html": {
@@ -176,11 +176,11 @@
    "size": 119045
   },
   "catalogue.html": {
-   "sha256": "90de06d9bc5b6dde48ba7f10ee9a00042b36e180a9405d4d6f1d1b6ece60b5eb",
-   "size": 43683
+   "sha256": "ffbb37722bf32c5c2840b1e6fa666fa7fc8fd119cf459028e7966e912ef4744b",
+   "size": 43685
   },
   "versions.js": {
-   "sha256": "e542bc67b4d25bae42ea4cd058b22abd2f3083032fdda6421df49ddcf6c53ce8",
+   "sha256": "36e762437f51cd94f9e20ae5fe0d6742e27841a54adfe79c267b2bc111bd9eac",
    "size": 1883
   },
   "favicon.ico": {
@@ -216,7 +216,7 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "efdc20ddf473c29fb8ffee1a03e2d5d1c8b5b1f4e3cce1636ec80d9de1e3ce5f",
+   "sha256": "04befa80b474140291c036c6a93871a741383301226cd70be790ecfeeb7d9cf4",
    "size": 75164
   },
   "covers/Vp01_F.png": {
