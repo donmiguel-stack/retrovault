@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01 18:47:59",
+ "generated": "2026-11-01 21:17:38",
  "count": 850,
  "bytes": 328747932,
  "files": {
@@ -136,7 +136,7 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "281b62fc2d208659148a44e3740333a5fcd1ee64d569fd2240fd8046a740847c",
+   "sha256": "631ca1b4766708bb3687e797b79a4eccffd61311439e3d4c9c8bc80d21634ab9",
    "size": 106197
   },
   "animcovers.js": {
@@ -152,7 +152,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "874db2845fa1cf20beb6b39591518cb3e1bcc44a8851274f683c930a8cd20370",
+   "sha256": "5c9ffb4c5c9347777fbd58a8d80ae16eda2f17366c5f828f6def2e07de3d9a8f",
    "size": 20544
   },
   "resources.html": {
@@ -172,7 +172,7 @@
    "size": 51651
   },
   "game-page.js": {
-   "sha256": "b17ed130cf9d37c39987f720e94923c7ea5dbd795358386cac0c076fb5b1f1f8",
+   "sha256": "0a115964b9315db5421c5b26b7e45e4bc7fe42e31e35386f093654dd0e5410e9",
    "size": 119045
   },
   "catalogue.html": {
@@ -180,7 +180,7 @@
    "size": 43685
   },
   "versions.js": {
-   "sha256": "36e762437f51cd94f9e20ae5fe0d6742e27841a54adfe79c267b2bc111bd9eac",
+   "sha256": "ed542e9ebe549defcb45eb002b8702ac401f9b2666d581dd5642188e5a8dbe0c",
    "size": 1883
   },
   "favicon.ico": {
