@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-01 21:17:38",
+ "generated": "2026-11-02 10:23:20",
  "count": 850,
- "bytes": 328747932,
+ "bytes": 328765770,
  "files": {
   "games.js": {
    "sha256": "ab4174732e3075316bb9a5be76b1b153f7fc693df8f37c3ce6a5e3714261516e",
@@ -136,7 +136,7 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "631ca1b4766708bb3687e797b79a4eccffd61311439e3d4c9c8bc80d21634ab9",
+   "sha256": "45fc0cf82dea2afc3a83382a66853eaa16bb57505d309ddb79e7f59267b9e563",
    "size": 106197
   },
   "animcovers.js": {
@@ -152,7 +152,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "5c9ffb4c5c9347777fbd58a8d80ae16eda2f17366c5f828f6def2e07de3d9a8f",
+   "sha256": "aa72a71be6d6578952aa9713937d9d6aaf7faf097acabff00931d84492596f7b",
    "size": 20544
   },
   "resources.html": {
@@ -172,7 +172,7 @@
    "size": 51651
   },
   "game-page.js": {
-   "sha256": "0a115964b9315db5421c5b26b7e45e4bc7fe42e31e35386f093654dd0e5410e9",
+   "sha256": "61ed19bc0490af1fd3ba706d551834d5b076d84598e265896e7f64d6db66e02b",
    "size": 119045
   },
   "catalogue.html": {
@@ -180,7 +180,7 @@
    "size": 43685
   },
   "versions.js": {
-   "sha256": "ed542e9ebe549defcb45eb002b8702ac401f9b2666d581dd5642188e5a8dbe0c",
+   "sha256": "fdf8b6cbdffa5a5fdaf967d243ecb5210ff7035bd75912dc60fb9170c05b85f4",
    "size": 1883
   },
   "favicon.ico": {
@@ -1316,8 +1316,8 @@
    "size": 756812
   },
   "covers/new_demo-tribute.png": {
-   "sha256": "edb1f410db0c58d756467ee5a3f37eb47393cf8de269915af91796b1b1bedfc1",
-   "size": 379984
+   "sha256": "d4ea1d4aac9f31cbcedea9079288e1ce07a2906f35bce549c99bdfb29e5dff29",
+   "size": 397822
   },
   "covers/new_helicopter_buzzword.png": {
    "sha256": "c5fac80f9430736b044d34d27ff1cbf6f0b39fab7795d4b24f97ed5183c89a21",
