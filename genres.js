@@ -1182,6 +1182,50 @@ window.GENRE_DATA = {
   "genre": "adventure",
   "players": "p1"
  },
+ "pc_pq1": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_pq1_vga": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_pq2": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_pq3": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_pq4": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_qfg1": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_qfg1_vga": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_qfg2": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_qfg3": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_qfg4": {
+  "genre": "adventure",
+  "players": "p1"
+ },
+ "pc_gk1": {
+  "genre": "adventure",
+  "players": "p1"
+ },
  "c64_hb_c64anabalt": {
   "genre": "action",
   "players": "p1"

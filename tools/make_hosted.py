@@ -130,6 +130,18 @@ EXCLUDE_IDS = {
     "pc_keen2", "pc_keen3", "pc_keen4", "pc_keen5", "pc_keen6",
     "pc_leisure_suit_larry",                             # GOG bundle ships the 1987 AGI original
     "pc_freddy_pharkas",                                 # GOG
+    # GOG classics added 2026-11-05 (catalogue only, never hosted)
+    "pc_pq1",
+    "pc_pq1_vga",
+    "pc_pq2",
+    "pc_pq3",
+    "pc_pq4",
+    "pc_qfg1",
+    "pc_qfg1_vga",
+    "pc_qfg2",
+    "pc_qfg3",
+    "pc_qfg4",
+    "pc_gk1",
     "pc_gta1",                                           # Take-Two
     "pc_outrun",                                         # SEGA AGES + Mike's call
 }

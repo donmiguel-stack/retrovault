@@ -4146,6 +4146,127 @@ window.GAMEPAGES_DATA = {
    "text": "Al Lowe's Western comedy, co-designed with Josh Mandel: a gunslinger who lost an ear in a shoot-out hangs up his guns to run the pharmacy in Coarsegold, California, until someone starts poisoning the town. Lowe and Mandel also wrote the songs, including the opening ballad. Computer Gaming World called it the \"Blazing Saddles of computer games\"; the 1994 CD-ROM release added voices (Cam Clarke as Freddy) but cut about 15% of the text. Still sold on GOG; the Vault shows you where a preserved copy lives."
   }
  },
+ "pc_pq1": {
+  "input": "keyboard",
+  "note": "Type what you want to do (<em>look</em>, <em>open door</em>, <em>get in car</em>) and press <strong>Enter</strong>; the arrow keys walk. Police procedure is part of the puzzle: check your car, radio in, follow the book. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "QPUHYTI-Qgs",
+   "title": "POLICE QUEST (EGA VERSION) Full Game Walkthrough - No Commentary Gameplay - Point & Clickers"
+  },
+  "history": {
+   "text": "Sierra's police procedural, written by Jim Walls after years as a California Highway Patrol officer. As officer Sonny Bonds of Lytton you work your way from traffic patrol to narcotics, after the drug dealer Jessie Bains, the \"Death Angel\". Walls wanted it real: walk around your patrol car before you drive off, follow procedure, or the game ends you. Typed commands, EGA graphics, Sierra's AGI engine. Sold on GOG in the Police Quest Collection, together with the 1992 remake; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_pq1_vga": {
+  "input": "mouse",
+  "note": "Point-and-click with Sierra's icon bar: walk, look, use, talk, and the inventory. Procedure still decides whether you survive. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "E4Ateuwt6YM",
+   "title": "POLICE QUEST (VGA Remake) Adventure Game Gameplay Walkthrough - No Commentary Playthrough - Yzzyxz"
+  },
+  "history": {
+   "text": "Sierra's 1992 remake of the first Police Quest, in hand-painted VGA with the point-and-click icon bar of the time instead of typed commands. The story is the same, Sonny Bonds against Jessie Bains in Lytton, but scenes were reworked and driving now happens on a city map. Sold on GOG in the Police Quest Collection, together with the 1987 original; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_pq2": {
+  "input": "keyboard",
+  "note": "Type commands and press <strong>Enter</strong>; the arrow keys walk. Sight in your gun at the range before you need it. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "KGFfCWIs0j8",
+   "title": "PC Longplay [464] Police Quest II: The Vengeance - World-of-Longplays"
+  },
+  "history": {
+   "text": "Jessie Bains breaks out of jail and goes after everyone who put him there, Sonny Bonds' girlfriend Marie included. Jim Walls' sequel moved to Sierra's SCI engine, still with typed commands, and kept the series' obsession with procedure: sight in your gun at the range, handle the evidence properly, keep your partner informed. The chase runs through Lytton, a river and an airliner. Sold on GOG in the Police Quest Collection; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_pq3": {
+  "input": "mouse",
+  "note": "Point-and-click with Sierra's icon bar; driving around Lytton happens on a map. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "wfKwEi6mXyM",
+   "title": "POLICE QUEST III (VGA Version) Adventure Game Gameplay Walkthrough - No Commentary Playthrough - Yzzyxz"
+  },
+  "history": {
+   "text": "Sonny Bonds, now a sergeant, faces a string of ritual killings in Lytton, and the case turns personal when his wife Marie is stabbed and left in a coma. The first Police Quest in VGA with point-and-click, and the last designed by Jim Walls, who left Sierra before it was finished. Procedure still matters, from the patrol car to the evidence room. Sold on GOG in the Police Quest Collection; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_pq4": {
+  "input": "mouse",
+  "note": "Point-and-click with Sierra's icon bar. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "IrQ22bh-mm0",
+   "title": "POLICE QUEST IV Adventure Game Gameplay Walkthrough - No Commentary Playthrough - Yzzyxz"
+  },
+  "history": {
+   "text": "The series moves to Los Angeles and gets a new designer: Daryl F. Gates, the city's former police chief. As homicide detective John Carey you hunt the killer of your partner through a string of mutilation murders. Sierra built it from digitised photographs of real Los Angeles locations and of actors, a grim and realistic look far from Lytton. Sold on GOG in the Police Quest Collection; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_qfg1": {
+  "input": "keyboard",
+  "note": "Type commands and press <strong>Enter</strong>; the arrow keys walk. Pick fighter, magic user or thief at the start; skills grow by using them. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "hkQl5tP4yxI",
+   "title": "Hero's Quest: So You Want To Be A Hero (PC/DOS) Longplay, EGA 16-color, 1989, Sierra - Major Thriftwood"
+  },
+  "history": {
+   "text": "Lori Ann and Corey Cole's mix of adventure game and role-playing game, first sold as Hero's Quest until Milton Bradley's HeroQuest board game forced a new name. You pick fighter, magic user or thief and save the valley of Spielburg; skills grow by using them, and most problems have a solution for each class. Your hero can be carried over into the sequels. Typed commands, EGA graphics. Sold on GOG in Quest for Glory 1-5, together with the 1992 remake; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_qfg1_vga": {
+  "input": "mouse",
+  "note": "Point-and-click with Sierra's icon bar. Pick fighter, magic user or thief at the start. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "fxbfd8eB89Y",
+   "title": "[Longplay] Quest for Glory 1 - So You Want to Be a Hero VGA - TecPontificates"
+  },
+  "history": {
+   "text": "Sierra's 1992 VGA remake of the first Quest for Glory: hand-painted backgrounds, the point-and-click icon bar instead of typed commands, and reworked combat. The valley of Spielburg, the three classes and the hero you can carry into the sequels stay the same. GOG's Quest for Glory 1-5 includes both this remake and the 1989 original; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_qfg2": {
+  "input": "keyboard",
+  "note": "Type commands and press <strong>Enter</strong>; the arrow keys walk. Events run on a day-by-day schedule, so come back to places on later days. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "ZAUXYKQnkjM",
+   "title": "Quest for Glory II: Trial by Fire - DOS - [Thief path] - English Longplay - No Commentary - Andrea Pannocchia"
+  },
+  "history": {
+   "text": "The hero from Spielburg travels on to the desert city of Shapeir, in a story built on the Arabian Nights: elementals attack the city, and its sister city Raseir has fallen under a tyrant. The last Quest for Glory with typed commands and EGA graphics, and the most tightly plotted: events run on a day-by-day clock, and the city's alleys are a maze. Fans remade it in VGA in 2008 (AGD Interactive). Sold on GOG in Quest for Glory 1-5; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_qfg3": {
+  "input": "mouse",
+  "note": "Point-and-click with Sierra's icon bar. A hero exported from Quest for Glory II can be imported at the start. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "cypkqZqvp3M",
+   "title": "Quest for Glory III: Wages of War - DOS - [Thief path] - English Longplay - No Commentary - Andrea Pannocchia"
+  },
+  "history": {
+   "text": "The hero follows his friends from Shapeir to Tarna, a land inspired by the African savanna and jungle, where two peoples are being pushed into war. The first Quest for Glory in VGA with point-and-click, and the bridge between the desert adventure of part II and the darker part IV. A hero imported from Quest for Glory II keeps his skills. Sold on GOG in Quest for Glory 1-5; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_qfg4": {
+  "input": "mouse",
+  "note": "Point-and-click with Sierra's icon bar. The CD-ROM version is large: the browser unpacks it on every start, so expect a wait. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "eCbeElchSzo",
+   "title": "Quest for Glory IV: Shadows of Darkness - Thief Path - English Longplay 100% - No Commentary - Andrea Pannocchia"
+  },
+  "history": {
+   "text": "The darkest game in the series: the hero wakes up in Mordavia, a valley out of Slavic folklore and Gothic horror, with vampires, a haunted monastery and a dark god stirring beneath it. The 1994 CD-ROM version is fully voiced and narrated by John Rhys-Davies. It shipped with a reputation for bugs but is loved for its writing. Quest for Glory V (1998) is a Windows game and not on this shelf. Sold on GOG in Quest for Glory 1-5; buy it there and the Vault plays its original DOS files."
+  }
+ },
+ "pc_gk1": {
+  "input": "mouse",
+  "note": "Point-and-click with Sierra's icon bar. GOG sells the CD-ROM talkie, which is large: the browser unpacks it on every start, so expect a wait. <strong>Esc</strong> opens DOSBox's own menu, not the game's.",
+  "video": {
+   "id": "kDecp9xjcXM",
+   "title": "Gabriel Knight: Sins of the Fathers (Pc/Dos) Walkthrough No Commentary - TheSmokingPhantom"
+  },
+  "history": {
+   "text": "Jane Jensen's supernatural thriller: Gabriel Knight, a New Orleans bookshop owner writing a novel about the city's \"voodoo murders\", finds out that he is the heir to a family of shadow hunters. The story runs from New Orleans to Germany and Africa. The 1994 CD-ROM version is fully voiced, with Tim Curry as Gabriel and Mark Hamill as detective Mosely. Remade in 2014 for its 20th anniversary. Sold on GOG; buy it there and the Vault plays its original DOS files."
+  }
+ },
  "c64_hb_c64anabalt": {
   "input": "joystick",
   "video": {

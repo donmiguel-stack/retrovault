@@ -26,6 +26,18 @@ window.WALKTHROUGH_DATA = (function () {
   set("pc_lsl6", "leisuresuitlarry6");
   // Al Lowe's Western
   set("pc_freddy_pharkas", "freddypharkas");
+  // Police Quest, Quest for Glory, Gabriel Knight (GOG classics, 2026-11-05)
+  set("pc_pq1", "policequest");
+  set("pc_pq1_vga", "policequest1remake");
+  set("pc_pq2", "policequest2");
+  set("pc_pq3", "policequest3");
+  set("pc_pq4", "policequest4");
+  set("pc_qfg1", "questforglory");
+  set("pc_qfg1_vga", "questforglory1remake");
+  set("pc_qfg2", "questforglory2");
+  set("pc_qfg3", "questforglory3");
+  set("pc_qfg4", "questforglory4");
+  set("pc_gk1", "gabrielknight");
   // Space Quest
   set("pc_sq1", "spacequest");
   set("pc_sq2", "spacequest2");

@@ -1,6 +1,7 @@
 // Where the shelf's games are sold on GOG (checked 2026-10-10 against GOG's
 // catalogue - see the project doc vault-gog-availability-2026-10-10.md;
-// Freddy Pharkas and Final Doom re-checked 2026-10-28).
+// Freddy Pharkas and Final Doom re-checked 2026-10-28; Police Quest, Quest for
+// Glory, Gabriel Knight and Pool of Radiance added 2026-11-05).
 //
 // Rendered by game-page.js as a "Buy it on GOG" box. When the game file is
 // missing it sits above the "Where to get it" box (romsources.js) and explains
@@ -33,7 +34,11 @@ window.GOG_STORE = (function () {
     wolf:  { slug: "wolfenstein_3d", product: "Wolfenstein 3D" },
     keen:  { slug: "commander_keen_complete_pack", product: "Commander Keen Complete Pack" },
     xcom:  { slug: "xcom_ufo_defense", product: "X-Com: UFO Defense" },
-    freddy: { slug: "freddy_pharkas_frontier_pharmacist", product: "Freddy Pharkas: Frontier Pharmacist" }
+    freddy: { slug: "freddy_pharkas_frontier_pharmacist", product: "Freddy Pharkas: Frontier Pharmacist" },
+    // added 2026-11-05: Sierra classics that joined the shelf because GOG sells them
+    pq:    { slug: "police_quest_collection", product: "Police Quest Collection" },
+    qfg:   { slug: "quest_for_glory", product: "Quest for Glory 1-5" },
+    gk1:   { slug: "gabriel_knight_sins_of_the_fathers", product: "Gabriel Knight: Sins of the Fathers" }
   };
   var M = {
     pc_kq1: "kq123", pc_kq2: "kq123", pc_kq3: "kq123",
@@ -46,7 +51,10 @@ window.GOG_STORE = (function () {
     pc_wolfenstein3d: "wolf", pc_spear_of_destiny: "wolf",
     pc_commander_keen: "keen", pc_keen2: "keen", pc_keen3: "keen",
     pc_keen4: "keen", pc_keen5: "keen", pc_keen6: "keen",
-    pc_xcom_ufo_defense: "xcom", pc_freddy_pharkas: "freddy"
+    pc_xcom_ufo_defense: "xcom", pc_freddy_pharkas: "freddy",
+    pc_pq1: "pq", pc_pq1_vga: "pq", pc_pq2: "pq", pc_pq3: "pq", pc_pq4: "pq",
+    pc_qfg1: "qfg", pc_qfg1_vga: "qfg", pc_qfg2: "qfg", pc_qfg3: "qfg", pc_qfg4: "qfg",
+    pc_gk1: "gk1"
   };
   var out = {};
   for (var id in M) out[id] = { slug: P[M[id]].slug, product: P[M[id]].product };
@@ -58,7 +66,8 @@ window.GOG_STORE = (function () {
     c64_mule: ["mule", "M.U.L.E."],
     c64_microprose_soccer: ["microprose_soccer", "MicroProse Soccer"],
     am_populous: ["populous", "Populous"],
-    am_north_and_south: ["north_south", "North & South"]
+    am_north_and_south: ["north_south", "North & South"],
+    c64_pool_of_radiance: ["forgotten_realms_the_archives_collection_two", "Forgotten Realms: The Archives - Collection Two"]
   };
   for (var o in other) out[o] = { slug: other[o][0], product: other[o][1], other: true };
   // On GOG only inside a modern re-release, not as the DOS original

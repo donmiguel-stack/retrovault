@@ -8,7 +8,7 @@
 
 Why this exists
 ---------------
-30 of the shelf's MS-DOS games are still sold on GOG (gog.js lists them, and
+The shelf's MS-DOS games that GOG still sells are listed in gog.js, and
 the game page shows a "Buy it on GOG" box). GOG's downloads include the
 original DOS files, but wrapped in a Windows installer - and several of the
 Sierra bundles are Windows-only, so GOG Galaxy on a Mac won't even install
@@ -103,8 +103,61 @@ SIERRA = [
     ("pc_lsl6", r"larry.*(\b6\b|\bvi\b|shape up)"),
     (None, r"larry.*(\b7\b|\bvii\b|love for sail|magna|reloaded|wet dreams|box office)"),  # not on the shelf
     ("pc_freddy_pharkas", r"freddy pharkas"),
+    ("pc_gk1", r"gabriel knight(?!.*(beast|blood|\b2\b|\b3\b|20th))"),
+    (None, r"gabriel knight"),                     # GK2/GK3/20th Anniversary: not on the shelf
+    ("@pq", r"police quest(?!.*swat)"),            # Police Quest Collection: several games, see FAMILIES
+    ("@qfg", r"quest for glory|hero.?s quest"),    # Quest for Glory 1-5: several games, see FAMILIES
     ("pc_leisure_suit_larry", r"larry"),           # "Leisure Suit Larry" (1), with or without a number
 ]
+
+
+# Collections that put several Sierra games in one installer (added 2026-11-05,
+# layout NOT yet checked against a real download). Each game folder is told
+# apart by the number in its path; game 1 comes in two versions, told apart by
+# AGI vs SCI (Police Quest) or by "ega"/"vga" in the path (Quest for Glory).
+# Anything this can't place is reported, never guessed.
+FAMILIES = {
+    "@pq":  {"word": r"pq|police", 1: ("pc_pq1", "pc_pq1_vga"), 2: "pc_pq2", 3: "pc_pq3", 4: "pc_pq4"},
+    "@qfg": {"word": r"qfg|qg|glory|hq", 1: ("pc_qfg1", "pc_qfg1_vga"), 2: "pc_qfg2", 3: "pc_qfg3", 4: "pc_qfg4", 5: None},
+}
+
+
+def family_ids(fam, sierra_dirs, top, name):
+    """[(shelf id, folder)] and problems for a Police Quest / Quest for Glory install."""
+    F = FAMILIES[fam]
+    out, problems = [], []
+    for d, kind in sierra_dirs:
+        rel = os.path.relpath(d, top).lower().replace(os.sep, "/")
+        m = re.search(r"(?:%s)\D{0,3}([1-5])" % F["word"], rel) or re.search(r"([1-5])", rel)
+        if not m and len(sierra_dirs) == 1:
+            m = re.search(r"\b([1-5]|i{1,3}|iv|v)\b", name.lower())
+        n = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5}.get(m.group(1), None) if m else None
+        if m and n is None:
+            n = int(m.group(1))
+        if n not in F:
+            problems.append("%s: can't tell which game is in %s" % (name, rel))
+            continue
+        gid = F[n]
+        if gid is None:
+            continue                                   # Quest for Glory V: a Windows game, not on the shelf
+        if isinstance(gid, tuple):
+            if fam == "@pq":
+                gid = gid[0] if kind == "agi" else gid[1]
+            elif "ega" in rel:
+                gid = gid[0]
+            elif "vga" in rel:
+                gid = gid[1]
+            elif any("vga" in os.path.relpath(o, top).lower() for o, _ in sierra_dirs if o != d):
+                gid = gid[0]                               # QFG1 next to QFG1VGA: this one is the original
+            else:
+                problems.append("%s: game 1 in %s, but EGA original or VGA remake?" % (name, rel))
+                continue
+        out.append((gid, d))
+    return out, problems
+
+
+def has_dos_program(d):
+    return any(re.search(r"\.(exe|com|bat)$", f, re.I) and not JUNK_FILE.match(f) for f in os.listdir(d))
 
 
 def sierra_kind(names):
@@ -156,6 +209,10 @@ def recognise(top):
             if re.search(rx, low):
                 if gid is None:
                     problems.append("%s is not a shelf game" % name)
+                elif gid.startswith("@"):
+                    got, probs = family_ids(gid, sierra_dirs, top, name)
+                    found += [(g, d, "") for g, d in got]
+                    problems += probs
                 elif gid == "pc_leisure_suit_larry":
                     # GOG's Larry 1 may carry the 1987 AGI game and the 1991 VGA remake
                     for d, kind in sierra_dirs:
@@ -168,6 +225,15 @@ def recognise(top):
                 break
     seen = set()
     found = [f for f in found if not (f[0] in seen or seen.add(f[0]))]
+    # GOG has been moving Sierra games to ScummVM; a folder with only the data
+    # files and no DOS program won't start in DOSBox, so say so instead of
+    # writing a zip that looks fine and does nothing.
+    fp = {g for g, _ in FINGERPRINTS}               # those are recognised by their .EXE already
+    for gid, d, _ in found:
+        if gid not in fp and not has_dos_program(d):
+            problems.append("%s: no DOS program (.exe/.com) in %s - GOG's build may be ScummVM-only"
+                            % (gid, os.path.relpath(d, top)))
+    found = [f for f in found if f[0] in fp or has_dos_program(f[1])]
     if not found:
         cds = [os.path.relpath(os.path.join(d, n), top) for d, ns in dirs for n in ns if CD_IMAGE.search(n)]
         if cds:
