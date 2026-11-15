@@ -1,15 +1,15 @@
 {
- "generated": "2026-11-15 11:54:02",
- "count": 863,
- "bytes": 330187956,
+ "generated": "2026-11-15 12:09:04",
+ "count": 864,
+ "bytes": 330221317,
  "files": {
   "games.js": {
    "sha256": "1e322292efa80c692f04aeb2c7d44a5c364dc5a6e79849bcfd280ccf19ed95e1",
    "size": 149369
   },
   "gamepages.js": {
-   "sha256": "1a59bb7bafe962ff9db43977da389f9b57c084f12e6a18116a8967f40d9f94ec",
-   "size": 346147
+   "sha256": "a38aaa7602ddff413ae83f16a704a51222c9ff204c47ce40dc44bcb400a84b46",
+   "size": 346740
   },
   "genres.js": {
    "sha256": "44a0cbde8fd27095efc75d2c8cc95ec4a12912d7f5a8743650dbd383c0434404",
@@ -152,7 +152,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "85f4e48b5f1ae1e821f44cb0042c8ee04580e68ad19ffc75ad015315542e5bbf",
+   "sha256": "5bc51960480220d72333dcd9cf4afe8ab32959db1add1dc56bfcac55504d6cf9",
    "size": 20544
   },
   "resources.html": {
@@ -180,7 +180,7 @@
    "size": 45091
   },
   "versions.js": {
-   "sha256": "cc07964f7003fa614f3ac88dd4583e6dfebd06fb56074b9723dc2ff1680f4425",
+   "sha256": "e3431e5702799dfe05810db68ca2146ed4e4c8635d240b49fde619107f12e470",
    "size": 1883
   },
   "favicon.ico": {
@@ -3002,6 +3002,10 @@
   "homebrew-downloads/Demo Tribute (Retro Vault) - 16K EPROM.bin": {
    "sha256": "37fe8dd213e63644dbe9738e95d3465a4e0ce07895b38bb966d58c414733be88",
    "size": 16384
+  },
+  "homebrew-downloads/Demo Tribute (Retro Vault) - 27C256 (32K).bin": {
+   "sha256": "b694a60188760b01d066fb31893f358febf848fe2d08de5920b71bd63ce1d387",
+   "size": 32768
   },
   "homebrew-downloads/Demo Tribute (Retro Vault) - source.zip": {
    "sha256": "137b91964c20934ade5a21ef3472094b2543020409e6a9e8a8ee9b09bb43353d",
