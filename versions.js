@@ -43,9 +43,9 @@
     ["c64ad.js", 110],
     ["gamepages.js", 162],
     ["gamepages-ja.js", 4],
-    ["demo.js", 112],
+    ["demo.js", 113],
     ["demogroups.js", 2],
-    ["game-page.js", 50],
+    ["game-page.js", 51],
     ["animcovers.js", 12]
   ];
   function write(list, tag) {

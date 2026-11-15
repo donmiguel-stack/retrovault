@@ -81,6 +81,10 @@
     // is mentioned here so the patch tool can tell this file is done.)
     if (btn.dataset.store) return;
     if (btn.dataset.hosted || (btn.dataset.dlfallback && window.HOSTED_FILES && window.HOSTED_FILES.bios)) return;
+    // A ROM found in emulator/roms/ on this server (committed to the repo, e.g.
+    // the C7010 Chess cartridge) plays for real too: game-page.js only sets
+    // data-served after a successful HEAD on it.
+    if (btn.dataset.served) return;
     e.preventDefault();
     if (e.stopImmediatePropagation) e.stopImmediatePropagation();
     e.stopPropagation();

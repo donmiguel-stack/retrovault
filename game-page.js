@@ -920,7 +920,9 @@
   sale && window.VaultStore.preview ? Promise.reject(0) :
   fetch("emulator/roms/" + encodeURIComponent(g.romFile), { method: "HEAD" }))
     .then(function (r) {
-      if (r.ok) { vaultShowStart(false); return; }
+      // data-served: the ROM really is on this server (e.g. a file committed to
+      // the repo, like the C7010 Chess cartridge), so demo.js lets it play.
+      if (r.ok) { if (!launchUrl) start.dataset.served = "1"; vaultShowStart(false); return; }
       throw 0;
     })
     .catch(function () {
