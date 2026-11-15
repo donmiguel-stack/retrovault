@@ -12,7 +12,7 @@
 window.HOSTED_FILES = {
   "base": "https://retrovault.world/files/",
   "bios": "bios/",
-  "generated": "2026-10-09",
+  "generated": "2026-11-15",
   "roms": [
     "anwol.zip",
     "Archon.d64",
@@ -38,6 +38,7 @@ window.HOSTED_FILES = {
     "Brazilian #21 related fix - Comando-style pack fix (Alt, Mod).bin",
     "Bruce Lee.d64",
     "Bubble Bobble.d64",
+    "C7010 - Chess Module.bin",
     "Castle Wolfenstein.d64",
     "Chez Maxime.bin",
     "CIVILIZATION.zip",

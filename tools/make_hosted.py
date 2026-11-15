@@ -93,7 +93,7 @@ BASE_URL = "https://retrovault.world/files/"
 BIOS = "g7400.bin"
 # o2rom.bin = the G7000 BIOS, needed by VP05 Blackjack (its shuffle calls a
 # G7000-only BIOS routine); game.html asks the emulator for it per title.
-BIOS_FILES = ["g7400.bin", "o2rom.bin"]
+BIOS_FILES = ["g7400.bin", "o2rom.bin", "c7010_z80.bin"]
 
 INCLUDE_CATEGORIES = {
     "Official Videopac (EU)", "Official Videopac (French)",

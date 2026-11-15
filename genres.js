@@ -410,6 +410,10 @@ window.GENRE_DATA = {
   "genre": "shooter",
   "players": "p12"
  },
+ "vp_c7010": {
+  "genre": "strategy",
+  "players": "p1"
+ },
  "vp_05": {
   "genre": "gambling",
   "players": "p12"

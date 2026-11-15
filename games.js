@@ -1,6 +1,6 @@
 window.GAMES_DATA = {
   "generated": "picopac catalogue",
-  "count": 362,
+  "count": 363,
   "games": [
   {
     "id": "new_amok_alt",
@@ -957,6 +957,16 @@ window.GAMES_DATA = {
     "vpNumber": "05",
     "tags": [],
     "romFile": "VP05 - Blackjack.bin"
+  },
+  {
+    "id": "vp_c7010",
+    "filename": "vp_c7010.bin",
+    "title": "Chess Module (C7010)",
+    "platform": "G7000",
+    "category": "Official Videopac (EU)",
+    "vpNumber": null,
+    "tags": [],
+    "romFile": "C7010 - Chess Module.bin"
   },
   {
     "id": "vp_57",
