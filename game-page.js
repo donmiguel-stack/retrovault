@@ -2064,28 +2064,35 @@
   }
 
   // ---- manual ----
+  // data.manual.byLang: another scan of the same booklet per interface
+  // language (e.g. {"nl": {item, pages, credit}}). The matching one replaces
+  // item/pages/credit for this visitor; every other language keeps the default.
+  var MAN = data.manual;
+  if (MAN && MAN.byLang && MAN.byLang[window.currentLang()]) {
+    MAN = Object.assign({}, MAN, MAN.byLang[window.currentLang()]);
+  }
   var mSec = el("div","section");
   var mH = el("h2",null,window.t("manual"));
-  // Two kinds of manual: a scan of the printed booklet (data.manual.item,
+  // Two kinds of manual: a scan of the printed booklet (MAN.item,
   // page images under manuals/) and, for a game that never had a booklet,
-  // the instructions the author wrote themselves (data.manual.text).
-  // A manual made for the game (data.manual.credit) says so instead of
-  // naming an archive.org scan; data.manual.pdf adds a download link.
-  if (data.manual && data.manual.item && data.manual.credit) {
-    var mNote = el("span","sec-note",data.manual.credit);
-    if (data.manual.pdf) {
+  // the instructions the author wrote themselves (MAN.text).
+  // A manual made for the game (MAN.credit) says so instead of
+  // naming an archive.org scan; MAN.pdf adds a download link.
+  if (MAN && MAN.item && MAN.credit) {
+    var mNote = el("span","sec-note",MAN.credit);
+    if (MAN.pdf) {
       var mPdf = el("a",null,"PDF");
-      mPdf.href = data.manual.pdf; mPdf.setAttribute("download","");
+      mPdf.href = MAN.pdf; mPdf.setAttribute("download","");
       mNote.appendChild(document.createTextNode(" · ")); mNote.appendChild(mPdf);
     }
     mH.appendChild(mNote);
   }
-  else if (data.manual && data.manual.item) mH.appendChild(el("span","sec-note","scan: "+data.manual.source+" (archive.org)"));
-  else if (data.manual) mH.appendChild(el("span","sec-note","from "+data.manual.source));
+  else if (MAN && MAN.item) mH.appendChild(el("span","sec-note","scan: "+MAN.source+" (archive.org)"));
+  else if (MAN) mH.appendChild(el("span","sec-note","from "+MAN.source));
   mSec.appendChild(mH);
 
-  if (data.manual && data.manual.item) {
-    var m = data.manual, cur = 0;
+  if (MAN && MAN.item) {
+    var m = MAN, cur = 0;
     var reader = el("div","manual-reader");
     var stage = el("div","manual-stage");
     var pageImg = new Image();

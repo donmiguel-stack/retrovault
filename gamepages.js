@@ -1436,7 +1436,14 @@ window.GAMEPAGES_DATA = {
   "manual": {
    "item": "C7010_Chess_1982_Philips_FR",
    "pages": 18,
-   "credit": "the French instructions (Philips, 1982), scanned by 6502man"
+   "credit": "the French instructions (Philips, 1982), scanned by 6502man",
+   "byLang": {
+    "nl": {
+     "item": "C7010_Schaak_1982_Philips_NL",
+     "pages": 18,
+     "credit": "de Nederlandse handleiding (Philips, 1982), gescand door Nova Hollandia"
+    }
+   }
   },
   "note": "Plays the real <strong>C7010 Chess Module</strong>: the cartridge talks to a second computer in the module (an NSC800 processor with its own 8 KB chess program), which the vault emulates alongside the console. Runs on the <strong>G7000 BIOS</strong> and switches to PAL by itself. <strong>How to start:</strong> click the game screen first (or press <span class='kbd'>Tab</span>) so the keys go to the console. Press <span class='kbd'>1</span>: an empty board appears with a small figure top right and no letters under it &mdash; that is the question <em>do you want white?</em> It only accepts <span class='kbd'>Y</span> (you play white) or <span class='kbd'>N</span> (you play black, the board turns round and the computer opens). Then <em>1-6?</em> appears: pick the level with <span class='kbd'>1</span>&ndash;<span class='kbd'>6</span> and press <span class='kbd'>Enter</span>; the pieces and the letters A&ndash;H appear. Enter a move as from and to square, for example <span class='kbd'>E</span><span class='kbd'>2</span><span class='kbd'>E</span><span class='kbd'>4</span>, then <span class='kbd'>Enter</span>, and wait for the computer's reply at the top of the screen. Level 1 answers at once; the higher levels think for minutes, as on the real module.",
   "bios": "o2rom.bin",

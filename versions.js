@@ -41,11 +41,11 @@
     ["walkthroughs.js", 3],
     ["featured.js", 119],
     ["c64ad.js", 110],
-    ["gamepages.js", 161],
+    ["gamepages.js", 162],
     ["gamepages-ja.js", 4],
     ["demo.js", 112],
     ["demogroups.js", 2],
-    ["game-page.js", 49],
+    ["game-page.js", 50],
     ["animcovers.js", 12]
   ];
   function write(list, tag) {
