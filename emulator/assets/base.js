@@ -1107,6 +1107,27 @@ if (queries.keys === "j2arrows") {
 	});
 }
 
+/* Retro Vault "Play together" (netplay.js): with &netplay=host the friend's
+ * joystick arrives as joystick 2. W A S D + Q are real console keys, so here
+ * joystick 2 moves to keys the console cannot see (see the j2arrows note
+ * above): PageUp, PageDown, Home, End and the quote key. The host's own
+ * joystick 1 and keyboard are untouched. Like &keys=, never persisted. */
+if (queries.netplay === "host") {
+	var np2 = {
+		input_player2_up: "pageup",
+		input_player2_down: "pagedown",
+		input_player2_left: "home",
+		input_player2_right: "end",
+		input_player2_b: "quote"
+	};
+	if (!perGameBindsPrev) perGameBindsPrev = {};
+	Object.keys(np2).forEach(function (k) {
+		if (!(k in perGameBindsPrev)) perGameBindsPrev[k] = savedKeybindsObj[k];
+		savedKeybindsObj[k] = np2[k];
+		keybindsObj[k] = np2[k];
+	});
+}
+
 var validKeybinds = Object.keys(defaultKeybindsObj);
 
 // update the config list

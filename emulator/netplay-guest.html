@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Play together | Retro Vault</title>
+<link rel="icon" href="../favicon.ico">
+<style>
+  html,body{margin:0;height:100%;background:#0b0c0f;color:#e8e8e8;font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+  header{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #22252c}
+  header b{letter-spacing:.06em}
+  #status{margin-left:auto;font-weight:600;font-size:14px}
+  #status.ok{color:#5fd38d}#status.bad{color:#ff8a7a}
+  main{display:flex;flex-direction:column;align-items:center;padding:14px}
+  #screen{position:relative;width:min(96vw,calc((100vh - 190px) * 4 / 3));aspect-ratio:4/3;background:#000;border-radius:6px;overflow:hidden}
+  video{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;background:#000}
+  #overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;background:#000c;text-align:center;padding:20px}
+  #overlay button,#sound{background:#1d6f42;color:#fff;border:0;border-radius:20px;padding:10px 20px;font:600 15px system-ui;cursor:pointer}
+  #help{max-width:760px;color:#b8bcc6;font-size:14px;margin-top:12px;text-align:center}
+  .kbd{display:inline-block;border:1px solid #555;border-bottom-width:2px;border-radius:4px;padding:0 6px;margin:0 1px;font:12px monospace;color:#fff;background:#1b1d22}
+  #sound{padding:6px 14px;font-size:13px;margin-top:10px;background:#2a2d35;border:1px solid #444}
+  #pad{display:none;margin-top:14px;gap:30px;align-items:center;user-select:none;-webkit-user-select:none;touch-action:none}
+  #pad button{width:64px;height:64px;border-radius:12px;border:1px solid #444;background:#1b1d22;color:#fff;font-size:24px}
+  #dpad{display:grid;grid-template-columns:repeat(3,64px);grid-template-rows:repeat(3,64px);gap:4px}
+  #fire{width:90px!important;height:90px!important;border-radius:50%!important;background:#7a1f1f!important}
+  @media (pointer:coarse){#pad{display:flex}}
+</style>
+</head>
+<body>
+<header><b>RETRO VAULT</b><span id="title">Play together</span><span id="status">connecting&hellip;</span></header>
+<main>
+  <div id="screen">
+    <video id="v" playsinline autoplay muted></video>
+    <div id="overlay"><div id="ovtext">Connecting to your friend&rsquo;s game&hellip;</div></div>
+  </div>
+  <button id="sound" type="button">&#128264; Sound on</button>
+  <div id="pad">
+    <div id="dpad">
+      <span></span><button data-j="up">&#9650;</button><span></span>
+      <button data-j="left">&#9664;</button><span></span><button data-j="right">&#9654;</button>
+      <span></span><button data-j="down">&#9660;</button><span></span>
+    </div>
+    <button id="fire" data-j="fire">FIRE</button>
+  </div>
+  <p id="help">You are <b>joystick 2</b>: <span class="kbd">&larr;</span><span class="kbd">&uarr;</span><span class="kbd">&rarr;</span><span class="kbd">&darr;</span> to move,
+  <span class="kbd">Space</span> to fire. Letters, digits and <span class="kbd">Enter</span> type on the console keyboard
+  (for example <span class="kbd">1</span> at SELECT GAME). A connected game controller works too.</p>
+</main>
+<script>
+(function () {
+  "use strict";
+  var P = new URLSearchParams(location.search);
+  var room = (P.get("room") || "").toLowerCase();
+  var SIGNAL = P.get("signal") || window.RV_NETPLAY_SIGNAL || "https://retrovault.world/netplay/signal.php";
+  var ICE = window.RV_NETPLAY_ICE || [{ urls: "stun:stun.l.google.com:19302" }, { urls: "stun:stun.cloudflare.com:3478" }];
+  var v = document.getElementById("v"), st = document.getElementById("status");
+  var ov = document.getElementById("overlay"), ovt = document.getElementById("ovtext");
+  if (P.get("title")) document.getElementById("title").textContent = "Play together – " + P.get("title").replace(/\s*\|.*$/, "");
+  function status(t, c) { st.textContent = t; st.className = c || ""; }
+  function overlay(t) { if (t) { ovt.textContent = t; ov.style.display = "flex"; } else ov.style.display = "none"; }
+  if (!/^[a-z0-9]{6,12}$/.test(room)) { status("invalid link", "bad"); overlay("This invite link is incomplete. Ask your friend to copy it again."); return; }
+
+  function url(slot) { return SIGNAL + (SIGNAL.indexOf("?") < 0 ? "?" : "&") + "room=" + room + "&slot=" + slot; }
+  var pc = new RTCPeerConnection({ iceServers: ICE }), dc = null;
+
+  pc.ontrack = function (e) {
+    if (e.track.kind === "video") { v.srcObject = e.streams[0] || new MediaStream([e.track]); }
+    else if (v.srcObject && v.srcObject.getAudioTracks().indexOf(e.track) < 0) { v.srcObject.addTrack(e.track); }
+    v.play().catch(function () {});
+  };
+  pc.ondatachannel = function (e) {
+    dc = e.channel;
+    dc.onopen = function () { status("connected – you are joystick 2", "ok"); overlay(null); };
+    dc.onclose = function () { status("the game was closed", "bad"); overlay("Your friend stopped the game."); };
+  };
+  pc.onconnectionstatechange = function () {
+    if (pc.connectionState === "failed") { status("could not connect", "bad"); overlay("Could not connect. Your networks may block direct connections; try again, or from another network."); }
+    if (pc.connectionState === "disconnected") status("connection lost", "bad");
+  };
+  function gatherDone() {
+    return new Promise(function (res) {
+      if (pc.iceGatheringState === "complete") return res();
+      var t = setTimeout(res, 4000);
+      pc.addEventListener("icegatheringstatechange", function () { if (pc.iceGatheringState === "complete") { clearTimeout(t); res(); } });
+    });
+  }
+  var tries = 0;
+  (function getOffer() {
+    fetch(url("offer"), { cache: "no-store" }).then(function (r) {
+      if (r.status !== 200) {
+        if (++tries > 40) { status("room not found", "bad"); overlay("This game is no longer open. Ask your friend for a new link."); return; }
+        return setTimeout(getOffer, 1500);
+      }
+      return r.json().then(function (offer) {
+        status("connecting…");
+        return pc.setRemoteDescription(offer)
+          .then(function () { return pc.createAnswer(); })
+          .then(function (a) { return pc.setLocalDescription(a); })
+          .then(gatherDone)
+          .then(function () { return fetch(url("answer"), { method: "POST", body: JSON.stringify(pc.localDescription) }); })
+          .then(function (r) { if (!r.ok) throw new Error("signal " + r.status); });
+      });
+    }).catch(function (e) { status("connection problem", "bad"); overlay("Could not reach the Vault (" + e.message + "). Reload to try again."); });
+  })();
+
+  // ---- input ----
+  function send(m) { if (dc && dc.readyState === "open") dc.send(JSON.stringify(m)); }
+  var JOY = { ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right", Space: "fire" };
+  var KEY = /^(Key[A-Z]|Digit[0-9]|Numpad[0-9]|Enter|NumpadEnter|Period|Slash|Minus|Equal|Backspace)$/;
+  var down = {};
+  function handle(e, isDown) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var c = e.code;
+    if (JOY[c]) { e.preventDefault(); if (!!down[c] === isDown) return; down[c] = isDown; send({ j: JOY[c], down: isDown }); return; }
+    if (KEY.test(c)) {
+      e.preventDefault();
+      var k = c.replace(/^Numpad(\d)$/, "Digit$1").replace("NumpadEnter", "Enter");
+      if (!!down[k] === isDown) return; down[k] = isDown; send({ k: k, down: isDown });
+    }
+  }
+  addEventListener("keydown", function (e) { handle(e, true); });
+  addEventListener("keyup", function (e) { handle(e, false); });
+  addEventListener("blur", function () {
+    Object.keys(down).forEach(function (c) { if (down[c]) { if (JOY[c]) send({ j: JOY[c], down: false }); else send({ k: c, down: false }); } });
+    down = {};
+  });
+  // touch pad (phones and tablets)
+  document.querySelectorAll("#pad [data-j]").forEach(function (b) {
+    var j = b.getAttribute("data-j");
+    b.addEventListener("pointerdown", function (e) { e.preventDefault(); b.setPointerCapture(e.pointerId); send({ j: j, down: true }); });
+    ["pointerup", "pointercancel"].forEach(function (t) { b.addEventListener(t, function () { send({ j: j, down: false }); }); });
+  });
+  // game controller: d-pad / left stick + button 0 = fire
+  var gp = {};
+  (function poll() {
+    var pads = navigator.getGamepads ? navigator.getGamepads() : [], p = null;
+    for (var i = 0; i < pads.length; i++) if (pads[i]) { p = pads[i]; break; }
+    var now = {};
+    if (p) {
+      var ax = p.axes[0] || 0, ay = p.axes[1] || 0, b = p.buttons;
+      if ((b[12] && b[12].pressed) || ay < -0.5) now.up = 1;
+      if ((b[13] && b[13].pressed) || ay > 0.5) now.down = 1;
+      if ((b[14] && b[14].pressed) || ax < -0.5) now.left = 1;
+      if ((b[15] && b[15].pressed) || ax > 0.5) now.right = 1;
+      if ((b[0] && b[0].pressed) || (b[1] && b[1].pressed)) now.fire = 1;
+    }
+    ["up", "down", "left", "right", "fire"].forEach(function (j) { if (!!now[j] !== !!gp[j]) send({ j: j, down: !!now[j] }); });
+    gp = now; requestAnimationFrame(poll);
+  })();
+
+  document.getElementById("sound").onclick = function () {
+    v.muted = !v.muted; v.play().catch(function () {});
+    this.innerHTML = v.muted ? "&#128264; Sound on" : "&#128263; Sound off";
+  };
+})();
+</script>
+</body>
+</html>
