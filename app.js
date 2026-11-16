@@ -512,7 +512,9 @@
   // The PC-style advert banner lives in pcad.js (shared with game.html):
   // window.buildPcAd(sponsor) returns the animated banner element.
   function pcAdBlock() {
-    var sp = ((window.FEATURED_DATA || {}).sponsors || [])[0] || null;
+    // The PC shelf advertises GOG (gog.js GOG_AD, affiliate link once the
+    // demo channel is approved); the generic sponsor is the fallback.
+    var sp = window.GOG_AD || ((window.FEATURED_DATA || {}).sponsors || [])[0] || null;
     var strip = document.createElement("div"); strip.className = "sponsor-strip pc-ad-strip";
     var a = document.createElement("a"); a.className = "pcad-link";
     a.href = (sp && sp.url) || "#"; a.target = "_blank"; a.rel = "noopener sponsored";

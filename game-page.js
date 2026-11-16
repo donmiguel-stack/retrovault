@@ -673,11 +673,17 @@
     var s = (window.GOG_STORE || {})[g.id];
     if (!s) return;
     if (gogEl) { gogEl.remove(); gogEl = null; }
-    var link = '<a href="https://www.gog.com/en/game/' + encodeURIComponent(s.slug) +
-      '" target="_blank" rel="noopener">' + esc(s.product) + "</a>";
+    // gog.js GOG_URL: this game's own GOG page, through the Adtraction link
+    // when the affiliate channel is switched on. Affiliate links are marked
+    // rel="sponsored" for search engines and get a one-line note for people.
+    var u = (window.GOG_URL && window.GOG_URL(g.id)) ||
+            { href: "https://www.gog.com/en/game/" + encodeURIComponent(s.slug), affiliate: false };
+    var link = '<a href="' + esc(u.href) + '" target="_blank" rel="' +
+      (u.affiliate ? "sponsored noopener" : "noopener") + '">' + esc(s.product) + "</a>";
+    var affNote = u.affiliate ? ' <span class="gog-aff">' + esc(window.t("gogAffNote")) + "</span>" : "";
     if (!missing) {
       gogEl = el("p", "gog-line");
-      gogEl.innerHTML = window.t(s.other ? "gogAlsoOther" : (s.remaster ? "gogAlsoRemaster" : "gogAlso"), { product: link });
+      gogEl.innerHTML = window.t(s.other ? "gogAlsoOther" : (s.remaster ? "gogAlsoRemaster" : "gogAlso"), { product: link }) + affNote;
       actions.insertAdjacentElement("afterend", gogEl);
       return;
     }
@@ -686,6 +692,7 @@
     var body = el("p", "gog-body");
     body.innerHTML = window.t(s.other ? "gogBodyOther" : (s.remaster ? "gogBodyRemaster" : "gogBody"), { product: link, platform: esc(g.platform) });
     gogEl.appendChild(body);
+    if (u.affiliate) gogEl.appendChild(el("p", "gog-aff", window.t("gogAffNote")));
     if (!s.other && !s.remaster) {
       var ol = document.createElement("ol");
       ["gogStep1", "gogStep2", "gogStep3"].forEach(function (k) {

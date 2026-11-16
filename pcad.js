@@ -62,7 +62,7 @@
     function measure() { half = scr.scrollWidth / 2; }   // half = one copy of the (doubled) message
     function step() {
       if (!half) measure();                              // retry until laid out, so it always loops
-      x -= 0.8;                                           // slow scroll
+      x -= 1.3;                                           // scroll speed (was 0.8, sped up 2026-11-16)
       if (half && x <= -half) x += half;                 // seamless wrap - runs forever
       scr.style.transform = "translateX(" + x + "px)";
       t += 0.02;                                          // slow drift for the colour bars

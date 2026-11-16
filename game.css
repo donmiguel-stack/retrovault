@@ -257,6 +257,9 @@
   .gog-box .gog-body{margin:0 0 6px;color:var(--text-dim);}
   .gog-line{margin:8px 0 0;font-size:13px;color:var(--text-mute);}
   .gog-line a{color:#b18cff;}
+  /* affiliate disclosure under the GOG box / after the GOG line */
+  .gog-aff{font-size:12px;color:var(--text-mute);}
+  p.gog-aff{margin:8px 0 0;}
   .get-box .get-note{margin:8px 0 0;color:var(--text-mute);font-size:13px;}
   /* "Play your own copy" - localroms.js, the drop zone under the missing-file
      note, and the line under START once a copy is stored in this browser */

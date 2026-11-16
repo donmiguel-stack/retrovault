@@ -78,3 +78,51 @@ window.GOG_STORE = (function () {
   for (var r in remaster) out[r] = { slug: P[remaster[r]].slug, product: P[remaster[r]].product, remaster: true };
   return out;
 })();
+
+// ---- Affiliate links (Adtraction, GOG programme 1578845455) ----------------
+// Every game links straight to its own GOG page (deep link), with the Vault's
+// game id as the "epi" reference, so Adtraction's reports show which game page
+// a sale came from.
+//
+// CHANNEL is the Adtraction channel the links are credited to. The game pages
+// live on demo.retrovault.world, so that channel (2124885154) is the one to use.
+// GOG approved retrovault.world (2124885291) on 2026-11-16 but demo is still
+// "pending approval" there, and a link with an unapproved channel opens
+// Adtraction's "Invalid link" page - so CHANNEL stays null (plain gog.com links,
+// no affiliate note) until the demo channel shows the green tick in Adtraction.
+// Then: CHANNEL = "2124885154" and bump gog.js in versions.js. That's all.
+(function () {
+  var CHANNEL = null;            // "2124885154" once GOG approves demo.retrovault.world
+  var AD = "1578845458";         // GOG's ad id in Adtraction (fixed)
+  // Any GOG page, through Adtraction when CHANNEL is set. epi = where the
+  // click came from (a game id, or a placement name like "pc_shelf_banner").
+  function link(page, epi) {
+    if (!CHANNEL) return { href: page, affiliate: false };
+    return {
+      href: "https://go.adt256.com/t/t?a=" + AD + "&as=" + CHANNEL + "&t=2&tk=1" +
+            "&epi=" + encodeURIComponent(epi) + "&url=" + encodeURIComponent(page),
+      affiliate: true
+    };
+  }
+  window.GOG_LINK = link;
+  window.GOG_URL = function (id) {
+    var s = (window.GOG_STORE || {})[id];
+    if (!s) return null;
+    return link("https://www.gog.com/en/game/" + encodeURIComponent(s.slug), id);
+  };
+  // The PC shelf's DOS-style marquee banner (pcad.js, app.js pcAdBlock) runs
+  // this instead of the generic "advertise here" sponsor: same object shape as
+  // FEATURED_DATA.sponsors[]. Lands on GOG's Classic Games page.
+  window.GOG_AD = {
+    name: "GOG.com",
+    url: link("https://www.gog.com/en/games/classic", "pc_shelf_banner").href,
+    attract: {
+      en: "Get your Good Old Games on GOG.com",
+      nl: "Haal je Good Old Games op GOG.com",
+      de: "Hol dir deine Good Old Games auf GOG.com",
+      fr: "Vos Good Old Games sur GOG.com",
+      pt: "Pegue seus Good Old Games na GOG.com",
+      ja: "Good Old Games は GOG.com で"
+    }
+  };
+})();
