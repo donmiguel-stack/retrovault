@@ -179,6 +179,7 @@ body{
 .badge-variant{background:var(--surface-2);color:var(--text-mute);border:1px solid var(--border);}
 /* shipped with a physical board / overlay / workbook */
 .badge-pack{background:rgba(224,192,90,.16);color:#e0c05a;border:1px solid rgba(224,192,90,.35);}
+.badge-np{background:rgba(47,163,107,.16);color:#5fd39a;border:1px solid rgba(47,163,107,.4);}
 
 /* favorite star, top-right of the cover */
 .fav-btn{

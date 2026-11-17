@@ -921,3 +921,38 @@
   .sierra-moose:hover img,.sierra-moose:focus-visible img{transform:rotate(-4deg) scale(1.05);}
   .sierra-moose:hover span,.sierra-moose:focus-visible span{text-decoration:underline;}
   @media (max-width: 600px){ .lsl-coverwrap{width:100%;max-width:220px;} }
+
+  /* "Play together" (playtogether.js): the second launch button next to
+     START, the explainer box under Controls, and the "Online 2P" badge.
+     Green, like the Play together button inside the emulator. */
+  .np-btn{
+    display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+    background:#1f7a4d;color:#fff;border:1px solid #2fa36b;cursor:pointer;
+    font-size:15px;font-weight:700;letter-spacing:.03em;
+    padding:13px 22px;border-radius:var(--radius);
+    box-shadow:0 2px 12px rgba(47,163,107,.35);
+    transition:transform .12s, box-shadow .12s;
+  }
+  .np-btn:hover{transform:translateY(-2px);box-shadow:0 4px 18px rgba(47,163,107,.5);}
+  .np-box{max-width:760px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;border-color:rgba(47,163,107,.45);}
+  .np-text{flex:1 1 300px;min-width:0;}
+  .np-lead{margin:0 0 8px;line-height:1.6;color:var(--text);}
+  .np-steps{margin:0 0 10px;padding-left:20px;line-height:1.6;}
+  .np-steps li{margin:3px 0;}
+  .np-steps b{color:#5fd39a;}
+  .np-tip{margin:10px 0;padding:9px 12px;border-radius:8px;background:rgba(224,192,90,.10);
+    border:1px solid rgba(224,192,90,.3);line-height:1.55;color:var(--text);}
+  .np-tip strong{color:#e0c05a;}
+  .np-note{margin:8px 0 0;font-size:12.5px;color:var(--text-mute);line-height:1.5;}
+  .np-video{flex:0 1 300px;min-width:240px;}
+  .np-video-wrap{max-width:none;}
+  .np-poster{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#000;cursor:pointer;}
+  .np-poster img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92;transition:opacity .15s;}
+  .np-poster:hover img{opacity:1;}
+  .np-play{position:absolute;left:50%;top:50%;width:62px;height:44px;margin:-22px 0 0 -31px;border-radius:12px;
+    background:rgba(204,0,0,.92);box-shadow:0 2px 10px rgba(0,0,0,.5);}
+  .np-play::after{content:"";position:absolute;left:25px;top:13px;border-left:16px solid #fff;
+    border-top:9px solid transparent;border-bottom:9px solid transparent;}
+  .np-caption{margin:6px 0 0;font-size:12.5px;color:var(--text-dim);}
+  .np-yt{color:var(--text-mute);}
+  @media (max-width: 600px){ .np-video{flex-basis:100%;} }

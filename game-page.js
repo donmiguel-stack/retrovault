@@ -415,6 +415,12 @@
   if (gen) {
     meta.appendChild(el("span","badge badge-cat", window.t("g_"+gen.genre)));
     meta.appendChild(el("span","badge badge-cat", window.t("p_"+gen.players)));
+    if (window.RV_NP && window.RV_NP.ok(g)) {
+      var npBadge = el("span","badge badge-np");
+      npBadge.innerHTML = "&#128101; " + esc(window.t("np_badge"));
+      npBadge.title = window.t("np_cardTitle");
+      meta.appendChild(npBadge);
+    }
   }
   info.appendChild(meta);
   // year, publisher and developer, for shelves whose catalogue carries them
@@ -587,6 +593,13 @@
   // 18+ confirmation before START launches; the answer is remembered in
   // localStorage, so it is a speed bump, not access control.
   var isAdult = (g.tags || []).indexOf("adult") !== -1;
+  // "Play together" (playtogether.js / emulator/netplay.js): the second button
+  // next to START launches exactly like START, but straight into host mode with
+  // the invite panel opening by itself - no restart inside the emulator.
+  // Videopac shelf only (RV_NP.ok). The flag survives the adult gate: its
+  // "yes" re-clicks START, which then still sees it.
+  var npLaunch = false;
+  function npSuffix() { var s = npLaunch ? "&netplay=host&npopen=1" : ""; npLaunch = false; return s; }
   function adultOk() { try { return localStorage.getItem("rv-adult-ok") === "1"; } catch (e) { return false; } }
   var adultBox = null;
   start.addEventListener("click", function(ev){
@@ -612,7 +625,7 @@
     if (launchUrl) {
       location.href = "emulator/index.html?core=o2em&rom=" + encodeURIComponent(launchUrl) +
                       "&dlfallback=" + encodeURIComponent(launchUrl) +
-                      hostedBiosParam() + gameBiosParam() + "&teletext=1";
+                      hostedBiosParam() + gameBiosParam() + "&teletext=1" + npSuffix();
       return;
     }
     // your own copy (localroms.js): the emulator page reads it from this
@@ -644,7 +657,7 @@
       // listed as .d64 has to arrive named .prg
       if (own && ownExt) rom = g.romFile.replace(/\.[^.\/]*$/, "") + "." + ownExt;
       location.href = "emulator/index.html?core=" + (CORES[g.platform] || "o2em") +
-                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam() + gameBiosParam() + gameKeysParam() + own;
+                      "&rom=" + encodeURIComponent(rom) + fb + hostedBiosParam() + gameBiosParam() + gameKeysParam() + own + npSuffix();
     }
   });
   info.appendChild(document.createElement("br"));
@@ -721,6 +734,14 @@
       start.title = window.t("playsHosted");
     }
     actions.insertBefore(start, actions.firstChild);
+    if (window.RV_NP && window.RV_NP.ok(g) && !actions.querySelector(".np-btn")) {
+      var npBtn = el("button", "np-btn");
+      npBtn.type = "button";
+      npBtn.innerHTML = "&#128101; " + window.t("np_btn");
+      npBtn.title = window.t("np_btnTitle");
+      npBtn.addEventListener("click", function () { npLaunch = true; start.click(); });
+      actions.insertBefore(npBtn, start.nextSibling);
+    }
     showGog(false);
   }
   function vaultShowMissing() {
@@ -1200,6 +1221,53 @@
   // buttons to console number keys 0-4 - so typing P also typed 2, which broke
   // K.C. Munchkin's create-a-maze (RESET then P) and every other
   // keyboard-driven title. Those binds are now "nul".
+  // "Play together" box: three steps, the per-game tip (if any) and the
+  // explainer video. The video is a poster + play button until clicked, so
+  // visitors who don't watch it never load anything from YouTube.
+  function buildPlayTogether() {
+    var NP = window.RV_NP;
+    var sec = el("div","section np-section");
+    var h = el("h2"); h.innerHTML = "&#128101; " + esc(window.t("np_head")); sec.appendChild(h);
+    var box = el("div","controls-box np-box");
+    var txt = el("div","np-text");
+    var lead = el("p","np-lead"); lead.innerHTML = window.t("np_lead"); txt.appendChild(lead);
+    var ol = el("ol","np-steps");
+    ["np_step1","np_step2","np_step3"].forEach(function (k) { var li = el("li"); li.innerHTML = window.t(k); ol.appendChild(li); });
+    txt.appendChild(ol);
+    var tipText = NP.tip(g);
+    if (tipText) {
+      var tip = el("div","np-tip");
+      tip.innerHTML = "<strong>" + esc(window.t("np_tipHead")) + "</strong> " + tipText;
+      txt.appendChild(tip);
+    }
+    txt.appendChild(el("p","np-note", window.t("np_note")));
+    box.appendChild(txt);
+    if (NP.video) {
+      var vid = el("div","np-video");
+      var wrap = el("div","video-wrap np-video-wrap");
+      var poster = el("button","np-poster");
+      poster.type = "button";
+      poster.setAttribute("aria-label", window.t("np_video"));
+      poster.innerHTML = '<img src="' + esc(NP.poster) + '" alt="" loading="lazy"><span class="np-play" aria-hidden="true"></span>';
+      poster.addEventListener("click", function () {
+        var ifr = document.createElement("iframe");
+        ifr.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(NP.video) + "?autoplay=1&rel=0";
+        ifr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        ifr.allowFullscreen = true;
+        ifr.title = window.t("np_head");
+        wrap.innerHTML = ""; wrap.appendChild(ifr);
+      });
+      wrap.appendChild(poster);
+      vid.appendChild(wrap);
+      var cap = el("p","np-caption");
+      cap.innerHTML = esc(window.t("np_video")) + ' <span class="np-yt">&middot; ' + esc(window.t("np_videoNote")) + "</span>";
+      vid.appendChild(cap);
+      box.appendChild(vid);
+    }
+    sec.appendChild(box);
+    return sec;
+  }
+
   var cSec = el("div","section");
   cSec.appendChild(el("h2",null,window.t("controls")));
 
@@ -1619,6 +1687,9 @@
     page.appendChild(amSec);
   } else if (g.platform !== "C64") {
     page.appendChild(cSec);
+    // "Play together" explainer right under the controls (playtogether.js
+    // decides which games: Videopac two-player titles).
+    if (window.RV_NP && window.RV_NP.ok(g)) page.appendChild(buildPlayTogether());
   } else {
     var c64Sec = el("div","section");
     c64Sec.appendChild(el("h2",null,window.t("controls")));

@@ -131,6 +131,19 @@
     btn.title = "Invite a friend to play " + TXT.who + " over the internet";
     btn.addEventListener("click", onButton);
     document.body.appendChild(btn);
+    // Started from the game page's own "Play together" button
+    // (&netplay=host&npopen=1): the page already loaded in host mode, so no
+    // restart - open the invite panel by itself once the game is running.
+    // "Running" = the audio tap exists (sound reaches the friend from the
+    // first frame); after 30 s it opens anyway.
+    if (Q.netplay === "host" && Q.npopen === "1") {
+      var tries = 0;
+      (function waitReady() {
+        if (panel || pc) return;
+        if (window.__rvNetAudio || ++tries > 60) { openPanel(); if (!pc) startHosting(); return; }
+        setTimeout(waitReady, 500);
+      })();
+    }
   }
 
   function onButton() {

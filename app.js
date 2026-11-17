@@ -411,7 +411,9 @@
     if (state.platform === "videopac") { if (g.platform === "C64" || g.platform === "PC" || g.platform === "Amiga") return false; }
     else if (state.platform !== "all" && g.platform !== state.platform) return false;
     if (state.genre !== "all" && genreOf(g) !== state.genre) return false;
-    if (state.players !== "all" && playersOf(g) !== state.players) return false;
+    // "online": the Play together subset (playtogether.js) - Videopac two-player titles
+    if (state.players === "online") { if (!(window.RV_NP && window.RV_NP.ok(g))) return false; }
+    else if (state.players !== "all" && playersOf(g) !== state.players) return false;
     if (state.category !== "all") {
       if (state.category === "G7000" || state.category === "G7400+") {
         if (g.platform !== state.category) return false;
@@ -1696,6 +1698,15 @@
       meta.appendChild(pbadge2);
     }
 
+    // Play together (playtogether.js): online two-player Videopac titles
+    if (window.RV_NP && window.RV_NP.ok(g)) {
+      var npb = document.createElement("span");
+      npb.className = "badge badge-np";
+      npb.textContent = "\uD83D\uDC65 " + window.t("np_badge");
+      npb.title = window.t("np_cardTitle");
+      meta.appendChild(npb);
+    }
+
     // star sits on the cover so it doesn't push the card layout around
     var star = document.createElement("button");
     star.className = "fav-btn" + (isFav(g.id) ? " on" : "");
@@ -1797,6 +1808,17 @@
   function buildFacets() {
     buildFacetChips(genreSel, GENRE_ORDER, genreOf, "g_", "genre", window.t("allGenres"));
     buildFacetChips(playerSel, PLAYER_ORDER, playersOf, "p_", "players", window.t("allPlayers"));
+    // extra entry: games you can play with a friend online (Play together)
+    var npCount = window.RV_NP ? platformGames().filter(window.RV_NP.ok).length : 0;
+    if (npCount) {
+      var npOpt = document.createElement("option");
+      npOpt.value = "online";
+      npOpt.textContent = "\uD83D\uDC65 " + window.t("p_online") + " (" + npCount + ")";
+      playerSel.appendChild(npOpt);
+      if (state.players === "online") { playerSel.value = "online"; playerSel.classList.add("on"); }
+    } else if (state.players === "online") {
+      state.players = "all"; playerSel.value = "all"; playerSel.classList.remove("on");
+    }
     sortSel.innerHTML = '<option value="number">' + window.t("sortNumber") + '</option>' +
                         '<option value="az">' + window.t("sortAZ") + '</option>';
     sortSel.value = state.sort;
