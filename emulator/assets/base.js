@@ -1111,15 +1111,33 @@ if (queries.keys === "j2arrows") {
  * joystick arrives as joystick 2. W A S D + Q are real console keys, so here
  * joystick 2 moves to keys the console cannot see (see the j2arrows note
  * above): PageUp, PageDown, Home, End and the quote key. The host's own
- * joystick 1 and keyboard are untouched. Like &keys=, never persisted. */
+ * joystick 1 and keyboard are untouched. Like &keys=, never persisted.
+ *
+ * C64 (VICE): RetroPad 1 (arrows + G) is the C64's joystick PORT 2 and
+ * RetroPad 2 is PORT 1 - checked with a PEEK(56320)/PEEK(56321) probe. So by
+ * default the host is port 2 (player 1 in most two-player C64 games) and the
+ * friend port 1. &npswap=1 turns that round for games that want player 1 in
+ * port 1: the friend's keys go to RetroPad 1 and the host's arrows + G to
+ * RetroPad 2. Also only for this page load.
+ *
+ * The friend's keys differ per core. O2EM ignores PageUp/PageDown/Home/End/
+ * quote, but VICE does not: End is VICE's own RESET hotkey (vice_mapper_reset
+ * = RETROK_END) and PageDown, Home and quote also type C64 keys (left arrow,
+ * cursor, shift-space). Probed with a BASIC program showing PEEK(197), the
+ * last GET character and an NMI (RESTORE) counter: every numpad key reaches
+ * the C64 as nothing at all, so the C64 friend sits on keypad 8/2/4/6 + 0.
+ * These are only ever pressed by netplay.js (fakeKey), never by a person. */
 if (queries.netplay === "host") {
-	var np2 = {
-		input_player2_up: "pageup",
-		input_player2_down: "pagedown",
-		input_player2_left: "home",
-		input_player2_right: "end",
-		input_player2_b: "quote"
-	};
+	var npFriendKeys = queries.core === "vice_x64" ?
+		{ up: "keypad8", down: "keypad2", left: "keypad4", right: "keypad6", b: "keypad0" } :
+		{ up: "pageup", down: "pagedown", left: "home", right: "end", b: "quote" };
+	var npHostKeys = { up: "up", down: "down", left: "left", right: "right", b: "g" };
+	var npSwap = queries.npswap === "1";
+	var np2 = {};
+	["up", "down", "left", "right", "b"].forEach(function (d) {
+		np2["input_player2_" + d] = npSwap ? npHostKeys[d] : npFriendKeys[d];
+		if (npSwap) np2["input_player1_" + d] = npFriendKeys[d];
+	});
 	if (!perGameBindsPrev) perGameBindsPrev = {};
 	Object.keys(np2).forEach(function (k) {
 		if (!(k in perGameBindsPrev)) perGameBindsPrev[k] = savedKeybindsObj[k];

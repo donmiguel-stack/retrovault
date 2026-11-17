@@ -13,6 +13,16 @@
 // Home, End, Quote), so the friend's joystick never types on the console.
 // Pressing "Play together" without that flag reloads the page with it.
 //
+// C64 shelf (VICE): same mechanism. RetroPad 1 is the C64's joystick port 2,
+// RetroPad 2 is port 1, so the friend gets port 1 and the host keeps port 2
+// (player 1 in most two-player C64 games). "Swap ports" in the panel reloads
+// with &npswap=1 for games that want it the other way round. The friend's
+// page is told the system and port (&sys=c64&port=N) for its help text.
+// The friend's joystick rides on keypad 8/2/4/6 + 0 here: VICE treats End as
+// RESET and PageDown/Home/quote as C64 keys (see base.js).
+// F1-F4 stay off the friend's list: on the host they are the menu, save
+// state, load state and screenshot keys.
+//
 // Signalling: the two browsers only need to swap one offer and one answer
 // (ICE gathered up front), stored for a short while by a tiny PHP script on
 // retrovault.world (netplay/signal.php). No accounts, no game data on the
@@ -22,8 +32,26 @@
 (function () {
   "use strict";
   var Q = (typeof queries === "object" && queries) || Object.fromEntries(new URLSearchParams(location.search));
-  // Videopac shelf only for now
-  if (Q.core && Q.core !== "o2em") return;
+  // Videopac (O2EM) and C64 (VICE) shelves. Amiga and DOS run on pages of
+  // their own and are not wired up yet.
+  var SYS = (!Q.core || Q.core === "o2em") ? "vp" : (Q.core === "vice_x64" ? "c64" : null);
+  if (!SYS) return;
+  // C64: RetroPad 1 = joystick port 2, RetroPad 2 = port 1 (see base.js).
+  // &npswap=1 gives the friend RetroPad 1 instead.
+  var SWAP = SYS === "c64" && Q.npswap === "1";
+  var FRIEND_PAD = SWAP ? "player1" : "player2";
+  var FRIEND_PORT = SWAP ? 2 : 1, HOST_PORT = SWAP ? 1 : 2;
+  var TXT = SYS === "c64" ? {
+    who: "joystick port " + FRIEND_PORT,
+    confirm: "Play together restarts this game so your friend gets the second joystick.\n\nContinue?",
+    intro: "Send this link to a friend. They see and hear the game, and control the C64's <b>joystick port " + FRIEND_PORT + "</b> with the arrow keys and Space; letters, digits and Enter type on the C64 keyboard.",
+    you: "You keep joystick port " + HOST_PORT + " (arrow keys + G) and the rest of the keyboard. The game streams straight from your browser to your friend's; nothing is uploaded."
+  } : {
+    who: "joystick 2",
+    confirm: "Play together restarts this game so your friend gets joystick 2.\n\nContinue?",
+    intro: "Send this link to a friend. They see and hear the game, and play <b>joystick 2</b> with the arrow keys and Space; keys like 1 or Y type on the console keyboard.",
+    you: "You keep joystick 1. The game streams straight from your browser to your friend's; nothing is uploaded."
+  };
 
   var SIGNAL = Q.signal || window.RV_NETPLAY_SIGNAL || "https://retrovault.world/netplay/signal.php";
   var ICE = window.RV_NETPLAY_ICE || [{ urls: "stun:stun.l.google.com:19302" }, { urls: "stun:stun.cloudflare.com:3478" }];
@@ -58,9 +86,13 @@
     return fallback;
   }
   function joyCode(dir) {
-    var map = { up: ["input_player2_up", "PageUp"], down: ["input_player2_down", "PageDown"],
-                left: ["input_player2_left", "Home"], right: ["input_player2_right", "End"],
-                fire: ["input_player2_b", "Quote"] };
+    var p = "input_" + FRIEND_PAD + "_";
+    // fallbacks only; the real keys come from base.js's &netplay=host binds
+    var map = SYS === "c64" ?
+      { up: [p + "up", "Numpad8"], down: [p + "down", "Numpad2"], left: [p + "left", "Numpad4"],
+        right: [p + "right", "Numpad6"], fire: [p + "b", "Numpad0"] } :
+      { up: [p + "up", "PageUp"], down: [p + "down", "PageDown"], left: [p + "left", "Home"],
+        right: [p + "right", "End"], fire: [p + "b", "Quote"] };
     var m = map[dir]; return m ? bindCode(m[0], m[1]) : null;
   }
   // console-keyboard keys the friend may type: letters, digits, space, enter,
@@ -96,7 +128,7 @@
     btn = document.createElement("button");
     btn.id = "rvnp-btn"; btn.type = "button";
     btn.textContent = "👥 Play together";
-    btn.title = "Invite a friend to play joystick 2 over the internet";
+    btn.title = "Invite a friend to play " + TXT.who + " over the internet";
     btn.addEventListener("click", onButton);
     document.body.appendChild(btn);
   }
@@ -104,7 +136,7 @@
   function onButton() {
     if (panel) { panel.remove(); panel = null; return; }
     if (Q.netplay !== "host") {
-      if (!confirm("Play together restarts this game so your friend gets joystick 2.\n\nContinue?")) return;
+      if (!confirm(TXT.confirm)) return;
       var u = new URL(location.href); u.searchParams.set("netplay", "host");
       location.href = u.toString(); return;
     }
@@ -117,13 +149,24 @@
     panel.id = "rvnp-panel";
     panel.innerHTML =
       "<h3>Play together</h3>" +
-      "<p>Send this link to a friend. They see and hear the game, and play <b>joystick 2</b> with the arrow keys and Space; keys like 1 or Y type on the console keyboard.</p>" +
+      "<p>" + TXT.intro + "</p>" +
       "<input id='rvnp-link' readonly value='creating a room…'>" +
       "<div><button id='rvnp-copy' type='button'>Copy link</button><button id='rvnp-stop' type='button'>Stop</button></div>" +
       "<p>Status: <span id='rvnp-status'>starting…</span></p>" +
-      "<p style='font-size:12px;color:#999'>You keep joystick 1. The game streams straight from your browser to your friend's; nothing is uploaded.</p>";
+      (SYS === "c64" ?
+        "<p style='font-size:12px;color:#bbb'>Most two-player C64 games put player 1 in port 2. If this one wants it the other way round, swap before you send the link (the game restarts).<br>" +
+        "<button id='rvnp-swap' type='button'>⇄ Swap ports</button></p>" : "") +
+      "<p style='font-size:12px;color:#999'>" + TXT.you + "</p>";
     document.body.appendChild(panel);
     statusEl = panel.querySelector("#rvnp-status");
+    var sw = panel.querySelector("#rvnp-swap");
+    if (sw) sw.onclick = function () {
+      if (dc && dc.readyState === "open" && !confirm("Your friend is connected. Swapping restarts the game and they will need a new link.\n\nSwap anyway?")) return;
+      var u = new URL(location.href);
+      if (SWAP) u.searchParams.delete("npswap"); else u.searchParams.set("npswap", "1");
+      u.searchParams.set("netplay", "host");
+      location.href = u.toString();
+    };
     panel.querySelector("#rvnp-copy").onclick = function () {
       var i = panel.querySelector("#rvnp-link"); i.select();
       (navigator.clipboard ? navigator.clipboard.writeText(i.value) : Promise.reject()).catch(function () { document.execCommand("copy"); });
@@ -138,6 +181,7 @@
     u.searchParams.set("room", room);
     if (Q.signal) u.searchParams.set("signal", Q.signal);
     var t = document.title || ""; if (t) u.searchParams.set("title", t.slice(0, 80));
+    if (SYS === "c64") { u.searchParams.set("sys", "c64"); u.searchParams.set("port", String(FRIEND_PORT)); }
     return u.toString();
   }
   function showLink() { var i = panel && panel.querySelector("#rvnp-link"); if (i) i.value = guestUrl(); }
@@ -167,7 +211,7 @@
     if (at) at.stream.getAudioTracks().forEach(function (t) { pc.addTrack(t, at.stream); });
     else pc.addTransceiver("audio", { direction: "sendonly" });   // sound may start later
     dc = pc.createDataChannel("input", { ordered: true });
-    dc.onopen = function () { setStatus("connected – your friend is joystick 2", "ok"); btn.textContent = "👥 Playing together"; };
+    dc.onopen = function () { setStatus("connected – your friend is " + TXT.who, "ok"); btn.textContent = "👥 Playing together"; };
     dc.onclose = function () { releaseAll(); setStatus("your friend left", "bad"); btn.textContent = "👥 Play together"; };
     dc.onmessage = function (e) {
       var m; try { m = JSON.parse(e.data); } catch (x) { return; }

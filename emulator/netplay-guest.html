@@ -57,6 +57,16 @@
   var v = document.getElementById("v"), st = document.getElementById("status");
   var ov = document.getElementById("overlay"), ovt = document.getElementById("ovtext");
   if (P.get("title")) document.getElementById("title").textContent = "Play together – " + P.get("title").replace(/\s*\|.*$/, "");
+  // C64 host: say which joystick port the friend is on (set by netplay.js)
+  var C64 = P.get("sys") === "c64";
+  var PORT = /^[12]$/.test(P.get("port") || "") ? P.get("port") : "1";
+  var WHO = C64 ? "joystick port " + PORT : "joystick 2";
+  if (C64) {
+    document.getElementById("help").innerHTML = "You are on the C64&rsquo;s <b>joystick port " + PORT + "</b>: " +
+      "<span class=\"kbd\">&larr;</span><span class=\"kbd\">&uarr;</span><span class=\"kbd\">&rarr;</span><span class=\"kbd\">&darr;</span> to move, " +
+      "<span class=\"kbd\">Space</span> to fire. Letters, digits and <span class=\"kbd\">Enter</span> type on the C64 keyboard. " +
+      "A connected game controller works too.";
+  }
   function status(t, c) { st.textContent = t; st.className = c || ""; }
   function overlay(t) { if (t) { ovt.textContent = t; ov.style.display = "flex"; } else ov.style.display = "none"; }
   if (!/^[a-z0-9]{6,12}$/.test(room)) { status("invalid link", "bad"); overlay("This invite link is incomplete. Ask your friend to copy it again."); return; }
@@ -71,7 +81,7 @@
   };
   pc.ondatachannel = function (e) {
     dc = e.channel;
-    dc.onopen = function () { status("connected – you are joystick 2", "ok"); overlay(null); };
+    dc.onopen = function () { status("connected – you are " + WHO, "ok"); overlay(null); };
     dc.onclose = function () { status("the game was closed", "bad"); overlay("Your friend stopped the game."); };
   };
   pc.onconnectionstatechange = function () {
