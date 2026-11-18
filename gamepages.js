@@ -415,7 +415,11 @@ window.GAMEPAGES_DATA = {
   },
   "hideNotes": [
    "c_hidden"
-  ]
+  ],
+  "video": {
+   "id": "aPQrqhnBqXs",
+   "title": "Grand Theft Odyssey: a brand new Videopac G7000 / G7400 game (2026) | Ocean Drive Race + Helicopter Chase"
+  }
  },
  "new_demo-tribute": {
   "input": "keyboard",
