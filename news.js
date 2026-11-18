@@ -35,6 +35,16 @@ window.NEWS_DATA = {
   speed: 90,
 
   items: [
+    { id: "grand-theft-odyssey-2026-11",
+      date: "2026-11-18",
+      href: "game.html?id=new_grand-theft-odyssey",
+      text: {
+        en: "New from Retro Vault: Grand Theft Odyssey, two games in one for the Videopac. Ocean Drive Race: get the goods to Miami, jump out of the wreck and steal the next car. Helicopter Chase: get the cash out of town with a friend flying the police helicopter. Play it free, online, for 1 or 2 players",
+        nl: "Nieuw van Retro Vault: Grand Theft Odyssey, twee spellen in één voor de Videopac. Ocean Drive Race: breng de lading naar Miami, spring uit het wrak en steel de volgende auto. Helicopter Chase: ontsnap met het geld terwijl een vriend de politiehelikopter vliegt. Gratis online te spelen, met 1 of 2 spelers",
+        de: "Neu von Retro Vault: Grand Theft Odyssey, zwei Spiele in einem für das Videopac. Ocean Drive Race: Bring die Ware nach Miami, spring aus dem Wrack und klau das nächste Auto. Helicopter Chase: Raus aus der Stadt mit dem Geld, während ein Freund den Polizeihubschrauber fliegt. Kostenlos online spielen, für 1 oder 2 Spieler",
+        fr: "Nouveau chez Retro Vault : Grand Theft Odyssey, deux jeux en un pour le Videopac. Ocean Drive Race : livrez la marchandise à Miami, sautez de l’épave et volez la voiture suivante. Helicopter Chase : quittez la ville avec l’argent pendant qu’un ami pilote l’hélicoptère de police. Gratuit, en ligne, pour 1 ou 2 joueurs",
+        pt: "Novidade da Retro Vault: Grand Theft Odyssey, dois jogos em um para o Videopac. Ocean Drive Race: leve a carga até Miami, salte do carro destruído e roube o próximo. Helicopter Chase: fuja da cidade com o dinheiro enquanto um amigo pilota o helicóptero da polícia. Grátis, online, para 1 ou 2 jogadores",
+        ja: "Retro Vault から あたらしい ゲーム： Grand Theft Odyssey。 Videopac の ための ふたつの ゲームが ひとつに。 Ocean Drive Race： にもつを マイアミまで とどけよう。 くるまが こわれたら とびだして つぎの くるまを ぬすもう。 Helicopter Chase： おかねを もって まちから にげよう。 ともだちが けいさつの ヘリコプターを そうじゅう。 オンラインで むりょう、 1～2 にん で あそべます" } },
     { id: "gog-2026-11",
       date: "2026-11-16",
       href: "index.html?shelf=pc",
