@@ -1367,9 +1367,13 @@
     cBox.appendChild(n2);
   }
   if (!data.keys && !launchUrl) {
+  // gamepages.js hideNotes: ["c_hidden"] leaves a general note off a page
+  // where it only gets in the way (Grand Theft Odyssey needs no console keyboard)
+  if ((data.hideNotes || []).indexOf("c_hidden") === -1) {
   var nHidden = el("p","controls-note");
   nHidden.innerHTML = LT("c_hidden");
   cBox.appendChild(nHidden);
+  }
   var nBleed = el("p","controls-note");
   nBleed.innerHTML = LT("c_bleed");
   cBox.appendChild(nBleed);
@@ -2518,6 +2522,75 @@
       }
 
       draw(red, false); draw(green, false);
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (es) {
+          var v = es[0].isIntersecting && !document.hidden;
+          if (v && !visible) { visible = true; requestAnimationFrame(step); }
+          visible = v;
+        }).observe(box);
+      } else { visible = true; requestAnimationFrame(step); }
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) visible = false;
+        else { var r = box.getBoundingClientRect();
+               if (r.bottom > 0 && r.top < window.innerHeight && !visible) { visible = true; requestAnimationFrame(step); } }
+      });
+    })();
+  }
+
+  // ---- Grand Theft Odyssey (new_grand-theft-odyssey) easter egg ----------
+  // The police helicopter from Helicopter Chase hovers over the Controls box
+  // and sweeps a searchlight across it. The sprite is the cartridge's own
+  // shp_heli bitmap (8x7, bit 0 = leftmost pixel), flashing red/blue the way
+  // the game does it. It drifts slowly from side to side, turns to face the
+  // way it flies, and the beam swings ahead of it. Runs only while the box is
+  // on screen, skips itself under prefers-reduced-motion, takes no pointer.
+  if (g.id === "new_grand-theft-odyssey" &&
+      !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    (function () {
+      var box = document.querySelector(".controls-box");
+      if (!box) return;
+      var HELI = [0x7E, 0x08, 0x79, 0xDF, 0x78, 0x48, 0xFC];
+      var PX = 4, SW = 8 * PX;
+      function sprite(colour) {
+        var s = '<svg width="' + SW + '" height="' + (7 * PX) + '" viewBox="0 0 8 7" ' +
+                'shape-rendering="crispEdges" aria-hidden="true">';
+        for (var y = 0; y < 7; y++)
+          for (var x = 0; x < 8; x++)
+            if (HELI[y] & (1 << x))
+              s += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + colour + '"/>';
+        return s + "</svg>";
+      }
+      var looks = [sprite("#4f7dff"), sprite("#f0463c")];
+      var beam = el("div", "gto-beam");
+      var heli = el("div", "gto-heli");
+      heli.innerHTML = looks[0];
+      box.appendChild(beam);
+      box.appendChild(heli);
+      var t = Math.random() * 20, last = null, visible = false, look = 0, px = null;
+
+      function step(now) {
+        if (!visible) { last = null; return; }
+        if (last === null) last = now;
+        t += Math.min(0.05, (now - last) / 1000); last = now;
+        var w = box.clientWidth, h = box.clientHeight;
+        var span = Math.max(40, w - SW - 40);
+        // a slow patrol with a little hover bob on top
+        var x = 20 + span * (0.5 + 0.5 * Math.sin(t * 0.32) * Math.cos(t * 0.11 + 0.7));
+        var dir = px === null || x >= px ? 1 : -1; px = x;
+        var bob = Math.sin(t * 2.1) * 2;
+        var l = Math.floor(t * 3.75) % 2;          // 8 frames on, 8 off at 60 Hz
+        if (l !== look) { heli.innerHTML = looks[l]; look = l; }
+        heli.style.transform = "translate(" + x + "px," + bob + "px)" + (dir < 0 ? " scaleX(-1)" : "");
+        // the beam: from the helicopter's belly down into the box, swinging
+        var cx = x + SW / 2;
+        var reach = Math.min(h - 8, 230);
+        var foot = cx + dir * 30 + Math.sin(t * 0.9) * 70;
+        var half = 46 + Math.sin(t * 1.3) * 8;
+        beam.style.height = reach + "px";
+        beam.style.clipPath = "polygon(" + (cx - 3) + "px 0," + (cx + 3) + "px 0," +
+          (foot + half) + "px 100%," + (foot - half) + "px 100%)";
+        requestAnimationFrame(step);
+      }
       if ("IntersectionObserver" in window) {
         new IntersectionObserver(function (es) {
           var v = es[0].isIntersecting && !document.hidden;

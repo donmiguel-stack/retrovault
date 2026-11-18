@@ -232,6 +232,18 @@ window.GAMES_DATA = {
     "romFile": "Demo Tribute (Retro Vault).bin"
   },
   {
+    "id": "new_grand-theft-odyssey",
+    "filename": "new_grand-theft-odyssey.bin",
+    "title": "Grand Theft Odyssey",
+    "platform": "G7400+",
+    "category": "Homebrew (this project)",
+    "vpNumber": null,
+    "tags": [
+      "plus-graphics"
+    ],
+    "romFile": "Grand Theft Odyssey (Retro Vault).bin"
+  },
+  {
     "id": "im_atlantis",
     "filename": "im_atlantis.bin",
     "title": "Atlantis",

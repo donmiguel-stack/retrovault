@@ -1,19 +1,19 @@
 {
- "generated": "2026-11-17 15:58:15",
- "count": 864,
- "bytes": 330228010,
+ "generated": "2026-11-18 11:17:28",
+ "count": 865,
+ "bytes": 330488751,
  "files": {
   "games.js": {
-   "sha256": "1e322292efa80c692f04aeb2c7d44a5c364dc5a6e79849bcfd280ccf19ed95e1",
-   "size": 149369
+   "sha256": "28adb0267e9ed566907d6f4b4283e4ccdd78645f29321f482e10afeb4f68c326",
+   "size": 149687
   },
   "gamepages.js": {
-   "sha256": "8dc349a6f625fbcb2d716027272452dc102bf1f4bb205ce203c86662c4867ce5",
-   "size": 347514
+   "sha256": "721fb06c86850b9d44dbb78f98e06bd90e440fd0cda6d423eb9d39c1956d4bc9",
+   "size": 352283
   },
   "genres.js": {
-   "sha256": "44a0cbde8fd27095efc75d2c8cc95ec4a12912d7f5a8743650dbd383c0434404",
-   "size": 31662
+   "sha256": "e5d0b3aba4e72ace3b004e4a028dbbb4d307aadad4ac84fdfc6e8c3e04508dd9",
+   "size": 31736
   },
   "brazil.js": {
    "sha256": "c0655874809855d12e8e66896d2863e46cc544c94a0b8463c17fcd375b6d0c4d",
@@ -32,8 +32,8 @@
    "size": 7622
   },
   "i18n.js": {
-   "sha256": "83e90161dd4ebfcd7f8e28959ac8a0b80036d8b5fad483979b2f47b180c5dd87",
-   "size": 115612
+   "sha256": "3494591b45d13397f7609c3528c6c5d617d24a1298e45dbd19c31c4294737667",
+   "size": 122621
   },
   "setup-i18n.js": {
    "sha256": "a057ba706131c676ae6be26084f77fbbb015afda3aea26134467d2e9a459c4bb",
@@ -136,8 +136,8 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "98ce98c42989642feac972373839cdeef8832624a58635d6308ac98d169122c5",
-   "size": 106360
+   "sha256": "596f16566d307b70ff156cf7f1def7fca182247197aa4846747a0e445630b64b",
+   "size": 107530
   },
   "animcovers.js": {
    "sha256": "1a5f73229f91bd065c61ad69525ffc9a1aa05c456d9580618d0d1a0b0c68608c",
@@ -152,36 +152,36 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "3498be2b2fd10b64cedefbf823230ea7b2e954190a93dd980f299e2448d5adb4",
-   "size": 20579
+   "sha256": "45598d63def8e17d6d2963db40e563a9c0ebcc0047a2558d2464775b87caf12f",
+   "size": 20623
   },
   "resources.html": {
    "sha256": "2ec9e687dc0f34a0a8b45199b24b30fc3d82ee8c895cf6434684e41604431b7e",
    "size": 13352
   },
   "style.css": {
-   "sha256": "59d3a24ea14a51832e3188f70251bde78a841b711ea652467855a5fcb4371d52",
-   "size": 76155
+   "sha256": "5f8332c93c1af2dd673b6446ae59a7f3aabb19b7eab4dff89bd7f3dfb90d4be1",
+   "size": 76250
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
    "size": 3768
   },
   "game.css": {
-   "sha256": "5610759621fabb75d5b52622508eaca5c6c76c85077b47f2e2935b62064dde09",
-   "size": 51799
+   "sha256": "16abe99019eb89cb1d554b4146a3c860f986ec9518c5f34560037ecf08beeca8",
+   "size": 54634
   },
   "game-page.js": {
-   "sha256": "899dd7837c646edc7852faecfd3450d5eb9daad9482d55ab8329618c3ab92ad0",
-   "size": 120089
+   "sha256": "e5341b2162ec4ca5d85caef43bdc4182b33010d2c4bd51d0c8753f172cb48193",
+   "size": 127519
   },
   "catalogue.html": {
-   "sha256": "2520dc57aa55391690159fbe6e1cb4d5e07eb1fdde95aef07533e6d9cf4b37cc",
-   "size": 45091
+   "sha256": "e86bda4cbc0bae6c659008c28c0d11fdf7639a0e82e977ba2fdc076ca8e99c97",
+   "size": 45174
   },
   "versions.js": {
-   "sha256": "45e900033ca690b343c92fadce635a94acdc7c87f7635e32be4d78a759b5fe77",
-   "size": 1883
+   "sha256": "f7f01b7beeac47f5b9e0844af3988441b38e4ac8c058bfa72647cfcac2ed2206",
+   "size": 1911
   },
   "favicon.ico": {
    "sha256": "aef39245d7c68f0175738f3ec02699e780488e387a5e180ee920a8d6edd6315c",
@@ -216,8 +216,8 @@
    "size": 582
   },
   "sitemap.xml": {
-   "sha256": "af3abab85d6d6823bc6737481ad1440ceea7f9cb5ab3a9e5f544f2077942b8f1",
-   "size": 77315
+   "sha256": "804f64a92c902035a91dda2042f868c543c9995f27d5d3f86a7288839b79393b",
+   "size": 77510
   },
   "covers/Vp01_F.png": {
    "sha256": "0ea5a86b00bc4c83b75d1841c2e7a913a0019c79ec4879884fb1d2119d49c728",
@@ -1318,6 +1318,10 @@
   "covers/new_demo-tribute.png": {
    "sha256": "d4ea1d4aac9f31cbcedea9079288e1ce07a2906f35bce549c99bdfb29e5dff29",
    "size": 397822
+  },
+  "covers/new_grand-theft-odyssey.png": {
+   "sha256": "f4fe8dc3bbf7c3580a7ef74b28a1e3b49fd0b4bea9039ffea90632ae3c8906b8",
+   "size": 236691
   },
   "covers/new_helicopter_buzzword.png": {
    "sha256": "c5fac80f9430736b044d34d27ff1cbf6f0b39fab7795d4b24f97ed5183c89a21",

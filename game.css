@@ -863,6 +863,21 @@
   }
   @media (prefers-reduced-motion: reduce){ .ls-runner,.ls-tag{display:none;} }
 
+  /* Grand Theft Odyssey easter egg: the police helicopter hovers over the
+     Controls box and sweeps a searchlight across it (see game-page.js). */
+  .gto-heli{
+    position:absolute;left:0;top:-34px;width:32px;height:28px;z-index:3;
+    pointer-events:none;will-change:transform;
+    filter:drop-shadow(0 1px 0 rgba(0,0,0,.6));
+  }
+  .gto-heli svg{display:block;}
+  .gto-beam{
+    position:absolute;left:0;right:0;top:-8px;z-index:1;pointer-events:none;
+    background:linear-gradient(to bottom, rgba(255,244,190,.26), rgba(255,244,190,.10) 70%, rgba(255,244,190,0));
+    mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion: reduce){ .gto-heli,.gto-beam{display:none;} }
+
   /* Controller panel (pad.js) - under Controls on every game page */
   .pad-status{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:var(--text-dim);font-size:14px;}
   .pad-dot{width:10px;height:10px;border-radius:50%;background:#555b66;flex:0 0 auto;}

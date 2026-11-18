@@ -148,6 +148,10 @@ window.GENRE_DATA = {
   "genre": "demo",
   "players": "p1"
  },
+ "new_grand-theft-odyssey": {
+  "genre": "racing",
+  "players": "p12"
+ },
  "im_atlantis": {
   "genre": "shooter",
   "players": "p12"
