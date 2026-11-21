@@ -661,13 +661,14 @@
         '<span class="feature-cover-wrap">' +
         '<img class="feature-cover" src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
         'onerror="this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
-        (homebrew ? '<span class="cover-ribbon">' + window.t("cat_homebrew") + '</span>' : '') +
         '</span>' +
         '<div class="feature-copy">' +
         '<h3>' + g.title + '</h3>' +
         '<p class="feature-blurb">' + window.tx(pick.blurb) + '</p>' +
         '<div class="feature-meta">' +
         '<span class="badge ' + platformBadge(g.platform) + '">' + g.platform + '</span>' +
+        // homebrew is said here, in the badges, not on a ribbon over the cover art
+        (homebrew ? '<span class="badge badge-cat-dyn" style="--badge-color:' + groupFor(g).color + '">' + catLabel(groupFor(g)) + '</span>' : '') +
         (gen.genre ? '<span class="badge badge-cat">' + window.t("g_" + gen.genre) + '</span>' : '') +
         (gen.players ? '<span class="badge badge-cat">' + window.t("p_" + gen.players) + '</span>' : '') +
         '</div></div>' + videoSlot(g, pick);
@@ -1095,7 +1096,6 @@
         '<span class="feature-cover-wrap">' +
         '<img class="feature-cover" src="covers/' + g.id + '.png?v=' + COVER_V + '" alt="" ' +
         'onerror="this.src=\'covers/' + g.id + '.jpg?v=' + COVER_V + '\'">' +
-        '<span class="cover-ribbon">' + window.t("cat_homebrew") + '</span>' +
         '</span>' +
         '<div class="feature-copy">' +
         '<h3>' + g.title + '</h3>' +
@@ -1650,14 +1650,8 @@
     img.src = "covers/" + coverId(g) + ".png?v=" + COVER_V;
     cover.appendChild(img);
 
-    // Homebrew games are easy to mistake for official releases in the grid,
-    // and four of them borrow an official box for want of art of their own.
-    if (groupFor(g).key === "homebrew") {
-      var rib = document.createElement("span");
-      rib.className = "cover-ribbon";
-      rib.textContent = window.t("cat_homebrew");
-      cover.appendChild(rib);
-    }
+    // Homebrew is shown by the category badge under the title (the pink
+    // Homebrew pill), not by a ribbon across the cover art (Mike, 2026-11-19).
 
     var body = document.createElement("div");
     body.className = "card-body";

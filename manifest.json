@@ -1,15 +1,15 @@
 {
- "generated": "2026-11-18 11:17:28",
+ "generated": "2026-11-21 14:46:35",
  "count": 865,
- "bytes": 330488751,
+ "bytes": 330489961,
  "files": {
   "games.js": {
    "sha256": "28adb0267e9ed566907d6f4b4283e4ccdd78645f29321f482e10afeb4f68c326",
    "size": 149687
   },
   "gamepages.js": {
-   "sha256": "721fb06c86850b9d44dbb78f98e06bd90e440fd0cda6d423eb9d39c1956d4bc9",
-   "size": 352283
+   "sha256": "3f70ce7f563af8657b37da38700b934d591a6225a39e01002e9ed11e1d564998",
+   "size": 351411
   },
   "genres.js": {
    "sha256": "e5d0b3aba4e72ace3b004e4a028dbbb4d307aadad4ac84fdfc6e8c3e04508dd9",
@@ -44,8 +44,8 @@
    "size": 160322
   },
   "news.js": {
-   "sha256": "51d358338a6cb247fcbd3858e166bf2b83f32725a2b851cc39c2ae3d8f24f520",
-   "size": 5131
+   "sha256": "4ea0620f83cd3d9a2b5f7b842a27a7947a577bfb671f6e6adeca321c6f69d62c",
+   "size": 7431
   },
   "shops.js": {
    "sha256": "4b6a36f22dc606140e78571abde3742c4292b110a4e9f89160a87d33d749c613",
@@ -136,8 +136,8 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "596f16566d307b70ff156cf7f1def7fca182247197aa4846747a0e445630b64b",
-   "size": 107530
+   "sha256": "1dc46c4933cf4be459b81d5425003127500cbd41088a7e5310d2448637f19c53",
+   "size": 107372
   },
   "animcovers.js": {
    "sha256": "1a5f73229f91bd065c61ad69525ffc9a1aa05c456d9580618d0d1a0b0c68608c",
@@ -152,7 +152,7 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "45598d63def8e17d6d2963db40e563a9c0ebcc0047a2558d2464775b87caf12f",
+   "sha256": "25303e9937e57b3c6d4210f0c055d4f5539881e81bbe5bb2fabb6fda61219f9e",
    "size": 20623
   },
   "resources.html": {
@@ -172,15 +172,15 @@
    "size": 54634
   },
   "game-page.js": {
-   "sha256": "e5341b2162ec4ca5d85caef43bdc4182b33010d2c4bd51d0c8753f172cb48193",
-   "size": 127519
+   "sha256": "e2cdfd5d6ab1b0a3ae4b90bf4f129e414b77eb96415184561148038ea7b33d89",
+   "size": 127459
   },
   "catalogue.html": {
    "sha256": "e86bda4cbc0bae6c659008c28c0d11fdf7639a0e82e977ba2fdc076ca8e99c97",
    "size": 45174
   },
   "versions.js": {
-   "sha256": "f7f01b7beeac47f5b9e0844af3988441b38e4ac8c058bfa72647cfcac2ed2206",
+   "sha256": "bef5d886c0ca1aebb71c656e3099e27aa6e565e2a62739bdb519fd447ce5badd",
    "size": 1911
   },
   "favicon.ico": {

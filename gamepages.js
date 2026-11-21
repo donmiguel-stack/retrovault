@@ -406,8 +406,10 @@ window.GAMEPAGES_DATA = {
   "note": "Retro Vault's own game, made in November 2026 for online play here in the Vault. At <strong>SELECT GAME</strong> press <span class='kbd'>1</span>; the title screen then asks <strong>KEY 1 OR 2</strong>.<br><br><strong>Game 1 - Ocean Drive Race</strong> (one player). A bag of contraband on the back seat and a buyer waiting in Miami. Drive the red car up Ocean Drive with <span class='kbd'>&larr;</span> <span class='kbd'>&uarr;</span> <span class='kbd'>&rarr;</span> <span class='kbd'>&darr;</span>; pushing forward revs the engine. Somebody doesn't want this delivery to arrive: bombs land on the road, tick for a couple of seconds and go off wherever you are - be somewhere else. Road blocks, parked cars and a bomb blast wreck the car and cost a life; blue oil spins you round. A wreck is not the end of the run: your driver jumps out, bag in hand. Run him onto one of the blue parked cars and press <span class='kbd'>G</span> to take that one instead. Three lives. 1000 points and the goods are in Miami.<br><br><strong>Game 2 - Helicopter Chase</strong> (one or two players). The drop is made and the cash is in the car - now get it out of Miami. Same keys, racing left to right along Ocean Drive under the neon $ signs; dodge the crates, oil spins you round. The police helicopter is joystick&nbsp;2: <span class='kbd'>W</span> <span class='kbd'>A</span> <span class='kbd'>S</span> <span class='kbd'>D</span> to fly, <span class='kbd'>Q</span> drops a bomb. Flying into a building or a palm tree spins it out for a moment. Nobody on joystick&nbsp;2? Then the computer flies it. Every 200 points lights another of the five wanted stars, and the helicopter gets faster and bombs more often. Will you make it out of town before the police get you? 1000 points: <strong>ESCAPED</strong>. Three lives gone: <strong>BUSTED</strong>.<br><br>After each game press <span class='kbd'>G</span> to get back to the title. On a Videopac+ G7400 the Ocean Drive skyline grows on the horizon as you get closer to Miami.",
   "playTogetherTip": "Press 2 at the title for Helicopter Chase: you drive the getaway car, your friend flies the police helicopter (joystick 2).",
   "manual": {
-   "source": "Retro Vault",
-   "text": "<h3>The story</h3><p>Miami, summer 1983. The red sports car isn't yours, and neither is the bag on the back seat: a load of contraband, with a buyer waiting at the far end of Ocean Drive. All you have to do is get it there.</p><p>Not everyone wants that delivery to arrive. Bombs come down on the boulevard ahead of you, the police have put up road blocks, and when the car goes up in smoke there is only one way to keep going: grab the bag, jump out, take the next car at the kerb and drive on.</p><p>Make the drop and the cash is yours. Then comes the hard part - getting it out of Miami. The neon $ signs blaze over Ocean Drive, a police helicopter comes in low over the rooftops, and five wanted stars light up one by one. Will you make it out of town before the police get you?</p><h3>Game 1 - Ocean Drive Race</h3><p>A top-down run up the boulevard to Miami with the goods. The bombs on the road tick for a couple of seconds and then go off wherever you happen to be, so read the road ahead; road blocks and parked cars end a car just as surely. A wrecked car is not the end: the driver jumps out with the bag, and any empty car parked by the kerb will do. 1000 points and you have reached Miami.</p><h3>Game 2 - Helicopter Chase</h3><p>The way out: side-on along Ocean Drive with the cash, the car racing right and a police helicopter on its tail. The helicopter has to weave between the hotels and the palms to line up a bomb; the car has to read where it will fall. Play it with a friend through Play together - you drive, they fly. Alone, the computer takes the helicopter. 1000 points and you are out of town: ESCAPED. Run out of cars first: BUSTED.</p>"
+   "item": "Grand_Theft_Odyssey_2026_RetroVault",
+   "pages": 10,
+   "credit": "the game manual by Retro Vault (with both blueprint sheets)",
+   "pdf": "manuals/Grand_Theft_Odyssey_2026_RetroVault/grand-theft-odyssey-manual.pdf"
   },
   "history": {
    "text": "Retro Vault's own game for the Philips Videopac G7000 and Videopac+ G7400, written in Intel 8048 assembly in November 2026 and shaped build by build here in the Vault. It started as one question - could a Videopac do a car you can get out of? - and grew a second game from a pencil sketch of a helicopter over Ocean Drive. Parker Brothers' Super Cobra showed how to build a city out of the console's own grid, and the engine note follows Race, Videopac 1: the sound chip's noise mode, louder as you pick up speed. One 6 KB image, two 3 KB halves: Ocean Drive Race with the title screen, and Helicopter Chase. On a G7400 the second video chip adds the Ocean Drive skyline. Made for online play in the Vault - there is no cartridge - and the cover is a fan-made one.",
@@ -940,6 +942,12 @@ window.GAMEPAGES_DATA = {
  },
  "mod_tutankham_fix": {
   "input": "joystick",
+  "manual": {
+   "item": "Tutankham_1983_Parker_EN",
+   "pages": 13,
+   "credit": "the English instructions (Parker, 1983)",
+   "pdf": "manuals/Tutankham_1983_Parker_EN/Tutankham_manual_EN.pdf"
+  },
   "video": {
    "id": "6IgcEyfp8s0",
    "title": "Tutankham Videopac / Odyssey2"
@@ -3253,6 +3261,12 @@ window.GAMEPAGES_DATA = {
  },
  "pr_tutankham": {
   "input": "joystick",
+  "manual": {
+   "item": "Tutankham_1983_Parker_EN",
+   "pages": 13,
+   "credit": "the English instructions (Parker, 1983)",
+   "pdf": "manuals/Tutankham_1983_Parker_EN/Tutankham_manual_EN.pdf"
+  },
   "video": {
    "id": "6IgcEyfp8s0",
    "title": "Tutankham Videopac / Odyssey2"

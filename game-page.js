@@ -202,10 +202,7 @@
   img.dataset.stage="png";
   img.src="covers/"+CID+".png?v="+COVER_V;
   cover.appendChild(img);
-  if (/Homebrew/.test(g.category)) {
-    var rib = el("span","cover-ribbon", window.t("cat_homebrew"));
-    cover.appendChild(rib);
-  }
+  // no Homebrew ribbon over the cover: the badges beside it already say so
 
   // Click the cover to see the art full size. The hero thumbnail is 220px wide
   // and crops to 3/4, which throws away most of what is actually on a box scan
