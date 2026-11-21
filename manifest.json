@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-21 14:46:35",
+ "generated": "2026-11-21 20:34:42",
  "count": 865,
- "bytes": 330489961,
+ "bytes": 330505720,
  "files": {
   "games.js": {
    "sha256": "28adb0267e9ed566907d6f4b4283e4ccdd78645f29321f482e10afeb4f68c326",
@@ -40,8 +40,8 @@
    "size": 90970
   },
   "featured.js": {
-   "sha256": "508c46fc927ef4e98c924e3834bbf1c1f2f60095f02b3c938a516d3cce8f4254",
-   "size": 160322
+   "sha256": "7b844ab997ed58cb350c88ad2c0b01f53af201abbf418ada64c110f23dfbd6b9",
+   "size": 169259
   },
   "news.js": {
    "sha256": "4ea0620f83cd3d9a2b5f7b842a27a7947a577bfb671f6e6adeca321c6f69d62c",
@@ -136,8 +136,8 @@
    "size": 53813
   },
   "app.js": {
-   "sha256": "1dc46c4933cf4be459b81d5425003127500cbd41088a7e5310d2448637f19c53",
-   "size": 107372
+   "sha256": "fbce64bfc8d3640c19ac2885b01f884bfc585550a91ae46226fc63eee003466a",
+   "size": 110495
   },
   "animcovers.js": {
    "sha256": "1a5f73229f91bd065c61ad69525ffc9a1aa05c456d9580618d0d1a0b0c68608c",
@@ -152,16 +152,16 @@
    "size": 8939
   },
   "index.html": {
-   "sha256": "25303e9937e57b3c6d4210f0c055d4f5539881e81bbe5bb2fabb6fda61219f9e",
-   "size": 20623
+   "sha256": "7a3d1c5b18844409f34fd4d703726a4cfcdffd5c3e31ccca6c1fbe13c975c41c",
+   "size": 21591
   },
   "resources.html": {
    "sha256": "2ec9e687dc0f34a0a8b45199b24b30fc3d82ee8c895cf6434684e41604431b7e",
    "size": 13352
   },
   "style.css": {
-   "sha256": "5f8332c93c1af2dd673b6446ae59a7f3aabb19b7eab4dff89bd7f3dfb90d4be1",
-   "size": 76250
+   "sha256": "ab5eec4dd0d90365cdbe9d72e67b3b31dc0f83acb6f2876b71a27270e841b8d1",
+   "size": 78981
   },
   "boot-splash.js": {
    "sha256": "727e62594ec2dab0fde1144bff499786432e370da6eb63a1b6a57de2515af837",
@@ -180,7 +180,7 @@
    "size": 45174
   },
   "versions.js": {
-   "sha256": "bef5d886c0ca1aebb71c656e3099e27aa6e565e2a62739bdb519fd447ce5badd",
+   "sha256": "de2993f85f4a0476bc26289481e733c0fd93d81527925967fbd78c8635e3307e",
    "size": 1911
   },
   "favicon.ico": {

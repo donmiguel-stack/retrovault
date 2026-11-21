@@ -976,6 +976,54 @@ html[lang="ja"] .c64ad-scroller b{font-size:32px;letter-spacing:2px;}
 .demo-video-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0; display:block;}
 .demo-video-cap{font-size:12px; line-height:1.5; color:var(--text-mute); text-align:center;}
 
+/* cracktro reels (Instagram embeds) between the stage and the links */
+.demo-reels{margin:0 0 20px;}
+.demo-reels-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; margin:0 0 10px;}
+.demo-reels-head h4{
+  margin:0; font-size:11px; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--amiga);
+}
+.demo-reels-head p{margin:0; flex:1 1 320px; font-size:12px; line-height:1.5; color:var(--text-mute);}
+.demo-reels-head a{font-size:12px; color:var(--amiga); text-decoration:none; white-space:nowrap;}
+.demo-reels-head a:hover{text-decoration:underline;}
+.demo-reels-head p a{color:var(--amiga); text-decoration:none;}
+.demo-reels-head p a:hover{text-decoration:underline;}
+.demo-reel-nav{display:inline-flex; gap:6px;}
+.demo-reel-nav button{
+  width:30px; height:30px; padding:0; border-radius:50%; border:1px solid var(--border);
+  background:var(--surface-2); color:inherit; font-size:20px; line-height:1; cursor:pointer;
+}
+.demo-reel-nav button:hover{border-color:var(--amiga); color:var(--amiga);}
+/* stand-alone cracktro strip (C64 and PC shelves): same look, shelf colour */
+.cracktro-strip.cracktro-c64{--amiga:var(--c64);}
+.cracktro-strip.cracktro-pc{--amiga:var(--pc);}
+.cracktro-strip .demo-head{margin-bottom:8px;}
+.cracktro-strip .demo-reels{margin-bottom:0;}
+.cracktro-strip .demo-reels-head h4{display:none;}
+/* carousel: four in view, swipe / scroll / arrows for the rest */
+.demo-reel-row{
+  display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 36px) / 4); gap:12px;
+  overflow-x:auto; scroll-snap-type:x mandatory; padding:0 0 10px; scrollbar-width:thin;
+}
+.demo-reel{scroll-snap-align:start;}
+.demo-reel{margin:0; display:flex; flex-direction:column; gap:6px; min-width:0;}
+/* Show only the demo picture. Instagram's embed is a 54px header, then a
+   4:5 box holding the 9:16 reel (so pillarboxed to 70.3% of the width), then
+   a footer; the 4:3 demo sits in the middle of the reel. The iframe is made
+   wider than the frame and shifted so just that 4:3 picture is in view. */
+.demo-reel-frame{
+  position:relative; width:100%; aspect-ratio:4/3; background:#000; container-type:inline-size;
+  border-radius:10px; overflow:hidden; box-shadow:0 8px 28px rgba(0,0,0,.45);
+}
+.demo-reel-frame iframe{
+  position:absolute; border:0; display:block;
+  width:142.25cqw; left:-21.12cqw; top:calc(-54px - 51.42cqw); height:calc(300px + 178cqw);
+}
+.demo-reel figcaption{display:flex; flex-direction:column; font-size:12px; line-height:1.4; text-align:center;}
+.demo-reel figcaption span{color:var(--text-mute);}
+@media (max-width:1100px){ .demo-reel-row{grid-auto-columns:calc((100% - 12px) / 2);} }
+@media (max-width:700px){ .demo-reel-row{grid-auto-columns:86%;} }
+
 /* links under the stage */
 .demo-links{display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:20px;}
 .demo-links h4{

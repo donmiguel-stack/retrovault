@@ -1276,6 +1276,50 @@
     }).join("");
   }
 
+  // Fills a .demo-reels box (heading, note, arrows, carousel of Instagram
+  // reel embeds). Used by the Amiga demoscene panel and by the stand-alone
+  // cracktro strips on the C64 and PC shelves. Texts a strip does not set
+  // itself (prev / next / more / account) come from the Amiga panel's reels.
+  function fillReels(reelBox, reels) {
+    var base = (((window.FEATURED_DATA || {}).amdemoscene || {}).reels) || {};
+    reels = Object.assign({}, base, reels);
+    reelBox.querySelector("h4").textContent = window.tx(reels.head);
+    var esc = function (t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;"); };
+    reelBox.querySelector("p").innerHTML = esc(window.tx(reels.note)).replace("Retro Cracktros",
+      '<a href="' + esc(reels.account) + '" target="_blank" rel="noopener">Retro Cracktros</a>');
+    var reelRow = reelBox.querySelector(".demo-reel-row");
+    [["prev", -1], ["next", 1]].forEach(function (d) {
+      var btn = reelBox.querySelector(".demo-reel-" + d[0]);
+      btn.setAttribute("aria-label", window.tx(reels[d[0]])); btn.title = window.tx(reels[d[0]]);
+      btn.addEventListener("click", function () {
+        reelRow.scrollBy({ left: d[1] * reelRow.clientWidth, behavior: "smooth" });
+      });
+    });
+    var more = reelBox.querySelector(".demo-reels-more");
+    more.href = reels.account; more.textContent = window.tx(reels.more);
+    reelBox.querySelector(".demo-reel-row").innerHTML = reels.items.map(function (r) {
+      var label = r.title + " - " + r.group;
+      return '<figure class="demo-reel"><div class="demo-reel-frame">' +
+        '<iframe src="https://www.instagram.com/reel/' + encodeURIComponent(r.id) + '/embed/" loading="lazy" ' +
+        'title="' + esc(label) + '" frameborder="0" scrolling="no" allowfullscreen ' +
+        'allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+        '</div><figcaption><b>' + esc(r.title) + '</b><span>' + esc(r.group) + '</span></figcaption></figure>';
+    }).join("");
+  }
+
+  // Stand-alone cracktro carousel for a shelf without a demoscene panel.
+  function cracktroBlock(key, cls) {
+    var reels = (window.FEATURED_DATA || {})[key];
+    var tpl = document.getElementById("cracktroTpl");
+    if (!reels || !(reels.items || []).length || !tpl) return null;
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    node.classList.add(cls);
+    node.querySelector(".demo-kicker").textContent = window.tx(reels.kicker);
+    node.querySelector(".demo-head h3").textContent = window.tx(reels.head);
+    fillReels(node.querySelector(".demo-reels"), reels);
+    return node;
+  }
+
   function amDemosceneBlock() {
     var data = (window.FEATURED_DATA || {}).amdemoscene;
     var tpl = document.getElementById("amdemoTpl");
@@ -1304,6 +1348,10 @@
     } else {
       node.querySelector(".demo-video").remove();
     }
+    var reels = data.reels || {};
+    var reelBox = node.querySelector(".demo-reels");
+    if (reelBox && (reels.items || []).length) fillReels(reelBox, reels);
+    else if (reelBox) reelBox.remove();
     var heads = data.linkHeads || {};
     node.querySelector(".demo-links-read h4").textContent = window.tx(heads.read);
     node.querySelector(".demo-links-sites h4").textContent = window.tx(heads.sites);
@@ -1534,6 +1582,7 @@
     // homebrew/community panels (those are Videopac content).
     if (state.platform === "C64") {
       if (total >= 6) insertAt(c64AdBlock(), Math.min(12, Math.floor(total / 2)));
+      if (total >= 30) insertAt(cracktroBlock("c64cracktros", "cracktro-c64"), Math.min(30, Math.floor(total / 2)));
       if (total >= 40) insertAt(c64HomebrewBlock(), Math.min(80, Math.floor(total * 2 / 3)));
       if (total >= 20) insertAt(c64CommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
       return;
@@ -1544,6 +1593,7 @@
     // reasoning as the C64 branch above.
     if (state.platform === "PC") {
       if (total >= 6) insertAt(pcAdBlock(), Math.min(12, Math.floor(total / 2)));
+      if (total >= 30) insertAt(cracktroBlock("pccracktros", "cracktro-pc"), Math.min(30, Math.floor(total / 2)));
       if (total >= 30) insertAt(pcHomebrewBlock(), Math.min(60, Math.floor(total * 2 / 3)));
       if (total >= 20) insertAt(pcCommunityBlock(), Math.min(50, Math.floor(total * 5 / 6)));
       return;

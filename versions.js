@@ -11,7 +11,7 @@
 // Order matters: later scripts use what earlier ones define.
 (function () {
   var CSS = [
-    ["style.css", 117],
+    ["style.css", 121],
     ["game.css", 20]
   ];
   var JS = [
@@ -39,7 +39,7 @@
     ["tips.js", 111],
     ["tips-ja.js", 1],
     ["walkthroughs.js", 3],
-    ["featured.js", 119],
+    ["featured.js", 124],
     ["c64ad.js", 110],
     ["gamepages.js", 172],
     ["gamepages-ja.js", 4],

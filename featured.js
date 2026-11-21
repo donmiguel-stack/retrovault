@@ -888,6 +888,67 @@ window.FEATURED_DATA = {
   // placing, sourced to Demozoo (see the game pages' history paragraphs).
   // The panel's own text lives here too, not in i18n.js, so the whole
   // banner is editable in one place.
+  // Cracktro carousels for the C64 and PC shelves (2026-11-21): reels from
+  // the Instagram account @retrocracktros, same embed as the Amiga demoscene
+  // panel's "reels" (see there). Each is its own strip at about card 30.
+  // prev / next / more / account are taken from amdemoscene.reels. The PC
+  // list is intros, demos and old cracktros only - no cracks of games that
+  // are still on sale.
+  c64cracktros: {
+    kicker: { en: "Cracked on the C64", nl: "Gekraakt op de C64", de: "Gecrackt auf dem C64",
+              fr: "Cracké sur C64", pt: "Crackeado no C64", ja: "C64 の クラック" },
+    head: { en: "Cracktros: the C64 scene's calling cards", nl: "Cracktro's: de visitekaartjes van de C64-scene",
+            de: "Cracktros: die Visitenkarten der C64-Szene", fr: "Cracktros : les cartes de visite de la scène C64",
+            pt: "Cracktros: os cartões de visita da cena C64", ja: "クラックトロ ― C64 シーンの めいし" },
+    note: { en: "Crack intros from the C64 years, recorded by Retro Cracktros. The clips play straight from their Instagram account - give them a follow!",
+            nl: "Crack-intro's uit de C64-jaren, opgenomen door Retro Cracktros. De clips spelen rechtstreeks vanaf hun Instagram-account - geef ze een follow!",
+            de: "Crack-Intros aus den C64-Jahren, aufgenommen von Retro Cracktros. Die Clips laufen direkt von ihrem Instagram-Konto - folgt ihnen!",
+            fr: "Des cracktros des années C64, enregistrées par Retro Cracktros. Les clips sont lus directement depuis leur compte Instagram - abonnez-vous !",
+            pt: "Crack intros dos anos do C64, gravadas por Retro Cracktros. Os clipes rodam direto da conta deles no Instagram - siga a conta!",
+            ja: "C64 じだいの クラックイントロです。Retro Cracktros が ろくがしました。クリップは かれらの Instagram から そのまま ながれます。ぜひ フォローしてね!" },
+    items: [
+      // Fairlight Intro (DGz94H4t6u2) removed: Instagram will not play it embedded,
+      // it only shows "View on Instagram" (2026-11-21).
+      { id: "DHxsMzjt3X1", title: "Stunt Car Racer", group: "Radius" },
+      { id: "Dae0ownNxYX", title: "Alien", group: "Genesis Project" },
+      { id: "DHsi2S-NKv8", title: "Captain Blood", group: "Strike Force" },
+      { id: "DacSkfttuNZ", title: "Tristar Intro", group: "Tristar" },
+      { id: "DHvHHEktbW8", title: "Indiana Jones and the Last Crusade", group: "Defence" },
+      { id: "DTInozuiGiR", title: "Tower of Terror", group: "Abstract" },
+      { id: "DHxsaWKN0tE", title: "Panzer Battles", group: "Genesis Project" },
+      { id: "DHxsVQuNGHm", title: "Tibo's Tale", group: "Verdict" },
+      { id: "DHvHQtOtBYp", title: "Lethal Zone", group: "Pandora" },
+      { id: "DHvG8OytIjb", title: "High Voltage Preview", group: "X-Rated" },
+      { id: "DHsitybtNYx", title: "Nibbly V4", group: "The Shaolin Monastery" },
+      { id: "DGMEOlMuMSD", title: "Xenophobe", group: "The Blasters Inc." }
+    ]
+  },
+  pccracktros: {
+    kicker: { en: "Cracked on the PC", nl: "Gekraakt op de pc", de: "Gecrackt auf dem PC",
+              fr: "Cracké sur PC", pt: "Crackeado no PC", ja: "PC の クラック" },
+    head: { en: "Cracktros and intros: the PC scene shows off", nl: "Cracktro's en intro's: de pc-scene pakt uit",
+            de: "Cracktros und Intros: die PC-Szene zeigt, was sie kann", fr: "Cracktros et intros : la scène PC se montre",
+            pt: "Cracktros e intros: a cena PC se exibe", ja: "クラックトロと イントロ ― PC シーンの うでじまん" },
+    note: { en: "Intros and demos by the PC cracking groups, recorded by Retro Cracktros. The clips play straight from their Instagram account - give them a follow!",
+            nl: "Intro's en demo's van de pc-crackgroepen, opgenomen door Retro Cracktros. De clips spelen rechtstreeks vanaf hun Instagram-account - geef ze een follow!",
+            de: "Intros und Demos der PC-Crackergruppen, aufgenommen von Retro Cracktros. Die Clips laufen direkt von ihrem Instagram-Konto - folgt ihnen!",
+            fr: "Intros et démos des groupes de crackers PC, enregistrées par Retro Cracktros. Les clips sont lus directement depuis leur compte Instagram - abonnez-vous !",
+            pt: "Intros e demos dos grupos de crackers de PC, gravadas por Retro Cracktros. Os clipes rodam direto da conta deles no Instagram - siga a conta!",
+            ja: "PC の クラッカー グループの イントロと デモです。Retro Cracktros が ろくがしました。クリップは かれらの Instagram から そのまま ながれます。ぜひ フォローしてね!" },
+    items: [
+      { id: "DZE8UN_tp80", title: "Starport BBS (1992)", group: "Future Crew" },
+      { id: "DTS3_56DIqB", title: "Red (1994)", group: "Razor 1911" },
+      { id: "Dami2mOt1k1", title: "Theatre of Death trainer", group: "Tristar & Red Sector Inc." },
+      { id: "Daj-t84tV67", title: "Quark Express 3.12", group: "Outlaws & The Raider Brothers" },
+      { id: "DZE8ebRN_07", title: "Starport BBS Intro II (1992)", group: "Future Crew" },
+      { id: "DTQYkuVDZej", title: "Fudged Insanity (1994)", group: "Razor 1911" },
+      { id: "DTQYwVvjZrl", title: "Glenz Vector From Hell (2013)", group: "Razor 1911" },
+      { id: "Damivudtu2i", title: "Zucks (2012)", group: "Tristar & Red Sector" },
+      { id: "DTVhkciCCiA", title: "Solarstorm", group: "Hoodlum" },
+      { id: "Daj-09TtZHE", title: "HLM Visage", group: "Unix of Hoodlum" },
+      { id: "DTQY-fvDZba", title: "Heaven 777 (2013)", group: "Razor 1911" }
+    ]
+  },
   amdemoscene: {
     kicker: { en: "Made on the Amiga", nl: "Gemaakt op de Amiga", de: "Gemacht auf dem Amiga",
               fr: "Né sur Amiga", pt: "Feito no Amiga", ja: "Amiga で うまれた" },
@@ -943,6 +1004,42 @@ window.FEATURED_DATA = {
                  fr: "Images de party partagées par Teodor Bjerrang, sans doute The Gathering 1993 à Lillestrøm, en Norvège.",
                  pt: "Imagens de party compartilhadas por Teodor Bjerrang, provavelmente da The Gathering 1993 em Lillestrøm, Noruega.",
                  ja: "Teodor Bjerrang が こうかいした パーティーの えいぞうです。1993ねんに ノルウェーの Lillestrøm で ひらかれた The Gathering と おもわれます。" } },
+    // Crack intros under the stage (2026-11-21, Mike's pick): reels from the
+    // Instagram account @retrocracktros, shown with Instagram's own embed
+    // player - nothing is copied or hosted here. "id" is the reel shortcode
+    // from instagram.com/reel/<id>/. Add or swap entries freely: the row is a
+    // carousel, four in view. "Retro Cracktros" in the note becomes a link.
+    reels: {
+      account: "https://www.instagram.com/retrocracktros/",
+      head: { en: "Cracktros: where it all began", nl: "Cracktro's: waar het allemaal begon",
+              de: "Cracktros: wo alles begann", fr: "Cracktros : là où tout a commencé",
+              pt: "Cracktros: onde tudo começou", ja: "クラックトロ ― すべての はじまり" },
+      note: { en: "Crack intros from the Amiga years, recorded by Retro Cracktros. The clips play straight from their Instagram account - give them a follow!",
+              nl: "Crack-intro's uit de Amiga-jaren, opgenomen door Retro Cracktros. De clips spelen rechtstreeks vanaf hun Instagram-account - geef ze een follow!",
+              de: "Crack-Intros aus den Amiga-Jahren, aufgenommen von Retro Cracktros. Die Clips laufen direkt von ihrem Instagram-Konto - folgt ihnen!",
+              fr: "Des cracktros des années Amiga, enregistrées par Retro Cracktros. Les clips sont lus directement depuis leur compte Instagram - abonnez-vous !",
+              pt: "Crack intros dos anos do Amiga, gravadas por Retro Cracktros. Os clipes rodam direto da conta deles no Instagram - siga a conta!",
+              ja: "Amiga じだいの クラックイントロです。Retro Cracktros が ろくがしました。クリップは かれらの Instagram から そのまま ながれます。ぜひ フォローしてね!" },
+      prev: { en: "Previous cracktros", nl: "Vorige cracktro's", de: "Vorherige Cracktros", fr: "Cracktros précédentes", pt: "Cracktros anteriores", ja: "まえへ" },
+      next: { en: "More cracktros", nl: "Meer cracktro's", de: "Weitere Cracktros", fr: "Cracktros suivantes", pt: "Mais cracktros", ja: "つぎへ" },
+      more: { en: "More on @retrocracktros", nl: "Meer op @retrocracktros", de: "Mehr auf @retrocracktros",
+              fr: "Plus sur @retrocracktros", pt: "Mais em @retrocracktros", ja: "@retrocracktros で もっと みる" },
+      items: [
+        { id: "DfRS71Yhx5A", title: "Wing Commander", group: "Scoopex" },
+        { id: "DfJkmLaBmhg", title: "Walker", group: "TRSI" },
+        { id: "DfOuMzSBGcG", title: "Wild Cup Soccer", group: "Paradox" },
+        { id: "DfT3yaZB0h_", title: "Worlds of Legend", group: "Crystal" },
+        { id: "DfT3r6VhE9r", title: "Worldwide Hunting", group: "Scoopex" },
+        { id: "DfRS5H7htHW", title: "Wonderland", group: "Defjam" },
+        { id: "DfMJZ3wBvQY", title: "Weird Dreams", group: "Subway" },
+        { id: "DfOuHsDhrsR", title: "Wild Streets", group: "Oracle" },
+        { id: "DfRS6qEhv-v", title: "Winter Games", group: "E.C.A." },
+        { id: "DfMJZlsBsP1", title: "Western Games", group: "The Champs" },
+        { id: "DfOuJ-ehwxB", title: "Window Wizard", group: "Damage Inc." },
+        { id: "DfJkhBYhtrm", title: "Warm Up", group: "Radical" },
+        { id: "DfJkld-BtJR", title: "Vroom", group: "Vision Factory & The Company" }
+      ]
+    },
     // Links beside the demos: articles first, then the Amiga-demo databases.
     // Exotica (Janeway's home) is already in the shelf's community carousel,
     // so the Janeway entry here links straight to the database itself.
